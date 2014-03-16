@@ -1,0 +1,5 @@
+*.orig
+*~
+*.sublime-project
+*.sublime-workspace
+*.swp
