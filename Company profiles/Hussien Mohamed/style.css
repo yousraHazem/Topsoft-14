@@ -1,0 +1,37 @@
+div {
+	font-size: 28px;
+	color: white;
+	text-align: center;
+	font-family: Georgia ,serif;
+}
+p {
+	font-size: 14px;
+	color: white;
+	margin-left: 40%;
+}
+body {
+	background-image: url('back.jpg');
+	background-size: 1200px 800px;
+}
+button {
+	background:transparent;
+    border:none;
+    outline:none;
+    display:block;
+    position: relative;
+    left: 10%;
+    height:50px;
+    width:100px;
+    cursor:pointer;
+    font-size: 16px;
+    color :white;
+}
+button.face {
+	height: 100px;
+	width: 100px;
+	display: inline;
+	background-image: url('facebook.gif');
+	left: 20%;
+	background-position: center;
+	background-size: 100%;
+}
