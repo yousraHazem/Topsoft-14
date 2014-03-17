@@ -1,0 +1,62 @@
+header nav{ 
+background:  black;
+
+border-radius: 5px;
+ 
+line-height: 40px;
+ 
+background-position: center;
+	
+width: 800px;
+	
+margin-left: 220px;
+
+}
+
+header nav ol li{
+	
+display:  inline;
+padding:  7px  30px;
+ 
+margin-left: 20px;
+ 
+}
+header a {
+					
+color: white;
+					
+text-decoration: none;
+}	
+
+header a:hover {
+				
+color: #fd9372;
+		
+}
+
+		
+header img { 
+		
+height: 115px;
+		
+width: 236px;
+	
+margin-left: 100px;
+		
+margin-top: 20px;	
+}
+	
+	
+header figcaption{
+		
+margin-left: 100px;
+		
+margin-top: 0px;
+
+}
+
+section{
+margin-left: 200px;
+		
+margin-top: 20px;	
+}
