@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Profile</title>
+<style type = "text/css">
+#body{ border: 3px solid black;
+            border-radius: 30px;
+            height: 275px;
+			width: 500px;
+			margin: 0px auto;
+			margin-top: 20px;
+			padding: 10px;
+			text-align:center;
+			}
+#extra{
+            border: 3px solid black;
+            border-radius: 30px; height: 50px;
+			width: 250px;
+			margin: 0px auto;  margin-bottom:2px;
+        }			
+</style>
+</head>
+<body style="background-color:#CDB5CD">
+<layer id="placeholderlayer"></layer><div id="body">
+<div id="extra"><h2 style="color: blue">Favourite Quotes</h2></div>
+<div id="placeholderdiv"></div>
+</div>
+<div id="body"> 
+<div id="extra"><h2 style="color: blue;">Education</h2></div>
+<ul>
+<li> GUC 6th Semester MET-CS</li>
+<li> IGCSE </li>
+</ul>
+</div>
+<div id="body">
+<div id="extra"><h2 style="color: blue;">Previous Experience</h2></div>
+<ul>
+<li> Math Teaching Assistant</li>
+<li> Biology Teaching Assistant</li>
+</ul>
+</div>
+<script language="JavaScript1.2">
+var howOften = 5; //number often in seconds to rotate
+var current = 0; //start the counter at 0
+var ns6 = document.getElementById&&!document.all; //detect netscape 6
+
+// place your images, text, etc in the array elements here
+var items = new Array();
+    items[0]="<img src='Image1.jpg' width= 500 height= 200/>"; //a linked image
+    items[1]="<img src='Image2.jpg' width =500 height = 200/>"; //a linked image
+    items[2]="<img src='Image3.jpg' width= 500 height = 200/>"; //a linked image
+   
+function rotater() {
+    document.getElementById("placeholder").innerHTML = items[current];
+    current = (current==items.length-1) ? 0 : current + 1;
+    setTimeout("rotater()",howOften*1000);
+}
+
+function rotater() {
+    if(document.layers) {
+        document.placeholderlayer.document.write(items[current]);
+        document.placeholderlayer.document.close();
+    }
+    if(ns6)document.getElementById("placeholderdiv").innerHTML=items[current]
+        if(document.all)
+            placeholderdiv.innerHTML=items[current];
+
+    current = (current==items.length-1) ? 0 : current + 1; //increment or reset
+    setTimeout("rotater()",howOften*1000);
+}
+window.onload=rotater;
+//-->
+</script>
+
+</body>
+</html>
+
