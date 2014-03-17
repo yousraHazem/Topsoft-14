@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script language="javascript">
+        alert(":) Welcome to Ammar's profile! :)")
+        </script>
+        <meta charset="utf-8" />
+        <title>Ammar ELWazir</title>
+        <link rel="stylesheet" type="text/css" href="profile.css">
+        
+    </head>
+    <body>
+        
+        <style>
+            BODY {
+                SCROLLBAR-FACE-COLOR: red;
+                SCROLLBAR-HIGHLIGHT-COLOR: gray;
+                SCROLLBAR-SHADOW-COLOR: black;
+                SCROLLBAR-ARROW-COLOR: gray;
+                SCROLLBAR-TRACK-COLOR: black;
+                SCROLLBAR-DARKSHADOW-COLOR: red;
+            }
+        </style>
+
+        <script language=javascript>
+            msg = "Ammar ELWazeer profile's page";
+
+            msg = "..." + msg; pos = 0;
+            function scrollMSG() {
+                document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+                pos++;
+                if (pos > msg.length) pos = 0
+                window.setTimeout("scrollMSG()", 200);
+            }
+            scrollMSG();
+        </script>
+        <div id="header">
+            <div id="image">
+            <img id="ammar" src="ammar.jpg" />
+            </div>
+            <h1 id="name">Ammar Mohamed Amin Ahmed ELWazir</h1>
+            <p>Welcome to My Profile!</p>
+        </div>
+
+        <div id="main">
+            <div class="section first">
+                <h2>You can contact me on:</h2>
+                <ul>
+                    <li><a href="https://www.facebook.com/ammarwa"><img src="fb.jpg" width="250" height="50" /></a></li>
+                    <li><a href="https://google.com/+AmmarELWazeer"><img src="google+.jpg" width="250" height="50" /></a></li>
+                    <li><a href="https://twitter.com/ammarelwazeer"><img src="twitter.png" width="250" height="50" /></a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>My Life</h2>
+                <div id="para"><div id="para2">My name is Ammar , I am 20 years old and I am an MET-CS student.
+                I am an employee in Topsoft and I am the leader of component 2.<br>
+                I love gaming and programming too much.</div></div>
+                
+            </div>
+
+            <div class="section">
+                <h2>Skills</h2>
+                <ul>
+                    <li><h5>Programming:</h5></li>
+                    <li>C#</li>
+                    <li>Java</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </div>
+
+            <div class="section last">
+                <h2>Contact ME</h2>
+                <ul>
+                    <li><a href="mailto:ammar.elwazeer@student.guc.edu.eg">Email Me</a></li>
+                    <li>+201012851110</li>
+                </ul>
+            </div>
+        </div>
+
+    </body>
+</html>
