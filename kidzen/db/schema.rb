@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140323213712) do
+ActiveRecord::Schema.define(version: 20140324220736) do
+
+  create_table "permissions", force: true do |t|
+    t.text     "abilities"
+    t.integer  "registered_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "registered_users", force: true do |t|
     t.string   "user_name"
@@ -27,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140323213712) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "gender"
+    t.integer  "permission_id"
   end
 
   add_index "registered_users", ["email"], name: "index_registered_users_on_email", unique: true

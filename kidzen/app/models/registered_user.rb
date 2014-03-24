@@ -10,8 +10,9 @@ class RegisteredUser < ActiveRecord::Base
         validates :middle_name, presence: true, length: { maximum: 256 }
         validates :family_name, presence: true, length: { maximum: 256 }
         validates :nickname, presence: true, length: { minimum: 4, maximum: 512 }
-        validates :last_accessed, presence: true
+        validates :password_digest, presence: true
+        validates :birth_date, presence: true
         validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
-
-
+        has_one :permission, dependent: :destroy
+        validates_associated :permission #Note: Don't use on both ends
 end
