@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324234604) do
+ActiveRecord::Schema.define(version: 20140325005809) do
 
   create_table "children", force: true do |t|
     t.boolean  "is_approved"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20140324234604) do
   create_table "friend_ships", force: true do |t|
     t.integer  "child_1_id"
     t.integer  "child_2_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notifications", force: true do |t|
+    t.time     "sent_in_time"
+    t.date     "sent_in_date"
+    t.string   "type"
+    t.boolean  "checked"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
