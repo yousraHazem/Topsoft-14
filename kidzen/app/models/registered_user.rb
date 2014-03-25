@@ -15,4 +15,6 @@ class RegisteredUser < ActiveRecord::Base
         validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
         has_one :permission, dependent: :destroy
         validates_associated :permission #Note: Don't use on both ends
+        has_secure_password
+        validates :password, length: { minimum: 6 }
 end
