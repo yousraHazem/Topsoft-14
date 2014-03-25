@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324220736) do
+ActiveRecord::Schema.define(version: 20140324234604) do
+
+  create_table "children", force: true do |t|
+    t.boolean  "is_approved"
+    t.integer  "registered_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "friend_ships", force: true do |t|
+    t.integer  "child_1_id"
+    t.integer  "child_2_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "permissions", force: true do |t|
     t.text     "abilities"
