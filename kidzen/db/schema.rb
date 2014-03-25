@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140325011952) do
+ActiveRecord::Schema.define(version: 20140325021749) do
 
   create_table "children", force: true do |t|
     t.boolean  "is_approved"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20140325011952) do
     t.datetime "updated_at"
     t.boolean  "gender"
     t.integer  "permission_id"
+    t.boolean  "banned"
   end
 
   add_index "registered_users", ["email"], name: "index_registered_users_on_email", unique: true

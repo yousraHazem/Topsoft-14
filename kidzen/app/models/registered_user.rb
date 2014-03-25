@@ -12,9 +12,46 @@ class RegisteredUser < ActiveRecord::Base
         validates :nickname, presence: true, length: { minimum: 4, maximum: 512 }
         validates :password_digest, presence: true
         validates :birth_date, presence: true
+        validates :banned, presence: true
         validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
-        has_one :permission, dependent: :destroy
-        validates_associated :permission #Note: Don't use on both ends
-        has_secure_password
         validates :password, length: { minimum: 6 }
+        validates_associated :permission #Note: Don't use on both ends
+        has_one :permission, dependent: :destroy
+        has_secure_password
+
+        # Full name with space sperators
+        # Authors: Ahmed H. Ismail
+        def full_name
+            [first_name, middle_name, family_name].join(" ")
+        end
+        
+        def female?
+            gender == true
+        end
+
+        def male?
+            gender == false
+        end
+
+        def gender=(value)
+            if value == :female
+                self[:gender] = true
+            elsif value == :male
+                self[:gender] = false
+            end
+        end
+
+        def first_name=(name)
+            self[:first_name] = name.capitalize
+        end
+
+        def middle_name=(name)
+            self[:middle_name] = name.capitalize
+        end
+
+        def family_name=(name)
+            self[:family_name] = name.capitalize
+        end
+
+        
 end
