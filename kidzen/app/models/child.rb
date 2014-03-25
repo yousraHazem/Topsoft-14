@@ -1,5 +1,5 @@
 # The model representing 
-# Children
+# Children.
 # Authors: Ahmed H. Ismail
 class Child < ActiveRecord::Base
     has_one :registered_user, dependent: :destroy

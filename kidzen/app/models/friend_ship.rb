@@ -1,5 +1,5 @@
 # The model representing 
-# The FriendShip relation
+# The FriendShip relation.
 # Between two children
 # Authors: Ahmed H. Ismail
 class FriendShip < ActiveRecord::Base
