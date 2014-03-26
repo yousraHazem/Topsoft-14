@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ChildControllerTest < ActionController::TestCase
+class SupervisorControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end
