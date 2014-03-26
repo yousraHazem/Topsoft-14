@@ -18,7 +18,15 @@ class RegisteredUser < ActiveRecord::Base
         validates_associated :permission #Note: Don't use on both ends
         has_one :permission, dependent: :destroy
         has_secure_password
+        after_initialize  :cap_names
+        after_create :cap_default
 
+        # Capitalize all the names
+        def cap_names
+            self[:first_name].capitalize
+            self[:middle_name].capitalize
+            self[:last_name].capitalize
+        end
         # Full name with space sperators
         # Authors: Ahmed H. Ismail
         def full_name
