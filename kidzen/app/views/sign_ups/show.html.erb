@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @sign_up.Username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @sign_up.Password %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @sign_up.Date_Of_Birth %>
+</p>
+
+<p>
+  <strong>Gaurdian email:</strong>
+  <%= @sign_up.Gaurdian_Email %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @sign_up.Email %>
+</p>
+
+<%= link_to 'Edit', edit_sign_up_path(@sign_up) %> |
+<%= link_to 'Back', sign_ups_path %>

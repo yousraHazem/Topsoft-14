@@ -2,4 +2,4 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the Rails application.
-Kidzen::Application.initialize!
+C2S0CreateSupervisorSkeleton1::Application.initialize!
