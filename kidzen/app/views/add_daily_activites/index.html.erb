@@ -1,0 +1,29 @@
+<h1>Listing add_daily_activites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Child</th>
+      <th>Activity</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @add_daily_activites.each do |add_daily_activite| %>
+      <tr>
+        <td><%= add_daily_activite.child_id %></td>
+        <td><%= add_daily_activite.activity %></td>
+        <td><%= link_to 'Show', add_daily_activite %></td>
+        <td><%= link_to 'Edit', edit_add_daily_activite_path(add_daily_activite) %></td>
+        <td><%= link_to 'Destroy', add_daily_activite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Add daily activite', new_add_daily_activite_path %>

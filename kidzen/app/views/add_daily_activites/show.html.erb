@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Child:</strong>
+  <%= @add_daily_activite.child_id %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @add_daily_activite.activity %>
+</p>
+
+<%= link_to 'Edit', edit_add_daily_activite_path(@add_daily_activite) %> |
+<%= link_to 'Back', add_daily_activites_path %>

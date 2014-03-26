@@ -1,0 +1,25 @@
+<%= form_for(@add_daily_activite) do |f| %>
+  <% if @add_daily_activite.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@add_daily_activite.errors.count, "error") %> prohibited this add_daily_activite from being saved:</h2>
+
+      <ul>
+      <% @add_daily_activite.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :child_id %><br>
+    <%= f.number_field :child_id %>
+  </div>
+  <div class="field">
+    <%= f.label :activity %><br>
+    <%= f.text_field :activity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
