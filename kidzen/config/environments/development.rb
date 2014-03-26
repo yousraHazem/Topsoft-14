@@ -27,12 +27,12 @@ Kidzen::Application.configure do
   # number of complex assets.
   config.assets.debug = true
   config.action_mailer.delivery_method = :smtp
-config.action_mailer.smtp_settings = {
+  config.action_mailer.smtp_settings = {
   :authentication => :plain,
   :address => "smtp.gmail.com",
   :port => 587,
   :domain => "kidzennetwork.gmail.com",
- :user_name => "kidzennetwork",
+  :user_name => "kidzennetwork",
   :password => "kidZen14"
 }
 
