@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Kidzen::Application.config.secret_key_base = 'd66453cad6645b34c9e91ebc6831914deb4092627eda1404234ecbc25eba134c9fb4e88781e8f5f769a9f30a5a02bb452a38604661c9d39f2580725b703f6fe7'
+C2S0CreateSupervisorSkeleton1::Application.config.secret_key_base = '3b70e7ca08aba4fab5d103b4dff5d7c1acbd80b402734910a073d5e9f0cdf69555b46bd863214681d0364755237884b46a429ca92fb125bfd18e16cac2044db5'
