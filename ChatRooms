@@ -1,0 +1,45 @@
+class ChatRooms
+    
+    $child_name
+    $room_id
+    $invite_only
+    $participants
+    $mutual_only
+    $pending_invites
+    $banned_children
+    $log
+
+        def set_name(name)
+        end
+
+        def get_name()
+        end
+
+        def get_creator(child ,child)
+        end
+
+        def ban_child(registered_user,child)
+        end
+
+        def operation_add_participant(child)
+        end
+
+        def get_participant()
+        end
+
+        def send_message(message)
+        end
+
+        def history()
+        end
+
+        def get_id()
+        end
+
+        def leave(registered_user)
+
+        end
+
+end
+
+
