@@ -26,12 +26,7 @@ class GroupsController < ApplicationController
   # Time Complexity: O(n).
   # Author: Mohamed Bahgat Elrakaiby
       def remove_member(RegisteredUser r)
-        r.delete
-    unless members.include? (r)
-      return false
-          else
-      members.delete(r)
-      return true
+        r.destroy
       end
 
   # This is a function that views members of the group
@@ -40,7 +35,11 @@ class GroupsController < ApplicationController
   # Author: Mohamed Bahgat Elrakaiby
       def view_members()
     a = []
-          members.each {|r| a.push(r.get_username)}
+          GroupMember.all.each {|r|
+            if r.group_id == @group.id
+              a.push(r.username)
+            end
+          }
     puts a
       end
 
@@ -49,7 +48,7 @@ class GroupsController < ApplicationController
   # Time complexity: O(1)
   # Author: Mohamed Bahgat Elrakaiby
       def create_status(Status status)
-    statuses.push(status)
+      Status.create(group_id: @group_id, status: status)
       end
 
 
