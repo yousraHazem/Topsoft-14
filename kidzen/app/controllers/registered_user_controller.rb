@@ -2,7 +2,7 @@
 class RegisteredUserController < ApplicationController
 
 
-    # TODO: Implement
-    def ban
-    end
+  # TODO: Implement
+  def ban
+  end
 end
