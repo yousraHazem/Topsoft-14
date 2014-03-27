@@ -16,7 +16,7 @@ class GroupMembersController < ApplicationController
 # Method for viewing the join requests sent to the group
 # group_id-integer
 # the method returns a container of the member requests to the group containg the username, and the id of the group to join
-# The function takes a group_id, and 
+# The function takes a group_id, and returns the members with pending requests
 # Author: Nouran T. Attia
 
     def view_member_request
