@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Kidzen::Application.config.secret_key_base = 'd66453cad6645b34c9e91ebc6831914deb4092627eda1404234ecbc25eba134c9fb4e88781e8f5f769a9f30a5a02bb452a38604661c9d39f2580725b703f6fe7'
+Kidzen::Application.config.secret_key_base = 'bfb0fcdc40c98860723baad2c6ebb2ad419451d9c76abff1348b4eff220edc94c1a545acd16d8d07f947e554664457994682d8073a100fbf8c0460303e4c430d'

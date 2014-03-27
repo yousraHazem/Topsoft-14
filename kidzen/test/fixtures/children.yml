@@ -1,9 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  is_approved: false
-  registered_user_id: 1
+  approved: false
+  guardian_email: MyString
+  user_name: MyString
+  password: MyString
+  first_name: MyString
+  birth_of_date: 2014-03-27 18:16:19
+  gender: MyString
 
 two:
-  is_approved: false
-  registered_user_id: 1
+  approved: false
+  guardian_email: MyString
+  user_name: MyString
+  password: MyString
+  first_name: MyString
+  birth_of_date: 2014-03-27 18:16:19
+  gender: MyString
