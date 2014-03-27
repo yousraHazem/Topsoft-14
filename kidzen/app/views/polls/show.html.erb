@@ -1,13 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Poll question:</strong>
-  <%= @poll.poll_question %>
+  <strong>Question:</strong>
+  <%= @poll.question %>
 </p>
 
 <p>
-  <strong>Poll answers:</strong>
-  <%= @poll.poll_answers %>
+  <strong>Asnwer1:</strong>
+  <%= @poll.asnwer1 %>
+</p>
+
+<p>
+  <strong>Answer2:</strong>
+  <%= @poll.answer2 %>
+</p>
+
+<p>
+  <strong>Answer3:</strong>
+  <%= @poll.answer3 %>
 </p>
 
 <%= link_to 'Edit', edit_poll_path(@poll) %> |

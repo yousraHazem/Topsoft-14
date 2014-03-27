@@ -18,7 +18,7 @@ class PollsControllerTest < ActionController::TestCase
 
   test "should create poll" do
     assert_difference('Poll.count') do
-      post :create, poll: { poll_answers: @poll.poll_answers, poll_question: @poll.poll_question }
+      post :create, poll: { answer2: @poll.answer2, answer3: @poll.answer3, asnwer1: @poll.asnwer1, question: @poll.question }
     end
 
     assert_redirected_to poll_path(assigns(:poll))
@@ -35,7 +35,7 @@ class PollsControllerTest < ActionController::TestCase
   end
 
   test "should update poll" do
-    patch :update, id: @poll, poll: { poll_answers: @poll.poll_answers, poll_question: @poll.poll_question }
+    patch :update, id: @poll, poll: { answer2: @poll.answer2, answer3: @poll.answer3, asnwer1: @poll.asnwer1, question: @poll.question }
     assert_redirected_to poll_path(assigns(:poll))
   end
 

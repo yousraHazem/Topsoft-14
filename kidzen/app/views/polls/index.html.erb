@@ -3,8 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th>Poll question</th>
-      <th>Poll answers</th>
+      <th>Question</th>
+      <th>Asnwer1</th>
+      <th>Answer2</th>
+      <th>Answer3</th>
       <th></th>
       <th></th>
       <th></th>
@@ -14,8 +16,10 @@
   <tbody>
     <% @polls.each do |poll| %>
       <tr>
-        <td><%= poll.poll_question %></td>
-        <td><%= poll.poll_answers %></td>
+        <td><%= poll.question %></td>
+        <td><%= poll.asnwer1 %></td>
+        <td><%= poll.answer2 %></td>
+        <td><%= poll.answer3 %></td>
         <td><%= link_to 'Show', poll %></td>
         <td><%= link_to 'Edit', edit_poll_path(poll) %></td>
         <td><%= link_to 'Destroy', poll, method: :delete, data: { confirm: 'Are you sure?' } %></td>

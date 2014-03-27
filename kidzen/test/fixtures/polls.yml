@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  poll_question: MyString
-  poll_answers: MyString
+  question: MyString
+  asnwer1: MyString
+  answer2: MyString
+  answer3: MyString
 
 two:
-  poll_question: MyString
-  poll_answers: MyString
+  question: MyString
+  asnwer1: MyString
+  answer2: MyString
+  answer3: MyString
