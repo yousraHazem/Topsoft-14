@@ -1,7 +1,11 @@
 Kidzen::Application.routes.draw do
+<<<<<<< HEAD
   resources :registered_users
 
   resources :groups
+=======
+  resources :children
+>>>>>>> 76866c5dfbfc2b5fcb8c25878a62663ff49824ef
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
