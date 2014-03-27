@@ -13,7 +13,7 @@ class ChildrenController < ApplicationController
   end
 
   # GET /children/new
-  def new
+  def new 
     @child = Child.new
   end
 
@@ -23,7 +23,7 @@ class ChildrenController < ApplicationController
 
   # POST /children
   # POST /children.json
-  def create
+  def create #Sign up Child
     @child = Child.new(child_params)
 
     respond_to do |format|
@@ -39,7 +39,7 @@ class ChildrenController < ApplicationController
 
   # PATCH/PUT /children/1
   # PATCH/PUT /children/1.json
-  def update
+  def update #update a child
     respond_to do |format|
       if @child.update(child_params)
         format.html { redirect_to @child, notice: 'Child was successfully updated.' }
@@ -53,7 +53,7 @@ class ChildrenController < ApplicationController
 
   # DELETE /children/1
   # DELETE /children/1.json
-  def destroy
+  def destroy #delete a child
     @child.destroy
     respond_to do |format|
       format.html { redirect_to children_url }
