@@ -1,3 +1,4 @@
+# Authors: Ammar M. ELWazir
 class ChildrenController < ApplicationController
   before_action :set_child, only: [:show, :edit, :update, :destroy]
 
@@ -23,14 +24,17 @@ class ChildrenController < ApplicationController
 
   # POST /children
   # POST /children.json
-  def create #Sign up Child
+  # Sign up Child
+  # child_params - sign up text feilds
+  # Authors: Ammar M. ElWazir
+  def create 
     @child = Child.new(child_params)
 
     respond_to do |format|
+      else
       if @child.save
         format.html { redirect_to @child, notice: 'Child was successfully created.' }
         format.json { render action: 'show', status: :created, location: @child }
-      else
         format.html { render action: 'new' }
         format.json { render json: @child.errors, status: :unprocessable_entity }
       end
@@ -39,7 +43,10 @@ class ChildrenController < ApplicationController
 
   # PATCH/PUT /children/1
   # PATCH/PUT /children/1.json
-  def update #update a child
+  # Update a child
+  # child_params - sign up text feilds
+  # Authors: Ammar M. ElWazir
+  def update 
     respond_to do |format|
       if @child.update(child_params)
         format.html { redirect_to @child, notice: 'Child was successfully updated.' }
@@ -53,7 +60,9 @@ class ChildrenController < ApplicationController
 
   # DELETE /children/1
   # DELETE /children/1.json
-  def destroy #delete a child
+  # Delete a child
+  # Authors: Ammar M. ElWazir
+  def destroy 
     @child.destroy
     respond_to do |format|
       format.html { redirect_to children_url }
