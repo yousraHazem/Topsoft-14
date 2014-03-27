@@ -11,8 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140327111619) do
-
   create_table "children", force: true do |t|
     t.boolean  "is_approved"
     t.integer  "registered_user_id"
