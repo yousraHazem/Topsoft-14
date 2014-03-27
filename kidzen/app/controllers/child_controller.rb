@@ -16,11 +16,15 @@ class ChildController < ApplicationController
   def verify
     @child.is_approved = true
   end
-
-   def add_daily_activities(child,daily_activity)
-        DailyActivitesChild.create(child_id: child.id,activity_id: daily_activity.id,adder_id: child.id)
-       #table name is DailyActivitesChild with attributes daily_activity.id,adder_id,child_id
-       #adder_id is the id of the user who added the daily activity(child or supervisor)
-    end 
+  
+  #table name is DailyActivitesChild with attributes daily_activity.id,adder_id,child_id
+  #adder_id - user id who adds daily activity
+  #Authors: Khaled I. Elhossiny
+  #child- the child
+  #daily_activity -the daily activity added to child
+  def add_daily_activities(child,daily_activity)
+    DailyActivitesChild.create(child_id: child.id,activity_id: daily_activity.id,adder_id: child.id)
+    
+  end 
   
 end
