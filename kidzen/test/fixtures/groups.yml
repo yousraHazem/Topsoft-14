@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner: 
+  name: 
+  statuses: 
+  info: 
+  numberOfMembers: 
+  members: 
+
+two:
+  owner: 
+  name: 
+  statuses: 
+  info: 
+  numberOfMembers: 
+  members: 
