@@ -20,31 +20,50 @@ class SupervisorsController < ApplicationController
   # GET /supervisors/1/edit
   def edit
   end
-
+  
+  # Author : Radwan A. Shrief
+  # A method to return to the activities done by shild for the supervisor of a given child
   def notifyChildActivity
   end
 
-  def isParentOf?
+  # Author : Radwan A. Shrief  
+  # A method to check if this superviser is the guardian of a given child
+  def guardiantOf?
   end
 
-  def isSuperVisorOf?
+  # Author : Radwan A. Shrief  
+  # A method to check if this superviser is the supervisor of a given child
+  def superVisorOf?
   end
-
+  
+  # Author : Radwan A. Shrief
+  # A method to check the condition of a given  child
   def getCondition
   end
+  
 
+  # Author : Radwan A. Shrief
+  # A method to set the condition of a given  child
   def setCondition
   end
-
+  
+  # Author : Radwan A. Shrief
+  # A method for approving the creation of a child's account
   def approve
   end
- 
+  
+  # Author : Radwan A. Shrief
+  # A method for changing the legal guardian
   def exchangeLegalG
   end
-
+  
+  # Author : Radwan A. Shrief
+  # A method for adding a child in the responsibility of  this supervisor
   def addChild
   end
-
+  
+  # Author : Radwan A. Shrief
+  # A metod to move the responsibility of a child from a supervisor to another one
   def moveChild
   end
 
