@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group_id: 
+  username: MyString
+  invite: 
+  accept: 
+
+two:
+  group_id: 
+  username: MyString
+  invite: 
+  accept: 
