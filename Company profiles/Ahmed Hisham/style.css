@@ -1,0 +1,17 @@
+body {
+    margin: 0px;
+    background: #ffffff;
+}
+
+#header {
+    width:100%;
+    top:0px;
+    text-align: center;
+}
+
+#Stuff {
+    border: 1em solid #69b;
+    position: relative;
+    top: 60px;
+}
+
