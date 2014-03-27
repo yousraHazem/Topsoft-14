@@ -21,22 +21,12 @@ class GroupsController < ApplicationController
   def edit
   end
 
-
   # This is a function that removes a registered user from a group
   # Returns true or false indicating whether the member was removed or not
-  # Time Complexity: O(1).
+  # Time Complexity: O(n).
   # Author: Mohamed Bahgat Elrakaiby
       def remove_member(RegisteredUser r)
-<<<<<<< HEAD
         r.destroy
-=======
-        r.delete
-    unless members.include? (r)
-      return false
-          else
-      members.delete(r)
-      return true
->>>>>>> b224549433136733da9bb38da424ac7f0afc013d
       end
 
   # This is a function that views members of the group

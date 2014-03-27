@@ -24,8 +24,8 @@ class RegisteredUsersController < ApplicationController
   # Returns nothing
   # Time complexity: O(1).
   # Author: Mohamed Bahgat Elrakaiby
-      def leave_group(String name)
-    groups.delete(name)
+      def leave_group(RegisteredUser r)
+          r.destroy
       end
 
   # POST /registered_users
