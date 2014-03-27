@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Khaled's Profile</title>
+<style type="text/css">
+body{
+background-image:url(nature-wallpaper-amazing-view.jpg);
+}
+h1{
+color:crimson;
+}
+div{
+border:1px solid white;
+position:absolute;
+left:40px;
+right:40px;
+}
+p{
+padding-top:20px;
+padding-bottom:20px;
+margin-left:100px;
+margin-right:100px;
+color:Darkred;
+text-align:center;
+}
+</style>
+<script type="text/javascript">
+var image1=new Image();
+image1.src="matrixQ1024X768.jpg";
+var image2=new Image();
+image2.src="Titanic-3D-HD-Movie-Captures-10.png";
+var image3=new Image();
+image3.src="barcelona-club-messi-photo-Wallpapers-News-players-139.jpg";
+var image4=new Image();
+image4.src="Barcelona-FC-Football-70.jpg";
+var images=new Array();
+images.push(image1);
+images.push(image2);
+images.push(image3);
+images.push(image4);
+</script>
+</head>
+<body>
+<center><h1>This is My Profile</h1></center>
+<br/>
+<form name="khaled_form">
+<center><img src="" height="500" width=800
+name="barcelona"/></center>
+</form>
+<br/>
+<center>
+<div>
+<p>
+Hi, My name is Khaled Ibrahim,this is a profile page for me that i creeated using HTML, CSS and Javascript, I study CS at the GUC, it's pretty tough in there, but I hope I'll make it and graduate with good grades, I love my family and my friends,
+ I love watching movies, football, listening to music and playing games and I'm proud to be a huge fan of FC Barcelona which is in my Heart
+</p>
+</div>
+</center>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<center>
+<a href=https://www.facebook.com/khaled.ibrahim.39?ref=tn_tnmn>Facebook</a>
+</center>
+
+<script type="text/javascript">
+var i=0
+function display()
+{
+if(i==3)
+{
+document.khaled_form.barcelona.src=images[i].src
+i=0
+}
+else{
+document.khaled_form.barcelona.src=images[i].src
+i++
+}
+setTimeout("display()",1500)
+}
+display()
+</script>
+</body>
+</html>

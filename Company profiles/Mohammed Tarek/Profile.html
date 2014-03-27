@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html bgcolor=""#000D00>
+	<head>
+		<link rel="stylesheet" type="text/css" href="Profile.css">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<style>
+			body{
+			background-attachment:fixed;
+			background-repeat: no-repeat;
+			background-color:000D00;
+			background-position: 300 200;
+			}
+		</style>
+
+		<script language="JavaScript1.2">
+			var bgimages=new Array()
+			bgimages[0]="back.jpg"
+			bgimages[1]="back2.jpg"
+			bgimages[2]="back3.jpg"
+
+			var pathToImg=new Array()
+			for (i=0;i<bgimages.length;i++){
+			pathToImg[i]=new Image()
+			pathToImg[i].src=bgimages[i]
+			}
+
+			var inc=0
+
+			function bgSlide(){
+			if (inc<bgimages.length)
+			inc++
+			else
+			inc=0
+			document.body.background=pathToImg[inc].src
+			}
+
+			if (document.all||document.getElementById)
+			window.onload=new Function('setInterval("bgSlide()",3000)')
+
+		</script>
+
+
+		<title>
+		Welcome
+		</title>
+		<h1>
+		Profile home
+		</h1>
+		<script type="text/javascript">
+			
+		</script>
+	</head>
+	<body>
+		<p>
+			<div id="pp">
+				<img src="ppp.jpg">
+			</div>
+			<div id="name">
+				<p><font color="white">Mohammed Tarek Nabih</font></p>
+			</div>
+			<div id="info">
+				<p>
+				<font color="00FF00" id="A" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Age</font>: 20 years (30/9/1993)<br>
+				<font color="00FF00"id="L">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student in</font> GUC (German University in Cairo)<br>
+				<font color="00FF00" id="I">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Live in</font> : Nasr City, Cairo, Egypt<br>
+				<ul><font color="00FF00"id="C">Computer Skills</font>
+					<li><font color="00FF00" id="P">Programming</font> : HTML, JavaScript, CSS, Java, C, Haskell and Prolog</li>
+					<li><font color="00FF00" id="O">Other</font> : Photoshop, Windows Movie Maker, Autodesk Maya and Unreal Development</li>
+				</ul>
+				
+				</p>
+			</div>
+			<div id="t">
+				<a href="https://www.facebook.com/nabeahz"><img src="Facebook-New-Logo-2013.png"></a>
+				<a href="https://twitter.com/dogdashdos"><img src="new-twitter-logo.png"></a>
+				<a href="https://plus.google.com/u/1/+MohammedTarekddd/about"><img src="Google-Plus-Logo.png"></a>
+				<a href="http://www.youtube.com/user/dogdashdos"><img src="youtube_logo_detail.png"></a>
+			</div>
+			<div id="cr">
+				<p>Copyrights reserved.<p>
+			</div>
+		</p>
+	</body>
+</html>

@@ -1,9 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
   parent_name: MyString
   child_name: MyString
 
 two:
   parent_name: MyString
   child_name: MyString
+=======
+  parent_id: 1
+  child_id: 1
+
+two:
+  parent_id: 1
+  child_id: 1
+>>>>>>> 6220626cf07ed4ce26538d770a38dc9e0b17a97e

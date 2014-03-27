@@ -1,10 +1,19 @@
 Kidzen::Application.routes.draw do
+<<<<<<< HEAD
   get "access/access"
   get "access/add"
   get "profiles/supervisor"
   match "access/add" => "access#add", :via => :post   
   match "access/delete" => "access#delete", :via => :post
   match "access/access" => "access#access", :via => :post
+=======
+    resources :child
+
+
+  get "child/verify"
+  post "child/new"
+
+>>>>>>> 6220626cf07ed4ce26538d770a38dc9e0b17a97e
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
