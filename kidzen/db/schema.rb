@@ -11,16 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140327161619) do
+ActiveRecord::Schema.define(version: 20140324130345) do
 
-  create_table "children", force: true do |t|
-    t.boolean  "approved"
-    t.string   "guardian_email"
-    t.string   "user_name"
-    t.string   "password"
-    t.string   "first_name"
-    t.datetime "birth_of_date"
-    t.string   "gender"
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
