@@ -28,6 +28,7 @@ Kidzen::Application.configure do
   config.assets.debug = true
 
   # This configration to allow the user_mailer send emails
+  # Authors: Shary Beshara
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :authentication => :plain,

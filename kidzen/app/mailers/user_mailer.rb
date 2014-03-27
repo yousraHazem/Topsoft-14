@@ -1,13 +1,17 @@
 # Authors: Shary Beshara
 class UserMailer < ActionMailer::Base
 
-# set the default email that emails would be sent from 
+# Set the default email to send from. 
   default from: "kidzennetwork@gmail.com"
 
-# this method will send an account verification email to the gaurdian email of # the child that passed to it
-  def account_verification(sign_up)
-    @sign_up = sign_up
-    mail(:to => @sign_up.gaurdian_email, :subject => 'hi')
+# This method sends a verification email.
+# child - child to send email to
+# Email is sent to the child's gaurdian email attribute
+# Authors: Shary Beshara
+  def account_verification(child)
+    @child = child
+    # TODO: add dynamic mail content, link and subject. 
+    mail(:to => @child.guardian_email, :subject => 'hi')
   end
 
 end
