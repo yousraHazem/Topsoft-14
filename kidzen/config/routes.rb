@@ -1,10 +1,17 @@
+<<<<<<< HEAD
+=======
 
+>>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
 Kidzen::Application.routes.draw do
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
   
   match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
   match '/uploadingphoto', :to => 'public#uploading', via: [:get, :post]
   match '/removephoto/:id', :to => 'public#remove_photo', via: [:get, :post]
+<<<<<<< HEAD
+
+=======
+>>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
 
   resources :events
   resources :polls

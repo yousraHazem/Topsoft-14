@@ -6,6 +6,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
 module Kidzen
 
   class Application < Rails::Application
