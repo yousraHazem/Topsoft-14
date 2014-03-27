@@ -1,7 +1,7 @@
 class CreateRegisteredUsers < ActiveRecord::Migration
   def change
     create_table :registered_users do |t|
-      t.string :username
+      t.string :user_name
       t.boolean :online
       t.timestamp :last_accessed
       t.string :first_name

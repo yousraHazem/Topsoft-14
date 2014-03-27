@@ -6,6 +6,8 @@ class RegisteredUserTest < ActiveSupport::TestCase
   # end
 
   test "validation" do
-        assert true
+        @user_1 = RegisteredUser.create(user_name: 'ahiiii', first_name: 'Ahmed',
+                middle_name: 'hisham', last_name: 'ismail', email: 'ahi@example.com', 
+                nick_name: 'hamada', )
   end
 end
