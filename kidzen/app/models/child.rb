@@ -49,5 +49,19 @@ class Child < ActiveRecord::Base
   def delete_message(message)
   end
     
-    
+  # Returns true if supervisor is a supervisor of child  
+  # Authors: Ahmed H. Ismail
+  def can_see_progress_as_supervisor?(supervisor)
+    entries = SupervisesChild.where(child_id: id, supervisor_id: supervisor.id)
+    return not entries.empty?
+  end    
+
+  # Returns true if supervisor is a ****parent ****
+  # of this child
+  def can_see_progress_as_parent?(parent)
+    entries = ParentChild.where(child_id: id, parent_id: parent.id)
+    return not entries.empty?
+  end 
+  
+
 end
