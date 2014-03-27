@@ -11,8 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140327111619) do
+ActiveRecord::Schema.define(version: 20140327160432) do
+
+  create_table "child_favorites", force: true do |t|
+    t.string   "username"
+    t.string   "String"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "child_hobbies", force: true do |t|
+    t.string   "username"
+    t.string   "String"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "child_interests", force: true do |t|
+    t.string   "username"
+    t.string   "String"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "children", force: true do |t|
     t.boolean  "is_approved"
     t.integer  "registered_user_id"
