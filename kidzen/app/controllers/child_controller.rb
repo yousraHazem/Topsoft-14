@@ -1,17 +1,22 @@
-# Authors: Ahmed H. Ismail
+# Authors: Ahmed H. Ismail, Shary Beshara
 class ChildController < ApplicationController
 
-    def new
-        UserMailer.account_verification.deliver #after creating the sign up we will pass the email
-    end
+# inside creating the child there will be a method to call another method 
+# inside the user_mailer passing to it the child as an object 
+  def create
+    @child=child
+    UserMailer.account_verification(@child).deliver 
+  end
 
-    def create_friendship(child_1, child_2)
-        FriendShip.create(child_1_id: child_1.id, child_2_id: child_2.id)
-    end
+  def create_friendship(child_1, child_2)
+    FriendShip.create(child_1_id: child_1.id, child_2_id: child_2.id)
+  end
 
-    def verify
-        @child.is_approved = true
-    end 
+# this method will set the variable is_approved to true as to show that the 
+# parent had verified this child
+  def verify
+    @child.is_approved = true
+  end 
     
 
 end
