@@ -6,13 +6,12 @@ Kidzen::Application.routes.draw do
   match '/uploadingphoto', :to => 'public#uploading', via: [:get, :post]
   match '/removephoto/:id', :to => 'public#remove_photo', via: [:get, :post]
 
+  resources :events
   resources :polls
-
   resources :surveys
 
+
     resources :child
-
-
   get "child/verify"
   post "child/new"
 
