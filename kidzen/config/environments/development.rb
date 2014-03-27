@@ -38,5 +38,4 @@ Kidzen::Application.configure do
     :user_name => "kidzennetwork",
     :password => "kidZen14"
   }
-
 end

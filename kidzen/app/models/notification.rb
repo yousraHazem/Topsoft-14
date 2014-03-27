@@ -3,6 +3,6 @@
 # Author: Ahmed H. Ismail
 class Notification < ActiveRecord::Base
 
-    def checked?
-    end
+  def checked?
+  end
 end

@@ -9,10 +9,6 @@ class ChildController < ApplicationController
     UserMailer.account_verification(@child).deliver 
   end
 
-  def create_friendship(child_1, child_2)
-    FriendShip.create(child_1_id: child_1.id, child_2_id: child_2.id)
-  end
-
 # This method will set the variable is_approved to true to mark that 
 # this child has been approved.
 # Authors: Shary Beshara
@@ -20,5 +16,12 @@ class ChildController < ApplicationController
     @child.is_approved = true
   end 
     
+  # Adds a new friendship entry.
+  # child_1 - first child.
+  # child_2 - second child.
+  # Authors: Ahmed H. Ismail.
+  def create_friendship(child_1, child_2)
+    FriendShip.create(child_1_id: child_1.id, child_2_id: child_2.id)
+  end
 
 end
