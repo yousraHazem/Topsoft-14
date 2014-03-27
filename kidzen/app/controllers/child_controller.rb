@@ -18,7 +18,7 @@ class ChildController < ApplicationController
   end
 
    def add_daily_activities(child,daily_activity)
-        DailyActivitesChild.create(child_id: child.id,daily_activity_id: daily_activity.id,adder_id: child.id)
+        DailyActivitesChild.create(child_id: child.id,activity_id: daily_activity.id,adder_id: child.id)
        #table name is DailyActivitesChild with attributes daily_activity.id,adder_id,child_id
        #adder_id is the id of the user who added the daily activity(child or supervisor)
     end 
