@@ -76,9 +76,18 @@ class MessagesController < ApplicationController
    # takes the content of the message and checks wheter it contains abusive words or not and returns boolean #complexity o(n) #author ali el halawaty
    
 def send(sender_id,receiver_id)
+  t=messages.new
+  t.title=title
+  t.content=content
+  t.sender=sender
+  t.receiver=receiver
+
+
 end 
 #sends a message from the sender id to the id of the receiver takes the message and sends it #complexity o(n) #author ali el halawaty
 def delete(message_id)
+  z= messages.find(message_id)
+  z.destroy
 end
 #searches for the message id in the database and deletes this meassge #complexity o(n) #author ali el halawaty
 
