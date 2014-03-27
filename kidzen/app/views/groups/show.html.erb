@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @group.owner %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>Statuses:</strong>
+  <%= @group.statuses %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @group.info %>
+</p>
+
+<p>
+  <strong>Numberofmembers:</strong>
+  <%= @group.numberOfMembers %>
+</p>
+
+<p>
+  <strong>Members:</strong>
+  <%= @group.members %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>
