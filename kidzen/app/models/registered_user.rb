@@ -3,7 +3,7 @@
 # Authors: Ahmed H. Ismail
 class RegisteredUser < ActiveRecord::Base
     private
-        VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
+        VALID_email_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
     public
         validates :user_name, presence: true, length: { minimum: 4 }, uniqueness: true
         validates :first_name, presence: true, length: { maximum: 256 }
@@ -13,7 +13,7 @@ class RegisteredUser < ActiveRecord::Base
         validates :password_digest, presence: true
         validates :birth_date, presence: true
         validates :banned, presence: true
-        validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
+        validates :email, presence: true, format: { with: VALID_email_REGEX }, uniqueness: true
         validates :password, length: { minimum: 6 }
         validates_associated :permission #Note: Don't use on both ends
         has_one :permission, dependent: :destroy

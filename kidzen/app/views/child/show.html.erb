@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>user_name:</strong>
+  <%= @child.user_name %>
+</p>
+
+<p>
+  <strong>password:</strong>
+  <%= @child.password %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @child.date_of_birth %>
+</p>
+
+<p>
+  <strong>Gaurdian email:</strong>
+  <%= @child.guardian_email %>
+</p>
+
+<p>
+  <strong>email:</strong>
+  <%= @child.email %>
+</p>
+
+<%= link_to 'Edit', edit_child_path(@child) %> |
+<%= link_to 'Back', children_path %>
