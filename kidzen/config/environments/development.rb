@@ -1,4 +1,6 @@
+
 Kidzen::Application.configure do
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -27,6 +29,8 @@ Kidzen::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+ 
+
   # This configration to allow the user_mailer send emails
   # Authors: Shary Beshara
   config.action_mailer.delivery_method = :smtp
@@ -38,4 +42,5 @@ Kidzen::Application.configure do
     :user_name => "kidzennetwork",
     :password => "kidZen14"
   }
+
 end
