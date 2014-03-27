@@ -1,0 +1,31 @@
+<h1>Listing supervisors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Personal</th>
+      <th>Phone num</th>
+      <th>Address</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @supervisors.each do |supervisor| %>
+      <tr>
+        <td><%= supervisor.personal_id %></td>
+        <td><%= supervisor.phone_num %></td>
+        <td><%= supervisor.address %></td>
+        <td><%= link_to 'Show', supervisor %></td>
+        <td><%= link_to 'Edit', edit_supervisor_path(supervisor) %></td>
+        <td><%= link_to 'Destroy', supervisor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Supervisor', new_supervisor_path %>
