@@ -1,5 +1,10 @@
 Kidzen::Application.routes.draw do
+
   resources :events
+  resources :polls
+  resources :surveys
+
+
     resources :child
   get "child/verify"
   post "child/new"
