@@ -2,7 +2,10 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require File.expand_path('../config/application', __FILE__)
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
 Kidzen::Application.load_tasks
 
