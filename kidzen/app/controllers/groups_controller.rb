@@ -71,14 +71,12 @@ class GroupsController < ApplicationController
     def group_params
       params.require(:group).permit(:owner, :name, :statuses, :info, :numberOfMembers, :members)
     end
-    def set_background (photo)
+    def set_background (photo) #set_background takes photo of type photo returns nothing
 end
-#set_background is a function that takes a photo and sets it to the background. 
-    #Time complexity: O(1). 
-    #Authors: Ali A. El-Halawaty, 
-def get_backgroung()
+
+def get_backgroung()#get_background returns a photo of type photo
 end
-#get_background is a function that retruns the background photo. 
-#Time complexity: O(1). 
-#Authors: Ali A. El-Halawaty, 
+
+
+
 end
