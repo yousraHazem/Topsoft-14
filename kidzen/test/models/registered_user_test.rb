@@ -4,4 +4,13 @@ class RegisteredUserTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+<<<<<<< HEAD
+=======
+
+  # test "validation" do
+  #       @user_1 = RegisteredUser.create(user_name: 'ahiiii', first_name: 'Ahmed',
+  #               middle_name: 'hisham', last_name: 'ismail', email: 'ahi@example.com', 
+  #               nick_name: 'hamada', )
+  # end
+>>>>>>> 8bf0fb8eaab3e87d4f174266a0e08cfb54cfa72b
 end

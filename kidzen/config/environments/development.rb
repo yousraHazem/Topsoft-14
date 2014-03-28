@@ -1,4 +1,6 @@
+
 Kidzen::Application.configure do
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -26,4 +28,25 @@ Kidzen::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+<<<<<<< HEAD
+=======
+
+ 
+>>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
+
+  # This configration to allow the user_mailer send emails
+  # Authors: Shary Beshara
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "kidzennetwork.gmail.com",
+    :user_name => "kidzennetwork",
+    :password => "kidZen14"
+  }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
 end
