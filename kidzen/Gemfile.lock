@@ -84,6 +84,10 @@ GEM
       thor (>= 0.18.1, < 2.0)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    rake (10.1.1)
+>>>>>>> development
     rake (10.2.1)
     rdoc (4.1.1)
       json (~> 1.4)
@@ -126,6 +130,10 @@ GEM
 >>>>>>> 6220626cf07ed4ce26538d770a38dc9e0b17a97e
 =======
     thor (0.19.1)
+<<<<<<< HEAD
+>>>>>>> development
+=======
+    thor (0.19.0)
 >>>>>>> development
     thread_safe (0.3.1)
       atomic (>= 1.1.7, < 2)
@@ -146,10 +154,14 @@ PLATFORMS
 DEPENDENCIES
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   bcrypt-ruby
 >>>>>>> 6220626cf07ed4ce26538d770a38dc9e0b17a97e
 =======
+>>>>>>> development
+=======
+  bcrypt-ruby
 >>>>>>> development
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)

@@ -12,7 +12,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140327134022) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20140327142651) do
+
+  create_table "photos", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "url"
+    t.string   "description"
+    t.string   "photo_name"
+    t.string   "photo_type"
+  end
+
+  create_table "songs", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.string   "artist"
+    t.string   "album"
+    t.integer  "length"
+  end
+
+=======
+>>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
+>>>>>>> development
 
   create_table "parent_children", force: true do |t|
     t.string   "parent_name"
