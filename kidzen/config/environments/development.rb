@@ -29,10 +29,27 @@ Kidzen::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  :authentication => :plain,
+  :address => "smtp.gmail.com",
+  :port => 587,
+  :domain => "kidzennetwork.gmail.com",
+  :user_name => "kidzennetwork",
+  :password => "kidZen14"
+}
+
+>>>>>>> 6220626cf07ed4ce26538d770a38dc9e0b17a97e
+=======
+=======
 =======
 
  
 >>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
+>>>>>>> development
 
   # This configration to allow the user_mailer send emails
   # Authors: Shary Beshara
@@ -46,7 +63,11 @@ Kidzen::Application.configure do
     :password => "kidZen14"
   }
 <<<<<<< HEAD
+>>>>>>> development
+=======
+<<<<<<< HEAD
 =======
 
 >>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
+>>>>>>> development
 end

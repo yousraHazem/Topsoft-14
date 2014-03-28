@@ -1,0 +1,19 @@
+  <h1>Access Page</h1>
+  <%= form_for @banned, :url => { :action => "add" }  do |f|  %>
+  <%= f.text_field  :name %>
+  <%= f.submit "Ban It !", class: "btn btn-primary" %>
+  <ul> 
+
+	<%  @banned_items.each do |t| { :action => "access" } %>
+  <li> <%= t.name %>  <li> 
+  <%end%>
+	</ul> 
+
+  <%end%>
+  <%= form_for @banned_delete, :url => { :action => "access" }  do |f|  %>
+  <%= f.text_field  :name %>
+  <%= f.submit "Delete It ", class: "btn btn-primary" %>
+  <%end%>
+
+</ul> </li></ul>	
+ 

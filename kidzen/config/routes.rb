@@ -13,12 +13,23 @@ Kidzen::Application.routes.draw do
 =======
 >>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
 
+  get "access/access"
+  get "access/add"
+  get "profiles/supervisor"
+  match "access/add" => "access#add", :via => :post   
+  match "access/delete" => "access#delete", :via => :post
+  match "access/access" => "access#access", :via => :post
+
+    resources :child
+
+
   resources :events
   resources :polls
   resources :surveys
 
 
-    resources :child
+
+  resources :child
   get "child/verify"
   post "child/new"
 

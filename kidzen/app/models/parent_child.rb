@@ -1,3 +1,4 @@
+class ParentChild < ActiveRecord::Base
 # Represents ParentOf relationship
 #Authors: Ahmed H. Ismail
 class ParentChild < ActiveRecord::Base

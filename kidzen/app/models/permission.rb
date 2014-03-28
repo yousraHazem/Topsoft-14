@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+class Permission < ActiveRecord::Base
+=======
 # The model representing 
 # Permissions
 # abilities is a key,bool hash
@@ -38,4 +41,5 @@ class Permission < ActiveRecord::Base
 
   def report_post?
   end
+>>>>>>> 6220626cf07ed4ce26538d770a38dc9e0b17a97e
 end

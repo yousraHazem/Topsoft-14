@@ -13,6 +13,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20140327134022) do
+=======
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140327142651) do
 
   create_table "photos", force: true do |t|
@@ -35,7 +38,16 @@ ActiveRecord::Schema.define(version: 20140327142651) do
 
 =======
 >>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
+>>>>>>> development
 
+  create_table "parent_children", force: true do |t|
+    t.string   "parent_name"
+    t.string   "child_name"
+
+
+
+
+development
 ActiveRecord::Schema.define(version: 20140327111619) do
   create_table "children", force: true do |t|
     t.boolean  "is_approved"
@@ -74,18 +86,41 @@ ActiveRecord::Schema.define(version: 20140327111619) do
   create_table "parent_children", force: true do |t|
     t.integer  "parent_id"
     t.integer  "child_id"
+
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+create_table "permissions", force: true do |t|
+    t.string   "name"
+
 
   add_index "parent_children", ["parent_id", "child_id"], name: "index_parent_children_on_parent_id_and_child_id"
 
   create_table "permissions", force: true do |t|
     t.text     "abilities"
     t.integer  "registered_user_id"
+
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+
+  create_table "supervisors", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+
+
+
+
+
+
+
+
+
 
   create_table "registered_users", force: true do |t|
     t.string   "user_name"
@@ -116,5 +151,6 @@ ActiveRecord::Schema.define(version: 20140327111619) do
   end
 
   add_index "supervises_children", ["supervisor_id", "child_id"], name: "index_supervises_children_on_supervisor_id_and_child_id"
+
 
 end
