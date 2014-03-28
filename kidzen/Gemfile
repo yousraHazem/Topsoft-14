@@ -27,6 +27,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+<<<<<<< HEAD
+=======
 
 gem 'bcrypt-ruby'
 
@@ -34,6 +36,7 @@ gem 'bcrypt-ruby'
 
 =======
 >>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
+>>>>>>> 8bf0fb8eaab3e87d4f174266a0e08cfb54cfa72b
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -41,6 +44,8 @@ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+<<<<<<< HEAD
+=======
 
 
 <<<<<<< HEAD
@@ -48,6 +53,7 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+>>>>>>> 8bf0fb8eaab3e87d4f174266a0e08cfb54cfa72b
 
 >>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
 # Use unicorn as the app server

@@ -13,6 +13,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20140327161619) do
+=======
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140327142651) do
 
   create_table "photos", force: true do |t|
@@ -32,12 +35,17 @@ ActiveRecord::Schema.define(version: 20140327142651) do
     t.string   "album"
     t.integer  "length"
   end
+>>>>>>> 8bf0fb8eaab3e87d4f174266a0e08cfb54cfa72b
 
 =======
 >>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
 
 ActiveRecord::Schema.define(version: 20140327111619) do
   create_table "children", force: true do |t|
+<<<<<<< HEAD
+    t.boolean  "approved"
+    t.string   "guardian_email"
+=======
     t.boolean  "is_approved"
     t.integer  "registered_user_id"
     t.datetime "created_at"
@@ -88,33 +96,14 @@ ActiveRecord::Schema.define(version: 20140327111619) do
   end
 
   create_table "registered_users", force: true do |t|
+>>>>>>> 8bf0fb8eaab3e87d4f174266a0e08cfb54cfa72b
     t.string   "user_name"
-    t.boolean  "online"
-    t.datetime "last_accessed"
+    t.string   "password"
     t.string   "first_name"
-    t.string   "middle_name"
-    t.string   "family_name"
-    t.date     "birth_date"
-    t.string   "email"
-    t.string   "nickname"
-    t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "gender"
-    t.integer  "permission_id"
-    t.boolean  "banned"
-  end
-
-  add_index "registered_users", ["email"], name: "index_registered_users_on_email", unique: true
-  add_index "registered_users", ["user_name"], name: "index_registered_users_on_user_name", unique: true
-
-  create_table "supervises_children", force: true do |t|
-    t.integer  "supervisor_id"
-    t.integer  "child_id"
+    t.datetime "birth_of_date"
+    t.string   "gender"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "supervises_children", ["supervisor_id", "child_id"], name: "index_supervises_children_on_supervisor_id_and_child_id"
 
 end

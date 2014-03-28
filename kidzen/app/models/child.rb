@@ -1,7 +1,6 @@
-# The model representing 
-# Children.
-# Authors: Ahmed H. Ismail
 class Child < ActiveRecord::Base
+<<<<<<< HEAD
+=======
   # Associations and validations.
   has_one :registered_user, dependent: :destroy
   validates_associated :registered_user
@@ -50,4 +49,5 @@ class Child < ActiveRecord::Base
   end
     
     
+>>>>>>> 8bf0fb8eaab3e87d4f174266a0e08cfb54cfa72b
 end
