@@ -1,9 +1,5 @@
 
 Kidzen::Application.configure do
-<<<<<<< HEAD
-=======
-
->>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

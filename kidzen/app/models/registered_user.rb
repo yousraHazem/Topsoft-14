@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-class RegisteredUser < ActiveRecord::Base
-=======
 # The model representing 
 # RegisteredUser.
 # Authors: Ahmed H. Ismail
@@ -65,8 +62,6 @@ class RegisteredUser < ActiveRecord::Base
 
       def family_name=(name)
         self[:family_name] = name.capitalize
-      send
+      end
 
-        
->>>>>>> 8bf0fb8eaab3e87d4f174266a0e08cfb54cfa72b
 end

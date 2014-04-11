@@ -1,6 +1,4 @@
 class Child < ActiveRecord::Base
-<<<<<<< HEAD
-=======
   # Associations and validations.
   has_one :registered_user, dependent: :destroy
   validates_associated :registered_user
@@ -48,6 +46,4 @@ class Child < ActiveRecord::Base
   def delete_message(message)
   end
     
-    
->>>>>>> 8bf0fb8eaab3e87d4f174266a0e08cfb54cfa72b
 end

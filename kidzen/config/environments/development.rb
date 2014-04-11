@@ -28,12 +28,6 @@ Kidzen::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-<<<<<<< HEAD
-=======
-
- 
->>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
-
   # This configration to allow the user_mailer send emails
   # Authors: Shary Beshara
   config.action_mailer.delivery_method = :smtp
@@ -45,8 +39,5 @@ Kidzen::Application.configure do
     :user_name => "kidzennetwork",
     :password => "kidZen14"
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> 62d85970fc5313f1786eaa33541c3fd359f911c5
 end
