@@ -5,6 +5,6 @@ class CreateChildParent < ActiveRecord::Migration
         t.integer :child_id
         t.timestamps
     end
-    add_index(:parent_children, [:parent_id, :child_id], unique:  true)
+    add_index(:child_parents, [:parent_id, :child_id], unique:  true)
   end
 end
