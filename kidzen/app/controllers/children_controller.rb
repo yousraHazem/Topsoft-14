@@ -1,4 +1,4 @@
-# Authors: Ammar M. ELWazir
+# Authors: Ammar M. ELWazir, Shary Beshara, Ahmed H. Ismail
 class ChildrenController < ApplicationController
   before_action :set_child, only: [:show, :edit, :update, :destroy]
 
@@ -22,14 +22,36 @@ class ChildrenController < ApplicationController
   def edit
   end
 
+
+  # Adds a new friendship entry.
+  # First child invites second child
+  # child_1 - first child.
+  # child_2 - second child.
+  # Authors: Ahmed H. Ismail.
+  def create_friendship(child_1, child_2)
+    #TODO remember notifcations and calling function in child
+    # model to invite.
+    Friendship.create_friendship(child_1, child_2)
+  end
+
+
+  # This method will set the variable is_approved to true to mark that 
+  # this child has been approved.
+  # Authors: Shary Beshara
+  def verify
+    @child.is_approved = true
+  end 
+
   # POST /children
   # POST /children.json
   # Sign up Child
+  # Sends a verification request to the email supplied.
+  # Uses UserMailer to handle the email sending logic.
   # child_params - sign up text feilds
-  # Authors: Ammar M. ElWazir
+  # Authors: Ammar M. ElWazir, Shary Beshara 
   def create 
     @child = Child.new(child_params)
-
+    UserMailer.account_verification(@child).deliver 
     respond_to do |format|
       else
       if @child.save
