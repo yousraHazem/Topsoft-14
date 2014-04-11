@@ -62,7 +62,6 @@ class RegisteredUser < ActiveRecord::Base
 
       def family_name=(name)
         self[:family_name] = name.capitalize
-      send
+      end
 
-        
 end

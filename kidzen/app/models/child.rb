@@ -1,6 +1,3 @@
-# The model representing 
-# Children.
-# Authors: Ahmed H. Ismail
 class Child < ActiveRecord::Base
   # Associations and validations.
   has_one :registered_user, dependent: :destroy
@@ -48,6 +45,5 @@ class Child < ActiveRecord::Base
   # ERD??
   def delete_message(message)
   end
-    
     
 end

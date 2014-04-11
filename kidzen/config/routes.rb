@@ -1,5 +1,10 @@
 Kidzen::Application.routes.draw do
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
+  resources :registered_users
+
+  resources :groups
+  resources :children
+  resources :public, :only => [:upload_photo, :uploading, :remove_photo]
   match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
   match '/uploadingphoto', :to => 'public#uploading', via: [:get, :post]
   match '/removephoto/:id', :to => 'public#remove_photo', via: [:get, :post]
@@ -10,7 +15,6 @@ Kidzen::Application.routes.draw do
   resources :groups
   get "child/verify"
   post "child/new"
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
