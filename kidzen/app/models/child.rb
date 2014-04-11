@@ -31,7 +31,7 @@ class Child < ActiveRecord::Base
 
   # Adds an entry in the SupervisesChild relationship.
   # Authors: Ahmed H. Ismail
-  def add_interested_part(supervisor)
+  def add_interested_party(supervisor)
     ChildSupervisor.create(child_id: id, supervisor_id: supervisor.id)
   end
 
