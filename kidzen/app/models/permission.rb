@@ -38,4 +38,5 @@ class Permission < ActiveRecord::Base
 
   def report_post?
   end
+  
 end
