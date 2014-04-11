@@ -65,4 +65,8 @@ class RegisteredUser < ActiveRecord::Base
       self[:family_name] = name.capitalize
     end
 
+    # TODO: Implement
+    # Authors: Ahmed H. Ismail
+    def ban
+    end
 end
