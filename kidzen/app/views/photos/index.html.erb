@@ -1,0 +1,9 @@
+
+<% for photo in @photos %>
+<div class="photo"> 
+Description: <%= photo.description %> 
+<br>
+</div>
+<% end %>
+
+<p><%= link_to "New Photo", new_photo_path %></p>
