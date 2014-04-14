@@ -2,6 +2,9 @@
 <% for photo in @photos %>
 <div class="photo"> 
 Description: <%= photo.description %> 
+<%= link_to "Show", photo %>
+<%= link_to "Edit", edit_photo_path(photo) %>
+<%= link_to "Destroy", photo, :confirm => 'Are you sure?', :method => :delete %> |
 <br>
 </div>
 <% end %>
