@@ -32,7 +32,7 @@ class PhotosController < ApplicationController
 
 	def update
 		@photo = Photo.find(params[:id])
-        if @photo.update_attributes(params[:photo])
+        if @photo.update_attributes(photo_params)
             flash[:notice] = "Successfully updated photo."
             redirect_to photo_url
         else
