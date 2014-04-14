@@ -1,4 +1,6 @@
 Kidzen::Application.routes.draw do
+  resources :groups
+  resources :children
   resources :photos
   resources :events
   resources :polls
