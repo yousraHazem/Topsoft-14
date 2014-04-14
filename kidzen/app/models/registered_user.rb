@@ -6,7 +6,7 @@ class RegisteredUser < ActiveRecord::Base
     VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
   public
     # Validations: 
-    validates :user_name, presence: true, length: { minimum: 4 }, uniqueness: true
+    validates :username, presence: true, length: { minimum: 4 }, uniqueness: true
     validates :first_name, presence: true, length: { maximum: 256 }
     validates :middle_name, presence: true, length: { maximum: 256 }
     validates :family_name, presence: true, length: { maximum: 256 }
@@ -25,44 +25,48 @@ class RegisteredUser < ActiveRecord::Base
     after_create :cap_default
 
     # Capitalize all the names
-      def cap_names
-        self[:first_name].capitalize
-        self[:middle_name].capitalize
-        self[:last_name].capitalize
-      end
-      # Full name with space sperators
-      # Authors: Ahmed H. Ismail
-      def full_name
-        [first_name, middle_name, family_name].join(" ")
-      end
+    def cap_names
+      self[:first_name].capitalize
+      self[:middle_name].capitalize
+      self[:last_name].capitalize
+    end
+    
+    # Full name with space sperators
+    # Authors: Ahmed H. Ismail
+    def full_name
+      [first_name, middle_name, family_name].join(" ")
+    end
         
-      def female?
-        gender == true
+    def female?
+      gender == true
+    end
+
+    def male?
+      gender == false
+    end
+
+    def gender=(value)
+      if value == :female
+          self[:gender] = true
+      elsif value == :male
+          self[:gender] = false
       end
+    end
 
-      def male?
-        gender == false
-      end
+    def first_name=(name)
+      self[:first_name] = name.capitalize
+    end
 
-      def gender=(value)
-        if value == :female
-            self[:gender] = true
-          elsif value == :male
-              self[:gender] = false
-          end
-        end
+    def middle_name=(name)
+      self[:middle_name] = name.capitalize
+    end
 
-      def first_name=(name)
-        self[:first_name] = name.capitalize
-      end
+    def family_name=(name)
+      self[:family_name] = name.capitalize
+    end
 
-      def middle_name=(name)
-        self[:middle_name] = name.capitalize
-      end
-
-      def family_name=(name)
-        self[:family_name] = name.capitalize
-      send
-
-        
+    # TODO: Implement
+    # Authors: Ahmed H. Ismail
+    def ban
+    end
 end
