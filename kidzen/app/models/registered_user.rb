@@ -22,13 +22,14 @@ class RegisteredUser < ActiveRecord::Base
     has_one :permission, dependent: :destroy
     has_secure_password
     after_initialize  :cap_names
-    after_create :cap_default
+    after_create :cap_names
 
     # Capitalize all the names
+    # Authors: Ahmed H. Ismail
     def cap_names
-      self[:first_name].capitalize
-      self[:middle_name].capitalize
-      self[:last_name].capitalize
+      self[:first_name].capitalize if self[:first_name] != nil
+      self[:middle_name].capitalize if self[:middle_name] != nil
+      self[:last_name].capitalize if self[:last_name] != nil
     end
     
     # Full name with space sperators
@@ -45,6 +46,10 @@ class RegisteredUser < ActiveRecord::Base
       gender == false
     end
 
+    # Assigns gender.
+    # Column value is trie if female
+    # gender - symbol one of {female, male}
+    # Authors: Ahmed H. Ismail
     def gender=(value)
       if value == :female
           self[:gender] = true
@@ -52,15 +57,23 @@ class RegisteredUser < ActiveRecord::Base
           self[:gender] = false
       end
     end
-
+    # Assigns first name.
+    # name - string input
+    # Authors: Ahmed H. Ismail
     def first_name=(name)
       self[:first_name] = name.capitalize
     end
 
+    # Assigns middle name.
+    # name - string input
+    # Authors: Ahmed H. Ismail
     def middle_name=(name)
       self[:middle_name] = name.capitalize
     end
 
+    # Assigns first name.
+    # name - string input
+    # Authors: Ahmed H. Ismail
     def family_name=(name)
       self[:family_name] = name.capitalize
     end
