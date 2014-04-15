@@ -13,5 +13,10 @@ class UserMailer < ActionMailer::Base
     # TODO: add dynamic mail content, link and subject. 
     mail(:to => @child.guardian_email, :subject => 'hi')
   end
+  def invite_others(email,child)
+    @child = child
+    @email = email
+    mail(:to => @email, :subject => 'invitation')
+  end
 
 end

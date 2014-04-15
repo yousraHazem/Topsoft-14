@@ -11,10 +11,12 @@ Kidzen::Application.routes.draw do
   resources :events
   resources :polls
   resources :surveys
-  resources :child
+  resources :child 
   resources :groups
-  get "child/verify"
-  post "child/new"
+  get "children/verify"
+  get "children/:id/invite" => 'children#invite'
+  post "children/:id/invite" => 'children#invite'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
