@@ -7,12 +7,7 @@ class ChildrenController < ApplicationController
   def index
     @children = Child.all
   end
-  # this should be in the parent conrtoller
-  def invite
-    @child = Child.find(params[:id])
-    @email = params[:email]
-    UserMailer.invite_others(@email, @child).deliver 
-  end
+
   # GET /children/1
   # GET /children/1.json
   def show
@@ -58,6 +53,7 @@ class ChildrenController < ApplicationController
     @child = Child.new(child_params)
     UserMailer.account_verification(@child).deliver 
     respond_to do |format|
+      else
       if @child.save
         format.html { redirect_to @child, notice: 'Child was successfully created.' }
         format.json { render action: 'show', status: :created, location: @child }

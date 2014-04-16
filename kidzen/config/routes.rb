@@ -13,15 +13,13 @@ Kidzen::Application.routes.draw do
   resources :events
   resources :polls
   resources :surveys
-  resources :child 
+  resources :child
   resources :groups
   get "children/verify"
 
   # This routes to enable getting info from invite page
   get "supervisors/:id/invite" => 'supervisors#invite'
   post "supervisors/:id/invite" => 'supervisors#invite'
-
-  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
