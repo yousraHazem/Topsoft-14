@@ -1,4 +1,6 @@
 Kidzen::Application.routes.draw do
+  resources :supervisors
+
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
 
@@ -14,8 +16,11 @@ Kidzen::Application.routes.draw do
   resources :child 
   resources :groups
   get "children/verify"
-  get "children/:id/invite" => 'children#invite'
-  post "children/:id/invite" => 'children#invite'
+
+  # This routes to enable getting info from invite page
+  get "supervisors/:id/invite" => 'supervisors#invite'
+  post "supervisors/:id/invite" => 'supervisors#invite'
+
   
 
   # The priority is based upon order of creation: first created -> highest priority.
