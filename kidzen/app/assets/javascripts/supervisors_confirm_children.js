@@ -28,10 +28,40 @@ function collapse (element) {
 }
 
 
+/****************************************************
+ * Creates an AJAX request.                         *
+ * Always uses a put request.                       *
+ * url - where to send                              *
+ * data - payload is converted to json              *
+ * callback - function to be called when ready      *
+ * with params responseJSON, XMLHttpRequest object. *
+ * Authors: Ahmed H. Ismail                         *
+ ****************************************************/
+function create_ajax_request (url, data, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('PUT', url, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.addEventListener('load', function() {
+    xhr.responseJSON = JSON.parse( xhr.responeText );
+    callback(xhr.responseJSON,  xhr);
+  });
+  xhr.send( JSON.stringify(data) );
+  return xhr;
+}
+
+
 function verify_child (childUserName) {
-  // body...
+  var url = [location.hostname, 'supervisor', 'accept_child'].join('/');
+  var callback = function() {
+
+  }
+  create_ajax_request(url, childUserName, callback);
 }
 
 function reject_child (childUserName) {
-  // body...
+  var url = [location.hostanme, 'supervisor', 'reject_child'].join('/');
+  var callback = function () {
+    
+  }
+  create_ajax_request(url, childUserName, callback);
 }
