@@ -71,12 +71,16 @@
 }
 
 
-.collapsable {
+.collapsable_container {
+  margin: auto;
+  text-align: center;
+}
+.collapsable_container > .collapsable_field {
   width: 100px;
   height: 100px;
   overflow-y: scroll;
-  margin-bottom: 15px;
   visibility: hidden;
+  margin: auto;
 }
 
 /********************************
@@ -93,11 +97,5 @@
 .filter {
   display: none;
 }
-/******************************************
- * Make collapsable visible when checked. * 
- * Authors Ahmed H. Ismail.               *
- ******************************************/
-.filter:checked + .collapsable {
-  visibility: visible;
-}
+
 
