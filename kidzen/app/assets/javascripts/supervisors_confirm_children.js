@@ -9,7 +9,7 @@
 function collapse (element) {
   var checkBox = element.firstElementChild.firstElementChild;
   if(checkBox != null) {
-    checkBox.checked = !checkBox.checked;
+    checkBox.checked = !checkBox.checked; // toggle
     var collapsableDiv = element.firstElementChild.nextElementSibling;
     if(collapsableDiv != null) {
       if(checkBox.checked) {
@@ -25,4 +25,13 @@ function collapse (element) {
   }else {
     console.log("Error in collapse function could not find checkBox");
   }
+}
+
+
+function verify_child (childUserName) {
+  // body...
+}
+
+function reject_child (childUserName) {
+  // body...
 }
