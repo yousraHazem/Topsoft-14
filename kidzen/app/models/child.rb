@@ -1,8 +1,4 @@
 class Child < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
   # Associations and validations.
   has_one :registered_user, dependent: :destroy
   validates_associated :registered_user
