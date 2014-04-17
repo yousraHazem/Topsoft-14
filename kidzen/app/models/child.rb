@@ -44,6 +44,12 @@ class Child < ActiveRecord::Base
   def write_message
   end
 
+  # Checks if child is approved.
+  # Authors: Ahmed H. Ismail
+  def approved?
+    is_approved
+  end
+
   # FIXME: This should be in Message
   # ERD??
   def delete_message(message)

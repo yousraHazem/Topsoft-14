@@ -1,4 +1,5 @@
 Kidzen::Application.routes.draw do
+  get "confirm_children", to: "supervisors#confirm_children"
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
 

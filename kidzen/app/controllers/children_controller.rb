@@ -29,7 +29,7 @@ class ChildrenController < ApplicationController
   # child_2 - second child.
   # Authors: Ahmed H. Ismail.
   def create_friendship(child_1, child_2)
-    #TODO remember notifcations and calling function in child
+    # TODO remember notifcations and calling function in child
     # model to invite.
     Friendship.create_friendship(child_1, child_2)
   end
@@ -53,7 +53,6 @@ class ChildrenController < ApplicationController
     @child = Child.new(child_params)
     UserMailer.account_verification(@child).deliver 
     respond_to do |format|
-      else
       if @child.save
         format.html { redirect_to @child, notice: 'Child was successfully created.' }
         format.json { render action: 'show', status: :created, location: @child }
@@ -99,7 +98,8 @@ class ChildrenController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # Authors: Ahmed H. Ismail
     def child_params
-      params.require(:child).permit(:approved, :guardian_email, :user_name, :password, :first_name, :birth_of_date, :gender)
+      params.require(:child).permit(:is_approved, :guardian_email, :registered_user_id)
     end
 end
