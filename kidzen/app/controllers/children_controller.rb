@@ -53,7 +53,6 @@ class ChildrenController < ApplicationController
     @child = Child.new(child_params)
     UserMailer.account_verification(@child).deliver 
     respond_to do |format|
-      else
       if @child.save
         format.html { redirect_to @child, notice: 'Child was successfully created.' }
         format.json { render action: 'show', status: :created, location: @child }
