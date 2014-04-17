@@ -1,4 +1,5 @@
 Kidzen::Application.routes.draw do
+  devise_for :children
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
 
