@@ -1,5 +1,3 @@
-
-
 /**
  * @brief  Handles collapsing and expanding fields.
  * @authors Ahmed H. Ismail
@@ -48,20 +46,24 @@ function create_ajax_request (url, data, callback) {
   xhr.send( JSON.stringify(data) );
   return xhr;
 }
+// add removeElement function to DOM
+Element.prototype.remove = function() {
+  this.parentElement.removeChild(this);
+};
 
 
 function verify_child (childUserName) {
   var url = [location.hostname, 'supervisor', 'accept_child'].join('/');
-  var callback = function() {
-
+  var callback = function(responseJSON, xhr) {
+    document.getElementById(childUserName).remove();
   }
   create_ajax_request(url, childUserName, callback);
 }
 
 function reject_child (childUserName) {
   var url = [location.hostanme, 'supervisor', 'reject_child'].join('/');
-  var callback = function () {
-    
+  var callback = function (responseJSON, xhr) {
+    document.getElementById(childUserName).remove();
   }
   create_ajax_request(url, childUserName, callback);
 }
