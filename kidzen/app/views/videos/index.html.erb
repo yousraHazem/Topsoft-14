@@ -1,0 +1,13 @@
+
+<% for video in @videos %>
+<div class="video"> 
+Description: <%= video.description %>
+Category: <%= video.category %>
+<%= link_to "Show", video %>
+<%= link_to "Edit", edit_video_path(video) %>
+<%= link_to "Destroy", video, :confirm => 'Are you sure?', :method => :delete %> 
+<br>
+</div>
+<% end %>
+
+<p><%= link_to "New Video", new_video_path %></p>
