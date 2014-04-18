@@ -57,7 +57,7 @@ function verify_child (childUserName) {
   var callback = function(responseJSON, xhr) {
     document.getElementById(childUserName).remove();
   }
-  create_ajax_request(url, childUserName, callback);
+  create_ajax_request(url, {child_username: childUserName}, callback);
 }
 
 function reject_child (childUserName) {
@@ -65,5 +65,5 @@ function reject_child (childUserName) {
   var callback = function (responseJSON, xhr) {
     document.getElementById(childUserName).remove();
   }
-  create_ajax_request(url, childUserName, callback);
+  create_ajax_request(url, {child_username: childUserName}, callback);
 }
