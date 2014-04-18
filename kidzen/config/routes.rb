@@ -1,4 +1,5 @@
 Kidzen::Application.routes.draw do
+  devise_for :registered_users
   get "confirm_children", to: "supervisors#confirm_children"
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
@@ -16,6 +17,9 @@ Kidzen::Application.routes.draw do
   resources :groups
   get "child/verify"
   post "child/new"
+
+  root to: "home#index"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
