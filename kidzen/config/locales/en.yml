@@ -22,3 +22,5 @@
 en:
   hello: "Hello world"
   supervisor_layout_title: "Supervision Portal"
+  verify_confirm_child: "Verify"
+  reject_confirm_child: "Reject"
