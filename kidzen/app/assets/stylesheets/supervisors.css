@@ -99,3 +99,18 @@
 }
 
 
+#left_panel {
+  float: right;
+  clear: both;
+  width: 100px;
+  height: 100%;
+}
+
+#notifications_container {
+  position: absolute;
+  width: 100px;
+  heigh: 80px;
+  font-family: cursive;
+  font-size: 1em;
+  overflow-y: scroll; 
+}
