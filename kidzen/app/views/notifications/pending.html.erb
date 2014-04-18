@@ -18,9 +18,9 @@
         <% # Each notification action is essentially a button %>
         <div class="round_button" <%= on_click(action) %> > 
           <% if action.async? %>
-            <p class="round_inner"><%= action.name %>
+            <p class="round_inner notification_action"><%= action.name %>
           <% else %>
-            <a class="round_inner" href="<%= action.url %>"><%= action.name %></a>
+            <a class="round_inner notification_action" href="<%= action.url %>"><%= action.name %></a>
           <% end %>
         </div>
       <% end %>

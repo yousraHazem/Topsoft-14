@@ -116,3 +116,7 @@
   overflow-y: scroll;
   margin: auto; 
 }
+
+.notification_action {
+  display: inline-block;
+}
