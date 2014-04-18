@@ -11,22 +11,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="navbar-text pull-right">
-<%= link_to "Arabic", change_locale_path(locale: :ar) %>
-<%= link_to "English", change_locale_path(locale: :en) %>
-</p>
+  <p class="navbar-text pull-right">
+  <%= link_to "Arabic", change_locale_path(locale: :ar) %>
+  <%= link_to "English", change_locale_path(locale: :en) %>
+  </p>
 
-<%= yield %>
+  <%= yield %>
 
-<div id="left_panel">
-  <div id="notifications_container"></div>
-</div>
-<!-- Script for loading pending notifications -->
-<script type="text/javascript" language="javascript">    
-function load_pending_notifications() {
-            <%= remote_function(:url => {:controller => "notifications", :action => "pending"},
-                                  :update => "notifications_container")%>
-        };
-</script>
+  <div id="left_panel">
+    <div id="notifications_container">
+    <% # To be replaced by load_pending_notifications %>
+    </div>
+  </div>
 </body>
 </html>
