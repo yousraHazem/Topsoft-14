@@ -15,7 +15,8 @@ Kidzen::Application.routes.draw do
   resources :groups
   get "child/verify"
   post "child/new"
-  get "friendship/view_my_friends"
+  get "friendship/view_pending_friendship_requests"
+  get "friendship/accept_reject_friend_request"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
