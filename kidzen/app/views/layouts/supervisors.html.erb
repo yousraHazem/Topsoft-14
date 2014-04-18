@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Supervision Portal</title>
+  <title><%= t('supervisor_layout_title') %></title>
   <meta charset="utf-8">
   <%= stylesheet_link_tag    "supervisors", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "supervisors", "data-turbolinks-track" => true %>
@@ -11,6 +11,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<p class="navbar-text pull-right">
+<%= link_to "Arabic", change_locale_path(locale: :ar) %>
+<%= link_to "English", change_locale_path(locale: :en) %>
+</p>
 
 <%= yield %>
 
