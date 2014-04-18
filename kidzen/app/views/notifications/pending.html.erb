@@ -1,0 +1,16 @@
+<% @notifications.each do |notification| %>
+
+  <div onclick="collapse(this)" class="collapsable_container" id="<%= notification.id %>" >
+  <!-- Input is used for preserving state -->
+  <div class ="round_button">
+    <label class="header"><input type="checkbox" class="filter" disabled="true" /> 
+      <p class="round_inner"><%= notification.title %></p>
+    </label>
+  </div>
+  <!-- This is the div containing the actual content -->    
+    <div class="collapsable_field">
+      
+    </div>
+  </div>
+
+<% end %>
