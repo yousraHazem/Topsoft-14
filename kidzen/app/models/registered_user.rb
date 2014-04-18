@@ -89,18 +89,18 @@ class RegisteredUser < ActiveRecord::Base
     # child - child entity that was created.
     # returns true if successful otherwise false
     def notify_child_created(child)
-        notification = Notification.new
-        # Set attributes
-        notification.mark_unread
-        notification.title = "New child #{child.full_name}"
-        notification.short_desc = "A new child needs approval."
-        notification.long_desc = ""
-        notification.embedded_view_url = nil
-        # Create actions
-        notification.add_child_creation_actions
-        # Enqueue
-        queue_notification( notification )
-        notification.save
+      notification = Notification.new
+      # Set attributes
+      notification.mark_unread
+      notification.title = "New child #{child.full_name}"
+      notification.short_desc = "A new child needs approval."
+      notification.long_desc = ""
+      notification.embedded_view_url = nil
+      # Create actions
+      notification.add_child_creation_actions
+      # Enqueue
+      queue_notification( notification )
+      notification.save
     end
 
     # Queues a notification as pending for this user.
