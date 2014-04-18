@@ -12,16 +12,12 @@ function create_ajax_request (url, data, callback) {
   xhr.open('PUT', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.addEventListener('load', function() {
-    xhr.responseJSON = JSON.parse( xhr.responeText );
+    xhr.responseJSON = JSON.parse( xhr.responseText );
     callback(xhr.responseJSON,  xhr);
   });
   xhr.send( JSON.stringify(data) );
   return xhr;
 }
-// add removeElement function to DOM
-Element.prototype.remove = function() {
-  this.parentElement.removeChild(this);
-};
 
 
 function verify_child (childUserName) {
