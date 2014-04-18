@@ -15,7 +15,7 @@ class RegisteredUser < ActiveRecord::Base
     validates :middle_name, presence: true, length: { maximum: 256 }
     validates :family_name, presence: true, length: { maximum: 256 }
     validates :nickname, presence: true, length: { minimum: 4, maximum: 512 }
-    validates :password_digest, presence: true
+    #validates :password_digest, presence: true
     validates :birth_date, presence: true
     validates :banned, presence: true
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, 
@@ -33,7 +33,7 @@ class RegisteredUser < ActiveRecord::Base
     def cap_names
       self[:first_name].capitalize if self[:first_name] != nil
       self[:middle_name].capitalize if self[:middle_name] != nil
-      self[:last_name].capitalize if self[:last_name] != nil
+      self[:family_name].capitalize if self[:family_name] != nil
     end
     
     # Full name with space sperators
