@@ -1,3 +1,7 @@
+/*****************************************************************************
+ * JavaScript file included with everything rendered with supervisor layout. *
+ * Authors: Ahmed H. Ismail.                                                 *
+ *****************************************************************************/
 // add removeElement function to DOM
 Element.prototype.remove = function() {
   this.parentElement.removeChild(this);
@@ -30,6 +34,7 @@ function collapse (element) {
   }
 }
 
+/* Next Section is for Notification workers */
 var notification_worker = new Worker('notification_worker.js'); // Notification Worker
 notification_worker.postMessage("start");
 /********************************************************************
