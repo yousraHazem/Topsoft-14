@@ -11,6 +11,7 @@
     <div class="collapsable_field">
       <p class="notification_short_desc"><%= notification.short_desc %> </p>
       <p class="notification_long_desc"><%= notification.long_desc %> </p>
+      <% # Does it have an associated partial ? %>
       <% if !notification.embedded_view_url.null? %>
       <%= render partial: notification.embedded_view_url, locals: { notification: @notification} %>
       <% end %>
