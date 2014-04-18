@@ -13,4 +13,11 @@ class Notification < ActiveRecord::Base
   def default_values
     self[:pending] = true
   end
+
+  # Retrives list of associated actions.
+  # Authors: Ahmed H. Ismail
+  def actions
+    NotificationActions.where(notification_id: id)
+  end
+
 end
