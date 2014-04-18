@@ -3,6 +3,12 @@ class EventsController < ApplicationController
 
   # GET /events
   # GET /events.json
+  #this method returns all the events in model Event in index (home)page
+  #Parameters :None
+  #Returns : the events instances from the model event
+  #Approach : view all the events created
+  # Time Complexity : O(n)
+  #Author : Nouran Mamdouh
   def index
     @events = Event.all
   end
@@ -13,6 +19,12 @@ class EventsController < ApplicationController
   end
 
   # GET /events/new
+  #this method creates a new event. 
+  #Parameters :None
+  #Returns : the events instances from the model event
+  #Approach : view all the events created
+  # Time Complexity : O(1)
+  #Author : Nouran Mamdouh
   def new
     @event = Event.new
   end
@@ -20,9 +32,14 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
   end
-
   # POST /events
   # POST /events.json
+  #this method creates a new event after submitting the form with the variables
+  #Parameters : event parameters
+  #Returns : None
+  #Approach : save the new event instance to the event model
+  # Time Complexity : O(1)
+  #Author : Nouran Mamdouh
   def create
     @event = Event.new(event_params)
 
@@ -39,6 +56,12 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
+  #this method updates an existing event viewing a message Event was successfully updated.
+  #Parameters : event parameters
+  #Returns : None
+  #Approach : update the event 
+  # Time Complexity : O(1)
+  #Author : Nouran Mamdouh
   def update
     respond_to do |format|
       if @event.update(event_params)
@@ -53,6 +76,12 @@ class EventsController < ApplicationController
 
   # DELETE /events/1
   # DELETE /events/1.json
+  #this method deletes an existing event 
+  #Parameters : None
+  #Returns : None
+  #Approach : delete specific event 
+  # Time Complexity : O(1)
+  #Author : Nouran Mamdouh
   def destroy
     @event.destroy
     respond_to do |format|
