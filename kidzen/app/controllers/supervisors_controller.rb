@@ -4,6 +4,7 @@ class SupervisorsController < ApplicationController
   before_action :grab_pending_child_by_name, only: [:accept_child, :reject_child]
   before_action :set_supervisor, except: [] # set for all
   wrap_parameters format: [:json], include: [:child_username]
+
   # GET /confirm_children
   # Renders the confirm children
   # view.
@@ -11,7 +12,6 @@ class SupervisorsController < ApplicationController
   def confirm_children
     @children = @supervisor.pending_children
   end
-
 
   # PUT /supervisor/reject_child
   # Accept child action.
