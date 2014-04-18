@@ -5,6 +5,9 @@ Description: <%= @video.description %>
 <p>
 Category: <%= @video.category %>
 <p>
+<p>
+<%= video_tag @video.file_url if @video.file? %>
+</p>
   <%= link_to "Edit", edit_video_path(@video) %> |
   <%= link_to "Destroy", @video, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", videos_path %>

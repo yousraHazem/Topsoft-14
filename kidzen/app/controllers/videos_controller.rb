@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
   def video_params
-  params.require(:video).permit(:description, :length, :category)
+  params.require(:video).permit(:description, :length, :category, :file)
   end
 
   def index

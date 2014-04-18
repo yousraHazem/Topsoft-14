@@ -1,9 +1,14 @@
 class Video < ActiveRecord::Base
 	# has_many :comments, :tags, :keywords
 	# belongs_to :post
+	mount_uploader :file, VideoUploader
 	def video_params
-	params.require(:video).permit(:description, :length, :category)
+	params.require(:video).permit(:description, :length, :category, :file)
 	end
+
+	def set_success(format, opts)
+    self.success = true
+    end
 
 	def get_id
 		self[:id]
@@ -50,3 +55,4 @@ class Video < ActiveRecord::Base
 	def add_keyword(keyword)
 	end
 end
+
