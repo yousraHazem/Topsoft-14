@@ -7,6 +7,7 @@
   <meta charset="utf-8">
   <%= stylesheet_link_tag    "supervisors", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "supervisors", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag("notification_action.js") %>
   <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
 </head>
@@ -20,7 +21,7 @@
 
   <div id="left_panel">
     <div id="notifications_container">
-    <% # To be replaced by load_pending_notifications %>
+    <% # To be filled by load_pending_notifications %>
     </div>
   </div>
 </body>

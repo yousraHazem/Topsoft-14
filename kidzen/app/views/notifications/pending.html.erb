@@ -9,7 +9,9 @@
   </div>
   <!-- This is the div containing the actual content -->    
     <div class="collapsable_field">
+      <p class="notification_short_desc"><%= notification.short_desc %> </p>
       <p class="notification_long_desc"><%= notification.long_desc %> </p>
+      <% # Does it have an associated partial ? %>
       <% if !notification.embedded_view_url.null? %>
       <%= render partial: notification.embedded_view_url, locals: { notification: @notification} %>
       <% end %>
@@ -18,9 +20,9 @@
         <% # Each notification action is essentially a button %>
         <div class="round_button" <%= on_click(action) %> > 
           <% if action.async? %>
-            <p class="round_inner"><%= action.name %>
+            <p class="round_inner notification_action"><%= action.name %>
           <% else %>
-            <a class="round_inner" href="<%= action.url %>"><%= action.name %></a>
+            <a class="round_inner notification_action" href="<%= action.url %>"><%= action.name %></a>
           <% end %>
         </div>
       <% end %>

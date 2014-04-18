@@ -84,14 +84,17 @@ class RegisteredUser < ActiveRecord::Base
     def ban
     end
 
-    # Queues a notification as pending for this user
+
+
+    # Queues a notification as pending for this user.
+    # Namely adds the foreign key.
     # notification - notification to queue
     # Authors: Ahmed H. Ismail
     def queue_notification(notification)
-            
+        notification.assigned_to = username  
     end
 
-    # Retrives Pending notifications
+    # Retrieves Pending notifications
     # Authors: Ahmed H. Ismail
     def pending_notifications
       Notification.where(assigned_to: username, pending: true )
