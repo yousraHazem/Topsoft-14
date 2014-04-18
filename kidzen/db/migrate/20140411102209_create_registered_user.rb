@@ -11,7 +11,7 @@ class CreateRegisteredUser < ActiveRecord::Migration
         t.string :family_name
         t.date :birth_date
         t.string :nickname
-        t.boolean :banned
+        t.boolean :banned, null: false, default: false
         t.integer :permission_id
         t.timestamps
         ## Database authenticatable
