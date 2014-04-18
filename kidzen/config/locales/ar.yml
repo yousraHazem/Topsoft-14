@@ -1,3 +1,5 @@
 ar:
   hello: "مرحبا"
   supervisor_layout_title: "ال اشراف"
+  verify_confirm_child: "موافقة"
+  reject_confirm_child: "مش تبعى"
