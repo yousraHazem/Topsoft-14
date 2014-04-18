@@ -1,7 +1,7 @@
 # Controller for notifications
 # Authors: Ahmed H. Ismail
 class NotificationsController < ApplicationController
-  
+  helper NotificationActionHelper
   # GET /notifications/pending
   # Lists notifications for currently logged in user.
   # Authors: Ahmed H. Ismail
