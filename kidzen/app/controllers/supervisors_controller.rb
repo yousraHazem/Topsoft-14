@@ -3,7 +3,7 @@
 class SupervisorsController < ApplicationController
   before_action :grab_pending_child_by_name, only: [:accept_child, :reject_child]
   before_action :set_supervisor, except: [] # set for all
-  wrap_paramaters format: [:json], include: [:child_username]
+  wrap_parameters format: [:json], include: [:child_username]
   # GET /confirm_children
   # Renders the confirm children
   # view.
@@ -20,7 +20,7 @@ class SupervisorsController < ApplicationController
     respond_to do |format| 
       msg =  {status: "ok"}
       format.json { render json: msg }
-      format.html { redirect_to: :confirm_children }
+      format.html { redirect_to  :confirm_children }
     end
   end
 
@@ -31,7 +31,7 @@ class SupervisorsController < ApplicationController
     respond_to do |format|
       msg = {status: "ok"}
       format.json { render json: msg }
-      format.html { redirect_to: :confirm_children }
+      format.html { redirect_to :confirm_children }
     end
   end
 
