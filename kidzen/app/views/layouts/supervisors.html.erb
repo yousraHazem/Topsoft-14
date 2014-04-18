@@ -1,3 +1,5 @@
+<% # Layout for all of supervisor's pages %>
+<% # Authors: Ahmed H. Ismail %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,5 +14,15 @@
 
 <%= yield %>
 
+<div id="left_panel">
+  <div id="notifications_container"></div>
+</div>
+<!-- Script for loading pending notifications -->
+<script type="text/javascript" language="javascript">    
+function load_pending_notifications() {
+            <%= remote_function(:url => {:controller => "notifications", :action => "pending"},
+                                  :update => "notifications_container")%>
+        };
+</script>
 </body>
 </html>
