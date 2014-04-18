@@ -6,7 +6,7 @@ class FriendshipController < ApplicationController
  end
  
  def view_my_friends
- @friends = current_user.friends
+ 
  end
 
  def view_pending_friendship_requests
