@@ -23,6 +23,21 @@ class RegisteredUser < ActiveRecord::Base
     has_secure_password
     after_initialize  :cap_names
     after_create :cap_default
+     attr_accessible :email, :first_name, :last_name
+  acts_as_messageable
+ 
+  # Returns the name of the user
+  def name
+   return "#{first_name} #{last_name}"
+  end
+end
+def mailboxer_email(object)
+#Check if an email should be sent for that object
+#if true
+return "#{RegisteredUser.email}"
+#if false
+return nil
+end
 
     # Capitalize all the names
       def cap_names
