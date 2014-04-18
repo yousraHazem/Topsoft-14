@@ -23,6 +23,7 @@ class RegisteredUser < ActiveRecord::Base
     has_secure_password
     after_initialize  :cap_names
     after_create :cap_names
+    has_many :notifications, foreign_key: 'assigned_to', primary_key: 'username'
 
     # Capitalize all the names
     # Authors: Ahmed H. Ismail
@@ -82,4 +83,12 @@ class RegisteredUser < ActiveRecord::Base
     # Authors: Ahmed H. Ismail
     def ban
     end
+
+    # Queues a notification as pending for this user
+    # notification - notification to queue
+    # Authors: Ahmed H. Ismail
+    def queue_notification(notification)
+            
+    end
+
 end

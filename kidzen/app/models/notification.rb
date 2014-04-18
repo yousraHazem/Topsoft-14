@@ -1,8 +1,9 @@
-#Basic Model.
-# FIXME: This model makes no sense
-# Author: Ahmed H. Ismail
+# Model representing all notification
+# Authors: Ahmed H. Ismail
 class Notification < ActiveRecord::Base
-
-  def checked?
-  end
+  validates :title, presence: true
+  validates :short_desc, presence: true
+  validates :long_desc, presence: true
+  has_many :notification_actions, dependent: :destroy
+  belongs_to :registered_user, foreign_key: 'assigned_to', primary_key: 'username'
 end
