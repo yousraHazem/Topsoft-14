@@ -97,10 +97,23 @@ class RegisteredUser < ActiveRecord::Base
       notification.long_desc = ""
       notification.embedded_view_url = nil
       # Create actions
-      notification.add_child_creation_actions
+      actions = notification.add_child_creation_actions
+      actions_saved = true
+      actions.each do |action| 
+        actions_saved &= action.save
+      end
       # Enqueue
       queue_notification( notification )
-      notification.save
+      if notification.save and actions_saved
+        true
+      else
+        # Clean up 
+        actions.each do |action| 
+          action.destroy
+        end
+        notification.destroy
+        false
+      end
     end
 
     # Queues a notification as pending for this user.

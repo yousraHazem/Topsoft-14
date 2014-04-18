@@ -44,4 +44,29 @@ class Notification < ActiveRecord::Base
   end
 
 
+
+  # Adds actions for child creation notification
+  # child - child for which notification actions are being created
+  # returns list of unsaved actions
+  # Authors: Ahmed H. Ismail
+  def add_child_creation_actions(child)
+    accept_action_params = Hash.new
+    accept_action_params[:async] = true
+    accept_action_params[:name] = "Accept" # Internationalize
+    accept_action_params[:url] = "supervisor/accept_child"
+    accept_action_params[:data] = "{child_username: #{child.username}}"
+    accept_action = add_action(accept_action_params)
+
+    reject_action_params = Hash.new
+    reject_action_params[:async] = true
+    reject_action_params[:name] = "Reject" # Internationalize
+    reject_action_params[:url] = "supervisor/reject_child"
+    reject_action_params[:data] = "{child_username: #{child.username}}"
+    reject_action = add_action(reject_action_params)
+
+    return [accept_action, reject_action]
+  end
+
+
+
 end
