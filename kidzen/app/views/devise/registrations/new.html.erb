@@ -9,9 +9,16 @@
   <div><%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
+  
+  <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+    
   <div><%= f.label :first_name %><br />
     <%= f.text_field :first_name%></div>
-
+  
+  <div><%= f.label :middle_name %><br />
+    <%= f.text_field :middle_name %></div>
+  
   <div><%= f.label :family_name %><br />
     <%= f.text_field :family_name %></div>
 
@@ -20,18 +27,13 @@
 
   <div><%= f.label :gender %><br />
     <%= f.text_field :gender %></div>
-  
-  <div><%= f.label :middle_name %><br />
-    <%= f.text_field :middle_name %></div>
-  
+
   <div><%= f.label :birth_date %><br />
     <%= f.date_select :birth_date %></div>
   
   <div><%= f.label :nickname %><br />
     <%= f.text_field :nickname %></div>
-  
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>

@@ -17,14 +17,14 @@ class RegisteredUser < ActiveRecord::Base
     validates :nickname, presence: true, length: { minimum: 4, maximum: 512 }
     #validates :password_digest, presence: true
     validates :birth_date, presence: true
-    validates :banned, presence: true
+    #validates :banned, presence: true
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, 
     uniqueness: true
     validates :password, length: { minimum: 6 }
     validates_associated :permission #Note: Don't use on both ends
     # Associations:
     has_one :permission, dependent: :destroy
-    has_secure_password
+    #has_secure_password
     after_initialize  :cap_names
     after_create :cap_names
 
