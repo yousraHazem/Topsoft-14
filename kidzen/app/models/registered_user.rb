@@ -84,11 +84,20 @@ class RegisteredUser < ActiveRecord::Base
     def ban
     end
 
-    # Queues a notification as pending for this user
+    # Adds a notification that a child was created.
+    # creates notification and saves to database.
+    # child - child entity that was created.
+    # returns true if successful otherwise false
+    def notify_child_created(child)
+      
+    end
+
+    # Queues a notification as pending for this user.
+    # Namely adds the foreign key.
     # notification - notification to queue
     # Authors: Ahmed H. Ismail
     def queue_notification(notification)
-            
+        notification.assigned_to = username  
     end
 
     # Retrives Pending notifications
