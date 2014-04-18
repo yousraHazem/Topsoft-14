@@ -3,7 +3,9 @@
 class SupervisorsController < ApplicationController
   before_action :grab_pending_child_by_name, only: [:accept_child, :reject_child]
   before_action :set_supervisor, except: [] # set for all
-  wrap_paramaters format: [:json], include: [:child_username]
+  before_action :authenticate_registered_user!
+  wrap_parameters format: [:json], include: [:child_username]
+
   # GET /confirm_children
   # Renders the confirm children
   # view.
@@ -12,7 +14,6 @@ class SupervisorsController < ApplicationController
     @children = @supervisor.pending_children
   end
 
-
   # PUT /supervisor/reject_child
   # Accept child action.
   # Authors: Ahmed H. Ismail
@@ -20,7 +21,7 @@ class SupervisorsController < ApplicationController
     respond_to do |format| 
       msg =  {status: "ok"}
       format.json { render json: msg }
-      format.html { redirect_to: :confirm_children }
+      format.html { redirect_to  :confirm_children }
     end
   end
 
@@ -31,7 +32,7 @@ class SupervisorsController < ApplicationController
     respond_to do |format|
       msg = {status: "ok"}
       format.json { render json: msg }
-      format.html { redirect_to: :confirm_children }
+      format.html { redirect_to :confirm_children }
     end
   end
 
@@ -48,7 +49,8 @@ class SupervisorsController < ApplicationController
   # if none.
   # Authors: Ahmed H. Ismail
   def set_supervisor
-    #TODO: implement
+    logged_in_user = current_registered_user # Of type Registered user
+    @supervisor = Supervisor.find(registered_user_id: logged_in_user.id);
   end
 
 
