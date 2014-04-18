@@ -3,6 +3,7 @@
 class SupervisorsController < ApplicationController
   before_action :grab_pending_child_by_name, only: [:accept_child, :reject_child]
   before_action :set_supervisor, except: [] # set for all
+  before_action :authenticate_registered_user!
   wrap_parameters format: [:json], include: [:child_username]
 
   # GET /confirm_children
@@ -48,7 +49,8 @@ class SupervisorsController < ApplicationController
   # if none.
   # Authors: Ahmed H. Ismail
   def set_supervisor
-    #TODO: implement
+    logged_in_user = current_registered_user # Of type Registered user
+    @supervisor = Supervisor.find(registered_user_id: logged_in_user.id);
   end
 
 
