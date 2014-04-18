@@ -151,24 +151,33 @@ ActiveRecord::Schema.define(version: 20140417131543) do
 
   create_table "registered_users", force: true do |t|
     t.string   "username"
+    t.boolean  "is_child"
     t.boolean  "online"
-    t.boolean  "gender"
+    t.string   "gender"
     t.datetime "last_accessed"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "family_name"
     t.date     "birth_date"
-    t.string   "email"
     t.string   "nickname"
-    t.string   "password_digest"
     t.boolean  "banned"
     t.integer  "permission_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
 
   add_index "registered_users", ["email"], name: "index_registered_users_on_email", unique: true
-  add_index "registered_users", ["username"], name: "index_registered_users_on_username", unique: true
+  add_index "registered_users", ["reset_password_token"], name: "index_registered_users_on_reset_password_token", unique: true
 
   create_table "supervisors", id: false, force: true do |t|
     t.integer  "registered_user_id"

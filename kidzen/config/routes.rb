@@ -15,7 +15,7 @@ Kidzen::Application.routes.draw do
   resources :groups
   get "child/verify"
   post "child/new"
-
+  get 'change_locale', to: 'application#change_locale'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
