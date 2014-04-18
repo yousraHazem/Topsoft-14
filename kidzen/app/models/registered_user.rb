@@ -91,4 +91,10 @@ class RegisteredUser < ActiveRecord::Base
             
     end
 
+    # Retrives Pending notifications
+    # Authors: Ahmed H. Ismail
+    def pending_notifications
+      Notification.where(assigned_to: username, pending: true )
+    end
+
 end
