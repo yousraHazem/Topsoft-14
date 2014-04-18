@@ -1,8 +1,8 @@
 Kidzen::Application.routes.draw do
-  get "confirm_children", to: "supervisors#confirm_children"
+  get "/notifications/pending", to: "notifications#pending"
+  get "/confirm_children", to: "supervisors#confirm_children"
   put "/supervisor/accept_child", to: "supervisors#accept_child"
   put "/supervisor/reject_child", to: "supervisors#reject_child"
-
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
 
