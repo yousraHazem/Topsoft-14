@@ -99,10 +99,12 @@
 
 
 #left_panel {
-  float: right;
+  float: left;
   clear: both;
   width: 100px;
-  height: 100%;
+  height: 400px%;
+  position: fixed;
+  z-index: 1;
 }
 
 #notifications_container {
@@ -111,5 +113,6 @@
   heigh: 80px;
   font-family: cursive;
   font-size: 1em;
-  overflow-y: scroll; 
+  overflow-y: scroll;
+  margin: auto; 
 }
