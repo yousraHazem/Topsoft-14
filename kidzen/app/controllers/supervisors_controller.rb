@@ -50,7 +50,7 @@ class SupervisorsController < ApplicationController
   # Authors: Ahmed H. Ismail
   def set_supervisor
     logged_in_user = current_registered_user # Of type Registered user
-    @supervisor = Supervisor.find(registered_user_id: logged_in_user.id);
+    @supervisor = Supervisor.find(logged_in_user.id) if !logged_in_user.nil?
   end
 
 
