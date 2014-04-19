@@ -17,8 +17,7 @@
     <%= f.text_field :username %></div>
 
   <div><%= f.label t('gender') %><br />
-    <%# f.select :gender, [ ["Female", "female"], ["Male", "male"]] %>
-    <%= f.text_field :gender %>
+    <%= f.select :gender, [ ["Female", "female"], ["Male", "male"]] %>
   </div>
 
   <div><%= f.label t('birth_date') %><br />

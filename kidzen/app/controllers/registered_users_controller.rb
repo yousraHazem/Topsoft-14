@@ -35,6 +35,7 @@ class RegisteredUsersController < ApplicationController
   
   def create
     @registered_user = RegisteredUser.new(registered_user_params)
+    @registered_user.banned = false
 
     respond_to do |format|
       if @registered_user.save
@@ -43,10 +44,10 @@ class RegisteredUsersController < ApplicationController
         if @registered_user.child?
           # Create Child
           # FIXME: Handle guardian_email
-          Child.create(registered_user_id: registered_user.id, is_approved: false, guardian_email: "WHAT DO I DO WIZ DIS")
+          Child.create(registered_user_id: @registered_user.id, is_approved: false, guardian_email: "WHAT DO I DO WIZ DIS")
         else 
           # Create Supervisor
-          Supervisor.create(registered_user_id: registered_user.id)
+          Supervisor.create(registered_user_id: @registered_user.id)
         end
 
         format.html { redirect_to @registered_user, notice: 'Registered user was successfully created.' }
@@ -90,8 +91,7 @@ class RegisteredUsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def registered_user_params
-      # params[:registered_user]
       params.require(:registered_user).permit(:first_name, :middle_name, :family_name, :last_name, :gender, :is_child, :password, :password_confirmation, :nickname, :username, :email )
     end
-    
+
 end
