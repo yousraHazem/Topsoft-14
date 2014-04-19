@@ -1,20 +1,20 @@
 class CreateRegisteredUser < ActiveRecord::Migration
   def change
     create_table :registered_users do |t|
-        t.string :username
-        t.boolean :is_child
-        t.boolean :online
-        t.string :gender
-        t.timestamp :last_accessed
-        t.string :first_name
-        t.string :middle_name
-        t.string :family_name
-        t.date :birth_date
-        t.string :nickname
-        t.boolean :banned, null: false, default: false
-        t.integer :permission_id
-        t.timestamps
-        ## Database authenticatable
+      t.string :username
+      t.boolean :is_child
+      t.boolean :online
+      t.string :gender
+      t.timestamp :last_accessed
+      t.string :first_name
+      t.string :middle_name
+      t.string :family_name
+      t.date :birth_date
+      t.string :nickname
+      t.boolean :banned, null: false, default: false
+      t.integer :permission_id
+      t.timestamps
+      ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 

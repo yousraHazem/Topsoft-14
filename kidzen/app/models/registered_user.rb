@@ -17,6 +17,7 @@ class RegisteredUser < ActiveRecord::Base
     validates :nickname, presence: true, length: { minimum: 4, maximum: 512 }
     validates :birth_date, presence: true
     #validates :banned, presence: true
+    validates :gender, presence: true
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, 
     uniqueness: true
     validates :password, length: { minimum: 6 }
@@ -40,13 +41,24 @@ class RegisteredUser < ActiveRecord::Base
     def full_name
       [first_name, middle_name, family_name].join(" ")
     end
-        
+    
+    # Checks if female
+    # Authors: Ahmed H. Ismail    
     def female?
-      gender == true
+      gender.lowercase == "female"
     end
 
+
+    # Checks if male
+    # Authors: Ahmed H. Ismail
     def male?
-      gender == false
+      gender.lowercase == "male"
+    end
+
+    # Am I a child?
+    # Authors: Ahmed H. Ismail
+    def child?
+      is_child
     end
 
     # Assigns gender.

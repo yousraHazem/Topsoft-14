@@ -4,38 +4,42 @@
   <%= devise_error_messages! %>
   <h3>Personal Info</h3>
    
-  <div><%= f.label :first_name %><br />
+  <div><%= f.label t('first_name') %><br />
     <%= f.text_field :first_name%></div>
   
-  <div><%= f.label :middle_name %><br />
+  <div><%= f.label t('middle_name') %><br />
     <%= f.text_field :middle_name %></div>
   
-  <div><%= f.label :family_name %><br />
+  <div><%= f.label t('family_name') %><br />
     <%= f.text_field :family_name %></div>
 
-  <div><%= f.label :username %><br />
+  <div><%= f.label t('username') %><br />
     <%= f.text_field :username %></div>
 
-  <div><%= f.label :gender %><br />
-    <%= f.text_field :gender %></div>
+  <div><%= f.label t('gender') %><br />
+    <%# f.select :gender, [ ["Female", "female"], ["Male", "male"]] %>
+    <%= f.text_field :gender %>
+  </div>
 
-  <div><%= f.label :birth_date %><br />
+  <div><%= f.label t('birth_date') %><br />
     <%= f.date_select :birth_date, start_year: Time.now.year - 100, end_year: Time.now.year - 20  %></div>
   
-  <div><%= f.label :nickname %><br />
+  <div><%= f.label t('nickname') %><br />
     <%= f.text_field :nickname %></div>
 
   <h3>Login Info</h3>
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label t('email') %><br />
   <%= f.email_field :email, autofocus: true %></div>
 
-  <div><%= f.label :password %><br />
+  <div><%= f.label ('password') %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
   
-  <div><%= f.label :password_confirmation %><br />
+  <div><%= f.label t('password_confirmation') %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+  <div> <%= f.label t("child_q") %><br/>
+    <%= f.check_box :is_child %>
 
   <div><%= f.submit t('create_account_submit') %></div>
 <% end %>
