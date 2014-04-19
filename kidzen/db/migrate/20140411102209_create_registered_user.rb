@@ -11,6 +11,7 @@ class CreateRegisteredUser < ActiveRecord::Migration
       t.boolean :banned
       t.timestamps
       t.string :email
+      t.string :password_digest
     end
     add_index :registered_users, :email,                unique: true
   end

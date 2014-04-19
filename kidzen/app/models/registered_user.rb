@@ -23,7 +23,8 @@ class RegisteredUser < ActiveRecord::Base
     after_initialize  :cap_names
     after_create :cap_names
     has_many :notifications, foreign_key: 'assigned_to', primary_key: 'username'
-
+    has_secure_password
+    
     # Capitalize all the names
     # Authors: Ahmed H. Ismail
     def cap_names
