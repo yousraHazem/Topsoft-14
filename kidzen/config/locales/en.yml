@@ -24,3 +24,4 @@ en:
   supervisor_layout_title: "Supervision Portal"
   verify_confirm_child: "Verify"
   reject_confirm_child: "Reject"
+  create_account_submit: "Create!"
