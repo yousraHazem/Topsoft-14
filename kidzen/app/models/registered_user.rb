@@ -51,11 +51,11 @@ class RegisteredUser < ActiveRecord::Base
       gender.lowercase == "male"
     end
 
-    # Am I a child?
-    # Authors: Ahmed H. Ismail
-    def child?
-      is_child
-    end
+    # # Am I a child?
+    # # Authors: Ahmed H. Ismail
+    # def child?
+    #   is_child
+    # end
 
     # Assigns gender.
     # Column value is trie if female
