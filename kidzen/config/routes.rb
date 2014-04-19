@@ -7,10 +7,7 @@ Kidzen::Application.routes.draw do
   # Children notification actions
   put "/supervisor/accept_child", to: "supervisors#accept_child"
   put "/supervisor/reject_child", to: "supervisors#reject_child"
-  # Devise for signin/signup
-  devise_for :registered_users
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
-  resources :registered_users
 
   resources :groups
   resources :children

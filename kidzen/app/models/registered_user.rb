@@ -2,10 +2,6 @@
 # RegisteredUser.
 # Authors: Ahmed H. Ismail
 class RegisteredUser < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
   private
     VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
   public
@@ -19,6 +15,7 @@ class RegisteredUser < ActiveRecord::Base
     validates :gender, presence: true
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, 
     uniqueness: true
+    validated :banned, presence: true
     validates :password, length: { minimum: 6 }
     validates_associated :permission #Note: Don't use on both ends
     # Associations:
