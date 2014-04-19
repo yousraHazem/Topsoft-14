@@ -29,7 +29,7 @@
     <%= f.text_field :gender %></div>
 
   <div><%= f.label :birth_date %><br />
-    <%= f.date_select :birth_date %></div>
+    <%= f.date_select :birth_date, start_year: Time.now.years - 100, end_year: Time.now.years - 20  %></div>
   
   <div><%= f.label :nickname %><br />
     <%= f.text_field :nickname %></div>
@@ -37,4 +37,4 @@
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
-<%= render "registered_users/shared/links" %>
+<%# render "registered_users/shared/links" %>
