@@ -20,16 +20,19 @@ class RegisteredUsersController < ApplicationController
   # GET /registered_users/1/edit
   def edit
   end
-  # This is a function that allows a user to leave a group
-  # Returns nothing
-  # Time complexity: O(1).
-  # Author: Mohamed Bahgat Elrakaiby
-      def leave_group(RegisteredUser r)
-          r.destroy
-      end
+
+  # This function is wrong 
+  # # This is a function that allows a user to leave a group
+  # # Returns nothing
+  # # Time complexity: O(1).
+  # # Author: Mohamed Bahgat Elrakaiby
+  #     def leave_group(RegisteredUser r)
+  #         r.destroy
+  #     end
 
   # POST /registered_users
   # POST /registered_users.json
+  
   def create
     @registered_user = RegisteredUser.new(registered_user_params)
 

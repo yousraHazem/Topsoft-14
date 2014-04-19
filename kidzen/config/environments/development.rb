@@ -28,6 +28,9 @@ Kidzen::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
   # This configration to allow the user_mailer send emails
   # Authors: Shary Beshara
   config.action_mailer.delivery_method = :smtp

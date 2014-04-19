@@ -1,8 +1,14 @@
 Kidzen::Application.routes.draw do
+
+  # Lists pending notifications
   get "/notifications/pending", to: "notifications#pending"
+  # Confirm children page
   get "/confirm_children", to: "supervisors#confirm_children"
+  # Children notification actions
   put "/supervisor/accept_child", to: "supervisors#accept_child"
   put "/supervisor/reject_child", to: "supervisors#reject_child"
+  # Devise for signin/signup
+  devise_for :registered_users
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
 
@@ -19,7 +25,10 @@ Kidzen::Application.routes.draw do
   resources :groups
   get "child/verify"
   post "child/new"
+  
+  # Internationalization
   get 'change_locale', to: 'application#change_locale'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

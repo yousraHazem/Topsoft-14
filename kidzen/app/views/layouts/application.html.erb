@@ -2,18 +2,21 @@
 <html>
 <head>
   <title>Kidzen</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
 </head>
 <body>
 	
-<p class="navbar-text pull-right">
-<%= link_to "Arabic", change_locale_path(locale: :ar) %>
-<%= link_to "English", change_locale_path(locale: :en) %>
-</p>
+  <p class="navbar-text pull-right">
+    <%= link_to "Arabic", change_locale_path(locale: :ar) %>
+    <%= link_to "English", change_locale_path(locale: :en) %>
+  </p>
 
-<%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
 
 </body>
 </html>
