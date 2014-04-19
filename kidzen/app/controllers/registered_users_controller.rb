@@ -34,8 +34,10 @@ class RegisteredUsersController < ApplicationController
   # POST /registered_users.json
   
   def create
+
     @registered_user = RegisteredUser.new(registered_user_params)
     @registered_user.banned = false
+    
 
     respond_to do |format|
       if @registered_user.save
@@ -45,9 +47,25 @@ class RegisteredUsersController < ApplicationController
           # Create Child
           # FIXME: Handle guardian_email
           Child.create(registered_user_id: @registered_user.id, is_approved: false, guardian_email: "WHAT DO I DO WIZ DIS")
+          abilities = Hash.new
+          abilities[:child] = true
+          abilities[:parent] = false
+          abilities[:account_creation] = false
+          perms = Permission.create(registered_user_id: @registered_user.id, abilities: abilities)
+          @registered_user.permission = perms
+          @registered_user.permission_id = perms.id
+          @registered_user.save      
         else 
           # Create Supervisor
           Supervisor.create(registered_user_id: @registered_user.id)
+          abilities = Hash.new
+          abilities[:child] = false
+          abilities[:parent] = true
+          abilities[:account_creation] = true
+          perms = Permission.create(registered_user_id: @registered_user.id, abilities: abilities)
+          @registered_user.permission = perms
+          @registered_user.permission_id = perms.id
+          @registered_user.save      
         end
 
         format.html { redirect_to @registered_user, notice: 'Registered user was successfully created.' }
