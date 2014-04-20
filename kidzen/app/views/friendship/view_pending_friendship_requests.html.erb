@@ -1,7 +1,8 @@
 <h1>Pending Friendship requests</h1>
 <%if @pending_friends.to_a !=[]%>
 <%@pending_friends.to_a.each do |t|%>
-<%=t.email%>
+<%s="#{t.first_name} #{t.family_name}"%>
+<%=s%>
 <%=link_to "accept friend request",:controller=>'friendship',
 :action=>'accept_reject_friend_request',:friend_id=>t.id,:status=>1%>
 <%=link_to "reject friend request",:controller=>'friendship',
