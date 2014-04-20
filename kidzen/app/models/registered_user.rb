@@ -15,16 +15,16 @@ class RegisteredUser < ActiveRecord::Base
     validates :gender, presence: true
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, 
     uniqueness: true
-    validated :banned, presence: true
+    validates :banned, presence: true
     validates :password, length: { minimum: 6 }
-    validates_associated :permission #Note: Don't use on both ends
+    validates_associated :permission # Note: Don't use on both ends
     # Associations:
     has_one :permission, dependent: :destroy
     after_initialize  :cap_names
     after_create :cap_names
     has_many :notifications, foreign_key: 'assigned_to', primary_key: 'username'
     has_secure_password
-    
+
     # Capitalize all the names
     # Authors: Ahmed H. Ismail
     def cap_names
@@ -94,8 +94,6 @@ class RegisteredUser < ActiveRecord::Base
     # Authors: Ahmed H. Ismail
     def ban
     end
-
-
 
     # Queues a notification as pending for this user.
     # Namely adds the foreign key.

@@ -1,0 +1,35 @@
+<div class="signup">
+<h1>Create Parent Account</h1>
+<%= form_tag('/supervisor/create', method: 'put') do %>
+  <h3>Personal Info</h3>
+    <%= label_tag "user[:first_name]",  t('first_name') %>
+    <%= text_field_tag "user[:first_name]" %>
+    <br/>
+    <%= label_tag "user[:middle_name]", t('middle_name') %>
+    <%= text_field_tag "user[:middle_name"  %>
+    <br/>
+    <%= label_tag "user[:family_name]", t('family_name') %>
+    <%= text_field_tag "user[:family_name]" %>
+    <br/>
+    <%= label_tag "user[:user_name]", t('username') %>
+    <%= text_field_tag "user[:user_name]" %>
+    <br/>
+    <%= label_tag "user[:gender]", t('gender') %>
+    <%= select_tag "user[:gender]", [["Female", "female"], ["Male", "male"]] %>
+    <br/>
+    <%= label_tag "user[:birth_date]", t('birth_date') %>
+    <%= date_select_tag "user[:birth_date]", start_year: Time.now.year - 100, end_year: Time.now.year - 20  %>
+    <br/>
+  <h3>Login Info</h3>
+    <%= label_tag "user[:email]", t('email') %>
+    <%= text_field_tag "user[:email]" %>
+    <br/>
+    <%= label_tag "user[:password]", t('password') %>
+    <%= password_field_tag "user[:password]" %>
+    <br/>
+    <%= label_tag "user[:password_confirmation]", t('password_confirmation') %>
+    <%= password_field_tag "user[:password_confirmation]" %>
+    <%= submit_tag t('create_account_submit') %>
+<% end %>
+
+</div>

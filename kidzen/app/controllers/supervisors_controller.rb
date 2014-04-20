@@ -1,9 +1,7 @@
 # Supervisor controller
 # Authors: Ahmed H. Ismail
 class SupervisorsController < ApplicationController
-  before_action :grab_pending_child_by_name, only: [:accept_child, :reject_child]
-  before_action :set_supervisor, except: [] # set for all
-  before_action :authenticate_registered_user!
+  # before_action :set_supervisor, except: [] # set for all
   wrap_parameters format: [:json], include: [:child_username]
 
   # GET /confirm_children
@@ -44,6 +42,12 @@ class SupervisorsController < ApplicationController
     params.require(:supervisor).permit(:user_name)
   end
 
+  # GET /supervisors/signup
+  # Authors: Ahmed H. Ismail
+  def signup
+    # Just render the view.
+  end
+  
   # Sets supervisor instance var to 
   # the currently logged in supervisor or nil
   # if none.
