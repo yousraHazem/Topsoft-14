@@ -126,7 +126,7 @@ class RegisteredUser < ActiveRecord::Base
 
     # Passes token through one way hash
     # Authors: Ahmed H. Ismail
-    def User.digest(token)
+    def self.digest(token)
       Digest::SHA1.hexdigest(token.to_s)
     end
 

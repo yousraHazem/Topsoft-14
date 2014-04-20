@@ -1,5 +1,7 @@
 Kidzen::Application.routes.draw do
 
+  get '/registered_user', to: 'registered_users#show'
+
   # Lists pending notifications
   get "/notifications/pending", to: 'notifications#pending'
 
@@ -7,6 +9,7 @@ Kidzen::Application.routes.draw do
   get "/confirm_children", to: 'supervisors#confirm_children'
 
   # Children notification actions
+  get "/supervisors/dashboard", to: 'supervisors#show'
   put "/supervisor/accept_child", to: 'supervisors#accept_child'
   put "/supervisor/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup'

@@ -12,6 +12,12 @@ class SupervisorsController < ApplicationController
     @children = @supervisor.pending_children
   end
 
+  # GET /supervisors/dashboard
+  # Renders the supervisor's homepage
+  def show
+
+  end
+  
   # PUT /supervisor/reject_child
   # Accept child action.
   # Authors: Ahmed H. Ismail
@@ -54,6 +60,7 @@ class SupervisorsController < ApplicationController
       if @user.save
         params.registered_user = @user
         @supervisor = Supervisor.create(registered_user_id: @registered_user.id)
+        sign_in @user
         format.json { render json: {status: "ok"} }
         flash[:success] = "Welcome to kidzen!!"
         format.html { redirect_to @supervisor }
