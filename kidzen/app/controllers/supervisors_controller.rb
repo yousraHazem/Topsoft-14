@@ -38,10 +38,10 @@ class SupervisorsController < ApplicationController
   # GET /supervisors/signup
   # Authors: Ahmed H. Ismail
   def signup
-    # Just render the view.
+    @user = RegisteredUser.new
   end
 
-  # PUT /supervisors/create
+  # POST /supervisors/create
   # Creates a new supervisor
   # Authors: Ahmed H. Ismail
   def create
@@ -77,7 +77,7 @@ class SupervisorsController < ApplicationController
     # Safety first.
     # Authors Ahmed H. Ismail
     def signup_params
-      params.require(:user).permit(:first_name, :middle_name, :family_name, :gender, :birth_date, :email, :password, :password_confirmation, :username)
+      params.require(:registed_user).permit(:first_name, :middle_name, :family_name, :gender, :birth_date, :email, :password, :password_confirmation, :username)
     end
 
 
