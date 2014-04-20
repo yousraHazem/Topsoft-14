@@ -21,7 +21,7 @@ function create_ajax_request (url, data, callback) {
 
 
 function verify_child (childUserName) {
-  var url = [location.hostname, 'supervisor', 'accept_child'].join('/');
+  var url = ['http://' + location.host, 'supervisor', 'accept_child'].join('/');
   var callback = function(responseJSON, xhr) {
     document.getElementById(childUserName).remove();
   }
@@ -29,7 +29,7 @@ function verify_child (childUserName) {
 }
 
 function reject_child (childUserName) {
-  var url = [location.hostanme, 'supervisor', 'reject_child'].join('/');
+  var url = ['http://' + location.host, 'supervisor', 'reject_child'].join('/');
   var callback = function (responseJSON, xhr) {
     document.getElementById(childUserName).remove();
   }
