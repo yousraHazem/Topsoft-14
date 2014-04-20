@@ -1,5 +1,5 @@
 Kidzen::Application.routes.draw do
-  devise_for :registered_users
+  devise_for :registered_users do get '/registered_users/sign_out' => 'devise/sessions#destroy' end
   get "confirm_children", to: "supervisors#confirm_children"
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
@@ -19,6 +19,7 @@ Kidzen::Application.routes.draw do
   post "child/new"
 
   root to: "home#index"
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
