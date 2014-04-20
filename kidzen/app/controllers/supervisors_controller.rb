@@ -48,15 +48,17 @@ class SupervisorsController < ApplicationController
     perms = Permission.supervisor_default
     perms.save
     @user = RegisteredUser.new(signup_params)
-    @user.permission = perms
     @user.banned = false
+    @user.permission = perms
     respond_to do |format|
       if @user.save
-        supervisor = Supervisor.create(registered_user_id: @registered_user.id)
+        params.registered_user = @user
+        @supervisor = Supervisor.create(registered_user_id: @registered_user.id)
         format.json { render json: {status: "ok"} }
-        format.html { redirect_to action: :profile }
+        flash[:success] = "Welcome to kidzen!!"
+        format.html { redirect_to @supervisor }
       else
-        perms.delete
+        perms.destroy
         format.json { render json: @registered_user.errors.full_messages }
         format.html { render :signup}
       end
