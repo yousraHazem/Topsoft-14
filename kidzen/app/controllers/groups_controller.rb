@@ -25,14 +25,14 @@ class GroupsController < ApplicationController
   # Returns true or false indicating whether the member was removed or not
   # Time Complexity: O(1).
   # Author: Mohamed Bahgat Elrakaiby
-  def remove_member(RegisteredUser r)
-    r.destroy
-    unless members.include? (r)
-    return false
-    else
-    members.delete(r)
-    return true
-  end
+  #def remove_member(RegisteredUser r)
+   # r.destroy
+    #unless members.include? (r)
+    #return false
+    #else
+    #members.delete(r)
+    #return true
+  #end
 
   # POST /groups
   # POST /groups.json
@@ -78,23 +78,23 @@ class GroupsController < ApplicationController
   # Returns nothing
   # Time complexity: O(1)
   # Author: Mohamed Bahgat Elrakaiby
-  def create_status(Status status)
-    Status.create(group_id: @group_id, status: status)
-  end
+  #def create_status(Status status)
+   # Status.create(group_id: @group_id, status: status)
+  #end
 
   # This is a function that views members of the group
   # Returns nothing
   # Time Complexity: O(n).
   # Author: Mohamed Bahgat Elrakaiby
-  def view_members()
-    a = []
-          GroupMember.all.each {|r|
-            if r.group_id == @group.id
-              a.push(r.username)
-            end
-          }
-    puts a
-  end
+  #def view_members()
+   # a = []
+    #      GroupMember.all.each {|r|
+     #       if r.group_id == @group.id
+      #        a.push(r.username)
+       #     end
+        #  }
+#    puts a
+ # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -113,41 +113,41 @@ class GroupsController < ApplicationController
     # This is a function that adds a member to the group by his name.
     # Time complexity: O(1).
     # Authors: Mohammed T. Nabih.
-    def add_member_name(name)
+  #  def add_member_name(name)
 
-    end
+   # end
 
     # This is a function that adds a member to the group by his email.
     # Doesn't return anything.
     # Time complexity: O(n).
     # Authors: Mohammed T. Nabih.
-    def add_member_email(email)
+#    def add_member_email(email)
 
-    end
+ #   end
 
     # This is a function that adds a member to the group by his phone number.
     # Doesn't return anything.
     # Time complexity: O(n).
     # Authors: Mohammed T. Nabih.
-    def add_member_phone(phone)
+  #  def add_member_phone(phone)
 
-    end
+   # end
 
     # This is a function that allows members in the group to accept the join requests from other users.
     # Doesn't return anything.
     # Time complexity: O(1).
     # Authors: Mohammed T. Nabih.
-    def accept_invitation
+    #def accept_invitation
     
-    end
+    #end
       
     # This is a function that allows the user to send request to a group.
     # Doesn't return anything.
     # Time complexity: O(1).
     #Authors: Mohammed T. Nabih.
-    def join_request
+    #def join_request
     
-    end
+    #end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_group
