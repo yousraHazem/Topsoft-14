@@ -10,7 +10,6 @@ class RegisteredUser < ActiveRecord::Base
     validates :first_name, presence: true, length: { maximum: 256 }
     validates :middle_name, presence: true, length: { maximum: 256 }
     validates :family_name, presence: true, length: { maximum: 256 }
-    validates :nickname, presence: true, length: { minimum: 4, maximum: 512 }
     validates :birth_date, presence: true
     validates :gender, presence: true
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, 
