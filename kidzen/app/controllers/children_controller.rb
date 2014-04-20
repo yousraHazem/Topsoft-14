@@ -5,6 +5,19 @@ class ChildrenController < ApplicationController
   # GET /children/1
   # GET /children/1.json
   def show
+    if signed_in?
+      # Is user a supervisor?
+      @user = Child.find_by(registered_user_id: current_user.id)
+      if @user
+        # Render view
+      else
+        # Must be a supervisor.
+        redirect_to controller: :supervisors, action: :show
+      end
+    else
+      # No one signed in
+      redirect_to session_path :new
+    end
   end
 
   # GET /signup
@@ -53,7 +66,7 @@ class ChildrenController < ApplicationController
     registered_user_params[:password] = super_duper_params[:password]
     registered_user_params[:password_confirmation] = super_duper_params[:password_confirmation]
     registered_user_params[:birth_date] = super_duper_params[:birth_date]
-    registered_user_params[:user_name] = super_duper_params[:user_name]
+    registered_user_params[:username] = super_duper_params[:username]
     registered_user_params[:banned] = false
     registered_user_params[:permission] = perms
     Rails.logger.debug("registered_user_params: #{registered_user_params.inspect}")

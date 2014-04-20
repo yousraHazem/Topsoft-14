@@ -21,7 +21,7 @@ class RegisteredUser < ActiveRecord::Base
     validates :gender, presence: true
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, 
     uniqueness: true
-    validates :banned, presence: true
+    validates :banned, inclusion: [true, false]
     validates :password, length: { minimum: 6 }
     validates_associated :permission # Note: Don't use on both ends
     # Associations:

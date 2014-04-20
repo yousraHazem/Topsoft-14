@@ -26,6 +26,7 @@ class SupervisorsController < ApplicationController
       end
     else
       # No one signed in
+      redirect_to session_path :new
     end
   end
   
@@ -69,7 +70,6 @@ class SupervisorsController < ApplicationController
     create_params[:permission] = perms
     Rails.logger.debug("create_params: #{create_params.inspect}")
     @user = RegisteredUser.new(create_params)
-    @user.banned = true
     respond_to do |format|
       if @user.save
         perms.registered_user = @user

@@ -2,38 +2,38 @@
 
 <p>
   <strong>Approved:</strong>
-  <%= @child.approved %>
+  <%= @user.approved %>
 </p>
 
 <p>
   <strong>Guardian email:</strong>
-  <%= @child.guardian_email %>
+  <%= @user.guardian_email %>
 </p>
 
 <p>
   <strong>User name:</strong>
-  <%= @child.user_name %>
+  <%= @user.user_name %>
 </p>
 
 <p>
   <strong>Password:</strong>
-  <%= @child.password %>
+  <%= @user.password %>
 </p>
 
 <p>
   <strong>First name:</strong>
-  <%= @child.first_name %>
+  <%= @user.first_name %>
 </p>
 
 <p>
   <strong>Birth of date:</strong>
-  <%= @child.birth_of_date %>
+  <%= @user.birth_of_date %>
 </p>
 
 <p>
   <strong>Gender:</strong>
-  <%= @child.gender %>
+  <%= @user.gender %>
 </p>
 
-<%= link_to 'Edit', edit_child_path(@child) %> |
+<%= link_to 'Edit', edit_child_path(@user) %> |
 <%= link_to 'Back', children_path %>
