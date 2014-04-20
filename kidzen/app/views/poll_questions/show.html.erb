@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @poll_question.content %>
+</p>
+
+<%= link_to 'Edit', edit_poll_question_path(@poll_question) %> |
+<%= link_to 'Back', poll_questions_path %>
