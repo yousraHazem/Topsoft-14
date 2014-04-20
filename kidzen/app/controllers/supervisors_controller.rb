@@ -54,6 +54,7 @@ class SupervisorsController < ApplicationController
       if @user.save
         supervisor = Supervisor.create(registered_user_id: @registered_user.id)
         format.json { render json: {status: "ok"} }
+        format.html { redirect_to action: :profile }
       else
         perms.delete
         format.json { render json: @registered_user.errors.full_messages }

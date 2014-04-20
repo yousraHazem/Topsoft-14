@@ -14,20 +14,27 @@
 </head>
 <body>
   <div class="locale_button">
-  <div class="round_button">
-  <%= link_to "Arabic", change_locale_path(locale: :ar), class: "round_inner" %>
-  </div>
-  <div class="round_button">
-  <%= link_to "English", change_locale_path(locale: :en), class: "round_inner" %>
-  </div>
+    <div class="round_button">
+      <%= link_to "Arabic", change_locale_path(locale: :ar), class: "round_inner" %>
+    </div>
+    <div class="round_button">
+      <%= link_to "English", change_locale_path(locale: :en), class: "round_inner" %>
+    </div>
   </div>
   <br/>
+  <div id="alert_container">
+      <% flash.each do |key, value| %>
+        <div class="flash flash-<%= key %>">
+          <%= value %>
+        </div>
+      <% end %>      
+  </div>
   <%= yield %>
-  <br/>
   <div id="left_panel">
     <div id="notifications_container">
     <% # To be filled by load_pending_notifications %>
     </div>
   </div>
+  <%= debug(params) if Rails.env.development? %>
 </body>
 </html>
