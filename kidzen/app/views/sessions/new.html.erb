@@ -1,0 +1,33 @@
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag("signin_forms.css") %>
+<% end %>
+<div class="signin">
+  <%= form_for :session, url: sessions_path do | f | %>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Log In</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <%= f.label :email, t('email') %>
+          </td>
+          <td>
+            <%= f.text_field :email %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.label :password, t('password') %>
+          </td>
+          <td>
+            <%= f.password_field :password %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <%= f.submit t('login_submit') %>
+  <% end %>
+</div>

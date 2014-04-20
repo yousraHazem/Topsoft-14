@@ -1,26 +1,29 @@
 # Authors: Ammar M. ELWazir, Shary Beshara, Ahmed H. Ismail
 class ChildrenController < ApplicationController
-  before_action :set_child, only: [:show, :edit, :update, :destroy]
-
-  # GET /children
-  # GET /children.json
-  def index
-    @children = Child.all
-  end
 
   # GET /children/1
   # GET /children/1.json
   def show
+    if signed_in?
+      # Is user a supervisor?
+      if Child.exists?(registered_user_id: current_user.id)
+        @user = Child.find_by(registered_user_id: current_user.id)
+        # Render view
+      else
+        # Must be a supervisor.
+        redirect_to controller: :supervisors, action: :show
+      end
+    else
+      # No one signed in
+      redirect_to session_path :new
+    end
   end
 
-  # GET /children/new
-  def new 
-    @child = Child.new
+  # GET /signup
+  def signup 
+    @errors = []
   end
 
-  # GET /children/1/edit
-  def edit
-  end
 
 
   # Adds a new friendship entry.
@@ -48,18 +51,72 @@ class ChildrenController < ApplicationController
   # Sends a verification request to the email supplied.
   # Uses UserMailer to handle the email sending logic.
   # child_params - sign up text feilds
-  # Authors: Ammar M. ElWazir, Shary Beshara 
+  # Authors: Ammar M. ElWazir, Shary Beshara, Ahmed H. Ismail
   def create 
-    @child = Child.new(child_params)
-    UserMailer.account_verification(@child).deliver 
-    respond_to do |format|
-      if @child.save
-        format.html { redirect_to @child, notice: 'Child was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @child }
-        format.html { render action: 'new' }
-        format.json { render json: @child.errors, status: :unprocessable_entity }
+    perms = Permission.child_default
+    perms.save
+    super_duper_params = signup_params
+    registered_user_params = Hash.new
+    # Unpack params for registered_user
+    # TODO: Change to nested params and form
+    registered_user_params[:first_name] = super_duper_params[:first_name]
+    registered_user_params[:middle_name] = super_duper_params[:middle_name]
+    registered_user_params[:family_name] = super_duper_params[:family_name]
+    registered_user_params[:email] = super_duper_params[:email]
+    registered_user_params[:gender] = super_duper_params[:gender]
+    registered_user_params[:password] = super_duper_params[:password]
+    registered_user_params[:password_confirmation] = super_duper_params[:password_confirmation]
+    # Set up Date
+    year = super_duper_params["birth_date(1i)"].to_i
+    month = super_duper_params["birth_date(2i)"].to_i
+    day = super_duper_params["birth_date(3i)"].to_i
+    # Set Date
+    registered_user_params[:birth_date] = Date.new(year, month, day)
+    # More registered user params
+    registered_user_params[:username] = super_duper_params[:username]
+    registered_user_params[:banned] = false
+    registered_user_params[:permission] = perms
+    # Log for debugging
+    Rails.logger.debug("registered_user_params: #{registered_user_params.inspect}")
+    @user = RegisteredUser.new(registered_user_params)
+    respond_to do |format| 
+      if @user.save
+        # registered user fields ok.
+        # Finalize perms
+        perms.registered_user = @user
+        perms.save
+        child_params = Hash.new
+        # Unpack child params
+        child_params[:registered_user_id] = @user.id
+        child_params[:guardian_email] = super_duper_params[:guardian_email]
+        child_params[:is_approved] = false
+        @child = Child.new(child_params)
+        if @child.save
+          sign_in @user # login
+          # Send verification email
+          UserMailer.account_verification(@child).deliver 
+          flash[:success] = "Welcome to kidzen!!"
+          format.html { redirect_to @user }
+        else
+          # failed on child params
+          # Cleanup
+          @user.destroy
+          perms.destroy
+          @errors = @child.errors.full_messages
+          format.json {render json: @errors}
+          format.html { render :signup }
+        end
+      else
+        # Failed on registered user params
+        # clean up
+        perms.destroy
+        format.json { render json: @user.errors.full_messages }
+        @errors = @user.errors.full_messages
+        format.html { render :signup}
       end
+      
     end
+
   end
 
   # PATCH/PUT /children/1
@@ -101,5 +158,9 @@ class ChildrenController < ApplicationController
     # Authors: Ahmed H. Ismail
     def child_params
       params.require(:child).permit(:is_approved, :guardian_email, :registered_user_id)
+    end
+
+    def signup_params
+      params.require(:child).permit(:first_name, :middle_name, :family_name, :gender, "birth_date(1i)", "birth_date(2i)", "birth_date(3i)", :email, :password, :password_confirmation, :username, :guardian_email)
     end
 end
