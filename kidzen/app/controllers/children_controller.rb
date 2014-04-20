@@ -1,14 +1,13 @@
 # Authors: Ammar M. ELWazir, Shary Beshara, Ahmed H. Ismail
 class ChildrenController < ApplicationController
-  before_action :set_child, only: [:show, :edit, :update, :destroy]
 
   # GET /children/1
   # GET /children/1.json
   def show
     if signed_in?
       # Is user a supervisor?
-      @user = Child.find_by(registered_user_id: current_user.id)
-      if @user
+      if Child.exists?(registered_user_id: current_user.id)
+        @user = Child.find_by(registered_user_id: current_user.id)
         # Render view
       else
         # Must be a supervisor.
@@ -65,7 +64,10 @@ class ChildrenController < ApplicationController
     registered_user_params[:gender] = super_duper_params[:gender]
     registered_user_params[:password] = super_duper_params[:password]
     registered_user_params[:password_confirmation] = super_duper_params[:password_confirmation]
-    registered_user_params[:birth_date] = super_duper_params[:birth_date]
+    year = super_duper_params["birth_date(1i)"].to_i
+    month = super_duper_params["birth_date(2i)"].to_i
+    day = super_duper_params["birth_date(3i)"].to_i
+    registered_user_params[:birth_date] = Date.new(year, month, day)
     registered_user_params[:username] = super_duper_params[:username]
     registered_user_params[:banned] = false
     registered_user_params[:permission] = perms
@@ -147,6 +149,6 @@ class ChildrenController < ApplicationController
     end
 
     def signup_params
-      params.require(:child).permit(:first_name, :middle_name, :family_name, :gender, :birth_date, :email, :password, :password_confirmation, :username, :guardian_email)
+      params.require(:child).permit(:first_name, :middle_name, :family_name, :gender, "birth_date(1i)", "birth_date(2i)", "birth_date(3i)", :email, :password, :password_confirmation, :username, :guardian_email)
     end
 end

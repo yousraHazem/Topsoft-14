@@ -9,12 +9,12 @@ class RegisteredUsersController < ApplicationController
     
     else
       # Someone is signed in
-      if Supervisor.find(current_user.id)
+      if Supervisor.exists?( registered_user_id: current_user.id)
         # Supervisor
         redirect_to controller: :supervisors, action: :show
       else 
         # Child
-        redirect_to children_path :show
+        redirect_to controller: :children, action: :show
       end
 
     end

@@ -17,11 +17,11 @@ class SupervisorsController < ApplicationController
   def show
     if signed_in?
       # Is user a supervisor?
-      @user = Supervisor.find(current_user.id)
-      if @user
+      if Supervisor.exists?(registered_user_id: current_user.id)
+        @user = Supervisor.find(current_user.id)
         # Render view
       else
-        # Must be a child.
+         # Must be a child.
         redirect_to child_path :show
       end
     else

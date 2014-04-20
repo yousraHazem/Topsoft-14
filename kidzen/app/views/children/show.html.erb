@@ -2,7 +2,7 @@
 
 <p>
   <strong>Approved:</strong>
-  <%= @user.approved %>
+  <%= @user.approved? %>
 </p>
 
 <p>
@@ -12,28 +12,24 @@
 
 <p>
   <strong>User name:</strong>
-  <%= @user.user_name %>
+  <%= @user.registered_user.username %>
 </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+
 
 <p>
   <strong>First name:</strong>
-  <%= @user.first_name %>
+  <%= @user.registered_user.first_name %>
 </p>
 
 <p>
   <strong>Birth of date:</strong>
-  <%= @user.birth_of_date %>
+  <%= @user.registered_user.birth_date %>
 </p>
 
 <p>
   <strong>Gender:</strong>
-  <%= @user.gender %>
+  <%= @user.registered_user.gender %>
 </p>
 
-<%= link_to 'Edit', edit_child_path(@user) %> |
-<%= link_to 'Back', children_path %>
+
