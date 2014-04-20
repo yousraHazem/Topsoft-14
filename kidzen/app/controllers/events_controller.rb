@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     # Time Complexity : O(1)
     #Author : Nouran Mamdouh
   def invite_friend_to_an_event
-    Event_invitations.create(:inviter=>current_user.id,:invited=>params[friend_id])
+    Event_invitations.create(:inviter=>current_user.id,:invited=>params[friend_id],:event=>@event_id)
   end
 
   # GET /events
@@ -35,7 +35,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
+    @event_id=@event.id
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
