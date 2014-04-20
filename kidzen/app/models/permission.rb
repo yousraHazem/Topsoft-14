@@ -8,6 +8,17 @@ class Permission < ActiveRecord::Base
   after_initialize  :hash_default
   after_create :hash_default
 
+  # Returns default permissions
+  # for supervisors
+  # Authors: Ahmed H. Ismail
+  def self.supervisor_default
+    perm_hash = Hash.new
+    perm_hash[:account_creation] = true
+    perm_hash[:supervisor] = true
+    perm_hash[:child] = false
+    Permission.new(abilities: perm_hash)
+  end
+
   def hash_default
     self[:abilities].default = false
   end
