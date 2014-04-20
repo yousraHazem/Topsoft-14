@@ -40,12 +40,12 @@
   <br/>
   <div id="bottom_container" >
     <div id="footer">
-      <div class="round_button">
-      <%= link_to "Sign out", signout_path, method: "delete", class: "round_inner" %>
-      </div>
-      <div class = "round_button">
-      <%= link_to "Profile", current_user, class: "round_inner" %>
-      </div>
+        <div class="round_button">
+        <%= link_to "Sign out", signout_path, method: "delete", class: "round_inner" %>
+        </div>
+        <div class = "round_button">
+        <%= link_to "Profile", current_user, class: "round_inner" %>
+        </div>
       <%= debug(params) if Rails.env.development? %>
     </div>
   </div>

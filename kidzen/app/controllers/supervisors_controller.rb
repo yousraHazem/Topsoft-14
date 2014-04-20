@@ -16,6 +16,7 @@ class SupervisorsController < ApplicationController
         # Child can't access this page
         flash[:failure] = "This isn't the page you are looking for.."
         redirect_to child_path :show
+      end
     else
       flash[:failure] = "You have to be signed in"
       redirect_to session_path :new
