@@ -76,16 +76,6 @@ class SupervisorsController < ApplicationController
 
   private
 
-    # Sets supervisor instance var to 
-    # the currently logged in supervisor or nil
-    # if none.
-    # Authors: Ahmed H. Ismail
-    def set_supervisor
-      logged_in_user = current_registered_user # Of type Registered user
-      @supervisor = Supervisor.find(logged_in_user.id) if !logged_in_user.nil?
-    end
-
-
     # Safety first.
     # Authors Ahmed H. Ismail
     def signup_params
