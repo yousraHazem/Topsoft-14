@@ -10,8 +10,8 @@ Kidzen::Application.routes.draw do
 
   # Children notification actions
   get "/supervisors/dashboard", to: 'supervisors#show'
-  put "/supervisor/accept_child", to: 'supervisors#accept_child'
-  put "/supervisor/reject_child", to: 'supervisors#reject_child'
+  put "/supervisors/accept_child", to: 'supervisors#accept_child'
+  put "/supervisors/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  

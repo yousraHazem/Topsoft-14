@@ -69,16 +69,16 @@ class SupervisorsController < ApplicationController
     create_params[:permission] = perms
     Rails.logger.debug("create_params: #{create_params.inspect}")
     @user = RegisteredUser.new(create_params)
-    @user.unban
+    @user.banned = true
     respond_to do |format|
       if @user.save
-        params.registered_user = @user
-        params.save
-        @supervisor = Supervisor.create(registered_user_id: @registered_user.id)
+        perms.registered_user = @user
+        perms.save
+        @supervisor = Supervisor.create(registered_user_id: @user.id)
         sign_in @user
         format.json { render json: {status: "ok"} }
         flash[:success] = "Welcome to kidzen!!"
-        format.html { redirect_to @supervisor }
+        format.html { redirect_to @user }
       else
         perms.destroy
         format.json { render json: @registered_user.errors.full_messages }
