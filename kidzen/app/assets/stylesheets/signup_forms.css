@@ -67,3 +67,23 @@
   background-image: linear-gradient(to top, #08C, #05C);
   box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.5);          
 }  
+
+#error_explanation {
+  color: #cc0000;
+  font-family: Cursive;
+}
+#error_explanation .alert {
+  border-radius:10px;
+  font-weight:bold;
+  text-transform:uppercase;
+  color:#555;
+  width: 80%;
+  padding:10px 10px 10px 36px;
+  margin: auto;
+  font-size: 1em;
+  background: #ffecec url('error.png') no-repeat 10px 50%;
+  border:1px solid #f5aca6;
+}
+.signup ul {
+  list-style: none;
+}

@@ -47,16 +47,16 @@ class SupervisorsController < ApplicationController
   def create
     perms = Permission.supervisor_default
     perms.save
-    registered_user = RegisteredUser.new(signup_params)
-    registered_user.permission = perms
-    registered_user.banned = false
+    @user = RegisteredUser.new(signup_params)
+    @user.permission = perms
+    @user.banned = false
     respond_to do |format|
-      if registered_user.save
-        supervisor = Supervisor.create(registered_user_id: registered_user.id)
+      if @user.save
+        supervisor = Supervisor.create(registered_user_id: @registered_user.id)
         format.json { render json: {status: "ok"} }
       else
         perms.delete
-        format.json { render json: registered_user.errors.messages }
+        format.json { render json: @registered_user.errors.full_messages }
         format.html { render :signup}
       end
     end

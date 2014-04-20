@@ -5,7 +5,7 @@
 <div class="signup">
 <h3>Create Parent Account</h3>
 <%= form_for @user, url: {controller: :supervisors, action: :create, method: :post} do |f|  %>
-  
+  <%= render 'shared/signup_error_messages' %>
     <table>
         <thead>
         <tr>
