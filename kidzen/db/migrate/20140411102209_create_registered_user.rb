@@ -12,8 +12,10 @@ class CreateRegisteredUser < ActiveRecord::Migration
       t.timestamps
       t.string :email
       t.string :password_digest
+      t.string :remember_token
     end
-    add_index :registered_users, :email,                unique: true
+    add_index :registered_users, :email, unique: true
+    add_index :registered_users, :remember_token
   end
 
 end

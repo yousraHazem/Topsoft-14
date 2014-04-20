@@ -4,6 +4,13 @@
 class RegisteredUser < ActiveRecord::Base
   private
     VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
+
+    # Creates the token.
+    # Authors: Ahmed H. Ismail
+    def create_remember_token
+      self.remember_token = RegisteredUser.digest(RegisteredUser.new_remember_token)
+    end
+
   public
     # Validations: 
     validates :username, presence: true, length: { minimum: 4 }, uniqueness: true
@@ -21,6 +28,7 @@ class RegisteredUser < ActiveRecord::Base
     has_one :permission, dependent: :destroy
     after_initialize  :cap_names
     after_create :cap_names
+    before_create :create_remember_token
     has_many :notifications, foreign_key: 'assigned_to', primary_key: 'username'
     has_secure_password
 
@@ -106,6 +114,20 @@ class RegisteredUser < ActiveRecord::Base
     # Authors: Ahmed H. Ismail
     def pending_notifications
       Notification.where(assigned_to: username, pending: true )
+    end
+
+
+
+    # Generates a random token
+    # Authors: Ahmed H. Ismail
+    def self.new_remember_token
+       SecureRandom.urlsafe_base64
+    end
+
+    # Passes token through one way hash
+    # Authors: Ahmed H. Ismail
+    def User.digest(token)
+      Digest::SHA1.hexdigest(token.to_s)
     end
 
 end

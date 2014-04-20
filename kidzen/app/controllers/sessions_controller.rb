@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       # Sign in user
     else
       # Display error page and redirect
-      flash[:signin_error] = 'Invalid email/password'
+      flash.now[:signin_error] = 'Invalid email/password'
       render :new
     end
     
