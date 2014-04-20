@@ -57,6 +57,8 @@ class ChildrenController < ApplicationController
     perms.save
     super_duper_params = signup_params
     registered_user_params = Hash.new
+    # Unpack params for registered_user
+    # TODO: Change to nested params and form
     registered_user_params[:first_name] = super_duper_params[:first_name]
     registered_user_params[:middle_name] = super_duper_params[:middle_name]
     registered_user_params[:family_name] = super_duper_params[:family_name]
@@ -64,20 +66,27 @@ class ChildrenController < ApplicationController
     registered_user_params[:gender] = super_duper_params[:gender]
     registered_user_params[:password] = super_duper_params[:password]
     registered_user_params[:password_confirmation] = super_duper_params[:password_confirmation]
+    # Set up Date
     year = super_duper_params["birth_date(1i)"].to_i
     month = super_duper_params["birth_date(2i)"].to_i
     day = super_duper_params["birth_date(3i)"].to_i
+    # Set Date
     registered_user_params[:birth_date] = Date.new(year, month, day)
+    # More registered user params
     registered_user_params[:username] = super_duper_params[:username]
     registered_user_params[:banned] = false
     registered_user_params[:permission] = perms
+    # Log for debugging
     Rails.logger.debug("registered_user_params: #{registered_user_params.inspect}")
     @user = RegisteredUser.new(registered_user_params)
     respond_to do |format| 
       if @user.save
+        # registered user fields ok.
+        # Finalize perms
         perms.registered_user = @user
         perms.save
         child_params = Hash.new
+        # Unpack child params
         child_params[:registered_user_id] = @user.id
         child_params[:guardian_email] = super_duper_params[:guardian_email]
         child_params[:is_approved] = false
@@ -90,13 +99,16 @@ class ChildrenController < ApplicationController
           format.html { redirect_to @user }
         else
           # failed on child params
+          # Cleanup
           @user.destroy
-          @perms.destroy
-          @errors = @user.errors.full_messages
+          perms.destroy
+          @errors = @child.errors.full_messages
           format.json {render json: @errors}
           format.html { render :signup }
         end
       else
+        # Failed on registered user params
+        # clean up
         perms.destroy
         format.json { render json: @user.errors.full_messages }
         @errors = @user.errors.full_messages
