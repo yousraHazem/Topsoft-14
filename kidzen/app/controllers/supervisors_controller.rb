@@ -15,7 +15,18 @@ class SupervisorsController < ApplicationController
   # GET /supervisors/dashboard
   # Renders the supervisor's homepage
   def show
-
+    if signed_in?
+      # Is user a supervisor?
+      @user = Supervisor.find(current_user.id)
+      if @user
+        # Render view
+      else
+        # Must be a child.
+        redirect_to child_path :show
+      end
+    else
+      # No one signed in
+    end
   end
   
   # PUT /supervisor/reject_child
