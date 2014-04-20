@@ -30,6 +30,7 @@
   /* Cancel selection, when clicking multiple times in rapid succession */
   -moz-user-select: none; 
   -webkit-user-select: none; 
+  
 }
 
 .round_button:before {  
@@ -67,6 +68,7 @@
   text-decoration: none; 
   color: black;
   display: block;
+
 }
 
 
