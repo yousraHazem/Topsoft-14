@@ -1,7 +1,8 @@
 Kidzen::Application.routes.draw do
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
-
+  resources :poll_questions
+  root 'poll_questions#index'
   resources :groups
   resources :children
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]

@@ -75,7 +75,7 @@ class PollQuestionsController < ApplicationController
     end
 
     def poll_question_params
-      params.require(:poll_question).permit(:content, :open_close, poll_answers_attributes: [:content, :_destroy]) 
+      params.require(:poll_question).permit(:content, poll_answers_attributes: [:content, :_destroy]) 
     end
 
 end
