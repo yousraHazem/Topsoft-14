@@ -73,6 +73,7 @@ class SupervisorsController < ApplicationController
     respond_to do |format|
       if @user.save
         params.registered_user = @user
+        params.save
         @supervisor = Supervisor.create(registered_user_id: @registered_user.id)
         sign_in @user
         format.json { render json: {status: "ok"} }
