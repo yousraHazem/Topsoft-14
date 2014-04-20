@@ -41,14 +41,14 @@ class RegisteredUser < ActiveRecord::Base
     # Checks if female
     # Authors: Ahmed H. Ismail    
     def female?
-      gender.lowercase == "female"
+      gender.downcase == "female"
     end
 
 
     # Checks if male
     # Authors: Ahmed H. Ismail
     def male?
-      gender.lowercase == "male"
+      gender.downcase == "male"
     end
 
     # # Am I a child?

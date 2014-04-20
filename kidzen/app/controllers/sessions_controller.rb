@@ -12,6 +12,15 @@ class SessionsController < ApplicationController
   # Creates a new session
   # Authors: Ahmed H. Ismail
   def create
+    user = RegisteredUser.find_by(email: params[:session][:email].downcase )
+    if user and user.authenticate(params[:session][:password])
+      # Sign in user
+    else
+      # Display error page and redirect
+      flash[:signin_error] = 'Invalid email/password'
+      render :new
+    end
+    
   end
 
   # DELETE /signout
