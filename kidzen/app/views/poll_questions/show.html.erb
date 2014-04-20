@@ -6,8 +6,7 @@
 </p>
 
 
-<!-- listing all the answers for the question with radiobuttons -->
-<%= form_tag({ :controller => "poll_questions", :action => "calc", :poll_answer => @poll} ) do %>
+
   <ol>
     <% for poll_answer in @poll_question.poll_answers %>
       <li>
@@ -18,8 +17,7 @@
       </li>
     <% end %>
   </ol>
-<%= submit_tag "Submit" %>
-<% end %>
+
 
 
 

@@ -1,4 +1,7 @@
 Kidzen::Application.routes.draw do
+  resources :poll_questions
+  root 'poll_questions#index'
+  post 'calc' => 'poll_questions#calc', as: :calc
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
 
