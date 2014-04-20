@@ -90,6 +90,12 @@ class RegisteredUser < ActiveRecord::Base
     # TODO: Implement
     # Authors: Ahmed H. Ismail
     def ban
+        self[:banned] = true
+    end
+
+    
+    def unban
+        self[:banned] = false
     end
 
     # Queues a notification as pending for this user.
