@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   #this method invite a friend to an events 
-    #Parameters : invited friend id
+    #Parameters : child id , invited friend id and event id
     #Returns : None
     #Approach : invite friend to an event
     # Time Complexity : O(1)
