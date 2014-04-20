@@ -15,6 +15,7 @@ class PollQuestionsController < ApplicationController
   # GET /poll_questions/new
   def new
     @poll_question = PollQuestion.new
+    #creating a defult new answer
     @poll_question.poll_answers.build
   end
 
