@@ -35,7 +35,7 @@ function collapse (element) {
 }
 
 /* Next Section is for Notification workers */
-var notification_worker = new Worker('notification_worker.js'); // Notification Worker
+var notification_worker = new Worker("http://"+ location.host + '/' + 'notification_worker.js'); // Notification Worker
 notification_worker.postMessage("start");
 /********************************************************************
  * Called when the notifications update web worker sends a message. *
