@@ -37,6 +37,9 @@ end
 
 gem 'bcrypt', '~> 3.1.7'
 
+#use simple_form gem to create group creation form
+gem 'simple_form'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
