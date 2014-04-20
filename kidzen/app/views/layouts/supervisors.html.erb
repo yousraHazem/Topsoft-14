@@ -35,6 +35,10 @@
     <% # To be filled by load_pending_notifications %>
     </div>
   </div>
+  <div style="text-align: center;">
+    <%= link_to "Sign out", signout_path, method: "delete" %>
+    <%= link_to "Profile", current_user %>
+  </div>
   <%= debug(params) if Rails.env.development? %>
 </body>
 </html>

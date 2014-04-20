@@ -2,9 +2,8 @@
   <%= stylesheet_link_tag("signup_forms.css") %>
 <% end %>
 <div class="signup">
-<h3>Create Parent Account</h3>
-<%= form_for @user, url: {controller: :supervisors, action: :create, method: :post} do |f|  %>
-  <%= render 'shared/signup_error_messages' %>
+<h3>Create Child Account</h3>
+<%= form_for :child, url: {controller: :children, action: :create, method: :post} do |f|  %>
     <table>
         <thead>
         <tr>
@@ -47,10 +46,19 @@
     <tr>
         <td>
             <%= f.label :gender, t('gender') %>
-            </td>
+        </td>
         <td>
             <%= f.select :gender, [ ["Female", "female"], ["Male", "male"] ] %>
         </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= f.label :guardian_email %>
+      </td>
+      <td>
+        <%= f.text_field :guardian_email  %>
+      </td>
     </tr>
     </tbody>
     </table>

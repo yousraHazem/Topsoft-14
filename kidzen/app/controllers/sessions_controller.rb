@@ -29,9 +29,11 @@ class SessionsController < ApplicationController
   # Logs out a user
   # Authors: Ahmed H. Ismail
   def destroy
-    sign_out
+    if signed_in?
+      sign_out
+    end
     # TODO: Change this to home page/default for guests
-    redirect_to :new
+    redirect_to session_path :new
   end
 
 end

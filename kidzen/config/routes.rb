@@ -20,6 +20,11 @@ Kidzen::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
+  get '/signout', to: 'sessions#destroy'
+
+  # Children Signup paths
+  get '/signup', to: 'children#signup'
+  post '/children/create', to: 'children#create'
 
   resources :groups
   resources :children
@@ -30,11 +35,8 @@ Kidzen::Application.routes.draw do
   resources :events
   resources :polls
   resources :surveys
-  resources :child
   resources :groups
-  get "child/verify"
-  post "child/new"
-  
+
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
 

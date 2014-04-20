@@ -2,25 +2,16 @@
 class ChildrenController < ApplicationController
   before_action :set_child, only: [:show, :edit, :update, :destroy]
 
-  # GET /children
-  # GET /children.json
-  def index
-    @children = Child.all
-  end
-
   # GET /children/1
   # GET /children/1.json
   def show
   end
 
-  # GET /children/new
-  def new 
-    @child = Child.new
+  # GET /signup
+  def signup 
+    
   end
 
-  # GET /children/1/edit
-  def edit
-  end
 
 
   # Adds a new friendship entry.
@@ -48,7 +39,7 @@ class ChildrenController < ApplicationController
   # Sends a verification request to the email supplied.
   # Uses UserMailer to handle the email sending logic.
   # child_params - sign up text feilds
-  # Authors: Ammar M. ElWazir, Shary Beshara 
+  # Authors: Ammar M. ElWazir, Shary Beshara, Ahmed H. Ismail
   def create 
     @child = Child.new(child_params)
     UserMailer.account_verification(@child).deliver 
