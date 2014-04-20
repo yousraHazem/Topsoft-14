@@ -19,10 +19,10 @@
   border: 1px solid #aaa;  
   bottom: -8px;  
   content: '';  
-  height: 120%;  
+  height: 100%;  
   left: 2px;  
   position: absolute;  
-  width: 105%;  
+  width: 80%;  
   z-index: -10;    
   box-shadow: 0 0 3px rgba(0,0,0,.2);   
   border-radius: 3px;  
@@ -32,8 +32,8 @@
 .signin:before {  
   bottom: -14px;  
   left: 5px;
-  height: 120%;  
-  width: 105%;  
+  height: 100%;  
+  width: 80%;  
   border-radius: 3px;  
   box-shadow: 0 0 15px rgba(0,0,0,0.5);  
 }  
