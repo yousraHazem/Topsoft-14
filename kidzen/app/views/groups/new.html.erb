@@ -1,5 +1,21 @@
-<h1>New group</h1>
+<h1>Create Group Form</h1>
 
-<%= render 'form' %>
+<%= simple_form_for :group , url: groups_path do |f| %>
+
+  <%=f.input :owner, required: true, label: 'Owner Username:  ' %><br>
+  <%=f.input :group_name, required: true, label: 'Group name : ' %><br>
+  <%=f.input :group_description, label: 'About the group : '%>
+
+  <h3>Set Privacy :</h3>
+  <!--<%=f.input :privacy, as: :radio_buttons %>-->
+  <%= radio_button_tag(:privacy , "Private") %>
+  <%= label_tag(:privacy_private ,"Private Group, Only by invitation") %>
+  <br>
+  <%= radio_button_tag(:privacy , "Public")%>
+  <%= label_tag(:privacy_public , "Public Group, Visible to all")%>
+  <br><br>
+  <%= f.button :submit %>
+  
+<% end %>
 
 <%= link_to 'Back', groups_path %>
