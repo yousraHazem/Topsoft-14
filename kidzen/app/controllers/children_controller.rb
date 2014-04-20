@@ -9,7 +9,7 @@ class ChildrenController < ApplicationController
 
   # GET /signup
   def signup 
-    
+    @errors = []
   end
 
 
@@ -41,16 +41,55 @@ class ChildrenController < ApplicationController
   # child_params - sign up text feilds
   # Authors: Ammar M. ElWazir, Shary Beshara, Ahmed H. Ismail
   def create 
-    @child = Child.new(child_params)
-    UserMailer.account_verification(@child).deliver 
-    respond_to do |format|
-      if @child.save
-        format.html { redirect_to @child, notice: 'Child was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @child }
-        format.html { render action: 'new' }
-        format.json { render json: @child.errors, status: :unprocessable_entity }
+    perms = Permission.child_default
+    perms.save
+    super_duper_params = signup_params
+    registered_user_params = Hash.new
+    registered_user_params[:first_name] = super_duper_params[:first_name]
+    registered_user_params[:middle_name] = super_duper_params[:middle_name]
+    registered_user_params[:family_name] = super_duper_params[:family_name]
+    registered_user_params[:email] = super_duper_params[:email]
+    registered_user_params[:gender] = super_duper_params[:gender]
+    registered_user_params[:password] = super_duper_params[:password]
+    registered_user_params[:password_confirmation] = super_duper_params[:password_confirmation]
+    registered_user_params[:birth_date] = super_duper_params[:birth_date]
+    registered_user_params[:user_name] = super_duper_params[:user_name]
+    registered_user_params[:banned] = false
+    registered_user_params[:permission] = perms
+    Rails.logger.debug("registered_user_params: #{registered_user_params.inspect}")
+    @user = RegisteredUser.new(registered_user_params)
+    respond_to do |format| 
+      if @user.save
+        perms.registered_user = @user
+        perms.save
+        child_params = Hash.new
+        child_params[:registered_user_id] = @user.id
+        child_params[:guardian_email] = super_duper_params[:guardian_email]
+        child_params[:is_approved] = false
+        @child = Child.new(child_params)
+        if @child.save
+          sign_in @user # login
+          # Send verification email
+          UserMailer.account_verification(@child).deliver 
+          flash[:success] = "Welcome to kidzen!!"
+          format.html { redirect_to @user }
+        else
+          # failed on child params
+          @user.destroy
+          @perms.destroy
+          @errors = @user.errors.full_messages
+          format.json {render json: @errors}
+          format.html { render :signup }
+        end
+      else
+        perms.destroy
+        format.json { render json: @user.errors.full_messages }
+        @errors = @user.errors.full_messages
+        format.html { render :signup}
       end
+      
     end
+
   end
 
   # PATCH/PUT /children/1
@@ -92,5 +131,9 @@ class ChildrenController < ApplicationController
     # Authors: Ahmed H. Ismail
     def child_params
       params.require(:child).permit(:is_approved, :guardian_email, :registered_user_id)
+    end
+
+    def signup_params
+      params.require(:child).permit(:first_name, :middle_name, :family_name, :gender, :birth_date, :email, :password, :password_confirmation, :username, :guardian_email)
     end
 end
