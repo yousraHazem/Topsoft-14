@@ -2,14 +2,21 @@ Kidzen::Application.routes.draw do
 
   # Lists pending notifications
   get "/notifications/pending", to: 'notifications#pending'
+
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'
+
   # Children notification actions
   put "/supervisor/accept_child", to: 'supervisors#accept_child'
   put "/supervisor/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
+
+  # Session routes
+  resources :sessions, only: [:new, :create, :destroy]
+  get '/signin', to: 'sessions#new'
+  delete '/signout', to: 'sessions#destroy'
 
   resources :groups
   resources :children
