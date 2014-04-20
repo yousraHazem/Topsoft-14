@@ -1,3 +1,9 @@
+<% if @notifications.empty? %>
+
+  <p id="no_notifications">No new notifications<p>
+
+<% end %>
+
 <% @notifications.each do |notification| %>
 
   <div onclick="collapse(this)" class="collapsable_container" id="<%= notification.id %>" >

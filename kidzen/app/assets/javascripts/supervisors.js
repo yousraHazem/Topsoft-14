@@ -42,6 +42,8 @@ notification_worker.postMessage("start");
  * Should update #notifications_container with new data.            *
  * Authors: Ahmed H. Ismail.                                        *
  ********************************************************************/
+
+
 notification_worker.onmessage = function(message) {
-  document.getElementByid('notifications_container').innerHTML = message.data;
+  document.getElementById('notifications_container').innerHTML = message.data;
 }
