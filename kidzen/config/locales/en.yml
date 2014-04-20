@@ -36,4 +36,4 @@ en:
   password_confirmation: "confirm password"
   child_q: "Are you a child?!"
   create_account_submit: "Create!"
-
+  login_submit: 'Login!'

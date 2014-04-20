@@ -15,3 +15,4 @@ ar:
   password_confirmation: "الرجاء اعادة ادخال كلمة السر"
   child_q: "هل انت\\انتى طفل\\طفلة"
   create_account_submit: "تسجيل ملف!"
+  login_submit: "تسجيل الدخول"
