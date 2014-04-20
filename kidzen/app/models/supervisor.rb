@@ -1,7 +1,7 @@
 # Supervisor model.
 # Authors: Ahmed H. Ismail
 class Supervisor < ActiveRecord::Base
-  has_one :registered_user, dependent: :destroy
+  belongs_to :registered_user, dependent: :destroy
   has_many :children, through: :child_parent
   has_many :supervised_children, through: :child_supervisor, class_name: "Child"
   validates_associated :registered_user
@@ -11,6 +11,9 @@ class Supervisor < ActiveRecord::Base
   # Gets them through the ChildParent relationship.
   # Authors: Ahmed H. Ismail
   def pending_children
+    # Children who set this user as their guardian.
+    children = Child.where(guardian_email: registered_user.email )
+    # Only those that haven't been approved.
     children.select { | c | !c.approved? }
   end
 

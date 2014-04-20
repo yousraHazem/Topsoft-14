@@ -2,14 +2,24 @@
 # Authors: Ahmed H. Ismail
 class SupervisorsController < ApplicationController
   # before_action :set_supervisor, except: [] # set for all
-  wrap_parameters format: [:json], include: [:child_username]
 
   # GET /confirm_children
   # Renders the confirm children
   # view.
   # Authors: Ahmed H. Ismail
   def confirm_children
-    @children = @supervisor.pending_children
+    if signed_in?
+      if Supervisor.exists?(registered_user_id: current_user.id)
+        # set children and render 
+        @children = Supervisor.find(current_user.id).pending_children
+      else
+        # Child can't access this page
+        flash[:failure] = "This isn't the page you are looking for.."
+        redirect_to child_path :show
+    else
+      flash[:failure] = "You have to be signed in"
+      redirect_to session_path :new
+    end
   end
 
   # GET /supervisors/dashboard
@@ -74,7 +84,7 @@ class SupervisorsController < ApplicationController
       if @user.save
         perms.registered_user = @user
         perms.save
-        @supervisor = Supervisor.create(registered_user_id: @user.id)
+        @supervisor = Supervisor.create(registered_user_id: @user.id, registered_user: @user)
         sign_in @user
         format.json { render json: {status: "ok"} }
         flash[:success] = "Welcome to kidzen!!"
