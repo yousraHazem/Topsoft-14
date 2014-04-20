@@ -22,6 +22,7 @@ class ChildrenController < ApplicationController
   # GET /signup
   def signup 
     @errors = []
+    @user = nil
   end
 
 
@@ -42,7 +43,7 @@ class ChildrenController < ApplicationController
   # this child has been approved.
   # Authors: Shary Beshara
   def verify
-    @child.is_approved = true
+    @child_account.is_approved = true
   end 
 
   # POST /children
@@ -90,11 +91,12 @@ class ChildrenController < ApplicationController
         child_params[:registered_user_id] = @user.id
         child_params[:guardian_email] = super_duper_params[:guardian_email]
         child_params[:is_approved] = false
-        @child = Child.new(child_params)
-        if @child.save
+        child_params[:registered_user] = @user
+        @child_account = Child.new(child_params)
+        if @child_account.save
           sign_in @user # login
           # Send verification email
-          UserMailer.account_verification(@child).deliver 
+          UserMailer.account_verification(@child_account).deliver 
           flash[:success] = "Welcome to kidzen!!"
           format.html { redirect_to @user }
         else
@@ -102,7 +104,8 @@ class ChildrenController < ApplicationController
           # Cleanup
           @user.destroy
           perms.destroy
-          @errors = @child.errors.full_messages
+          @errors = @child_account.errors.full_messages
+          @user = nil
           format.json {render json: @errors}
           format.html { render :signup }
         end
@@ -126,12 +129,12 @@ class ChildrenController < ApplicationController
   # Authors: Ammar M. ElWazir
   def update 
     respond_to do |format|
-      if @child.update(child_params)
-        format.html { redirect_to @child, notice: 'Child was successfully updated.' }
+      if @child_account.update(child_params)
+        format.html { redirect_to @child_account, notice: 'Child was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @child.errors, status: :unprocessable_entity }
+        format.json { render json: @child_account.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -141,7 +144,7 @@ class ChildrenController < ApplicationController
   # Delete a child
   # Authors: Ammar M. ElWazir
   def destroy 
-    @child.destroy
+    @child_account.destroy
     respond_to do |format|
       format.html { redirect_to children_url }
       format.json { head :no_content }
@@ -151,7 +154,7 @@ class ChildrenController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_child
-      @child = Child.find(params[:id])
+      @child_account = Child.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,13 +1,15 @@
-<% if @user.nil? %>
+<% if @user.nil?  %>
   <% if ! @errors.empty? %>
-  <div class="alert">
-    The form contains <%= pluralize(@errors.length, "error") %>.
+  <div id="error_explanation">
+    <div class="alert">
+      The form contains <%= pluralize(@errors.length, "error") %>.
+    </div>
+    <ul>
+      <% @errors.each do |msg| %>
+        <li>*<%= msg %></li>
+      <% end %>
+    </ul>
   </div>
-  <ul>
-    <% @errors.each do |msg| %>
-      <li>*<%= msg %></li>
-    <% end %>
-  </ul>
   <% end %>
 <% else %>
   <% if @user.errors.any? %>

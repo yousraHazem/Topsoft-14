@@ -25,7 +25,7 @@ Kidzen::Application.routes.draw do
   # Children Signup paths
   get '/signup', to: 'children#signup'
   post '/children/create', to: 'children#create'
-  get '/chilren/show', to: 'children#show'
+  get '/children/show', to: 'children#show'
   resources :groups
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
   match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
