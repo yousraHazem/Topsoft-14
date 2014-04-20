@@ -1,8 +1,6 @@
 class FriendshipController < ApplicationController
+
  def index
- end
- 
- def find_friends
  end
  
  def view_my_friends
@@ -17,4 +15,5 @@ class FriendshipController < ApplicationController
 
  def accept_reject_friend_request
  end
+
 end
