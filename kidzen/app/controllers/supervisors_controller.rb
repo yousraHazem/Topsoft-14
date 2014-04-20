@@ -57,6 +57,7 @@ class SupervisorsController < ApplicationController
       else
         perms.delete
         format.json { render json: registered_user.errors.messages }
+        format.html { render :signup}
       end
     end
 
@@ -77,7 +78,7 @@ class SupervisorsController < ApplicationController
     # Safety first.
     # Authors Ahmed H. Ismail
     def signup_params
-      params.require(:registed_user).permit(:first_name, :middle_name, :family_name, :gender, :birth_date, :email, :password, :password_confirmation, :username)
+      params.require(:registered_user).permit(:first_name, :middle_name, :family_name, :gender, :birth_date, :email, :password, :password_confirmation, :username)
     end
 
 
