@@ -1,4 +1,9 @@
 ar:
+  date:
+    order:
+    - :day
+    - :month
+    - :year
   hello: "مرحبا"
   search: "بحث"
   kid: "كيد"
