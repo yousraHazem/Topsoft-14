@@ -6,6 +6,7 @@
   <title><%= t('supervisor_layout_title') %></title>
   <meta charset="utf-8">
   <%= stylesheet_link_tag    "supervisors", media: "all", "data-turbolinks-track" => true %>
+  <%= yield :stylesheet_includes %>
   <%= javascript_include_tag "supervisors", "data-turbolinks-track" => true %>
   <%= javascript_include_tag("notification_action.js") %>
   <%= yield :javascript_includes %>
