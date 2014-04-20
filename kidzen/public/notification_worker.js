@@ -31,7 +31,8 @@ onmessage = function (message) {
  ***************************************/
 function fetch_pending_notifications () {
   var xhr = new XMLHttpRequest();
-  url = [location.hostname, 'notifications', 'pending'].join('/');
+  hostname = "http://"+ location.host;
+  url = [hostname, 'notifications', 'pending'].join('/');
   xhr.open('GET', url , false); // do not execute asynchronously
   xhr.send(); // blocks
   if(xhr.status == 200)  {
