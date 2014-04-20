@@ -1,6 +1,16 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  #this method invite a friend to an events 
+    #Parameters : invited friend id
+    #Returns : None
+    #Approach : invite friend to an event
+    # Time Complexity : O(1)
+    #Author : Nouran Mamdouh
+  def invite_friend_to_an_event
+    Event_invitations.create(:inviter=>current_user.id,:invited=>params[friend_id])
+  end
+
   # GET /events
   # GET /events.json
   def index
