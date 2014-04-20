@@ -53,9 +53,10 @@ class SupervisorsController < ApplicationController
   def create
     perms = Permission.supervisor_default
     perms.save
-    @user = RegisteredUser.new(signup_params)
-    @user.banned = false
-    @user.permission = perms
+    create_params = signup_params
+    create_params[:banned] = false
+    create_params[:permission] = perms
+    @user = RegisteredUser.new(create_params)
     respond_to do |format|
       if @user.save
         params.registered_user = @user

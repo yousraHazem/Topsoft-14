@@ -65,17 +65,7 @@ class RegisteredUser < ActiveRecord::Base
     #   is_child
     # end
 
-    # Assigns gender.
-    # Column value is trie if female
-    # gender - symbol one of {female, male}
-    # Authors: Ahmed H. Ismail
-    def gender=(value)
-      if value == :female
-          self[:gender] = true
-      elsif value == :male
-          self[:gender] = false
-      end
-    end
+
     # Assigns first name.
     # name - string input
     # Authors: Ahmed H. Ismail

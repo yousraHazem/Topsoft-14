@@ -3,6 +3,8 @@
 module SessionsHelper
 
   # Signs in a user and stores a cookie on his/her browser.
+  # Only call this from sessions controller
+  # Or after authenticating the password !
   # Authors: Ahmed H. Ismail
   def sign_in(user)
     # Create new token.
