@@ -6,13 +6,9 @@
   <%=f.input :group_name, required: true, label: 'Group name : ' %><br>
   <%=f.input :group_description, label: 'About the group : '%>
 
-  <h3>Set Privacy :</h3>
+  <h6>Set Privacy :</h6>
   <!--<%=f.input :privacy, as: :radio_buttons %>-->
-  <%= radio_button_tag(:privacy , "Private") %>
-  <%= label_tag(:privacy_private ,"Private Group, Only by invitation") %>
-  <br>
-  <%= radio_button_tag(:privacy , "Public")%>
-  <%= label_tag(:privacy_public , "Public Group, Visible to all")%>
+  <%= f.select :privacy, [ ["Private", "private"], ["Public", "public"] ] %>
   <br><br>
   <%= f.button :submit %>
   
