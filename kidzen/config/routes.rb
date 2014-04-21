@@ -15,6 +15,8 @@ Kidzen::Application.routes.draw do
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
+  #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
+  #resources :registered_users
 
   # Session routes
   resources :sessions, only: [:new, :create, :destroy]
@@ -26,7 +28,7 @@ Kidzen::Application.routes.draw do
   get '/signup', to: 'children#signup'
   post '/children/create', to: 'children#create'
   get '/children/show', to: 'children#show'
-  resources :groups
+
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
   match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
   match '/uploadingphoto', :to => 'public#uploading', via: [:get, :post]
@@ -38,6 +40,18 @@ Kidzen::Application.routes.draw do
 
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
+  #resources :children
+  #resources :public, :only => [:upload_photo, :uploading, :remove_photo]
+  #match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
+  #match '/uploadingphoto', :to => 'public#uploading', via: [:get, :post]
+  #match '/removephoto/:id', :to => 'public#remove_photo', via: [:get, :post]
+  #resources :events
+  #resources :polls
+  #resources :surveys
+  #resources :child
+  #resources :groups
+  #get "child/verify"
+  #post "child/new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
