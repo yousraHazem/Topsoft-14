@@ -6,6 +6,7 @@ delegate :content_tag, to: :view
 #Parameters : None
 #Returns : None
 #Complexity : O(1)
+#Author : Abdelrahman Saad
 def table
 content_tag :table, class: "calendar table table-bordered table-striped" do
 header + week_rows
@@ -15,6 +16,7 @@ end
 #Parameters : None
 #Returns : None
 #Complexity : O(1)
+#Author : Abdelrahman Saad
 def header
 content_tag :tr do
 HEADER.map { |day| content_tag :th, day }.join.html_safe
@@ -24,6 +26,7 @@ end
 #Parameters : None
 #Returns : None
 #Complexity : O(1)
+#Author : Abdelrahman Saad
 def week_rows
 weeks.map do |week|
 content_tag :tr do
@@ -35,6 +38,7 @@ end
 #Parameters : day
 #Returns : None
 #Complexity : O(1)
+#Author : Abdelrahman Saad
 def day_cell(day)
 content_tag :td, view.capture(day, &callback), class: day_classes(day)
 end
@@ -42,6 +46,7 @@ end
 #Parameters : day
 #Returns : None
 #Complexity : O(1)
+#Author : Abdelrahman Saad
 def day_classes(day)
 classes = []
 classes << "today" if day == Date.today
@@ -52,6 +57,7 @@ end
 #Parameters : None
 #Returns : None
 #Complexity : O(1)
+#Author : Abdelrahman Saad
  def weeks
 first = date.beginning_of_month.beginning_of_week(START_DAY)
 last = date.end_of_month.end_of_week(START_DAY)
