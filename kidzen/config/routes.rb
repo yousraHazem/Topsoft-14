@@ -40,6 +40,12 @@ Kidzen::Application.routes.draw do
 
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
+
+  #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
+  #resources :registered_users
+
+  resources :groups
+
   #resources :children
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]
   #match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
