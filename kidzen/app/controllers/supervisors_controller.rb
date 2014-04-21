@@ -1,26 +1,16 @@
+
 # Supervisor controller
 # Authors: Ahmed H. Ismail
 class SupervisorsController < ApplicationController
   # before_action :set_supervisor, except: [] # set for all
+  wrap_parameters format: [:json], include: [:child_username]
 
   # GET /confirm_children
   # Renders the confirm children
   # view.
   # Authors: Ahmed H. Ismail
   def confirm_children
-    if signed_in?
-      if Supervisor.exists?(registered_user_id: current_user.id)
-        # set children and render 
-        @children = Supervisor.find(current_user.id).pending_children
-      else
-        # Child can't access this page
-        flash[:failure] = "This isn't the page you are looking for.."
-        redirect_to child_path :show
-      end
-    else
-      flash[:failure] = "You have to be signed in"
-      redirect_to session_path :new
-    end
+    @children = @supervisor.pending_children
   end
 
   # GET /supervisors/dashboard
@@ -85,7 +75,7 @@ class SupervisorsController < ApplicationController
       if @user.save
         perms.registered_user = @user
         perms.save
-        @supervisor = Supervisor.create(registered_user_id: @user.id, registered_user: @user)
+        @supervisor = Supervisor.create(registered_user_id: @user.id)
         sign_in @user
         format.json { render json: {status: "ok"} }
         flash[:success] = "Welcome to kidzen!!"
@@ -107,5 +97,11 @@ class SupervisorsController < ApplicationController
       params.require(:registered_user).permit(:first_name, :middle_name, :family_name, :gender, :birth_date, :email, :password, :password_confirmation, :username)
     end
 
+  # This method gets email and supervisor id from the view and find the corresponding supervisor which it paas them to the user_mailer method
+    def invite
+    @supervisor = Supervisor.find(params[:id])
+    @email = params[:email]
+    UserMailer.invite_others(@email, @supervisor).deliver 
+  end
 
 end

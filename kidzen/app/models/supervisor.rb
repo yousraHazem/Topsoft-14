@@ -48,6 +48,16 @@ class Supervisor < ActiveRecord::Base
       false
     end
   end
+
+  def notify_friend_request(child_1, child_2)
+    notification = Notification.new
+    # Set attributes
+    notification.mark_unread
+    notification.title = "Friend Request #{child_2.full_name}"
+    notification.short_desc = ""
+    notification.long_desc = "#{child_1.full_name} sent a friend request to #{child_2.full_name}"
+
+
   
   # Approves a child
   # Returns true if successfull
