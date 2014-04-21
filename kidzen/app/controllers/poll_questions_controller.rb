@@ -23,9 +23,21 @@ class PollQuestionsController < ApplicationController
   #return non
   #Author : Ahmad Bassiouny
   def new
-    @poll_question = PollQuestion.new
-    #creating a defult new answer
-    @poll_question.poll_answers.build
+    if signed_in?
+      # Is user a supervisor?
+      if Child.exists?(registered_user_id: current_user.id)
+        @user = Child.find_by(registered_user_id: current_user.id)
+        @poll_question = PollQuestion.new
+        #creating a defult new answer
+        @poll_question.poll_answers.build
+      else
+        # Must be a supervisor.
+        redirect_to controller: :supervisors, action: :show
+      end
+    else
+      # No one signed in
+      redirect_to session_path :new
+    end
   end
 
   # GET /poll_questions/1/edit
@@ -40,6 +52,7 @@ class PollQuestionsController < ApplicationController
   #Author : Ahmad Bassiouny
   def create
     @poll_question = PollQuestion.new(poll_question_params)
+  # @poll_question[:user_id] = (registered_user_id: current_user.id)
 
     respond_to do |format|
       if @poll_question.save
@@ -92,13 +105,13 @@ class PollQuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poll_question_params
-      params.require(:poll_question).permit(:content)
+      params.require(:poll_question).permit(:content, :user_id)
     end
 
 
     #strong parameters required for rails 4 
     def poll_question_params
-      params.require(:poll_question).permit(:content, poll_answers_attributes: [:content, :_destroy]) 
+      params.require(:poll_question).permit(:content, :user_id, poll_answers_attributes: [:content, :_destroy]) 
     end
 
 end
