@@ -89,6 +89,13 @@ class SupervisorsController < ApplicationController
 
   end
 
+    # This method gets email and supervisor id from the view and find the corresponding supervisor which it paas them to the user_mailer method
+    def invite
+    @supervisor = Supervisor.find(params[:id])
+    @email = params[:email]
+    UserMailer.invite_others(@email, @supervisor).deliver 
+  end
+
   private
 
     # Safety first.
@@ -96,12 +103,4 @@ class SupervisorsController < ApplicationController
     def signup_params
       params.require(:registered_user).permit(:first_name, :middle_name, :family_name, :gender, :birth_date, :email, :password, :password_confirmation, :username)
     end
-
-  # This method gets email and supervisor id from the view and find the corresponding supervisor which it paas them to the user_mailer method
-    def invite
-    @supervisor = Supervisor.find(params[:id])
-    @email = params[:email]
-    UserMailer.invite_others(@email, @supervisor).deliver 
-  end
-
 end
