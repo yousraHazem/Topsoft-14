@@ -15,6 +15,8 @@ Kidzen::Application.routes.draw do
   resources :groups
   get "child/verify"
   post "child/new"
+  #add Route to view friends
+  #Author : Nouran Mamdouh
   get "event/view_friends"
 
   # The priority is based upon order of creation: first created -> highest priority.
