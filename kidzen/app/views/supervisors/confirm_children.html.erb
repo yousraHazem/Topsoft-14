@@ -17,13 +17,13 @@
         <!-- verify and reject buttons -->
         <div class="verify_reject">
           <!-- verify and reject with username -->
-          <div class="round_button" onclick="verify(<%= child.registered_user.username %>)">
+          <div class="round_button" onclick="verify(<%= "\'#{child.registered_user.username}\'" %>)">
               <p class="round_inner"><%= t('verify_confirm_child') %></p>
           </div>
-          <div class="round_button" onclick="reject(<%= child.registered_user.username %>)">
+          <div class="round_button" onclick="reject(<%= "\'#{child.registered_user.username}\'" %>)">
             <p class="round_inner"><%= t('reject_confirm_child') %></p>
           </div>
         </div>
     </div>
   </div>
-<% end %>
+<% end %> 
