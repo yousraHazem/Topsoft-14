@@ -46,6 +46,10 @@ Kidzen::Application.routes.draw do
 
   resources :groups
 
+  #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
+  #resources :registered_users
+
+  
   #resources :children
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]
   #match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
