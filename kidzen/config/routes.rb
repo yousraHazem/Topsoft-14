@@ -1,4 +1,5 @@
 Kidzen::Application.routes.draw do
+  get "group_members/index"
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
 
