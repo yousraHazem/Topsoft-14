@@ -1,0 +1,17 @@
+<h1>My Friends</h1>
+  <%- #list all child's friends first and last name if exists and providing a link for each in order to invite them to the event else it retruns a message Sorry, You have no Friends -%>
+  <%- #Returns: first and last name of friends -%>
+  <%- #Approach : listing all friends of the child to invite them to the event -%>
+  <%- #Time Complexity : O(n) -%>
+  <%- #Author : Nouran Mamdouh -%>
+<%if @friends.to_a !=[]%>
+<%@friends.to_a.each do |t|%>
+<%s="#{t.first_name} #{t.family_name}"%>
+<%=s%>
+<%= link_to "invite friend" , :controller => "EventsController", :action => 'invite_friend_to_an_event' , :friend_id => t.id %>
+<br/>
+<%end%>
+
+<%else%>
+<p>Sorry,You have no Friends</p>
+<%end%>
