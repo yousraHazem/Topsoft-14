@@ -10,6 +10,15 @@ class EventsController < ApplicationController
   def invite_friend_to_an_event
     Event_invitations.create(:inviter=>current_user.id,:invited=>params[friend_id],:event=>@event_id)
   end
+  #this method to assign variable friends to child's friends
+  #Parameters : None
+  #Returns : None
+  #Approach : view child's friends
+  #Time Complexity : O(1)
+  #Author : Nouran Mamdouh
+  def view_friends
+    @friends = current_user.friends
+  end
 
   # GET /events
   # GET /events.json
@@ -73,7 +82,7 @@ class EventsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_event
+   def set_event
       @event = Event.find(params[:id])
     end
 
