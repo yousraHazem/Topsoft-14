@@ -14,6 +14,7 @@ Kidzen::Application.routes.draw do
   resources :child
   resources :groups
   get "child/verify"
+  get "child/add_daily_activity"
   post "child/new"
 
   # The priority is based upon order of creation: first created -> highest priority.

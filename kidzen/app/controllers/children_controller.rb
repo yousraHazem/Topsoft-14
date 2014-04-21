@@ -1,4 +1,4 @@
-# Authors: Ammar M. ELWazir, Shary Beshara, Ahmed H. Ismail
+# Authors: Ammar M. ELWazir, Shary Beshara, Ahmed H. Ismail, Khaled I. Elhossiny
 class ChildrenController < ApplicationController
   before_action :set_child, only: [:show, :edit, :update, :destroy]
 
@@ -90,6 +90,21 @@ class ChildrenController < ApplicationController
       format.html { redirect_to children_url }
       format.json { head :no_content }
     end
+  end
+  
+  # Adds a new daily activity to the child.
+  # child - the object of the child currently signed in.
+  # daily_act - the daily activity the child wishes to add.
+  # the method then add this daily activity to the child's daily activities.
+  # redirects to controller and action that invoked this action.
+  # Authors: Khaled I. Elhossiny.
+   
+  def add_daily_activity
+  child=Child.where("registered_user_id=#{current_registered_user.id}").first
+  daily_act=DailyActivity.create(:value => params[:value].to_i, :info => params[:info], :name => params[:name])
+  child.daily_activities << daily_act
+  flash[:notice]="Successfully added daily activities"
+  redirect_to(:controller => params[:cont],:action => params[:act])
   end
 
   private
