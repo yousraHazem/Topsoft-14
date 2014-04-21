@@ -5,6 +5,9 @@ class PollQuestionsController < ApplicationController
   # GET /poll_questions.json
 
   #list all questions
+  #Parameters : non
+  #return non
+  #Author : Ahmad Bassiouny
   def index
     @poll_questions = PollQuestion.all
   end
@@ -16,6 +19,9 @@ class PollQuestionsController < ApplicationController
 
   # GET /poll_questions/new
   # create new poll Question and 1 answer
+  #Parameters : non
+  #return non
+  #Author : Ahmad Bassiouny
   def new
     @poll_question = PollQuestion.new
     #creating a defult new answer
@@ -29,6 +35,9 @@ class PollQuestionsController < ApplicationController
   # POST /poll_questions
   # POST /poll_questions.json
   #create poll with the questions and answers given by the user in the _form page
+  #Parameters : non
+  #return : redirect to the show page or the new page
+  #Author : Ahmad Bassiouny
   def create
     @poll_question = PollQuestion.new(poll_question_params)
 
@@ -46,6 +55,9 @@ class PollQuestionsController < ApplicationController
   # PATCH/PUT /poll_questions/1
   # PATCH/PUT /poll_questions/1.json
   # update an exciting poll 
+  #Parameters : non
+  #return : redirect to the show or edit page
+  #Author : Ahmad Bassiouny
   def update
     respond_to do |format|
       if @poll_question.update(poll_question_params)
@@ -61,6 +73,9 @@ class PollQuestionsController < ApplicationController
   # DELETE /poll_questions/1
   # DELETE /poll_questions/1.json
   # delete poll
+  #Parameters : non
+  #return : redirect to index page
+  #Author : Ahmad Bassiouny
   def destroy
     @poll_question.destroy
     respond_to do |format|
