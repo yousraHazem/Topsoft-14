@@ -6,7 +6,12 @@ Description: <%= @video.description %>
 Category: <%= @video.category %>
 <p>
 <p>
-<%= video_tag @video.file_url if @video.file? %>
+<%= video_tag @video.real_file,:controls => true if @video.file? %>
+</p>
+<p>
+  <% if @video.youtube? %>
+	<iframe src="<%= "http://www.youtube.com/embed/"+@video.get_link %>"></iframe>
+	<% end %>
 </p>
   <%= link_to "Edit", edit_video_path(@video) %> |
   <%= link_to "Destroy", @video, :confirm => 'Are you sure?', :method => :delete %> |
