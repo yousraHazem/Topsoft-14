@@ -1,5 +1,14 @@
 class GroupMembersController < ApplicationController
+    
+
+    
+    # This piece of code allows a user to view the members of a group
+    # The members are populated in @group_members to allow the model to generate a list of members
+    # Returns nothing
+    # Time Complexity: O(n).
+    # Author: Mohamed Bahgat Elrakaiby
     def index
+      @group_members = GroupMember.all
     end
 
     # This is a function that allows a user to leave a group
@@ -12,5 +21,4 @@ class GroupMembersController < ApplicationController
       @g = Group.where(:group_id => :group_id)
       redirect_to @g
     end
-
 end 
