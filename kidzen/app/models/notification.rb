@@ -17,7 +17,7 @@ class Notification < ActiveRecord::Base
   # Retrives list of associated actions.
   # Authors: Ahmed H. Ismail
   def actions
-    NotificationActions.where(notification_id: id)
+    notification_actions
   end
 
   # Adds a notification action.
@@ -27,7 +27,6 @@ class Notification < ActiveRecord::Base
   # to the db
   # Authors: Ahmed H. Ismail
   def add_action(params)
-    params[:notification_id] = id
     params[:notification] = self
     NotificationAction.new(params)
   end

@@ -4,9 +4,9 @@ class CreateNotificationActions < ActiveRecord::Migration
       t.string :name
       t.string :url
       t.boolean :async
-      t.integer :notification_id
+      t.belongs_to :notification
       t.timestamps
     end
-    add_index(:notification_actions, :notification_id, unique:  false)
+    add_index(:notification_actions, :notification, unique:  false)
   end
 end
