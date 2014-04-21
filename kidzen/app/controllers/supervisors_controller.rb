@@ -46,26 +46,8 @@ class SupervisorsController < ApplicationController
   # Authors: Ahmed H. Ismail
   def accept_child
     data = params[:child_username]
-    respond_to do |format| 
-      if (!data.nill? ) and signed_in? and Supervisor.exists?(registered_user_id: current_user.id)
-          begin
-          supervisor = Supervisor.find(current_user.id)
-          r_user_child = RegisteredUser.find_by(username: data)
-          child = Child.find_by(registered_user_id: r_user_child.id)
-          supervisor.accept_child(child)
-          msg =  {status: "ok"}
-          format.json { render json: msg }
-          format.html { redirect_to  :confirm_children }
-        rescue
-          msg = {status: "failure"}
-          format.json { render json: msg }
-          format.html { redirect_to  :confirm_children }
-        end
-      else
-        msg = {status: "failure"}
-        format.json { render json: msg }
-        format.html { redirect_to  :confirm_children }
-      end
+    func = lambda { |supervisor, child | supervisor.accept_child(data) }
+    associated_child_apply(func, data, :confirm_children)
   end
 
   # PUT /supervisor/accept_child
@@ -73,26 +55,8 @@ class SupervisorsController < ApplicationController
   # Authors: Ahmed H. Ismail
   def reject_child
     data = params[:child_username]
-    respond_to do |format| 
-      if (!data.nill? ) and signed_in? and Supervisor.exists?(registered_user_id: current_user.id)
-          begin
-          supervisor = Supervisor.find(current_user.id)
-          r_user_child = RegisteredUser.find_by(username: data)
-          child = Child.find_by(registered_user_id: r_user_child.id)
-          supervisor.reject_child(child)
-          msg =  {status: "ok"}
-          format.json { render json: msg }
-          format.html { redirect_to  :confirm_children }
-        rescue
-          msg = {status: "failure"}
-          format.json { render json: msg }
-          format.html { redirect_to  :confirm_children }
-        end
-      else
-        msg = {status: "failure"}
-        format.json { render json: msg }
-        format.html { redirect_to  :confirm_children }
-      end
+    func = lambda { |supervisor, child | supervisor.reject_child(data) }
+    associated_child_apply(func, data, :confirm_children)
   end
 
 
@@ -139,5 +103,34 @@ class SupervisorsController < ApplicationController
       params.require(:registered_user).permit(:first_name, :middle_name, :family_name, :gender, :birth_date, :email, :password, :password_confirmation, :username)
     end
 
+    # Helper function that finds a child by username and calles a function
+    # with the currently signed in supervisor and the child as the params
+    # func - function to call called as func(signed_in_supervisor, child_found_by_username)
+    # child_username - the child's username, read only
+    # fallback_action - symbol of action to redirect to, read only
+    # renders JSON object with status set to ok or failure
+    # redirects to fallback_action if html
+    # Authors: Ahmed H. Ismail
+    def associated_child_apply(func, child_username, fallback_action)
+      respond_to do |format|
+        if (!child_username.nill? ) and signed_in? and Supervisor.exists?(registered_user_id: current_user.id)
+          begin
+            supervisor = Supervisor.find(current_user.id)
+            r_user_child = RegisteredUser.find_by(username: child_username)
+            child = Child.find_by(registered_user_id: r_user_child.id)
+            func(supervisor, child)
+            msg =  {status: "ok"}
+          rescue
+            msg = {status: "failure"}
+          end
+          format.json { render json: msg }
+          format.html { redirect_to  fallback_action }
+        else
+          msg = {status: "failure"}
+          format.json { render json: msg }
+          format.html { redirect_to  fallback_action }
+        end
+      end
+    end
 
 end

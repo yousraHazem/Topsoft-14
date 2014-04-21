@@ -51,6 +51,7 @@ class Supervisor < ActiveRecord::Base
   end
   
   # Approves a child
+  # child - child to accept modified and saved in database
   # Returns true if successfull
   # Returns false if this user can not approve
   # that child. (different guardian)
@@ -63,6 +64,7 @@ class Supervisor < ActiveRecord::Base
   end
 
   # Rejects a child
+  # child - child to reject modified and saved in database
   # Returns true if successfull
   # Returns false if this user is not
   # the guadian of that child.
