@@ -75,6 +75,7 @@ class Supervisor < ActiveRecord::Base
       true 
     else
       false # Not the guardian of this child
+    end
   end
 
 end
