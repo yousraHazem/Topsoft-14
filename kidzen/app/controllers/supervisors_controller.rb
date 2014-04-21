@@ -45,22 +45,54 @@ class SupervisorsController < ApplicationController
   # Accept child action.
   # Authors: Ahmed H. Ismail
   def accept_child
+    data = params[:child_username]
     respond_to do |format| 
-      msg =  {status: "ok"}
-      format.json { render json: msg }
-      format.html { redirect_to  :confirm_children }
-    end
+      if (!data.nill? ) and signed_in? and Supervisor.exists?(registered_user_id: current_user.id)
+          begin
+          supervisor = Supervisor.find(current_user.id)
+          r_user_child = RegisteredUser.find_by(username: data)
+          child = Child.find_by(registered_user_id: r_user_child.id)
+          supervisor.accept_child(child)
+          msg =  {status: "ok"}
+          format.json { render json: msg }
+          format.html { redirect_to  :confirm_children }
+        rescue
+          msg = {status: "failure"}
+          format.json { render json: msg }
+          format.html { redirect_to  :confirm_children }
+        end
+      else
+        msg = {status: "failure"}
+        format.json { render json: msg }
+        format.html { redirect_to  :confirm_children }
+      end
   end
 
   # PUT /supervisor/accept_child
   # Reject child action.
   # Authors: Ahmed H. Ismail
   def reject_child
-    respond_to do |format|
-      msg = {status: "ok"}
-      format.json { render json: msg }
-      format.html { redirect_to :confirm_children }
-    end
+    data = params[:child_username]
+    respond_to do |format| 
+      if (!data.nill? ) and signed_in? and Supervisor.exists?(registered_user_id: current_user.id)
+          begin
+          supervisor = Supervisor.find(current_user.id)
+          r_user_child = RegisteredUser.find_by(username: data)
+          child = Child.find_by(registered_user_id: r_user_child.id)
+          supervisor.reject_child(child)
+          msg =  {status: "ok"}
+          format.json { render json: msg }
+          format.html { redirect_to  :confirm_children }
+        rescue
+          msg = {status: "failure"}
+          format.json { render json: msg }
+          format.html { redirect_to  :confirm_children }
+        end
+      else
+        msg = {status: "failure"}
+        format.json { render json: msg }
+        format.html { redirect_to  :confirm_children }
+      end
   end
 
 

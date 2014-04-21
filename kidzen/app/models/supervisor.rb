@@ -55,7 +55,7 @@ class Supervisor < ActiveRecord::Base
   # Returns false if this user can not approve
   # that child. (different guardian)
   # Authors: Ahmed H. Ismail
-  def aprove_child(child)
+  def accept_child(child)
     if child.guardian_email == email
       child.update_attributes(is_approved: true) # Returns true
     else
@@ -69,7 +69,8 @@ class Supervisor < ActiveRecord::Base
   # Authors: Ahmed H. Ismail
   def reject_child(child)
     if child.guardian_email == email
-      # FIXME: 
+      # FIXME: Should child be banned?
+      true 
     else
       false # Not the guardian of this child
   end
