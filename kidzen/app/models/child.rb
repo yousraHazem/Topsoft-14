@@ -1,6 +1,6 @@
 class Child < ActiveRecord::Base
   # Associations and validations.
-  has_one :registered_user, dependent: :destroy
+  belongs_to :registered_user, dependent: :destroy
   validates_associated :registered_user
 
   # Checks if other is a friend of this child.
@@ -42,6 +42,12 @@ class Child < ActiveRecord::Base
   end
 
   def write_message
+  end
+
+  # Checks if child is approved.
+  # Authors: Ahmed H. Ismail
+  def approved?
+    is_approved
   end
 
   # FIXME: This should be in Message

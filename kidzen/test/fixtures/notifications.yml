@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  assigned_to: MyString
+  title: MyString
+  short_desc: MyString
+  long_desc: MyString
+  embedded_view_url: MyString
+
+two:
+  assigned_to: MyString
+  title: MyString
+  short_desc: MyString
+  long_desc: MyString
+  embedded_view_url: MyString

@@ -2,7 +2,7 @@ class CreatePermission < ActiveRecord::Migration
   def change
     create_table :permissions do |t|
         t.text :abilities
-        t.integer :registered_user_id
+        t.belongs_to :registered_user
         t.timestamps
     end
   end
