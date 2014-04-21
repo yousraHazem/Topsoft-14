@@ -28,6 +28,7 @@ class Notification < ActiveRecord::Base
   # Authors: Ahmed H. Ismail
   def add_action(params)
     params[:notification_id] = id
+    params[:notification] = self
     NotificationAction.new(params)
   end
 
@@ -53,14 +54,14 @@ class Notification < ActiveRecord::Base
     accept_action_params = Hash.new
     accept_action_params[:async] = true
     accept_action_params[:name] = "Accept" # Internationalize
-    accept_action_params[:url] = "supervisor/accept_child"
+    accept_action_params[:url] = "supervisors/accept_child"
     accept_action_params[:data] = "{child_username: #{child.username}}"
     accept_action = add_action(accept_action_params)
 
     reject_action_params = Hash.new
     reject_action_params[:async] = true
     reject_action_params[:name] = "Reject" # Internationalize
-    reject_action_params[:url] = "supervisor/reject_child"
+    reject_action_params[:url] = "supervisors/reject_child"
     reject_action_params[:data] = "{child_username: #{child.username}}"
     reject_action = add_action(reject_action_params)
 

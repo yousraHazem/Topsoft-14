@@ -21,6 +21,7 @@ class Supervisor < ActiveRecord::Base
   # creates notification and saves to database.
   # child - child entity that was created.
   # returns true if successful otherwise false
+  # Authors: Ahmed H. Ismail
   def notify_child_created(child)
     notification = Notification.new
     # Set attributes
