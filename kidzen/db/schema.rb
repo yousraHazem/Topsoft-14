@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417131543) do
+ActiveRecord::Schema.define(version: 20140420002645) do
 
   create_table "activities", force: true do |t|
     t.integer  "min_age"
@@ -86,6 +86,14 @@ ActiveRecord::Schema.define(version: 20140417131543) do
     t.datetime "updated_at"
   end
 
+  create_table "event_invitations", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "inviter_id"
+    t.integer  "invited_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", force: true do |t|
     t.string   "location"
     t.string   "name"
@@ -98,6 +106,7 @@ ActiveRecord::Schema.define(version: 20140417131543) do
   create_table "friendships", force: true do |t|
     t.integer  "child_1_id"
     t.integer  "child_2_id"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -134,6 +143,31 @@ ActiveRecord::Schema.define(version: 20140417131543) do
     t.datetime "updated_at"
   end
 
+  create_table "notification_actions", force: true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.boolean  "async"
+    t.integer  "notification_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notification_actions", ["notification_id"], name: "index_notification_actions_on_notification_id"
+
+  create_table "notifications", force: true do |t|
+    t.string   "assigned_to"
+    t.string   "title"
+    t.string   "short_desc"
+    t.string   "long_desc"
+    t.string   "embedded_view_url"
+    t.boolean  "pending"
+    t.string   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notifications", ["assigned_to"], name: "index_notifications_on_assigned_to"
+
   create_table "permissions", force: true do |t|
     t.text     "abilities"
     t.integer  "registered_user_id"
@@ -143,8 +177,22 @@ ActiveRecord::Schema.define(version: 20140417131543) do
 
   create_table "photos", force: true do |t|
     t.string   "description"
-    t.string   "name"
+    t.string   "image"
     t.string   "remote_image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "poll_answers", force: true do |t|
+    t.string   "content"
+    t.integer  "counter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "poll_question_id"
+  end
+
+  create_table "poll_questions", force: true do |t|
+    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
