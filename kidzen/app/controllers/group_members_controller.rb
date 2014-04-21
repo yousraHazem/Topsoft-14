@@ -18,6 +18,7 @@ class GroupMembersController < ApplicationController
     	m.member_accept_state = 2
     	m.save
     end
+    
 
     # This is a function that adds a member to the group by his email.
     # Doesn't return anything.
