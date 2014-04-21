@@ -7,6 +7,6 @@ class CreateNotificationActions < ActiveRecord::Migration
       t.belongs_to :notification
       t.timestamps
     end
-    add_index(:notification_actions, :notification, unique:  false)
+    add_index(:notification_actions, :notification_id, unique:  false)
   end
 end
