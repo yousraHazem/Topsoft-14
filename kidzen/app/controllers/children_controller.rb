@@ -97,6 +97,11 @@ class ChildrenController < ApplicationController
           sign_in @user # login
           # Send verification email
           UserMailer.account_verification(@child_account).deliver 
+          # Send notification to parent
+          if Supervisor.exists?(email: @child_account.guardian_email)
+            parent = Supervisor.find_by(email: @child_account.guardian_email)
+            parent.notify_child_created(child)
+          end
           flash[:success] = "Welcome to kidzen!!"
           format.html { redirect_to @user }
         else
