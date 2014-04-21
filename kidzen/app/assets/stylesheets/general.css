@@ -1,10 +1,3 @@
-/*****************************************************
- * This is the style sheet for all supervisor views. *
- * Authors: Ahmed H. Ismail                          *
- *****************************************************/
-
-
-
 /******************************************************************
  * Style for round button outer container.                        *
  * Round button should be composed of an outer container of class *
@@ -30,7 +23,6 @@
   /* Cancel selection, when clicking multiple times in rapid succession */
   -moz-user-select: none; 
   -webkit-user-select: none; 
-  
 }
 
 .round_button:before {  
@@ -68,50 +60,8 @@
   text-decoration: none; 
   color: black;
   display: block;
-
 }
 
-
-.collapsable_container {
-  margin: auto;
-  text-align: center;
-}
-.collapsable_container > .collapsable_field {
-  width: 100px;
-  height: 100px;
-  overflow-y: scroll;
-  visibility: hidden;
-  margin: auto;
-}
-
-/********************************
- * Label for collapsable areas. *
- * Authors: Ahmed H. Ismail.    *
- ********************************/
-.header { 
-  text-decoration: none;
-}
-/**************************************
- * Checkbox needed for checked state. *
- * Authors: Ahmed H. Ismail.          *
- **************************************/
-.filter {
-  display: none;
-}
-
-
-#left_panel {
-  float: left;
-  clear: both;
-  width: 200px;
-  height: 400px;
-  position: fixed;
-  margin-top: 0;
-  z-index: 2;
-  display: block;
-  top: 0;
-  bottom: 0;
-}
 
 .locale_button {
   float:right;
@@ -124,63 +74,4 @@
   width: 50px;
   font-size: 0.5em;
   height: 20px;
-}
-
-
-#notifications_container {
-  position: absolute;
-  width: 70%;
-  height: 100%;
-  font-family: cursive;
-  font-size: 1em;
-  overflow-y: scroll;
-  margin: auto; 
-
-}
-
-.notification_action {
-  display: inline-block;
-}
-
-#main_content {
-  display: block;
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  text-align: center;
-}
-
-#container {
-  display: block;
-  text-align: center;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-#footer {
-  text-align: center;
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 200px;
-  margin: auto;
-  bottom: 0;
-}
-
-
-#alert_container .flash {
-  border-radius:10px;
-  font-weight:bold;
-  text-transform:uppercase;
-  color:#555;
-  width: 80%;
-  padding:10px 10px 10px 36px;
-  margin: auto;
-  font-size: 1em;
-  border:1px solid #f5aca6;
-}
-
-.flash-failure{
-  background: #ffecec url('error.png') no-repeat 10px 50%;
 }

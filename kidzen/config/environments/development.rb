@@ -43,4 +43,7 @@ Kidzen::Application.configure do
     :password => "kidZen14"
   }
 
+  # Allow static pages
+  config.serve_static_assets = true
+
 end

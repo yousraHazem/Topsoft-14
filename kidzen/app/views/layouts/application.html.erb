@@ -2,16 +2,33 @@
 <html>
 <head>
   <title>Kidzen</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag("general.css") %>
+      <%= yield :stylesheet_includes %>
+      <%= yield :javascript_includes %>
+    <%= csrf_meta_tags %>
 </head>
 <body>
-	<p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+  <div class="locale_button">
+    <div class="round_button">
+      <%= link_to "Arabic", change_locale_path(locale: :ar), class: "round_inner" %>
+    </div>
+    <div class="round_button">
+      <%= link_to "English", change_locale_path(locale: :en), class: "round_inner" %>
+    </div>
+  </div>
+  <br/>
 
+  <div id="alert_container">
+      <% flash.each do |key, value| %>
+        <div class="flash flash-<%= key %>">
+          <%= value %>
+        </div>
+      <% end %>      
+  </div>
+  <%= yield %>
 
-<%= yield %>
-
+  <%= link_to "Sign out", signout_path, method: "delete" %>
+  <%= link_to "Profile", current_user %>
+  <%= debug(params) if Rails.env.development? %>
 </body>
 </html>

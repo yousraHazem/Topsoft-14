@@ -1,31 +1,3 @@
-/**
- * @brief  Handles collapsing and expanding fields.
- * @authors Ahmed H. Ismail
- * @param  element, this element when clicked.
- * @return void
- */
-function collapse (element) {
-  var checkBox = element.firstElementChild.firstElementChild;
-  if(checkBox != null) {
-    checkBox.checked = !checkBox.checked; // toggle
-    var collapsableDiv = element.firstElementChild.nextElementSibling;
-    if(collapsableDiv != null) {
-      if(checkBox.checked) {
-        // make visible
-        collapsableDiv.style.visibility="visible";
-      }else {
-        collapsableDiv.style.visibility="hidden";
-      }
-    }else {
-      console.log("Error in collapse function could not find collapsableDiv");
-    }
-    console.log(checkBox);
-  }else {
-    console.log("Error in collapse function could not find checkBox");
-  }
-}
-
-
 /****************************************************
  * Creates an AJAX request.                         *
  * Always uses a put request.                       *
@@ -40,30 +12,26 @@ function create_ajax_request (url, data, callback) {
   xhr.open('PUT', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.addEventListener('load', function() {
-    xhr.responseJSON = JSON.parse( xhr.responeText );
+    xhr.responseJSON = JSON.parse( xhr.responseText );
     callback(xhr.responseJSON,  xhr);
   });
   xhr.send( JSON.stringify(data) );
   return xhr;
 }
-// add removeElement function to DOM
-Element.prototype.remove = function() {
-  this.parentElement.removeChild(this);
-};
 
 
 function verify_child (childUserName) {
-  var url = [location.hostname, 'supervisor', 'accept_child'].join('/');
+  var url = ['http://' + location.host, 'supervisors', 'accept_child'].join('/');
   var callback = function(responseJSON, xhr) {
     document.getElementById(childUserName).remove();
   }
-  create_ajax_request(url, childUserName, callback);
+  create_ajax_request(url, {child_username: childUserName}, callback);
 }
 
 function reject_child (childUserName) {
-  var url = [location.hostanme, 'supervisor', 'reject_child'].join('/');
+  var url = ['http://' + location.host, 'supervisors', 'reject_child'].join('/');
   var callback = function (responseJSON, xhr) {
     document.getElementById(childUserName).remove();
   }
-  create_ajax_request(url, childUserName, callback);
+  create_ajax_request(url, {child_username: childUserName}, callback);
 }
