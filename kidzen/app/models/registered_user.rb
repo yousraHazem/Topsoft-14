@@ -101,6 +101,9 @@ class RegisteredUser < ActiveRecord::Base
     # Queues a notification as pending for this user.
     # Namely adds the foreign key.
     # notification - notification to queue
+    # notification_by_email - is the boolean that shows if the user wants the 
+    # notification to be sent by email
+    # notification_by_email - is the method in usermailer  
     # Authors: Ahmed H. Ismail, Shary Beshara
     def queue_notification(notification)
         notification.assigned_to = username 
