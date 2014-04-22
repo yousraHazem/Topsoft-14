@@ -2,6 +2,7 @@
 # RegisteredUser.
 # Authors: Ahmed H. Ismail
 class RegisteredUser < ActiveRecord::Base
+   
   private
     VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
 
@@ -31,6 +32,7 @@ class RegisteredUser < ActiveRecord::Base
     before_create :create_remember_token
     has_many :notifications, foreign_key: 'assigned_to', primary_key: 'username'
     has_secure_password
+    has_many :messages
 
     # Capitalize all the names
     # Authors: Ahmed H. Ismail
