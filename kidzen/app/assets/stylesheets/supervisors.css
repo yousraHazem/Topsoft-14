@@ -75,10 +75,27 @@
 .collapsable_container {
   margin: auto;
   text-align: center;
+  width: 50%;
+  height: 50%;
 }
+
+.confirm_child_cont {
+  border: 1px solid #7ECCDE;
+  border-radius: 20%;
+  padding: 5px 5px 5px 5px;
+  background: linear-gradient(45deg, #b8e1fc 0%,#a9d2f3 10%,#90bae4 25%,#90bcea 37%,#90bff0 50%,#6ba8e5 51%,#a2daf5 83%,#bdf3fd 100%);
+}
+.confirm_child_cont .round_button {
+  display: inline-block;
+}
+
+.child_attr_disp {
+
+}
+
 .collapsable_container > .collapsable_field {
-  width: 100px;
-  height: 100px;
+  width: 50%;
+  height: 50%;
   overflow-y: scroll;
   visibility: hidden;
   margin: auto;
@@ -160,10 +177,27 @@
 }
 #footer {
   text-align: center;
-  display: inline-block;
-  position: absolute;
+  display: block;
+  position: relative;
   width: 100%;
   height: 200px;
   margin: auto;
   bottom: 0;
+}
+
+
+#alert_container .flash {
+  border-radius:10px;
+  font-weight:bold;
+  text-transform:uppercase;
+  color:#555;
+  width: 80%;
+  padding:10px 10px 10px 36px;
+  margin: auto;
+  font-size: 1em;
+  border:1px solid #f5aca6;
+}
+
+.flash-failure{
+  background: #ffecec url('error.png') no-repeat 10px 50%;
 }

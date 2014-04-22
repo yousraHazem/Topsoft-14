@@ -103,7 +103,8 @@ class RegisteredUser < ActiveRecord::Base
     # notification - notification to queue
     # Authors: Ahmed H. Ismail
     def queue_notification(notification)
-        notification.assigned_to = username  
+        notification.assigned_to = username
+        notification.registered_user = self  
     end
 
     # Retrieves Pending notifications
