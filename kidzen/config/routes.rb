@@ -2,11 +2,13 @@ Kidzen::Application.routes.draw do
   resources :groups
   resources :children
   resources :photos
+  resources :videos
   resources :events
   resources :polls
   resources :surveys
   resources :child
   resources :groups
+  resources :videos
   get "child/verify"
   post "child/new"
 
