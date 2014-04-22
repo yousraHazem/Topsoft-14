@@ -78,7 +78,8 @@ class Video < ActiveRecord::Base
   # from the youtube link in order to embed it in show view
   # Parameters : None
   # Returns : string
-  # Approach : The method is  just making The model's column accessible
+  # Approach : The method splits the url from '=' sign to get
+  # the code of the video
   # Time Complexity : O(1)
   # Author : Hussien M. Eloy 
   def get_link
@@ -109,7 +110,7 @@ class Video < ActiveRecord::Base
   # Parameteres : None
   # Returns : category - string
   # Approach : Just selecting the value of the current video category from the database
-  # Time Complexity : Unknown (database query)
+  # Time Complexity : O(n)
   # Author : Hussien M. Eloy
   def get_category
     self[:category]
@@ -142,7 +143,7 @@ class Video < ActiveRecord::Base
   # Returns : comments - table of comments
   # Approach : Just selecting the comments associated 
   # with the current video  from the database
-  # Time Complexity : O(n^2)
+  # Time Complexity : O(n)
   # Author : Hussien M. Eloy
   def get_comments
     # self.comments
@@ -162,7 +163,7 @@ class Video < ActiveRecord::Base
   # Returns : tags - table of tags
   # Approach : Just selecting the tags associated 
   # with the current video  from the database
-  # Time Complexity : O(n^2)
+  # Time Complexity : O(n)
   # Author : Hussien M. Eloy
   def get_tags
     # self.tags
@@ -191,7 +192,7 @@ class Video < ActiveRecord::Base
   # Returns : keywords - table of keywords
   # Approach : Just selecting the keywords associated 
   # with the current video  from the database
-  # Time Complexity : O(n^2)
+  # Time Complexity : O(n)
   # Author : Hussien M. Eloy
   def get_keywords
     # self.keywords
