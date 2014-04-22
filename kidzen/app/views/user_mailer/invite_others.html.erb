@@ -1,4 +1,6 @@
+ <!-- This is the invitation email that should be sent -->    
+  <!-- Authors: Shary Beshara --> 
 <h2>Join kidzen network<h2>
 <p>
- <%= @supervisor.username %> invites you to join kidzen network and become one of his/her friends
+ <%= @supervisor.registered_user.username %> invites you to join kidzen network and become one of his/her friends follow this link to be able to sign up <%= link_to 'Sign Up',  :controller => :supervisors, :action => :signup %> 
 </p>
