@@ -12,8 +12,8 @@ function create_ajax_request (url, data, callback) {
 
   xhr.open('PUT', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.setRequestHeader('Accept', 'application/json');
-  xhr.responseType = "json"
+  xhr.setRequestHeader('Accept', 'application/json'); // I want JSON 
+  xhr.responseType = "json";
   xhr.addEventListener('load', function() {
     xhr.responseJSON =  xhr.response;
     console.log(xhr.responseJSON);
@@ -23,7 +23,12 @@ function create_ajax_request (url, data, callback) {
   return xhr;
 }
 
-
+/********************************************
+ * onclick handler for verify child button. *
+ * on confirm_children view                 *
+ * childUserName - The child's user name.   *
+ * Authors: Ahmed H. Ismail.                *
+ ********************************************/
 function verify_child (childUserName) {
   var url = ['http://' + location.host, 'supervisors', 'accept_child'].join('/');
   var callback = function(responseJSON, xhr) {
@@ -32,6 +37,12 @@ function verify_child (childUserName) {
   create_ajax_request(url, {child_username: childUserName}, callback);
 }
 
+/********************************************
+ * onclick handler for reject child button. *
+ * on confirm_children view                 *
+ * childUserName - The child's user name.   *
+ * Authors: Ahmed H. Ismail.                *
+ ********************************************/
 function reject_child (childUserName) {
   var url = ['http://' + location.host, 'supervisors', 'reject_child'].join('/');
   var callback = function (responseJSON, xhr) {
