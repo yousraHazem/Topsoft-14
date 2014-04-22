@@ -6,13 +6,6 @@ class Notification < ActiveRecord::Base
   validates :pending, inclusion: [true, false]
   has_many :notification_actions, dependent: :destroy
   belongs_to :registered_user, foreign_key: 'assigned_to', primary_key: 'username'
-  before_save :default_values
-
-  # Sets default values
-  # Authors: Ahmed H. Ismail
-  def default_values
-    self[:pending] = true
-  end
 
   # Retrives list of associated actions.
   # Authors: Ahmed H. Ismail
