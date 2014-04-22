@@ -37,15 +37,30 @@ Kidzen::Application.routes.draw do
   resources :polls
   resources :surveys
   resources :groups
+  resources :group_members
+
+  
+  get "group_members/index"
+  get "group_members/new"
+  get "group_members/create"
+  get "group_members/show"
+  get "group_members/destroy"
+  get "group_members/membership_requests" , to: 'group_members#membership_requests'
+  
+
+  #resources :children
+  #resources :public, :only => [:upload_photo, :uploading, :remove_photo]
+  #match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
+  #match '/uploadingphoto', :to => 'public#uploading', via: [:get, :post]
+  #match '/removephoto/:id', :to => 'public#remove_photo', via: [:get, :post]
+  #resources :events
+  #resources :polls
+  #resources :surveys
+  #resources :child
+  #resources :groups
+  #get "child/verify"
+  #post "child/new"
 
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
-
-  #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
-  #resources :registered_users
-
-  resources :groups
-
-  #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
-  #resources :registered_users
 end
