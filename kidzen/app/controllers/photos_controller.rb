@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
   # Time Complexity : O(1)
   # Author : Hussien M. Eloy 
   def photo_params
-    params.require(:photo).permit(:id, :description, :image, :remote_image_url)
+    params.require(:photo).permit(:description, :image, :remote_image_url)
   end
 
   # This method used to assign all the photos in the database 
