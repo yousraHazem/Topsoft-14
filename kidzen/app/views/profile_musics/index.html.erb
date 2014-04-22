@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Mp3 url</th>
       <th>Youtube url</th>
       <th>User</th>
       <th></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @profile_musics.each do |profile_music| %>
       <tr>
+        <td><%= profile_music.mp3_url %></td>
         <td><%= profile_music.youtube_url %></td>
         <td><%= profile_music.user_id %></td>
         <td><%= link_to 'Show', profile_music %></td>

@@ -14,7 +14,19 @@ class ProfileMusicsController < ApplicationController
 
   # GET /profile_musics/new
   def new
-    @profile_music = ProfileMusic.new
+    if signed_in?
+      # Is user a supervisor?
+      if Child.exists?(registered_user_id: current_user.id)
+        @user = Child.find_by(registered_user_id: current_user.id)
+        @profile_music = ProfileMusic.new
+      else
+        # Must be a supervisor.
+        redirect_to controller: :supervisors, action: :show
+      end
+    else
+      # No one signed in
+      redirect_to session_path :new
+    end
   end
 
   # GET /profile_musics/1/edit
@@ -28,6 +40,7 @@ class ProfileMusicsController < ApplicationController
 
     respond_to do |format|
       if @profile_music.save
+        @profile_music.update_column(:user_id, current_user.id)
         format.html { redirect_to @profile_music, notice: 'Profile music was successfully created.' }
         format.json { render action: 'show', status: :created, location: @profile_music }
       else
@@ -69,6 +82,6 @@ class ProfileMusicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_music_params
-      params.require(:profile_music).permit(:youtube_url, :user_id)
+      params.require(:profile_music).permit(:mp3_url, :youtube_url, :user_id)
     end
 end

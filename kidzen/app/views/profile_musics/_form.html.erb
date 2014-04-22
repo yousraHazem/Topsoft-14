@@ -12,13 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :youtube_url %><br>
-    <%= f.text_field :youtube_url %>
+    <%= f.label :mp3_url %><br>
+    <%= f.text_field :mp3_url, :id=>"mp3", :onclick => "enablemp3()" %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <%= f.label :youtube_url %><br>
+    <%= f.text_field :youtube_url, :id=>"you", :onclick => "enableyoutube()" %>
   </div>
+
+  <script type="text/javascript">
+    function enablemp3() {
+        document.getElementById("you").value = '';
+    }
+    function enableyoutube() {
+        document.getElementById("mp3").value = '';
+    }
+  </script>
+
   <div class="actions">
     <%= f.submit %>
   </div>

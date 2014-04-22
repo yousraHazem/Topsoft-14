@@ -18,7 +18,7 @@ class ProfileMusicsControllerTest < ActionController::TestCase
 
   test "should create profile_music" do
     assert_difference('ProfileMusic.count') do
-      post :create, profile_music: { user_id: @profile_music.user_id, youtube_url: @profile_music.youtube_url }
+      post :create, profile_music: { mp3_url: @profile_music.mp3_url, user_id: @profile_music.user_id, youtube_url: @profile_music.youtube_url }
     end
 
     assert_redirected_to profile_music_path(assigns(:profile_music))
@@ -35,7 +35,7 @@ class ProfileMusicsControllerTest < ActionController::TestCase
   end
 
   test "should update profile_music" do
-    patch :update, id: @profile_music, profile_music: { user_id: @profile_music.user_id, youtube_url: @profile_music.youtube_url }
+    patch :update, id: @profile_music, profile_music: { mp3_url: @profile_music.mp3_url, user_id: @profile_music.user_id, youtube_url: @profile_music.youtube_url }
     assert_redirected_to profile_music_path(assigns(:profile_music))
   end
 

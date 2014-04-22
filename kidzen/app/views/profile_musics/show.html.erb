@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Youtube url:</strong>
-  <%= @profile_music.youtube_url %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile_music.user_id %>
-</p>
+
+<EMBED SRC="<%= @profile_music.mp3_url %>" 
+width="360" height="165" HIDDEN=false AUTOSTART=true loop="false" volume="60">
+
+
+
 <div style="position:relative;width:0px;height:0px;overflow:hidden;">
   <div style="position:absolute;top:-276px;left:-5px">
- <iframe width="300" height="300" 
-      src="http://www.youtube.com/embed/<%= @profile_music.youtube_url.split("watch?v=").last %>?autoplay=1"  
-	  > 
+	<iframe width="300" height="300" 
+	      src="http://www.youtube.com/embed/<%= @profile_music.youtube_url.split("watch?v=").last %>?autoplay=1"  
+		  > 
+    </iframe>
+  </div>
+</div>
+
+
 
 <%= link_to 'Edit', edit_profile_music_path(@profile_music) %> |
 <%= link_to 'Back', profile_musics_path %>
