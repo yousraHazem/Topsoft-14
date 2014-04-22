@@ -20,5 +20,9 @@ class RegisteredUsersController < ApplicationController
     end
 
   end
+  def settings
+    @registered_user.update_attribute(:notification_by_email, params[:notification_by_email])
+    
+  end
 
 end

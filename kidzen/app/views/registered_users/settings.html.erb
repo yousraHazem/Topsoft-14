@@ -1,0 +1,9 @@
+<%= form_for(@registered_user) do |f| %>
+<div class="field">
+    <%= f.label "Get Email" %> <br />
+    <%= f.check_box :notification_by_email %> <br />
+</div>
+<div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
