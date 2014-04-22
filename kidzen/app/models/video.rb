@@ -28,13 +28,20 @@ class Video < ActiveRecord::Base
   # video is not empty
   # Parameters : None
   # Returns : None
-  # Approach : The method perfoms and Xor operation between the values of 
-  # the 2 fields (local video & hyperlink) , And it should arise 
+  # Approach : The method perfoms an addition between the values
+  # of the blank fields, And it should arise 
   # an error if both are true or both are false
   # Time Complexity : O(1)
   # Author : Hussien M. Eloy
   def local_or_remote
-    if (file.blank? ^ youtube.blank?) == 0
+    counter = 0
+    if file.blank? 
+      counter = counter + 1
+    end
+    if youtube.blank?
+      counter = counter + 1
+    end
+    if counter != 1
       errors.add(:base, "Please Add video")
     end
   end
@@ -61,8 +68,7 @@ class Video < ActiveRecord::Base
   # Author : Hussien M. Eloy 
   def convert
     new_video = 
-    FFMPEG::Movie.new
-    ("#{Rails.root}/public/uploads/video/file/#{self[:id]}/#{self[:file]}")
+    FFMPEG::Movie.new("#{Rails.root}/public/uploads/video/file/#{self[:id]}/#{self[:file]}")
     new_video.transcode("#{Rails.root}/public/uploads/tmp/#{self[:id]}.webm")
     self[:real_file] = "/uploads/tmp/#{self[:id]}.webm"
     self.save
@@ -72,8 +78,7 @@ class Video < ActiveRecord::Base
   # from the youtube link in order to embed it in show view
   # Parameters : None
   # Returns : string
-  # Approach : The method splits the url from '=' sign to get
-  # the code of the video
+  # Approach : The method is  just making The model's column accessible
   # Time Complexity : O(1)
   # Author : Hussien M. Eloy 
   def get_link
@@ -104,7 +109,7 @@ class Video < ActiveRecord::Base
   # Parameteres : None
   # Returns : category - string
   # Approach : Just selecting the value of the current video category from the database
-  # Time Complexity : O(n)
+  # Time Complexity : Unknown (database query)
   # Author : Hussien M. Eloy
   def get_category
     self[:category]
@@ -137,7 +142,7 @@ class Video < ActiveRecord::Base
   # Returns : comments - table of comments
   # Approach : Just selecting the comments associated 
   # with the current video  from the database
-  # Time Complexity : O(n)
+  # Time Complexity : O(n^2)
   # Author : Hussien M. Eloy
   def get_comments
     # self.comments
@@ -157,7 +162,7 @@ class Video < ActiveRecord::Base
   # Returns : tags - table of tags
   # Approach : Just selecting the tags associated 
   # with the current video  from the database
-  # Time Complexity : O(n)
+  # Time Complexity : O(n^2)
   # Author : Hussien M. Eloy
   def get_tags
     # self.tags
@@ -186,7 +191,7 @@ class Video < ActiveRecord::Base
   # Returns : keywords - table of keywords
   # Approach : Just selecting the keywords associated 
   # with the current video  from the database
-  # Time Complexity : O(n)
+  # Time Complexity : O(n^2)
   # Author : Hussien M. Eloy
   def get_keywords
     # self.keywords
