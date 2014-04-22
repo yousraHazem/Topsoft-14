@@ -51,6 +51,16 @@ class Supervisor < ActiveRecord::Base
       return false
     end
   end
+
+  # Adds a notification that a post 
+  # of a supervised child was reported.
+  # post - post that was reported, read only
+  # returns true if sucessful otherwise false
+  # Authors: Ahmed H. Ismail
+  def notify_post_reported(post)
+    
+  end
+
   
   # Approves a child
   # child - child to accept modified and saved in database
