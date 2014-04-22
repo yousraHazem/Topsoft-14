@@ -28,13 +28,20 @@ class Video < ActiveRecord::Base
   # video is not empty
   # Parameters : None
   # Returns : None
-  # Approach : The method perfoms and Xor operation between the values of 
-  # the 2 fields (local video & hyperlink) , And it should arise 
+  # Approach : The method perfoms an addition between the values
+  # of the blank fields, And it should arise 
   # an error if both are true or both are false
   # Time Complexity : O(1)
   # Author : Hussien M. Eloy
   def local_or_remote
-    if (file.blank? ^ youtube.blank?) == 0
+    counter = 0
+    if file.blank? 
+      counter = counter + 1
+    end
+    if youtube.blank?
+      counter = counter + 1
+    end
+    if counter != 1
       errors.add(:base, "Please Add video")
     end
   end
@@ -61,8 +68,7 @@ class Video < ActiveRecord::Base
   # Author : Hussien M. Eloy 
   def convert
     new_video = 
-    FFMPEG::Movie.new
-    ("#{Rails.root}/public/uploads/video/file/#{self[:id]}/#{self[:file]}")
+    FFMPEG::Movie.new("#{Rails.root}/public/uploads/video/file/#{self[:id]}/#{self[:file]}")
     new_video.transcode("#{Rails.root}/public/uploads/tmp/#{self[:id]}.webm")
     self[:real_file] = "/uploads/tmp/#{self[:id]}.webm"
     self.save
