@@ -1,4 +1,8 @@
 Kidzen::Application.routes.draw do
+  get "rooms/index"
+  get "rooms/create"
+  get "rooms/party"
+  get "rooms/config_opentok"
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
 
@@ -15,6 +19,9 @@ Kidzen::Application.routes.draw do
   resources :groups
   get "child/verify"
   post "child/new"
+  root :to => “rooms#index”
+  resources :rooms
+  match ‘/party/:id’, :to => “rooms#party”, :as => :party, :via => :get
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
