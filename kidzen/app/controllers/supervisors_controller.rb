@@ -2,16 +2,17 @@
 # Authors: Ahmed H. Ismail
 class SupervisorsController < ApplicationController
   # before_action :set_supervisor, except: [] # set for all
-
+  # TODO: fix 'X-CSRF-Token' in XMLHttpRequest header
+  skip_before_filter :verify_authenticity_token, only: [:accept_child, :reject_child]
   # GET /confirm_children
   # Renders the confirm children
   # view.
   # Authors: Ahmed H. Ismail
   def confirm_children
     if signed_in?
-      if Supervisor.exists?(registered_user_id: current_user.id)
+      if Supervisor.exists?(registered_user: current_user)
         # set children and render 
-        @children = Supervisor.find(current_user.id).pending_children
+        @children = Supervisor.find(current_user).pending_children
       else
         # Child can't access this page
         flash[:failure] = "This isn't the page you are looking for.."
@@ -28,8 +29,8 @@ class SupervisorsController < ApplicationController
   def show
     if signed_in?
       # Is user a supervisor?
-      if Supervisor.exists?(registered_user_id: current_user.id)
-        @user = Supervisor.find(current_user.id)
+      if Supervisor.exists?(registered_user: current_user)
+        @user = Supervisor.find(current_user)
         # Render view
       else
          # Must be a child.
@@ -46,8 +47,8 @@ class SupervisorsController < ApplicationController
   # Authors: Ahmed H. Ismail
   def accept_child
     data = params[:child_username]
-    func = lambda { |supervisor, child | supervisor.accept_child(data) }
-    associated_child_apply(func, data, :confirm_children)
+    func = lambda { |supervisor, child | supervisor.accept_child(child) }
+    associated_child_apply(func, data)
   end
 
   # PUT /supervisor/accept_child
@@ -55,8 +56,8 @@ class SupervisorsController < ApplicationController
   # Authors: Ahmed H. Ismail
   def reject_child
     data = params[:child_username]
-    func = lambda { |supervisor, child | supervisor.reject_child(data) }
-    associated_child_apply(func, data, :confirm_children)
+    func = lambda { |supervisor, child | supervisor.reject_child(child) }
+    associated_child_apply(func, data)
   end
 
 
@@ -81,14 +82,14 @@ class SupervisorsController < ApplicationController
       if @user.save
         perms.registered_user = @user
         perms.save
-        @supervisor = Supervisor.create(registered_user_id: @user.id, registered_user: @user)
+        @supervisor = Supervisor.create(registered_user: @user)
         sign_in @user
         format.json { render json: {status: "ok"} }
         flash[:success] = "Welcome to kidzen!!"
         format.html { redirect_to @user }
       else
         perms.destroy
-        format.json { render json: @registered_user.errors.full_messages }
+        format.json { render json: @user.errors.full_messages }
         format.html { render :signup}
       end
     end
@@ -107,28 +108,27 @@ class SupervisorsController < ApplicationController
     # with the currently signed in supervisor and the child as the params
     # func - function to call called as func(signed_in_supervisor, child_found_by_username)
     # child_username - the child's username, read only
-    # fallback_action - symbol of action to redirect to, read only
     # renders JSON object with status set to ok or failure
-    # redirects to fallback_action if html
+    # renders none if html
     # Authors: Ahmed H. Ismail
-    def associated_child_apply(func, child_username, fallback_action)
+    def associated_child_apply(func, child_username)
       respond_to do |format|
-        if (!child_username.nill? ) and signed_in? and Supervisor.exists?(registered_user_id: current_user.id)
+        if (!child_username.nil? ) and signed_in? and Supervisor.exists?(registered_user: current_user)
           begin
-            supervisor = Supervisor.find(current_user.id)
+            supervisor = Supervisor.find(current_user)
             r_user_child = RegisteredUser.find_by(username: child_username)
-            child = Child.find_by(registered_user_id: r_user_child.id)
-            func(supervisor, child)
+            child = Child.find_by(registered_user: r_user_child)
+            func.call(supervisor, child)
             msg =  {status: "ok"}
           rescue
             msg = {status: "failure"}
           end
           format.json { render json: msg }
-          format.html { redirect_to  fallback_action }
+          format.html { render layout: false, nothing: true }
         else
           msg = {status: "failure"}
           format.json { render json: msg }
-          format.html { redirect_to  fallback_action }
+          format.html { render layout: false, nothing: true }
         end
       end
     end

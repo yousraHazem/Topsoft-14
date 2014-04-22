@@ -4,7 +4,6 @@ class Supervisor < ActiveRecord::Base
   belongs_to :registered_user, dependent: :destroy
   has_many :children, through: :child_parent
   has_many :supervised_children, through: :child_supervisor, class_name: "Child"
-  validates_associated :registered_user
   self.primary_key = 'registered_user_id'
 
   # Returns an array of children pending verification.
@@ -25,28 +24,31 @@ class Supervisor < ActiveRecord::Base
   def notify_child_created(child)
     notification = Notification.new
     # Set attributes
-    notification.mark_unread
-    notification.title = "New child #{child.full_name}"
+    notification.pending = true
+    notification.title = "New child #{child.registered_user.full_name}"
     notification.short_desc = "A new child needs approval."
-    notification.long_desc = ""
+    notification.long_desc = " "
     notification.embedded_view_url = nil
-    # Create actions
-    actions = notification.add_child_creation_actions
-    actions_saved = true
-    actions.each do |action| 
-      actions_saved &= action.save
-    end
     # Enqueue
-    registered_user.queue_notification( notification )
-    if notification.save and actions_saved
-      true
-    else
-      # Clean up 
-      actions.each do |action| 
-        action.destroy
+    registered_user.queue_notification( notification ) # Sets the associations
+    if notification.save
+      actions = notification.add_child_creation_actions(child)
+      actions_saved = true
+      actions.each { |action| actions_saved &= action.save }
+      if actions_saved
+        # Everything is okay.
+        return true
+      else
+        # Failed to save notification actions
+        Rails.logger.debug("notify_child_created failed to save notification actions for notification: #{notification.inspect}")
+        Rails.logger.debug("Actions array: #{actions.inspect}")
+        notification.destroy
+        return false
       end
-      notification.destroy
-      false
+    else 
+      # Failed to save notification
+      Rails.logger.debug("notify_child_created failed to save notification : #{notification.inspect}")
+      return false
     end
   end
   
@@ -57,10 +59,13 @@ class Supervisor < ActiveRecord::Base
   # that child. (different guardian)
   # Authors: Ahmed H. Ismail
   def accept_child(child)
-    if child.guardian_email == email
+    if child.guardian_email == registered_user.email
+      Rails.logger.debug("supervisor accept child : #{child.inspect}")
       child.update_attributes(is_approved: true) # Returns true
     else
+      Rails.logger.debug("supervisor accept child : guardian email mismatch")
       false # Not the guardian of this child
+    end
   end
 
   # Rejects a child
@@ -69,9 +74,10 @@ class Supervisor < ActiveRecord::Base
   # Returns false if this user is not
   # the guadian of that child.
   # Authors: Ahmed H. Ismail
-  def reject_child(child)
-    if child.guardian_email == email
+  def reject_child(child)    
+    if child.guardian_email == registered_user.email
       # FIXME: Should child be banned?
+      Rails.logger.debug("supervisor reject child : #{child.inspect}")
       true 
     else
       false # Not the guardian of this child

@@ -6,8 +6,8 @@ class ChildrenController < ApplicationController
   def show
     if signed_in?
       # Is user a supervisor?
-      if Child.exists?(registered_user_id: current_user.id)
-        @user = Child.find_by(registered_user_id: current_user.id)
+      if Child.exists?(registered_user: current_user)
+        @user = Child.find_by(registered_user: current_user)
         # Render view
       else
         # Must be a supervisor.
@@ -88,19 +88,18 @@ class ChildrenController < ApplicationController
         perms.save
         child_params = Hash.new
         # Unpack child params
-        child_params[:registered_user_id] = @user.id
+        child_params[:registered_user] = @user
         child_params[:guardian_email] = super_duper_params[:guardian_email]
         child_params[:is_approved] = false
-        child_params[:registered_user] = @user
         @child_account = Child.new(child_params)
         if @child_account.save
           sign_in @user # login
           # Send verification email
           UserMailer.account_verification(@child_account).deliver 
           # Send notification to parent
-          if Supervisor.exists?(email: @child_account.guardian_email)
-            parent = Supervisor.find_by(email: @child_account.guardian_email)
-            parent.notify_child_created(child)
+          if RegisteredUser.exists?(email: @child_account.guardian_email)
+            parent = Supervisor.find(RegisteredUser.find_by(email: @child_account.guardian_email))
+            parent.notify_child_created(@child_account)
           end
           flash[:success] = "Welcome to kidzen!!"
           format.html { redirect_to @user }

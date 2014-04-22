@@ -9,10 +9,14 @@
  ****************************************************/
 function create_ajax_request (url, data, callback) {
   var xhr = new XMLHttpRequest();
+
   xhr.open('PUT', url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Accept', 'application/json');
+  xhr.responseType = "json"
   xhr.addEventListener('load', function() {
-    xhr.responseJSON = JSON.parse( xhr.responseText );
+    xhr.responseJSON =  xhr.response;
+    console.log(xhr.responseJSON);
     callback(xhr.responseJSON,  xhr);
   });
   xhr.send( JSON.stringify(data) );
