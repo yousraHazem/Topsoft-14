@@ -30,7 +30,7 @@ class FriendshipController < ApplicationController
  else 
  flash[:error]  =  "unable to send friend request"
  end
- redirect_to(:controller => params[:cont],:action => params[:act])
+ redirect_to(:controller => params[:cont].to_s,:action => params[:act].to_s)
  end
 
  def accept_reject_friend_request
