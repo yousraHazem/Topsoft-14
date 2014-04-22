@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
+<%= show_for @group do |u| %>
+  <%= u.attribute :group_name %>
+  <%= u.attribute :group_description %>
+  <%= u.attribute :owner %>
+
+
+<% end %>
+
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
