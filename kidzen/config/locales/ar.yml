@@ -1,2 +1,7 @@
 ar:
+	date:
+		order:
+		- :day
+		- :month
+		- :year
   hello: "مرحبا"
