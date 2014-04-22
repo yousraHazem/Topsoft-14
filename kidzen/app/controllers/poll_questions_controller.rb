@@ -4,12 +4,12 @@ class PollQuestionsController < ApplicationController
   # GET /poll_questions
   # GET /poll_questions.json
 
-  #list all questions
+  #list all questions of the current loged in user
   #Parameters : non
   #return non
   #Author : Ahmad Bassiouny
   def index
-    @poll_questions = PollQuestion.all
+    @poll_questions = PollQuestion.find_all_by_user_id current_user.id
   end
 
   # GET /poll_questions/1
@@ -18,7 +18,7 @@ class PollQuestionsController < ApplicationController
   end
 
   # GET /poll_questions/new
-  # create new poll Question and 1 answer
+  # create new poll Question and 1 answer after checking if the user is a logged in child or not
   #Parameters : non
   #return non
   #Author : Ahmad Bassiouny
@@ -52,15 +52,16 @@ class PollQuestionsController < ApplicationController
   #Author : Ahmad Bassiouny
   def create
     @poll_question = PollQuestion.new(poll_question_params)
-  # @poll_question[:user_id] = (registered_user_id: current_user.id)
 
     respond_to do |format|
       if @poll_question.save
-        format.html { redirect_to @poll_question, notice: 'Poll question was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @poll_question }
+         #update the question's user id column with the current user id 
+         @poll_question.update_column(:user_id, current_user.id)
+         format.html { redirect_to @poll_question, notice: 'Poll question was successfully created.' }
+         format.json { render action: 'show', status: :created, location: @poll_question }
       else
-        format.html { render action: 'new' }
-        format.json { render json: @poll_question.errors, status: :unprocessable_entity }
+         format.html { render action: 'new' }
+         format.json { render json: @poll_question.errors, status: :unprocessable_entity }
       end
     end
   end
