@@ -1,3 +1,5 @@
+#This class is controller class used in searching.
+#Authors: Moaz El-Nashar.
 class SearchesController < ApplicationController
 
 # This is a function which take a parameter ":search" and search with it in each table
