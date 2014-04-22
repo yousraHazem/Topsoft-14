@@ -26,7 +26,7 @@ class Photo < ActiveRecord::Base
   # Time Complexity : O(1)
   # Author : Hussien M. Eloy  
   def photo_params
-    params.require(:photo).permit(:description, :image, :remote_image_url)
+    params.require(:photo).permit(:id, :description, :image, :remote_image_url)
   end
 
   # This method returns the value of the photo id
