@@ -28,7 +28,7 @@ function collapse (element) {
     }else {
       console.log("Error in collapse function could not find collapsableDiv");
     }
-    console.log(checkBox);
+    // console.log(checkBox);
   }else {
     console.log("Error in collapse function could not find checkBox");
   }
