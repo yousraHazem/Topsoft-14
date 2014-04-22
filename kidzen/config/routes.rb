@@ -8,7 +8,6 @@ Kidzen::Application.routes.draw do
   resources :surveys
   resources :child
   resources :groups
-  resources :videos
   get "child/verify"
   post "child/new"
 
