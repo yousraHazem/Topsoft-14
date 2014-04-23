@@ -54,11 +54,12 @@ class Supervisor < ActiveRecord::Base
 
   # This method create a notification
   # , make it unread and fill it's attributes 
+  # chils_1 - is the child sending the friend request
+  # child_2 - is the child that the friend request is sent to
   # it returns true if it is successfully saved and false otherwise
   # Authors: Shary Beshara
   def notify_friend_request(child_1, child_2)
     notification = Notification.new
-    # Set attributes
     notification.mark_unread
     notification.title = "Friend Request #{child_2.full_name}"
     notification.short_desc = ""

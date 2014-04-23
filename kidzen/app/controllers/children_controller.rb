@@ -157,24 +157,4 @@ class ChildrenController < ApplicationController
     def signup_params
       params.require(:child).permit(:first_name, :middle_name, :family_name, :gender, "birth_date(1i)", "birth_date(2i)", "birth_date(3i)", :email, :password, :password_confirmation, :username, :guardian_email)
     end
-
-    # Adds a new friendship entry.
-    # First child invites second child
-    # child_1 - first child.
-    # child_2 - second child.
-    # This method gets all the supervisors of the child that will recieve the # request and sent them notifications
-    # Authors: Ahmed H. Ismail, Shary Beshara.
-    def create_friendship(child_1, child_2)
-      # TODO remember notifcations and calling function in child
-      # model to invite.
-      Friendship.create_friendship(child_1, child_2)
-      supervisors = Childparents.where(child: child_2.id)
-      supervisors.each do |supervisor|
-        supervisor.notify_friend_request(child_1, child_2)
-      end
-
-
-    end
-
-
 end
