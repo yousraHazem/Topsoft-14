@@ -20,9 +20,12 @@ class RegisteredUsersController < ApplicationController
     end
 
   end
+
+  # This method gets the attribute from the view and sends it to the 
+  # function in the model 
+  # Authors: Shary Beshara
   def settings
-    @registered_user.update_attribute(:notification_by_email, params[:notification_by_email])
-    
+    current_user.settings(params[:notification_by_email])
   end
 
 end

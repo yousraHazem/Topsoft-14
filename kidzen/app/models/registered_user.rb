@@ -103,12 +103,13 @@ class RegisteredUser < ActiveRecord::Base
     # notification - notification to queue
     # notification_by_email - is the boolean that shows if the user wants the 
     # notification to be sent by email
-    # notification_by_email - is the method in usermailer  
+    # notification_by_email - is the method in usermailer that sends the email 
     # Authors: Ahmed H. Ismail, Shary Beshara
     def queue_notification(notification)
         notification.assigned_to = username 
         if self.notification_by_email
-        UserMailer.notification_by_email(email, notification).deliver 
+            UserMailer.notification_by_email(email, notification).deliver 
+        end
     end
 
     # Retrieves Pending notifications
@@ -130,5 +131,15 @@ class RegisteredUser < ActiveRecord::Base
     def self.digest(token)
       Digest::SHA1.hexdigest(token.to_s)
     end
+
+    # this method changes the attribute (notification_by_email) of the user by # the value passed to it from the controller
+    # notification_by_email is the attribute that show if the user wants the 
+    # notifications to be sent by email
+    # Authors: Shary Beshara
+    def settings(notification_by_email)
+        update_attributes(notification_by_email: notification_by_email)
+    end
+
+
 
 end
