@@ -40,8 +40,8 @@ Kidzen::Application.routes.draw do
   get "children/verify"
 
   # This routes to enable getting info from invite page
-  get "supervisors/:id/invite" => 'supervisors#invite'
-  post "supervisors/:id/invite" => 'supervisors#invite'
+  get "supervisors/invite" => 'supervisors#invite'
+  post "supervisors/invite" => 'supervisors#invite'
 
   # Internationalization
   get 'change_locale', to: 'application#change_locale'

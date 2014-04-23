@@ -106,7 +106,7 @@ class SupervisorsController < ApplicationController
     def invite
       if signed_in?
         if Supervisor.exists?(registered_user: current_user)
-          @supervisor = Supervisor.find(params[:id])
+          @supervisor = current_user
           @email = params[:email]
           UserMailer.invite_others(@email, @supervisor).deliver 
         else
