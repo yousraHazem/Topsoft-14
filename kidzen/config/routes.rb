@@ -1,4 +1,6 @@
 Kidzen::Application.routes.draw do
+  resources :poll_questions
+
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
 
