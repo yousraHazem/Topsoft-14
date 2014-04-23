@@ -45,7 +45,9 @@ Kidzen::Application.routes.draw do
   get "group_members/create"
   get "group_members/show"
   get "group_members/destroy"
-  get "group_members/membership_requests" , to: 'group_members#membership_requests'
+  get "groups/:id/membership_requests" , to: 'group_members#membership_requests'
+  get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
+  get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
   
 
   #resources :children

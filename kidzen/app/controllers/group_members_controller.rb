@@ -66,7 +66,22 @@ class GroupMembersController < ApplicationController
   # The function takes a group_id, and returns the members with pending requests
   # Author: Nouran T. Attia
   def membership_requests
-    @group_members = GroupMember.where(:group_id => params[:group_id], :owner_accept_state => 2)
+    @pending_members = GroupMember.where(:group_id => params[:id],:owner_accept_state => 2)
+  end
+
+  # Method for accepting a join request into the group specified
+  # username-string
+  # group_id-integer
+  # updating an existing record in table group_members
+  # The function takes a unique username, and a group_id and updates
+  # an existing group_member record by setting the value of column invite to 1 indicating accepting the join request
+  # Author: Nouran T. Attia
+
+  def accept_membership_request
+   
+  end
+
+  def reject_membership_request
   end
 
   private
