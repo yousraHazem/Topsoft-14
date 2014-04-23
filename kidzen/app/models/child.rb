@@ -30,19 +30,17 @@ class Child < ActiveRecord::Base
   end
 
   # Adds a new friendship entry.
-  # First child invites second child
-  # child_1 - first child.
-  # child_2 - second child.
+  # child - is the child the friendhip is sent to
   # This method gets all the supervisors of the child that will recieve the 
   # request and sent them notifications
   # Authors: Ahmed H. Ismail, Shary Beshara.
   def create_friendship(child)
     # TODO remember notifcations and calling function in child
     # model to invite.
-    Friendship.create_friendship(self, child_2)
-    supervisors = Childparents.where(child: child_2.id)
+    Friendship.create_friendship(self, child)
+    supervisors = ChildParent.where(child: child.id)
     supervisors.each do |supervisor|
-      supervisor.notify_friend_request(self, child_2)
+      supervisor.notify_friend_request(self, child)
   end
 
 
