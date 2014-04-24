@@ -1,0 +1,41 @@
+ <table class="child_attr_disp">
+  <thead>
+  <tr>
+    <th colspan="2"> <%= child.registered_user.full_name %>
+  </th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        User Name
+      </td>
+      <td>
+        <%= child.registered_user.username %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Gender
+      </td>
+      <td>
+        <%= child.registered_user.gender ? "Female" : "Male" %>
+      </td>
+    </tr>
+    <tr>  
+      <td>
+        Date of Birth
+      </td>
+      <td>
+        <%= child.registered_user.birth_date %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Email
+      </td>
+      <td>
+        <%= child.registered_user.email %>
+      </td>
+    </tr>
+  </tbody>
+</table>
