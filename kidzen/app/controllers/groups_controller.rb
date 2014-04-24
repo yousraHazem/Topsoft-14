@@ -74,19 +74,11 @@ class GroupsController < ApplicationController
     end
   end
 
-  # This is a function that allows a group member to create a status in a group
-  # Returns nothing
-  # Time complexity: O(1)
-  # Author: Mohamed Bahgat Elrakaiby
-  def create_status(Status status)
-    Status.create(group_id: @group_id, status: status)
-  end
-
-  # This is a function that views members of the group
+  # This is a function that shows the members of a group
   # Returns nothing
   # Time Complexity: O(n).
   # Author: Mohamed Bahgat Elrakaiby
-  def view_members()
+  def view_members
     a = []
           GroupMember.all.each {|r|
             if r.group_id == @group.id
