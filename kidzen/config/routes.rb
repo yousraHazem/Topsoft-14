@@ -1,5 +1,6 @@
 Kidzen::Application.routes.draw do
 
+  get "access_page/access"
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
   # Lists pending notifications
