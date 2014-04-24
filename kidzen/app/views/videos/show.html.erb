@@ -10,8 +10,8 @@ Category: <%= @video.category %>
 </p>
 <p>
   <% if @video.youtube? %>
-	<iframe src="<%= "http://www.youtube.com/embed/"+@video.get_link %>"></iframe>
-	<% end %>
+    <iframe src="<%= "http://www.youtube.com/embed/"+@video.get_link %>"></iframe>
+  <% end %>
 </p>
   <%= link_to "Edit", edit_video_path(@video) %> |
   <%= link_to "Destroy", @video, :confirm => 'Are you sure?', :method => :delete %> |

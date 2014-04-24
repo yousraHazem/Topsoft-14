@@ -8,7 +8,7 @@ class VideosController < ApplicationController
   # Time Complexity : O(1)
   # Author : Hussien M. Eloy
   def video_params
-  params.require(:video).permit(:description, :category, :file, :real_file, :youtube)
+    params.require(:video).permit(:description, :category, :file, :real_file, :youtube)
   end
 
   # This method used to assign all the video in the database 
@@ -56,7 +56,7 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
     if @video.save
       if !@video.file.blank?
-      @video.convert
+        @video.convert
       end
       flash[:notice] = "Successfully created video"
       redirect_to @video
