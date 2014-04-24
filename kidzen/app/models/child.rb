@@ -1,6 +1,7 @@
 class Child < ActiveRecord::Base
   # Associations and validations.
   has_one :registered_user, dependent: :destroy
+  has_and_belongs_to_many :daily_activities
   validates_associated :registered_user
 
   # Checks if other is a friend of this child.
