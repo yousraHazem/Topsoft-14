@@ -111,8 +111,11 @@ class Photo < ActiveRecord::Base
   # Time Complexity : O(1)
   # Author : Hussien M. Eloy
   def local_or_remote
-    if (image.blank? ^ remote_image_url.blank?) == 0
+    if image.blank? && remote_image_url.blank?
       errors.add(:base, "Please Add photo")
+    end
+    if !image.blank? && !remote_image_url.blank?
+      errors.add(:base, "Please Add only one photo")
     end
   end
 end
