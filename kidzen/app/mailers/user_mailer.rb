@@ -15,6 +15,8 @@ class UserMailer < ActionMailer::Base
   end
 
   # This method sends an invitation email to the email 
+  # email - the email that the invitation should be sent
+  # supervisor - is the supervisor that sends the invitations
   # Authors: Shary Beshara
   def invite_others(email,supervisor)
     @supervisor = supervisor

@@ -22,7 +22,6 @@ Kidzen::Application.routes.draw do
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
-  resources :supervisors
 
 
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
@@ -47,14 +46,15 @@ Kidzen::Application.routes.draw do
   resources :surveys
   resources :groups
 
-
-  # Internationalization
-  get 'change_locale', to: 'application#change_locale'
   get "children/verify"
 
   # This routes to enable getting info from invite page
-  get "supervisors/:id/invite" => 'supervisors#invite'
-  post "supervisors/:id/invite" => 'supervisors#invite'
+  get "supervisors/invite" => 'supervisors#invite'
+  post "supervisors/invite" => 'supervisors#invite'
+
+  # Internationalization
+  get 'change_locale', to: 'application#change_locale'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
