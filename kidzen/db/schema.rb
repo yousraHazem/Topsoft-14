@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424095902) do
+ActiveRecord::Schema.define(version: 20140420002645) do
 
   create_table "activities", force: true do |t|
     t.integer  "min_age"
@@ -94,9 +94,19 @@ ActiveRecord::Schema.define(version: 20140424095902) do
     t.datetime "updated_at"
   end
 
+  create_table "events", force: true do |t|
+    t.string   "location"
+    t.string   "name"
+    t.date     "date_time"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "friendships", force: true do |t|
     t.integer  "child_1_id"
     t.integer  "child_2_id"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -167,11 +177,10 @@ ActiveRecord::Schema.define(version: 20140424095902) do
 
   create_table "photos", force: true do |t|
     t.string   "description"
-    t.string   "name"
+    t.string   "image"
     t.string   "remote_image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
   end
 
   create_table "poll_answers", force: true do |t|

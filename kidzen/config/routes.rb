@@ -1,7 +1,7 @@
 Kidzen::Application.routes.draw do
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
-
+  get "calendar/show"
   resources :groups
   resources :children
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
@@ -15,6 +15,7 @@ Kidzen::Application.routes.draw do
   resources :groups
   get "child/verify"
   post "child/new"
+   resource :calendar , only: [:show], controller: :calendar
   root 'events#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
