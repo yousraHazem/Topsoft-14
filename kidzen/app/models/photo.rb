@@ -105,9 +105,7 @@ class Photo < ActiveRecord::Base
   # photo is not empty
   # Parameters : None
   # Returns : None
-  # Approach : The method perfoms and Xor operation between the values of 
-  # the 2 fields (local image & hyperlink image) , And it should arise 
-  # an error if both are true or both are false
+  # Approach : the method ensures that only one field is entered
   # Time Complexity : O(1)
   # Author : Hussien M. Eloy
   def local_or_remote
