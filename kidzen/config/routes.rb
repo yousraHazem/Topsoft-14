@@ -1,5 +1,8 @@
 Kidzen::Application.routes.draw do
-  get "group_members/index"
+  get "group_members/index" 
+  get '/group_members/:id' , to:  'group_members#index'
+  get '/group_members/:id/view' , to:  'group_members#view'
+  get '/group_members/:id/leave_group' , to:  'group_members#leave_group'
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :registered_users
 

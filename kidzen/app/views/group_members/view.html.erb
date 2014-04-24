@@ -5,9 +5,9 @@
     <th>username</th>
   </tr>
  
-  <% @group_members.each do |GroupMember| %>
+  <% @group_members.each do |g| %>
     <tr>
-      <td><%= GroupMember.username %></td>
+      <td><%= g.username %></td>
     </tr>
   <% end %>
 </table>

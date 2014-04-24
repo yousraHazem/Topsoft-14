@@ -8,7 +8,11 @@ class GroupMembersController < ApplicationController
     # Time Complexity: O(n).
     # Author: Mohamed Bahgat Elrakaiby
     def index
-      @group_members = GroupMember.all
+      @group_members = GroupMembers.all
+    end
+
+    def view
+      @group_members = GroupMembers.all
     end
 
     # This is a function that allows a user to leave a group
@@ -16,9 +20,13 @@ class GroupMembersController < ApplicationController
     # Time complexity: O(1).
     # Author: Mohamed Bahgat Elrakaiby
     def leave_group
-      m = GroupMember.where(:username => current_user.username , :group_id => :group_id)
-      m.destroy
-      @g = Group.where(:group_id => :group_id)
-      redirect_to @g
+      m = GroupMembers.where(:username => current_user.username , :group_id => params[:id])
+      m.destroy_all
+      #@g = Group.where(:group_id => :group_id)
+      #redirect_to @g
+    end
+
+    def group_member_params
+      params.require(:group_members).permit(:group_id, :username)
     end
 end 
