@@ -15,8 +15,8 @@ class Photo < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   # has_many :comments,:tags    <<< to be un-commented once these models are created
   # belongs_to :post    <<< to be un-commented once these models are created        
-  validates_presence_of :description
-  validate :local_or_remote 
+  validates_presence_of :description, :image
+ #  validate :local_or_remote 
 
   # This method is used to Allow accessing model attributes As Rails 4 does
   # not support "attr_accessible" keyword
@@ -109,12 +109,9 @@ class Photo < ActiveRecord::Base
   # Time Complexity : O(1)
   # Author : Hussien M. Eloy
   def local_or_remote
-    if image.blank? && remote_image_url.blank?
-      errors.add(:base, "Please Add photo")
-    end
-    if !image.blank? && !remote_image_url.blank?
-      errors.add(:base, "Please Add only one photo")
-    end
+    if [self.image, self.remote_image_url].reject(&:blank?).size != 1
+    errors[:base] << ("Please choose at least one name - any language will do.")
+  end
   end
 end
 
