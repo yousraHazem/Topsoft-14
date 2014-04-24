@@ -1,28 +1,21 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Content:</strong>
   <%= @poll_question.content %>
 </p>
 
-
-
+<!-- listing all answers with radio buttons  -->
 <%= form_tag do %>
-<ol>
-  <% i = 0 %>
-  <% for poll_answer in @poll_question.poll_answers %>
-    <li>
-      <%= radio_button_tag "poll", poll_answer.content ,true%>
-      <%= h poll_answer.content %>
-      <%= poll_answer.counter %>
-      <% i += 1 %>
-    </li>
-  <% end %>
-</ol>
- <%= link_to 'vote', poll_questions_path %>
+  <ol>
+    <% for poll_answer in @poll_question.poll_answers %>
+      <li>
+        <%= radio_button_tag "poll", poll_answer.content%>
+        <%= h poll_answer.content %>
+        <%= poll_answer.counter %>
+      </li>
     <% end %>
-
-
+  </ol>
+  <%= link_to 'vote', poll_questions_path %><br><br>
+<% end %>
 
 
 
