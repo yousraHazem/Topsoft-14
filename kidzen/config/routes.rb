@@ -1,9 +1,32 @@
 Kidzen::Application.routes.draw do
-  resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
-  resources :registered_users
 
+  get '/registered_user', to: 'registered_users#show'
+
+  # Lists pending notifications
+  get "/notifications/pending", to: 'notifications#pending'
+
+  # Confirm children page
+  get "/confirm_children", to: 'supervisors#confirm_children'
+
+  # Children notification actions
+  get "/supervisors/dashboard", to: 'supervisors#show'
+  put "/supervisors/accept_child", to: 'supervisors#accept_child'
+  put "/supervisors/reject_child", to: 'supervisors#reject_child'
+  get "/supervisors/signup", to: 'supervisors#signup'
+  post "/supervisors/create", to: 'supervisors#create'
+  resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
+
+  # Session routes
+  resources :sessions, only: [:new, :create, :destroy]
+  get '/signin', to: 'sessions#new'
+  delete '/signout', to: 'sessions#destroy'
+  get '/signout', to: 'sessions#destroy'
+
+  # Children Signup paths
+  get '/signup', to: 'children#signup'
+  post '/children/create', to: 'children#create'
+  get '/children/show', to: 'children#show'
   resources :groups
-  resources :children
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
   match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
   match '/uploadingphoto', :to => 'public#uploading', via: [:get, :post]
@@ -11,13 +34,15 @@ Kidzen::Application.routes.draw do
   resources :events
   resources :polls
   resources :surveys
-  resources :child
   resources :groups
   get "child/verify"
   post "child/new"
   #add Route to view friends
   #Author : Nouran Mamdouh
   get "event/view_friends"
+  # Internationalization
+  get 'change_locale', to: 'application#change_locale'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
