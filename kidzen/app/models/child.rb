@@ -1,17 +1,20 @@
 class Child < ActiveRecord::Base
   # Associations and validations.
-  has_one :registered_user, dependent: :destroy
+  belongs_to :registered_user, dependent: :destroy
   validates_associated :registered_user
 
+  # Checks if other is a friend of this child.
+  # other - child
+  # Authors: Ahmed H. Ismail
   def friend?(other)
-    FriendShip.exists? child_1_id: id, child_2_id: other.id or 
-    FriendShip.exists? child_1_id: other.id, child_2_id: id
+    Friendship.exists? child_1_id: id, child_2_id: other.id or 
+    Friendship.exists? child_1_id: other.id, child_2_id: id
   end
 
   # Adds an entry in the ParentChild relationship.
   # Authors: Ahmed H. Ismail
   def add_parent(parent)
-    ParentChild.create(child_id: id, parent_id: parent.id)
+    ChildParent.create(child_id: id, parent_id: parent.id)
   end
 
   def join(chat_room)
@@ -28,8 +31,8 @@ class Child < ActiveRecord::Base
 
   # Adds an entry in the SupervisesChild relationship.
   # Authors: Ahmed H. Ismail
-  def add_interested_part(supervisor)
-    SupervisesChild.create(child_id: id, supervisor_id: supervisor.id)
+  def add_interested_party(supervisor)
+    ChildSupervisor.create(child_id: id, supervisor_id: supervisor.id)
   end
 
   def notify_observers
@@ -39,6 +42,12 @@ class Child < ActiveRecord::Base
   end
 
   def write_message
+  end
+
+  # Checks if child is approved.
+  # Authors: Ahmed H. Ismail
+  def approved?
+    is_approved
   end
 
   # FIXME: This should be in Message

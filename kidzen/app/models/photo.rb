@@ -13,10 +13,10 @@ class Photo < Post
 	has_many :comments, :tags
 
 
- # This function is used to initialize attributes of the model 
- # as Rails 4 prevent listing accessible fields in model
- # so it depends on Something called strong parameters to protect Accessibility
- # Author : Hussien M. Eloy
+   # This function is used to initialize attributes of the model 
+   # as Rails 4 prevent listing accessible fields in model
+   # so it depends on Something called strong parameters to protect Accessibility
+  # Author : Hussien M. Eloy
 	def photo_params
     params.require(:photo).permit(:description,:url)
   end
@@ -24,8 +24,8 @@ class Photo < Post
 
   # This function simply returns the photo ID (Auto generated)
   # Author : Hussien M. Eloy
-	def get_id 
-	self.id
+  def get_id 
+    self.id
 	end
 
 
@@ -55,14 +55,14 @@ class Photo < Post
 	end
 
 
-    # This function should tag A registered user into the given photo
+  # This function should tag A registered user into the given photo
 	# Author : Hussien M. Eloy
-    def tag_someone
+  def tag_someone
 	end
 
 
-    # This function should over-ride the description of The given photo
-    # Author : Hussien M. Eloy
+  # This function should over-ride the description of The given photo
+  # Author : Hussien M. Eloy
 	def edit_description(description)
 		self[:description] = description
 	end
@@ -70,16 +70,16 @@ class Photo < Post
 
 	# This function is used to access the attribute photo_name in Controller class
 	# Author : Hussien M. Eloy 
-    def photo_name
-    	self[:photo_name] 
-    end
+  def photo_name
+  	self[:photo_name] 
+  end
 
 
-    # This function is used to access the attribute photo_type in Controller class
+  # This function is used to access the attribute photo_type in Controller class
 	# Author : Hussien M. Eloy 
-    def photo_type
-    	self[:photo_type] 
-    end
+  def photo_type
+  	self[:photo_type] 
+  end
 
 
 end
