@@ -1,0 +1,16 @@
+<h1>Find Friends</h1>
+<%friends=Child.where("registered_user_id=#{current_user.id}").first.friends%>
+<%pending_friends=Child.where("registered_user_id=#{current_user.id}").first.pending_friends%>
+<%requested_friends=Child.where("registered_user_id=#{current_user.id}").first.requested_friends%>
+<%@users_to_display= (@all_users.to_a)-(friends.to_a)-(pending_friends.to_a)-(requested_friends.to_a)%>
+<%if @users_to_display !=[]%>
+<%@users_to_display.each do |t|%>
+<%user=RegisteredUser.where("id=#{t.registered_user_id}").first%>
+<%s="#{user.first_name} #{user.family_name}"%>
+<%=s%>
+<%=link_to "Add friend",:controller=>'friendship',:action=>'send_friend_request',:friend_id=>t.id,:cont=>'friendship',:act=>'find_friends'%>
+<br/>
+<%end%>
+<%else%>
+<p>No Friends to add</p>
+<%end%>
