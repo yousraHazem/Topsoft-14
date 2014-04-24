@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420002645) do
+ActiveRecord::Schema.define(version: 20140424095902) do
 
   create_table "activities", force: true do |t|
     t.integer  "min_age"
@@ -171,6 +171,7 @@ ActiveRecord::Schema.define(version: 20140420002645) do
     t.string   "remote_image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   create_table "poll_answers", force: true do |t|
