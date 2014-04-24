@@ -4,9 +4,9 @@
 <%user=RegisteredUser.where("id=#{t.registered_user_id}").first%>
 <%s="#{user.first_name} #{user.family_name}"%>
 <%=s%>
-<%=link_to "accept friend request",:controller=>'friendship',
+<%=link_to "accept friend request",:controller=>'friendships',
 :action=>'accept_reject_friend_request',:friend_id=>t.registered_user_id,:status=>1%>
-<%=link_to "reject friend request",:controller=>'friendship',
+<%=link_to "reject friend request",:controller=>'friendships',
 :action=>'accept_reject_friend_request',:friend_id=>t.registered_user_id,:status=>0%>
 <br/>
 <%end%>

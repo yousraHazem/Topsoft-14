@@ -1,4 +1,4 @@
-class FriendshipController < ApplicationController
+class FriendshipsController < ApplicationController
 
  def index
 
@@ -16,8 +16,8 @@ class FriendshipController < ApplicationController
  #Authors: Khaled I. Elhossiny.
 
  def view_pending_friendship_requests
- child=Child.where("registered_user_id=#{current_user.id}").first
- @pending_friends=child.pending_friends
+   child = Child.where("registered_user_id=#{current_user.id}").first
+   @pending_friends = child.pending_friends
  end
  
  def send_friend_request
@@ -34,16 +34,16 @@ class FriendshipController < ApplicationController
  #Authors: Khaled I. Elhossiny.
 
  def accept_reject_friend_request
- is_accepted = params[:status].to_i
- if is_accepted == 1
- rec1 = Friendship.where("child1_id=#{current_user.id} AND child2_id=#{params[:friend_id]}").update_all(status:"accepted")
- rec2 = Friendship.where("child1_id=#{params[:friend_id]} AND child2_id=#{current_user.id}").update_all(status:"accepted")
- flash[:notice]="friend request successfully accepted"
- else
- destroyed_friendship=Friendship.delete_all("child1_id=#{current_user.id} AND child2_id=#{params[:friend_id]}")
- flash[:notice]="friend request successfully rejected"
- end
- redirect_to(:controller => 'friendship',:action => 'view_pending_friendship_requests')
+   is_accepted = params[:status].to_i
+   if is_accepted == 1
+    rec1 = Friendship.where("child_1_id=#{current_user.id} AND child_2_id=#{params[:friend_id]}").update_all(status:"accepted")
+    rec2 = Friendship.where("child_1_id=#{params[:friend_id]} AND child_2_id=#{current_user.id}").update_all(status:"accepted")
+    flash[:notice] = "friend request successfully accepted"
+   else
+    destroyed_friendship = Friendship.delete_all("child_1_id=#{current_user.id} AND child_2_id=#{params[:friend_id]}")
+    flash[:notice] = "friend request successfully rejected"
+   end
+   redirect_to( :controller => 'friendship', :action => 'view_pending_friendship_requests')
  end
 
 end
