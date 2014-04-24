@@ -1,4 +1,9 @@
 class RegisteredUsersController < ApplicationController
+
+    def show_user 
+	@profile_owner = RegisteredUser.where(:username=>params[:username]).first
+
+    end
  
  def show 
 
