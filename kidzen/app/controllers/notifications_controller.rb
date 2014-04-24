@@ -13,7 +13,7 @@ class NotificationsController < ApplicationController
       render layout: false
     else
       # No one signed in
-      redirect_to session_path :new
+      render layout: false, nothing: true
     end
   end
 

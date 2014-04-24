@@ -107,6 +107,7 @@ class RegisteredUser < ActiveRecord::Base
     # Authors: Ahmed H. Ismail, Shary Beshara
     def queue_notification(notification)
         notification.assigned_to = username 
+        notification.registered_user = self  
         if self.notification_by_email
             UserMailer.notification_by_email(email, notification).deliver 
         end
