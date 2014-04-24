@@ -2,8 +2,10 @@ Kidzen::Application.routes.draw do
 
   get '/registered_user', to: 'registered_users#show'
 
+  # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
+  # username will be the same as in the url /show/"username".
   # Author: Ammar ELWazeer
-  # Unique url for every user to use it to access the profile(by now to access simple information until profile story)
+
   get '/show/:username', to: 'registered_users#show_user'
 
   # Lists pending notifications
