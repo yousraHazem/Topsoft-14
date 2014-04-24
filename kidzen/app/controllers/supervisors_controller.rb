@@ -52,7 +52,7 @@ class SupervisorsController < ApplicationController
     associated_child_apply(func, data)
   end
 
-  # PUT /supervisor/accept_child
+  # PUT /supervisor/accept_childBeshara
   # Reject child action.
   # Authors: Ahmed H. Ismail
   def reject_child
@@ -98,12 +98,30 @@ class SupervisorsController < ApplicationController
 
   end
 
-    # This method gets email and supervisor id from the view and find the corresponding supervisor which it paas them to the user_mailer method
+    # This method gets email and supervisor id from the view and find the 
+    # corresponding supervisor which it paas them to the user_mailer method 
+    # after checking that the supervisor is signed in  
+    # email - is the email that the invitation should be sent to 
+    # that passed by the views
+    # Authors: Shary Beshara
     def invite
-    @supervisor = Supervisor.find(params[:id])
-    @email = params[:email]
-    UserMailer.invite_others(@email, @supervisor).deliver 
-  end
+      if signed_in?
+        if Supervisor.exists?(registered_user: current_user)
+          @supervisor = current_user
+          @email = params[:email]
+          if !RegisteredUser.exists?(email: <email here>)
+            UserMailer.invite_others(@email, @supervisor).deliver 
+          end
+        else
+          flash[:failure] = "This isn't the page you are looking for.."
+          redirect_to child_path :show
+        end
+      else
+        flash[:failure] = "You have to be signed in"
+        redirect_to session_path :new
+      end
+    end
+
 
   private
 
@@ -141,5 +159,4 @@ class SupervisorsController < ApplicationController
         end
       end
     end
-    
 end

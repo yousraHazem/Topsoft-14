@@ -2,10 +2,10 @@
 <html>
 <head>
   <title>Kidzen</title>
-      <%= stylesheet_link_tag("general.css") %>
-      <%= yield :stylesheet_includes %>
-      <%= yield :javascript_includes %>
-    <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag("general.css") %>
+  <%= yield :stylesheet_includes %>
+  <%= yield :javascript_includes %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
   <div class="locale_button">
@@ -19,11 +19,11 @@
   <br/>
 
   <div id="alert_container">
-      <% flash.each do |key, value| %>
-        <div class="flash flash-<%= key %>">
-          <%= value %>
-        </div>
-      <% end %>      
+    <% flash.each do |key, value| %>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>      
   </div>
   <%= yield %>
 
