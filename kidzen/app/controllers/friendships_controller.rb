@@ -1,4 +1,4 @@
-class FriendshipController < ApplicationController
+class FriendshipsController < ApplicationController
 
  def index
  end
@@ -11,8 +11,8 @@ class FriendshipController < ApplicationController
  #Authors: Khaled I. Elhossiny.
  
  def view_my_friends
- child=Child.where("registered_user_id=#{current_user.id}").first
- @friends = child.friends
+   child = Child.where("registered_user_id=#{current_user.id}").first
+   @friends = child.friends
  end
 
  def view_pending_friendship_requests
