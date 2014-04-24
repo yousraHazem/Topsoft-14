@@ -98,6 +98,13 @@ class SupervisorsController < ApplicationController
 
   end
 
+    # This method gets email and supervisor id from the view and find the corresponding supervisor which it paas them to the user_mailer method
+    def invite
+    @supervisor = Supervisor.find(params[:id])
+    @email = params[:email]
+    UserMailer.invite_others(@email, @supervisor).deliver 
+  end
+
   private
 
     # Safety first.
@@ -134,5 +141,5 @@ class SupervisorsController < ApplicationController
         end
       end
     end
-
+    
 end

@@ -22,7 +22,8 @@ class RegisteredUser < ActiveRecord::Base
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, 
     uniqueness: true
     validates :banned, inclusion: [true, false]
-    validates :password, length: { minimum: 6 }
+    # this needs to be in the javascript
+    # validates :password, length: { minimum: 6 }
     validates_associated :permission # Note: Don't use on both ends
     # Associations:
     has_one :permission, dependent: :destroy
@@ -104,10 +105,16 @@ class RegisteredUser < ActiveRecord::Base
     # Queues a notification as pending for this user.
     # Namely adds the foreign key.
     # notification - notification to queue
-    # Authors: Ahmed H. Ismail
+    # notification_by_email - is the boolean that shows if the user wants the 
+    # notification to be sent by email
+    # notification_by_email - is the method in usermailer that sends the email 
+    # Authors: Ahmed H. Ismail, Shary Beshara
     def queue_notification(notification)
-        notification.assigned_to = username
+        notification.assigned_to = username 
         notification.registered_user = self  
+        if self.notification_by_email
+            UserMailer.notification_by_email(email, notification).deliver 
+        end
     end
 
     # Retrieves Pending notifications
@@ -129,5 +136,15 @@ class RegisteredUser < ActiveRecord::Base
     def self.digest(token)
       Digest::SHA1.hexdigest(token.to_s)
     end
+
+    # this method changes the attribute (notification_by_email) of the user by # the value passed to it from the controller
+    # notification_by_email is the attribute that show if the user wants the 
+    # notifications to be sent by email
+    # Authors: Shary Beshara
+    def settings(notification_by_email)
+        update_attributes(notification_by_email: notification_by_email)
+    end
+
+
 
 end

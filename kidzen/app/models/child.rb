@@ -41,6 +41,7 @@ class Child < ActiveRecord::Base
     supervisors = ChildParent.where(child: child.id)
     supervisors.each do |supervisor|
       supervisor.notify_friend_request(self, child)
+    end
   end
 
 
