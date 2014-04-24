@@ -2,7 +2,6 @@
 <html>
 <head>
 <title> My webpage </title>
-<%= include_gon %>
 <%= csrf_meta_tags %>
 <link type="text/css" rel="stylesheet" href="stylesheet.css"/> 
 </head>	
@@ -10,8 +9,12 @@
 	<%= form_tag("access", method: "get", remote: true) do %>		
 			<%  @child.each do |child| { :action => "access" } %>
 				<ul>
-					<button id = "<%=child.child_name%>" onclick = "myFunction(<%= "\'#{child.child_name}\'" %>, <%= "' #{Permit.find_by(child_name: "mohamed").abilities[:can_create_public_chat_rooms]}'" %>, <%= "' #{Permit.find_by(child_name: "mohamed").text}'" %>, <%= "' #{Permit.find_by(child_name: "mohamed").abilities[:can_join_public_chat_rooms]}'" %>  )" name = "child" > <%= child.child_name %></button>
-					<button onclick="save(<%= "\'#{child.child_name}\'" %>)" name = "saveButton"> save changes done to this child </button>	
+					<button id = "<%=registered_user.find_by(id: child.child_id).username%>" onclick = "myFunction(<%= "\'#{RegisteredUser.find_by(id: child.child_id).username}\'" %>, <%= "' #{Permission.find_by(registered_user_id: child.child_id).abilities[:can_create_public_chat_rooms]}'" %>, <%= "' #{permissions.find_by(registered_user_id: child.child_id).tag}'" %>, <%= "' #{Permission.find_by(registered_user_id: child.child_id).abilities[:can_join_public_chat_rooms]}'" %>  )" name = "child" > 
+						<%= RegisteredUser.find_by(id: child.child_id).username %>
+					</button>
+					<button onclick="save(<%= "\'#{RegisteredUser.find_by(id: child.child_id).username }\'" %>)" name = "saveButton"> 
+						save changes done to this child 
+					</button>	
 				</ul>
 			<% end %>
 				<button onclick="enable()"> Click here to edit your children</button>
@@ -33,10 +36,6 @@
 			var t = document.createTextNode(tags);
 			y.appendChild(t);
 			document.getElementById("tags").appendChild(y);
-			//prompt(tags);
-			//var div = document.createElement("div");
-			//div.name = "props";
-
 			var btn = document.createElement("INPUT");
 			btn.setAttribute("type","checkbox");
 			btn.name = "checkbox";	
@@ -57,30 +56,23 @@
 			mySubmit.setAttribute("type", "text");
 			//mySubmit.setAttribute("name", "TagField");
 			mySubmit.setAttribute("id", "TagField");
+			
 			submit.onclick = function() {
 				var added = document.createElement("LI");
 				var written = document.getElementById("TagField").value;
-				//prompt(written);
+				
 				var textAdded = document.createTextNode(written)
-				//promp
 				added.appendChild(textAdded);
 				document.getElementById("tags").appendChild(added);
-				//window.open("localhost:3000//access_page/access?written="+written+"&child"+childUserName);
+				window.open("localhost:3000//access_page/access?written="+written+"&child"+childUserName);
 			};
 
-			
-			//for (var i = 0; i < document.getElementsByName('checkbox').length; i++){
-			//document.getElementsByName('checkboxDiv').appendChild(document.getElementsByName('checkbox')
-			//	);
-			//document.body.appendChild(div);
-			//	}
 			document.body.appendChild(btn);
 			document.body.appendChild(t);  
 			document.body.appendChild(btn2);
 			document.body.appendChild(t2);  			
 			document.body.appendChild(mySubmit);
 			document.body.appendChild(submit);
-
 
 			if (canCreatePublicChatRooms = false) {
 				prompt(canCreatePublicChatRooms);
@@ -105,11 +97,6 @@
 			for (var i = 0; i < document.getElementsByName('saveButton').length; i++){
 				document.getElementsByName('saveButton')[i].disabled = false;
 			}
-
-			
-			
-			//var m = "mohsen";
-			//window.open("localhost:3000//access_page/access?m="+m+,"_self");
 						
 			};
 
@@ -156,15 +143,6 @@
 
 			
 				
-			
-			/*var name = @bla.child_name;
-			prompt(name);
-			console.log(name);
-			var btn = document.createElement("INPUT");
-			btn.setAttribute("type","checkbox");	
-			var t = document.createTextNode("Can chat with mutual friends");
-			document.body.appendChild(btn);
-			document.body.appendChild(t);*/
 		
 	</script>	
 
@@ -173,3 +151,4 @@
 
 </body>
 </html>
+
