@@ -1,5 +1,7 @@
 Kidzen::Application.routes.draw do
 
+  resources :poll_questions
+
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
   # Lists pending notifications
