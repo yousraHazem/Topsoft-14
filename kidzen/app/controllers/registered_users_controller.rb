@@ -1,6 +1,13 @@
 class RegisteredUsersController < ApplicationController
+
+  # Authors: Ammar ELWazeer
+  # save the user in @profile_owner to use it to view the profile while the username is the one taken from the url.
+  def show_user 
+    @profile_owner = RegisteredUser.where(:username=>params[:username]).first
+
+  end
  
- def show 
+  def show 
 
     if !signed_in? 
       # Login page
