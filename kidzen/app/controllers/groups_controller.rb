@@ -24,12 +24,14 @@ class GroupsController < ApplicationController
   # Method for creating a new group
   # input : group_params hash
   # Insertion of a new record in table groups
-  # The function takes a unique username, and a group_name and creates a new group by creating and inserting a new record in table groups
+  # The function takes a unique username, and a group_name 
+  # and description and creates a new group by creating and inserting
+  # a new record in table groups
   # Author: Nouran T. Attia
   # POST /groups
   # POST /groups.json
   def create
-    #if signed_in?
+    if signed_in?
       #if current_user.username = 
         
       #end
@@ -44,7 +46,7 @@ class GroupsController < ApplicationController
           format.json { render json: @group.errors, status: :unprocessable_entity }
         end
       end
-    #end
+    end
   end
 
   # PATCH/PUT /groups/1
