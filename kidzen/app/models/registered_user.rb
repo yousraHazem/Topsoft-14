@@ -22,7 +22,8 @@ class RegisteredUser < ActiveRecord::Base
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, 
     uniqueness: true
     validates :banned, inclusion: [true, false]
-    validates :password, length: { minimum: 6 }
+    # this needs to be in the javascript
+    # validates :password, length: { minimum: 6 }
     validates_associated :permission # Note: Don't use on both ends
     # Associations:
     has_one :permission, dependent: :destroy
