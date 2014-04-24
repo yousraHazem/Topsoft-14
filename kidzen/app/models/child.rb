@@ -2,7 +2,7 @@ class Child < ActiveRecord::Base
   # Associations and validations.
   belongs_to :registered_user, dependent: :destroy
   validates_associated :registered_user
-  
+
   has_many :friends,
            :through => :friendships,
            :conditions => "status = 'accepted'"
@@ -20,7 +20,7 @@ class Child < ActiveRecord::Base
            :order => :created_at
 
   has_many :friendships,
-           :foreign_key => 'child_1_id',
+           :foreign_key => 'child1_id',
            :dependent => :destroy
 
   # Checks if other is a friend of this child.

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420002645) do
+ActiveRecord::Schema.define(version: 20140424134205) do
 
   create_table "activities", force: true do |t|
     t.integer  "min_age"
@@ -104,14 +104,14 @@ ActiveRecord::Schema.define(version: 20140420002645) do
   end
 
   create_table "friendships", force: true do |t|
-    t.integer  "child_1_id"
-    t.integer  "child_2_id"
+    t.integer  "child1_id"
+    t.integer  "child2_id"
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "friendships", ["child_1_id", "child_2_id"], name: "index_friendships_on_child_1_id_and_child_2_id", unique: true
+  add_index "friendships", ["child1_id", "child2_id"], name: "index_friendships_on_child1_id_and_child2_id", unique: true
 
   create_table "group_members", force: true do |t|
     t.integer  "group_id"
@@ -199,24 +199,22 @@ ActiveRecord::Schema.define(version: 20140420002645) do
 
   create_table "registered_users", force: true do |t|
     t.string   "username"
-    t.boolean  "online"
-    t.boolean  "gender"
+    t.string   "gender"
     t.datetime "last_accessed"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "family_name"
     t.date     "birth_date"
-    t.string   "email"
-    t.string   "nickname"
-    t.string   "password_digest"
     t.boolean  "banned"
-    t.integer  "permission_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "remember_token"
   end
 
   add_index "registered_users", ["email"], name: "index_registered_users_on_email", unique: true
-  add_index "registered_users", ["username"], name: "index_registered_users_on_username", unique: true
+  add_index "registered_users", ["remember_token"], name: "index_registered_users_on_remember_token"
 
   create_table "supervisors", id: false, force: true do |t|
     t.integer  "registered_user_id"
@@ -232,6 +230,9 @@ ActiveRecord::Schema.define(version: 20140420002645) do
     t.integer  "length"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "real_file"
+    t.string   "youtube"
+    t.string   "file"
   end
 
 end

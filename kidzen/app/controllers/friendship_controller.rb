@@ -4,6 +4,23 @@ class FriendshipController < ApplicationController
 
  end
  
+
+def find_friends
+ @user_id=current_user.id
+ @all_users=Child.all.where("id<>#{@user_id}")
+ end
+ # This method to provide the child with a list of friends.
+ # child - the child currently signed in.
+ # @friends - active record of children.
+ # Returns @friends which is the active record of the child's friends.
+ # Time complexity: O(n).
+ #Authors: Khaled I. Elhossiny.
+ 
+ def view_my_friends
+ child=Child.where("registered_user_id=#{current_user.id}").first
+ @friends = child.friends
+ end
+
  # This method to provide the child with a list of pending friends.
  # child - an object of the child currently signed in.
  # @pending_friends - active record of children.
@@ -58,8 +75,6 @@ class FriendshipController < ApplicationController
  flash[:notice]="friend request successfully rejected"
  end
  redirect_to(:controller => 'friendship',:action => 'view_pending_friendship_requests')
- end
-
  end
 
 end

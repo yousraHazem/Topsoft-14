@@ -32,4 +32,11 @@
   <%= @user.registered_user.gender %>
 </p>
 
+</br>
+
+<%=link_to "Create Event",:controller=>'events',:action=>'new'%>
+<%=link_to "Find Friends",:controller=>'friendship',:action=>'find_friends'%>
+<%=link_to "View Pending Friend Requests",:controller=>'friendship',:action=>'view_pending_friendship_requests'%>
+<%=link_to "My Friends",:controller=>'friendship',:action=>'view_my_friends'%>
+
 
