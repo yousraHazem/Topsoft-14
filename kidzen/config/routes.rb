@@ -37,6 +37,7 @@ Kidzen::Application.routes.draw do
   resources :groups
   get "child/verify"
   post "child/new"
+<<<<<<< HEAD
   #add Route to view friends
   #Author : Nouran Mamdouh
   get "event/view_friends"
@@ -44,6 +45,9 @@ Kidzen::Application.routes.draw do
   get 'change_locale', to: 'application#change_locale'
   get "friendship/view_pending_friendship_requests"
   get "friendship/accept_reject_friend_request"
+=======
+  get "friendship/send_friend_request"
+>>>>>>> c1d9755a9796bcca24b8c091fb20e60d55b800f4
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

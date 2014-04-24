@@ -6,9 +6,10 @@
   <%- #Author : Nouran Mamdouh -%>
 <%if @friends.to_a !=[]%>
 <%@friends.to_a.each do |t|%>
-<%s="#{t.first_name} #{t.family_name}"%>
+<%user=RegisteredUser.where("id=#{t.registered_user_id}").first%>
+<%s="#{user.first_name} #{user.family_name}"%>
 <%=s%>
-<%= link_to "invite friend" , :controller => "EventsController", :action => 'invite_friend_to_an_event' , :friend_id => t.id %>
+<%= link_to "invite friend" , :controller => "events", :action => 'invite_friend_to_an_event' , :friend_id => t.id %>
 <br/>
 <%end%>
 
