@@ -3,8 +3,8 @@ Kidzen::Application.routes.draw do
   get '/registered_user', to: 'registered_users#show'
 
   # Settings' actions 
-  post '/registered_user/settings', to: 'registered_users#settings'
-  get '/registered_user/settings', to: 'registered_users#settings'
+  post '/settings', to: 'registered_users#settings'
+  get '/settings', to: 'registered_users#settings'
 
   # Lists pending notifications
   get "/notifications/pending", to: 'notifications#pending'
