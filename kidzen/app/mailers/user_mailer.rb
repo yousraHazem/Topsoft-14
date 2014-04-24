@@ -24,4 +24,14 @@ class UserMailer < ActionMailer::Base
     mail(:to => @email, :subject => 'invitation')
   end
 
+  # This method sends a notification email 
+  # email- is the email of the registered user that the notification will be  # sent
+  # notification - is the notification will be sent by email
+  # Authors: Shary Beshara
+  def notification_by_email(email, notification)
+    @email = email
+    @notification = notification
+    mail(:to => @email, :subject => @notification.title)
+  end
+
 end

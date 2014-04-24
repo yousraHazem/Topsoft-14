@@ -26,19 +26,6 @@ class ChildrenController < ApplicationController
   end
 
 
-
-  # Adds a new friendship entry.
-  # First child invites second child
-  # child_1 - first child.
-  # child_2 - second child.
-  # Authors: Ahmed H. Ismail.
-  def create_friendship(child_1, child_2)
-    # TODO remember notifcations and calling function in child
-    # model to invite.
-    Friendship.create_friendship(child_1, child_2)
-  end
-
-
   # This method will set the variable is_approved to true to mark that 
   # this child has been approved.
   # Authors: Shary Beshara

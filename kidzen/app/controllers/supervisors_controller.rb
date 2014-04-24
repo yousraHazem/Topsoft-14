@@ -97,6 +97,7 @@ class SupervisorsController < ApplicationController
 
   end
 
+<<<<<<< HEAD
     # This method gets email and supervisor id from the view and find the 
     # corresponding supervisor which it paas them to the user_mailer method 
     # after checking that the supervisor is signed in  
@@ -120,6 +121,14 @@ class SupervisorsController < ApplicationController
         redirect_to session_path :new
       end
     end
+=======
+    # This method gets email and supervisor id from the view and find the corresponding supervisor which it paas them to the user_mailer method
+    def invite
+    @supervisor = Supervisor.find(params[:id])
+    @email = params[:email]
+    UserMailer.invite_others(@email, @supervisor).deliver 
+  end
+>>>>>>> b554734f23c3d4643a12057044ed1c6c3c677dc9
 
   private
 
@@ -157,5 +166,9 @@ class SupervisorsController < ApplicationController
         end
       end
     end
+<<<<<<< HEAD
 
 end
+=======
+end
+>>>>>>> b554734f23c3d4643a12057044ed1c6c3c677dc9

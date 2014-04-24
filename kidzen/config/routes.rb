@@ -2,6 +2,10 @@ Kidzen::Application.routes.draw do
 
   get '/registered_user', to: 'registered_users#show'
 
+  # Settings' actions 
+  post '/settings', to: 'registered_users#set_settings'
+  get '/settings', to: 'registered_users#settings'
+
   # Lists pending notifications
   get "/notifications/pending", to: 'notifications#pending'
 
@@ -14,6 +18,7 @@ Kidzen::Application.routes.draw do
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
+
 
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
 
