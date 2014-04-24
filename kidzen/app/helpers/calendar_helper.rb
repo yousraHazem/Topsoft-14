@@ -5,6 +5,6 @@ module CalendarHelper
 # Time Complexity : O(1)
 # Author : Abdelrahman Saad
     def calendar(date = Date.today, &block)
-    Calendar.new(self, date, block).table
+      Calendar.new(self, date, block).table
     end
 end
