@@ -3,6 +3,10 @@ Kidzen::Application.routes.draw do
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
 
+  # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
+  # username will be the same as in the url /show/"username".
+  # Author: Ammar ELWazeer
+  get '/show/:username', to: 'registered_users#show_user'
   # Settings' actions 
   post '/settings', to: 'registered_users#set_settings'
   get '/settings', to: 'registered_users#settings'
