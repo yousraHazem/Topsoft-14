@@ -140,6 +140,4 @@ class SupervisorsController < ApplicationController
         end
       end
     end
-
 end
-
