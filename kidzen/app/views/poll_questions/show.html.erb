@@ -7,16 +7,20 @@
 
 
 
-  <ol>
-    <% for poll_answer in @poll_question.poll_answers %>
-      <li>
-	    <%= radio_button_tag "poll", poll_answer.content ,true%>
-	  	<%= h poll_answer.content %>
-	  	<!-- counter for how many one voted for this Question -->
-        <%= poll_answer.counter %>
-      </li>
+<%= form_tag do %>
+<ol>
+  <% i = 0 %>
+  <% for poll_answer in @poll_question.poll_answers %>
+    <li>
+      <%= radio_button_tag "poll", poll_answer.content ,true%>
+      <%= h poll_answer.content %>
+      <%= poll_answer.counter %>
+      <% i += 1 %>
+    </li>
+  <% end %>
+</ol>
+ <%= link_to 'vote', poll_questions_path %>
     <% end %>
-  </ol>
 
 
 
