@@ -60,6 +60,14 @@ class Notification < ActiveRecord::Base
     return [accept_action, reject_action]
   end
 
+  # Adds actions for reported post notification
+  # post - post in question
+  # returns list of unsaved actios
+  # Authors: Ahmed H. Ismail
+  def add_post_reported_actions(post)
+    # TODO: Implement when post is implemented.
+    return []
+  end
 
 
 end
