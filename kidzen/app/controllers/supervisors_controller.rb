@@ -108,7 +108,9 @@ class SupervisorsController < ApplicationController
         if Supervisor.exists?(registered_user: current_user)
           @supervisor = current_user
           @email = params[:email]
+          if !RegisteredUser.exists?(email: <email here>)
           UserMailer.invite_others(@email, @supervisor).deliver 
+          end
         else
           flash[:failure] = "This isn't the page you are looking for.."
           redirect_to child_path :show
