@@ -51,6 +51,30 @@ class Supervisor < ActiveRecord::Base
       return false
     end
   end
+
+  # This method create a notification
+  # , make it unread and fill it's attributes 
+  # chils_1 - is the child sending the friend request
+  # child_2 - is the child that the friend request is sent to
+  # it returns true if it is successfully saved and false otherwise
+  # Authors: Shary Beshara
+  def notify_friend_request(child_1, child_2)
+    notification = Notification.new
+    notification.mark_unread
+    notification.title = "Friend Request #{child_2.full_name}"
+    notification.short_desc = ""
+    notification.long_desc = "#{child_1.full_name} sent a friend request to #{child_2.full_name}"
+
+      if notification.save
+        return true
+      else 
+        # Failed to save notification
+        Rails.logger.debug("notify_child_created failed to save notification : #{notification.inspect}")
+        return false
+      end
+    end
+
+
   
   # Approves a child
   # child - child to accept modified and saved in database

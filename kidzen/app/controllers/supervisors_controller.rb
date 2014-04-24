@@ -1,7 +1,6 @@
 # Supervisor controller
 # Authors: Ahmed H. Ismail
-class SupervisorsController < ApplicationController
-  
+class SupervisorsController < ApplicationController  
   # TODO: fix 'X-CSRF-Token' in XMLHttpRequest header
   skip_before_filter :verify_authenticity_token, only: [:accept_child, :reject_child]
   
