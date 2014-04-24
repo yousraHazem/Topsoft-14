@@ -1,7 +1,7 @@
 ## The access page controller
 ##Author:- Mohamed khaled abdelmeguid
 
-## change DB tables and attributes to be compatible with the master (DONE)
+# change DB tables and attributes to be compatible with the master (DONE)
 
 class AccessPageController < ApplicationController
   def access
