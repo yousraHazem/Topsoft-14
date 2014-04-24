@@ -39,7 +39,7 @@ Kidzen::Application.routes.draw do
   post "child/new"
   #add Route to view friends
   #Author : Nouran Mamdouh
-  get "event/view_friends"
+  get "events/view_friends"
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
   get "friendship/view_pending_friendship_requests"
@@ -47,7 +47,6 @@ Kidzen::Application.routes.draw do
   get "friendship/send_friend_request"
   get "friendship/find_friends"
   get "friendship/view_my_friends"
-  get "events/view_friends"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

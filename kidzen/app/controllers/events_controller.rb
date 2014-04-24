@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  skip_before_action  :set_event , only: [:view_friends]
 
   #this method invite a friend to an events 
     #Parameters : child id , invited friend id and event id
@@ -17,8 +18,8 @@ class EventsController < ApplicationController
   #Time Complexity : O(1)
   #Author : Nouran Mamdouh
   def view_friends
-    child = Child.where("registered_user_id=#{current_user.id}").first
-    @friends = child.friends
+    @child = Child.where("registered_user_id=#{current_user.id}").first
+    @friends = @child.friends
   end
 
   # GET /events
