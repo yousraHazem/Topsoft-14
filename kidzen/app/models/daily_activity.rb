@@ -2,6 +2,6 @@
 class DailyActivity < ActiveRecord::Base
 # Associations and validations.
 
-has_and_belongs_to_many:children
+has_and_belongs_to_many :children
 
 end

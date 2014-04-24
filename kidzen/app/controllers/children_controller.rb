@@ -100,11 +100,11 @@ class ChildrenController < ApplicationController
   # Authors: Khaled I. Elhossiny.
    
   def add_daily_activity
-  child=Child.where("registered_user_id=#{current_registered_user.id}").first
-  daily_act=DailyActivity.create(:value => params[:value].to_i, :info => params[:info], :name => params[:name])
-  child.daily_activities << daily_act
-  flash[:notice]="Successfully added daily activities"
-  redirect_to(:controller => params[:cont],:action => params[:act])
+    child = Child.where("registered_user_id=#{current_registered_user.id}").first
+    daily_act = DailyActivity.create( :value => params[:value].to_i, :info => params[:info], :name => params[:name])
+    child.daily_activities << daily_act
+    flash[:notice] = "Successfully added daily activities"
+    redirect_to( :controller => params[:cont], :action => params[:act])
   end
 
   private
