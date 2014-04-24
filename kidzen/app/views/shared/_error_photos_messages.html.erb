@@ -1,0 +1,22 @@
+<!-- An Error message to displayed When error occurs Author : Hussien M. Eloy --> 
+<% if @photo.errors.any? %>
+      <div id="error_explanation">
+      <!--
+      populize is the method to set the text as plural as per the integer value
+      -->
+         <h2><%= pluralize(@photo.errors.count, "error") %>
+         prohibited the uploading process...</h2>
+         <p>There were problems with the following fields:</p>
+      <ul>
+
+         <!--
+               @image.errors.full_messages => return the array of full error messages
+         -->
+            <% @photo.errors.full_messages.each do |msg| %>
+                     <li><%= msg %></li>
+            <% end %>
+      </ul>
+</div>
+<% else %>
+         &nbsp;<br />
+<% end %>
