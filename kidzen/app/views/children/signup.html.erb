@@ -1,0 +1,108 @@
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag("signup_forms.css") %>
+<% end %>
+
+<div class="signup">
+<h3>Create Child Account</h3>
+<%= form_for :child, url: {controller: :children, action: :create, method: :post} do |f|  %>
+  <%= render 'shared/signup_error_messages' %>
+    <table>
+        <thead>
+        <tr>
+            <th colspan="2">Personal Info</th>
+        </tr>
+        </thead>
+    <tbody>
+    <tr>
+        <td>
+        <%= f.label :first_name,  t('first_name') %>
+        </td>
+        <td>
+        <%= f.text_field :first_name %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= f.label :middle_name, t('middle_name') %>
+        </td>
+        <td>
+            <%= f.text_field :middle_name  %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= f.label :family_name, t('family_name') %>
+        </td>   
+        <td>
+            <%= f.text_field :family_name %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= f.label :user_name, t('username') %>
+        </td>
+        <td>
+            <%= f.text_field :username %>
+        </td>
+    </tr>  
+    <tr>
+        <td>
+            <%= f.label :gender, t('gender') %>
+        </td>
+        <td>
+            <%= f.select :gender, [ ["Female", "female"], ["Male", "male"] ] %>
+        </td>
+    </tr>
+
+    <tr>
+      <td>
+        <%= f.label :guardian_email %>
+      </td>
+      <td>
+        <%= f.text_field :guardian_email  %>
+      </td>
+    </tr>
+    </tbody>
+    </table>
+    <br/>
+    <%= f.label :birth_date, t('birth_date') %>
+    <%= f.date_select  :birth_date, start_year: Time.now.year - 100, end_year: Time.now.year  %>
+    <br/>
+
+  <table>
+  <thead>
+  <tr>
+    <th colspan="2">Login Info</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>
+    <%= f.label :email, t('email') %>
+  </td>
+  <td>
+    <%= f.text_field :email %>
+  </td> 
+  </tr>
+  <tr>
+    <td>
+      <%= f.label :password , t('password') %>
+    </td>
+    <td>
+      <%= f.password_field :password %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= f.label :password_confirmation, t('password_confirmation') %>
+    </td>
+    <td>
+      <%= f.password_field :password_confirmation %>
+    </td>
+  </tr>
+  </tbody>
+  </table>
+    <%= f.submit t('create_account_submit') %>
+<% end %>
+
+</div>
