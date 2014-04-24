@@ -25,7 +25,18 @@ class RegisteredUsersController < ApplicationController
   # function in the model 
   # Authors: Shary Beshara
   def settings
-    current_user.settings(params[:notification_by_email])
+     if signed_in?
+        if Supervisor.exists?(registered_user: current_user)
+              current_user.settings(params[:notification_by_email])
+        else
+          flash[:failure] = "This isn't the page you are looking for.."
+          redirect_to child_path :show
+        end
+      else
+        flash[:failure] = "You have to be signed in"
+        redirect_to session_path :new
+      end
+
   end
 
 end
