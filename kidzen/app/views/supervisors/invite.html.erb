@@ -1,0 +1,7 @@
+<%= form_tag ( {:controller => 'supervisor', :action => 'invite'}), :method => 'get' do %>
+<p>
+    <%= email_field_tag :email %>
+    <%= submit_tag "Send invitation" %>
+  </p>
+<%= link_to 'Return', @supervisor %> 
+<% end %>
