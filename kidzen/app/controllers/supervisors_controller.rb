@@ -1,4 +1,3 @@
-
 # Supervisor controller
 # Authors: Ahmed H. Ismail
 class SupervisorsController < ApplicationController
@@ -109,7 +108,7 @@ class SupervisorsController < ApplicationController
           @supervisor = current_user
           @email = params[:email]
           if !RegisteredUser.exists?(email: <email here>)
-          UserMailer.invite_others(@email, @supervisor).deliver 
+            UserMailer.invite_others(@email, @supervisor).deliver 
           end
         else
           flash[:failure] = "This isn't the page you are looking for.."
