@@ -1,0 +1,13 @@
+<!-- Authors: Shary Beshara -->
+<!-- This view contains a checkbox which pass the value to the controller-->
+
+<%= form_for(:settings, url: {controller: :registered_users, action:
+:set_settings, method: :post } ) do |f| %>
+  <div class="field">
+    <%= f.label "Get Email" %> <br />
+    <%= f.check_box :notification_by_email %> <br />
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
