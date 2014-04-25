@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   # @message instant user of a type message.
   # @user instant user of type registered user.
   # Complexity o(n).
-  # Author: Ali A. El-Halawaty .
+  # Authors: Ali A. El-Halawaty .
   def index 
     @user = current_user
     @messages = Message.order("created_at desc")
@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
   # @message instant user of a type message.
   # @user instant user of type registered user.
   # Complexity O(n).
-  # Author: Ali A. El-Halawaty .
+  # Authors: Ali A. El-Halawaty .
   def show 
     @message = Message.find(params[:id])
     @user = current_user
@@ -41,7 +41,7 @@ class MessagesController < ApplicationController
   # This function creates new message by passing parameters to it form m_params function 
   # and saves it in the table and if the message saved succes message will emerge else failure message .
   # Complexity o(1) .
-  # Author: Ali A. El-Halawaty .
+  # Authors: Ali A. El-Halawaty .
   def create
     @message = Message.new(m_params)
     @message.sender = current_user.email
@@ -60,7 +60,7 @@ class MessagesController < ApplicationController
 
   # This function searches for the message and deletes the message from the table
   # Complexity o(n)
-  # Author: Ali A. El-Halawaty .
+  # Authors: Ali A. El-Halawaty .
   def destroy
     @message = Message.find(params[:id])
     @message.destroy
@@ -75,10 +75,11 @@ class MessagesController < ApplicationController
 
 
 
+
+  private 
   # This function is required to define variables for rails 4 as attr_accesible not usable in rails 4 .
   # Complexity o(1) .
-  # Author: Ali A. El-Halawaty .
-  private    
+  # Authors: Ali A. El-Halawaty .   
   def m_params
     params.require(:message).permit(:subject, :body, :sender, :recepient, :read)
   end
