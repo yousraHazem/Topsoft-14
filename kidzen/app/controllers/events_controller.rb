@@ -56,7 +56,7 @@ class EventsController < ApplicationController
   def edit
   end
   # POST /events
-  # POST /events.json
+  # POST /events.json 
   #this method creates a new event after submitting the form with the variables
   #Parameters : event parameters
   #Returns : None

@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 20140424212240) do
   create_table "events", force: true do |t|
     t.string   "location"
     t.string   "name"
-    t.datetime "date_time"
+    t.date     "date"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -202,20 +202,6 @@ ActiveRecord::Schema.define(version: 20140424212240) do
     t.string   "description"
     t.string   "image"
     t.string   "remote_image_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "poll_answers", force: true do |t|
-    t.string   "content"
-    t.integer  "counter"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "poll_question_id"
-  end
-
-  create_table "poll_questions", force: true do |t|
-    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
