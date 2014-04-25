@@ -6,17 +6,20 @@
 <link type="text/css" rel="stylesheet" href="stylesheet.css"/> 
 </head>	
 <body>
+<!-- in this form a button of every child of a parent is viewd and on clicking on any of these buttons the javascript do some work that is described in the script tag below-->
   <%= form_tag("access", method: "get", remote: true) do %>		
   <%  @child.each do |child| { :action => "access" } %>
   <ul>
     <button id = "<%=registered_user.find_by(id: child.child_id).username%>" onclick = "myFunction(<%= "\'#{RegisteredUser.find_by(id: child.child_id).username}\'" %>, <%= "' #{Permission.find_by(registered_user_id: child.child_id).abilities[:can_create_public_chat_rooms]}'" %>, <%= "' #{permissions.find_by(registered_user_id: child.child_id).tag}'" %>, <%= "' #{Permission.find_by(registered_user_id: child.child_id).abilities[:can_join_public_chat_rooms]}'" %>  )" name = "child" > 
       <%= RegisteredUser.find_by(id: child.child_id).username %>
     </button>
+    <!-- this is a save button, when clicked it saves the information changed of the child selected-->
     <button onclick="save(<%= "\'#{RegisteredUser.find_by(id: child.child_id).username }\'" %>)" name = "saveButton"> 
     save changes done to this child 
     </button>	
   </ul>
   <% end %>
+  <!-- this button is created to be able to edit the children due to some functionlaties done in the javascript found in the script tag-->
   <button onclick="enable()"> Click here to edit your children</button>
   <div name = "tagDiv">
     <ol id = "tags" >				

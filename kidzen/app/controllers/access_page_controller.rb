@@ -5,7 +5,7 @@
 
 class AccessPageController < ApplicationController
   def access
-  	# check if the children of a parent is not empty
+    # check if the children of a parent is not empty
     if RegisteredUser.find_by(id: ChildParent.find_by(parent_id: current_user.id).child_id).nil?
     &&ChildParent.find_by(parent_id: current_user.id).nil?
     && ChildParent.find_by(parent_id: current_user.id).child_id.nil?
@@ -15,7 +15,7 @@ class AccessPageController < ApplicationController
       @child = ChildParent.find_all_by_parent_id (current_user.id)
     end
 
-  		## here we take the values to be updated from the url but there is a bug in updating the Hash
+  	# here we take the values to be updated from the url but there is a bug in updating the Hash
     check = params[:c1]
     child = params[:childUpdate]
     @update = Permission.find_by(child_name: child).update(abilities[:can_add_mutual_friends] => check)
@@ -26,7 +26,7 @@ class AccessPageController < ApplicationController
       edirect_to root_url
     end
   	
-  	## here we take the values to be updated from the url but there is a bug in updating the DB 
+  	# here we take the values to be updated from the url but there is a bug in updating the DB 
   		
   	text = params[:written]
   	child = params[:childUserName]
