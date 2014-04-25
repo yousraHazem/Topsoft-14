@@ -1,5 +1,10 @@
 Kidzen::Application.routes.draw do
 
+  resources :groups
+  resources :children
+  resources :photos
+
+
   get '/registered_user', to: 'registered_users#show'
 
   # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
@@ -23,11 +28,6 @@ Kidzen::Application.routes.draw do
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
 
-
-  resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
-  #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
-  #resources :registered_users
-
   # Session routes
   resources :sessions, only: [:new, :create, :destroy]
   get '/signin', to: 'sessions#new'
@@ -38,6 +38,7 @@ Kidzen::Application.routes.draw do
   get '/signup', to: 'children#signup'
   post '/children/create', to: 'children#create'
   get '/children/show', to: 'children#show'
+
 
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
   match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
