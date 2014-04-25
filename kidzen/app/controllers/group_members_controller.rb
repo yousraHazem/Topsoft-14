@@ -70,6 +70,9 @@ class GroupMembersController < ApplicationController
   # Author: Nouran T. Attia
   def membership_requests
     @pending_members = GroupMember.where(:group_id => params[:id],:owner_accept_state => 2)
+    if @pending_members.to_a.length == 0
+      flash[:notice] = 'No Pending Members yet'
+    end
   end
 
   # Method for accepting a join request into the group specified
