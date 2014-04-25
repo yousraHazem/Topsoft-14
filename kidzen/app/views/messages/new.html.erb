@@ -1,0 +1,7 @@
+<!--This view relates to creating the messages -->
+<!-- Author: Ali A. El-Halawaty .-->
+<% if current_user %>
+  <%= render 'messages/new' %>
+<% else %>
+  <% flash[:error] = "Unauthorized - The page is not available." %>
+<%end%>

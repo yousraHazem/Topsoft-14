@@ -12,9 +12,14 @@
      </div>
     </div>
     <div class="row">
-     <div class="col-md-12">
-      <%= calendar @date do |date| %>
-        <%= date.day %> 
+      <div class="col-md-12">
+        <%= calendar @date do |date| %>
+          <%= date.day %> 
+          <% @events_by_date.where("date(date_time) = ?", date).each do |event| %>
+            <ul>
+              <li><%= link_to event.name, event %></li>
+            </ul>
+         <% end %>
       <% end %>
      </div>
     </div>

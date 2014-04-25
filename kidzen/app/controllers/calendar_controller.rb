@@ -6,5 +6,6 @@
 # Author : Abdelrahman Saad
   def show
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @events_by_date = Event.group(:date_time)
   end
 end

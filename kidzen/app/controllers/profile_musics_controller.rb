@@ -3,10 +3,10 @@ class ProfileMusicsController < ApplicationController
 
   # GET /profile_musics
   # GET /profile_musics.json
-  # author : ahmad bassiouny
+  # Authors : Ahmad bassiouny
   # list all the music profile of the looged in child
   # comlixty O(n)
-  # paremtaers : nill
+  # parameters  : nill
   # return : all profile musics 
   def index
     if signed_in?
@@ -26,22 +26,23 @@ class ProfileMusicsController < ApplicationController
 
   # GET /profile_musics/1
   # GET /profile_musics/1.json
-  # author : ahmad bassiouny
-  # paremtaers : nill
+  # Authors : Ahmad bassiouny
+  # parameters  : nill
   # return : null
   def show
   end
 
   # GET /profile_musics/new
-  # author : ahmad bassiouny
+  # Authors : Ahmad bassiouny
   # redirect to the form page that create the app
   #  if the logged is a child
-<<<<<<< HEAD
   # comlixty O(n)
-=======
+<<<<<<< HEAD
   # comlixty O(1)
->>>>>>> 68354cf072030ec4b6b65b0b31d7442a9e9ea6d9
   # paremtaers : nill
+=======
+  # parameters  : nill
+>>>>>>> c1836f990dc9d2d58ed4285e7e1bdd6bed33644b
   # return : nil
   def new
     if signed_in?
@@ -59,7 +60,7 @@ class ProfileMusicsController < ApplicationController
     end
   end
    
-  # author : ahmad bassiouny
+  # Authors : Ahmad bassiouny
   # edit .. no work here
   # comlixty _
   # paremtaers : nill
@@ -70,11 +71,11 @@ class ProfileMusicsController < ApplicationController
 
   # POST /profile_musics
   # POST /profile_musics.json
-  # author : ahmad bassiouny
+  # Authors : Ahmad bassiouny
   # creating a profile music and saving values in db
   # and get the current.idand save in the table
   # comlixty O(n)
-  # paremtaers : nill
+  # parameters : nill
   # return : all profile musics 
   def create
     @profile_music = ProfileMusic.new(profile_music_params)
@@ -93,14 +94,15 @@ class ProfileMusicsController < ApplicationController
 
   # PATCH/PUT /profile_musics/1
   # PATCH/PUT /profile_musics/1.json
-  # author : ahmad bassiouny
+  # Authors : Ahmad bassiouny
   # no work done
-<<<<<<< HEAD
   # comlixty : O(n)
-=======
+<<<<<<< HEAD
   # comlixty _
->>>>>>> 68354cf072030ec4b6b65b0b31d7442a9e9ea6d9
   # paremtaers : nill
+=======
+  # parameters : nill
+>>>>>>> c1836f990dc9d2d58ed4285e7e1bdd6bed33644b
   # return : new Profile opject
   def update
     respond_to do |format|
@@ -116,10 +118,10 @@ class ProfileMusicsController < ApplicationController
 
   # DELETE /profile_musics/1
   # DELETE /profile_musics/1.json
-  # author : ahmad bassiouny
+  # Authors : Ahmad bassiouny
   # remove
   # comlixty O(n)
-  # paremtaers : nill
+  # parameters : nill
   # return : nill
   def destroy
     @profile_music.destroy
