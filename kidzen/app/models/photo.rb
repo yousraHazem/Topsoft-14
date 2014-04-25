@@ -15,8 +15,7 @@ class Photo < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   # has_many :comments,:tags    <<< to be un-commented once these models are created
   # belongs_to :post    <<< to be un-commented once these models are created        
-  validates_presence_of :description, :image
- #  validate :local_or_remote 
+  validates_presence_of :description, :image 
 
   # This method is used to Allow accessing model attributes As Rails 4 does
   # not support "attr_accessible" keyword
@@ -98,20 +97,6 @@ class Photo < ActiveRecord::Base
   # Author : Hussien M. Eloy
   def edit_description(description)
     self[:description] = description
-  end
-
-  private
-  # This methods checks that one of the 2 fields that used in uploading
-  # photo is not empty
-  # Parameters : None
-  # Returns : None
-  # Approach : the method ensures that only one field is entered
-  # Time Complexity : O(1)
-  # Author : Hussien M. Eloy
-  def local_or_remote
-    if [self.image, self.remote_image_url].reject(&:blank?).size != 1
-    errors[:base] << ("Please choose at least one name - any language will do.")
-  end
   end
 end
 
