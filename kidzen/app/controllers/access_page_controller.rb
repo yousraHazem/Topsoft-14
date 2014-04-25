@@ -3,12 +3,14 @@
 # change DB tables and attributes to be compatible with the master (DONE)
 
 class AccessPageController < ApplicationController
+  #this function gets the info of a child from the DB and view it and vice versa
+  #Author Mohamed Khaled AbdelMeguid	
   def access
     # check if the children of a parent is not empty
-    if RegisteredUser.find_by(id: ChildParent.find_by(parent_id: current_user.id).child_id).nil?
-    &&ChildParent.find_by(parent_id: current_user.id).nil?
-    && ChildParent.find_by(parent_id: current_user.id).child_id.nil?
-    &&Supervisor.find_by(supervisor_id: current_user.id).nil?
+    if RegisteredUser.find_by(id: ChildParent.find_by(parent_id: current_user.id).child_id).nil?\
+    &&ChildParent.find_by(parent_id: current_user.id).nil?\
+    && ChildParent.find_by(parent_id: current_user.id).child_id.nil?\
+    &&Supervisor.find_by(supervisor_id: current_user.id).nil?'
       puts("error there is no child")
     else
       @child = ChildParent.find_all_by_parent_id (current_user.id)
