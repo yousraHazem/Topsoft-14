@@ -1,0 +1,19 @@
+<link href="/assets/messages.css" rel="stylesheet">
+
+<link href="/assets/bootstrap.css" rel="stylesheet">
+<% if message.recepient == @user.email %>
+<table class="table">
+  <tr>
+    <td>
+      <%= link_to message.subject, message_path(message) %>
+    </td>
+    <td>
+      <%= message.sender %>
+    </td>
+    <td>
+      <%= message.created_at %>
+    </td>
+    <td><%= link_to 'Delete Message', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+</table>
+<% end %>
