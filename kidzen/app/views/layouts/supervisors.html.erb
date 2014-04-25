@@ -1,0 +1,54 @@
+<% # Layout for all of supervisor's pages %>
+<% # Authors: Ahmed H. Ismail %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t('supervisor_layout_title') %></title>
+  <meta charset="utf-8">
+  <%= stylesheet_link_tag    "supervisors", media: "all", "data-turbolinks-track" => true %>
+  <%= yield :stylesheet_includes %>
+  <%= javascript_include_tag "supervisors", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag("notification_action.js") %>
+  <%= yield :javascript_includes %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="locale_button">
+    <div class="round_button">
+      <%= link_to "Arabic", change_locale_path(locale: :ar), class: "round_inner" %>
+    </div>
+    <div class="round_button">
+      <%= link_to "English", change_locale_path(locale: :en), class: "round_inner" %>
+    </div>
+  </div>
+  <br/>
+  <div id="alert_container">
+    <% flash.each do |key, value| %>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>      
+  </div>
+  <div id="main_content">
+    <%= yield %>
+  </div>
+  <div id="left_panel">
+    <div id="notifications_container">
+      <% # To be filled by load_pending_notifications %>
+    </div>
+  </div>
+  <br/>
+  <div id="bottom_container" >
+    <div id="footer">
+      <div class="round_button">
+        <<%= link_to "Sign out", signout_path, method: "delete", class: "round_inner" %>
+      </div>
+      <div class = "round_button">
+        <%= link_to "Profile", current_user, class: "round_inner" %>
+      </div>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+  </div>
+  
+</body>
+</html>

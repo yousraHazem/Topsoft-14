@@ -1,6 +1,6 @@
 class Calendar < Struct.new(:view, :date, :callback)
   HEADER = %w[Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
-  #here we decide which day will our calendar table starts with in our case it is sunday
+#START_DAY is for deciding the day the table of Calendar should start at , in our case it is sunday
   START_DAY = :sunday
   delegate :content_tag, to: :view
 #Here we define the table of the Calendar
