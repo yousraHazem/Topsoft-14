@@ -27,11 +27,14 @@ class GroupMembersController < ApplicationController
 
     respond_to do |format|
       if @group_member.save
-        format.html { redirect_to @group_member, notice: 'Group member was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @group_member }
+        format.html { redirect_to @group_member, notice:
+          'Group member was successfully created.' }
+        format.json { render action: 'show', status: :created,
+          location: @group_member }
       else
         format.html { render action: 'new' }
-        format.json { render json: @group_member.errors, status: :unprocessable_entity }
+        format.json { render json: @group_member.errors,
+          status: :unprocessable_entity }
       end
     end
   end
@@ -41,11 +44,13 @@ class GroupMembersController < ApplicationController
   def update
     respond_to do |format|
       if @group_member.update(group_member_params)
-        format.html { redirect_to @group_member, notice: 'Group member was successfully updated.' }
+        format.html { redirect_to @group_member, notice:
+          'Group member was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @group_member.errors, status: :unprocessable_entity }
+        format.json { render json: @group_member.errors,
+          status: :unprocessable_entity }
       end
     end
   end
@@ -69,7 +74,8 @@ class GroupMembersController < ApplicationController
   # Complexity : O(n)
   # Author: Nouran T. Attia
   def membership_requests
-    @pending_members = GroupMember.where(:group_id => params[:id],:owner_accept_state => 2)
+    @pending_members = GroupMember.where(:group_id => params[:id],
+      :owner_accept_state => 2)
     if @pending_members.to_a.length == 0
       flash[:notice] = 'No Pending Members yet'
     end
@@ -107,7 +113,8 @@ class GroupMembersController < ApplicationController
       @group_member = GroupMember.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Never trust parameters from the scary internet, 
+    # only allow the white list through.
     def group_member_params
       params.require(:group_member).permit(:group_id, :username)
     end
