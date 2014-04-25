@@ -1,14 +1,12 @@
-class CreateMessages < ActiveRecord::Migration
+    class CreateMessages < ActiveRecord::Migration
   def change
     create_table :messages do |t|
-    	t.string :title
-    	t.string :sender_username
-    	t.string :receiver_username
-    	t.string :content
-    	t.date :sent_in_date
-    	t.time :sent_in_time
-
-    	t.timestamps
+        t.string :sender
+        t.string :recepient
+        t.string :subject
+        t.text :body
+        t.integer :read
+    	  t.timestamps
     end
   end
 end
