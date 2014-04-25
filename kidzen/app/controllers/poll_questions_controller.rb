@@ -5,6 +5,7 @@ class PollQuestionsController < ApplicationController
   # GET /poll_questions.json
   #list all questions of the current loged in user
   #Parameters : non
+  #complixty : O(1)
   #return non
   #Author : Ahmad Bassiouny
   def index
@@ -29,7 +30,9 @@ class PollQuestionsController < ApplicationController
   end
 
   # GET /poll_questions/new
-  # create new poll Question and 1 answer after checking if the user is a logged in child or not
+  # create new poll Question and 1 answer after checking if the user is a 
+  # logged in child or not
+  ##complixty : O(1)
   #Parameters : non
   #return non
   #Author : Ahmad Bassiouny
@@ -60,6 +63,7 @@ class PollQuestionsController < ApplicationController
   # POST /poll_questions
   # POST /poll_questions.json
   #create poll with the questions and answers given by the user in the _form page
+  # #complixty : O(1)
   #Parameters : non
   #return : redirect to the show page or the new page
   #Author : Ahmad Bassiouny
@@ -82,6 +86,7 @@ class PollQuestionsController < ApplicationController
   # PATCH/PUT /poll_questions/1
   # PATCH/PUT /poll_questions/1.json
   # update an exciting poll 
+  # complixty : O(1)
   #Parameters : non
   #return : redirect to the show or edit page
   #Author : Ahmad Bassiouny
@@ -103,6 +108,7 @@ class PollQuestionsController < ApplicationController
   #Parameters : non
   #return : redirect to index page
   #Author : Ahmad Bassiouny
+  ##complixty : O(1)
   def destroy
     @poll_question.destroy
     respond_to do |format|
