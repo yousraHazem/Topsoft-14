@@ -249,12 +249,11 @@ ActiveRecord::Schema.define(version: 20140424134205) do
   create_table "videos", force: true do |t|
     t.string   "description"
     t.string   "category"
-    t.integer  "length"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "file"
     t.string   "real_file"
     t.string   "youtube"
-    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

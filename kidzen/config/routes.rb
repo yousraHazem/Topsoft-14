@@ -40,6 +40,7 @@ Kidzen::Application.routes.draw do
   #add Route to view friends
   #Author : Nouran Mamdouh
   #get "event/view_friends"
+  #get "events/view_friends"
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
   get "friendship/view_pending_friendship_requests"
