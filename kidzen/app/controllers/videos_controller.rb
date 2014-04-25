@@ -86,7 +86,7 @@ class VideosController < ApplicationController
   def update
     @video = Video.find(params[:id])
     if @video.update_attributes(video_params)
-      if !video.file.blank?
+      if !@video.file.blank?
         @video.convert
       end
       flash[:notice] = "Successfully updated video"
