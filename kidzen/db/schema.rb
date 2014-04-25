@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424212240) do
+ActiveRecord::Schema.define(version: 20140425212057) do
 
   create_table "activities", force: true do |t|
     t.integer  "min_age"
@@ -155,12 +155,11 @@ ActiveRecord::Schema.define(version: 20140424212240) do
   end
 
   create_table "messages", force: true do |t|
-    t.string   "title"
-    t.string   "sender_username"
-    t.string   "receiver_username"
-    t.string   "content"
-    t.date     "sent_in_date"
-    t.time     "sent_in_time"
+    t.string   "sender"
+    t.string   "recepient"
+    t.string   "subject"
+    t.text     "body"
+    t.integer  "read"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -206,20 +205,6 @@ ActiveRecord::Schema.define(version: 20140424212240) do
     t.datetime "updated_at"
   end
 
-  create_table "poll_answers", force: true do |t|
-    t.string   "content"
-    t.integer  "counter"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "poll_question_id"
-  end
-
-  create_table "poll_questions", force: true do |t|
-    t.string   "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "profile_musics", force: true do |t|
     t.integer  "user_id"
     t.string   "mp3_url"
@@ -230,18 +215,22 @@ ActiveRecord::Schema.define(version: 20140424212240) do
 
   create_table "registered_users", force: true do |t|
     t.string   "username"
-    t.string   "gender"
+    t.boolean  "online"
+    t.boolean  "gender"
     t.datetime "last_accessed"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "family_name"
     t.date     "birth_date"
+    t.string   "email"
+    t.string   "nickname"
+    t.string   "password_digest"
     t.boolean  "banned"
+    t.integer  "permission_id"
+    t.boolean  "notification_by_email"
+    t.string   "remember_token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "remember_token"
   end
 
   add_index "registered_users", ["email"], name: "index_registered_users_on_email", unique: true

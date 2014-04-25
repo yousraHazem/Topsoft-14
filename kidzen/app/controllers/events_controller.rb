@@ -26,9 +26,9 @@ class EventsController < ApplicationController
   # GET /events.json
   #this method returns all the events in model Event in index (home)page
   #Parameters :None
-  #Returns : the events instances from the model event
+  #Returns : None
   #Approach : view all the events created
-  # Time Complexity : O(n)
+  # Time Complexity : O(1)
   #Author : Nouran Mamdouh
   def index
     @events = Event.all
@@ -57,9 +57,9 @@ class EventsController < ApplicationController
   # POST /events.json
   #this method creates a new event after submitting the form with the variables
   #Parameters : event parameters
-  #Returns : None
+  #Returns : Non
   #Approach : save the new event instance to the event model
-  # Time Complexity : O(1)
+  # Time Complexity : O(n)
   #Author : Nouran Mamdouh
   def create
     @event = Event.new(event_params)
@@ -81,7 +81,7 @@ class EventsController < ApplicationController
   #Parameters : event parameters
   #Returns : None
   #Approach : update the event 
-  # Time Complexity : O(1)
+  # Time Complexity : O(n)
   #Author : Nouran Mamdouh
   def update
     respond_to do |format|
