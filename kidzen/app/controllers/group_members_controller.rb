@@ -47,6 +47,6 @@ class GroupMembersController < ApplicationController
       child = Child.where(:registered_user_id => user.id)
       member = GroupMember.where(:username => user.username , :group_id => :group_id)
       member.member_accept_state = 2
-      memberd.save
+      member.save
     end
 end
