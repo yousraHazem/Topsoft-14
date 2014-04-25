@@ -4,6 +4,13 @@ Kidzen::Application.routes.draw do
   resources :groups
   resources :children
   resources :photos
+<<<<<<< HEAD
+  
+ 
+
+
+=======
+>>>>>>> c1836f990dc9d2d58ed4285e7e1bdd6bed33644b
   resources :groups
   resources :children
   resources :photos
