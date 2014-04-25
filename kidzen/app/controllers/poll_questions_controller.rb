@@ -108,7 +108,7 @@ class PollQuestionsController < ApplicationController
   #Parameters : non
   #return : redirect to index page
   #Author : Ahmad Bassiouny
-  ##complixty : O(1)
+  ##complixty : O(n)
   def destroy
     @poll_question.destroy
     respond_to do |format|
@@ -121,7 +121,7 @@ class PollQuestionsController < ApplicationController
   #Parameters : :id
   #return : Poll Question object
   #Author : Ahmad Bassiouny
-  #complixty : O(n)
+  #complixty : O(1)
   # Use callbacks to share common setup or constraints between actions.
     def set_poll_question
       @poll_question = PollQuestion.find(params[:id])
