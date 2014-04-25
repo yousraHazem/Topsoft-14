@@ -139,9 +139,10 @@ class RegisteredUser < ActiveRecord::Base
       Digest::SHA1.hexdigest(token.to_s)
     end
 
-    # this method changes the attribute (notification_by_email) of the user by # the value passed to it from the controller
-    # notification_by_email is the attribute that show if the user wants the 
-    # notifications to be sent by email
+    # This method changes the attribute (notification_by_email) of the user by 
+    # The value passed to it from the controller
+    # Notification_by_email is the attribute that show if the user wants the 
+    # Notifications to be sent by email
     # Authors: Shary Beshara
     def settings(notification_by_email)
         update_attributes(notification_by_email: notification_by_email)
