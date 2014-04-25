@@ -3,5 +3,4 @@ class Event < ActiveRecord::Base
   #Author: Nouran Mamdouh
   validates_presence_of :name , :location
   searchkick autocomplete: [:name]	
-
 end
