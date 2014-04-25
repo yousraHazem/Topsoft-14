@@ -1,0 +1,42 @@
+<%= form_for(@profile_music) do |f| %>
+  <% if @profile_music.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile_music.errors.count, "error") %> prohibited this profile_music from being saved:</h2>
+
+      <ul>
+      <% @profile_music.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!-- adding a url that ends with .mp3 -->
+  <div class="field">
+    <%= f.label :mp3_url %><br>
+    <%= f.text_field :mp3_url, :id=>"mp3", :onclick => "enablemp3()" %>
+  </div>
+
+  <!-- adding a youtube url -->
+  <div class="field">
+    <%= f.label :youtube_url %><br>
+    <%= f.text_field :youtube_url, :id=>"you", :onclick => "enableyoutube()" %>
+  </div>
+
+<!-- JS methods to make sure that the user wont add both 
+     youtube and .mp3 url so when ever the user click on
+     a text box the other one will be blank even if it 
+     contains text -->
+  <script type="text/javascript">
+    function enablemp3() {
+        document.getElementById("you").value = '';
+    }
+    function enableyoutube() {
+        document.getElementById("mp3").value = '';
+    }
+  </script>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

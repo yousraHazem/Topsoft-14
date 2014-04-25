@@ -1,8 +1,14 @@
 Kidzen::Application.routes.draw do
+  resources :profile_musics
+  root 'profile_musics#index'
+  resources :groups
+  resources :children
+  resources :photos
   resources :groups
   resources :children
   resources :photos
   get '/registered_user', to: 'registered_users#show'
+  get '/profile', to: 'registered_users#show'
   # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
   # username will be the same as in the url /show/"username".
   # Author: Ammar ELWazeer
@@ -20,9 +26,12 @@ Kidzen::Application.routes.draw do
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
+  resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
+  resources :poll_questions
   get "calendar/show"
   resource :calendar, only: [:show], controller: :calendar
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
+  resources :registered_users
   # Session routes
   resources :sessions, only: [:new, :create, :destroy]
   get '/signin', to: 'sessions#new'
@@ -43,6 +52,8 @@ Kidzen::Application.routes.draw do
   #Author : Nouran Mamdouh
   #get "event/view_friends"
   #get "events/view_friends"
+  resources :profile_musics
+  get "children/verify"
   resources :searches
   resources :events
   resources :activities
