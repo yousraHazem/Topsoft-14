@@ -1,8 +1,12 @@
 Kidzen::Application.routes.draw do
+  resources :profile_musics
 
+
+  root 'profile_musics#index'
   resources :groups
   resources :children
   resources :photos
+
 
 
   get '/registered_user', to: 'registered_users#show'
@@ -32,6 +36,11 @@ Kidzen::Application.routes.draw do
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
 
 
+  resources :registered_users
+  resources :poll_questions
+  
+
+
   # Session routes
   resources :sessions, only: [:new, :create, :destroy]
   get '/signin', to: 'sessions#new'
@@ -42,6 +51,7 @@ Kidzen::Application.routes.draw do
   get '/signup', to: 'children#signup'
   post '/children/create', to: 'children#create'
   get '/children/show', to: 'children#show'
+
   resources :groups
   
 

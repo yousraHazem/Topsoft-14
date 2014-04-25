@@ -1,0 +1,18 @@
+<p>
+  <strong>Content:</strong>
+  <%= @poll_question.content %>
+</p>
+
+  <!-- listing all the answers -->
+<ol>
+  <% for poll_answer in @poll_question.poll_answers %>
+   <li>
+    <%= h poll_answer.content %>
+    </li>
+  <% end %>
+</ol>
+
+
+
+<%= link_to 'Edit', edit_poll_question_path(@poll_question) %> |
+<%= link_to 'Back', poll_questions_path %>
