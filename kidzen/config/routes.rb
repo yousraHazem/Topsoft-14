@@ -50,6 +50,7 @@ Kidzen::Application.routes.draw do
   get "friendship/view_my_friends"
   get "events/:id/view_friends", to: 'events#view_friends'
   get "events/:id/destroy", to: 'events#destroy'
+  get "events/:id/invite/", to: 'events#invite_friend_to_an_event'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
