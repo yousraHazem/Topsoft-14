@@ -7,6 +7,7 @@ class CreateNotifications < ActiveRecord::Migration
       t.string :long_desc
       t.string :embedded_view_url
       t.boolean :pending
+      t.string :data
       t.timestamps
     end
     add_index(:notifications, :assigned_to, unique:  false)
