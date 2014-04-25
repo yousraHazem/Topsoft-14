@@ -1,5 +1,7 @@
 Kidzen::Application.routes.draw do
 
+
+  get '/access_page', to: 'access_page#access'
   root 'registered_users#show'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
