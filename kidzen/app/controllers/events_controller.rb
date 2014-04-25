@@ -22,10 +22,6 @@ class EventsController < ApplicationController
     @friends = @child.friends
   end
 
-  def search
-    @child = Child.search params[:search]
-  end
-
   # GET /events
   # GET /events.json
   #this method returns all the events in model Event in index (home)page
@@ -67,11 +63,7 @@ class EventsController < ApplicationController
   #Author : Nouran Mamdouh
   def create
     @event = Event.new(event_params)
-
     @event_id=@event.id
-
-    
-
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }

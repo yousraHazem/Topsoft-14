@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
-  #validation
+  #validation of name and location
   #Author: Nouran Mamdouh
   validates_presence_of :name , :location
-  searchkick autocomplete: [:name]		
+  searchkick autocomplete: [:name]	
 end
