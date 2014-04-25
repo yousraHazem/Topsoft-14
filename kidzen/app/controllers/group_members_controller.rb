@@ -62,8 +62,11 @@ class GroupMembersController < ApplicationController
 
   # Method for viewing the join requests sent to the group
   # group_id-integer
-  # the method returns a container of the member requests to the group containg the username, and the id of the group to join
-  # The function takes a group_id, and returns the members with pending requests
+  # the method returns a container of the member requests to the group
+  # containg the username, and the id of the group to join
+  # The function takes a group_id, and returns the members
+  # with pending requests
+  # complexity : O(n)
   # Author: Nouran T. Attia
   def membership_requests
     @pending_members = GroupMember.where(:group_id => params[:id],:owner_accept_state => 2)
