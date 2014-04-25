@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 20140420002645) do
   create_table "events", force: true do |t|
     t.string   "location"
     t.string   "name"
-    t.date     "date_time"
+    t.datetime "date_time"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(version: 20140420002645) do
   create_table "notification_actions", force: true do |t|
     t.string   "name"
     t.string   "url"
+    t.string   "data"
     t.boolean  "async"
     t.integer  "notification_id"
     t.datetime "created_at"
@@ -199,24 +200,22 @@ ActiveRecord::Schema.define(version: 20140420002645) do
 
   create_table "registered_users", force: true do |t|
     t.string   "username"
-    t.boolean  "online"
-    t.boolean  "gender"
+    t.string   "gender"
     t.datetime "last_accessed"
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "family_name"
     t.date     "birth_date"
-    t.string   "email"
-    t.string   "nickname"
-    t.string   "password_digest"
     t.boolean  "banned"
-    t.integer  "permission_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "remember_token"
   end
 
   add_index "registered_users", ["email"], name: "index_registered_users_on_email", unique: true
-  add_index "registered_users", ["username"], name: "index_registered_users_on_username", unique: true
+  add_index "registered_users", ["remember_token"], name: "index_registered_users_on_remember_token"
 
   create_table "supervisors", id: false, force: true do |t|
     t.integer  "registered_user_id"
