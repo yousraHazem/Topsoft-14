@@ -66,7 +66,13 @@ gem 'streamio-ffmpeg'
 
 gem 'carrierwave'
 
+#use simple_form gem to create group creation form
+gem 'simple_form'
 
+#use show_for gem to show group page
+gem 'show_for'
+
+gem 'rmagick'
 
 # Use unicorn as the app server
 # gem 'unicorn'
