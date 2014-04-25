@@ -10,7 +10,7 @@ class AccessPageController < ApplicationController
     if RegisteredUser.find_by(id: ChildParent.find_by(parent_id: current_user.id).child_id).nil?\
     &&ChildParent.find_by(parent_id: current_user.id).nil?\
     && ChildParent.find_by(parent_id: current_user.id).child_id.nil?\
-    &&Supervisor.find_by(supervisor_id: current_user.id).nil?'
+    &&Supervisor.find_by(supervisor_id: current_user.id).nil?
       puts("error there is no child")
     else
       @child = ChildParent.find_all_by_parent_id (current_user.id)
