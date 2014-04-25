@@ -109,7 +109,7 @@ class SupervisorsController < ApplicationController
         if Supervisor.exists?(registered_user: current_user)
           @supervisor = current_user
           @email = params[:email]
-          if !RegisteredUser.exists?(email: <email here>)
+          if !RegisteredUser.exists?(email: @email)
             UserMailer.invite_others(@email, @supervisor).deliver 
           end
         else
@@ -159,4 +159,5 @@ class SupervisorsController < ApplicationController
         end
       end
     end
+
 end
