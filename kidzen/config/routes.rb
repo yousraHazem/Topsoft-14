@@ -25,6 +25,8 @@ Kidzen::Application.routes.draw do
 
 
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
+  #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
+  #resources :registered_users
 
   # Session routes
   resources :sessions, only: [:new, :create, :destroy]
@@ -36,7 +38,7 @@ Kidzen::Application.routes.draw do
   get '/signup', to: 'children#signup'
   post '/children/create', to: 'children#create'
   get '/children/show', to: 'children#show'
-  resources :groups
+
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
   match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
   match '/uploadingphoto', :to => 'public#uploading', via: [:get, :post]
@@ -45,6 +47,18 @@ Kidzen::Application.routes.draw do
   resources :polls
   resources :surveys
   resources :groups
+  resources :group_members
+
+  
+  get "group_members/index"
+  get "group_members/new"
+  get "group_members/create"
+  get "group_members/show"
+  get "group_members/destroy"
+  get "groups/:id/membership_requests" , to: 'group_members#membership_requests'
+  get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
+  get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
+  
   resources :searches
   resources :events
   resources :activities
