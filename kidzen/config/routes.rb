@@ -88,6 +88,7 @@ Kidzen::Application.routes.draw do
   # children routes
   get "child/verify"
   post "child/new"
+
   get "children/verify"
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
@@ -95,6 +96,9 @@ Kidzen::Application.routes.draw do
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   #resources :registered_users
 
+
+  get "friendships/send_friend_request"
+  get "friendships/view_my_friends"
 
 
 
