@@ -1,8 +1,11 @@
 # The access page controller
+
 #Author:- Mohamed Khaled Abdelmeguid
 # change DB tables and attributes to be compatible with the master (DONE)
 
 class AccessPageController < ApplicationController
+  #this function gets the info of a child from the DB and view it and vice versa
+  #Author Mohamed Khaled AbdelMeguid	
   def access
     # check if the children of a parent is not empty
     if RegisteredUser.find_by(id: ChildParent.find_by(parent_id: current_user.id).child_id).nil?
