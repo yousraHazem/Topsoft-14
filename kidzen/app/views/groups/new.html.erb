@@ -1,8 +1,6 @@
 <h1>Create Group Form</h1>
 
 <%= simple_form_for :group , url: groups_path do |f| %>
-
-  <%=f.input :owner, required: true, label: 'Owner Username:  ' %><br>
   <%=f.input :group_name, required: true, label: 'Group name : ' %><br>
   <%=f.input :group_description, label: 'About the group : '%>
 
