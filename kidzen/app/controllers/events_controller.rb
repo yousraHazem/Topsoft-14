@@ -24,7 +24,8 @@ class EventsController < ApplicationController
 
   # GET /events
   # GET /events.json
-  #this method returns all the events in model Event in index (home)page
+  #this method view all the events in model Event in index (home)page
+  #assign variable events to all records in table Event
   #Parameters :None
   #Returns : None
   #Approach : view all the events created
@@ -40,9 +41,10 @@ class EventsController < ApplicationController
   end
 
   # GET /events/new
-  #this method creates a new event. 
+  #this method creates a new event .
+  #assign variable event to new instance  
   #Parameters :None
-  #Returns : the event instance from the model event
+  #Returns : None
   #Approach : create a new event created
   # Time Complexity : O(1)
   #Author : Nouran Mamdouh
@@ -54,7 +56,7 @@ class EventsController < ApplicationController
   def edit
   end
   # POST /events
-  # POST /events.json
+  # POST /events.json 
   #this method creates a new event after submitting the form with the variables
   #Parameters : event parameters
   #Returns : Non
@@ -101,7 +103,7 @@ class EventsController < ApplicationController
   #Parameters : None
   #Returns : None
   #Approach : delete specific event 
-  # Time Complexity : O(1)
+  # Time Complexity : O(n)
   #Author : Nouran Mamdouh
   def destroy
     @event.destroy
@@ -111,6 +113,7 @@ class EventsController < ApplicationController
     end
   end
 
+  
   private
   # Use callbacks to share common setup or constraints between actions.
     def set_event

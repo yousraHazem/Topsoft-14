@@ -6,18 +6,22 @@
   <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
   <%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+<!--   <%= javascript_include_tag "application" %> -->
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag("general.css") %>
   <%= yield :stylesheet_includes %>
   <%= yield :javascript_includes %>
-
   <%= csrf_meta_tags %>
 
 </head>
 
 <link rel="shortcut icon" href="/assets/icon.gif"/>
 <body>
+   <% if signed_in? %>
+     Logged in as <strong><%= current_user.email %></strong>.b>
+     <%= link_to 'Inbox', messages_path  %> |
+     <%= link_to 'Send message', new_message_path  %> | 
+   <% end %>
   <div class="locale_button">
     <div class="round_button">
       <%= link_to "Arabic", change_locale_path(locale: :ar), class: "round_inner" %>
@@ -91,13 +95,18 @@
         <% if ( session[:locale] == "en")%>
         <ul>
           <li class="active"><a href="#"><%= t('home') %></a></li>
-          <li><a href="#"><%= t('profile') %></a></li>
+          <li><%= link_to t('profile'), controller: :registered_users, action: :show %></li>
           <li><a href="#"><%= t('activities') %></a></li>
-          <li><a href="#"><%= t('messages') %></a></li>
-          <li><a href="#"><%= t('notifications') %></a></li>
-          <li><a href="#"><%= t('logout') %></a></li>
+          <% if signed_in? %>
+            <li><%= link_to t('logout'), signout_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Sign in", controller: :sessions, action: :new %></li>
+            <li><%= link_to "Sign up", controller: :children, action: :signup %></li>
+          <% end %>
+          <li><%= link_to t('messages'), controller: :messages, action: :index %></li>
         </ul>
         <% end %>
+
        <% if ( session[:locale] == "ar")%>
         <ul>
         <li><a href="#"><%= t('logout') %></a></li>
