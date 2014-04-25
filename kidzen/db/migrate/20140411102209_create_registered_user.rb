@@ -16,6 +16,8 @@ class CreateRegisteredUser < ActiveRecord::Migration
         t.integer :permission_id
         t.boolean :notification_by_email
         t.string :remember_token
+        t.boolean :current_sign_in_at
+        t.boolean :last_sign_out_at
         t.timestamps
     end
     add_index :registered_users, :email, unique: true 

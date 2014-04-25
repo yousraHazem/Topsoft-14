@@ -9,6 +9,8 @@
       <%if b == "true"%>
       <%="online"%>
       <%end%>
+      <%c="#{user.last_sign_out_at}"%>
+      <%=c%>
     <%end%>
   <%else%>
     <p>You Currently have no Friends</p>
