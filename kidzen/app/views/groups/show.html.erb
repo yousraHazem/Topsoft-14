@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<!--using show_for gem , an initial show view is created for group-->
+<!--using show_for gem , an initial show view is created for group
+ displaying group_name, group_description, and the username of the group owner-->
 <%= show_for @group do |u| %>
   <%= u.attribute :group_name %>
   <%= u.attribute :group_description %>
