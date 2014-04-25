@@ -21,6 +21,19 @@
 
 en:
   hello: "Hello world"
+  search: "search"
+  kid: "Kid"
+  dizen: "dizen"
+  home: "Home"
+  profile: "Profile"
+  activities: "Activities"
+  messages: "Messages"
+  notifications: "Notifications"
+  logout: "Logout"
+  friends: "Friends"
+  events: "Events"
+  groups: "Groups"
+  chat_rooms: "Chat Rooms"
   supervisor_layout_title: "Supervision Portal"
   verify_confirm_child: "Verify"
   reject_confirm_child: "Reject"
@@ -37,3 +50,4 @@ en:
   child_q: "Are you a child?!"
   create_account_submit: "Create!"
   login_submit: 'Login!'
+

@@ -33,20 +33,6 @@ class ChildrenController < ApplicationController
   end
 
 
-
-  # Adds a new friendship entry.
-  # First child invites second child
-  # child_1 - first child.
-  # child_2 - second child.
-  # Authors: Ahmed H. Ismail.
-  def create_friendship(child_1, child_2)
-    # TODO remember notifcations and calling function in child
-    # model to invite.
-    # Fixme: Move to model
-    Friendship.create_friendship(child_1, child_2)
-  end
-
-
   # This method will set the variable is_approved to true to mark that 
   # this child has been approved.
   # Authors: Shary Beshara
@@ -149,4 +135,5 @@ class ChildrenController < ApplicationController
     def signup_params
       params.require(:child).permit(:first_name, :middle_name, :family_name, :gender, "birth_date(1i)", "birth_date(2i)", "birth_date(3i)", :email, :password, :password_confirmation, :username, :guardian_email)
     end
+    
 end

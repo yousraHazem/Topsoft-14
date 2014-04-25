@@ -5,7 +5,12 @@ gem 'rails', '4.0.4'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'cocoon'
 
+gem "searchkick"
+
+# Use gem file devise to make sign in/up and adding info
+gem 'devise', '3.2.4'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -29,6 +34,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 
+gem 'bcrypt-ruby'
+
+
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -39,9 +48,18 @@ group :test do
   gem 'capybara', '2.1.0'
 end
 
-gem 'bcrypt-ruby', '3.1.2'
+
 
 # Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+
+# Use ActiveModel has_secure_password
+
+
+
+gem 'carrierwave'
+
 
 
 # Use unicorn as the app server
