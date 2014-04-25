@@ -16,6 +16,7 @@ class GroupMembersController < ApplicationController
       child = Child.where(:registered_user_id => user.id)
       memeber = GroupMember.where(:username => user.username , :group_id => :group_id)
       member.member_accept_state = 2
+      member.owner_accept_state = 1
       member.save
     end
     
@@ -32,6 +33,7 @@ class GroupMembersController < ApplicationController
       child = Child.where(:registered_user_id => user.id)
       member = GroupMember.where(:username => user.username , :group_id => :group_id)
       member.member_accept_state = 2
+      member.owner_accept_state = 1
       member.save
     end
 
@@ -47,6 +49,7 @@ class GroupMembersController < ApplicationController
       child = Child.where(:registered_user_id => user.id)
       member = GroupMember.where(:username => user.username , :group_id => :group_id)
       member.member_accept_state = 2
+      member.owner_accept_state = 1
       member.save
     end
 end
