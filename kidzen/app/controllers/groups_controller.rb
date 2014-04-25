@@ -21,19 +21,6 @@ class GroupsController < ApplicationController
   def edit
   end
 
-  # This is a function that removes a registered user from a group
-  # Returns true or false indicating whether the member was removed or not
-  # Time Complexity: O(1).
-  # Author: Mohamed Bahgat Elrakaiby
-  #def remove_member(RegisteredUser r)
-  #  r.destroy
-  #  unless members.include? (r)
-  #  return false
-  #  else
-  #  members.delete(r)
-  #  return true
-  #end
-
   # POST /groups
   # POST /groups.json
   def create
@@ -74,23 +61,15 @@ class GroupsController < ApplicationController
     end
   end
 
-  # This is a function that allows a group member to create a status in a group
-  # Returns nothing
-  # Time complexity: O(1)
-  # Author: Mohamed Bahgat Elrakaiby
-  #def create_status(Status status)
-  #  Status.create(:group_id => params[:id], status: status)
-  #end
-
   # This is a function that allows a user to leave a group
+  # It retrieves the record to be deleted, save it in member then deletes it from the database
+  # no input, no output
   # Returns nothing
   # Time complexity: O(1).
   # Author: Mohamed Bahgat Elrakaiby
   def leave_group
-    m = GroupMember.where(:username => current_user.username, :group_id => params[:id])
-    m.destroy_all
-    #@g = Group.where(:group_id => :group_id)
-    #redirect_to @g
+    member = GroupMember.where(:username => current_user.username, :group_id => params[:id])
+    member.destroy_all
   end
 
   def group_member_params

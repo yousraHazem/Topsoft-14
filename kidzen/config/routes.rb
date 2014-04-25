@@ -78,14 +78,12 @@ Kidzen::Application.routes.draw do
   # children routes
   get "child/verify"
   post "child/new"
-<<<<<<< HEAD
-  get "children/verify"
+
   # This routes to enable getting info from invite page
   get "supervisors/invite" => 'supervisors#invite'
   post "supervisors/invite" => 'supervisors#invite'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
-<<<<<<< HEAD
 
   # group members
   get '/group_members/:id/view' , to:  'group_members#view'
@@ -93,8 +91,6 @@ Kidzen::Application.routes.draw do
   post '/groups/:id/leave_group' => 'groups#leave_group'
   post '/group_members/:id/view' => 'group_members#view'
 
-=======
->>>>>>> 0b3b7371a98a3b7da7d9a2210a87550c23bbc7c7
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
