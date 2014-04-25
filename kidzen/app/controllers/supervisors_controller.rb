@@ -51,6 +51,7 @@ class SupervisorsController < ApplicationController
     data = params[:child_username]
     func = lambda { |supervisor, child | supervisor.accept_child(child) }
     associated_child_apply(func, data)
+    
   end
 
   # PUT /supervisor/accept_child
