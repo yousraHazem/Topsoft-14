@@ -1,0 +1,17 @@
+<h1>Add Member</h1>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Add by name:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Add by email:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Add by phone:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<a href="/group_members/index"><button type="button">Back to the group!</button> </a>
