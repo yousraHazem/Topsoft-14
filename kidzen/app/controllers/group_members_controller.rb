@@ -13,7 +13,7 @@ class GroupMembersController < ApplicationController
     # Authors: Mohammed T. Nabih.
     def add_member_name
       user = RegisteredUser.all.where(:first_name => :first_name , :last_name => :last_name , :username => :username)
-   	  child = Child.where(:registered_user_id => user.id)
+      child = Child.where(:registered_user_id => user.id)
       memeber = GroupMember.where(:username => user.username , :group_id => :group_id)
       member.member_accept_state = 2
       member.save
