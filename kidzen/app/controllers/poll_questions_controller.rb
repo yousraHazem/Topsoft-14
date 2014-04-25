@@ -4,12 +4,12 @@ class PollQuestionsController < ApplicationController
   # GET /poll_questions
   # GET /poll_questions.json
 
-  #list all questions
+  #list all questions of the current loged in user
   #Parameters : non
   #return non
   #Author : Ahmad Bassiouny
   def index
-    @poll_questions = PollQuestion.all
+    @poll_questions = PollQuestion.find_all_by_user_id current_user.id
   end
 
   # GET /poll_questions/1
@@ -18,14 +18,26 @@ class PollQuestionsController < ApplicationController
   end
 
   # GET /poll_questions/new
-  # create new poll Question and 1 answer
+  # create new poll Question and 1 answer after checking if the user is a logged in child or not
   #Parameters : non
   #return non
   #Author : Ahmad Bassiouny
   def new
-    @poll_question = PollQuestion.new
-    #creating a defult new answer
-    @poll_question.poll_answers.build
+    if signed_in?
+      # Is user a supervisor?
+      if Child.exists?(registered_user_id: current_user.id)
+        @user = Child.find_by(registered_user_id: current_user.id)
+        @poll_question = PollQuestion.new
+        #creating a defult new answer
+        @poll_question.poll_answers.build
+      else
+        # Must be a supervisor.
+        redirect_to controller: :supervisors, action: :show
+      end
+    else
+      # No one signed in
+      redirect_to session_path :new
+    end
   end
 
   # GET /poll_questions/1/edit
@@ -43,11 +55,13 @@ class PollQuestionsController < ApplicationController
 
     respond_to do |format|
       if @poll_question.save
-        format.html { redirect_to @poll_question, notice: 'Poll question was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @poll_question }
+         #update the question's user id column with the current user id 
+         @poll_question.update_column(:user_id, current_user.id)
+         format.html { redirect_to @poll_question, notice: 'Poll question was successfully created.' }
+         format.json { render action: 'show', status: :created, location: @poll_question }
       else
-        format.html { render action: 'new' }
-        format.json { render json: @poll_question.errors, status: :unprocessable_entity }
+         format.html { render action: 'new' }
+         format.json { render json: @poll_question.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -92,13 +106,13 @@ class PollQuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poll_question_params
-      params.require(:poll_question).permit(:content)
+      params.require(:poll_question).permit(:content, :user_id)
     end
 
 
     #strong parameters required for rails 4 
     def poll_question_params
-      params.require(:poll_question).permit(:content, poll_answers_attributes: [:content, :_destroy]) 
+      params.require(:poll_question).permit(:content, :user_id, poll_answers_attributes: [:content, :_destroy]) 
     end
 
 end

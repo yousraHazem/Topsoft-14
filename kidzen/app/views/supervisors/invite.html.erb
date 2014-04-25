@@ -1,0 +1,9 @@
+  <!-- This is the view that take the email that the invitation should be sent from the supervisor -->  
+  <!-- Authors: Shary Beshara -->     
+<%= form_tag ( {:controller => 'supervisors', :action => 'invite'}), :method => 'get' do %>
+  <p>
+    <%= email_field_tag :email %>
+    <%= submit_tag "Send invitation" %>
+  </p>
+
+<% end %>
