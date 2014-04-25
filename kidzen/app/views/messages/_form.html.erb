@@ -1,3 +1,5 @@
+<!-- This view adds the subject , body and receipent labels , and the send message button -->
+<!-- Author: Ali A. El-Halawaty .-->
 <%= form_for @message do |form| %>
   <%= form.label :recepient %>
   <%= form.text_field :recepient %>
@@ -7,3 +9,4 @@
   <%= form.text_area :body %><br>
   <%= form.submit 'Send message' %>
 <% end %>
+

@@ -1,6 +1,11 @@
 class MessagesController < ApplicationController
 
-  def index #auto generated
+  # This function indexes the messages by the most sent message or received message desplayed first
+  # @message instant user of a type message.
+  # @user instant user of type registered user.
+  # Complexity o(n).
+  # Author: Ali A. El-Halawaty .
+  def index 
     @user = current_user
     @messages = Message.order("created_at desc")
     respond_to do |format|
@@ -8,8 +13,14 @@ class MessagesController < ApplicationController
       format.json { render json: @messages }
     end
   end
-
-  def show #shows messages to user as it checks if the user is the receiver or sender of msg , author :ali , complexity o(n)
+  
+  # This function shows messages to user as it checks if the user is the receiver or sender of message.
+  # The user must be related to the message either he is a sender or a receiver .
+  # @message instant user of a type message.
+  # @user instant user of type registered user.
+  # Complexity O(n).
+  # Author: Ali A. El-Halawaty .
+  def show 
     @message = Message.find(params[:id])
     @user = current_user
     if (@user.email == @message.sender) || (@user.email == @message.recepient)
@@ -20,12 +31,18 @@ class MessagesController < ApplicationController
     end
     end
   end
+  
 
-  def new#creates new message auto generated
+  #auto generated
+  def new
     @message = Message.new
   end
 
-  def create#creates new message , author ali , complexity o(1)
+  # This function creates new message by passing parameters to it form m_params function 
+  # and saves it in the table and if the message saved succes message will emerge else failure message .
+  # Complexity o(1) .
+  # Author: Ali A. El-Halawaty .
+  def create
     @message = Message.new(m_params)
     @message.sender = current_user.email
     @message.save
@@ -41,13 +58,21 @@ class MessagesController < ApplicationController
       end
   end
 
-  private    
 
-  def m_params#required to define variables for rails 4 as attr_accesible not usable in rails 4 , author ali , complexity o(1)
+  # This function is required to define variables for rails 4 as attr_accesible not usable in rails 4 .
+  # Complexity o(1) .
+  # Author: Ali A. El-Halawaty .
+  private    
+  def m_params
     params.require(:message).permit(:subject, :body, :sender, :recepient, :read)
   end
 
-  def destroy#searches for the message and deletes the message from the database , author ali , complexity o(n)
+
+
+  # This function searches for the message and deletes the message from the table
+  # Complexity o(n)
+  # Author: Ali A. El-Halawaty .
+  def destroy
     @message = Message.find(params[:id])
     @message.destroy
     respond_to do |format|
@@ -55,5 +80,7 @@ class MessagesController < ApplicationController
       format.json { head :no_content }
   end
   end
+
+
   
 end

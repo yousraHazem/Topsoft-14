@@ -13,7 +13,7 @@
     <td>
       <%= message.created_at %>
     </td>
-    <td><%= link_to 'Delete Message', message, method: :delete %></td>
+    <td><%= link_to 'Delete Message', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 </table>
 <% end %>

@@ -10,7 +10,7 @@
     </td>
     <td><%= m.recepient %></td>
     <td><%= m.created_at %></td>
-    <td><%= link_to 'Delete Message', m, method: :delete %></td>
+    <td><%= link_to 'Delete Message', m, method: :delete, data: { confirm: 'Are you sure?' } %></td>td>
   </tr>
 </table>
 <% end %>
