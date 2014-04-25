@@ -62,7 +62,11 @@
   display: block;
 }
 
-
+/*****************************
+ * Style for locale buttons  *
+ * Similar to round buttons. *
+ * Authors: Ahmed H. Ismail  *
+ *****************************/
 .locale_button {
   float:right;
   margin-right: 0;
