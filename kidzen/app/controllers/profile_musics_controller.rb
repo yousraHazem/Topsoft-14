@@ -36,7 +36,7 @@ class ProfileMusicsController < ApplicationController
   # author : ahmad bassiouny
   # redirect to the form page that create the app
   #  if the logged is a child
-  # comlixty O(1)
+  # comlixty O(n)
   # paremtaers : nill
   # return : nil
   def new
@@ -91,7 +91,7 @@ class ProfileMusicsController < ApplicationController
   # PATCH/PUT /profile_musics/1.json
   # author : ahmad bassiouny
   # no work done
-  # comlixty _
+  # comlixty : O(n)
   # paremtaers : nill
   # return : new Profile opject
   def update
