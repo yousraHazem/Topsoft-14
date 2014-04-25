@@ -1,4 +1,7 @@
+# Helpers for NotificationAction
+# Authors: Ahmed H. Ismail
 module NotificationActionHelper
+
   # onclick attribute for NotificationAction
   # action - NotificationAction
   # Authors: Ahmed H. Ismail

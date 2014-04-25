@@ -1,7 +1,6 @@
 class Event < ActiveRecord::Base
-	def self.search(search)
-  search_condition = "%" + search + "%"
-  find(:all, :conditions => ['title LIKE ? OR description LIKE ?', search_condition, search_condition])
-end
-
+  #validation of name and location
+  #Author: Nouran Mamdouh
+  validates_presence_of :name , :location
+  searchkick autocomplete: [:name]	
 end

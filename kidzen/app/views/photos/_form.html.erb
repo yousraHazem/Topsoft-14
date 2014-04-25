@@ -1,0 +1,23 @@
+<%= form_for @photo, html: { multipart: true } do |f| %>
+  <p>
+   <%= f.label :description %><br />
+   <%= f.text_field :description %>
+  </p>
+   <p>
+   <%= f.label :image,"Upload your Photo from Here" %> <br />
+   <%= f.file_field :image, :id => "loc", :onclick => "doLoc()" %>
+  </p>
+  <p>
+   <%= f.label :remote_image_url, "or image URL" %><br />
+   <%= f.text_field :remote_image_url, :id => "rem", :onclick => "doRem()" %>
+  </p>
+  <script type="text/javascript">
+  function doLoc () {
+    document.getElementById("rem").value = '';
+  }
+  function doRem() {
+    document.getElementById("loc").value = '';
+  }
+  </script>
+  <p><%= f.submit %></p>
+<% end %>
