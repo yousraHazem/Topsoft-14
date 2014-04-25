@@ -7,6 +7,7 @@ Kidzen::Application.routes.draw do
   resources :groups
   resources :children
   resources :photos
+  resources :videos
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
   get '/registered_user', to: 'registered_users#show'
@@ -53,6 +54,7 @@ Kidzen::Application.routes.draw do
   #Author : Nouran Mamdouh
   #get "event/view_friends"
   #get "events/view_friends"
+  resources :messages
   resources :profile_musics
   get "children/verify"
   resources :searches
@@ -74,7 +76,6 @@ Kidzen::Application.routes.draw do
   get "events/:id/view_friends", to: 'events#view_friends'
   get "events/:id/destroy", to: 'events#destroy'
   get "events/:id/invite/", to: 'events#invite_friend_to_an_event'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
