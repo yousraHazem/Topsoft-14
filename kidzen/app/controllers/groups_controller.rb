@@ -20,20 +20,6 @@ class GroupsController < ApplicationController
   # GET /groups/1/edit
   def edit
   end
-
-  # This is a function that removes a registered user from a group
-  # Returns true or false indicating whether the member was removed or not
-  # Time Complexity: O(1).
-  # Author: Mohamed Bahgat Elrakaiby
-  def remove_member(RegisteredUser r)
-    r.destroy
-    unless members.include? (r)
-    return false
-    else
-    members.delete(r)
-    return true
-  end
-
   # POST /groups
   # POST /groups.json
   def create
@@ -80,20 +66,6 @@ class GroupsController < ApplicationController
   # Author: Mohamed Bahgat Elrakaiby
   def create_status(Status status)
     Status.create(group_id: @group_id, status: status)
-  end
-
-  # This is a function that views members of the group
-  # Returns nothing
-  # Time Complexity: O(n).
-  # Author: Mohamed Bahgat Elrakaiby
-  def view_members()
-    a = []
-          GroupMember.all.each {|r|
-            if r.group_id == @group.id
-              a.push(r.username)
-            end
-          }
-    puts a
   end
 
   private
