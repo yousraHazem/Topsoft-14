@@ -1,3 +1,5 @@
+# Controller for RegisteredUsers
+# Authors: Ahmed H. Ismail
 class RegisteredUsersController < ApplicationController
 
   # save the user in @profile_owner to use it to view the profile while the username is the one taken from the url.
@@ -8,25 +10,27 @@ class RegisteredUsersController < ApplicationController
 
   end
  
-  def show 
 
+ # GET /registered_user
+ # GET /profile
+ # Redirects to the profile page of the currently
+ # logged in user. 
+ # Authors: Ahmed H. Ismail
+ def show 
     if !signed_in? 
       # Login page
       # TODO: Change to guest home page when/if created
-      redirect_to session_path :new
-    
+      redirect_to session_path :new    
     else
       # Someone is signed in
       if Supervisor.exists?( registered_user: current_user)
-        # Supervisor
+        # Redirect to Supervisor
         redirect_to controller: :supervisors, action: :show
       else 
-        # Child
+        # Redirect to Child
         redirect_to controller: :children, action: :show
       end
-
     end
-
   end
 
   # This method gets the attribute from the view and sends it to the

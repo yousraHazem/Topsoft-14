@@ -1,0 +1,31 @@
+<h1>Listing profile_musics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mp3 url</th>
+      <th>Youtube url</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profile_musics.each do |profile_music| %>
+      <tr>
+        <td><%= profile_music.mp3_url %></td>
+        <td><%= profile_music.youtube_url %></td>
+        <td><%= profile_music.user_id %></td>
+        <td><%= link_to 'Show', profile_music %></td>
+        <td><%= link_to 'Edit', edit_profile_music_path(profile_music) %></td>
+        <td><%= link_to 'Destroy', profile_music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile music', new_profile_music_path %>

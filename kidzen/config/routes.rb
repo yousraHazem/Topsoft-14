@@ -15,6 +15,7 @@ Kidzen::Application.routes.draw do
 
 
   get '/registered_user', to: 'registered_users#show'
+  get '/profile', to: 'registered_users#show'
 
   # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
   # username will be the same as in the url /show/"username".
@@ -23,6 +24,7 @@ Kidzen::Application.routes.draw do
   # Settings' actions
   post '/settings', to: 'registered_users#set_settings'
   get '/settings', to: 'registered_users#settings'
+
 
   # Lists pending notifications
   get "/notifications/pending", to: 'notifications#pending'
@@ -38,14 +40,10 @@ Kidzen::Application.routes.draw do
   post "/supervisors/create", to: 'supervisors#create'
 
 
+
+
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :poll_questions
-
-
-
-    
-
-
 
 
   get "calendar/show"
@@ -54,9 +52,7 @@ Kidzen::Application.routes.draw do
 
 
 
-
   resources :registered_users
-  resources :poll_questions
   
 
 
@@ -80,14 +76,20 @@ Kidzen::Application.routes.draw do
   resources :polls
   resources :surveys
   resources :groups
+  resources :profile_musics
+
+  get "children/verify"
+
   resources :searches
   resources :events
   resources :activities
   get "child/verify"
   post "child/new"
+
   get "children/verify"
 
   # This routes to enable getting info from invite page
+
   get "supervisors/invite" => 'supervisors#invite'
   post "supervisors/invite" => 'supervisors#invite'
 
