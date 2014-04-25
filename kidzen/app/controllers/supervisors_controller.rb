@@ -1,17 +1,18 @@
 # Supervisor controller
 # Authors: Ahmed H. Ismail
-class SupervisorsController < ApplicationController
-  # before_action :set_supervisor, except: [] # set for all
-
+class SupervisorsController < ApplicationController  
+  # TODO: fix 'X-CSRF-Token' in XMLHttpRequest header
+  skip_before_filter :verify_authenticity_token, only: [:accept_child, :reject_child]
+  
   # GET /confirm_children
   # Renders the confirm children
   # view.
   # Authors: Ahmed H. Ismail
   def confirm_children
     if signed_in?
-      if Supervisor.exists?(registered_user_id: current_user.id)
+      if Supervisor.exists?(registered_user: current_user)
         # set children and render 
-        @children = Supervisor.find(current_user.id).pending_children
+        @children = Supervisor.find(current_user).pending_children
       else
         # Child can't access this page
         flash[:failure] = "This isn't the page you are looking for.."
@@ -25,11 +26,12 @@ class SupervisorsController < ApplicationController
 
   # GET /supervisors/dashboard
   # Renders the supervisor's homepage
+  # Authors: Ahmed H. Ismail
   def show
     if signed_in?
       # Is user a supervisor?
-      if Supervisor.exists?(registered_user_id: current_user.id)
-        @user = Supervisor.find(current_user.id)
+      if Supervisor.exists?(registered_user: current_user)
+        @user = Supervisor.find(current_user)
         # Render view
       else
          # Must be a child.
@@ -45,26 +47,23 @@ class SupervisorsController < ApplicationController
   # Accept child action.
   # Authors: Ahmed H. Ismail
   def accept_child
-    respond_to do |format| 
-      msg =  {status: "ok"}
-      format.json { render json: msg }
-      format.html { redirect_to  :confirm_children }
-    end
+    data = params[:child_username]
+    func = lambda { |supervisor, child | supervisor.accept_child(child) }
+    associated_child_apply(func, data)
   end
 
-  # PUT /supervisor/accept_child
+  # PUT /supervisor/accept_childBeshara
   # Reject child action.
   # Authors: Ahmed H. Ismail
   def reject_child
-    respond_to do |format|
-      msg = {status: "ok"}
-      format.json { render json: msg }
-      format.html { redirect_to :confirm_children }
-    end
+    data = params[:child_username]
+    func = lambda { |supervisor, child | supervisor.reject_child(child) }
+    associated_child_apply(func, data)
   end
 
 
   # GET /supervisors/signup
+  # Renders the signup page
   # Authors: Ahmed H. Ismail
   def signup
     @user = RegisteredUser.new
@@ -85,19 +84,44 @@ class SupervisorsController < ApplicationController
       if @user.save
         perms.registered_user = @user
         perms.save
-        @supervisor = Supervisor.create(registered_user_id: @user.id, registered_user: @user)
+        @supervisor = Supervisor.create(registered_user: @user)
         sign_in @user
         format.json { render json: {status: "ok"} }
         flash[:success] = "Welcome to kidzen!!"
         format.html { redirect_to @user }
       else
         perms.destroy
-        format.json { render json: @registered_user.errors.full_messages }
+        format.json { render json: @user.errors.full_messages }
         format.html { render :signup}
       end
     end
 
   end
+
+    # This method gets email and supervisor id from the view and find the 
+    # corresponding supervisor which it paas them to the user_mailer method 
+    # after checking that the supervisor is signed in  
+    # email - is the email that the invitation should be sent to 
+    # that passed by the views
+    # Authors: Shary Beshara
+    def invite
+      if signed_in?
+        if Supervisor.exists?(registered_user: current_user)
+          @supervisor = current_user
+          @email = params[:email]
+          if !RegisteredUser.exists?(email: <email here>)
+            UserMailer.invite_others(@email, @supervisor).deliver 
+          end
+        else
+          flash[:failure] = "This isn't the page you are looking for.."
+          redirect_to child_path :show
+        end
+      else
+        flash[:failure] = "You have to be signed in"
+        redirect_to session_path :new
+      end
+    end
+
 
   private
 
@@ -107,5 +131,32 @@ class SupervisorsController < ApplicationController
       params.require(:registered_user).permit(:first_name, :middle_name, :family_name, :gender, :birth_date, :email, :password, :password_confirmation, :username)
     end
 
-
+    # Helper function that finds a child by username and calles a function
+    # with the currently signed in supervisor and the child as the params
+    # func - function to call called as func(signed_in_supervisor, child_found_by_username)
+    # child_username - the child's username, read only
+    # renders JSON object with status set to ok or failure
+    # renders none if html
+    # Authors: Ahmed H. Ismail
+    def associated_child_apply(func, child_username)
+      respond_to do |format|
+        if (!child_username.nil? ) and signed_in? and Supervisor.exists?(registered_user: current_user)
+          begin
+            supervisor = Supervisor.find(current_user)
+            r_user_child = RegisteredUser.find_by(username: child_username)
+            child = Child.find_by(registered_user: r_user_child)
+            func.call(supervisor, child)
+            msg =  {status: "ok"}
+          rescue
+            msg = {status: "failure"}
+          end
+          format.json { render json: msg }
+          format.html { render layout: false, nothing: true }
+        else
+          msg = {status: "failure"}
+          format.json { render json: msg }
+          format.html { render layout: false, nothing: true }
+        end
+      end
+    end
 end

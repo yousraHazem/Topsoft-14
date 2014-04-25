@@ -34,6 +34,7 @@ function fetch_pending_notifications () {
   hostname = "http://"+ location.host;
   url = [hostname, 'notifications', 'pending'].join('/');
   xhr.open('GET', url , false); // do not execute asynchronously
+  xhr.setRequestHeader('Accept', 'text/html'); // we want html !
   xhr.send(); // blocks
   if(xhr.status == 200)  {
     // HTTP OK
