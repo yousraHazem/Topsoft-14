@@ -1,11 +1,17 @@
 <!DOCTYPE html >
 <head>
-  <title>Kiddizen</title>
+  <title>Kidzen</title>
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
+<%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= stylesheet_link_tag("general.css") %>
   <%= yield :stylesheet_includes %>
   <%= yield :javascript_includes %>
+
   <%= csrf_meta_tags %>
 </head>
 
@@ -50,7 +56,7 @@
       </div>
       
      <div class="search">
-        <form method="get" id="search" action="searches">
+        <form method="get" id="search" action="/searches">
           <span>
           <input name="searchsubmit" type="image" src="/assets/search.gif" class="btn"  />
           <input type="text" name="search" placeholder="<%= t('search') %> .." required="true" autocomplete="off" />
@@ -62,20 +68,19 @@
 
 
 <% if ( session[:locale] == "ar")%>
- <div class="logo1">
+  <div class="logo1">
+    <h1><a href="#"><span><%= t('kid') %></span><%= t('dizen') %><small></small></a></h1>
+  </div>
       
-        <h1><a href="#"><span><%= t('kid') %></span><%= t('dizen') %><small></small></a></h1>
-      </div>
-      
-     <div class="search1">
-        <form method="get" id="search" action="searches">
-          <span>
-          <input name="searchsubmit" type="image" src="/assets/search.gif" class="btn"  />
-          <input type="text" name="search" placeholder="<%= t('search') %> .." required="true" autocomplete="off" />
-          </span>
-        </form>
-        <div class="clr"></div>
-      </div>
+        <div class="search1">
+          <form method="get" id="search" action="/searches">
+            <span>
+              <input name="searchsubmit" type="image" src="/assets/search.gif" class="btn"  />
+              <input type="text" name="search" placeholder="<%= t('search') %> .." required="true" autocomplete="off" />
+            </span>
+          </form>
+          <div class="clr"></div>
+        </div>
 <% end %>
      
 

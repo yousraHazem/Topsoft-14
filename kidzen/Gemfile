@@ -7,6 +7,11 @@ gem 'rails', '4.0.4'
 gem 'sqlite3'
 
 
+gem "searchkick"
+
+# Use gem file devise to make sign in/up and adding info
+gem 'devise', '3.2.4'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -47,8 +52,6 @@ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-gem 'bcrypt', '~> 3.1.7'
 
 
 # Use ActiveModel has_secure_password
