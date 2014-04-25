@@ -1,0 +1,13 @@
+<h1>View members</h1>
+ 
+<table>
+  <tr>
+    <th>username</th>
+  </tr>
+ 
+  <% @group_members.each do |g| %>
+    <tr>
+      <td><%= g.username %></td>
+    </tr>
+  <% end %>
+</table>
