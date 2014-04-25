@@ -2,7 +2,7 @@ class GroupMembersController < ApplicationController
 	layout false
 
 	def index
-		@group_members = GroupMember.all
+	  @group_members = GroupMember.all
 	end
 
 	# This is a function that adds a member to the group by his name.
@@ -12,11 +12,11 @@ class GroupMembersController < ApplicationController
     # Time complexity: O(1).
     # Authors: Mohammed T. Nabih.
     def add_member_name
-    	user = RegisteredUser.all.where(:first_name => :first_name , :last_name => :last_name , :username => :username)
-   		child = Child.where(:registered_user_id => user.id)
-    	memeber = GroupMember.where(:username => user.username , :group_id => :group_id)
-    	member.member_accept_state = 2
-    	member.save
+      user = RegisteredUser.all.where(:first_name => :first_name , :last_name => :last_name , :username => :username)
+   	  child = Child.where(:registered_user_id => user.id)
+      memeber = GroupMember.where(:username => user.username , :group_id => :group_id)
+      member.member_accept_state = 2
+      member.save
     end
     
 
@@ -28,12 +28,11 @@ class GroupMembersController < ApplicationController
     # Time complexity: O(n).
     # Authors: Mohammed T. Nabih.
     def add_member_email
-   		user = RegisteredUser.all.where(:email => :email)
-   		child = Child.where(:registered_user_id => user.id)
-    	member = GroupMember.where(:username => user.username , :group_id => :group_id)
-    	member.member_accept_state = 2
-    	member.save
-
+   	  user = RegisteredUser.all.where(:email => :email)
+   	  child = Child.where(:registered_user_id => user.id)
+      member = GroupMember.where(:username => user.username , :group_id => :group_id)
+      member.member_accept_state = 2
+      member.save
     end
 
     # This is a function that adds a member to the group by his phone number.
@@ -44,10 +43,10 @@ class GroupMembersController < ApplicationController
     # Time complexity: O(n).
     # Authors: Mohammed T. Nabih.
     def add_member_phone
-    	user = RegisteredUser.all.where(:phone => :phone)
-   		child = Child.where(:registered_user_id => user.id)
-    	member = GroupMember.where(:username => user.username , :group_id => :group_id)
-    	member.member_accept_state = 2
-    	memberd.save
+      user = RegisteredUser.all.where(:phone => :phone)
+   	  child = Child.where(:registered_user_id => user.id)
+      member = GroupMember.where(:username => user.username , :group_id => :group_id)
+      member.member_accept_state = 2
+      memberd.save
     end
 end
