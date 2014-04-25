@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425030548) do
+ActiveRecord::Schema.define(version: 20140424212240) do
 
   create_table "activities", force: true do |t|
     t.integer  "min_age"
@@ -216,7 +216,6 @@ ActiveRecord::Schema.define(version: 20140425030548) do
 
   create_table "poll_questions", force: true do |t|
     t.string   "content"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
