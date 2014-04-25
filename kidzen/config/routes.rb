@@ -7,7 +7,7 @@ Kidzen::Application.routes.draw do
   resources :groups
   resources :children
   resources :photos
-
+  resources :videos
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
   # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
