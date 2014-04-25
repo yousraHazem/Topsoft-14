@@ -95,8 +95,12 @@ Kidzen::Application.routes.draw do
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   #resources :registered_users
 
-
-
+  # group members leave and view
+  get '/group_members/:id/view' , to:  'group_members#view'
+  get '/groups/:id/leave_group' , to:  'groups#leave_group'
+  post '/groups/:id/leave_group' => 'groups#leave_group'
+  post '/group_members/:id/view' => 'group_members#view'
+   
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
