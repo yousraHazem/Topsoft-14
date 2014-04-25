@@ -5,6 +5,10 @@
       <%s="#{user.first_name} #{user.family_name}"%>
       <%=s%>
       <br/>
+      <%b="#{user.online}"%>
+      <%if b == "true"%>
+      <%="online"%>
+      <%end%>
     <%end%>
   <%else%>
     <p>You Currently have no Friends</p>

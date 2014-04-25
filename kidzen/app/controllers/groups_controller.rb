@@ -21,6 +21,7 @@ class GroupsController < ApplicationController
   def edit
   end
 
+
   # Method for creating a new group.
   # Input : group_params hash .
   # Insertion of a new record in table groups .
@@ -28,7 +29,7 @@ class GroupsController < ApplicationController
   # creates a new group by creating and inserting a 
   # new record in table groups.
   # Complexity: O(1).
-  # Author: Nouran T. Attia .
+  # Author: Nouran T. Attia.
   # POST /groups
   # POST /groups.json
   def create

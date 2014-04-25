@@ -4,9 +4,11 @@ class SessionsController < ApplicationController
 
   # GET /signin
   # Renders signin form
-  # Authors: Ahmed H. Ismail
+  # Update the attribute online to true 
+  # Authors: Ahmed H. Ismail , Radwan A. Shrief
   def new
     if signed_in?
+      current_user.update_attribute(:online , true)
       redirect_to current_user
     end
   end
@@ -30,9 +32,11 @@ class SessionsController < ApplicationController
 
   # DELETE /signout
   # Logs out a user
-  # Authors: Ahmed H. Ismail
+  # Update the attribute online to false 
+  # Authors: Ahmed H. Ismail , Radwan A. Shrief
   def destroy
     if signed_in?
+      current_user.update_attribute(:online , false)
       sign_out
     end
     # TODO: Change this to home page/default for guests
