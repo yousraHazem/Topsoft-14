@@ -1,4 +1,5 @@
 Kidzen::Application.routes.draw do
+<<<<<<< HEAD
   get "group_members/index"
   resources :profile_musics
   root 'profile_musics#index'
@@ -8,14 +9,14 @@ Kidzen::Application.routes.draw do
 <<<<<<< HEAD
   
  
-
-
 =======
->>>>>>> c1836f990dc9d2d58ed4285e7e1bdd6bed33644b
-  resources :groups
-  resources :children
-  resources :photos
-  resources :videos
+>>>>>>> 00a14087349e95f0319d8ced6a58e7e7eeb0b264
+
+  root 'registered_users#show'
+  # Internationalization
+  get 'change_locale', to: 'application#change_locale'
+
+  # RegisteredUser (generic) routes
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
   # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
@@ -27,6 +28,9 @@ Kidzen::Application.routes.draw do
   get '/settings', to: 'registered_users#settings'
   # Lists pending notifications
   get "/notifications/pending", to: 'notifications#pending'
+  # End generic routes
+
+  # Supervisor routes:
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'
   # Children notification actions
@@ -35,14 +39,13 @@ Kidzen::Application.routes.draw do
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
-  resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
-  resources :poll_questions
-  get "calendar/show"
-  resource :calendar, only: [:show], controller: :calendar
-  resources :public, :only => [:upload_photo, :uploading, :remove_photo]
-  resources :registered_users
+  # This routes to enable getting info from invite page
+  get "supervisors/invite", to: 'supervisors#invite'
+  post "supervisors/invite", to: 'supervisors#invite'
+
+  # End supervisor routes
+
   # Session routes
-  resources :sessions, only: [:new, :create, :destroy]
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
   get '/signout', to: 'sessions#destroy'
@@ -50,19 +53,32 @@ Kidzen::Application.routes.draw do
   get '/signup', to: 'children#signup'
   post '/children/create', to: 'children#create'
   get '/children/show', to: 'children#show'
+  # Sessions end
+
+  # scratch pad
+
+  # Some resources
+  resources :videos
   resources :groups
   resources :events
   resources :polls
   resources :surveys
-  resources :groups
   resources :messages
   resources :profile_musics
-  get "children/verify"
   resources :searches
-  resources :events
   resources :activities
+  resources :photos
+  resource :calendar, only: [:show], controller: :calendar
+  resources :public, only: [:upload_photo, :uploading, :remove_photo]
+  resources :public, :only: [:upload_photo, :uploading, :remove_photo]  
+  resources :poll_questions
+  resources :sessions, only: [:new, :create, :destroy]
+    
+
+  # children routes
   get "child/verify"
   post "child/new"
+<<<<<<< HEAD
   get "children/verify"
   # This routes to enable getting info from invite page
   get "supervisors/invite" => 'supervisors#invite'
@@ -93,45 +109,10 @@ Kidzen::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   # resources :products
+=======
+>>>>>>> 00a14087349e95f0319d8ced6a58e7e7eeb0b264
 
-  # Example resource route with options:
-  # resources :products do
-  # member do
-  # get 'short'
-  # post 'toggle'
-  # end
-  #
-  # collection do
-  # get 'sold'
-  # end
-  # end
 
-  # Example resource route with sub-resources:
-  # resources :products do
-  # resources :comments, :sales
-  # resource :seller
-  # end
-
-  # Example resource route with more complex sub-resources:
-  # resources :products do
-  # resources :comments
-  # resources :sales do
-  # get 'recent', on: :collection
-  # end
-  # end
-
-  # Example resource route with concerns:
-  # concern :toggleable do
-  # post 'toggle'
-  # end
-  # resources :posts, concerns: :toggleable
-  # resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  # namespace :admin do
-  # # Directs /admin/products/* to Admin::ProductsController
-  # # (app/controllers/admin/products_controller.rb)
-  # resources :products
-  # end
+  
 end
 
