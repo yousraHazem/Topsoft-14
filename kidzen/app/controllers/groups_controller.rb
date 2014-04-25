@@ -74,16 +74,9 @@ class GroupsController < ApplicationController
     end
   end
 
-  # This is a function that allows a group member to create a status in a group
-  # Returns nothing
-  # Time complexity: O(1)
-  # Author: Mohamed Bahgat Elrakaiby
-  #def create_status(Status status)
-  #  Status.create(:group_id => params[:id], status: status)
-  #end
-
   # This is a function that allows a user to leave a group
   # It retreives the record to be removed from the database, save it in "member", then remove it
+  # no input, no output
   # Returns nothing
   # Time complexity: O(1).
   # Author: Mohamed Bahgat Elrakaiby
