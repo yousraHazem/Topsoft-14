@@ -15,7 +15,7 @@ class Song < ActiveRecord::Base
  # as Rails 4 prevent listing accessible fields in model
  # so it depends on Something called strong parameters to protect Accessibility
  # Author : Hussien M. Eloy
-	def song_params
+  def song_params
     params.require(:song).permit(:name,:artist,:album,:length)
   end
 
@@ -35,7 +35,7 @@ class Song < ActiveRecord::Base
   # This function is used to stop the current song
   #Author : Hussien M. Eloy
   def stop
-  	end
+  end
 
 
   # This function is used to rewind the current song
