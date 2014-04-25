@@ -56,7 +56,8 @@ Kidzen::Application.routes.draw do
   resources :searches
   resources :activities
   resources :photos
-  resource :calendar, only: [:show], controller: :calendar
+  resources :children
+  resources :calendar, only: [:show], controller: :calendar
   resources :public, only: [:upload_photo, :uploading, :remove_photo]
   resources :public, only: [:upload_photo, :uploading, :remove_photo]  
   resources :poll_questions
