@@ -1,0 +1,7 @@
+<!--This view shows the messages indicies to the current user and if the process didn't succed desplays an error-->
+<!-- Author: Ali A. El-Halawaty .-->
+<% if current_user %>
+  <%= render 'messages/index' %>
+<% else %>
+  <% flash[:error] = "Unauthorized - The page is not available." %>
+<%end%>
