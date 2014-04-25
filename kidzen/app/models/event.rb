@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+<<<<<<< HEAD
 #validation
 #Author: Nouran Mamdouh
 validates_presence_of :name , :location
@@ -14,6 +15,7 @@ def convert_created_at
   rescue ArgumentError
     false
   end
+
 end
 
 def validate_created_at
