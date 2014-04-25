@@ -3,6 +3,7 @@
   <%= @poll_question.content %>
 </p>
 
+
 <!-- listing all answers with radio buttons  -->
 <%= form_tag do %>
   <ol>
@@ -16,6 +17,8 @@
   </ol>
   <%= link_to 'vote', poll_questions_path %><br><br>
 <% end %>
+
+
 
 
 

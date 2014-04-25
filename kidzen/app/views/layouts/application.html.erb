@@ -1,11 +1,10 @@
 <!DOCTYPE html >
 <head>
   <title>Kidzen</title>
-
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
-<%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
+  <%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -14,6 +13,7 @@
   <%= yield :javascript_includes %>
 
   <%= csrf_meta_tags %>
+
 </head>
 
 <link rel="shortcut icon" href="/assets/icon.gif"/>

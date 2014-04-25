@@ -1,4 +1,13 @@
 Kidzen::Application.routes.draw do
+  resources :profile_musics
+
+
+  root 'profile_musics#index'
+  resources :groups
+  resources :children
+  resources :photos
+
+
 
   resources :groups
   resources :children
@@ -29,9 +38,6 @@ Kidzen::Application.routes.draw do
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
-  get "calendar/show"
-  resource :calendar, only: [:show], controller: :calendar
-  resources :public, :only => [:upload_photo, :uploading, :remove_photo]
 
 
 
@@ -39,10 +45,18 @@ Kidzen::Application.routes.draw do
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   resources :poll_questions
 
-    
+
+  get "calendar/show"
+  resource :calendar, only: [:show], controller: :calendar
+  resources :public, :only => [:upload_photo, :uploading, :remove_photo]
 
 
 
+  resources :registered_users
+  
+
+
+  
 
   # Session routes
   resources :sessions, only: [:new, :create, :destroy]
@@ -54,6 +68,7 @@ Kidzen::Application.routes.draw do
   get '/signup', to: 'children#signup'
   post '/children/create', to: 'children#create'
   get '/children/show', to: 'children#show'
+
   resources :groups
   
 
