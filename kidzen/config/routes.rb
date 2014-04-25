@@ -1,4 +1,13 @@
 Kidzen::Application.routes.draw do
+  resources :profile_musics
+
+
+  root 'profile_musics#index'
+  resources :groups
+  resources :children
+  resources :photos
+
+
 
   resources :groups
   resources :children
@@ -6,6 +15,7 @@ Kidzen::Application.routes.draw do
 
 
   get '/registered_user', to: 'registered_users#show'
+  get '/profile', to: 'registered_users#show'
 
   # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
   # username will be the same as in the url /show/"username".
@@ -14,6 +24,7 @@ Kidzen::Application.routes.draw do
   # Settings' actions
   post '/settings', to: 'registered_users#set_settings'
   get '/settings', to: 'registered_users#settings'
+
 
   # Lists pending notifications
   get "/notifications/pending", to: 'notifications#pending'
@@ -27,11 +38,21 @@ Kidzen::Application.routes.draw do
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
+
+
+
+
+  resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
+  resources :poll_questions
+
+
   get "calendar/show"
   resource :calendar, only: [:show], controller: :calendar
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
 
-  # Session routes
+
+  resources :registered_users
+    # Session routes
   resources :sessions, only: [:new, :create, :destroy]
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
@@ -40,7 +61,7 @@ Kidzen::Application.routes.draw do
   # Children Signup paths
   get '/signup', to: 'children#signup'
   post '/children/create', to: 'children#create'
-  get '/children/show', to: 'children#show'
+  get '/children/show', to: 'children#show'  
 
 
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
@@ -51,6 +72,7 @@ Kidzen::Application.routes.draw do
   resources :polls
   resources :surveys
   resources :groups
+<<<<<<< HEAD
   resources :group_members
 
   
@@ -63,14 +85,20 @@ Kidzen::Application.routes.draw do
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
   
+  resources :profile_musics
+
+  get "children/verify"
+
   resources :searches
   resources :events
   resources :activities
   get "child/verify"
   post "child/new"
+
   get "children/verify"
 
   # This routes to enable getting info from invite page
+
   get "supervisors/invite" => 'supervisors#invite'
   post "supervisors/invite" => 'supervisors#invite'
 

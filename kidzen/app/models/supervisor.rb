@@ -72,8 +72,51 @@ class Supervisor < ActiveRecord::Base
         Rails.logger.debug("notify_child_created failed to save notification : #{notification.inspect}")
         return false
       end
-    end
+  end
 
+
+  # Adds a notification that a post 
+  # of a supervised child was reported.
+  # post - post that was reported, read only
+  # returns true if sucessful otherwise false
+  # Authors: Ahmed H. Ismail
+  def notify_post_reported(post)
+    child = Child.find(post.poster)
+    if parent_or_supervisor_of?(child)
+      notification = Notification.new
+      notification.title = "Reported post by #{child.registered_user.full_name}"
+      notification.short_desc = "#{post.title}"
+      notification.long_desc = " "
+      noticiation.embedded_view_url = "post_notification"
+      registered_user.queue_notification(noticiation)
+      if notification.save?
+        actions = notification.add_post_reported_actions(post)
+        actions_saved = true
+        actions.each { |action| actions_saved &= action.save }
+        if actions_saved
+          # Everything is ok
+          true
+        else
+         Rails.logger.debug("notify_post_reported failed to save notification actions for notification: #{notification.inspect}")
+         Rails.logger.debug("Actions array: #{actions.inspect}")
+        end
+      else 
+        Rails.logger.debug("notify_post_reported failed to save notification: #{notification.inspect}")
+        false
+      end
+    else
+      # Shouldn't receive notification
+      false
+    end
+  end
+
+  # Checks if this user is the supervisor
+  # or parent of child.
+  # child - child in question
+  # Authors: Ahmed H. Ismail
+  def parent_or_supervisor_of?(child)
+    children.include?(child) or supervised_children.include?(child) 
+  end
 
   
   # Approves a child

@@ -2,6 +2,7 @@
 # RegisteredUser.
 # Authors: Ahmed H. Ismail
 class RegisteredUser < ActiveRecord::Base
+  searchkick autocomplete: [:username, :first_name, :middle_name, :family_name, :nickname, :email]  
   private
     VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
 
@@ -88,13 +89,16 @@ class RegisteredUser < ActiveRecord::Base
       self[:family_name] = name.capitalize
     end
 
-    # TODO: Implement
+    # TODO: Missing other actions
+    # Such as preventing from logging in
     # Authors: Ahmed H. Ismail
     def ban
         self[:banned] = true
     end
 
-    
+    # TODO: Missing other actions
+    # Such as re-allowing logging in
+    # Authors: Ahmed H. Ismail
     def unban
         self[:banned] = false
     end

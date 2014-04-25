@@ -1,0 +1,35 @@
+<%= form_for(@poll_question) do |f| %>
+  <% if @poll_question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@poll_question.errors.count, "error") %> prohibited this poll_question from being saved:</h2>
+
+      <ul>
+      <% @poll_question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- here I create text field for the user to write his Question  -->
+  <div class="field">
+    <%= f.label "Question" %><br>
+    <%= f.text_field :content %>
+  </div>
+
+  <!-- here I render to _poll_answer to create a text field for the answer  -->
+  <%= f.fields_for :poll_answers do |ff| %>
+    <div class="field">
+      <%= render 'poll_answer_fields', :f => ff %>
+    </div>
+  <% end %> 
+
+  <!-- here I create a link called add answer to create a new answer field dynamicaly  -->
+  <div class='links'>
+    <%= link_to_add_association 'add answer', f, :poll_answers %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
