@@ -21,15 +21,7 @@ class GroupsController < ApplicationController
   def edit
   end
 
-<<<<<<< HEAD
-  # Method for creating a new group
-  # input : group_params hash
-  # Insertion of a new record in table groups
-  # The function takes a unique username, and a group_name 
-  # and description and creates a new group by creating and inserting
-  # a new record in table groups
-  # Author: Nouran T. Attia
-=======
+
   # Method for creating a new group.
   # Input : group_params hash .
   # Insertion of a new record in table groups .
@@ -37,18 +29,11 @@ class GroupsController < ApplicationController
   # creates a new group by creating and inserting a 
   # new record in table groups.
   # Complexity: O(1).
-  # Author: Nouran T. Attia .
->>>>>>> f3b505a52bb742de7d393bd6ca709bee2e52a2cd
+  # Author: Nouran T. Attia.
   # POST /groups
   # POST /groups.json
   def create
     if signed_in?
-<<<<<<< HEAD
-      #if current_user.username = 
-        
-      #end
-=======
->>>>>>> f3b505a52bb742de7d393bd6ca709bee2e52a2cd
       @group = Group.new(group_params)
       @group.owner = current_user.username
       respond_to do |format|
@@ -63,12 +48,9 @@ class GroupsController < ApplicationController
             status: :unprocessable_entity }
         end
       end
-<<<<<<< HEAD
-=======
     else
       # No one signed in
       redirect_to session_path :new
->>>>>>> f3b505a52bb742de7d393bd6ca709bee2e52a2cd
     end
   end
 
