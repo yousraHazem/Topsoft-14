@@ -1,14 +1,4 @@
 Kidzen::Application.routes.draw do
-  resources :profile_musics
-  root 'profile_musics#index'
-  resources :groups
-  resources :children
-  resources :photos
-  resources :groups
-  resources :children
-  resources :photos
-  resources :videos
-
 
   root 'registered_users#show'
   # Internationalization
@@ -76,6 +66,7 @@ Kidzen::Application.routes.draw do
   # children routes
   get "child/verify"
   post "child/new"
+
 
 
   
