@@ -6,7 +6,7 @@
 <link type="text/css" rel="stylesheet" href="stylesheet.css"/> 
 </head>	
 <body>
-<!-- in this form a button of every child of a parent is viewd and on clicking on any of these buttons the javascript do some work that is described in the script tag below-->
+<!--in this form a button of every child of a parent is viewd and on clicking on any of these buttons the javascript do some work that is described in the script tag below-->
   <%= form_tag("access", method: "get", remote: true) do %>		
   <%  @child.each do |child| { :action => "access" } %>
   <ul>

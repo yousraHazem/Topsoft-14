@@ -1,6 +1,5 @@
 # The access page controller
 #Author:- Mohamed Khaled Abdelmeguid
-
 # change DB tables and attributes to be compatible with the master (DONE)
 
 class AccessPageController < ApplicationController
