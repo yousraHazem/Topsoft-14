@@ -23,30 +23,29 @@
   </div>
   <br/>
   <div id="alert_container">
-      <% flash.each do |key, value| %>
-        <div class="flash flash-<%= key %>">
-          <%= value %>
-        </div>
-      <% end %>      
+    <% flash.each do |key, value| %>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>      
   </div>
   <div id="main_content">
     <%= yield %>
   </div>
   <div id="left_panel">
     <div id="notifications_container">
-    <% # To be filled by load_pending_notifications %>
+      <% # To be filled by load_pending_notifications %>
     </div>
   </div>
   <br/>
   <div id="bottom_container" >
     <div id="footer">
-        <div class="round_button">
+      <div class="round_button">
         <%= link_to "Sign out", signout_path, method: "delete", class: "round_inner" %>
-        </div>
-        <div class = "round_button">
+      </div>
+      <div class = "round_button">
         <%= link_to "Profile", current_user, class: "round_inner" %>
-        </div>
-      <%= debug(params) if Rails.env.development? %>
+      </div>
     </div>
   </div>
   

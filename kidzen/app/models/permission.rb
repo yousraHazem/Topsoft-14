@@ -36,6 +36,8 @@ class Permission < ActiveRecord::Base
     self[:abilities].default = false
   end
 
+  # Can create an account?
+  # Authors: Ahmed H. Ismail
   def create_account?
     abilities[:account_creation]
   end

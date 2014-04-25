@@ -1,13 +1,17 @@
 # Authors: Ammar M. ELWazir, Shary Beshara, Ahmed H. Ismail
 class ChildrenController < ApplicationController
 
-  # GET /children/1
-  # GET /children/1.json
+  # GET /children/show
+  # Shows the currently logged in user's 
+  # Profile if he/she is a child
+  # Otherwise redirects to same action
+  # In supervisors controller
+  # Authors: Ahmed H. Ismail
   def show
     if signed_in?
       # Is user a supervisor?
-      if Child.exists?(registered_user_id: current_user.id)
-        @user = Child.find_by(registered_user_id: current_user.id)
+      if Child.exists?(registered_user: current_user)
+        @user = Child.find_by(registered_user: current_user)
         # Render view
       else
         # Must be a supervisor.
@@ -20,22 +24,12 @@ class ChildrenController < ApplicationController
   end
 
   # GET /signup
+  # Renders the signup page for
+  # Children.
+  # Authors Ahmed H. Ismail
   def signup 
-    @errors = []
-    @user = nil
-  end
-
-
-
-  # Adds a new friendship entry.
-  # First child invites second child
-  # child_1 - first child.
-  # child_2 - second child.
-  # Authors: Ahmed H. Ismail.
-  def create_friendship(child_1, child_2)
-    # TODO remember notifcations and calling function in child
-    # model to invite.
-    Friendship.create_friendship(child_1, child_2)
+    @errors = [] # Populated by errors by create.
+    @user = nil # Probably completely useless, too lazy to check
   end
 
 
@@ -46,8 +40,8 @@ class ChildrenController < ApplicationController
     @child_account.is_approved = true
   end 
 
-  # POST /children
-  # POST /children.json
+
+  # POST /children/create
   # Sign up Child
   # Sends a verification request to the email supplied.
   # Uses UserMailer to handle the email sending logic.
@@ -88,15 +82,19 @@ class ChildrenController < ApplicationController
         perms.save
         child_params = Hash.new
         # Unpack child params
-        child_params[:registered_user_id] = @user.id
+        child_params[:registered_user] = @user
         child_params[:guardian_email] = super_duper_params[:guardian_email]
         child_params[:is_approved] = false
-        child_params[:registered_user] = @user
         @child_account = Child.new(child_params)
         if @child_account.save
           sign_in @user # login
           # Send verification email
           UserMailer.account_verification(@child_account).deliver 
+          # Send notification to parent
+          if RegisteredUser.exists?(email: @child_account.guardian_email)
+            parent = Supervisor.find(RegisteredUser.find_by(email: @child_account.guardian_email))
+            parent.notify_child_created(@child_account)
+          end
           flash[:success] = "Welcome to kidzen!!"
           format.html { redirect_to @user }
         else
@@ -122,35 +120,6 @@ class ChildrenController < ApplicationController
 
   end
 
-  # PATCH/PUT /children/1
-  # PATCH/PUT /children/1.json
-  # Update a child
-  # child_params - sign up text feilds
-  # Authors: Ammar M. ElWazir
-  def update 
-    respond_to do |format|
-      if @child_account.update(child_params)
-        format.html { redirect_to @child_account, notice: 'Child was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @child_account.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /children/1
-  # DELETE /children/1.json
-  # Delete a child
-  # Authors: Ammar M. ElWazir
-  def destroy 
-    @child_account.destroy
-    respond_to do |format|
-      format.html { redirect_to children_url }
-      format.json { head :no_content }
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_child
@@ -166,4 +135,5 @@ class ChildrenController < ApplicationController
     def signup_params
       params.require(:child).permit(:first_name, :middle_name, :family_name, :gender, "birth_date(1i)", "birth_date(2i)", "birth_date(3i)", :email, :password, :password_confirmation, :username, :guardian_email)
     end
+    
 end

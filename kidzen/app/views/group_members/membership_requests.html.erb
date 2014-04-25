@@ -1,11 +1,11 @@
 <h1> The Pending Requests</h1>
 <table>
+  <!-- Displays the usernames of the pending members-->
   <% @pending_members.to_a.each do |group_member| %>
-   <%= group_member.username %>&nbsp;
-   <%= link_to 'accept', controller: :group_members, action: :accept_membership_request %>&nbsp;
-   <%= link_to 'reject', controller: :group_members, action: :reject_membership_request %>
-   <br>
-   <br>
-   
+    <%= group_member.username %>&nbsp;
+    <%= link_to 'accept', controller: :group_members, action: :accept_membership_request %>&nbsp;
+    <%= link_to 'reject', controller: :group_members, action: :reject_membership_request %>
+    <br>
+    <br>
   <% end %>
 </table>
