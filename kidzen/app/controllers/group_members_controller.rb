@@ -61,12 +61,12 @@ class GroupMembersController < ApplicationController
   end
 
   # Method for viewing the join requests sent to the group
-  # group_id-integer
-  # the method returns a container of the member requests to the group
-  # containg the username, and the id of the group to join
+  # Inputs : group_id-integer
+  # The method returns a container of the member requests to the group
+  # containg the username, and the id of the group to join.
   # The function takes a group_id, and returns the members
-  # with pending requests where the owner_accept_state column is 2
-  # complexity : O(n)
+  # with pending requests where the owner_accept_state column is 2 .
+  # Complexity : O(n)
   # Author: Nouran T. Attia
   def membership_requests
     @pending_members = GroupMember.where(:group_id => params[:id],:owner_accept_state => 2)
@@ -75,26 +75,29 @@ class GroupMembersController < ApplicationController
     end
   end
 
-  # Method for accepting a join request into the group specified
-  # username-string
-  # group_id-integer
-  # updating an existing record in table group_members
+  # Method for accepting a join request into the group specified.
+  # Inputs: username-string.
+  # Inputs: group_id-integer.
+  # Updating an existing record in table group_members.
   # The function takes a unique username, and a group_id and updates
   # an existing group_member record by setting the value of column 
-  # owner_accept_state to 1 indicating accepting the join request
+  # owner_accept_state to 1 indicating accepting the join request.
+  # Complexity: O(1).
   # Author: Nouran T. Attia
 
   def accept_membership_request
   end
   
-  # Method for rejecting a join request into the group specified
-  # username-string
-  # group_id-integer
-  # updating an existing record in table group_members
+  # Method for rejecting a join request into the group specified.
+  # Inputs: username-string.
+  # Inputs: group_id-integer.
+  # Updating an existing record in table group_members.
   # The function takes a unique username, and a group_id and updates
   # an existing group_member record by setting the value of column 
-  # owner_accept_state to 0 indicating accepting the join request
+  # owner_accept_state to 0 indicating rejecting the join request.
+  # Complexity: O(1).
   # Author: Nouran T. Attia
+
   def reject_membership_request
   end
 
