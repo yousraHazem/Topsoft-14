@@ -37,12 +37,7 @@ class ProfileMusicsController < ApplicationController
   # redirect to the form page that create the app
   #  if the logged is a child
   # comlixty O(n)
-<<<<<<< HEAD
-  # comlixty O(1)
-  # paremtaers : nill
-=======
   # parameters  : nill
->>>>>>> c1836f990dc9d2d58ed4285e7e1bdd6bed33644b
   # return : nil
   def new
     if signed_in?
@@ -97,12 +92,7 @@ class ProfileMusicsController < ApplicationController
   # Authors : Ahmad bassiouny
   # no work done
   # comlixty : O(n)
-<<<<<<< HEAD
-  # comlixty _
-  # paremtaers : nill
-=======
   # parameters : nill
->>>>>>> c1836f990dc9d2d58ed4285e7e1bdd6bed33644b
   # return : new Profile opject
   def update
     respond_to do |format|
