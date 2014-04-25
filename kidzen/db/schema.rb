@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420002645) do
+ActiveRecord::Schema.define(version: 20140424212240) do
 
   create_table "activities", force: true do |t|
     t.integer  "min_age"
@@ -60,6 +60,21 @@ ActiveRecord::Schema.define(version: 20140420002645) do
     t.boolean  "mutual_only"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "child_favourites", force: true do |t|
+    t.string "child_name"
+    t.string "favourite_name"
+  end
+
+  create_table "child_hobbies", force: true do |t|
+    t.string "child_name"
+    t.string "hobby_name"
+  end
+
+  create_table "child_interests", force: true do |t|
+    t.string "child_name"
+    t.string "interest_name"
   end
 
   create_table "child_parents", force: true do |t|
@@ -132,6 +147,13 @@ ActiveRecord::Schema.define(version: 20140420002645) do
     t.datetime "updated_at"
   end
 
+  create_table "keywords", force: true do |t|
+    t.string   "child_name"
+    t.string   "tags"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "messages", force: true do |t|
     t.string   "title"
     t.string   "sender_username"
@@ -184,16 +206,10 @@ ActiveRecord::Schema.define(version: 20140420002645) do
     t.datetime "updated_at"
   end
 
-  create_table "poll_answers", force: true do |t|
-    t.string   "content"
-    t.integer  "counter"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "poll_question_id"
-  end
-
-  create_table "poll_questions", force: true do |t|
-    t.string   "content"
+  create_table "profile_musics", force: true do |t|
+    t.integer  "user_id"
+    t.string   "mp3_url"
+    t.string   "youtube_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -228,7 +244,9 @@ ActiveRecord::Schema.define(version: 20140420002645) do
   create_table "videos", force: true do |t|
     t.string   "description"
     t.string   "category"
-    t.integer  "length"
+    t.string   "file"
+    t.string   "real_file"
+    t.string   "youtube"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
