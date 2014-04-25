@@ -47,6 +47,7 @@ Kidzen::Application.routes.draw do
   resources :polls
   resources :surveys
   resources :groups
+  resources :messages
   resources :profile_musics
   get "children/verify"
   resources :searches
