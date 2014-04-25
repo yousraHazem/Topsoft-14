@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   #Parameters : None
   #Returns : None
   #Approach : view child's friends
-  #Time Complexity : O(1)
+  #Time Complexity : O(n)
   #Author : Nouran Mamdouh
   def view_friends
     @child = Child.where("registered_user_id=#{current_user.id}").first
