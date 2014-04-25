@@ -51,12 +51,18 @@ Kidzen::Application.routes.draw do
 
   get "children/verify"
 
-  # This routes to enable getting info from invite page
+  resources :searches
+  resources :events
+  resources :activities
+  get "child/verify"
+  post "child/new"
+    # This routes to enable getting info from invite page
   get "supervisors/invite" => 'supervisors#invite'
   post "supervisors/invite" => 'supervisors#invite'
 
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
