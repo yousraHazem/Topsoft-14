@@ -1,0 +1,42 @@
+#newMessage {
+	margin-left: 20px;
+}
+#inboxMessages {
+	margin:20px;
+}
+#inboxMessages table{
+    border-collapse: collapse;
+    border-spacing: 0;
+	height:100%;
+	margin:15px;
+	padding:5px;
+}
+#inboxMessages td{
+    width: 30%;
+}
+#sentMessages {
+	margin:20px;
+}
+#sentMessages table{
+    border-collapse: collapse;
+    border-spacing: 0;
+	height:100%;
+	margin:15px;
+	padding:5px;
+}
+#sentMessages td{
+    width: 30%;
+}
+#readMessage {
+	margin:20px;
+}
+#readMessage table{
+    border-collapse: collapse;
+    border-spacing: 0;
+	height:100%;
+	margin:15px;
+	padding:5px;
+}
+#readMessage td{
+    width: 30%;
+}

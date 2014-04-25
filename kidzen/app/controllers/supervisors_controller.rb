@@ -48,7 +48,11 @@ class SupervisorsController < ApplicationController
   # Authors: Ahmed H. Ismail
   def accept_child
     data = params[:child_username]
-    func = lambda { |supervisor, child | supervisor.accept_child(child) }
+    func = lambda do |supervisor, child | 
+      supervisor.accept_child(child)
+      ChildParent.create(supervisor: supervisor, child: child)
+      ChildSupervisor.create(supervisor: supervisor, child: child)
+    end
     associated_child_apply(func, data)
   end
 
@@ -98,6 +102,7 @@ class SupervisorsController < ApplicationController
 
   end
 
+<<<<<<< HEAD
     # This method gets email and supervisor id from the view and find the 
     # corresponding supervisor which it paas them to the user_mailer method 
     # after checking that the supervisor is signed in  
@@ -117,10 +122,14 @@ class SupervisorsController < ApplicationController
           redirect_to child_path :show
         end
       else
-        flash[:failure] = "You have to be signed in"
-        redirect_to session_path :new
+        flash[:failure] = "This isn't the page you are looking for.."
+        redirect_to child_path :show
       end
+    else
+      flash[:failure] = "You have to be signed in"
+      redirect_to session_path :new
     end
+  end
 
 
   private
