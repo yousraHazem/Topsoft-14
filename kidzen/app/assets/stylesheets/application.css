@@ -19,6 +19,7 @@ body {
 	font:normal 12px/1.8em Arial, Helvetica, sans-serif;
 	background:url(/assets/bg.jpg);
 }
+
 html {
 	padding:0;
 	margin:0;
@@ -39,18 +40,11 @@ html {
 }
 
 
-
-
-
-
 .logo1 {
 	float:right;
 	padding:0;
 	margin:0 auto;
 }
-
-
-
 
 
 h1 {
@@ -145,11 +139,6 @@ a.rm, a.com {
 	width:923px;
 }
 
-
-
-
-
-
 .mainbar {
 	margin:0;
 	padding:0;
@@ -180,12 +169,6 @@ a.rm, a.com {
 	background:#78bbe6;
 	color:#FFF;
 }
-
-
-
-
-
-
 
 .mainbar1 {
 	margin:0;
@@ -242,16 +225,6 @@ a.rm, a.com {
 	color:#d9d9d9;
 }
 
-
-
-
-
-
-
-
-
-
-
 .sidebar1 {
 	padding:0;
 	float:left;
@@ -273,15 +246,6 @@ a.rm, a.com {
 	font:normal 60px/12px Arial, Helvetica, sans-serif;
 	color:#d9d9d9;
 }
-
-
-
-
-
-
-
-
-
 
 
 ul.sb_menu, ul.ex_menu {
@@ -433,12 +397,6 @@ ol li .send {
 }
 
 
-
-
-
-
-
-
 .search {
 	float:right;
 	width:250px;
@@ -471,14 +429,6 @@ ol li .send {
 	width:auto;
 }
 
-
-
-
-
-
-
-
-
 .search1 {
 	float:left;
 	width:250px;
@@ -510,10 +460,6 @@ ol li .send {
 	border:0;
 	width:auto;
 }
-
-
-
-
 
 
 .pagenavi {
