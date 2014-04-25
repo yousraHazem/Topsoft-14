@@ -97,11 +97,17 @@
           <li class="active"><a href="#"><%= t('home') %></a></li>
           <li><a href="#"><%= t('profile') %></a></li>
           <li><a href="#"><%= t('activities') %></a></li>
-          <li><a href="#"><%= t('messages') %></a></li>
           <li><a href="#"><%= t('notifications') %></a></li>
-          <li><a href="#"><%= t('logout') %></a></li>
+          <% if signed_in? %>
+            <li><%= link_to t('logout'), signout_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Sign in", controller: :sessions, action: :new %></li>
+            <li><%= link_to "Sign up", controller: :children, action: :signup %></li>
+          <% end %>
+          <li><%= link_to t('messages'), controller: :messages, action: :index %></li>
         </ul>
         <% end %>
+        
        <% if ( session[:locale] == "ar")%>
         <ul>
         <li><a href="#"><%= t('logout') %></a></li>
