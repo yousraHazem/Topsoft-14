@@ -25,14 +25,14 @@ class GroupsController < ApplicationController
   # Returns true or false indicating whether the member was removed or not
   # Time Complexity: O(1).
   # Author: Mohamed Bahgat Elrakaiby
-  def remove_member(RegisteredUser r)
-    r.destroy
-    unless members.include? (r)
-    return false
-    else
-    members.delete(r)
-    return true
-  end
+  #def remove_member(RegisteredUser r)
+  #  r.destroy
+  #  unless members.include? (r)
+  #  return false
+  #  else
+  #  members.delete(r)
+  #  return true
+  #end
 
   # POST /groups
   # POST /groups.json
@@ -78,22 +78,23 @@ class GroupsController < ApplicationController
   # Returns nothing
   # Time complexity: O(1)
   # Author: Mohamed Bahgat Elrakaiby
-  def create_status(Status status)
-    Status.create(group_id: @group_id, status: status)
+  #def create_status(Status status)
+  #  Status.create(:group_id => params[:id], status: status)
+  #end
+
+  # This is a function that allows a user to leave a group
+  # Returns nothing
+  # Time complexity: O(1).
+  # Author: Mohamed Bahgat Elrakaiby
+  def leave_group
+    m = GroupMember.where(:username => current_user.username, :group_id => params[:id])
+    m.destroy_all
+    #@g = Group.where(:group_id => :group_id)
+    #redirect_to @g
   end
 
-  # This is a function that views members of the group
-  # Returns nothing
-  # Time Complexity: O(n).
-  # Author: Mohamed Bahgat Elrakaiby
-  def view_members()
-    a = []
-          GroupMember.all.each {|r|
-            if r.group_id == @group.id
-              a.push(r.username)
-            end
-          }
-    puts a
+  def group_member_params
+    params.require(:group_members).permit(:group_id, :username)
   end
 
   private

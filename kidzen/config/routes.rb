@@ -1,4 +1,5 @@
 Kidzen::Application.routes.draw do
+  get "group_members/index"
   resources :profile_musics
 
 
@@ -96,7 +97,11 @@ Kidzen::Application.routes.draw do
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
 
-
+  # group members
+  get '/group_members/:id/view' , to:  'group_members#view'
+  get '/groups/:id/leave_group' , to:  'groups#leave_group'
+  post '/groups/:id/leave_group' => 'groups#leave_group'
+  post '/group_members/:id/view' => 'group_members#view'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
