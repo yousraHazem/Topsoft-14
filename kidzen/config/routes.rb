@@ -1,6 +1,6 @@
 Kidzen::Application.routes.draw do
 
-  root 'profile_musics#index'
+  root 'registered_users#show'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
 
