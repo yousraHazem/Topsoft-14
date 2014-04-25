@@ -17,8 +17,7 @@ class EventsController < ApplicationController
   #Time Complexity : O(1)
   #Author : Nouran Mamdouh
   def view_friends
-    child = Child.where("registered_user_id=#{current_user.id}").first
-    @friends = child.friends
+    @friends = Child.where("registered_user_id=#{current_user.id}").first.friends
   end
 
   # GET /events

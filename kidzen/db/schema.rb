@@ -62,6 +62,21 @@ ActiveRecord::Schema.define(version: 20140424134205) do
     t.datetime "updated_at"
   end
 
+  create_table "child_favourites", force: true do |t|
+    t.string "child_name"
+    t.string "favourite_name"
+  end
+
+  create_table "child_hobbies", force: true do |t|
+    t.string "child_name"
+    t.string "hobby_name"
+  end
+
+  create_table "child_interests", force: true do |t|
+    t.string "child_name"
+    t.string "interest_name"
+  end
+
   create_table "child_parents", force: true do |t|
     t.integer  "parent_id"
     t.integer  "child_id"
@@ -128,6 +143,13 @@ ActiveRecord::Schema.define(version: 20140424134205) do
     t.string   "privacy"
     t.string   "group_description"
     t.integer  "member_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "keywords", force: true do |t|
+    t.string   "child_name"
+    t.string   "tags"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
