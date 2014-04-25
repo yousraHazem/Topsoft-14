@@ -1,3 +1,6 @@
+# File modified by Ahmed H. Ismail
+# From railstutorial.org
+# Dyncamic secret key since our code is in a public repo
 # Be sure to restart your server when you modify this file.
 
 # Your secret key is used for verifying the integrity of signed cookies.
@@ -9,5 +12,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Kidzen::Application.config.secret_key_base = '46d018bd416d9b412aa1492e3da6d5ef543cb0c76911ff41c176900b85b2a7e05d7d5d0b9fbd6efef82219050a0ecb60020926f0b4fac7670ee35bca7464c54a'
+require 'securerandom'
 
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Kidzen::Application.config.secret_key_base = secure_token
