@@ -1,0 +1,31 @@
+<link href="/assets/messages.css" rel="stylesheet">
+
+  <div id="inboxMessages">
+    <h2>Inbox</h2>
+    <table class="table">
+      <tr>
+        <td>Subject</td>
+        <td>From</td>
+        <td>Date</td>
+        <td></td>
+      </tr>
+    </table>
+    <div id="messages">
+      <%= render @messages %> 
+    </div>
+  </div>
+
+  <div id="sentMessages">
+    <h2>Sent Messages</h2>
+    <table class="table">
+      <tr>
+        <td>Subject</td>
+        <td>To</td>
+        <td>Date</td>
+        <td></td>
+      </tr>
+    </table>
+    <div id="messages">
+      <%= render 'messages/sent' %> 
+    </div>
+  </div>

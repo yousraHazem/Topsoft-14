@@ -8,11 +8,11 @@ class AccessPageController < ApplicationController
   #Author Mohamed Khaled AbdelMeguid	
   def access
     # check if the children of a parent is not empty
-    if RegisteredUser.find_by(id: ChildParent.find_by(parent_id: current_user.id).child_id).nil?
-    &&ChildParent.find_by(parent_id: current_user.id).nil?
-    && ChildParent.find_by(parent_id: current_user.id).child_id.nil?
-    &&Supervisor.find_by(supervisor_id: current_user.id).nil?
-      puts("error there is no child")
+    if RegisteredUser.find_by(id: ChildParent.find_by(parent_id: current_user.id).child_id).nil?\
+      and ChildParent.find_by(parent_id: current_user.id).nil?\
+      and ChildParent.find_by(parent_id: current_user.id).child_id.nil?\
+      and Supervisor.find_by(supervisor_id: current_user.id).nil?\
+        puts("error there is no child")
     else
       @child = ChildParent.find_all_by_parent_id (current_user.id)
     end
@@ -20,7 +20,7 @@ class AccessPageController < ApplicationController
     # here we take the values to be updated from the url but there is a bug in updating the Hash
     check = params[:c1]
     child = params[:childUpdate]
-    @update = Permission.find_by(child_name: child).update(abilities[:can_add_mutual_friends] => check)
+    @update = Permission.find_by(registered_user: child.registered_user).update(abilities[:can_add_mutual_friends] => check)
     if @update.save
       redirect_to root_url
     else

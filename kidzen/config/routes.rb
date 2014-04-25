@@ -9,8 +9,7 @@ Kidzen::Application.routes.draw do
   resources :groups
   resources :children
   resources :photos
-
-
+  resources :videos
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
   # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
@@ -50,6 +49,7 @@ Kidzen::Application.routes.draw do
   resources :polls
   resources :surveys
   resources :groups
+  resources :messages
   resources :profile_musics
   get "children/verify"
   resources :searches
@@ -63,9 +63,6 @@ Kidzen::Application.routes.draw do
   post "supervisors/invite" => 'supervisors#invite'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
-
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
