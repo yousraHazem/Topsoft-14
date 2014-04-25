@@ -102,6 +102,7 @@ class SupervisorsController < ApplicationController
 
   end
 
+
   # This method gets email and supervisor id from the view and find the 
   # corresponding supervisor which it paas them to the user_mailer method 
   # after checking that the supervisor is signed in  
@@ -163,4 +164,5 @@ class SupervisorsController < ApplicationController
         end
       end
     end
+
 end

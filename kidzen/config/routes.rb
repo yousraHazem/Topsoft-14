@@ -9,7 +9,6 @@ Kidzen::Application.routes.draw do
   resources :photos
   resources :videos
 
-  root 'registered_users#show'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
 
@@ -43,6 +42,7 @@ Kidzen::Application.routes.draw do
 
   # End supervisor routes
 
+
   # Session routes
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
@@ -50,6 +50,13 @@ Kidzen::Application.routes.draw do
   # Children Signup paths
   get '/signup', to: 'children#signup'
   post '/children/create', to: 'children#create'
+  get '/children/show', to: 'children#show'  
+
+
+  resources :public, :only => [:upload_photo, :uploading, :remove_photo]
+  match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
+  match '/uploadingphoto', :to => 'public#uploading', via: [:get, :post]
+  match '/removephoto/:id', :to => 'public#remove_photo', via: [:get, :post]
   get '/children/show', to: 'children#show'
   # Sessions end
 
@@ -73,17 +80,33 @@ Kidzen::Application.routes.draw do
   resources :searches
   resources :activities
   resources :photos
-  resource :calendar, only: [:show], controller: :calendar
+  resources :children
+  resources :calendar, only: [:show], controller: :calendar
   resources :public, only: [:upload_photo, :uploading, :remove_photo]
-  resources :public, :only: [:upload_photo, :uploading, :remove_photo]  
+  resources :public, only: [:upload_photo, :uploading, :remove_photo]  
   resources :poll_questions
   resources :sessions, only: [:new, :create, :destroy]
+  resources :group_members
+
+  # Group routes
+  get "group_members/index"
+  get "group_members/new"
+  get "group_members/create"
+  get "group_members/show"
+  get "group_members/destroy"
+  get "groups/:id/membership_requests" , to: 'group_members#membership_requests'
+  get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
+  get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
+  
+
     
 
   # children routes
   get "child/verify"
   post "child/new"
   get "children/verify"
+
+
   # This routes to enable getting info from invite page
   get "supervisors/invite" => 'supervisors#invite'
   post "supervisors/invite" => 'supervisors#invite'
@@ -111,6 +134,7 @@ Kidzen::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   # resources :products
+
 
 
   

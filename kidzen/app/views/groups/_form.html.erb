@@ -1,4 +1,4 @@
-<%= form_for(@group) do |f| %>
+<%= simple_form_for :group , url: groups_path do |f| %>
   <% if @group.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
@@ -11,7 +11,18 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%=f.input :owner, required: true, label: 'Owner Username:  ' %><br>
+  <%=f.input :group_name, required: true, label: 'Group name : ' %><br>
+  <%=f.input :group_description, label: 'About the group : '%>
+
+  <h3>Set Privacy :</h3>
+  <!--<%=f.input :privacy, as: :radio_buttons %>-->
+  <%= radio_button_tag(:privacy , "Private") %>
+  <%= label_tag(:privacy_private ,"Private Group, Only by invitation") %>
+  <br>
+  <%= radio_button_tag(:privacy , "Public")%>
+  <%= label_tag(:privacy_public , "Public Group, Visible to all")%>
+  <br><br>
+  <%= f.button :submit %>
+  
 <% end %>
