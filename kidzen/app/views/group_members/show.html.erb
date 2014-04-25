@@ -1,0 +1,7 @@
+<%= show_for @group_member do |s| %>
+  <%= s.attribute :group_id %>
+  <%= s.attribute :username %>
+<% end %>
+
+<%= link_to 'Edit', edit_group_member_path(@group_member) %> |
+<%= link_to 'Back', group_members_path %>

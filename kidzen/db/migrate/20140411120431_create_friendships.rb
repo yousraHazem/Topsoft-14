@@ -3,9 +3,13 @@ class CreateFriendships < ActiveRecord::Migration
     create_table :friendships do |t|
       t.integer :child_1_id
       t.integer :child_2_id
-	  t.string :status
+      t.string :status
       t.timestamps
+      t.integer :child_1_id
+      t.integer :child_2_id
+      t.timestamps
+    end
+    add_index(:friendships, [:child_1_id, :child_2_id], unique:  true)
   end
   add_index(:friendships, [:child_1_id, :child_2_id], unique:  true)
-  end
 end

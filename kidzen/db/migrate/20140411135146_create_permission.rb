@@ -4,6 +4,9 @@ class CreatePermission < ActiveRecord::Migration
       t.text :abilities
       t.belongs_to :registered_user
       t.timestamps
+      t.text :abilities
+      t.integer :registered_user_id
+      t.timestamps
     end
   end
 end
