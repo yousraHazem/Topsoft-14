@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ChildTest < ActiveSupport::TestCase
+class PollAnswerTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

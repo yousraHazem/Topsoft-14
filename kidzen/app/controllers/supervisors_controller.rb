@@ -1,9 +1,9 @@
 # Supervisor controller
 # Authors: Ahmed H. Ismail
-class SupervisorsController < ApplicationController
-  # before_action :set_supervisor, except: [] # set for all
+class SupervisorsController < ApplicationController  
   # TODO: fix 'X-CSRF-Token' in XMLHttpRequest header
   skip_before_filter :verify_authenticity_token, only: [:accept_child, :reject_child]
+  
   # GET /confirm_children
   # Renders the confirm children
   # view.
@@ -26,6 +26,7 @@ class SupervisorsController < ApplicationController
 
   # GET /supervisors/dashboard
   # Renders the supervisor's homepage
+  # Authors: Ahmed H. Ismail
   def show
     if signed_in?
       # Is user a supervisor?
@@ -47,7 +48,11 @@ class SupervisorsController < ApplicationController
   # Authors: Ahmed H. Ismail
   def accept_child
     data = params[:child_username]
-    func = lambda { |supervisor, child | supervisor.accept_child(child) }
+    func = lambda do |supervisor, child | 
+      supervisor.accept_child(child)
+      ChildParent.create(supervisor: supervisor, child: child)
+      ChildSupervisor.create(supervisor: supervisor, child: child)
+    end
     associated_child_apply(func, data)
   end
 
@@ -62,6 +67,7 @@ class SupervisorsController < ApplicationController
 
 
   # GET /supervisors/signup
+  # Renders the signup page
   # Authors: Ahmed H. Ismail
   def signup
     @user = RegisteredUser.new
@@ -96,29 +102,29 @@ class SupervisorsController < ApplicationController
 
   end
 
-    # This method gets email and supervisor id from the view and find the 
-    # corresponding supervisor which it paas them to the user_mailer method 
-    # after checking that the supervisor is signed in  
-    # email - is the email that the invitation should be sent to 
-    # that passed by the views
-    # Authors: Shary Beshara
-    def invite
-      if signed_in?
-        if Supervisor.exists?(registered_user: current_user)
-          @supervisor = current_user
-          @email = params[:email]
-          if !RegisteredUser.exists?(email: <email here>)
-            UserMailer.invite_others(@email, @supervisor).deliver 
-          end
-        else
-          flash[:failure] = "This isn't the page you are looking for.."
-          redirect_to child_path :show
+  # This method gets email and supervisor id from the view and find the 
+  # corresponding supervisor which it paas them to the user_mailer method 
+  # after checking that the supervisor is signed in  
+  # email - is the email that the invitation should be sent to 
+  # that passed by the views
+  # Authors: Shary Beshara
+  def invite
+    if signed_in?
+      if Supervisor.exists?(registered_user: current_user)
+        @supervisor = current_user
+        @email = params[:email]
+        if !RegisteredUser.exists?(email: @email)
+          UserMailer.invite_others(@email, @supervisor).deliver 
         end
       else
-        flash[:failure] = "You have to be signed in"
-        redirect_to session_path :new
+        flash[:failure] = "This isn't the page you are looking for.."
+        redirect_to child_path :show
       end
+    else
+      flash[:failure] = "You have to be signed in"
+      redirect_to session_path :new
     end
+  end
 
 
   private

@@ -1,0 +1,25 @@
+<h1>Listing poll_questions</h1>
+
+<%= current_user.username%>
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @poll_questions.each do |poll_question| %>
+      <tr>
+        <td><%= poll_question.content %></td>
+        <td><%= link_to 'Show', poll_question %></td>
+        <td><%= link_to 'Edit', edit_poll_question_path(poll_question) %></td>
+        <td><%= link_to 'Destroy', poll_question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Poll question', new_poll_question_path %>
