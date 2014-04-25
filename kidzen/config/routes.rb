@@ -8,6 +8,12 @@ Kidzen::Application.routes.draw do
   resources :children
   resources :photos
   resources :videos
+
+  root 'registered_users#show'
+  # Internationalization
+  get 'change_locale', to: 'application#change_locale'
+
+  # RegisteredUser (generic) routes
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
   get '/registered_user', to: 'registered_users#show'
@@ -20,6 +26,9 @@ Kidzen::Application.routes.draw do
   get '/settings', to: 'registered_users#settings'
   # Lists pending notifications
   get "/notifications/pending", to: 'notifications#pending'
+  # End generic routes
+
+  # Supervisor routes:
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'
   # Children notification actions
@@ -28,14 +37,13 @@ Kidzen::Application.routes.draw do
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
-  resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
-  resources :poll_questions
-  get "calendar/show"
-  resource :calendar, only: [:show], controller: :calendar
-  resources :public, :only => [:upload_photo, :uploading, :remove_photo]
-  resources :registered_users
+  # This routes to enable getting info from invite page
+  get "supervisors/invite", to: 'supervisors#invite'
+  post "supervisors/invite", to: 'supervisors#invite'
+
+  # End supervisor routes
+
   # Session routes
-  resources :sessions, only: [:new, :create, :destroy]
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
   get '/signout', to: 'sessions#destroy'
@@ -43,6 +51,12 @@ Kidzen::Application.routes.draw do
   get '/signup', to: 'children#signup'
   post '/children/create', to: 'children#create'
   get '/children/show', to: 'children#show'
+  # Sessions end
+
+  # scratch pad
+
+  # Some resources
+  resources :videos
   resources :groups
   resources :events
   resources :polls
@@ -56,10 +70,17 @@ Kidzen::Application.routes.draw do
   #get "events/view_friends"
   resources :messages
   resources :profile_musics
-  get "children/verify"
   resources :searches
-  resources :events
   resources :activities
+  resources :photos
+  resource :calendar, only: [:show], controller: :calendar
+  resources :public, only: [:upload_photo, :uploading, :remove_photo]
+  resources :public, :only: [:upload_photo, :uploading, :remove_photo]  
+  resources :poll_questions
+  resources :sessions, only: [:new, :create, :destroy]
+    
+
+  # children routes
   get "child/verify"
   post "child/new"
   get "children/verify"
@@ -91,44 +112,7 @@ Kidzen::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   # resources :products
 
-  # Example resource route with options:
-  # resources :products do
-  # member do
-  # get 'short'
-  # post 'toggle'
-  # end
-  #
-  # collection do
-  # get 'sold'
-  # end
-  # end
 
-  # Example resource route with sub-resources:
-  # resources :products do
-  # resources :comments, :sales
-  # resource :seller
-  # end
-
-  # Example resource route with more complex sub-resources:
-  # resources :products do
-  # resources :comments
-  # resources :sales do
-  # get 'recent', on: :collection
-  # end
-  # end
-
-  # Example resource route with concerns:
-  # concern :toggleable do
-  # post 'toggle'
-  # end
-  # resources :posts, concerns: :toggleable
-  # resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  # namespace :admin do
-  # # Directs /admin/products/* to Admin::ProductsController
-  # # (app/controllers/admin/products_controller.rb)
-  # resources :products
-  # end
+  
 end
 
