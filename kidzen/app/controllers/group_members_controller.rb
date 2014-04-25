@@ -14,7 +14,7 @@ class GroupMembersController < ApplicationController
     def add_member_name
       user = RegisteredUser.all.where(:first_name => params[:first_name] , :last_name => params[:last_name] , :username => params[:username])
       child = Child.where(:registered_user_id => user.id)
-      member=GroupMember.new(:group_id => :group_id,:username => user.username,:member_accept_state => 2,:owner_accept_state => 1)
+      member = GroupMember.new(:group_id => :group_id,:username => user.username,:member_accept_state => 2,:owner_accept_state => 1)
       member.save
     end
     
@@ -29,7 +29,7 @@ class GroupMembersController < ApplicationController
     def add_member_email
       user = RegisteredUser.all.where(:email => params[:email])
       child = Child.where(:registered_user_id => user.id)
-      member=GroupMember.new(:group_id => :group_id,:username => user.username,:member_accept_state => 2,:owner_accept_state => 1)
+      member = GroupMember.new(:group_id => :group_id,:username => user.username,:member_accept_state => 2,:owner_accept_state => 1)
       member.save
     end
 
@@ -43,7 +43,7 @@ class GroupMembersController < ApplicationController
     def add_member_phone
       user = RegisteredUser.all.where(:phone => params[:phone])
       child = Child.where(:registered_user_id => user.id)
-      member=GroupMember.new(:group_id => :group_id,:username => user.username,:member_accept_state => 2,:owner_accept_state => 1)
+      member = GroupMember.new(:group_id => :group_id,:username => user.username,:member_accept_state => 2,:owner_accept_state => 1)
       member.save
     end
 end
