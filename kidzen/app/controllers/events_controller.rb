@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def search
-  @child = Child.search params[:search]
+    @child = Child.search params[:search]
   end
 
   # GET /events
@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     #Approach : view all the events created
     # Time Complexity : O(n)
     #Author : Nouran Mamdouh
-    def index
+  def index
     @events = Event.all
   end
 
@@ -46,7 +46,7 @@ class EventsController < ApplicationController
   #Author : Nouran Mamdouh
   def create
     @event = Event.new(event_params)
-
+    
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
