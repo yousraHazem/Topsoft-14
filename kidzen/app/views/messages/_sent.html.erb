@@ -1,0 +1,17 @@
+<% @messages.each do |m| %>
+<% if m.sender == @user.email %>
+<table class="table">
+  <tr>
+    <td>
+      <%= link_to m.subject, message_path(m) %>
+      <% if m.read %>
+        [read by user]
+      <% end %>
+    </td>
+    <td><%= m.recepient %></td>
+    <td><%= m.created_at %></td>
+    <td><%= link_to 'Delete Message', m, method: :delete, data: { confirm: 'Are you sure?' } %></td>td>
+  </tr>
+</table>
+<% end %>
+<% end %>

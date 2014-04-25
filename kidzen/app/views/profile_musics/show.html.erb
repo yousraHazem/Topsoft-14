@@ -1,0 +1,26 @@
+	
+	<!-- playing the .mp3 url in the background 
+         auto play , hidden and max volume -->
+	<EMBED ID="x" SRC="<%= @profile_music.mp3_url %>" 
+	width="0" height="0" HIDDEN=true AUTOSTART=true loop="false" volume="100">
+
+	<!-- playing the youtube url in the background 
+         auto play and hidden // 
+         a split to the url happens here so that we
+         can take the video ID which came after 
+         watch?v= and the we add ?autoplay=1
+         to auto play the video -->
+
+	<div style="position:relative;width:0px;height:0px;overflow:hidden;">
+	  <div style="position:absolute;top:-276px;left:-5px">
+		<iframe ID="x" width="300" height="300" 
+		      src="http://www.youtube.com/embed/<%= @profile_music.youtube_url.split("watch?v=").last %>?autoplay=1"  
+			  > 
+	    </iframe>
+	  </div>
+	</div>
+<%= link_to 'Edit', edit_profile_music_path(@profile_music) %> |
+<%= link_to 'Back', profile_musics_path %>
+<script type="text/javascript">
+
+</script>

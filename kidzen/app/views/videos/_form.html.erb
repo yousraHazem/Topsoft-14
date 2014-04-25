@@ -1,0 +1,20 @@
+<%= form_for @video, html: { multipart: true } do |f| %>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+ <p>
+   <%= f.label :file,"Upload your Video from Here" %> <br />
+   <%= f.file_field :file %>
+  </p> 
+  <br>
+  <p>
+    <%= f.label :youtube,"Or Provide Youtube url" %> <br />
+    <%= f.text_field :youtube %>
+  </p>
+   <p>
+   <%= f.label :category %><br />
+   <%= f.text_field :category %>
+   </p>
+  <p><%= f.submit %></p>
+<% end %>

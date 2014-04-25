@@ -1,0 +1,136 @@
+
+<% if (!@registered_users.present? && !@events.present? && !@groups.present? && !@activities.present?) %>
+  <h1>No Results!</h1> 
+<% end %>
+
+<% if @registered_users.present? %>
+ <h1>Users</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>First name</th>
+      <th>Middle name</th>
+      <th>Family name</th>
+      <th>Date of Birth</th>
+      <th>Nickname</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @registered_users.each do |registered_user| %>
+      <tr>
+        <td><%= registered_user.username %></td>
+        <td><%= registered_user.first_name %></td>
+        <td><%= registered_user.middle_name %></td>
+        <td><%= registered_user.family_name %></td>
+        <td><%= registered_user.birth_date %></td>        
+        <td><%= registered_user.nickname %></td>
+        <td><%= registered_user.email %></td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+</br>
+
+
+<% if @events.present? %>
+<h1>Events</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Time</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.location %></td>
+        <td><%= event.date_time %></td>
+        <td><%= event.description %></td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+</br>
+
+
+
+<% if @groups.present? %>
+<h1>Groups</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Group Name</th>
+      <th>Owner</th>
+      <th>Description</th>
+      <th>Members</th>
+      <th>Privacy</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.group_name %></td>
+        <td><%= group.owner %></td>
+        <td><%= group.group_description %></td>
+        <td><%= group.member_count %></td>
+        <td><%= group.privacy %></td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+</br>
+
+
+<% if @activities.present? %>
+<h1>Activites</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Activity Name</th>
+      <th>Categoty</th>
+      <th>Min Age</th>
+      <th>Max Age</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.name %></td>
+        <td><%= activity.category %></td>
+        <td><%= activity.min_age %></td>
+        <td><%= activity.max_age %></td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>
