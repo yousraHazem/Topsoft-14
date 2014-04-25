@@ -115,12 +115,24 @@ class EventsController < ApplicationController
 
   
   private
-  # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between action
+  #this method set event by id
+  #Parameters : id
+  #Returns : None
+  #Approach : set specific event to variable event
+  # Time Complexity : O(1)
+  #Author : Nouran Mamdouh
     def set_event
       @event = Event.find(params[:id])
     end
 
   # Never trust parameters from the scary internet, only allow the white list through.
+  #this method make us able to access the event attributes
+  #Parameters : None
+  #Returns : None
+  #Approach : get specific event column
+  # Time Complexity : O(1)
+  #Author : Nouran Mamdouh
     def event_params
       params.require(:event).permit(:location, :name, :date_time, :description)
     end
