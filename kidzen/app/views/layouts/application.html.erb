@@ -95,7 +95,7 @@
         <% if ( session[:locale] == "en")%>
         <ul>
           <li class="active"><a href="#"><%= t('home') %></a></li>
-          <li><a href="#"><%= t('profile') %></a></li>
+          <li><%= link_to t('profile'), controller: :registered_users, action: show %></li>
           <li><a href="#"><%= t('activities') %></a></li>
           <li><a href="#"><%= t('notifications') %></a></li>
           <% if signed_in? %>
@@ -107,7 +107,7 @@
           <li><%= link_to t('messages'), controller: :messages, action: :index %></li>
         </ul>
         <% end %>
-        
+
        <% if ( session[:locale] == "ar")%>
         <ul>
         <li><a href="#"><%= t('logout') %></a></li>
