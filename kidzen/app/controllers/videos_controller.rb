@@ -84,11 +84,8 @@ class VideosController < ApplicationController
   # Time Complexity : O(log n)
   # Author : Hussien M. Eloy
   def update
-    @video = Video.find(params[:id])
+   @video = Video.find(params[:id])
     if @video.update_attributes(video_params)
-      if !@video.file.blank?
-        @video.convert
-      end
       flash[:notice] = "Successfully updated video"
       redirect_to video_url
     else
