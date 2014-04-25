@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html >
 <head>
   <title>Kidzen</title>
-      <%= stylesheet_link_tag("general.css") %>
-      <%= yield :stylesheet_includes %>
-      <%= yield :javascript_includes %>
-    <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
+  <%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag("general.css") %>
+  <%= yield :stylesheet_includes %>
+  <%= yield :javascript_includes %>
+
+  <%= csrf_meta_tags %>
 </head>
+
+<link rel="shortcut icon" href="/assets/icon.gif"/>
 <body>
   <div class="locale_button">
     <div class="round_button">
@@ -18,17 +27,147 @@
   </div>
   <br/>
 
-  <div id="alert_container">
-      <% flash.each do |key, value| %>
-        <div class="flash flash-<%= key %>">
-          <%= value %>
-        </div>
-      <% end %>      
-  </div>
-  <%= yield %>
 
-  <%= link_to "Sign out", signout_path, method: "delete" %>
-  <%= link_to "Profile", current_user %>
+<div class="main">
+
+  <div class="main_resize">
+      <p class="navbar-text pull-right">
+        <%= link_to "العربية", change_locale_path(locale: :ar) %>
+        <%= link_to "English", change_locale_path(locale: :en) %>
+      </p>
+
+
+      <div id="alert_container">
+    <% flash.each do |key, value| %>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>      
+  </div>
+
+
+    <div class="header">
+
+<% if ( session[:locale] == "en")%> 
+
+      <div class="logo">
+      
+        <h1><a href="#"><span><%= t('kid') %></span><%= t('dizen') %><small></small></a></h1>
+      </div>
+      
+     <div class="search">
+        <form method="get" id="search" action="/searches">
+          <span>
+          <input name="searchsubmit" type="image" src="/assets/search.gif" class="btn"  />
+          <input type="text" name="search" placeholder="<%= t('search') %> .." required="true" autocomplete="off" />
+          </span>
+        </form>
+        <div class="clr"></div>
+      </div>
+<% end %>
+
+
+<% if ( session[:locale] == "ar")%>
+  <div class="logo1">
+    <h1><a href="#"><span><%= t('kid') %></span><%= t('dizen') %><small></small></a></h1>
+  </div>
+      
+        <div class="search1">
+          <form method="get" id="search" action="/searches">
+            <span>
+              <input name="searchsubmit" type="image" src="/assets/search.gif" class="btn"  />
+              <input type="text" name="search" placeholder="<%= t('search') %> .." required="true" autocomplete="off" />
+            </span>
+          </form>
+          <div class="clr"></div>
+        </div>
+<% end %>
+     
+
+      <div class="clr"></div>
+
+      <div class="menu_nav">
+        <% if ( session[:locale] == "en")%>
+        <ul>
+          <li class="active"><a href="#"><%= t('home') %></a></li>
+          <li><a href="#"><%= t('profile') %></a></li>
+          <li><a href="#"><%= t('activities') %></a></li>
+          <li><a href="#"><%= t('messages') %></a></li>
+          <li><a href="#"><%= t('notifications') %></a></li>
+          <li><a href="#"><%= t('logout') %></a></li>
+        </ul>
+        <% end %>
+       <% if ( session[:locale] == "ar")%>
+        <ul>
+        <li><a href="#"><%= t('logout') %></a></li>
+        <li><a href="#"><%= t('notifications') %></a></li>
+        <li><a href="#"><%= t('messages') %></a></li>
+        <li><a href="#"><%= t('activities') %></a></li>
+        <li><a href="#"><%= t('profile') %></a></li>
+        <li class="active"><a href="#"><%= t('home') %></a></li>
+        </ul>
+        <% end %>
+        <div class="clr"></div>
+      </div>
+      <div class="hbg"><img src="/assets/header_images.jpg" width="923" height="291" alt="" /></div>
+    </div>
+    <div class="content">
+      <div class="content_bg">
+        <% if ( session[:locale] == "en")%>
+        <div class="mainbar">
+          
+            <%= yield %>
+
+            </br></br></br></br></br></br></br>
+          </div>
+        </div>
+      </div>
+        <div class="sidebar">
+          <div class="gadget">
+            <div class="clr"></div>
+            <ul class="sb_menu">
+              <li class="active"><a href="#"><%= t('friends') %></a></li>
+              <li><a href="#"><%= t('groups') %></a></li>
+              <li><a href="#"><%= t('events') %></a></li>
+              <li><a href="#"><%= t('chat_rooms') %></a></li>
+            </ul>
+          </div>  
+        </div>  
+        <% end %> 
+
+        <% if ( session[:locale] == "ar")%> 
+        <div class="mainbar1">
+            <%= yield %>
+            </br></br></br></br></br></br></br>
+          </div>
+        </div>
+      </div>
+        <div class="sidebar1">
+          <div class="gadget">
+            <div class="clr"></div>
+            <ul class="sb_menu">
+              <li class="active"><a href="#"><%= t('friends') %></a></li>
+              <li><a href="#"><%= t('groups') %></a></li>
+              <li><a href="#"><%= t('events') %></a></li>
+              <li><a href="#"><%= t('chat_rooms') %></a></li>
+            </ul>
+          </div>  
+        </div>  
+        <% end %>  
+
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
   <%= debug(params) if Rails.env.development? %>
+
 </body>
 </html>
+
+

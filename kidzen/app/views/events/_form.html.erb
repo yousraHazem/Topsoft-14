@@ -19,20 +19,9 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <%- #COMMMEEENT -%>
   <div class="field">
-  <%= f.label :month %><br>
-    <%= f.select :month, (1..12).to_a, selected: @current_user.created_at.month %>
-  </div>
-  <%- #COMMMEEENT -%>
-  <div class="field">
-  <%= f.label :day %><br>
-    <%= f.select :day, (1..31).to_a, selected: @current_user.created_at.day %>
-  </div>
-  <%- #COMMMEEENT -%>
-  <div class="field">
-  <%= f.label :year %><br>
-    <%= f.select :year, ((Time.now.year - 20)..Time.now.year).to_a, selected: @current_user.created_at.year %>
+    <%= f.label :date_time %><br>
+    <%= f.datetime_select :date_time %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
