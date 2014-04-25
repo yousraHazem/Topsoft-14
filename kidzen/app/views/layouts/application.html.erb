@@ -95,7 +95,7 @@
         <% if ( session[:locale] == "en")%>
         <ul>
           <li class="active"><a href="#"><%= t('home') %></a></li>
-          <li><%= link_to t('profile'), controller: :registered_users, action: show %></li>
+          <li><%= link_to t('profile'), controller: :registered_users, action: :show %></li>
           <li><a href="#"><%= t('activities') %></a></li>
           <li><a href="#"><%= t('notifications') %></a></li>
           <% if signed_in? %>
