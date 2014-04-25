@@ -48,7 +48,11 @@ class SupervisorsController < ApplicationController
   # Authors: Ahmed H. Ismail
   def accept_child
     data = params[:child_username]
-    func = lambda { |supervisor, child | supervisor.accept_child(child) }
+    func = lambda do |supervisor, child | 
+      supervisor.accept_child(child)
+      ChildParent.create(supervisor: supervisor, child: child)
+      ChildSupervisor.create(supervisor: supervisor, child: child)
+    end
     associated_child_apply(func, data)
   end
 
@@ -109,7 +113,7 @@ class SupervisorsController < ApplicationController
         if Supervisor.exists?(registered_user: current_user)
           @supervisor = current_user
           @email = params[:email]
-          if !RegisteredUser.exists?(email: <email here>)
+          if !RegisteredUser.exists?(email: @email)
             UserMailer.invite_others(@email, @supervisor).deliver 
           end
         else
