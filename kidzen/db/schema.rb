@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424134205) do
+ActiveRecord::Schema.define(version: 20140424212240) do
 
   create_table "activities", force: true do |t|
     t.integer  "min_age"
@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 20140424134205) do
   create_table "events", force: true do |t|
     t.string   "location"
     t.string   "name"
-    t.datetime "date_time"
+    t.date     "date"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -168,6 +168,7 @@ ActiveRecord::Schema.define(version: 20140424134205) do
   create_table "notification_actions", force: true do |t|
     t.string   "name"
     t.string   "url"
+    t.string   "data"
     t.boolean  "async"
     t.integer  "notification_id"
     t.datetime "created_at"
@@ -205,16 +206,10 @@ ActiveRecord::Schema.define(version: 20140424134205) do
     t.datetime "updated_at"
   end
 
-  create_table "poll_answers", force: true do |t|
-    t.string   "content"
-    t.integer  "counter"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "poll_question_id"
-  end
-
-  create_table "poll_questions", force: true do |t|
-    t.string   "content"
+  create_table "profile_musics", force: true do |t|
+    t.integer  "user_id"
+    t.string   "mp3_url"
+    t.string   "youtube_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
