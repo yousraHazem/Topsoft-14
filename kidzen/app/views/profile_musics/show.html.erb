@@ -21,33 +21,6 @@
 	</div>
 <%= link_to 'Edit', edit_profile_music_path(@profile_music) %> |
 <%= link_to 'Back', profile_musics_path %>
-
-
 <script type="text/javascript">
-window.my_mute = false;
 
-$('#my_mute_button').bind('click', function(){
-
-    $('audio,video').each(function(){
-
-        if (!my_mute ) {
-
-            if( !$(this).paused ) {
-                $(this).data('muted',true); //Store elements muted by the button.
-                $(this).pause(); // or .muted=true to keep playing muted
-            }
-
-        } else {
-
-            if( $(this).data('muted') ) {
-                $(this).data('muted',false);
-                $(this).play(); // or .muted=false
-            }
-
-        }
-    });
-
-    my_mute = !my_mute;
-
-});
 </script>
