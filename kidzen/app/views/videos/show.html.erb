@@ -6,8 +6,8 @@ Description: <%= @video.description %>
 Category: <%= @video.category %>
 <p>
 <p>
-<%= video_tag @video.real_file,:controls => true, :size => "640x385" 
-if @video.file? %>
+<%= video_tag @video.real_file,:controls => true,
+ :size => "640x385" if @video.file? %>
 </p>
 <p>
   <% if @video.youtube? %>
