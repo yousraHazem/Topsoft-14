@@ -6,6 +6,9 @@ class SessionsController < ApplicationController
   # Renders signin form
   # Authors: Ahmed H. Ismail
   def new
+    if signed_in?
+      redirect_to current_user
+    end
   end
 
   # POST /sessions
