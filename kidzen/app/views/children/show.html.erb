@@ -31,3 +31,10 @@
   <strong>Gender:</strong>
   <%= @user.registered_user.gender %>
 </p>
+
+<%= link_to 'Edit', edit_child_path(@child) %> |
+<%= link_to 'Back', children_path %>
+<%= link_to 'Create Event', controller: :events, action: :new %>
+
+<%= link_to 'profile music', profile_musics_path %><br><br>
+<%= link_to 'poll Questions', poll_questions_path %><br><br>

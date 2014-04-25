@@ -1,19 +1,16 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
-  def search
-  @child = Child.search params[:search]
-  end
-
   # GET /events
   # GET /events.json
-    #this method returns all the events in model Event in index (home)page
-    #Parameters :None
-    #Returns : the events instances from the model event
-    #Approach : view all the events created
-    # Time Complexity : O(n)
-    #Author : Nouran Mamdouh
-    def index
+  #this method view all the events in model Event in index (home)page
+  #assign variable events to all records in table Event
+  #Parameters :None
+  #Returns : None
+  #Approach : view all the events created 
+  # Time Complexity : O(1)
+  #Author : Nouran Mamdouh
+  def index
     @events = Event.all
   end
 
@@ -23,9 +20,10 @@ class EventsController < ApplicationController
   end
 
   # GET /events/new
-  #this method creates a new event. 
+  #this method creates a new event .
+  #assign variable event to new instance  
   #Parameters :None
-  #Returns : the event instance from the model event
+  #Returns : None
   #Approach : create a new event created
   # Time Complexity : O(1)
   #Author : Nouran Mamdouh
@@ -42,11 +40,10 @@ class EventsController < ApplicationController
   #Parameters : event parameters
   #Returns : None
   #Approach : save the new event instance to the event model
-  # Time Complexity : O(1)
+  # Time Complexity : O(n)
   #Author : Nouran Mamdouh
   def create
     @event = Event.new(event_params)
-
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -64,7 +61,7 @@ class EventsController < ApplicationController
   #Parameters : event parameters
   #Returns : None
   #Approach : update the event 
-  # Time Complexity : O(1)
+  # Time Complexity : O(n)
   #Author : Nouran Mamdouh
   def update
     respond_to do |format|
@@ -84,7 +81,7 @@ class EventsController < ApplicationController
   #Parameters : None
   #Returns : None
   #Approach : delete specific event 
-  # Time Complexity : O(1)
+  # Time Complexity : O(n)
   #Author : Nouran Mamdouh
   def destroy
     @event.destroy
@@ -94,6 +91,7 @@ class EventsController < ApplicationController
     end
   end
 
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event

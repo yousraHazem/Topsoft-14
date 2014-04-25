@@ -1,0 +1,26 @@
+<p>
+  <strong>Content:</strong>
+  <%= @poll_question.content %>
+</p>
+
+
+<!-- listing all answers with radio buttons  -->
+<%= form_tag do %>
+  <ol>
+    <% for poll_answer in @poll_question.poll_answers %>
+      <li>
+        <%= radio_button_tag "poll", poll_answer.content%>
+        <%= h poll_answer.content %>
+        <%= poll_answer.counter %>
+      </li>
+    <% end %>
+  </ol>
+  <%= link_to 'vote', poll_questions_path %><br><br>
+<% end %>
+
+
+
+
+
+<%= link_to 'Edit', edit_poll_question_path(@poll_question) %> |
+<%= link_to 'Back', poll_questions_path %>
