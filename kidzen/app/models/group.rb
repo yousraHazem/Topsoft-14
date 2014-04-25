@@ -1,4 +1,5 @@
 class Group < ActiveRecord::Base
-  #attr_accessible :owner , :group_name , :privacy , :group_description
-	
+  # Group Model , has a many to many relation with GroupMember
+  validates_presence_of :owner, :group_name, :group_description
+  has_and_belongs_to_many :group_members
 end
