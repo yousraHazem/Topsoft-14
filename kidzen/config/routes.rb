@@ -1,4 +1,6 @@
 Kidzen::Application.routes.draw do
+  get "access_page/access"		
+  get 'access_page', to: 'access_page#access'
   resources :profile_musics
   root 'profile_musics#index'
   resources :groups

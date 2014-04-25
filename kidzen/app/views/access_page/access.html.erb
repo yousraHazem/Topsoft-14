@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> My webpage </title>
+<%= csrf_meta_tags %>
+<link type="text/css" rel="stylesheet" href="stylesheet.css"/> 
+</head>	
+<body>
+<!-- in this form a button of every child of a parent is viewd and on clicking on any of these buttons the javascript do some work that is described in the script tag below-->
+  <%= form_tag("access", method: "get", remote: true) do %>		
+  <%  @child.each do |child| { :action => "access" } %>
+  <ul>
+    <button id = "<%=registered_user.find_by(id: child.child_id).username%>" onclick = "myFunction(<%= "\'#{RegisteredUser.find_by(id: child.child_id).username}\'" %>, <%= "' #{Permission.find_by(registered_user_id: child.child_id).abilities[:can_create_public_chat_rooms]}'" %>, <%= "' #{permissions.find_by(registered_user_id: child.child_id).tag}'" %>, <%= "' #{Permission.find_by(registered_user_id: child.child_id).abilities[:can_join_public_chat_rooms]}'" %>  )" name = "child" > 
+      <%= RegisteredUser.find_by(id: child.child_id).username %>
+    </button>
+    <!-- this is a save button, when clicked it saves the information changed of the child selected-->
+    <button onclick="save(<%= "\'#{RegisteredUser.find_by(id: child.child_id).username }\'" %>)" name = "saveButton"> 
+    save changes done to this child 
+    </button>	
+  </ul>
+  <% end %>
+  <!-- this button is created to be able to edit the children due to some functionlaties done in the javascript found in the script tag-->
+  <button onclick="enable()"> Click here to edit your children</button>
+  <div name = "tagDiv">
+    <ol id = "tags" >				
+    </ol>
+  </div>
+  <% end %>
+
+<script> //javascript method that handles every manipulation in the page
+		// Author:- Mohamed Khaled Abdelmeguid
+			
+		//This function takes as an input the child name and his properties and manipulates these props
+  function myFunction(childUserName, canCreatePublicChatRooms, tags, canJoinPublicChatRooms) {
+    //create a list of the tags prevented
+    var y = document.createElement("LI");
+	var t = document.createTextNode(tags);
+	y.appendChild(t);
+	document.getElementById("tags").appendChild(y);
+	//create the checboxes that contains the options of the children
+	var btn = document.createElement("INPUT");
+	btn.setAttribute("type","checkbox");
+	btn.name = "checkbox";	
+	var btn2 = document.createElement("INPUT");
+	btn2.setAttribute("type","checkbox");
+	btn2.name = "checkbox2";
+	var h = document.createElement("H1");
+	var t = document.createTextNode("Can create public chat rooms");
+	t.name = "text";
+	var h2 = document.createElement("H1");
+	var t2 = document.createTextNode("Can join public chat rooms");
+	t2.name = "text";
+	//create the text box and the button that are used to sumbit prevented tags
+	var submit = document.createElement("INPUT");
+	submit.name = "BanButton";
+	submit.setAttribute("type", "button");
+	submit.setAttribute("value", "BAN IT !");
+	var mySubmit = document.createElement("INPUT");
+	mySubmit.setAttribute("type", "text");
+	//mySubmit.setAttribute("name", "TagField");
+	mySubmit.setAttribute("id", "TagField");
+	
+	submit.onclick = function() { 
+		//this function add to the database what is written in the textbox and view it 
+	  var added = document.createElement("LI");
+	  var written = document.getElementById("TagField").value;			
+	  var textAdded = document.createTextNode(written);
+	  added.appendChild(textAdded);
+	  document.getElementById("tags").appendChild(added);
+	  window.open("localhost:3000//access_page/access?written="+written+"&child"+childUserName);
+	};
+	document.body.appendChild(btn);
+	document.body.appendChild(t);  
+	document.body.appendChild(btn2);
+	document.body.appendChild(t2);  			
+	document.body.appendChild(mySubmit);
+	document.body.appendChild(submit);
+	//the following three if condtions checks whether the ability of child is true or false and check or uncheck the checkbox accordingly
+	if (canCreatePublicChatRooms = false) {
+	  prompt(canCreatePublicChatRooms);
+	  btn.checked = false;
+	}
+	if (canCreatePublicChatRooms = true) {
+	  btn.checked = true;
+	 }
+
+	if (canJoinPublicChatRooms = false) {
+	  prompt(canCreatePublicChatRooms);
+	  btn.checked = false;
+	  }
+	if (canJoinPublicChatRooms = true) {
+	  btn.checked = true;
+	}
+	// these 2 for loops disables the buttons when a child button is clicked
+	for (var i = 0; i < document.getElementsByName('child').length; i++){
+      document.getElementsByName('child')[i].disabled = true;
+	}			
+	for (var i = 0; i < document.getElementsByName('saveButton').length; i++){
+	  document.getElementsByName('saveButton')[i].disabled = false;
+	}
+						
+	};
+
+		// this function disables and delete some buttons and iformation when we start editing a child's props		
+	function enable() {
+	  for (var i = 0; i < document.getElementsByName('saveButton').length; i++){
+	  document.getElementsByName('saveButton')[i].disabled = true;
+	}
+	Element.prototype.remove = function() {
+  	  this.parentElement.removeChild(this);
+	}
+	for (var i = 0; i < document.getElementsByName('child').length; i++){
+      document.getElementsByName('child')[i].disabled = false;
+	}			
+	for (var i = 0; i < document.getElementsByName('checkbox').length; i++){
+	  document.getElementsByName('checkbox')[i].remove();
+	}
+	for (var i = 0; i < document.getElementsByName('checkbox2').length; i++){
+	  document.getElementsByName('checkbox2')[i].remove();
+	}
+	for (var i = 0; i < document.getElementsByName('text').length; i++){
+	  document.getElementsByName('text')[i].remove();
+	}
+	for (var i = 0; i < document.getElementsByName('BanButton').length; i++){
+   	  document.getElementsByName('BanButton')[i].remove();
+	}
+			// there is a bug in it (it deletes correctly but when a child is clicked it doesn't work)
+			/*for (var i = 0; i < document.getElementsByName('tagDiv').length; i++){
+				document.getElementsByName('tagDiv')[i].remove();
+			}*/
+			
+	document.getElementById("TagField").remove();
+	};
+
+		// this function updates the options of the chosen child
+	function save(childUpdate) {
+	  for (var i = 0; i < document.getElementsByName('checkbox').length; i++){
+	    var c1 = document.getElementsByName('checkbox')[i].checked;
+	  }
+	  //prompt(c1);
+	  // there is a bug in the following line which is found in the controller
+	  window.open("localhost:3000//access_page/access?c1="+c1+"&child"+childUpdate);
+	};
+	
+</script>	
+</body>
+</html>

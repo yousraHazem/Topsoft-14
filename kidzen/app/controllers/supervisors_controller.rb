@@ -54,6 +54,7 @@ class SupervisorsController < ApplicationController
       ChildSupervisor.create(supervisor: supervisor, child: child)
     end
     associated_child_apply(func, data)
+    
   end
 
   # PUT /supervisor/accept_childBeshara
