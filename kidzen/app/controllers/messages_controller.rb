@@ -58,6 +58,22 @@ class MessagesController < ApplicationController
       end
   end
 
+  # This function searches for the message and deletes the message from the table
+  # Complexity o(n)
+  # Author: Ali A. El-Halawaty .
+  def destroy
+    @message = Message.find(params[:id])
+    @message.destroy
+      respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { head :no_content }
+      end
+  end
+
+
+  
+
+
 
   # This function is required to define variables for rails 4 as attr_accesible not usable in rails 4 .
   # Complexity o(1) .
@@ -66,21 +82,7 @@ class MessagesController < ApplicationController
   def m_params
     params.require(:message).permit(:subject, :body, :sender, :recepient, :read)
   end
-
-
-
-  # This function searches for the message and deletes the message from the table
-  # Complexity o(n)
-  # Author: Ali A. El-Halawaty .
-  def destroy
-    @message = Message.find(params[:id])
-    @message.destroy
-    respond_to do |format|
-      format.html { redirect_to :back }
-      format.json { head :no_content }
-  end
-  end
-
-
-  
 end
+
+
+
