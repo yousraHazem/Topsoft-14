@@ -61,9 +61,6 @@ Kidzen::Application.routes.draw do
   post "supervisors/invite" => 'supervisors#invite'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
-
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
