@@ -29,22 +29,17 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
-    #if signed_in?
-      #if current_user.username = 
-        
-      #end
-      @group = Group.new(group_params)
+    @group = Group.new(group_params)
 
-      respond_to do |format|
-        if @group.save
-          format.html { redirect_to @group, notice: 'Group was successfully created.' }
-          format.json { render action: 'show', status: :created, location: @group }
-        else
-          format.html { render action: 'new' }
-          format.json { render json: @group.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @group.save
+        format.html { redirect_to @group, notice: 'Group was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @group }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @group.errors, status: :unprocessable_entity }
       end
-    #end
+    end
   end
 
   # PATCH/PUT /groups/1
