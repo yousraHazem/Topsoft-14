@@ -11,15 +11,22 @@
     </div>
   <% end %>
 
+<!-- adding a url that ends with .mp3 -->
   <div class="field">
     <%= f.label :mp3_url %><br>
     <%= f.text_field :mp3_url, :id=>"mp3", :onclick => "enablemp3()" %>
   </div>
+
+  <!-- adding a youtube url -->
   <div class="field">
     <%= f.label :youtube_url %><br>
     <%= f.text_field :youtube_url, :id=>"you", :onclick => "enableyoutube()" %>
   </div>
 
+<!-- JS methods to make sure that the user wont add both 
+     youtube and .mp3 url so when ever the user click on
+     a text box the other one will be blank even if it 
+     contains text -->
   <script type="text/javascript">
     function enablemp3() {
         document.getElementById("you").value = '';

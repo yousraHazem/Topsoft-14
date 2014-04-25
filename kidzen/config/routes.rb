@@ -35,6 +35,7 @@ Kidzen::Application.routes.draw do
   resources :polls
   resources :surveys
   resources :groups
+  resources :profile_musics
 
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
