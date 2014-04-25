@@ -83,12 +83,13 @@ class GroupsController < ApplicationController
   #end
 
   # This is a function that allows a user to leave a group
+  # It retreives the record to be removed from the database, save it in "member", then remove it
   # Returns nothing
   # Time complexity: O(1).
   # Author: Mohamed Bahgat Elrakaiby
   def leave_group
-    m = GroupMember.where(:username => current_user.username, :group_id => params[:id])
-    m.destroy_all
+    member = GroupMember.where(:username => current_user.username, :group_id => params[:id])
+    member.destroy_all
     #@g = Group.where(:group_id => :group_id)
     #redirect_to @g
   end
