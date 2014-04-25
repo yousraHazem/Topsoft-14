@@ -4,16 +4,6 @@ Kidzen::Application.routes.draw do
   resources :groups
   resources :children
   resources :photos
-<<<<<<< HEAD
-  
- 
-
-
-=======
->>>>>>> c1836f990dc9d2d58ed4285e7e1bdd6bed33644b
-  resources :groups
-  resources :children
-  resources :photos
   resources :videos
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
