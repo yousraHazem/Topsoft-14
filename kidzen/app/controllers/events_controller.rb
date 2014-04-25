@@ -7,12 +7,12 @@ class EventsController < ApplicationController
 
   # GET /events
   # GET /events.json
-  #this method returns all the events in model Event in index (home)page
-  #Parameters :None
-  #Returns : the events instances from the model event
-  #Approach : view all the events created
-  # Time Complexity : O(n)
-  #Author : Nouran Mamdouh
+    #this method returns all the events in model Event in index (home)page
+    #Parameters :None
+    #Returns : the events instances from the model event
+    #Approach : view all the events created
+    # Time Complexity : O(n)
+    #Author : Nouran Mamdouh
   def index
     @events = Event.all
   end
