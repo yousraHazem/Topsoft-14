@@ -27,22 +27,13 @@ Kidzen::Application.routes.draw do
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
-<<<<<<< HEAD
-  resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
-  resources :poll_questions
-  get "calendar/show"
-  resource :calendar, only: [:show], controller: :calendar
-  resources :public, :only => [:upload_photo, :uploading, :remove_photo]
-
-  resources :registered_users
-=======
   # This routes to enable getting info from invite page
   get "supervisors/invite", to: 'supervisors#invite'
   post "supervisors/invite", to: 'supervisors#invite'
 
   # End supervisor routes
 
->>>>>>> d8730a4a443028d0a4bedc6e4d6ee3d1a0c29737
+
   # Session routes
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
@@ -68,8 +59,17 @@ Kidzen::Application.routes.draw do
   resources :events
   resources :polls
   resources :surveys
-<<<<<<< HEAD
-
+  resources :messages
+  resources :profile_musics
+  resources :searches
+  resources :activities
+  resources :photos
+  resources :children
+  resources :calendar, only: [:show], controller: :calendar
+  resources :public, only: [:upload_photo, :uploading, :remove_photo]
+  resources :public, only: [:upload_photo, :uploading, :remove_photo]  
+  resources :poll_questions
+  resources :sessions, only: [:new, :create, :destroy]
   resources :group_members
 
   
@@ -82,40 +82,15 @@ Kidzen::Application.routes.draw do
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
   
-  resources :messages
-  resources :profile_musics
-  resources :searches
-  resources :activities
-  resources :photos
-  resources :children
-  resources :calendar, only: [:show], controller: :calendar
-  resources :public, only: [:upload_photo, :uploading, :remove_photo]
-  resources :public, only: [:upload_photo, :uploading, :remove_photo]  
-  resources :poll_questions
-  resources :sessions, only: [:new, :create, :destroy]
+
     
 
   # children routes
   get "child/verify"
   post "child/new"
   get "children/verify"
-  # This routes to enable getting info from invite page
-  get "supervisors/invite" => 'supervisors#invite'
-  post "supervisors/invite" => 'supervisors#invite'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
-  # Example of regular route:
-  # get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  # get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
 
 
