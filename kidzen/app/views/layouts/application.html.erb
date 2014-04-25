@@ -3,12 +3,24 @@
   <title>Kiddizen</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag("general.css") %>
+  <%= yield :stylesheet_includes %>
+  <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
 </head>
 
 <link rel="shortcut icon" href="/assets/icon.gif"/>
-
 <body>
+  <div class="locale_button">
+    <div class="round_button">
+      <%= link_to "Arabic", change_locale_path(locale: :ar), class: "round_inner" %>
+    </div>
+    <div class="round_button">
+      <%= link_to "English", change_locale_path(locale: :en), class: "round_inner" %>
+    </div>
+  </div>
+  <br/>
+
 
 <div class="main">
 
@@ -17,6 +29,16 @@
         <%= link_to "العربية", change_locale_path(locale: :ar) %>
         <%= link_to "English", change_locale_path(locale: :en) %>
       </p>
+
+
+      <div id="alert_container">
+    <% flash.each do |key, value| %>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>      
+  </div>
+
 
     <div class="header">
 
@@ -125,7 +147,20 @@
             </ul>
           </div>  
         </div>  
-        <% end %>   
+        <% end %>  
+
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  <%= debug(params) if Rails.env.development? %>
+
 </body>
 </html>
 

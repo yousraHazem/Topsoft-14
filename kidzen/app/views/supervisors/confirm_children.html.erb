@@ -1,0 +1,30 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag("supervisors_confirm_children.js") %>
+<% end %>
+<% @children.each do |child| %>
+  <div onclick="collapse(this)" class="collapsable_container" id="<%= child.registered_user.username %>" >
+    <!-- Input is used for preserving state -->
+    <div class ="round_button">
+      <label class="header"><input type="checkbox" class="filter" disabled="true" /> 
+        <p class="round_inner"><%= child.registered_user.full_name %></p>
+      </label>
+    </div>
+    <!-- This is the div containing the actual content -->    
+      <div class="collapsable_field confirm_child_cont">
+        <!-- Display Child's attributes in a table -->
+        <%# Use child display partial %>
+        <%= render partial: "sup_child_disp", locals: { child: child}, layout: false %>
+        <!-- verify and reject buttons -->
+        <div class="verify_reject">
+          <!-- verify and reject with username -->
+          <div class="round_button" onclick="verify_child(<%= "\'#{child.registered_user.username}\'" %>)">
+              <p class="round_inner"><%= t('verify_confirm_child') %></p>
+          </div>
+          <div class="round_button" onclick="reject_child(<%= "\'#{child.registered_user.username}\'" %>)">
+            <p class="round_inner"><%= t('reject_confirm_child') %></p>
+          </div>
+        </div>
+    </div>
+  </div>
+  <br/>
+<% end %> 

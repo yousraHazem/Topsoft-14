@@ -1,0 +1,203 @@
+/*****************************************************
+ * This is the style sheet for all supervisor views. *
+ * Authors: Ahmed H. Ismail                          *
+ *****************************************************/
+
+
+
+/******************************************************************
+ * Style for round button outer container.                        *
+ * Round button should be composed of an outer container of class *
+ * round_button and an inner element of class round_inner.        *
+ * round_inner can be an anchor element for example.              *
+ * Authors: Ahmed H. Ismail                                       *
+ ******************************************************************/
+.round_button {
+  width: 100px;   
+  height: 25px;  
+  margin: auto;  
+  position: relative;  
+  background: #94c4fe;  
+  background: linear-gradient(to bottom,  #94c4fe 31%,#d3f6fe); /* Gives glossy look */
+  border-radius: 25px;
+  border: 1px solid #4864a9;  
+  color: #000;  
+  font-size: 0.750em;  
+  /* Make it look embosed */
+  text-shadow: 1px 1px 0px rgba(255,255,255,.5); 
+  box-shadow:  0px 1px 3px 0px rgba(0, 0, 0, .2);
+  text-align: center; /* Center content */
+  /* Cancel selection, when clicking multiple times in rapid succession */
+  -moz-user-select: none; 
+  -webkit-user-select: none; 
+  
+}
+
+.round_button:before {  
+  content: "";  
+  width: 90px;  
+  height: 16px;  
+  display: block;  
+  position: absolute; /* Relative to closest ancestor */ 
+  left: 5px;  
+  border-radius: 8px;
+  /* Gradient for glossy feel */
+  background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.7) 8%,rgba(255,255,255,0) 100%); 
+  
+}
+
+.round_button:active { 
+  /* Click effect */
+  box-shadow:  0 0 white;
+}
+
+/*******************************
+ * Contains the button's text. *
+ * Authors: Ahmed H. Ismail    *
+ *******************************/
+.round_inner {
+  margin: 5px auto;
+  position: relative; 
+  font-family: Courier;
+  /* Take all remaining space */
+  width: 100%;
+  height: 100%;
+  /* Place on top in order to be displayed clearly despite of gradients */
+  z-index: 1;
+  /* Incase someone places a link inside */
+  text-decoration: none; 
+  color: black;
+  display: block;
+
+}
+
+
+.collapsable_container {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  height: 50%;
+}
+
+.confirm_child_cont {
+  border: 1px solid #7ECCDE;
+  border-radius: 20%;
+  padding: 5px 5px 5px 5px;
+  background: linear-gradient(45deg, #b8e1fc 0%,#a9d2f3 10%,#90bae4 25%,#90bcea 37%,#90bff0 50%,#6ba8e5 51%,#a2daf5 83%,#bdf3fd 100%);
+}
+.confirm_child_cont .round_button {
+  display: inline-block;
+}
+
+.child_attr_disp {
+
+}
+
+.collapsable_container > .collapsable_field {
+  width: 50%;
+  height: 50%;
+  overflow-y: scroll;
+  visibility: hidden;
+  margin: auto;
+}
+
+/********************************
+ * Label for collapsable areas. *
+ * Authors: Ahmed H. Ismail.    *
+ ********************************/
+.header { 
+  text-decoration: none;
+}
+/**************************************
+ * Checkbox needed for checked state. *
+ * Authors: Ahmed H. Ismail.          *
+ **************************************/
+.filter {
+  display: none;
+}
+
+
+#left_panel {
+  float: left;
+  clear: both;
+  width: 200px;
+  height: 400px;
+  position: fixed;
+  margin-top: 0;
+  z-index: 2;
+  display: block;
+  top: 0;
+  bottom: 0;
+}
+
+.locale_button {
+  float:right;
+  margin-right: 0;
+  display: inline-block;
+  clear: both;
+}
+.locale_button .round_button {
+  display:inline-block;
+  width: 50px;
+  font-size: 0.5em;
+  height: 20px;
+}
+
+
+#notifications_container {
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  font-family: cursive;
+  font-size: 1em;
+  overflow-y: scroll;
+  margin: auto; 
+
+}
+
+.notification_action {
+  display: inline-block;
+}
+
+#main_content {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+#container {
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#footer {
+  text-align: center;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin: auto;
+  bottom: 0;
+}
+
+
+#alert_container .flash {
+  border-radius:10px;
+  font-weight:bold;
+  text-transform:uppercase;
+  color:#555;
+  width: 80%;
+  padding:10px 10px 10px 36px;
+  margin: auto;
+  font-size: 1em;
+  border:1px solid #f5aca6;
+}
+
+.flash-failure{
+  background: #ffecec url('error.png') no-repeat 10px 50%;
+}
