@@ -20,7 +20,11 @@
     <%= f.text_field :name %>
   </div>
     <%= f.label :date_time %><br>
- -    <%= f.datetime_select :date_time %>
+    <%= f.datetime_select :date_time %>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date :date %>
+  </div>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>

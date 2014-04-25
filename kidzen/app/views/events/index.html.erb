@@ -5,22 +5,23 @@
     <tr>
       <th>Location</th>
       <th>Name</th>
-      <th>Date time</th>
+      <th>Date </th>
       <th>Description</th>
       <th></th>
       <th></th>
       <th></th>
     </tr>
   </thead>
-
+  <%- #loop on each event instance to view its detalis -%> 
   <tbody>
     <% @events.each do |event| %>
       <tr>
         <td><%= event.location %></td>
         <td><%= event.name %></td>
-        <td><%= event.date_time %></td>
+        <td><%= event.date %></td>
         <td><%= event.description %></td>
         <td><%= link_to 'Show', event %></td>
+        <%- # editing an existing event -%>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -29,5 +30,5 @@
 </table>
 
 <br>
-
+<%- #direct to create a new event- -%>
 <%= link_to 'New Event', new_event_path %>

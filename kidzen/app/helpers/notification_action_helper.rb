@@ -4,7 +4,7 @@ module NotificationActionHelper
   # Authors: Ahmed H. Ismail
   def on_click(action)
     if action.async?
-      "onlick=\"notification_action_click(#{action.url}, #{action.notification_id}, #{action.data})\""
+      "onlick=\"notification_action_click(\'#{action.url}\', \'#{action.notification_id}\', \'#{action.data}\')\""
     else
       ''
     end

@@ -10,20 +10,21 @@
       </label>
     </div>
     <!-- This is the div containing the actual content -->    
-      <div class="collapsable_field">
+      <div class="collapsable_field confirm_child_cont">
         <!-- Display Child's attributes in a table -->
         <%# Use child display partial %>
-        <%= render partial: "sup_child_disp", locals: { child: @child} %>
+        <%= render partial: "sup_child_disp", locals: { child: child}, layout: false %>
         <!-- verify and reject buttons -->
         <div class="verify_reject">
           <!-- verify and reject with username -->
-          <div class="round_button" onclick="verify(<%= child.registered_user.username %>)">
+          <div class="round_button" onclick="verify_child(<%= "\'#{child.registered_user.username}\'" %>)">
               <p class="round_inner"><%= t('verify_confirm_child') %></p>
           </div>
-          <div class="round_button" onclick="reject(<%= child.registered_user.username %>)">
+          <div class="round_button" onclick="reject_child(<%= "\'#{child.registered_user.username}\'" %>)">
             <p class="round_inner"><%= t('reject_confirm_child') %></p>
           </div>
         </div>
     </div>
   </div>
-<% end %>
+  <br/>
+<% end %> 

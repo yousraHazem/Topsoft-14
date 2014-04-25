@@ -1,7 +1,7 @@
 class Child < ActiveRecord::Base
   # Associations and validations.
   belongs_to :registered_user, dependent: :destroy
-  validates_associated :registered_user
+
 
   has_many :friends,
            :through => :friendships,
@@ -48,6 +48,22 @@ class Child < ActiveRecord::Base
 
   def send_friend_request(friend)
   end
+
+  # Adds a new friendship entry.
+  # child - is the child the friendhip is sent to
+  # This method gets all the supervisors of the child that will recieve the 
+  # request and sent them notifications
+  # Authors: Ahmed H. Ismail, Shary Beshara.
+  def create_friendship(child)
+    # TODO remember notifcations and calling function in child
+    # model to invite.
+    Friendship.create_friendship(self, child)
+    supervisors = ChildParent.where(child: child.id)
+    supervisors.each do |supervisor|
+    supervisor.notify_friend_request(self, child)
+    end
+  end
+
 
   # Adds an entry in the SupervisesChild relationship.
   # Authors: Ahmed H. Ismail

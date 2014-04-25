@@ -4,15 +4,15 @@
   <%- #Approach : listing all friends of the child to invite them to the event -%>
   <%- #Time Complexity : O(n) -%>
   <%- #Author : Nouran Mamdouh -%>
-<%if @friends.to_a !=[]%>
-<%@friends.to_a.each do |t|%>
-<%user=RegisteredUser.where("id=#{t.registered_user_id}").first%>
-<%s="#{user.first_name} #{user.family_name}"%>
-<%=s%>
-<%= link_to "invite friend" , :controller => "events", :action => 'invite_friend_to_an_event' , :friend_id => t.id %>
-<br/>
-<%end%>
+  <%if @friends.to_a !=[]%>
+    <%@friends.to_a.each do |t|%>
+    <%user=RegisteredUser.where("id=#{t.registered_user_id}").first%>
+    <%s="#{user.first_name} #{user.family_name}"%>
+    <%=s%>
+    <%= link_to "invite friend" , :controller => "events", :action => 'invite_friend_to_an_event' , :friend_id => t.id %>
+  <br/>
+  <%end%>
 
-<%else%>
-<p>Sorry,You have no Friends</p>
-<%end%>
+  <%else%>
+    <p>Sorry,You have no Friends</p>
+  <%end%>

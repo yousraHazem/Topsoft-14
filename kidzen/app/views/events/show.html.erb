@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%- # to show each event details after creation -%>
 <p>
   <strong>Location:</strong>
   <%= @event.location %>
@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <strong>Date time:</strong>
-  <%= @event.date_time %>
+  <strong>Date:</strong>
+  <%= @event.date %>
 </p>
 
 <p>
@@ -21,8 +21,6 @@
 </p>
 <%- # add link to view friends of current child -%>
 <%- #Author : Nouran Mamdouh -%>
-
 <%=link_to "View friends", controller: "events", action: "view_friends"%>
-
 <%= link_to 'Edit', edit_event_path(@event) %> 
 <%= link_to 'Back', events_path %>
