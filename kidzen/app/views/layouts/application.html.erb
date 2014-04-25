@@ -56,7 +56,7 @@
       </div>
       
      <div class="search">
-        <form method="get" id="search" action="searches">
+        <form method="get" id="search" action="/searches">
           <span>
           <input name="searchsubmit" type="image" src="/assets/search.gif" class="btn"  />
           <input type="text" name="search" placeholder="<%= t('search') %> .." required="true" autocomplete="off" />
@@ -68,20 +68,19 @@
 
 
 <% if ( session[:locale] == "ar")%>
- <div class="logo1">
+  <div class="logo1">
+    <h1><a href="#"><span><%= t('kid') %></span><%= t('dizen') %><small></small></a></h1>
+  </div>
       
-        <h1><a href="#"><span><%= t('kid') %></span><%= t('dizen') %><small></small></a></h1>
-      </div>
-      
-     <div class="search1">
-        <form method="get" id="search" action="searches">
-          <span>
-          <input name="searchsubmit" type="image" src="/assets/search.gif" class="btn"  />
-          <input type="text" name="search" placeholder="<%= t('search') %> .." required="true" autocomplete="off" />
-          </span>
-        </form>
-        <div class="clr"></div>
-      </div>
+        <div class="search1">
+          <form method="get" id="search" action="/searches">
+            <span>
+              <input name="searchsubmit" type="image" src="/assets/search.gif" class="btn"  />
+              <input type="text" name="search" placeholder="<%= t('search') %> .." required="true" autocomplete="off" />
+            </span>
+          </form>
+          <div class="clr"></div>
+        </div>
 <% end %>
      
 
