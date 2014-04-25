@@ -6,9 +6,9 @@ class GroupMembersController < ApplicationController
 	end
 
 	# This is a function that adds a member to the group by his name.
-	# user is a variable of type RegisteredUser
-	# child is a variable of type Child
-	# member is a variavle of type GroupMember
+	# user is a variable of type RegisteredUser.
+	# child is a variable of type Child.
+	# member is a variavle of type GroupMember.
     # Time complexity: O(1).
     # Authors: Mohammed T. Nabih.
     def add_member_name
@@ -22,10 +22,10 @@ class GroupMembersController < ApplicationController
 
     # This is a function that adds a member to the group by his email.
     # Doesn't return anything.
-    # Time complexity: O(n).
     # user is a variable of type RegisteredUser.
     # child is a variable of type Child.
     # member is a variable of type GroupMember.
+    # Time complexity: O(n).
     # Authors: Mohammed T. Nabih.
     def add_member_email
    		user = RegisteredUser.all.where(:email => :email)
@@ -38,10 +38,10 @@ class GroupMembersController < ApplicationController
 
     # This is a function that adds a member to the group by his phone number.
     # Doesn't return anything.
-    # Time complexity: O(n).
     # user is a variable of type RegisteredUser.
     # child is a variable of type Child.
     # member is a variable of type GroupMember.
+    # Time complexity: O(n).
     # Authors: Mohammed T. Nabih.
     def add_member_phone
     	user = RegisteredUser.all.where(:phone => :phone)
