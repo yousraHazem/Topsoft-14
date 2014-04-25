@@ -41,6 +41,9 @@ class GroupsController < ApplicationController
           format.json { render json: @group.errors, status: :unprocessable_entity }
         end
       end
+    else
+      # No one signed in
+      redirect_to session_path :new
     end
   end
 

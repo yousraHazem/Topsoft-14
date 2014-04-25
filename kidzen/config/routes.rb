@@ -72,7 +72,6 @@ Kidzen::Application.routes.draw do
   resources :polls
   resources :surveys
   resources :groups
-<<<<<<< HEAD
   resources :group_members
 
   
