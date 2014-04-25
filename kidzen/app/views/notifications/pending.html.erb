@@ -18,7 +18,7 @@
       <p class="notification_short_desc"><%= notification.short_desc %> </p>
       <p class="notification_long_desc"><%= notification.long_desc %> </p>
       <% # Does it have an associated partial ? %>
-      <% if !notification.embedded_view_url.null? %>
+      <% if !notification.embedded_view_url.nil? %>
       <%= render partial: notification.embedded_view_url, locals: { notification: @notification} %>
       <% end %>
     <div class="notification_actions">
