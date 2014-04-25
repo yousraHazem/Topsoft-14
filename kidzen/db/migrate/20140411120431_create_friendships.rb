@@ -8,4 +8,6 @@ class CreateFriendships < ActiveRecord::Migration
     end
     add_index(:friendships, [:child_1_id, :child_2_id], unique:  true)
   end
+
+  add_index(:friendships, [:child_1_id, :child_2_id], unique:  true)
 end

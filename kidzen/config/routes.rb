@@ -1,21 +1,12 @@
 Kidzen::Application.routes.draw do
-  resources :profile_musics
-  root 'profile_musics#index'
-  resources :groups
-  resources :children
-  resources :photos
-  resources :groups
-  resources :children
-  resources :photos
-  resources :videos
 
+  root 'registered_users#show'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
 
   # RegisteredUser (generic) routes
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
-  get '/registered_user', to: 'registered_users#show'
   # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
   # username will be the same as in the url /show/"username".
   # Author: Ammar ELWazeer
@@ -43,6 +34,12 @@ Kidzen::Application.routes.draw do
   # End supervisor routes
 
 
+  # events path
+  
+  get "events/:id/view_friends", to: 'events#view_friends'
+  get "events/:id/destroy", to: 'events#destroy'
+  get "events/:id/invite/", to: 'events#invite_friend_to_an_event'
+
   # Session routes
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
@@ -68,13 +65,6 @@ Kidzen::Application.routes.draw do
   resources :events
   resources :polls
   resources :surveys
-  resources :groups
-  get "child/verify"
-  post "child/new"
-  #add Route to view friends
-  #Author : Nouran Mamdouh
-  #get "event/view_friends"
-  #get "events/view_friends"
   resources :messages
   resources :profile_musics
   resources :searches
@@ -88,7 +78,7 @@ Kidzen::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :group_members
 
-  # Group routes
+  
   get "group_members/index"
   get "group_members/new"
   get "group_members/create"
@@ -105,35 +95,8 @@ Kidzen::Application.routes.draw do
   get "child/verify"
   post "child/new"
   get "children/verify"
-
-
-  # This routes to enable getting info from invite page
-  get "supervisors/invite" => 'supervisors#invite'
-  post "supervisors/invite" => 'supervisors#invite'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
-  get "friendship/view_pending_friendship_requests"
-  get "friendship/accept_reject_friend_request"
-  get "friendship/send_friend_request"
-  get "friendship/find_friends"
-  get "friendship/view_my_friends"
-  get "events/:id/view_friends", to: 'events#view_friends'
-  get "events/:id/destroy", to: 'events#destroy'
-  get "events/:id/invite/", to: 'events#invite_friend_to_an_event'
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
-  # Example of regular route:
-  # get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  # get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  # resources :products
 
 
 
