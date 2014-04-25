@@ -7,7 +7,6 @@ gem 'rails', '4.0.4'
 gem 'sqlite3'
 gem 'cocoon'
 
-
 gem "searchkick"
 
 # Use gem file devise to make sign in/up and adding info

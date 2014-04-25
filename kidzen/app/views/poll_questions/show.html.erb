@@ -3,14 +3,22 @@
   <%= @poll_question.content %>
 </p>
 
-  <!-- listing all the answers -->
-<ol>
-  <% for poll_answer in @poll_question.poll_answers %>
-   <li>
-    <%= h poll_answer.content %>
-    </li>
-  <% end %>
-</ol>
+
+<!-- listing all answers with radio buttons  -->
+<%= form_tag do %>
+  <ol>
+    <% for poll_answer in @poll_question.poll_answers %>
+      <li>
+        <%= radio_button_tag "poll", poll_answer.content%>
+        <%= h poll_answer.content %>
+        <%= poll_answer.counter %>
+      </li>
+    <% end %>
+  </ol>
+  <%= link_to 'vote', poll_questions_path %><br><br>
+<% end %>
+
+
 
 
 

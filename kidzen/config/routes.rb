@@ -9,6 +9,11 @@ Kidzen::Application.routes.draw do
 
 
 
+  resources :groups
+  resources :children
+  resources :photos
+
+
   get '/registered_user', to: 'registered_users#show'
 
   # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
@@ -31,15 +36,31 @@ Kidzen::Application.routes.draw do
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup'
   post "/supervisors/create", to: 'supervisors#create'
+
+
+  resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
+  resources :poll_questions
+
+
+
+    
+
+
+
+
   get "calendar/show"
   resource :calendar, only: [:show], controller: :calendar
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
+
+
 
 
   resources :registered_users
   resources :poll_questions
   
 
+
+  
 
   # Session routes
   resources :sessions, only: [:new, :create, :destroy]

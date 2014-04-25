@@ -1,15 +1,13 @@
 <h1>Listing poll_questions</h1>
+
 <%= current_user.username%>
 <table>
   <thead>
     <tr>
       <th>Content</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @poll_questions.each do |poll_question| %>
       <tr>
