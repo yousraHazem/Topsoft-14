@@ -65,7 +65,7 @@ class GroupMembersController < ApplicationController
   # the method returns a container of the member requests to the group
   # containg the username, and the id of the group to join
   # The function takes a group_id, and returns the members
-  # with pending requests
+  # with pending requests where the owner_accept_state column is 2
   # complexity : O(n)
   # Author: Nouran T. Attia
   def membership_requests
@@ -77,13 +77,21 @@ class GroupMembersController < ApplicationController
   # group_id-integer
   # updating an existing record in table group_members
   # The function takes a unique username, and a group_id and updates
-  # an existing group_member record by setting the value of column invite to 1 indicating accepting the join request
+  # an existing group_member record by setting the value of column 
+  # owner_accept_state to 1 indicating accepting the join request
   # Author: Nouran T. Attia
 
   def accept_membership_request
-   
   end
-
+  
+  # Method for rejecting a join request into the group specified
+  # username-string
+  # group_id-integer
+  # updating an existing record in table group_members
+  # The function takes a unique username, and a group_id and updates
+  # an existing group_member record by setting the value of column 
+  # owner_accept_state to 0 indicating accepting the join request
+  # Author: Nouran T. Attia
   def reject_membership_request
   end
 
