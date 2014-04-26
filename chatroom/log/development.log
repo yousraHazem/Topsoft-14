@@ -1,0 +1,408 @@
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-23 06:30:33 +0200
+Processing by PublicController#index as HTML
+  Rendered public/index.html within layouts/application (8.0ms)
+Completed 200 OK in 8254ms (Views: 8252.8ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-23 06:30:42 +0200
+
+
+Started GET "/assets/chat.css?body=1" for 127.0.0.1 at 2014-04-23 06:30:42 +0200
+
+
+Started GET "/assets/http.css?body=1" for 127.0.0.1 at 2014-04-23 06:30:42 +0200
+
+
+Started GET "/assets/chat.js?body=1" for 127.0.0.1 at 2014-04-23 06:30:42 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-04-23 06:30:42 +0200
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-04-23 06:30:42 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 06:30:43 +0200
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-04-23 06:30:43 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-04-23 06:30:43 +0200
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-04-23 06:30:43 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 06:30:43 +0200
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-04-23 06:30:43 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 06:30:43 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 06:30:43 +0200
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-04-23 06:30:44 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+Processing by PublicController#index as HTML
+  Rendered public/index.html within layouts/application (1.5ms)
+Completed 200 OK in 146ms (Views: 145.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/chat.css?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/http.css?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/chat.js?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-04-23 06:51:54 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+Processing by PublicController#index as HTML
+  Rendered public/index.html within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/chat.css?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/http.css?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/chat.js?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-04-23 07:02:17 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+Processing by PublicController#index as HTML
+  Rendered public/index.html within layouts/application (2.9ms)
+Completed 200 OK in 150ms (Views: 149.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/chat.css?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/http.css?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/chat.js?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-04-23 12:38:15 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+Processing by PublicController#index as HTML
+  Rendered public/index.html within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 7.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/chat.css?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/http.css?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/chat.js?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-04-23 12:39:54 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+Processing by PublicController#index as HTML
+  Rendered public/index.html within layouts/application (1.7ms)
+Completed 200 OK in 130ms (Views: 130.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/chat.css?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/http.css?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/chat.js?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-04-23 13:21:03 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+Processing by PublicController#index as HTML
+  Rendered public/index.html within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 6.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/chat.css?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/http.css?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/chat.js?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-04-23 13:22:00 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2014-04-23 13:34:48 +0200
+Processing by PublicController#index as HTML
+  Rendered public/index.html within layouts/application (4.2ms)
+Completed 200 OK in 180ms (Views: 179.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-04-23 13:34:48 +0200
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-04-23 13:34:48 +0200
+
+
+Started GET "/assets/chat.css?body=1" for 127.0.0.1 at 2014-04-23 13:34:48 +0200
+
+
+Started GET "/assets/http.css?body=1" for 127.0.0.1 at 2014-04-23 13:34:49 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-04-23 13:34:49 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-04-23 13:34:49 +0200
+
+
+Started GET "/assets/chat.js?body=1" for 127.0.0.1 at 2014-04-23 13:34:49 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_rails.js?body=1" for 127.0.0.1 at 2014-04-23 13:34:49 +0200
+
+
+Started GET "/assets/websocket_rails/event.js?body=1" for 127.0.0.1 at 2014-04-23 13:34:49 +0200
+
+
+Started GET "/assets/websocket_rails/http_connection.js?body=1" for 127.0.0.1 at 2014-04-23 13:34:49 +0200
+
+
+Started GET "/assets/websocket_rails/websocket_connection.js?body=1" for 127.0.0.1 at 2014-04-23 13:34:49 +0200
+
+
+Started GET "/assets/websocket_rails/channel.js?body=1" for 127.0.0.1 at 2014-04-23 13:34:49 +0200
+
+
+Started GET "/assets/websocket_rails/main.js?body=1" for 127.0.0.1 at 2014-04-23 13:34:49 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-04-23 13:34:49 +0200
+
+
+Started GET "/websocket" for 127.0.0.1 at 2014-04-23 13:34:49 +0200

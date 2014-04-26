@@ -1,0 +1,2911 @@
+# Logfile created on 2014-04-23 06:30:44 +0200 by logger.rb/41954
+I [2014-04-23 06:30:44.230] [[32mConnectionManager[0m] Connection opened: #<Connection::-592669988>
+
+I [2014-04-23 06:30:44.235] [[32mDispatcher[0m] Started Event: client_connected
+I [2014-04-23 06:30:44.235] [[32mDispatcher[0m] [36mName:[0m client_connected
+I [2014-04-23 06:30:44.235] [[32mDispatcher[0m] [36mData:[0m {"connection_id"=>-592669988}
+I [2014-04-23 06:30:44.236] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:30:44.243] [[32mDispatcher[0m] Event client_connected Finished in 0.005966966 seconds
+
+I [2014-04-23 06:30:44.262] [[32mDispatcher[0m] Started Event: new_user
+I [2014-04-23 06:30:44.262] [[32mDispatcher[0m] [36mName:[0m new_user
+I [2014-04-23 06:30:44.263] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Guest_765"}
+I [2014-04-23 06:30:44.263] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:30:44.278] [[32mDispatcher[0m] Event new_user Finished in 0.014510083 seconds
+
+I [2014-04-23 06:30:54.222] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:30:54.223] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:30:54.223] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:30:54.223] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:30:54.224] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.0006951010000000001 seconds
+
+I [2014-04-23 06:31:02.845] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:02.846] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:02.847] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"h"}
+I [2014-04-23 06:31:02.847] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:02.854] [[32mDispatcher[0m] Event change_username Finished in 0.00599489 seconds
+
+I [2014-04-23 06:31:03.707] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:03.748] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:03.772] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"he"}
+I [2014-04-23 06:31:03.794] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:03.134] [[32mDispatcher[0m] Event change_username Finished in 0.004720338 seconds
+
+I [2014-04-23 06:31:03.481] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:03.482] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:03.482] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"hel"}
+I [2014-04-23 06:31:03.483] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:03.487] [[32mDispatcher[0m] Event change_username Finished in 0.003271961 seconds
+
+I [2014-04-23 06:31:03.635] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:03.636] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:03.636] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"hell"}
+I [2014-04-23 06:31:03.636] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:03.640] [[32mDispatcher[0m] Event change_username Finished in 0.003509238 seconds
+
+I [2014-04-23 06:31:03.848] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:03.849] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:03.849] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"hello"}
+I [2014-04-23 06:31:03.849] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:03.855] [[32mDispatcher[0m] Event change_username Finished in 0.005345728 seconds
+
+I [2014-04-23 06:31:04.223] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:31:04.223] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:31:04.223] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:31:04.223] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:04.224] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000124487 seconds
+
+I [2014-04-23 06:31:12.700] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 06:31:12.700] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 06:31:12.700] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"hello", "msg_body"=>"hi"}
+I [2014-04-23 06:31:12.701] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:12.705] [[32mDispatcher[0m] Event new_message Finished in 0.003831684 seconds
+
+I [2014-04-23 06:31:14.227] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:31:14.227] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:31:14.227] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:31:14.227] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:14.228] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000138023 seconds
+
+I [2014-04-23 06:31:17.593] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 06:31:17.597] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 06:31:17.599] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"hello", "msg_body"=>"Ahmed "}
+I [2014-04-23 06:31:17.601] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:17.645] [[32mDispatcher[0m] Event new_message Finished in 0.00364245 seconds
+
+I [2014-04-23 06:31:24.236] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:31:24.236] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:31:24.237] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:31:24.237] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:24.237] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000148947 seconds
+
+I [2014-04-23 06:31:30.935] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:30.935] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:30.935] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I"}
+I [2014-04-23 06:31:30.936] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:30.939] [[32mDispatcher[0m] Event change_username Finished in 0.003130215 seconds
+
+I [2014-04-23 06:31:30.956] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:30.956] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:30.956] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I"}
+I [2014-04-23 06:31:30.956] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:30.960] [[32mDispatcher[0m] Event change_username Finished in 0.002838182 seconds
+
+I [2014-04-23 06:31:31.208] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:31.209] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:31.209] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I "}
+I [2014-04-23 06:31:31.209] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:31.213] [[32mDispatcher[0m] Event change_username Finished in 0.003089962 seconds
+
+I [2014-04-23 06:31:31.439] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:31.439] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:31.439] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I a"}
+I [2014-04-23 06:31:31.439] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:31.442] [[32mDispatcher[0m] Event change_username Finished in 0.002536806 seconds
+
+I [2014-04-23 06:31:31.552] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:31.552] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:31.552] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am"}
+I [2014-04-23 06:31:31.552] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:31.555] [[32mDispatcher[0m] Event change_username Finished in 0.002598913 seconds
+
+I [2014-04-23 06:31:31.772] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:31.772] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:31.773] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am "}
+I [2014-04-23 06:31:31.773] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:31.776] [[32mDispatcher[0m] Event change_username Finished in 0.00278212 seconds
+
+I [2014-04-23 06:31:32.534] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:32.535] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:32.535] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am t"}
+I [2014-04-23 06:31:32.535] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:32.538] [[32mDispatcher[0m] Event change_username Finished in 0.002535629 seconds
+
+I [2014-04-23 06:31:32.619] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:32.619] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:32.619] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am th"}
+I [2014-04-23 06:31:32.619] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:32.623] [[32mDispatcher[0m] Event change_username Finished in 0.002675593 seconds
+
+I [2014-04-23 06:31:32.895] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:32.896] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:32.896] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am the"}
+I [2014-04-23 06:31:32.896] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:32.900] [[32mDispatcher[0m] Event change_username Finished in 0.003267918 seconds
+
+I [2014-04-23 06:31:33.942] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:33.947] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:33.949] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am ther"}
+I [2014-04-23 06:31:33.951] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:33.994] [[32mDispatcher[0m] Event change_username Finished in 0.003652204 seconds
+
+I [2014-04-23 06:31:33.283] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:33.283] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:33.283] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am there"}
+I [2014-04-23 06:31:33.284] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:33.288] [[32mDispatcher[0m] Event change_username Finished in 0.003740673 seconds
+
+I [2014-04-23 06:31:33.529] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:31:33.529] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:31:33.530] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am there"}
+I [2014-04-23 06:31:33.530] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:33.533] [[32mDispatcher[0m] Event change_username Finished in 0.002619983 seconds
+
+I [2014-04-23 06:31:34.238] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:31:34.238] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:31:34.239] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:31:34.239] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:34.240] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000177728 seconds
+
+I [2014-04-23 06:31:37.778] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 06:31:37.781] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 06:31:37.782] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am there", "msg_body"=>"Hi"}
+I [2014-04-23 06:31:37.785] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:37.821] [[32mDispatcher[0m] Event new_message Finished in 0.003068326 seconds
+
+I [2014-04-23 06:31:40.423] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 06:31:40.423] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 06:31:40.424] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am there", "msg_body"=>"Hello"}
+I [2014-04-23 06:31:40.424] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:40.427] [[32mDispatcher[0m] Event new_message Finished in 0.002805605 seconds
+
+I [2014-04-23 06:31:44.240] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:31:44.240] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:31:44.241] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:31:44.241] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:44.241] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000129573 seconds
+
+I [2014-04-23 06:31:54.251] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:31:54.251] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:31:54.251] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:31:54.252] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:31:54.252] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000180785 seconds
+
+I [2014-04-23 06:32:03.805] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:32:03.805] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:32:03.806] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am there "}
+I [2014-04-23 06:32:03.806] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:32:03.811] [[32mDispatcher[0m] Event change_username Finished in 0.004347931 seconds
+
+I [2014-04-23 06:32:04.255] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:32:04.255] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:32:04.255] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:32:04.256] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:32:04.256] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000130912 seconds
+
+I [2014-04-23 06:32:04.647] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:32:04.647] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:32:04.648] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am there"}
+I [2014-04-23 06:32:04.648] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:32:04.653] [[32mDispatcher[0m] Event change_username Finished in 0.004700981 seconds
+
+I [2014-04-23 06:32:09.302] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 06:32:09.307] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 06:32:09.310] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"I am there", "msg_body"=>"Here"}
+I [2014-04-23 06:32:09.312] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:32:09.360] [[32mDispatcher[0m] Event new_message Finished in 0.00400634 seconds
+
+I [2014-04-23 06:32:14.256] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:32:14.257] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:32:14.257] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:32:14.257] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:32:14.258] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000179658 seconds
+
+I [2014-04-23 06:32:24.269] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:32:24.269] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:32:24.270] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:32:24.271] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:32:24.272] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000199277 seconds
+
+I [2014-04-23 06:32:34.276] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:32:34.276] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:32:34.276] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:32:34.277] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:32:34.277] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000209621 seconds
+
+I [2014-04-23 06:32:44.279] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:32:44.279] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:32:44.280] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:32:44.280] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:32:44.281] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000258909 seconds
+
+I [2014-04-23 06:32:54.287] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:32:54.287] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:32:54.287] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:32:54.287] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:32:54.288] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000141055 seconds
+
+I [2014-04-23 06:33:04.299] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:33:04.299] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:33:04.299] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:33:04.299] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:33:04.300] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000134585 seconds
+
+I [2014-04-23 06:33:14.300] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:33:14.301] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:33:14.301] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:33:14.301] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:33:14.301] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000122192 seconds
+
+I [2014-04-23 06:33:24.312] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:33:24.312] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:33:24.312] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:33:24.312] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:33:24.316] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000197473 seconds
+
+I [2014-04-23 06:33:34.324] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:33:34.325] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:33:34.325] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:33:34.325] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:33:34.326] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000138328 seconds
+
+I [2014-04-23 06:33:44.327] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:33:44.328] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:33:44.328] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:33:44.328] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:33:44.329] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000166813 seconds
+
+I [2014-04-23 06:33:54.338] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:33:54.339] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:33:54.339] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:33:54.339] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:33:54.340] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000167339 seconds
+
+I [2014-04-23 06:34:04.355] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:34:04.356] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:34:04.356] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:34:04.356] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:34:04.357] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000262269 seconds
+
+I [2014-04-23 06:34:14.357] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:34:14.358] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:34:14.358] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:34:14.358] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:34:14.360] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000510799 seconds
+
+I [2014-04-23 06:34:24.367] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:34:24.368] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:34:24.368] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:34:24.368] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:34:24.369] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000147584 seconds
+
+I [2014-04-23 06:34:34.384] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:34:34.384] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:34:34.384] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:34:34.385] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:34:34.386] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000311471 seconds
+
+I [2014-04-23 06:34:44.382] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:34:44.382] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:34:44.382] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:34:44.382] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:34:44.383] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000195534 seconds
+
+I [2014-04-23 06:34:54.492] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:34:54.493] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:34:54.493] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:34:54.494] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:34:54.494] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000321259 seconds
+
+I [2014-04-23 06:35:04.408] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:35:04.409] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:35:04.409] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:35:04.409] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:35:04.410] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000210162 seconds
+
+I [2014-04-23 06:35:14.411] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:35:14.412] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:35:14.412] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:35:14.412] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:35:14.413] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000158685 seconds
+
+I [2014-04-23 06:35:24.424] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:35:24.424] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:35:24.425] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:35:24.425] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:35:24.425] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00014075 seconds
+
+I [2014-04-23 06:35:34.435] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:35:34.435] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:35:34.435] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:35:34.436] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:35:34.436] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000186398 seconds
+
+I [2014-04-23 06:35:44.439] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:35:44.439] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:35:44.439] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:35:44.439] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:35:44.440] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000131603 seconds
+
+I [2014-04-23 06:35:54.449] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:35:54.450] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:35:54.450] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:35:54.450] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592669988>
+
+I [2014-04-23 06:35:54.450] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00016588 seconds
+
+I [2014-04-23 06:35:56.466] [[32mConnectionManager[0m] Connection closed: #<Connection::-592669988>
+
+I [2014-04-23 06:51:54.933] [[32mConnectionManager[0m] Connection opened: #<Connection::-586438198>
+
+I [2014-04-23 06:51:54.934] [[32mDispatcher[0m] Started Event: client_connected
+I [2014-04-23 06:51:54.934] [[32mDispatcher[0m] [36mName:[0m client_connected
+I [2014-04-23 06:51:54.935] [[32mDispatcher[0m] [36mData:[0m {"connection_id"=>-586438198}
+I [2014-04-23 06:51:54.935] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:51:54.937] [[32mDispatcher[0m] Event client_connected Finished in 0.001739399 seconds
+
+I [2014-04-23 06:51:54.946] [[32mDispatcher[0m] Started Event: new_user
+I [2014-04-23 06:51:54.946] [[32mDispatcher[0m] [36mName:[0m new_user
+I [2014-04-23 06:51:54.946] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Guest_350"}
+I [2014-04-23 06:51:54.946] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:51:54.951] [[32mDispatcher[0m] Event new_user Finished in 0.004185602 seconds
+
+I [2014-04-23 06:52:04.958] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:52:04.958] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:52:04.958] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:52:04.958] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:52:04.958] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000307832 seconds
+
+I [2014-04-23 06:52:14.968] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:52:14.968] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:52:14.968] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:52:14.968] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:52:14.968] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053619 seconds
+
+I [2014-04-23 06:52:24.968] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:52:24.968] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:52:24.968] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:52:24.968] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:52:24.969] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000046921 seconds
+
+I [2014-04-23 06:52:34.971] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:52:34.971] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:52:34.971] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:52:34.971] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:52:34.972] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000238966 seconds
+
+I [2014-04-23 06:52:44.981] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:52:44.981] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:52:44.981] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:52:44.981] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:52:44.981] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000063839 seconds
+
+I [2014-04-23 06:52:54.982] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:52:54.983] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:52:54.983] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:52:54.983] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:52:54.983] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000056164 seconds
+
+I [2014-04-23 06:53:04.994] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:53:04.994] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:53:04.994] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:53:04.994] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:53:04.994] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000062257 seconds
+
+I [2014-04-23 06:53:15.464] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:53:15.475] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:53:15.481] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:53:15.485] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:53:15.511] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000054514 seconds
+
+I [2014-04-23 06:53:25.565] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:53:25.576] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:53:25.581] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:53:25.585] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:53:25.604] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053865 seconds
+
+I [2014-04-23 06:53:35.169] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:53:35.170] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:53:35.170] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:53:35.171] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:53:35.173] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000057747 seconds
+
+I [2014-04-23 06:53:45.280] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:53:45.288] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:53:45.291] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:53:45.292] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:53:45.296] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000123895 seconds
+
+I [2014-04-23 06:53:55.287] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:53:55.289] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:53:55.289] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:53:55.290] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:53:55.293] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000063302 seconds
+
+I [2014-04-23 06:54:05.392] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:54:05.393] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:54:05.394] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:54:05.394] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:05.396] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000058803 seconds
+
+I [2014-04-23 06:54:15.467] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:54:15.469] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:54:15.470] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:54:15.472] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:15.475] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00007315800000000001 seconds
+
+I [2014-04-23 06:54:25.473] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:54:25.474] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:54:25.475] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:54:25.475] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:25.477] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000057795 seconds
+
+I [2014-04-23 06:54:33.648] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:54:33.649] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:54:33.649] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"H"}
+I [2014-04-23 06:54:33.649] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:33.650] [[32mDispatcher[0m] Event change_username Finished in 0.001003827 seconds
+
+I [2014-04-23 06:54:33.679] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:54:33.679] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:54:33.679] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"H"}
+I [2014-04-23 06:54:33.679] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:33.681] [[32mDispatcher[0m] Event change_username Finished in 0.001849271 seconds
+
+I [2014-04-23 06:54:34.984] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:54:34.984] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:54:34.984] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"He"}
+I [2014-04-23 06:54:34.984] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:34.986] [[32mDispatcher[0m] Event change_username Finished in 0.001040415 seconds
+
+I [2014-04-23 06:54:35.483] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:54:35.485] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:54:35.486] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:54:35.487] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:35.489] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000049614 seconds
+
+I [2014-04-23 06:54:35.222] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:54:35.222] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:54:35.223] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Hel"}
+I [2014-04-23 06:54:35.223] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:35.224] [[32mDispatcher[0m] Event change_username Finished in 0.001065054 seconds
+
+I [2014-04-23 06:54:35.372] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:54:35.372] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:54:35.373] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Hell"}
+I [2014-04-23 06:54:35.373] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:35.374] [[32mDispatcher[0m] Event change_username Finished in 0.00110557 seconds
+
+I [2014-04-23 06:54:35.550] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 06:54:35.550] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 06:54:35.550] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Hello"}
+I [2014-04-23 06:54:35.550] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:35.551] [[32mDispatcher[0m] Event change_username Finished in 0.001213681 seconds
+
+I [2014-04-23 06:54:40.548] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 06:54:40.548] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 06:54:40.548] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Hello", "msg_body"=>"I am here"}
+I [2014-04-23 06:54:40.548] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:40.550] [[32mDispatcher[0m] Event new_message Finished in 0.000961957 seconds
+
+I [2014-04-23 06:54:45.512] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:54:45.514] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:54:45.514] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:54:45.515] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:45.516] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048575 seconds
+
+I [2014-04-23 06:54:55.521] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:54:55.522] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:54:55.523] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:54:55.524] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:54:55.526] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00007765199999999999 seconds
+
+I [2014-04-23 06:55:05.630] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:55:05.631] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:55:05.632] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:55:05.632] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:55:05.635] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047341 seconds
+
+I [2014-04-23 06:55:15.733] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:55:15.734] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:55:15.734] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:55:15.735] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:55:15.737] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048601 seconds
+
+I [2014-04-23 06:55:25.741] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:55:25.742] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:55:25.742] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:55:25.743] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:55:25.746] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053156 seconds
+
+I [2014-04-23 06:55:35.854] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:55:35.856] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:55:35.856] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:55:35.856] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:55:35.858] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053714 seconds
+
+I [2014-04-23 06:55:45.878] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:55:45.879] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:55:45.880] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:55:45.880] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:55:45.882] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051222 seconds
+
+I [2014-04-23 06:55:55.887] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:55:55.888] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:55:55.889] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:55:55.889] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:55:55.891] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000058826 seconds
+
+I [2014-04-23 06:56:05.998] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:56:05.100] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:56:05.100] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:56:05.100] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:56:05.100] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000049193 seconds
+
+I [2014-04-23 06:56:15.111] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:56:15.111] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:56:15.111] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:56:15.111] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:56:15.111] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000061413 seconds
+
+I [2014-04-23 06:56:25.112] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:56:25.112] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:56:25.112] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:56:25.112] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:56:25.112] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00005467 seconds
+
+I [2014-04-23 06:56:35.122] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:56:35.122] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:56:35.122] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:56:35.122] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:56:35.123] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000054526 seconds
+
+I [2014-04-23 06:56:45.125] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:56:45.125] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:56:45.125] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:56:45.125] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:56:45.125] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000076544 seconds
+
+I [2014-04-23 06:56:55.154] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:56:55.154] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:56:55.154] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:56:55.154] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:56:55.154] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000063828 seconds
+
+I [2014-04-23 06:57:05.139] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:57:05.139] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:57:05.139] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:57:05.139] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:57:05.139] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000056423 seconds
+
+I [2014-04-23 06:57:15.152] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:57:15.153] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:57:15.153] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:57:15.153] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:57:15.153] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000116989 seconds
+
+I [2014-04-23 06:57:25.149] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:57:25.149] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:57:25.150] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:57:25.150] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:57:25.150] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000050341 seconds
+
+I [2014-04-23 06:57:35.162] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:57:35.162] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:57:35.162] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:57:35.162] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:57:35.162] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000052478 seconds
+
+I [2014-04-23 06:57:45.174] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:57:45.174] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:57:45.174] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:57:45.174] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:57:45.175] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000191266 seconds
+
+I [2014-04-23 06:57:55.174] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:57:55.174] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:57:55.174] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:57:55.174] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:57:55.174] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053872 seconds
+
+I [2014-04-23 06:58:05.182] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:58:05.182] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:58:05.182] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:58:05.182] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:58:05.182] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055284 seconds
+
+I [2014-04-23 06:58:15.193] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:58:15.193] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:58:15.193] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:58:15.193] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:58:15.193] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053768 seconds
+
+I [2014-04-23 06:58:25.194] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:58:25.194] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:58:25.195] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:58:25.195] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:58:25.195] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000049464 seconds
+
+I [2014-04-23 06:58:35.206] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:58:35.206] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:58:35.206] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:58:35.206] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:58:35.206] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048752 seconds
+
+I [2014-04-23 06:58:45.215] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:58:45.215] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:58:45.215] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:58:45.216] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:58:45.216] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000172395 seconds
+
+I [2014-04-23 06:58:55.216] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:58:55.216] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:58:55.216] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:58:55.216] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:58:55.216] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00005334 seconds
+
+I [2014-04-23 06:59:05.225] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:59:05.225] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:59:05.226] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:59:05.226] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:59:05.226] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00006794799999999999 seconds
+
+I [2014-04-23 06:59:15.238] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:59:15.238] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:59:15.238] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:59:15.238] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:59:15.238] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00006662 seconds
+
+I [2014-04-23 06:59:25.238] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:59:25.238] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:59:25.239] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:59:25.239] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:59:25.239] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00005958 seconds
+
+I [2014-04-23 06:59:35.249] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:59:35.250] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:59:35.250] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:59:35.250] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:59:35.250] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000069428 seconds
+
+I [2014-04-23 06:59:45.261] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:59:45.261] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:59:45.261] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:59:45.261] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:59:45.261] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000075184 seconds
+
+I [2014-04-23 06:59:55.262] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 06:59:55.262] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 06:59:55.262] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 06:59:55.262] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 06:59:55.263] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00005676 seconds
+
+I [2014-04-23 07:00:05.273] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:00:05.273] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:00:05.273] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:00:05.273] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:00:05.273] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055144 seconds
+
+I [2014-04-23 07:00:15.285] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:00:15.285] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:00:15.285] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:00:15.285] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:00:15.285] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051566 seconds
+
+I [2014-04-23 07:00:25.286] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:00:25.286] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:00:25.286] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:00:25.286] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:00:25.286] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00004942 seconds
+
+I [2014-04-23 07:00:35.294] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:00:35.294] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:00:35.294] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:00:35.294] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:00:35.295] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000059356 seconds
+
+I [2014-04-23 07:00:45.306] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:00:45.306] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:00:45.306] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:00:45.306] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:00:45.306] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000049335 seconds
+
+I [2014-04-23 07:00:55.307] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:00:55.307] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:00:55.307] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:00:55.308] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:00:55.308] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000045861 seconds
+
+I [2014-04-23 07:01:05.319] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:01:05.319] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:01:05.319] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:01:05.319] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:01:05.319] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00005247 seconds
+
+I [2014-04-23 07:01:15.329] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:01:15.329] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:01:15.330] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:01:15.330] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:01:15.330] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053793 seconds
+
+I [2014-04-23 07:01:25.331] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:01:25.331] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:01:25.331] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:01:25.331] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:01:25.331] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000054582 seconds
+
+I [2014-04-23 07:01:35.342] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:01:35.342] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:01:35.342] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:01:35.342] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:01:35.342] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053988 seconds
+
+I [2014-04-23 07:01:45.355] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:01:45.355] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:01:45.355] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:01:45.355] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:01:45.355] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000058126 seconds
+
+I [2014-04-23 07:01:55.354] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:01:55.354] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:01:55.354] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:01:55.354] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:01:55.355] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055247 seconds
+
+I [2014-04-23 07:02:05.359] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:02:05.359] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:02:05.359] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:02:05.359] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:02:05.359] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048189 seconds
+
+I [2014-04-23 07:02:15.371] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:02:15.371] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:02:15.371] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:02:15.371] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+I [2014-04-23 07:02:15.371] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055643 seconds
+
+I [2014-04-23 07:02:17.618] [[32mConnectionManager[0m] Connection closed: #<Connection::-586438198>
+
+I [2014-04-23 07:02:17.618] [[32mDispatcher[0m] Started Event: client_disconnected
+I [2014-04-23 07:02:17.619] [[32mDispatcher[0m] [36mName:[0m client_disconnected
+I [2014-04-23 07:02:17.619] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-586438198>
+
+E [2014-04-23 07:02:17.620] [[31mDispatcher[0m] ArgumentError: wrong number of arguments (1 for 2)
+E [2014-04-23 07:02:17.620] [[31mDispatcher[0m] /home/bahgat/ws42-chat/app/controllers/chat_controller.rb:8:in `system_msg'
+E [2014-04-23 07:02:17.620] [[31mDispatcher[0m] /home/bahgat/ws42-chat/app/controllers/chat_controller.rb:44:in `delete_user'
+E [2014-04-23 07:02:17.620] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/base_controller.rb:27:in `process_action'
+E [2014-04-23 07:02:17.620] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+E [2014-04-23 07:02:17.620] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:373:in `_run__835247784__process_action__callbacks'
+E [2014-04-23 07:02:17.621] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+E [2014-04-23 07:02:17.621] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+E [2014-04-23 07:02:17.621] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/dispatcher.rb:65:in `block (3 levels) in route'
+E [2014-04-23 07:02:17.621] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/logging.rb:67:in `call'
+E [2014-04-23 07:02:17.621] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/logging.rb:67:in `log_event'
+E [2014-04-23 07:02:17.621] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/dispatcher.rb:62:in `block (2 levels) in route'
+
+I [2014-04-23 07:02:17.787] [[32mConnectionManager[0m] Connection opened: #<Connection::-589379138>
+
+I [2014-04-23 07:02:17.788] [[32mDispatcher[0m] Started Event: client_connected
+I [2014-04-23 07:02:17.788] [[32mDispatcher[0m] [36mName:[0m client_connected
+I [2014-04-23 07:02:17.788] [[32mDispatcher[0m] [36mData:[0m {"connection_id"=>-589379138}
+I [2014-04-23 07:02:17.788] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:17.789] [[32mDispatcher[0m] Event client_connected Finished in 0.000962483 seconds
+
+I [2014-04-23 07:02:17.815] [[32mDispatcher[0m] Started Event: new_user
+I [2014-04-23 07:02:17.815] [[32mDispatcher[0m] [36mName:[0m new_user
+I [2014-04-23 07:02:17.815] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Guest_296"}
+I [2014-04-23 07:02:17.815] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:17.816] [[32mDispatcher[0m] Event new_user Finished in 0.00133758 seconds
+
+I [2014-04-23 07:02:27.789] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:02:27.789] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:02:27.789] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:02:27.789] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:27.789] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047753 seconds
+
+I [2014-04-23 07:02:28.522] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 07:02:28.522] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 07:02:28.522] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Guest_296", "msg_body"=>"hello"}
+I [2014-04-23 07:02:28.522] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:28.523] [[32mDispatcher[0m] Event new_message Finished in 0.000926403 seconds
+
+I [2014-04-23 07:02:31.830] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 07:02:31.830] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 07:02:31.830] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"h"}
+I [2014-04-23 07:02:31.830] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:31.831] [[32mDispatcher[0m] Event change_username Finished in 0.000819223 seconds
+
+I [2014-04-23 07:02:33.338] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 07:02:33.338] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 07:02:33.338] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"he"}
+I [2014-04-23 07:02:33.338] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:33.339] [[32mDispatcher[0m] Event change_username Finished in 0.000902753 seconds
+
+I [2014-04-23 07:02:33.625] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 07:02:33.625] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 07:02:33.625] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"hel"}
+I [2014-04-23 07:02:33.626] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:33.627] [[32mDispatcher[0m] Event change_username Finished in 0.000844687 seconds
+
+I [2014-04-23 07:02:33.789] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 07:02:33.789] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 07:02:33.789] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"hell"}
+I [2014-04-23 07:02:33.789] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:33.790] [[32mDispatcher[0m] Event change_username Finished in 0.000866908 seconds
+
+I [2014-04-23 07:02:33.992] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 07:02:33.992] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 07:02:33.992] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"hello"}
+I [2014-04-23 07:02:33.992] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:33.993] [[32mDispatcher[0m] Event change_username Finished in 0.000792741 seconds
+
+I [2014-04-23 07:02:36.557] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 07:02:36.557] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 07:02:36.557] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"hello", "msg_body"=>"hi"}
+I [2014-04-23 07:02:36.557] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:36.559] [[32mDispatcher[0m] Event new_message Finished in 0.001078057 seconds
+
+I [2014-04-23 07:02:37.831] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:02:37.831] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:02:37.831] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:02:37.831] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:37.831] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000045132 seconds
+
+I [2014-04-23 07:02:47.904] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:02:47.904] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:02:47.904] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:02:47.904] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:47.905] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000046533 seconds
+
+I [2014-04-23 07:02:57.981] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:02:57.981] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:02:57.981] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:02:57.981] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:02:57.982] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000052507 seconds
+
+I [2014-04-23 07:03:08.611] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:03:08.613] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:03:08.613] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:03:08.613] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:03:08.615] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000044061 seconds
+
+I [2014-04-23 07:03:18.138] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:03:18.138] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:03:18.138] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:03:18.138] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:03:18.138] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00004715 seconds
+
+I [2014-04-23 07:03:28.215] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:03:28.215] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:03:28.216] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:03:28.216] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:03:28.216] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000044377 seconds
+
+I [2014-04-23 07:03:38.288] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:03:38.288] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:03:38.288] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:03:38.288] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:03:38.288] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000058678 seconds
+
+I [2014-04-23 07:03:48.365] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:03:48.365] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:03:48.365] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:03:48.365] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:03:48.365] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051917 seconds
+
+I [2014-04-23 07:03:58.442] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:03:58.442] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:03:58.442] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:03:58.442] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:03:58.442] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000052486 seconds
+
+I [2014-04-23 07:04:08.511] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:04:08.512] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:04:08.512] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:04:08.512] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:04:08.512] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00007661 seconds
+
+I [2014-04-23 07:04:18.591] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:04:18.591] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:04:18.591] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:04:18.591] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:04:18.591] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000052507 seconds
+
+I [2014-04-23 07:04:28.661] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:04:28.661] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:04:28.661] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:04:28.661] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:04:28.661] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047732 seconds
+
+I [2014-04-23 07:04:38.755] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:04:38.755] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:04:38.755] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:04:38.755] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:04:38.755] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000049113 seconds
+
+I [2014-04-23 07:04:48.822] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:04:48.822] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:04:48.822] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:04:48.822] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:04:48.822] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048274 seconds
+
+I [2014-04-23 07:04:58.896] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:04:58.896] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:04:58.896] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:04:58.896] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:04:58.897] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051335 seconds
+
+I [2014-04-23 07:05:08.969] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:05:08.969] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:05:08.969] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:05:08.969] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:05:08.969] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000083806 seconds
+
+I [2014-04-23 07:05:19.407] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:05:19.408] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:05:19.409] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:05:19.409] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:05:19.411] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053498 seconds
+
+I [2014-04-23 07:05:29.118] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:05:29.118] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:05:29.118] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:05:29.118] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:05:29.119] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000052641 seconds
+
+I [2014-04-23 07:05:39.196] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:05:39.197] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:05:39.197] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:05:39.197] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:05:39.197] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00004732 seconds
+
+I [2014-04-23 07:05:49.271] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:05:49.271] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:05:49.271] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:05:49.271] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:05:49.272] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000056333 seconds
+
+I [2014-04-23 07:05:59.346] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:05:59.346] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:05:59.347] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:05:59.347] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:05:59.347] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000052701 seconds
+
+I [2014-04-23 07:06:09.419] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:06:09.419] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:06:09.419] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:06:09.419] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:06:09.419] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053977 seconds
+
+I [2014-04-23 07:06:19.499] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:06:19.500] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:06:19.500] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:06:19.500] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:06:19.500] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000060332 seconds
+
+I [2014-04-23 07:06:29.577] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:06:29.577] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:06:29.577] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:06:29.577] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:06:29.578] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048064 seconds
+
+I [2014-04-23 07:06:39.653] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:06:39.653] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:06:39.653] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:06:39.653] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:06:39.653] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051856 seconds
+
+I [2014-04-23 07:06:49.732] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:06:49.732] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:06:49.732] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:06:49.732] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:06:49.732] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047247 seconds
+
+I [2014-04-23 07:06:59.809] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:06:59.809] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:06:59.809] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:06:59.809] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:06:59.810] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00004809 seconds
+
+I [2014-04-23 07:07:09.812] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 07:07:09.812] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 07:07:09.812] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 07:07:09.812] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589379138>
+
+I [2014-04-23 07:07:09.812] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047061 seconds
+
+I [2014-04-23 07:07:18.704] [[32mConnectionManager[0m] Connection closed: #<Connection::-589379138>
+
+I [2014-04-23 12:38:15.594] [[32mConnectionManager[0m] Connection opened: #<Connection::-590084298>
+
+I [2014-04-23 12:38:15.595] [[32mDispatcher[0m] Started Event: client_connected
+I [2014-04-23 12:38:15.596] [[32mDispatcher[0m] [36mName:[0m client_connected
+I [2014-04-23 12:38:15.596] [[32mDispatcher[0m] [36mData:[0m {"connection_id"=>-590084298}
+I [2014-04-23 12:38:15.596] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:15.598] [[32mDispatcher[0m] Event client_connected Finished in 0.001726929 seconds
+
+I [2014-04-23 12:38:15.622] [[32mDispatcher[0m] Started Event: new_user
+I [2014-04-23 12:38:15.623] [[32mDispatcher[0m] [36mName:[0m new_user
+I [2014-04-23 12:38:15.623] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Guest_538"}
+I [2014-04-23 12:38:15.623] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:15.628] [[32mDispatcher[0m] Event new_user Finished in 0.005201092 seconds
+
+I [2014-04-23 12:38:25.601] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:38:25.601] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:38:25.601] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:38:25.601] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:25.602] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000574831 seconds
+
+I [2014-04-23 12:38:32.277] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:32.277] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:32.277] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"b"}
+I [2014-04-23 12:38:32.277] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:32.278] [[32mDispatcher[0m] Event change_username Finished in 0.00098683 seconds
+
+I [2014-04-23 12:38:32.414] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:32.414] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:32.414] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"ba"}
+I [2014-04-23 12:38:32.414] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:32.415] [[32mDispatcher[0m] Event change_username Finished in 0.00107844 seconds
+
+I [2014-04-23 12:38:32.598] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:32.598] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:32.598] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"bah"}
+I [2014-04-23 12:38:32.598] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:32.601] [[32mDispatcher[0m] Event change_username Finished in 0.002421053 seconds
+
+I [2014-04-23 12:38:32.796] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:32.796] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:32.796] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"bahg"}
+I [2014-04-23 12:38:32.796] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:32.797] [[32mDispatcher[0m] Event change_username Finished in 0.000996004 seconds
+
+I [2014-04-23 12:38:32.920] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:32.921] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:32.921] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"bahga"}
+I [2014-04-23 12:38:32.921] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:32.922] [[32mDispatcher[0m] Event change_username Finished in 0.000967762 seconds
+
+I [2014-04-23 12:38:33.254] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:33.255] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:33.255] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"bahgat"}
+I [2014-04-23 12:38:33.256] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:33.267] [[32mDispatcher[0m] Event change_username Finished in 0.001021276 seconds
+
+I [2014-04-23 12:38:35.603] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:38:35.603] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:38:35.603] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:38:35.603] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:35.604] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000060278 seconds
+
+I [2014-04-23 12:38:37.331] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 12:38:37.331] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 12:38:37.331] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"bahgat", "msg_body"=>"Ahmed"}
+I [2014-04-23 12:38:37.331] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:37.333] [[32mDispatcher[0m] Event new_message Finished in 0.001205829 seconds
+
+I [2014-04-23 12:38:43.122] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:43.123] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:43.123] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"bahgat"}
+I [2014-04-23 12:38:43.123] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:43.126] [[32mDispatcher[0m] Event change_username Finished in 0.002731712 seconds
+
+I [2014-04-23 12:38:44.645] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:44.645] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:44.645] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"y"}
+I [2014-04-23 12:38:44.645] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:44.646] [[32mDispatcher[0m] Event change_username Finished in 0.0009782079999999999 seconds
+
+I [2014-04-23 12:38:44.784] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:44.784] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:44.784] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"yo"}
+I [2014-04-23 12:38:44.784] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:44.785] [[32mDispatcher[0m] Event change_username Finished in 0.000969178 seconds
+
+I [2014-04-23 12:38:44.957] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:44.958] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:44.958] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"you"}
+I [2014-04-23 12:38:44.958] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:44.959] [[32mDispatcher[0m] Event change_username Finished in 0.001085686 seconds
+
+I [2014-04-23 12:38:45.166] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:45.166] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:45.166] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"yous"}
+I [2014-04-23 12:38:45.166] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:45.168] [[32mDispatcher[0m] Event change_username Finished in 0.001109854 seconds
+
+I [2014-04-23 12:38:45.381] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:45.381] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:45.381] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"yousr"}
+I [2014-04-23 12:38:45.381] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:45.383] [[32mDispatcher[0m] Event change_username Finished in 0.001124321 seconds
+
+I [2014-04-23 12:38:45.510] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:45.510] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:45.510] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"yousra"}
+I [2014-04-23 12:38:45.510] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:45.511] [[32mDispatcher[0m] Event change_username Finished in 0.001089259 seconds
+
+I [2014-04-23 12:38:45.604] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:38:45.604] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:38:45.604] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:38:45.604] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:45.604] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000046607 seconds
+
+I [2014-04-23 12:38:46.106] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:38:46.106] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:38:46.106] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"yousra "}
+I [2014-04-23 12:38:46.106] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:46.108] [[32mDispatcher[0m] Event change_username Finished in 0.001568266 seconds
+
+I [2014-04-23 12:38:48.767] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 12:38:48.767] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 12:38:48.768] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"yousra ", "msg_body"=>"hello"}
+I [2014-04-23 12:38:48.768] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:48.769] [[32mDispatcher[0m] Event new_message Finished in 0.001237835 seconds
+
+I [2014-04-23 12:38:55.612] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:38:55.612] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:38:55.612] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:38:55.612] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:38:55.612] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047574 seconds
+
+I [2014-04-23 12:39:05.615] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:39:05.615] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:39:05.615] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:39:05.615] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:39:05.615] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00004873 seconds
+
+I [2014-04-23 12:39:15.616] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:39:15.616] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:39:15.616] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:39:15.616] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:39:15.617] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048669 seconds
+
+I [2014-04-23 12:39:25.617] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:39:25.618] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:39:25.618] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:39:25.618] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:39:25.618] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047263 seconds
+
+I [2014-04-23 12:39:35.629] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:39:35.630] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:39:35.630] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:39:35.630] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:39:35.630] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053407 seconds
+
+I [2014-04-23 12:39:45.630] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:39:45.630] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:39:45.630] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:39:45.630] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+I [2014-04-23 12:39:45.631] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00004785 seconds
+
+I [2014-04-23 12:39:54.507] [[32mConnectionManager[0m] Connection closed: #<Connection::-590084298>
+
+I [2014-04-23 12:39:54.507] [[32mDispatcher[0m] Started Event: client_disconnected
+I [2014-04-23 12:39:54.507] [[32mDispatcher[0m] [36mName:[0m client_disconnected
+I [2014-04-23 12:39:54.508] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-590084298>
+
+E [2014-04-23 12:39:54.508] [[31mDispatcher[0m] ArgumentError: wrong number of arguments (1 for 2)
+E [2014-04-23 12:39:54.508] [[31mDispatcher[0m] /home/bahgat/ws42-chat/app/controllers/chat_controller.rb:8:in `system_msg'
+E [2014-04-23 12:39:54.509] [[31mDispatcher[0m] /home/bahgat/ws42-chat/app/controllers/chat_controller.rb:44:in `delete_user'
+E [2014-04-23 12:39:54.509] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/base_controller.rb:27:in `process_action'
+E [2014-04-23 12:39:54.509] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+E [2014-04-23 12:39:54.509] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:373:in `_run__217168196__process_action__callbacks'
+E [2014-04-23 12:39:54.509] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+E [2014-04-23 12:39:54.509] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+E [2014-04-23 12:39:54.509] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/dispatcher.rb:65:in `block (3 levels) in route'
+E [2014-04-23 12:39:54.509] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/logging.rb:67:in `call'
+E [2014-04-23 12:39:54.509] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/logging.rb:67:in `log_event'
+E [2014-04-23 12:39:54.509] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/dispatcher.rb:62:in `block (2 levels) in route'
+
+I [2014-04-23 12:39:54.695] [[32mConnectionManager[0m] Connection opened: #<Connection::-581839478>
+
+I [2014-04-23 12:39:54.695] [[32mDispatcher[0m] Started Event: client_connected
+I [2014-04-23 12:39:54.724] [[32mDispatcher[0m] [36mName:[0m client_connected
+I [2014-04-23 12:39:54.724] [[32mDispatcher[0m] [36mData:[0m {"connection_id"=>-581839478}
+I [2014-04-23 12:39:54.724] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:39:54.726] [[32mDispatcher[0m] Event client_connected Finished in 0.002022689 seconds
+
+I [2014-04-23 12:39:54.739] [[32mDispatcher[0m] Started Event: new_user
+I [2014-04-23 12:39:54.739] [[32mDispatcher[0m] [36mName:[0m new_user
+I [2014-04-23 12:39:54.740] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Guest_785"}
+I [2014-04-23 12:39:54.740] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:39:54.741] [[32mDispatcher[0m] Event new_user Finished in 0.001354799 seconds
+
+I [2014-04-23 12:40:02.766] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:02.766] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:02.766] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"B"}
+I [2014-04-23 12:40:02.766] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:02.767] [[32mDispatcher[0m] Event change_username Finished in 0.001032411 seconds
+
+I [2014-04-23 12:40:02.783] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:02.783] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:02.783] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"B"}
+I [2014-04-23 12:40:02.783] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:02.785] [[32mDispatcher[0m] Event change_username Finished in 0.001417946 seconds
+
+I [2014-04-23 12:40:03.164] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:03.164] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:03.164] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>""}
+I [2014-04-23 12:40:03.164] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:03.165] [[32mDispatcher[0m] Event change_username Finished in 0.000864328 seconds
+
+I [2014-04-23 12:40:03.593] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:03.593] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:03.593] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"N"}
+I [2014-04-23 12:40:03.593] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:03.594] [[32mDispatcher[0m] Event change_username Finished in 0.000862133 seconds
+
+I [2014-04-23 12:40:03.631] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:03.631] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:03.631] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"N"}
+I [2014-04-23 12:40:03.631] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:03.632] [[32mDispatcher[0m] Event change_username Finished in 0.0008294 seconds
+
+I [2014-04-23 12:40:03.869] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:03.869] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:03.870] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"No"}
+I [2014-04-23 12:40:03.870] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:03.871] [[32mDispatcher[0m] Event change_username Finished in 0.001162532 seconds
+
+I [2014-04-23 12:40:04.938] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:04.939] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:04.939] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Nou"}
+I [2014-04-23 12:40:04.940] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:04.952] [[32mDispatcher[0m] Event change_username Finished in 0.001037122 seconds
+
+I [2014-04-23 12:40:04.323] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:04.324] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:04.324] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Nour"}
+I [2014-04-23 12:40:04.324] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:04.325] [[32mDispatcher[0m] Event change_username Finished in 0.0008038 seconds
+
+I [2014-04-23 12:40:04.421] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:04.422] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:04.422] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Noura"}
+I [2014-04-23 12:40:04.422] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:04.423] [[32mDispatcher[0m] Event change_username Finished in 0.001394659 seconds
+
+I [2014-04-23 12:40:04.595] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:04.595] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:04.595] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Nourabn"}
+I [2014-04-23 12:40:04.595] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:04.596] [[32mDispatcher[0m] Event change_username Finished in 0.00086443 seconds
+
+I [2014-04-23 12:40:04.615] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:04.615] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:04.615] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Nourabn"}
+I [2014-04-23 12:40:04.615] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:04.617] [[32mDispatcher[0m] Event change_username Finished in 0.002024685 seconds
+
+I [2014-04-23 12:40:04.710] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:40:04.710] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:40:04.710] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:40:04.710] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:04.710] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.0000503 seconds
+
+I [2014-04-23 12:40:05.693] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:05.693] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:05.693] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Nourab"}
+I [2014-04-23 12:40:05.693] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:05.694] [[32mDispatcher[0m] Event change_username Finished in 0.001181467 seconds
+
+I [2014-04-23 12:40:05.872] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:05.872] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:05.873] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Noura"}
+I [2014-04-23 12:40:05.873] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:05.875] [[32mDispatcher[0m] Event change_username Finished in 0.001522677 seconds
+
+I [2014-04-23 12:40:06.394] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:06.394] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:06.394] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Nouran"}
+I [2014-04-23 12:40:06.394] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:06.395] [[32mDispatcher[0m] Event change_username Finished in 0.0009986280000000001 seconds
+
+I [2014-04-23 12:40:09.781] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 12:40:09.782] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 12:40:09.782] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Nouran", "msg_body"=>"hello"}
+I [2014-04-23 12:40:09.783] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:09.794] [[32mDispatcher[0m] Event new_message Finished in 0.0009968399999999999 seconds
+
+I [2014-04-23 12:40:13.750] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:13.750] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:13.750] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"B"}
+I [2014-04-23 12:40:13.750] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:13.751] [[32mDispatcher[0m] Event change_username Finished in 0.0008760009999999999 seconds
+
+I [2014-04-23 12:40:13.792] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:13.792] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:13.792] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"B"}
+I [2014-04-23 12:40:13.793] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:13.794] [[32mDispatcher[0m] Event change_username Finished in 0.001093765 seconds
+
+I [2014-04-23 12:40:14.139] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:14.139] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:14.140] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Ba"}
+I [2014-04-23 12:40:14.140] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:14.141] [[32mDispatcher[0m] Event change_username Finished in 0.001063009 seconds
+
+I [2014-04-23 12:40:14.288] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:14.288] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:14.288] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Bah"}
+I [2014-04-23 12:40:14.288] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:14.289] [[32mDispatcher[0m] Event change_username Finished in 0.00087328 seconds
+
+I [2014-04-23 12:40:14.448] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:14.448] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:14.448] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Bahg"}
+I [2014-04-23 12:40:14.448] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:14.450] [[32mDispatcher[0m] Event change_username Finished in 0.001253499 seconds
+
+I [2014-04-23 12:40:14.572] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:14.572] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:14.572] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Bahga"}
+I [2014-04-23 12:40:14.572] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:14.573] [[32mDispatcher[0m] Event change_username Finished in 0.000853306 seconds
+
+I [2014-04-23 12:40:14.671] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 12:40:14.671] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 12:40:14.671] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Bahgat"}
+I [2014-04-23 12:40:14.671] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:14.672] [[32mDispatcher[0m] Event change_username Finished in 0.000963749 seconds
+
+I [2014-04-23 12:40:14.765] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:40:14.765] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:40:14.765] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:40:14.765] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:14.766] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047435 seconds
+
+I [2014-04-23 12:40:17.193] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 12:40:17.193] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 12:40:17.194] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Bahgat", "msg_body"=>"hello"}
+I [2014-04-23 12:40:17.194] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:17.195] [[32mDispatcher[0m] Event new_message Finished in 0.001106741 seconds
+
+I [2014-04-23 12:40:24.836] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:40:24.837] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:40:24.837] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:40:24.837] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:24.837] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048567 seconds
+
+I [2014-04-23 12:40:34.841] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:40:34.841] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:40:34.841] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:40:34.841] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:34.841] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048066 seconds
+
+I [2014-04-23 12:40:44.859] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:40:44.859] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:40:44.859] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:40:44.859] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:44.859] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000067654 seconds
+
+I [2014-04-23 12:40:54.869] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:40:54.869] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:40:54.869] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:40:54.869] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:40:54.869] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055208 seconds
+
+I [2014-04-23 12:41:04.930] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:41:04.930] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:41:04.930] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:41:04.930] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:41:04.931] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051923 seconds
+
+I [2014-04-23 12:41:14.945] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:41:14.945] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:41:14.945] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:41:14.945] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:41:14.945] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053981 seconds
+
+I [2014-04-23 12:41:24.972] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:41:24.972] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:41:24.972] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:41:24.972] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:41:24.972] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051333 seconds
+
+I [2014-04-23 12:41:35.540] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:41:35.541] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:41:35.542] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:41:35.542] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:41:35.544] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000049014 seconds
+
+I [2014-04-23 12:41:45.673] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:41:45.674] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:41:45.675] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:41:45.675] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:41:45.678] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00006329399999999999 seconds
+
+I [2014-04-23 12:41:55.132] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:41:55.132] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:41:55.133] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:41:55.133] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:41:55.133] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000059654 seconds
+
+I [2014-04-23 12:42:05.144] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:42:05.144] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:42:05.145] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:42:05.145] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:42:05.145] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000054201 seconds
+
+I [2014-04-23 12:42:15.168] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:42:15.168] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:42:15.168] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:42:15.168] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:42:15.168] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000056951 seconds
+
+I [2014-04-23 12:42:25.198] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:42:25.198] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:42:25.198] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:42:25.198] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:42:25.199] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00009482100000000001 seconds
+
+I [2014-04-23 12:42:35.289] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:42:35.290] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:42:35.290] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:42:35.290] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:42:35.290] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055321 seconds
+
+I [2014-04-23 12:42:45.304] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:42:45.304] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:42:45.304] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:42:45.304] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:42:45.304] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053494 seconds
+
+I [2014-04-23 12:42:55.307] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:42:55.308] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:42:55.308] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:42:55.308] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:42:55.308] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000061047 seconds
+
+I [2014-04-23 12:43:05.394] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:43:05.394] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:43:05.394] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:43:05.394] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:43:05.394] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000064995 seconds
+
+I [2014-04-23 12:43:15.398] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:43:15.398] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:43:15.398] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:43:15.398] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:43:15.398] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000050024 seconds
+
+I [2014-04-23 12:43:25.488] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:43:25.488] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:43:25.488] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:43:25.488] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:43:25.489] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055209 seconds
+
+I [2014-04-23 12:43:35.563] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:43:35.563] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:43:35.563] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:43:35.563] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:43:35.563] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00005526 seconds
+
+I [2014-04-23 12:43:45.632] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:43:45.632] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:43:45.632] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:43:45.632] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:43:45.632] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051889 seconds
+
+I [2014-04-23 12:43:55.707] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:43:55.707] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:43:55.707] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:43:55.707] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:43:55.707] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00004815 seconds
+
+I [2014-04-23 12:44:05.794] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:44:05.795] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:44:05.795] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:44:05.795] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:44:05.795] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000125354 seconds
+
+I [2014-04-23 12:44:15.796] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:44:15.796] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:44:15.796] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:44:15.796] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:44:15.796] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048179 seconds
+
+I [2014-04-23 12:44:25.799] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:44:25.799] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:44:25.799] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:44:25.799] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:44:25.799] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000063285 seconds
+
+I [2014-04-23 12:44:35.811] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:44:35.812] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:44:35.812] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:44:35.812] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:44:35.812] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000068131 seconds
+
+I [2014-04-23 12:44:45.829] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:44:45.829] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:44:45.830] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:44:45.830] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:44:45.830] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055858 seconds
+
+I [2014-04-23 12:44:55.917] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:44:55.917] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:44:55.917] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:44:55.917] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:44:55.917] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000071553 seconds
+
+I [2014-04-23 12:45:05.998] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:45:05.998] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:45:05.998] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:45:05.998] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:45:05.998] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000050501 seconds
+
+I [2014-04-23 12:45:16.132] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:45:16.134] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:45:16.134] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:45:16.134] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:45:16.136] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051219 seconds
+
+I [2014-04-23 12:45:26.419] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:45:26.420] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:45:26.421] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:45:26.421] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:45:26.424] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000052218 seconds
+
+I [2014-04-23 12:45:36.660] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:45:36.661] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:45:36.661] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:45:36.662] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:45:36.664] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00004981 seconds
+
+I [2014-04-23 12:45:46.989] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:45:46.991] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:45:46.992] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:45:46.992] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:45:46.994] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000056068 seconds
+
+I [2014-04-23 12:45:56.123] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:45:56.123] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:45:56.123] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:45:56.123] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:45:56.123] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047027 seconds
+
+I [2014-04-23 12:46:06.132] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:46:06.133] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:46:06.133] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:46:06.133] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:46:06.133] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048106 seconds
+
+I [2014-04-23 12:46:16.172] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:46:16.173] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:46:16.173] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:46:16.173] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:46:16.173] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000046989 seconds
+
+I [2014-04-23 12:46:26.219] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:46:26.220] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:46:26.220] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:46:26.220] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:46:26.220] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000050778 seconds
+
+I [2014-04-23 12:46:36.222] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:46:36.222] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:46:36.222] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:46:36.222] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:46:36.222] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000052895 seconds
+
+I [2014-04-23 12:46:46.310] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:46:46.310] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:46:46.310] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:46:46.310] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:46:46.310] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047656 seconds
+
+I [2014-04-23 12:46:56.323] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:46:56.323] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:46:56.323] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:46:56.323] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:46:56.323] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051138 seconds
+
+I [2014-04-23 12:47:06.414] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:47:06.414] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:47:06.414] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:47:06.415] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:47:06.415] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000052684 seconds
+
+I [2014-04-23 12:47:16.470] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:47:16.470] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:47:16.470] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:47:16.470] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:47:16.470] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055658 seconds
+
+I [2014-04-23 12:47:26.515] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:47:26.516] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:47:26.516] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:47:26.516] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:47:26.516] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000056833 seconds
+
+I [2014-04-23 12:47:36.554] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:47:36.554] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:47:36.554] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:47:36.554] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:47:36.554] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048203 seconds
+
+I [2014-04-23 12:47:46.573] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:47:46.573] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:47:46.574] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:47:46.574] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:47:46.574] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00007250299999999999 seconds
+
+I [2014-04-23 12:47:56.661] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:47:56.661] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:47:56.661] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:47:56.661] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:47:56.661] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000062099 seconds
+
+I [2014-04-23 12:48:06.665] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:48:06.665] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:48:06.665] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:48:06.665] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:48:06.666] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000050326 seconds
+
+I [2014-04-23 12:48:16.753] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:48:16.754] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:48:16.754] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:48:16.754] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:48:16.754] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000059652 seconds
+
+I [2014-04-23 12:48:26.755] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:48:26.755] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:48:26.755] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:48:26.755] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:48:26.755] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00006413400000000001 seconds
+
+I [2014-04-23 12:48:36.766] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:48:36.766] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:48:36.766] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:48:36.766] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:48:36.766] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000056505 seconds
+
+I [2014-04-23 12:48:46.855] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:48:46.855] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:48:46.855] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:48:46.855] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:48:46.855] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055268 seconds
+
+I [2014-04-23 12:48:56.971] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:48:56.971] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:48:56.971] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:48:56.971] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:48:56.971] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048655 seconds
+
+I [2014-04-23 12:49:06.979] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:49:06.979] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:49:06.979] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:49:06.979] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:49:06.979] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055029 seconds
+
+I [2014-04-23 12:49:17.672] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:49:17.673] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:49:17.673] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:49:17.674] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:49:17.676] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000050531 seconds
+
+I [2014-04-23 12:49:27.691] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:49:27.692] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:49:27.693] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:49:27.693] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:49:27.695] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000049238 seconds
+
+I [2014-04-23 12:49:37.157] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:49:37.157] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:49:37.157] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:49:37.157] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:49:37.158] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000056627 seconds
+
+I [2014-04-23 12:49:47.237] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:49:47.237] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:49:47.237] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:49:47.237] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:49:47.238] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051831 seconds
+
+I [2014-04-23 12:49:57.323] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:49:57.323] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:49:57.323] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:49:57.323] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:49:57.323] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00006459 seconds
+
+I [2014-04-23 12:50:07.395] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:50:07.395] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:50:07.395] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:50:07.395] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:50:07.396] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00006253 seconds
+
+I [2014-04-23 12:50:17.399] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:50:17.399] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:50:17.399] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:50:17.399] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:50:17.399] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000054994 seconds
+
+I [2014-04-23 12:50:27.488] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:50:27.488] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:50:27.488] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:50:27.488] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:50:27.489] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053037 seconds
+
+I [2014-04-23 12:50:37.491] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:50:37.491] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:50:37.491] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:50:37.491] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:50:37.491] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000058585 seconds
+
+I [2014-04-23 12:50:47.576] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:50:47.576] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:50:47.576] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:50:47.576] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:50:47.576] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000054041 seconds
+
+I [2014-04-23 12:50:57.655] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:50:57.655] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:50:57.655] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:50:57.655] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:50:57.655] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000057825 seconds
+
+I [2014-04-23 12:51:07.730] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:51:07.730] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:51:07.730] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:51:07.730] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:51:07.731] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053592 seconds
+
+I [2014-04-23 12:51:17.808] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:51:17.808] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:51:17.808] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:51:17.808] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:51:17.808] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000077945 seconds
+
+I [2014-04-23 12:51:27.881] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:51:27.881] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:51:27.881] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:51:27.881] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:51:27.882] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00004717 seconds
+
+I [2014-04-23 12:51:37.953] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:51:37.953] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:51:37.953] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:51:37.953] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:51:37.953] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053662 seconds
+
+I [2014-04-23 12:51:48.418] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:51:48.419] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:51:48.420] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:51:48.420] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:51:48.422] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000052664 seconds
+
+I [2014-04-23 12:51:58.453] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:51:58.455] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:51:58.456] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:51:58.456] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:51:58.459] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000050408 seconds
+
+I [2014-04-23 12:52:08.133] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:52:08.133] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:52:08.133] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:52:08.133] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:52:08.134] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000056548 seconds
+
+I [2014-04-23 12:52:18.224] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:52:18.224] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:52:18.224] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:52:18.224] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:52:18.224] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000072471 seconds
+
+I [2014-04-23 12:52:28.229] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:52:28.229] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:52:28.229] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:52:28.229] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:52:28.229] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000054296 seconds
+
+I [2014-04-23 12:52:38.315] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:52:38.316] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:52:38.316] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:52:38.316] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:52:38.316] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053422 seconds
+
+I [2014-04-23 12:52:48.399] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:52:48.399] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:52:48.399] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:52:48.399] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:52:48.400] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000059381 seconds
+
+I [2014-04-23 12:52:58.484] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:52:58.484] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:52:58.484] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:52:58.484] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:52:58.484] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000052755 seconds
+
+I [2014-04-23 12:53:08.484] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:53:08.484] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:53:08.484] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:53:08.484] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:53:08.484] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00004843 seconds
+
+I [2014-04-23 12:53:18.486] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:53:18.486] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:53:18.486] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:53:18.486] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:53:18.486] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047804 seconds
+
+I [2014-04-23 12:53:28.488] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:53:28.488] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:53:28.488] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:53:28.488] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:53:28.488] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000049053 seconds
+
+I [2014-04-23 12:53:38.495] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:53:38.496] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:53:38.496] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:53:38.496] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:53:38.496] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000064359 seconds
+
+I [2014-04-23 12:53:48.586] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:53:48.586] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:53:48.586] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:53:48.586] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:53:48.586] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000054576 seconds
+
+I [2014-04-23 12:53:58.671] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:53:58.671] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:53:58.671] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:53:58.671] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:53:58.671] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000049479 seconds
+
+I [2014-04-23 12:54:08.676] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:54:08.676] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:54:08.676] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:54:08.676] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:54:08.677] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048317 seconds
+
+I [2014-04-23 12:54:18.767] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:54:18.767] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:54:18.767] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:54:18.767] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:54:18.767] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053336 seconds
+
+I [2014-04-23 12:54:28.770] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:54:28.770] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:54:28.770] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:54:28.770] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:54:28.771] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000072037 seconds
+
+I [2014-04-23 12:54:38.862] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:54:38.862] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:54:38.863] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:54:38.863] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:54:38.863] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000057873 seconds
+
+I [2014-04-23 12:54:48.864] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:54:48.864] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:54:48.864] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:54:48.864] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:54:48.864] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055289 seconds
+
+I [2014-04-23 12:54:58.866] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:54:58.866] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:54:58.866] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:54:58.866] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:54:58.866] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000059145 seconds
+
+I [2014-04-23 12:55:08.873] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:55:08.873] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:55:08.873] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:55:08.873] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:55:08.873] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048106 seconds
+
+I [2014-04-23 12:55:18.875] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:55:18.875] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:55:18.875] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:55:18.875] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:55:18.876] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000063919 seconds
+
+I [2014-04-23 12:55:28.963] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:55:28.963] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:55:28.963] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:55:28.963] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:55:28.964] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048082 seconds
+
+I [2014-04-23 12:55:39.532] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:55:39.533] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:55:39.534] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:55:39.534] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:55:39.536] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000057002 seconds
+
+I [2014-04-23 12:55:49.547] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:55:49.548] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:55:49.549] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:55:49.550] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:55:49.552] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000062177 seconds
+
+I [2014-04-23 12:55:59.592] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:55:59.593] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:55:59.594] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:55:59.594] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:55:59.598] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000057475 seconds
+
+I [2014-04-23 12:56:09.146] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:56:09.146] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:56:09.146] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:56:09.146] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:56:09.146] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000056366 seconds
+
+I [2014-04-23 12:56:19.147] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:56:19.147] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:56:19.147] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:56:19.147] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:56:19.147] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055883 seconds
+
+I [2014-04-23 12:56:29.151] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:56:29.151] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:56:29.151] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:56:29.151] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:56:29.151] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000063416 seconds
+
+I [2014-04-23 12:56:39.240] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:56:39.240] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:56:39.240] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:56:39.240] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:56:39.241] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053087 seconds
+
+I [2014-04-23 12:56:49.326] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:56:49.326] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:56:49.326] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:56:49.327] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:56:49.327] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047843 seconds
+
+I [2014-04-23 12:56:59.328] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:56:59.328] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:56:59.328] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:56:59.328] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:56:59.329] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000052024 seconds
+
+I [2014-04-23 12:57:09.416] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:57:09.416] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:57:09.416] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:57:09.416] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:57:09.416] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000091528 seconds
+
+I [2014-04-23 12:57:19.501] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:57:19.501] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:57:19.501] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:57:19.501] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:57:19.502] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047989 seconds
+
+I [2014-04-23 12:57:29.502] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:57:29.502] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:57:29.503] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:57:29.503] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:57:29.503] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048684 seconds
+
+I [2014-04-23 12:57:39.520] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:57:39.520] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:57:39.520] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:57:39.520] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:57:39.521] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000125906 seconds
+
+I [2014-04-23 12:57:49.533] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:57:49.534] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:57:49.534] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:57:49.534] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:57:49.536] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000225863 seconds
+
+I [2014-04-23 12:57:59.551] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:57:59.551] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:57:59.551] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:57:59.551] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:57:59.552] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000129609 seconds
+
+I [2014-04-23 12:58:09.562] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:58:09.563] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:58:09.563] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:58:09.563] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:58:09.564] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000185541 seconds
+
+I [2014-04-23 12:58:19.571] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:58:19.571] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:58:19.571] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:58:19.571] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:58:19.572] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000135532 seconds
+
+I [2014-04-23 12:58:29.583] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:58:29.584] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:58:29.584] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:58:29.584] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:58:29.585] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000161777 seconds
+
+I [2014-04-23 12:58:39.596] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:58:39.596] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:58:39.597] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:58:39.597] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:58:39.598] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000232217 seconds
+
+I [2014-04-23 12:58:49.616] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:58:49.616] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:58:49.616] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:58:49.617] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:58:49.618] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000222194 seconds
+
+I [2014-04-23 12:58:59.625] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:58:59.626] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:58:59.626] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:58:59.626] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:58:59.627] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000126562 seconds
+
+I [2014-04-23 12:59:09.639] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:59:09.639] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:59:09.639] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:59:09.640] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:59:09.640] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000168512 seconds
+
+I [2014-04-23 12:59:19.659] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:59:19.659] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:59:19.659] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:59:19.659] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:59:19.660] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000143887 seconds
+
+I [2014-04-23 12:59:29.663] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:59:29.664] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:59:29.664] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:59:29.664] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:59:29.665] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000128898 seconds
+
+I [2014-04-23 12:59:39.681] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:59:39.681] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:59:39.681] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:59:39.681] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:59:39.682] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000290317 seconds
+
+I [2014-04-23 12:59:49.688] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:59:49.689] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:59:49.690] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:59:49.690] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:59:49.691] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000196005 seconds
+
+I [2014-04-23 12:59:59.698] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 12:59:59.699] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 12:59:59.699] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 12:59:59.699] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 12:59:59.700] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000129489 seconds
+
+I [2014-04-23 13:00:09.721] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:00:09.722] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:00:09.723] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:00:09.723] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:00:09.724] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000200114 seconds
+
+I [2014-04-23 13:00:19.738] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:00:19.738] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:00:19.738] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:00:19.739] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:00:19.739] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000140053 seconds
+
+I [2014-04-23 13:00:29.751] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:00:29.751] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:00:29.751] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:00:29.752] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:00:29.752] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000223447 seconds
+
+I [2014-04-23 13:00:39.757] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:00:39.757] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:00:39.757] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:00:39.757] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:00:39.758] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000221432 seconds
+
+I [2014-04-23 13:00:49.769] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:00:49.769] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:00:49.769] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:00:49.770] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:00:49.771] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00015871 seconds
+
+I [2014-04-23 13:00:59.791] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:00:59.791] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:00:59.792] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:00:59.792] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:00:59.792] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000146317 seconds
+
+I [2014-04-23 13:01:09.794] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:01:09.794] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:01:09.794] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:01:09.794] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:01:09.795] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000135378 seconds
+
+I [2014-04-23 13:01:19.801] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:01:19.801] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:01:19.801] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:01:19.802] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:01:19.802] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000198629 seconds
+
+I [2014-04-23 13:01:29.811] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:01:29.811] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:01:29.811] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:01:29.811] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:01:29.812] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00014967 seconds
+
+I [2014-04-23 13:01:39.814] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:01:39.814] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:01:39.814] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:01:39.814] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:01:39.815] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000130215 seconds
+
+I [2014-04-23 13:01:49.840] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:01:49.840] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:01:49.840] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:01:49.840] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:01:49.841] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00020489 seconds
+
+I [2014-04-23 13:01:59.855] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:01:59.855] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:01:59.855] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:01:59.856] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:01:59.857] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000298808 seconds
+
+I [2014-04-23 13:02:09.860] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:02:10.921] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:02:10.921] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:02:10.921] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:02:10.922] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000115667 seconds
+
+I [2014-04-23 13:03:48.749] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:03:48.749] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:03:48.749] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:03:48.750] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:03:48.750] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000055781 seconds
+
+I [2014-04-23 13:03:58.828] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:03:58.828] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:03:58.828] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:03:58.828] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:03:58.828] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00006887 seconds
+
+I [2014-04-23 13:04:08.871] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:04:08.871] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:04:08.871] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:04:08.871] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:04:08.871] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000056377 seconds
+
+I [2014-04-23 13:04:18.940] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:04:18.940] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:04:18.940] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:04:18.940] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:04:18.940] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047129 seconds
+
+I [2014-04-23 13:04:29.277] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:04:29.278] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:04:29.279] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:04:29.279] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:04:29.281] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000049417 seconds
+
+I [2014-04-23 13:04:39.346] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:04:39.347] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:04:39.348] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:04:39.348] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:04:39.350] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00005005 seconds
+
+I [2014-04-23 13:04:49.122] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:04:49.122] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:04:49.122] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:04:49.123] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:04:49.123] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000050095 seconds
+
+I [2014-04-23 13:04:59.209] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:04:59.209] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:04:59.209] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:04:59.209] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:04:59.209] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051136 seconds
+
+I [2014-04-23 13:05:09.294] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:05:09.294] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:05:09.294] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:05:09.294] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:05:09.294] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000048066 seconds
+
+I [2014-04-23 13:05:19.384] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:05:19.384] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:05:19.384] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:05:19.384] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:05:19.384] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000076516 seconds
+
+I [2014-04-23 13:05:29.440] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:05:29.440] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:05:29.440] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:05:29.440] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:05:29.441] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000056409 seconds
+
+I [2014-04-23 13:05:39.475] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:05:39.475] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:05:39.475] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:05:39.475] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+I [2014-04-23 13:05:39.476] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000051164 seconds
+
+I [2014-04-23 13:05:39.682] [[32mConnectionManager[0m] Connection closed: #<Connection::-581839478>
+
+I [2014-04-23 13:05:39.682] [[32mDispatcher[0m] Started Event: client_disconnected
+I [2014-04-23 13:05:39.682] [[32mDispatcher[0m] [36mName:[0m client_disconnected
+I [2014-04-23 13:05:39.682] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-581839478>
+
+E [2014-04-23 13:05:39.684] [[31mDispatcher[0m] ArgumentError: wrong number of arguments (1 for 2)
+E [2014-04-23 13:05:39.684] [[31mDispatcher[0m] /home/bahgat/ws42-chat/app/controllers/chat_controller.rb:8:in `system_msg'
+E [2014-04-23 13:05:39.684] [[31mDispatcher[0m] /home/bahgat/ws42-chat/app/controllers/chat_controller.rb:44:in `delete_user'
+E [2014-04-23 13:05:39.684] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/base_controller.rb:27:in `process_action'
+E [2014-04-23 13:05:39.684] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+E [2014-04-23 13:05:39.684] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:373:in `_run__217168196__process_action__callbacks'
+E [2014-04-23 13:05:39.685] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+E [2014-04-23 13:05:39.685] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+E [2014-04-23 13:05:39.685] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/dispatcher.rb:65:in `block (3 levels) in route'
+E [2014-04-23 13:05:39.685] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/logging.rb:67:in `call'
+E [2014-04-23 13:05:39.685] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/logging.rb:67:in `log_event'
+E [2014-04-23 13:05:39.685] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/dispatcher.rb:62:in `block (2 levels) in route'
+
+I [2014-04-23 13:21:03.808] [[32mConnectionManager[0m] Connection opened: #<Connection::-592114898>
+
+I [2014-04-23 13:21:03.808] [[32mDispatcher[0m] Started Event: client_connected
+I [2014-04-23 13:21:03.808] [[32mDispatcher[0m] [36mName:[0m client_connected
+I [2014-04-23 13:21:03.808] [[32mDispatcher[0m] [36mData:[0m {"connection_id"=>-592114898}
+I [2014-04-23 13:21:03.809] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:03.810] [[32mDispatcher[0m] Event client_connected Finished in 0.001101769 seconds
+
+I [2014-04-23 13:21:03.847] [[32mDispatcher[0m] Started Event: new_user
+I [2014-04-23 13:21:03.847] [[32mDispatcher[0m] [36mName:[0m new_user
+I [2014-04-23 13:21:03.847] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Guest_360"}
+I [2014-04-23 13:21:03.847] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:03.851] [[32mDispatcher[0m] Event new_user Finished in 0.003389159 seconds
+
+I [2014-04-23 13:21:06.956] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:21:06.956] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:21:06.956] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"A"}
+I [2014-04-23 13:21:06.956] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:06.957] [[32mDispatcher[0m] Event change_username Finished in 0.000849197 seconds
+
+I [2014-04-23 13:21:07.217] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:21:07.219] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:21:07.219] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"A"}
+I [2014-04-23 13:21:07.220] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:07.241] [[32mDispatcher[0m] Event change_username Finished in 0.001856452 seconds
+
+I [2014-04-23 13:21:07.161] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:21:07.161] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:21:07.161] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Al"}
+I [2014-04-23 13:21:07.161] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:07.162] [[32mDispatcher[0m] Event change_username Finished in 0.000971659 seconds
+
+I [2014-04-23 13:21:07.748] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:21:07.748] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:21:07.748] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Ali"}
+I [2014-04-23 13:21:07.748] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:07.749] [[32mDispatcher[0m] Event change_username Finished in 0.00105017 seconds
+
+I [2014-04-23 13:21:10.884] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 13:21:10.884] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 13:21:10.884] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Ali", "msg_body"=>"hello"}
+I [2014-04-23 13:21:10.884] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:10.885] [[32mDispatcher[0m] Event new_message Finished in 0.001056102 seconds
+
+I [2014-04-23 13:21:13.808] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:21:13.808] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:21:13.808] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:21:13.808] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:13.809] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.00017913 seconds
+
+I [2014-04-23 13:21:16.821] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:21:16.821] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:21:16.821] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"B"}
+I [2014-04-23 13:21:16.821] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:16.822] [[32mDispatcher[0m] Event change_username Finished in 0.0009800810000000001 seconds
+
+I [2014-04-23 13:21:16.853] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:21:16.853] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:21:16.853] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"B"}
+I [2014-04-23 13:21:16.853] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:16.854] [[32mDispatcher[0m] Event change_username Finished in 0.000975576 seconds
+
+I [2014-04-23 13:21:17.134] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:21:17.134] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:21:17.134] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Ba"}
+I [2014-04-23 13:21:17.134] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:17.135] [[32mDispatcher[0m] Event change_username Finished in 0.000972683 seconds
+
+I [2014-04-23 13:21:17.282] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:21:17.282] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:21:17.282] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Bah"}
+I [2014-04-23 13:21:17.282] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:17.283] [[32mDispatcher[0m] Event change_username Finished in 0.000893468 seconds
+
+I [2014-04-23 13:21:17.431] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:21:17.431] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:21:17.431] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Bahg"}
+I [2014-04-23 13:21:17.431] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:17.433] [[32mDispatcher[0m] Event change_username Finished in 0.001027223 seconds
+
+I [2014-04-23 13:21:17.550] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:21:17.551] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:21:17.551] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Bahga"}
+I [2014-04-23 13:21:17.551] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:17.552] [[32mDispatcher[0m] Event change_username Finished in 0.000916142 seconds
+
+I [2014-04-23 13:21:17.683] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:21:17.683] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:21:17.683] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Bahgat"}
+I [2014-04-23 13:21:17.683] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:17.684] [[32mDispatcher[0m] Event change_username Finished in 0.001016289 seconds
+
+I [2014-04-23 13:21:23.402] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 13:21:23.403] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 13:21:23.403] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Bahgat", "msg_body"=>"Bahgat"}
+I [2014-04-23 13:21:23.403] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:23.404] [[32mDispatcher[0m] Event new_message Finished in 0.001362337 seconds
+
+I [2014-04-23 13:21:23.809] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:21:23.810] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:21:23.810] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:21:23.810] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:23.810] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000054422 seconds
+
+I [2014-04-23 13:21:33.811] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:21:33.811] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:21:33.811] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:21:33.811] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:33.811] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047052 seconds
+
+I [2014-04-23 13:21:43.822] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:21:43.822] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:21:43.822] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:21:43.822] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:43.822] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000046722 seconds
+
+I [2014-04-23 13:21:53.828] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:21:53.829] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:21:53.829] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:21:53.829] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+I [2014-04-23 13:21:53.829] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000053201 seconds
+
+I [2014-04-23 13:22:00.733] [[32mConnectionManager[0m] Connection closed: #<Connection::-592114898>
+
+I [2014-04-23 13:22:00.734] [[32mDispatcher[0m] Started Event: client_disconnected
+I [2014-04-23 13:22:00.734] [[32mDispatcher[0m] [36mName:[0m client_disconnected
+I [2014-04-23 13:22:00.734] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-592114898>
+
+E [2014-04-23 13:22:00.735] [[31mDispatcher[0m] ArgumentError: wrong number of arguments (1 for 2)
+E [2014-04-23 13:22:00.735] [[31mDispatcher[0m] /home/bahgat/ws42-chat/app/controllers/chat_controller.rb:8:in `system_msg'
+E [2014-04-23 13:22:00.735] [[31mDispatcher[0m] /home/bahgat/ws42-chat/app/controllers/chat_controller.rb:44:in `delete_user'
+E [2014-04-23 13:22:00.735] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/base_controller.rb:27:in `process_action'
+E [2014-04-23 13:22:00.735] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+E [2014-04-23 13:22:00.735] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:373:in `_run__397624274__process_action__callbacks'
+E [2014-04-23 13:22:00.735] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+E [2014-04-23 13:22:00.735] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+E [2014-04-23 13:22:00.735] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/dispatcher.rb:65:in `block (3 levels) in route'
+E [2014-04-23 13:22:00.735] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/logging.rb:67:in `call'
+E [2014-04-23 13:22:00.735] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/logging.rb:67:in `log_event'
+E [2014-04-23 13:22:00.735] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/dispatcher.rb:62:in `block (2 levels) in route'
+
+I [2014-04-23 13:22:00.885] [[32mConnectionManager[0m] Connection opened: #<Connection::-598221558>
+
+I [2014-04-23 13:22:00.885] [[32mDispatcher[0m] Started Event: client_connected
+I [2014-04-23 13:22:00.885] [[32mDispatcher[0m] [36mName:[0m client_connected
+I [2014-04-23 13:22:00.885] [[32mDispatcher[0m] [36mData:[0m {"connection_id"=>-598221558}
+I [2014-04-23 13:22:00.885] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-598221558>
+
+I [2014-04-23 13:22:00.886] [[32mDispatcher[0m] Event client_connected Finished in 0.00087563 seconds
+
+I [2014-04-23 13:22:00.914] [[32mDispatcher[0m] Started Event: new_user
+I [2014-04-23 13:22:00.914] [[32mDispatcher[0m] [36mName:[0m new_user
+I [2014-04-23 13:22:00.914] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Guest_601"}
+I [2014-04-23 13:22:00.914] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-598221558>
+
+I [2014-04-23 13:22:00.915] [[32mDispatcher[0m] Event new_user Finished in 0.001222229 seconds
+
+I [2014-04-23 13:22:08.667] [[32mConnectionManager[0m] Connection closed: #<Connection::-598221558>
+
+I [2014-04-23 13:22:08.667] [[32mDispatcher[0m] Started Event: client_disconnected
+I [2014-04-23 13:22:08.667] [[32mDispatcher[0m] [36mName:[0m client_disconnected
+I [2014-04-23 13:22:08.667] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-598221558>
+
+E [2014-04-23 13:22:08.668] [[31mDispatcher[0m] ArgumentError: wrong number of arguments (1 for 2)
+E [2014-04-23 13:22:08.668] [[31mDispatcher[0m] /home/bahgat/ws42-chat/app/controllers/chat_controller.rb:8:in `system_msg'
+E [2014-04-23 13:22:08.668] [[31mDispatcher[0m] /home/bahgat/ws42-chat/app/controllers/chat_controller.rb:44:in `delete_user'
+E [2014-04-23 13:22:08.669] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/base_controller.rb:27:in `process_action'
+E [2014-04-23 13:22:08.669] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+E [2014-04-23 13:22:08.669] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:373:in `_run__397624274__process_action__callbacks'
+E [2014-04-23 13:22:08.669] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/activesupport-4.0.0/lib/active_support/callbacks.rb:80:in `run_callbacks'
+E [2014-04-23 13:22:08.669] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+E [2014-04-23 13:22:08.669] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/dispatcher.rb:65:in `block (3 levels) in route'
+E [2014-04-23 13:22:08.669] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/logging.rb:67:in `call'
+E [2014-04-23 13:22:08.669] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/logging.rb:67:in `log_event'
+E [2014-04-23 13:22:08.669] [[31mDispatcher[0m] /home/bahgat/.rbenv/versions/2.0.0-p451/lib/ruby/gems/2.0.0/bundler/gems/websocket-rails-6662c1c54d55/lib/websocket_rails/dispatcher.rb:62:in `block (2 levels) in route'
+
+I [2014-04-23 13:34:49.311] [[32mConnectionManager[0m] Connection opened: #<Connection::-589962088>
+
+I [2014-04-23 13:34:49.312] [[32mDispatcher[0m] Started Event: client_connected
+I [2014-04-23 13:34:49.312] [[32mDispatcher[0m] [36mName:[0m client_connected
+I [2014-04-23 13:34:49.312] [[32mDispatcher[0m] [36mData:[0m {"connection_id"=>-589962088}
+I [2014-04-23 13:34:49.312] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:34:49.314] [[32mDispatcher[0m] Event client_connected Finished in 0.001172539 seconds
+
+I [2014-04-23 13:34:49.347] [[32mDispatcher[0m] Started Event: new_user
+I [2014-04-23 13:34:49.347] [[32mDispatcher[0m] [36mName:[0m new_user
+I [2014-04-23 13:34:49.347] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Guest_139"}
+I [2014-04-23 13:34:49.347] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:34:49.369] [[32mDispatcher[0m] Event new_user Finished in 0.003379596 seconds
+
+I [2014-04-23 13:34:53.925] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:34:53.925] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:34:53.926] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"A"}
+I [2014-04-23 13:34:53.926] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:34:53.929] [[32mDispatcher[0m] Event change_username Finished in 0.002695604 seconds
+
+I [2014-04-23 13:34:53.959] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:34:53.959] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:34:53.959] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"A"}
+I [2014-04-23 13:34:53.959] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:34:53.961] [[32mDispatcher[0m] Event change_username Finished in 0.001609247 seconds
+
+I [2014-04-23 13:34:54.246] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:34:54.247] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:34:54.247] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Ah"}
+I [2014-04-23 13:34:54.247] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:34:54.248] [[32mDispatcher[0m] Event change_username Finished in 0.001055766 seconds
+
+I [2014-04-23 13:34:55.465] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:34:55.465] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:34:55.466] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Ahm"}
+I [2014-04-23 13:34:55.466] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:34:55.467] [[32mDispatcher[0m] Event change_username Finished in 0.001139991 seconds
+
+I [2014-04-23 13:34:55.589] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:34:55.589] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:34:55.589] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Ahme"}
+I [2014-04-23 13:34:55.589] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:34:55.590] [[32mDispatcher[0m] Event change_username Finished in 0.001124424 seconds
+
+I [2014-04-23 13:34:55.742] [[32mDispatcher[0m] Started Event: change_username
+I [2014-04-23 13:34:55.742] [[32mDispatcher[0m] [36mName:[0m change_username
+I [2014-04-23 13:34:55.742] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Ahmed"}
+I [2014-04-23 13:34:55.742] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:34:55.744] [[32mDispatcher[0m] Event change_username Finished in 0.001736323 seconds
+
+I [2014-04-23 13:34:58.110] [[32mDispatcher[0m] Started Event: new_message
+I [2014-04-23 13:34:58.110] [[32mDispatcher[0m] [36mName:[0m new_message
+I [2014-04-23 13:34:58.110] [[32mDispatcher[0m] [36mData:[0m {"user_name"=>"Ahmed", "msg_body"=>"hello"}
+I [2014-04-23 13:34:58.110] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:34:58.112] [[32mDispatcher[0m] Event new_message Finished in 0.001042323 seconds
+
+I [2014-04-23 13:34:59.307] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:34:59.308] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:34:59.308] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:34:59.308] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:34:59.308] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000257286 seconds
+
+I [2014-04-23 13:35:09.319] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:35:09.319] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:35:09.319] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:35:09.319] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:35:09.319] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000045081 seconds
+
+I [2014-04-23 13:35:19.320] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:35:19.320] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:35:19.320] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:35:19.321] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:35:19.321] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047417 seconds
+
+I [2014-04-23 13:35:29.331] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:35:29.332] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:35:29.332] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:35:29.332] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:35:29.332] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000046473 seconds
+
+I [2014-04-23 13:35:39.342] [[32mDispatcher[0m] Started Event: websocket_rails.pong
+I [2014-04-23 13:35:39.342] [[32mDispatcher[0m] [36mName:[0m websocket_rails.pong
+I [2014-04-23 13:35:39.342] [[32mDispatcher[0m] [36mData:[0m {}
+I [2014-04-23 13:35:39.342] [[32mDispatcher[0m] [36mConnection:[0m #<Connection::-589962088>
+
+I [2014-04-23 13:35:39.343] [[32mDispatcher[0m] Event websocket_rails.pong Finished in 0.000047454 seconds
+
+I [2014-04-23 13:35:39.907] [[32mConnectionManager[0m] Connection closed: #<Connection::-589962088>
+
