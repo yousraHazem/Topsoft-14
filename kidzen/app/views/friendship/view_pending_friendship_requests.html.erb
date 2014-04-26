@@ -1,0 +1,16 @@
+<h1>Pending Friendship requests</h1>
+  <%if @pending_friends.to_a !=[]%>
+    <%@pending_friends.to_a.each do |t|%>
+    <%user=RegisteredUser.where("id=#{t.registered_user_id}").first%>
+    <%s="#{user.first_name} #{user.family_name}"%>
+    <%=s%>
+    <%=link_to "accept friend request",:controller=>'friendship',
+    :action=>'accept_reject_friend_request',:friend_id=>t.registered_user_id,:status=>1%>
+    <%=link_to "reject friend request",:controller=>'friendship',
+    :action=>'accept_reject_friend_request',:friend_id=>t.registered_user_id,:status=>0%>
+  <br/>
+  <%end%>
+  <%else%>
+    <p>You Currently have no Pending Friendship Requests</p>
+<%end%>
+

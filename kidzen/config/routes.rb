@@ -34,6 +34,12 @@ Kidzen::Application.routes.draw do
   # End supervisor routes
 
 
+  # events path
+  
+  get "events/:id/view_friends", to: 'events#view_friends'
+  get "events/:id/destroy", to: 'events#destroy'
+  get "events/:id/invite/", to: 'events#invite_friend_to_an_event'
+
   # Session routes
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
@@ -96,8 +102,6 @@ Kidzen::Application.routes.draw do
   #resources :registered_users
 
 
-
-
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
@@ -106,5 +110,6 @@ Kidzen::Application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
 end
 

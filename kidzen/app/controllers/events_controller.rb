@@ -1,5 +1,27 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  skip_before_action  :set_event , only: [:view_friends]
+
+  #this method invite a friend to an events 
+  #Parameters : child id , invited friend id and event id
+  #Returns : None
+  #Approach : invite friend to an event
+  # Time Complexity : O(1)
+  #Author : Nouran Mamdouh
+  def invite_friend_to_an_event
+    @invite = Event_Invitations.create(:inviter=>current_user.id,
+    :invited=>params[friend_id],:event=>@event_id)
+  end
+  #this method to assign variable friends to child's friends
+  #Parameters : None
+  #Returns : None
+  #Approach : view child's friends
+  #Time Complexity : O(n)
+  #Author : Nouran Mamdouh
+  def view_friends
+    @child = Child.where("registered_user_id=#{current_user.id}").first
+    @friends = @child.friends
+  end
 
   # GET /events
   # GET /events.json
@@ -7,7 +29,7 @@ class EventsController < ApplicationController
   #assign variable events to all records in table Event
   #Parameters :None
   #Returns : None
-  #Approach : view all the events created 
+  #Approach : view all the events created
   # Time Complexity : O(1)
   #Author : Nouran Mamdouh
   def index
@@ -35,15 +57,16 @@ class EventsController < ApplicationController
   def edit
   end
   # POST /events
-  # POST /events.json
+  # POST /events.json 
   #this method creates a new event after submitting the form with the variables
   #Parameters : event parameters
-  #Returns : None
+  #Returns : Non
   #Approach : save the new event instance to the event model
   # Time Complexity : O(n)
   #Author : Nouran Mamdouh
   def create
     @event = Event.new(event_params)
+    @event_id=@event.id
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -93,12 +116,24 @@ class EventsController < ApplicationController
 
   
   private
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between action
+  #this method set event by id
+  #Parameters : id
+  #Returns : None
+  #Approach : set specific event to variable event
+  # Time Complexity : O(1)
+  #Author : Nouran Mamdouh
     def set_event
       @event = Event.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet, only allow the white list through.
+  #this method make us able to access the event attributes
+  #Parameters : None
+  #Returns : None
+  #Approach : get specific event column
+  # Time Complexity : O(1)
+  #Author : Nouran Mamdouh
     def event_params
       params.require(:event).permit(:location, :name, :date_time, :description)
     end

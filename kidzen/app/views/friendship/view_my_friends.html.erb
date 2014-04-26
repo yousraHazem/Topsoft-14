@@ -1,0 +1,11 @@
+<h1>My Friends</h1>
+  <%if @friends.to_a !=[]%>
+    <%@friends.to_a.each do |t|%>
+    <%user=RegisteredUser.where("id=#{t.registered_user_id}").first%>
+    <%s="#{user.first_name} #{user.family_name}"%>
+    <%=s%>
+  <br/>
+  <%end%>
+  <%else%>
+    <p>You Currently have no Friends</p>
+  <%end%>

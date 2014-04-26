@@ -3,6 +3,26 @@ class Child < ActiveRecord::Base
   belongs_to :registered_user, dependent: :destroy
 
 
+  has_many :friends,
+           :through => :friendships,
+           :conditions => "status = 'accepted'"
+
+  has_many :requested_friends,
+           :through => :friendships,
+           :source => :friend,
+           :conditions => "status = 'requested'", 
+           :order   => :created_at
+
+  has_many :pending_friends,
+           :through => :friendships,
+           :source => :friend,
+           :conditions => "status = 'pending'",
+           :order => :created_at
+
+  has_many :friendships,
+           :foreign_key => 'child1_id',
+           :dependent => :destroy
+
   # Checks if other is a friend of this child.
   # other - child
   # Authors: Ahmed H. Ismail
@@ -40,7 +60,7 @@ class Child < ActiveRecord::Base
     Friendship.create_friendship(self, child)
     supervisors = ChildParent.where(child: child.id)
     supervisors.each do |supervisor|
-      supervisor.notify_friend_request(self, child)
+    supervisor.notify_friend_request(self, child)
     end
   end
 
