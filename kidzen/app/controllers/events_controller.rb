@@ -9,7 +9,8 @@ class EventsController < ApplicationController
   # Time Complexity : O(1)
   #Author : Nouran Mamdouh
   def invite_friend_to_an_event
-    @invite = Event_Invitations.create(:inviter=>current_user.id,:invited=>params[friend_id],:event=>@event_id)
+    @invite = Event_Invitations.create(:inviter=>current_user.id,
+    :invited=>params[friend_id],:event=>@event_id)
   end
   #this method to assign variable friends to child's friends
   #Parameters : None
