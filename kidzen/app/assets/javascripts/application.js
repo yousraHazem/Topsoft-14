@@ -15,3 +15,5 @@
 //= require turbolinks
 //= require_tree .
 //= require cocoon
+//= require websocket_rails/main
+
