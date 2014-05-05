@@ -1,7 +1,15 @@
 # Controller for notifications
 # Authors: Ahmed H. Ismail
-class NotificationsController < ApplicationController
+class NotificationsController < WebsocketRails::BaseController
   helper NotificationActionHelper
+
+  # Called the first time a controller is set up.
+  # Which is when a controller is subscribed 
+  # to an event.
+  # Authors: Ahmed H. Ismail
+  def initialize_session
+
+  end
 
   # GET /notifications/pending
   # Lists notifications for currently logged in user.
