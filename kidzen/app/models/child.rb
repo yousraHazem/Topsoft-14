@@ -54,9 +54,6 @@ class Child < ActiveRecord::Base
   def notify_observers
   end
 
-  def notifications
-  end
-
   def write_message
   end
 
