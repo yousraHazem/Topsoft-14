@@ -82,7 +82,6 @@ class SupervisorsController < ApplicationController
     create_params = signup_params
     create_params[:banned] = false
     create_params[:permission] = perms
-    Rails.logger.debug("create_params: #{create_params.inspect}")
     @user = RegisteredUser.new(create_params)
     respond_to do |format|
       if @user.save

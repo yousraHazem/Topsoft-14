@@ -72,7 +72,6 @@ class ChildrenController < ApplicationController
     registered_user_params[:banned] = false
     registered_user_params[:permission] = perms
     # Log for debugging
-    Rails.logger.debug("registered_user_params: #{registered_user_params.inspect}")
     @user = RegisteredUser.new(registered_user_params)
     respond_to do |format| 
       if @user.save
