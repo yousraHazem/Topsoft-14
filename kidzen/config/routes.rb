@@ -14,8 +14,7 @@ Kidzen::Application.routes.draw do
   # Settings' actions
   post '/settings', to: 'registered_users#set_settings'
   get '/settings', to: 'registered_users#settings'
-  # Lists pending notifications
-  get "/notifications/pending", to: 'notifications#pending'
+
   # End generic routes
 
   # Supervisor routes:
