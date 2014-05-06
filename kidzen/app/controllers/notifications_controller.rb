@@ -2,29 +2,41 @@
 # Authors: Ahmed H. Ismail
 class NotificationsController < WebsocketRails::BaseController
   helper NotificationActionHelper
+  before_action :set_user
 
   # Called the first time a controller is set up.
   # Which is when a controller is subscribed 
   # to an event.
-  # Authors: Ahmed H. Ismail
+  # Authors: Ahmed H. Ismail.
   def initialize_session
 
   end
 
-  # GET /notifications/pending
-  # Lists notifications for currently logged in user.
-  # Authors: Ahmed H. Ismail
-  def pending
-    # First we need to find out if someone is logged in
-    if signed_in?
-      @notifications = current_user.pending_notifications
-      render layout: false
-    else
-      # No one signed in
-      render layout: false, nothing: true
-    end
+  # Lists all notifications.
+  # Read and undread.
+  # Authors: Ahmed H. Ismail.
+  def index
+  end
+
+  # Lists unread notifications only.
+  # Authors: Ahmed H. Ismail.
+  def pending 
+      notifications = @user.pending_notifications
+      message :pending_notifications 
   end
 
 
+  private 
+
+  # Triggers a failure event if 
+  # No one is currently logged in.
+  # Authors: Ahmed H. Ismail.
+  def  set_user
+    if signed_in?
+      @user = current_user
+    else
+      trigger_failure "signin"
+    end
+  end
 
 end
