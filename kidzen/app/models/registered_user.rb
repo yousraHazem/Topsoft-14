@@ -117,6 +117,7 @@ class RegisteredUser < ActiveRecord::Base
         if self.notification_by_email
             UserMailer.notification_by_email(email, notification).deliver 
         end
+        send_notification(notification)
     end
 
     # Retrieves Pending notifications
@@ -154,6 +155,18 @@ class RegisteredUser < ActiveRecord::Base
         update_attributes(notification_by_email: notification_by_email)
     end
 
+    private 
 
+    #  Sends a notification via WebSocket.
+    # If the user is subscribed to them.
+    # notification - notification to send.
+    # Authors: Ahmed H. Ismail
+    def send_notification(notification)
+        subscribers = WebSocketRails.users
+        if subscribers.has_key? id
+            connection = subscribers[id]
+            connection.send_message :new, notification.hashify, namespace: :notifications
+        end
+    end
 
 end

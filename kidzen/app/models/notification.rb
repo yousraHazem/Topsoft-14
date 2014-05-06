@@ -86,4 +86,13 @@ class Notification < ActiveRecord::Base
   end
 
 
+  # Returns the proper format
+  # for transporting over WebSocket
+  # to clients. Includes Actions.
+  # Authors: Ahmed H. Ismail
+  def hashify(notification)
+    notification # TODO: Implement
+  end
+
+  
 end
