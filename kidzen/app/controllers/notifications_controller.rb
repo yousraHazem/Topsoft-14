@@ -34,13 +34,15 @@ class NotificationsController < WebsocketRails::BaseController
   # Read and undread.
   # Authors: Ahmed H. Ismail.
   def index
-    send_message :index, @user.all_notifications, namespace: :notifications
+    message = @user.all_notifications.map { |n| n.hashify }
+    send_message :index, message, namespace: :notifications
   end
 
   # Lists unread notifications only.
   # Authors: Ahmed H. Ismail.
   def pending 
-    send_message :pending, @user.pending_notifications, namespace: :notifications
+    message = @user.pending_notifications.map { |n| n.hashify }
+    send_message :pending, message, namespace: :notifications
   end
 
   # Marks a notification as read.
