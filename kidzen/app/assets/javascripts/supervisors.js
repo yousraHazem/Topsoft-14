@@ -3,6 +3,7 @@
 //= require turbolinks
 //= require cocoon
 //= require websocket_rails/main
+//= require notifications.js
 
 /*****************************************************************************
  * JavaScript file included with everything rendered with supervisor layout. *
@@ -39,4 +40,8 @@ function collapse (element) {
     console.log("Error in collapse function could not find checkBox");
   }
 }
+
+
+
+
 
