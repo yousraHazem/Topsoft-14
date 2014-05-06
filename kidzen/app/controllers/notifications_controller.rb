@@ -46,6 +46,8 @@ class NotificationsController < WebsocketRails::BaseController
   end
 
   # Marks a notification as read.
+  # Requires that notification instance 
+  # variable be set.
   # Authors: Ahmed H. Ismail
   def mark_read
     @notification.mark_read!
@@ -53,6 +55,10 @@ class NotificationsController < WebsocketRails::BaseController
     send_message :mark_read, message, namespace: :notifications
   end
 
+  # Marks a notification as unread.
+  # Requires that notification instance 
+  # variable be set.
+  # Authors: Ahmed H. Ismail.
   def mark_unread
     @notification.mark_unread!
     message = {status: :ok}
