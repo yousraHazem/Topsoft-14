@@ -125,6 +125,12 @@ class RegisteredUser < ActiveRecord::Base
       Notification.where(assigned_to: username, pending: true )
     end
 
+    # Retrives all notifications
+    # read and unread.
+    # Authors: Ahmed H. Ismail.
+    def all_notifications
+        notifications
+    end
 
 
     # Generates a random token
