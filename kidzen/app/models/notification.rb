@@ -91,12 +91,7 @@ class Notification < ActiveRecord::Base
   # to clients. Includes Actions.
   # Authors: Ahmed H. Ismail
   def hashify
-    hash = Hash.new
-    hash[:id] = id
-    hash[:pending] = pending
-    hash[:title] = title
-    hash[:short_desc] = short_desc
-    hash[:long_desc] = long_desc
+    hash = attributes
     hash[:actions] = notification_actions.map { |action| action.hashify  }
     return hash
   end
