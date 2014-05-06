@@ -8,6 +8,7 @@ class NotificationAction < ActiveRecord::Base
   # to clients.
   # Authors: Ahmed H. Ismail
   def hashify
+    return attributes
   end
 
 end
