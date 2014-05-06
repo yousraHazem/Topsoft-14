@@ -90,7 +90,7 @@ class Notification < ActiveRecord::Base
   # for transporting over WebSocket
   # to clients. Includes Actions.
   # Authors: Ahmed H. Ismail
-  def hashify(notification)
+  def hashify
     hash = Hash.new
     hash[:id] = id
     hash[:pending] = pending
