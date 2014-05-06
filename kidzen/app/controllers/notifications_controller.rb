@@ -10,7 +10,24 @@ class NotificationsController < WebsocketRails::BaseController
   # to an event.
   # Authors: Ahmed H. Ismail.
   def initialize_session
+ 
+  end
 
+  # Subscribes a client as interested in new notifications.
+  # Authors: Ahmed H. Ismail.
+  def subscribe 
+    subscribers[@user.id] = connection
+    message = {status: :ok}
+    send_message :subscribe, message, namespace: :notifications
+  end
+
+  # Unsubscribes a client. Triggered by a client who is no
+  # longer interested in new notifications.
+  # Authors: Ahmed H. Ismail.
+  def unsubscribe
+    subscribers(@user.id).delete
+    message = {status: :ok}
+    send_message :unsubscribe, message, namespace: :notifications
   end
 
   # Lists all notifications.
@@ -37,7 +54,7 @@ class NotificationsController < WebsocketRails::BaseController
   def mark_unread
     @notification.mark_unread!
     message = {status: :ok}
-    send_message :mark_read, message, namespace: :notifications
+    send_message :mark_unread, message, namespace: :notifications
   end
 
   private 
@@ -63,6 +80,10 @@ class NotificationsController < WebsocketRails::BaseController
     else
       trigger_failure "id"
     end
+  end
+
+  def subscribers
+    WebsocketRails.users
   end
 
 end
