@@ -30,10 +30,26 @@ class Notification < ActiveRecord::Base
     self[:pending] = false
   end
 
-  # Marks a notification as unread
+  # Marks a notification as read
+  # and saves.
+  # Authors: Ahmed H. Ismail
+  def mark_read!
+    mark_read
+    save
+  end
+
+  # Marks a notification as unread.
   # Authors: Ahmed H. Ismail
   def mark_unread
     self[:pending] = true
+  end
+
+  # Marks a notification as unread
+  # and saves.
+  # Authors: Ahmed H. Ismail
+  def mark_unread!
+    mark_unread
+    save
   end
 
 
