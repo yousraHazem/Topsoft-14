@@ -117,18 +117,6 @@
 }
 
 
-#left_panel {
-  float: left;
-  clear: both;
-  width: 200px;
-  height: 400px;
-  position: fixed;
-  margin-top: 0;
-  z-index: 2;
-  display: block;
-  top: 0;
-  bottom: 0;
-}
 
 .locale_button {
   float:right;
@@ -144,20 +132,6 @@
 }
 
 
-#notifications_container {
-  position: absolute;
-  width: 70%;
-  height: 100%;
-  font-family: cursive;
-  font-size: 1em;
-  overflow-y: scroll;
-  margin: auto; 
-
-}
-
-.notification_action {
-  display: inline-block;
-}
 
 #main_content {
   display: block;
