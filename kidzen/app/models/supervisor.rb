@@ -40,14 +40,11 @@ class Supervisor < ActiveRecord::Base
         return true
       else
         # Failed to save notification actions
-        Rails.logger.debug("notify_child_created failed to save notification actions for notification: #{notification.inspect}")
-        Rails.logger.debug("Actions array: #{actions.inspect}")
         notification.destroy
         return false
       end
     else 
       # Failed to save notification
-      Rails.logger.debug("notify_child_created failed to save notification : #{notification.inspect}")
       return false
     end
   end
@@ -64,14 +61,7 @@ class Supervisor < ActiveRecord::Base
     notification.title = "Friend Request #{child_2.full_name}"
     notification.short_desc = ""
     notification.long_desc = "#{child_1.full_name} sent a friend request to #{child_2.full_name}"
-
-      if notification.save
-        return true
-      else 
-        # Failed to save notification
-        Rails.logger.debug("notify_child_created failed to save notification : #{notification.inspect}")
-        return false
-      end
+    notification.save
   end
 
 
@@ -97,11 +87,12 @@ class Supervisor < ActiveRecord::Base
           # Everything is ok
           true
         else
-         Rails.logger.debug("notify_post_reported failed to save notification actions for notification: #{notification.inspect}")
-         Rails.logger.debug("Actions array: #{actions.inspect}")
+          # Failed to save actions
+          notification.destroy
+          false
         end
-      else 
-        Rails.logger.debug("notify_post_reported failed to save notification: #{notification.inspect}")
+      else
+        # Failed to save notification 
         false
       end
     else
@@ -127,10 +118,8 @@ class Supervisor < ActiveRecord::Base
   # Authors: Ahmed H. Ismail
   def accept_child(child)
     if child.guardian_email == registered_user.email
-      Rails.logger.debug("supervisor accept child : #{child.inspect}")
       child.update_attributes(is_approved: true) # Returns true
     else
-      Rails.logger.debug("supervisor accept child : guardian email mismatch")
       false # Not the guardian of this child
     end
   end
@@ -144,7 +133,6 @@ class Supervisor < ActiveRecord::Base
   def reject_child(child)    
     if child.guardian_email == registered_user.email
       # FIXME: Should child be banned?
-      Rails.logger.debug("supervisor reject child : #{child.inspect}")
       true 
     else
       false # Not the guardian of this child
