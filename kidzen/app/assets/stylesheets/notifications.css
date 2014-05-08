@@ -28,6 +28,6 @@
   background-image: url("collapsed.png");
 }
 
-#expList .expanded {
+#notifications_list .expanded {
   background-image: url("expanded.png");
 }
