@@ -10,6 +10,9 @@
  *
  *= require_self
  *= require_tree .
+ *= require blueimp-gallery
+ *= require blueimp-gallery-indicator
+ *= require blueimp-gallery-video
  */
 body {
 	margin:0;
