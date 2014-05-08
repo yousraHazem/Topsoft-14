@@ -6,7 +6,7 @@ gem 'rails', '4.0.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'cocoon'
-gem 'blueimp-gallery'
+
 gem "searchkick"
 
 # Use gem file devise to make sign in/up and adding info

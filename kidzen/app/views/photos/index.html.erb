@@ -1,28 +1,12 @@
-<link rel="stylesheet" href="css/blueimp-gallery.min.css">
-<div id="blueimp-gallery" class="blueimp-gallery">
-    <div class="slides"></div>
-    <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
+
+<% for photo in @photos %>
+<div class="photo"> 
+Description: <%= photo.description %> 
+<%= link_to "Show", photo %>
+<%= link_to "Edit", edit_photo_path(photo) %>
+<%= link_to "Destroy", photo, :confirm => 'Are you sure?', :method => :delete %> 
+<br>
 </div>
-<div id="links">
-   <% for photo in @photos %>
-   <%= link_to "",photo.image_url,:title => photo.description %>
-   <%= image_tag(photo.image_url(:thumb),  :width => 300, :height => 300, :alt => photo.description) %>
-   <% end %>
-</div>
-<script src="js/blueimp-gallery.min.js"></script>
-<script>
-document.getElementById('links').onclick = function (event) {
-    event = event || window.event;
-    var target = event.target || event.srcElement,
-        link = target.src ? target.parentNode : target,
-        options = {index: link, event: event},
-        links = this.getElementsByTagName('a');
-    blueimp.Gallery(links, options);
-};
-</script>
+<% end %>
+
 <p><%= link_to "New Photo", new_photo_path %></p>
