@@ -9,6 +9,7 @@ WebsocketRails::EventMap.describe do
     subscribe :mark_read, 'notifications#mark_read'
     subscribe :mark_unread, 'notifications#mark_unread'
     subscribe :subscribe, 'notifications#subscribe'
+    
   end
   # Notification Events end.
   # Authors: Ahmed H. Ismail.

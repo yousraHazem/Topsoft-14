@@ -1,34 +1,31 @@
-
 #notifications_list ul, li {
   list-style: none;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-  bottom: 100%;
-  position: absolute;
+  display: block;
 }
 
+#actual_notifications {
+  position: absolute;
+  bottom: 100%;
+  background: linear-gradient(45deg, rgba(206,219,233,1) 0%,rgba(170,197,222,1) 17%,rgba(97,153,199,1) 50%,rgba(58,132,195,1) 51%,rgba(65,154,214,1) 59%,rgba(75,184,240,1) 71%,rgba(58,139,194,1) 84%,rgba(38,85,139,1) 100%);
+  text-align: center;
+}
 
 #notifications_list {
   display: inline-block;
   position: absolute;
   bottom: 100%;
+  text-align: center;
 }
 
-#notifications_list span {
-  margin: 0;
+#notifications_list div {
   display: block;
 }
 
-#notifications_list span:hover {
+#notifications_list div:hover {
   background-color: #82D7E2;
 }
 
 #notifications_list li {
-  line-height:140%;
-  text-indent:0px;
-  background-position: 1px 8px;
-  padding-left: 20px;
   background-repeat: no-repeat;
 }
 
@@ -42,5 +39,27 @@
 }
 
 
+.notification {
+  background: linear-gradient(45deg, rgba(245,246,246,1) 0%,rgba(219,220,226,1) 21%,rgba(184,186,198,1) 49%,rgba(221,223,227,1) 80%,rgba(245,246,246,1) 100%);
+  width: 100px;
+  margin: auto;
 
+}
+
+.title {
+  font-family: Times, "Times New Roman", Georgia, serif;
+  font-weight: bold;
+}
+
+.long_desc {
+  font-family: Times, "Times New Roman", Georgia, serif;
+}
+
+.short_desc {
+  font-family: Times, "Times New Roman", Georgia, serif;
+}
+
+.clickable_notification {
+  cursor: pointer;
+}
 
