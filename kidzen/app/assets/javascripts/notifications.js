@@ -5,7 +5,8 @@
 
 var notifications_connection = new WebSocketRails(location.host + "/websocket");
 notifications_connection.bind("notifications.pending", pending_event);
-notifications_connection.bend("notifications.new", new_notification);
+notifications_connection.bind("notifications.new", new_notification);
+
 
 /******************************************
  * Handles notifications.pending event.   *
@@ -41,3 +42,32 @@ function subscribe() {
 function new_notification(notification) {
   console.log(notification); // TODO: Implement
 }
+
+/***********************************************************
+ * Returns an HTML element that represents a notification. *
+ ***********************************************************/
+function notification_pretty_printer() {
+
+}
+
+
+
+/************************************
+ * Initializes notificiations list. *
+ * Authors: Ahmed H. Ismail.        *
+ ************************************/
+function init_notification_list() {
+  // add on click event
+  $('#notifications_list').find('li:has(ul)')
+    .click( function(event) {
+      if (this == event.target) {
+        $(this).toggleClass('expanded');
+        $(this).children('ul').toggle('medium');
+      }
+      return false;
+    })
+    .addClass('collapsed')
+    .children('ul').hide();
+}
+
+$(document).ready(init_notification_list);
