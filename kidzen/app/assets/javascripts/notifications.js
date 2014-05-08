@@ -68,6 +68,12 @@ function init_notification_list() {
     })
     .addClass('collapsed')
     .children('ul').hide();
+
+    // click functionality of links 
+    $('#notifications_list a').unbind('click').click(function() {
+      window.open($(this).attr('href'));
+      return false;
+  });
 }
 
 $(document).ready(init_notification_list);

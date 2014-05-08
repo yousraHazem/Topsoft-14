@@ -4,14 +4,20 @@
   margin: 0;
   padding: 0;
   cursor: pointer;
+
 }
 
-#notifications_list p {
+#notifications_list {
+  display: inline-block;
+  bottom: 100%;
+}
+
+#notifications_list span {
   margin: 0;
   display: block;
 }
 
-#notifications_list p:hover {
+#notifications_list span:hover {
   background-color: #FF0000;
 }
 
@@ -31,3 +37,12 @@
 #notifications_list .expanded {
   background-image: url("expanded.png");
 }
+
+
+#notifications_list:hover ul li:hover ul {
+    position: absolute;
+    margin-top: 1px;
+    font: 10px;
+    bottom: 100%; /* added this attribute */
+}
+

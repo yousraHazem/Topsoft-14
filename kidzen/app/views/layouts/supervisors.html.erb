@@ -6,6 +6,8 @@
   <title><%= t('supervisor_layout_title') %></title>
   <meta charset="utf-8">
   <%= stylesheet_link_tag    "supervisors", media: "all", "data-turbolinks-track" => true %>
+
+  <%= stylesheet_link_tag    "notifications" %>
   <%= yield :stylesheet_includes %>
   <%= javascript_include_tag "supervisors", "data-turbolinks-track" => true %>
   <%= javascript_include_tag("notification_action.js") %>
@@ -32,8 +34,14 @@
   <div id="main_content">
     <%= yield %>
   </div>
+  
   <br/>
-  <ul id="notifications_list_container">
+
+  
+
+
+  <footer>
+  <ul id="notifications_list">
     <li>Notifications
       <ul id="actual_notifications">
           <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis ultricies arcu, quis porttitor risus placerat et. Proin quis metus diam, quis bibendum dolor. Nulla nec dapibus nunc. Quisque ac erat sit amet nisl venenatis consequat nec in nibh. Aliquam viverra vestibulum elit faucibus sollicitudin.</span>
@@ -43,9 +51,6 @@
       </ul>
     </li>
   </ul>
-
-
-  <footer>
       <div class="round_button">
         <%= link_to "Sign out", signout_path, method: "delete", class: "round_inner" %>
       </div>
