@@ -1,0 +1,2 @@
+class ContentProvidersController < ApplicationController
+end
