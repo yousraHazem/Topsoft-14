@@ -48,9 +48,10 @@ function new_notification(notification) {
 
   if(notification.embedded_view_url != null) {
     li.onclick = function() {
-      window.open(notification.embedded_view_url);
-      li.classList.add('clickable_notification')
+      window.open(notification.embedded_view_url); 
     }
+
+    li.classList.add('clickable_notification');
   }
 }
 
