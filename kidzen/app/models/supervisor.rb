@@ -25,8 +25,8 @@ class Supervisor < ActiveRecord::Base
     notification = Notification.new
     # Set attributes
     notification.pending = true
-    notification.title = "New child #{child.registered_user.full_name}"
-    notification.short_desc = "A new child needs approval."
+    notification.title = "A new child needs approval."
+    notification.short_desc = "New child #{child.registered_user.full_name}"
     notification.long_desc = " "
     notification.embedded_view_url = nil
     # Enqueue
