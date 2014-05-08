@@ -4,11 +4,14 @@
   margin: 0;
   padding: 0;
   cursor: pointer;
-
+  bottom: 100%;
+  position: absolute;
 }
+
 
 #notifications_list {
   display: inline-block;
+  position: absolute;
   bottom: 100%;
 }
 
@@ -39,10 +42,5 @@
 }
 
 
-#notifications_list:hover ul li:hover ul {
-    position: absolute;
-    margin-top: 1px;
-    font: 10px;
-    bottom: 100%; /* added this attribute */
-}
+
 
