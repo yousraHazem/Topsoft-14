@@ -45,7 +45,10 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(m_params)
     @message.sender = current_user.email
-    @message.save
+    if RegisteredUser.where(:email => @message.recepient)
+       @message.save
+     end 
+    
     
     respond_to do |format|
       if @message.save
