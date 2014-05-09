@@ -12,7 +12,10 @@
   <%= yield :stylesheet_includes %>
   <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
-
+  <%= render partial: 'layouts/social_media_scripts' %>
+  <meta property="og:title" content="Kiddizen" />
+  <meta property="og:image" content="http://kiddizen.net/assets/header_images.jpg" />
+  <meta property="og:description" content="Social Network for kids" />
 </head>
 
 <link rel="shortcut icon" href="/assets/icon.gif"/>
@@ -176,7 +179,7 @@
   </br>
   </br>
 
-
+  <%= render partial: 'layouts/social_media' %>
 </body>
 </html>
 
