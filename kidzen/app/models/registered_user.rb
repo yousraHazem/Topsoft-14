@@ -2,7 +2,7 @@
 # RegisteredUser.
 # Authors: Ahmed H. Ismail
 class RegisteredUser < ActiveRecord::Base
-  searchkick autocomplete: [:username, :first_name, :middle_name, :family_name, :nickname, :email]  
+  searchkick autocomplete: [:username, :first_name, :middle_name, :family_name, :email]  
   private
     VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
 
