@@ -1,0 +1,97 @@
+
+  <div class='triangle'>
+  <a href='#' class='option' data-inf='portion'>
+    <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
+  </a>
+</div>
+<br>
+<div class='content'>
+<div id="square">
+  <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
+</div>
+</div>
+<div class='content'>
+<div id="circle">
+  <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
+</div>
+</div>
+<style>
+body { }
+.triangle {
+  overflow: hidden;
+  position: relative;
+  left: 350px;
+  margin: 0 auto;
+  width: 100px; height: 100px;
+}
+.option, .option img { width: 100%; height: 100%; }
+.option {
+  overflow: hidden;
+  position: absolute;  
+  /* arctan(27 / 40) = 34.01935deg 
+   * need to skew by 90deg - 34.01935deg = 55.98065deg
+  */
+  transform: skewX(-55.98deg);
+}
+.option:first-child {
+  left: -.25em;
+  transform-origin: 100% 0;
+}
+.option:last-child {
+  right: -.25em;
+  transform-origin: 0 100%;
+}
+.option img { opacity: .75; transition: .5s; }
+.option img:hover { opacity: 1; }
+.option img, .option:after {
+  transform: skewX(55.98deg);
+  transform-origin: inherit;
+}
+.option:after {
+  position: absolute;
+  margin: .5em 1.65em;
+  color: white;
+  font: 500 1.25em Courier;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  content: attr(data-inf);
+}
+.option:first-child:after { top: 0; left: 0; }
+.option:last-child:after { right: 0; bottom: 0; }
+.content {
+
+}
+#square {
+    overflow:hidden;
+    width:100px;
+    height:100px;
+    position: relative;
+    left: 350px;
+    margin: 0 auto;
+    clear:both;
+}
+#circle img {
+  width: 100px;
+ height: 100px;
+ position: relative;
+ left: 350px;
+ margin: 0 auto;
+ background-size: cover;
+ display: block;
+ border-radius: 100px;
+ -webkit-border-radius: 100px;
+ -moz-border-radius: 100px;
+}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script type="text/javascript">
+ 
+$( init );
+ 
+function init() {
+  $('.triangle').draggable();
+  $('#square').draggable();
+  $('#circle').draggable();
+}
+</script>

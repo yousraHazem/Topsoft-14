@@ -1,0 +1,11 @@
+<%= form_for @drag_and_drop, html: { multipart: true } do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+   <p>
+   <%= f.label :image,"Upload your Theme from Here" %> <br />
+    <%= f.file_field :image %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
