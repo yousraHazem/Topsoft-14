@@ -83,6 +83,16 @@ class MessagesController < ApplicationController
   def m_params
     params.require(:message).permit(:subject, :body, :sender, :recepient, :read)
   end
+
+
+  #This function to filter the message from any offensive word
+
+  #Authours: Mina M. Misak
+  def filter_messages
+    #if(offensiveWords.find(@message.body))
+    # this function is waiting for the database table 
+  end
+
 end
 
 
