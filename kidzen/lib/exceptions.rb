@@ -24,4 +24,10 @@ module Exceptions
     end
   end
 
+  class SupervisorParamsError < ArgumentError
+    def initialize(message)
+      super(message)
+    end
+  end
+
 end

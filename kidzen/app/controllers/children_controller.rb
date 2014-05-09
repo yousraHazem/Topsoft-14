@@ -51,7 +51,6 @@ class ChildrenController < ApplicationController
     respond_to do |format|
       begin       
         @user = RegisteredUser.new(registered_user_params)
-
         raise RegisteredUserParamsError(@user.inspect) if not @user.save
         # registered user fields ok.
         # Finalize perms
@@ -69,17 +68,17 @@ class ChildrenController < ApplicationController
         end
         flash[:success] = "Welcome to kidzen!!"
         format.html { redirect_to @user }
-      rescue RegisteredUserParamsError: rpe
+      rescue RegisteredUserParamsError => rpe
         format.json { render json: @user.errors.full_messages }
         @errors = @user.errors.full_messages
         format.html { render :signup}
-      rescue PermissionParamsError: ppe
+      rescue PermissionParamsError => ppe
         format.json { render json: {status: "failed"} }
-        format.html {render file: File.join(Rails.root, 'public/500.html'), status: 500, layout: false }
-      rescue ChildParamsError: cpe
+        format.html { render file: File.join(Rails.root, 'public/500.html'), status: 500, layout: false }
+      rescue ChildParamsError => cpe
         @errors = @child_account.errors.full_messages
         @user.destory
-        format.json {render json: @errors}
+        format.json { render json: @errors }
         format.html { render :signup }
       end      
     end

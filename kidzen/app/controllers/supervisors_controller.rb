@@ -1,3 +1,4 @@
+require 'exceptions'
 # Supervisor controller
 # Authors: Ahmed H. Ismail
 class SupervisorsController < ApplicationController  
@@ -77,30 +78,31 @@ class SupervisorsController < ApplicationController
   # Creates a new supervisor
   # Authors: Ahmed H. Ismail
   def create
-    perms = Permission.supervisor_default
-    perms.save
-    create_params = signup_params
-    create_params[:banned] = false
-    create_params[:permission] = perms
-    Rails.logger.debug("create_params: #{create_params.inspect}")
-    @user = RegisteredUser.new(create_params)
-    respond_to do |format|
-      if @user.save
-        perms.registered_user = @user
-        perms.save
-        @supervisor = Supervisor.create(registered_user: @user)
+    respond_to do |format| 
+      begin
+        create_params = signup_params
+        create_params[:banned] = false
+        @user = RegisteredUser.new(create_params)
+        raise RegisteredUserParamsError(@user.inspect) if not @user.save
+        perms = Permission.supervisor_default(@user)
+        raise PermissionParamsError(create_params.inspect) if not perms.save
+        @supervisor = Supervisor.new(registered_user: @user)
+        raise SupervisorParamsError(create_params.inspect) if not @supervisor.save
         sign_in @user
         format.json { render json: {status: "ok"} }
         flash[:success] = "Welcome to kidzen!!"
         format.html { redirect_to @user }
-      else
-        perms.destroy
+      rescue RegisteredUserParamsError => rpe
         format.json { render json: @user.errors.full_messages }
-        format.html { render :signup}
+        format.html { render :signup }
+      rescue ArgumentError => ae
+        @user.destroy
+        format.json { render json: @user.errors.full_messages }
+        format.html { render :signup }
       end
     end
-
   end
+
 
 
   # This method gets email and supervisor id from the view and find the 
