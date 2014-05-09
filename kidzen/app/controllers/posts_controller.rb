@@ -1,30 +1,46 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-  # GET /posts
-  # GET /posts.json
+# GET /posts
+# GET /posts.json
+# Here we are assigning variables @posts and @post
+# Parameters : None
+# returns : None
+# Author : Abdelrahman Saad
   def index
     @posts = Post.find(:all, :order => 'posts.created_at DESC')
     @post = Post.new
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
+# GET /posts/1
+# GET /posts/1.json
+# Here we direct our post show page to our index html file
+# Parameters : None
+# returns : None
+# Author : Abdelrahman Saad
   def show
       redirect_to index 
   end
 
-  # GET /posts/new
+# GET /posts/new
+# Here we create a new instance of post
+# Parameters : None
+# returns : None
+# Author : Abdelrahman Saad
   def new
     @post = Post.new
   end
 
-  # GET /posts/1/edit
+# GET /posts/1/edit
   def edit
   end
 
-  # POST /posts
-  # POST /posts.json
+# POST /posts
+# POST /posts.json
+# Here we make a new post with parameters and add it to our database
+# Parameters : None
+# returns : None
+# Author : Abdelrahman Saad
   def create
     @post = Post.new(post_params)
 
@@ -39,8 +55,12 @@ class PostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
+# PATCH/PUT /posts/1
+# PATCH/PUT /posts/1.json
+# Here we update our post's attributes
+# Parameters : None
+# returns : None
+# Author : Abdelrahman Saad
   def update
     respond_to do |format|
       if @post.update(post_params)
@@ -53,8 +73,12 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
-  # DELETE /posts/1.json
+# DELETE /posts/1
+# DELETE /posts/1.json
+# Here we delete an instance of post
+# Parameters : None
+# returns : None
+# Author : Abdelrahman Saad
   def destroy
     @post.destroy
     respond_to do |format|
@@ -64,12 +88,20 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+# Use callbacks to share common setup or constraints between actions.
+# Here we set our variable @post to a certaing post by id
+# Parameters : None
+# returns : None
+# Author : Abdelrahman Saad
     def set_post
       @post = Post.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+# Never trust parameters from the scary internet, only allow the white list through.
+# Here we define our post attributes
+# Parameters : None
+# returns : None
+# Author : Abdelrahman Saad
     def post_params
       params.require(:post).permit(:title, :body)
     end
