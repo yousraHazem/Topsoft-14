@@ -135,5 +135,19 @@ class ChildrenController < ApplicationController
     def signup_params
       params.require(:child).permit(:first_name, :middle_name, :family_name, :gender, "birth_date(1i)", "birth_date(2i)", "birth_date(3i)", :email, :password, :password_confirmation, :username, :guardian_email)
     end
+  
+  # Adds a new interest the child.
+  # child - the object of the child currently signed in.
+  # interest - the interest the child wants to add.
+  # Authors: Ahmad H. Elhamshary.
+  def add_interests
+    child = Child.where("registered_user_id=#{current_registered_user.id}").first
+    interests = Interests.create( :id => params[:id], :name => params[:name])
+    child.interests << interests
+    flash[:notice] = "Your interest has been successfully added"
+  end
+
+
+
     
 end
