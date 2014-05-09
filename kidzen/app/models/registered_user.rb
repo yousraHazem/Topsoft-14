@@ -25,7 +25,6 @@ class RegisteredUser < ActiveRecord::Base
     validates :banned, inclusion: [true, false]
     # this needs to be in the javascript
     # validates :password, length: { minimum: 6 }
-    validates_associated :permission # Note: Don't use on both ends
     # Associations:
     has_one :permission, dependent: :destroy
     after_initialize  :cap_names
