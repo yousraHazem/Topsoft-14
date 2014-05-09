@@ -22,13 +22,14 @@ class Permission < ActiveRecord::Base
 
   # Returns default permissions
   # for supervisors
+  # RegisteredUser to be associated with.
   # Authors: Ahmed H. Ismail
-  def self.child_default
+  def self.child_default(user)
     perm_hash = Hash.new
     perm_hash[:account_creation] = false
     perm_hash[:supervisor] = false
     perm_hash[:child] = true
-    Permission.new(abilities: perm_hash)
+    Permission.new(abilities: perm_hash, registered_user: user)
   end
 
 
