@@ -47,30 +47,7 @@ class ChildrenController < ApplicationController
   # Uses UserMailer to handle the email sending logic.
   # child_params - sign up text feilds
   # Authors: Ammar M. ElWazir, Shary Beshara, Ahmed H. Ismail
-  def create 
-    perms = Permission.child_default
-    perms.save
-    super_duper_params = signup_params
-    registered_user_params = Hash.new
-    # Unpack params for registered_user
-    # TODO: Change to nested params and form
-    registered_user_params[:first_name] = super_duper_params[:first_name]
-    registered_user_params[:middle_name] = super_duper_params[:middle_name]
-    registered_user_params[:family_name] = super_duper_params[:family_name]
-    registered_user_params[:email] = super_duper_params[:email]
-    registered_user_params[:gender] = super_duper_params[:gender]
-    registered_user_params[:password] = super_duper_params[:password]
-    registered_user_params[:password_confirmation] = super_duper_params[:password_confirmation]
-    # Set up Date
-    year = super_duper_params["birth_date(1i)"].to_i
-    month = super_duper_params["birth_date(2i)"].to_i
-    day = super_duper_params["birth_date(3i)"].to_i
-    # Set Date
-    registered_user_params[:birth_date] = Date.new(year, month, day)
-    # More registered user params
-    registered_user_params[:username] = super_duper_params[:username]
-    registered_user_params[:banned] = false
-    registered_user_params[:permission] = perms
+  def create     
     # Log for debugging
     Rails.logger.debug("registered_user_params: #{registered_user_params.inspect}")
     @user = RegisteredUser.new(registered_user_params)
@@ -134,6 +111,31 @@ class ChildrenController < ApplicationController
 
     def signup_params
       params.require(:child).permit(:first_name, :middle_name, :family_name, :gender, "birth_date(1i)", "birth_date(2i)", "birth_date(3i)", :email, :password, :password_confirmation, :username, :guardian_email)
+    end
+
+    # Grabs registered_user params from signup_params.
+    # Returns hash containing params for RegisteredUser.
+    # Authors: Ahmed H. Ismail.
+    def registered_user_params
+      super_duper_params = signup_params
+      ru_params = Hash.new
+      ru_params[:first_name] = super_duper_params[:first_name]
+      ru_params[:middle_name] = super_duper_params[:middle_name]
+      ru_params[:family_name] = super_duper_params[:family_name]
+      ru_params[:email] = super_duper_params[:email]
+      ru_params[:gender] = super_duper_params[:gender]
+      ru_params[:password] = super_duper_params[:password]
+      ru_params[:password_confirmation] = super_duper_params[:password_confirmation]
+      # Set up Date
+      year = super_duper_params["birth_date(1i)"].to_i
+      month = super_duper_params["birth_date(2i)"].to_i
+      day = super_duper_params["birth_date(3i)"].to_i
+      # Set Date
+      ru_params[:birth_date] = Date.new(year, month, day)
+      # More registered user params
+      ru_params[:username] = super_duper_params[:username]
+      ru_params[:banned] = false
+      return ru_params
     end
     
 end
