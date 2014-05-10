@@ -45,20 +45,22 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(m_params)
     @message.sender = current_user.email
-    if RegisteredUser.where(:email => @message.recepient)
-       @message.save
-     end 
-    
-    
+    @re = @message.recepient
+
+    #if RegisteredUser.where(:email => @message.recepient)
+       #@message.save
+     #end 
     respond_to do |format|
-      if @message.save
+      if RegisteredUser.exists?(:email => @re)
+      #if
+       @message.save
         format.html { redirect_to :action => :index, notice: 'Message has been sent.' }
         format.json { render json: @messages }
       else
         format.html { redirect_to :action => :new, notice: 'Error: Please try again.' }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
-      end
+    end
   end
 
   # This function searches for the message and deletes the message from the table
