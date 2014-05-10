@@ -113,7 +113,7 @@ class GroupMembersController < ApplicationController
   # Time Complexity: O(n).
   # Author: Mohamed Bahgat Elrakaiby
   def view
-      @group_members = GroupMember.where(:group_id => params[:id], :owner_accept_state => 1)
+      @group_members = GroupMember.where(:group_id => params[:id], :owner_accept_state => 1, :member_accept_state => 1)
   end
 
   private
