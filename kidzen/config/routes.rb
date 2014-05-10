@@ -25,7 +25,7 @@ Kidzen::Application.routes.draw do
   get "/supervisors/dashboard", to: 'supervisors#show'
   put "/supervisors/accept_child", to: 'supervisors#accept_child'
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
-  get "/supervisors/signup", to: 'supervisors#signup'
+  get "/supervisors/signup", to: 'supervisors#signup', as: :parent_signup
   post "/supervisors/create", to: 'supervisors#create'
   # This routes to enable getting info from invite page
   get "supervisors/invite", to: 'supervisors#invite'
