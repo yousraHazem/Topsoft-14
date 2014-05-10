@@ -46,9 +46,9 @@ function new_notification(notification) {
   li.appendChild(notification_pretty_printer(notification));
   notificiations_list.appendChild(li);
 
-  if(notification.embedded_view_url != null) {
+  if(notification.custom_view_url != null) {
     li.onclick = function() {
-      window.open(notification.embedded_view_url); 
+      window.open(notification.custom_view_url); 
     }
 
     li.classList.add('clickable_notification');
