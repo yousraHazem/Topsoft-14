@@ -1,0 +1,34 @@
+<h1>Listing profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Name</th>
+      <th>Date time</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <%- #loop on each profile instance to view its detalis -%> 
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.location %></td>
+        <td><%= profile.name %></td>
+        <td><%= profile.date_time %></td>
+        <td><%= profile.description %></td>
+        <td><%= link_to 'Show', profile %></td>
+        <%- # editing an existing profile -%>
+        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%- #direct to create a new profile- -%>
+<%= link_to 'New profile', new_profile_path %>
