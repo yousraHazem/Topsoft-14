@@ -1,26 +1,35 @@
-
-  <div class='triangle'>
+<h3> Match shapes with their corresponding slots</h3>
+<br>
+<button type="button" onclick="history.go(0);"><i>Play Again</i></button>
+<br>
+<br>
+<div class='contentn'>
+ <div class='triangle'>
   <a href='#' class='option' data-inf='portion'>
     <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
   </a>
 </div>
 <br>
-<div class='content'>
+<br>
 <div id="square">
   <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
 </div>
-</div>
-<div class='content'>
+<br>
+<br>
 <div id="circle">
   <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
 </div>
+<br>
+<div id="sqrdrop"> </div>
+<div id="trdrop"> </div>
+<div id="crdrop"></div>
 </div>
 <style>
 body { }
 .triangle {
   overflow: hidden;
   position: relative;
-  left: 350px;
+  left: 300px;
   margin: 0 auto;
   width: 100px; height: 100px;
 }
@@ -58,40 +67,111 @@ body { }
 }
 .option:first-child:after { top: 0; left: 0; }
 .option:last-child:after { right: 0; bottom: 0; }
-.content {
-
+.contentn {
+width: 800px;
+height: 600px;
+background-color: #00CCCC;
+position: absolute;
 }
 #square {
     overflow:hidden;
     width:100px;
     height:100px;
     position: relative;
-    left: 350px;
+    left: 300px;
     margin: 0 auto;
     clear:both;
 }
-#circle img {
+#circle  {
+  overflow: hidden;
   width: 100px;
  height: 100px;
  position: relative;
- left: 350px;
- margin: 0 auto;
+ left: 300px;
+ margin: 0 auto; 
  background-size: cover;
- display: block;
+ display: block; 
  border-radius: 100px;
  -webkit-border-radius: 100px;
  -moz-border-radius: 100px;
+}
+#sqrdrop {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 30px;
+  background-color: gray;
+}
+#trdrop {
+overflow: hidden;
+width: 0;
+height: 0;
+position: absolute;
+left: 150px;
+text-indent: -9999px;
+border-bottom: 100px solid gray;
+border-left: 100px solid transparent;
+}
+#crdrop {
+ overflow: hidden;
+  width: 100px;
+ height: 100px;
+ position: absolute;
+ left: 300px;
+ margin: 0 auto; 
+ background-size: cover;
+ display: block; 
+ border-radius: 100px;
+ -webkit-border-radius: 100px;
+ -moz-border-radius: 100px;
+ background-color: gray; 
 }
 </style>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
 <script type="text/javascript">
- 
+ var matched = 0;
+  var score = 0;
 $( init );
  
 function init() {
-  $('.triangle').draggable();
-  $('#square').draggable();
-  $('#circle').draggable();
+   matched = 0;
+   score = 0;
+  $('.triangle').data('shape',1).draggable({
+    containment: '.contentn',
+    cursor: 'move',
+    snap: '.contentn'
+  });
+  $('#square').data('shape',2).draggable({
+    containment: '.contentn',
+    cursor: 'move',
+    snap: '.contentn'
+  });
+  $('#circle').data('shape',3).draggable({
+    containment: '.contentn',
+    cursor: 'move',
+   snap: '.contentn'
+  });
+ $('#sqrdrop').data('shape',2).droppable({
+    drop: handhide
+  });
+ $('#trdrop').data('shape',1).droppable({
+    drop: handhide
+  });
+  $('#crdrop').data('shape',3).droppable({
+    drop: handhide
+  });  
 }
+ function handhide(event ,ui) {
+  matched++;
+  var draggable = ui.draggable;
+  var contid = $(this).data('shape')
+  var shid = draggable.data('shape')
+  if(contid == shid) score++;
+  draggable.hide();
+  if(matched == 3)
+    alert('Your Score: '+score);
+
+} 
 </script>
