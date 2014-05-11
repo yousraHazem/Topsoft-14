@@ -4,7 +4,14 @@
   <%=f.input :group_name, required: true, label: 'Group name : ' %><br>
   <%=f.input :group_description, label: 'About the group : '%>
 
+  <% if !flash[:error].nil? %>
+    <div class="alert alert-error">
+      <button type="button" class="close" data-dismiss="alert" >Close error</button>
+      <strong><%= flash[:error] %></strong>
+    </div>
+  <% end %>
   <h6>Set Privacy :</h6>
+
   <!--<%=f.input :privacy, as: :radio_buttons %>-->
   <%= f.select :privacy, [ ["Private", "private"], ["Public", "public"] ] %>
   <br><br>
