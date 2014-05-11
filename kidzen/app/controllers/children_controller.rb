@@ -157,7 +157,16 @@ class ChildrenController < ApplicationController
     child.favourites << favourites
     flash[:notice] = "Your favourite has been successfully added"
   end
-
-
+  
+  # Adds a new hobby to the child.
+  # child - the object of the child currently signed in.
+  # hobbie - the favourite the child wants to add.
+  # Authors: Ahmad H. Elhamshary.
+  def add_hobbies
+    child = Child.where("registered_user_id=#{current_registered_user.id}").first
+    hobbies = Hobbies.create( :id => params[:id], :name => params[:name])
+    child.hobbies << hobbies
+    flash[:notice] = "Your hobby has been successfully added"
+  end
     
 end
