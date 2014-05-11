@@ -43,11 +43,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :test do
+group :development do
   gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.1.0'
-  gem 'rspec-rails', '~> 3.0.0.beta'
-  gem 'factory_girl_rails', '4.2.1'
+  gem 'capybara-rails'
+  gem 'rspec-rails'
+  gem "factory_girl_rails"
 end
 
 
