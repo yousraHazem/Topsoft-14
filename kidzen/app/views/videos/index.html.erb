@@ -1,12 +1,51 @@
 
-<% for video in @videos %>
-<div class="video"> 
-Description: <%= video.description %>
-Category: <%= video.category %>
-<%= link_to "Show", video %>
-<%= link_to "Destroy", video, :confirm => 'Are you sure?', :method => :delete %> 
-<br>
+<link rel="stylesheet" href="css/blueimp-gallery.min.css">
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
 </div>
-<% end %>
-
+<div id="links">
+   <% for video in @videos %>
+   <% if video.file? %>
+    <a
+        href="<%= video.real_file %>"
+        title="<%= video.description %>"
+        type="video/webm"
+        data-poster="<%= video.screenshot %>"
+    ><img src="<%= video.screenshot %>"
+    width = 300
+    heigth = 300
+    alt="<%= video.description %>">
+    </a>
+   <% end %>
+   <% if video.youtube? %>
+   <a
+        href="<%= "http://www.youtube.com/watch?v="+video.get_link %>"
+        title="<%= video.description %>"
+        type="text/html"
+        data-youtube="<%= video.get_link %>"
+        data-poster="<%= "http://img.youtube.com/vi/"+video.get_link+"/0.jpg" %>"
+    ><img src="<%= "http://img.youtube.com/vi/"+video.get_link+"/0.jpg" %>" 
+    width = 300
+    heigth = 300
+    alt="<%= video.description %>"></a>
+   <% end %>
+   <% end %>
+</div>
 <p><%= link_to "New Video", new_video_path %></p>
+<script src="js/blueimp-gallery.min.js"></script>
+<script>
+document.getElementById('links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+};
+</script>

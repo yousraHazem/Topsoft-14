@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 //= require cocoon
-//= require blueimp-gallery
+//= require blueimp-gallery-all
 //= require blueimp-gallery-fullscreen
 //= require blueimp-gallery-indicator
 //= require blueimp-gallery-video

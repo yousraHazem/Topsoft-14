@@ -54,19 +54,15 @@ class Video < ActiveRecord::Base
   # Time Complexity : O(1)
   # Author : Hussien M. Eloy 
   def video_params
-    params.require(:video).permit(:description, 
-    :category, :file, :real_file, :youtube)
+    params.require(:video).permit(:description, :category, :file, :real_file, :youtube, :screenshot)
   end
 
   # This method is used to convert the video entered by the user
   # Parameters : None
   # Returns : None
-  # Approach : The method use ffmpeg gem in 
-  # order to convert the video that give by the user
-  # that is suffixed by the extension mentioned above, 
-  # then it would convert it to .webm extension
-  # that is used in html 5 video player and updates the 
-  # real_file value with the new file that is passed 
+  # Approach : The method use ffmpeg gem in order to convert the video that give by the user
+  # that is suffixed by the extension mentioned above, then it would convert it to .webm extension
+  # that is used in html 5 video player and updates the real_file value with the new file that is passed 
   # to 'show' view,and finally save the record to validate the changes 
   # Time Complexity : O(1)
   # Author : Hussien M. Eloy 
@@ -75,6 +71,8 @@ class Video < ActiveRecord::Base
     FFMPEG::Movie.new("#{Rails.root}/public/uploads/video/file/#{self[:id]}/#{self[:file]}")
     new_video.transcode("#{Rails.root}/public/uploads/tmp/#{self[:id]}.webm")
     self[:real_file] = "/uploads/tmp/#{self[:id]}.webm"
+    new_video.screenshot("#{Rails.root}/public/uploads/tmp/scr#{self[:id]}.jpg", :seek_time => 3)
+    self[:screenshot] = "/uploads/tmp/scr#{self[:id]}.jpg"
     self.save
   end
 
@@ -103,8 +101,7 @@ class Video < ActiveRecord::Base
   # This method returns the value of the video description
   # Parameteres : None
   # Returns : description - string
-  # Approach : Just selecting the value of the 
-  # current video description from the database
+  # Approach : Just selecting the value of the current video description from the database
   # Time Complexity : O(n)
   # Author : Hussien M. Eloy
   def get_description
@@ -213,3 +210,4 @@ class Video < ActiveRecord::Base
   end
 
 end
+
