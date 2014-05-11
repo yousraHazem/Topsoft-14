@@ -102,7 +102,6 @@ function init_notification_list() {
       return false;
     }).addClass('collapsed')
     .children('ul').hide();
-
 }
 
 $(document).ready(function() {
