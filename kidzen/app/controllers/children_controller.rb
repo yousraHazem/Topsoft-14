@@ -1,4 +1,4 @@
-# Authors: Ammar M. ELWazir, Shary Beshara, Ahmed H. Ismail
+# Authors: Ammar M. ELWazir, Shary Beshara, Ahmed H. Ismail, Ahmad H. Elhamshary
 class ChildrenController < ApplicationController
 
   # GET /children/show
