@@ -61,13 +61,6 @@ class RegisteredUser < ActiveRecord::Base
       gender.downcase == "male"
     end
 
-    # # Am I a child?
-    # # Authors: Ahmed H. Ismail
-    # def child?
-    #   is_child
-    # end
-
-
     # Assigns first name.
     # name - string input
     # Authors: Ahmed H. Ismail
