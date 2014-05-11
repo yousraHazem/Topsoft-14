@@ -40,17 +40,14 @@ function subscribe() {
  * Authors: Ahmed H. Ismail.  *
  ******************************/
 function new_notification(notification) {
-
   var notificiations_list = document.getElementById('actual_notifications');
   var li = document.createElement('li');
   li.appendChild(notification_pretty_printer(notification));
   notificiations_list.appendChild(li);
-
   if(notification.custom_view_url != null) {
     li.onclick = function() {
       window.open(notification.custom_view_url); 
     }
-
     li.classList.add('clickable_notification');
   }
 }
@@ -70,7 +67,6 @@ function notification_pretty_printer(notification) {
   var sd_p = document.createElement('p');
   sd_p.appendChild(short_desc);
   sd_p.classList.add('short_desc');
-
   var long_desc = document.createTextNode(notification.long_desc);
   var ld_p = document.createElement('p');
   ld_p.appendChild(long_desc);
@@ -78,10 +74,7 @@ function notification_pretty_printer(notification) {
   div.appendChild(title_p);
   div.appendChild(sd_p);
   div.appendChild(ld_p);
-
-
   div.classList.add('notification');
-
   return div;
 }
 
