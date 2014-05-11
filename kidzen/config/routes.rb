@@ -1,5 +1,7 @@
 Kidzen::Application.routes.draw do
 
+  get "access_page/access"
+post '/settings', to: 'registered_users#set_settings'
   root 'registered_users#show'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
@@ -95,6 +97,11 @@ Kidzen::Application.routes.draw do
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   #resources :registered_users
 
+  # access page routes
+  get "access_page/access"
+  post '/access_page/access', to: 'access_page#access'
+  put 'access_page/delete_tag', to: 'access_page#delete_tag'
+  put 'access_page/update', to: 'access_page#update'		
 
 
 
