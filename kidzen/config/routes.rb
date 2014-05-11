@@ -39,7 +39,7 @@ Kidzen::Application.routes.draw do
   delete '/signout', to: 'sessions#destroy'
   get '/signout', to: 'sessions#destroy'
   # Children Signup paths
-  get '/signup', to: 'children#signup'
+  get '/signup', to: 'children#signup', as: :child_signup
   post '/children/create', to: 'children#create'
   get '/children/show', to: 'children#show'  
 
