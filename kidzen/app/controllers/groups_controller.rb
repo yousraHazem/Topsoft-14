@@ -80,6 +80,47 @@ class GroupsController < ApplicationController
     end
   end
 
+  # This is a function that allows a user to leave a group
+  # It retrieves the record to be deleted, save it in member then deletes it from the database
+  # no input, no output
+  # Returns nothing
+  # Time complexity: O(1).
+  # Author: Mohamed Bahgat Elrakaiby
+  def leave_group
+    if signed_in?
+      member = GroupMember.where(:username => current_user.username, :group_id => params[:id])
+      if member.blank?
+        redirect_to "/group_members/:id/not_member"
+      else
+        member.destroy_all
+        redirect_to @group
+      end
+    else
+    redirect_to session_path :new
+    end
+  end  
+
+  # This is a function that allows a user to join a group
+  # It checks first if the user is already a member, otherwise it insert it in a database for approval
+  # no input, no output
+  # Returns nothing
+  # Time complexity: O(1).
+  # Author: Mohamed Bahgat Elrakaiby
+  def join_group
+    if signed_in?
+      member = GroupMember.where(:username => current_user.username, :group_id => params[:id])
+      unless member.blank?
+        redirect_to "/group_members/:id/already_member"
+      else
+        member = GroupMember.new(:username => current_user.username, :group_id => params[:id], :owner_accept_state => 2)
+        member.save
+        redirect_to @group
+      end
+    else
+    redirect_to session_path :new
+    end
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_group

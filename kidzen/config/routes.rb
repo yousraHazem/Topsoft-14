@@ -81,9 +81,13 @@ Kidzen::Application.routes.draw do
   get "groups/:id/membership_requests" , to: 'group_members#membership_requests'
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
-  
+  get '/group_members/:id/view' , to:  'group_members#view'
+  post '/group_members/:id/view' => 'group_members#view'  
+  get '/group_members/:id/leave_group' , to:  'group_members#leave_group'
+  post '/group_members/:id/leave_group' => 'group_members#leave_group'
+  get '/group_members/:id/join_group' , to:  'group_members#join_group'
+  post '/group_members/:id/join_group' => 'group_members#join_group'    
 
-    
 
   # children routes
   get "child/verify"
