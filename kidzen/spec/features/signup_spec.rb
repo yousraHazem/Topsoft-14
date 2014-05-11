@@ -1,10 +1,8 @@
 require 'spec_helper'
 
 feature "parent signup" do 
-  
 
   scenario "Should be able to create a parent account" do
-
     visit parent_signup_path
     fill_in "First Name", with: "TestSuperFirst"
     fill_in "Middle Name", with: "TestSuperMiddle"
@@ -15,8 +13,7 @@ feature "parent signup" do
     fill_in "Password", with: "foobar"
     fill_in "confirm password", with: "foobar"
     expect {click_button "Create!"}.to change(RegisteredUser, :count).by(1) &&
-          change(Supervisor, :count).by(1)
-    
+      change(Supervisor, :count).by(1)    
   end
 
   scenario "Should be able to create a child account" do 
@@ -32,9 +29,8 @@ feature "parent signup" do
     fill_in "confirm password", with: "foobar"
     fill_in "Guardian email", with: "testsupermail@exmaple.com"
     expect {click_button "Create!"}.to change(RegisteredUser, :count).by(1) &&
-          change(Child, :count).by(1)
+      change(Child, :count).by(1)
   end
-
 
 end
   
