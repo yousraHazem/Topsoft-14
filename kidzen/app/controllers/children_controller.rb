@@ -140,7 +140,7 @@ class ChildrenController < ApplicationController
   # child - the object of the child currently signed in.
   # interest - the interest the child wants to add.
   # Authors: Ahmad H. Elhamshary.
-  def add_interests
+  def add_interest
     child = Child.where("registered_user_id=#{current_registered_user.id}").first
     interest = Interest.create( :id => params[:id], :name => params[:name])
     child.interests << interest
@@ -151,7 +151,7 @@ class ChildrenController < ApplicationController
   # child - the object of the child currently signed in.
   # favourite - the favourite the child wants to add.
   # Authors: Ahmad H. Elhamshary.
-  def add_favourites
+  def add_favourite
     child = Child.where("registered_user_id=#{current_registered_user.id}").first
     favourite = Favourite.create( :id => params[:id], :name => params[:name])
     child.favourites << favourite
@@ -162,7 +162,7 @@ class ChildrenController < ApplicationController
   # child - the object of the child currently signed in.
   # hobbie - the favourite the child wants to add.
   # Authors: Ahmad H. Elhamshary.
-  def add_hobbies
+  def add_hobby
     child = Child.where("registered_user_id=#{current_registered_user.id}").first
     hobby = Hobby.create( :id => params[:id], :name => params[:name])
     child.hobbies << hobbies
