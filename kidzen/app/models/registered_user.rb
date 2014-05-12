@@ -10,7 +10,7 @@ class RegisteredUser < ActiveRecord::Base
     # Creates the token.
     # Authors: Ahmed H. Ismail , Nouran Tarek Attia
     def create_remember_token
-      self.remember_token = digest(new_remember_token)
+      self.remember_token = RegisteredUser.digest(RegisteredUser.new_remember_token)
     end
 
   public

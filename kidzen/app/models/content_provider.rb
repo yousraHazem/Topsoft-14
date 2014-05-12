@@ -7,7 +7,7 @@ class ContentProvider < ActiveRecord::Base
   # Creates the token.
   # Authors: Ahmed H. Ismail , Nouran Tarek Attia
     def create_remember_token
-      self.remember_token = digest(new_remember_token)
+      self.remember_token = ContentProvider.digest(ContentProvider.new_remember_token)
     end
 
   public
