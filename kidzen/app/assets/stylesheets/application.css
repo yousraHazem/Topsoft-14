@@ -32,6 +32,7 @@ html {
 	background:url(/assets/bg1.jpg) center;
         background-repeat:no-repeat;
         background-size:contain;
+	background-attachment: fixed;
 }
 
 
@@ -512,3 +513,70 @@ ol li .send {
 	height:100%;
 	font:normal 11px Arial, Helvetica, sans-serif;
 }
+.bet_time2 {
+    position:absolute;
+    bottom:-200;
+    right:-220;
+}
+.bet_time1 {
+    position:absolute;
+    bottom:-540;
+    right:-220;
+}
+.box {
+    position:relative;
+}
+.bet_time {
+    position:absolute;
+    bottom:-570;
+    right:0;
+}
+.userName {
+	width: 150px;
+	height: 22px;
+	border: 1px teal solid;
+	float:left;
+}
+.chatBox {
+	font-family:tahoma;
+	font-size:12px;
+	color:black;
+	border: 1px teal solid;
+	height: 225px;
+	width: 400px;
+	overflow: scroll;
+	float:left;
+
+}
+.usersOnLine{
+	font-family:tahoma;
+	font-size:14;
+	color:orange;
+	border:1px teal solid;
+	width:150px;
+	height:225px;
+	overflow:scroll;
+	margin-left:1px;
+}
+.message {
+	width: 350px;
+	height: 22px;
+	border: 1px teal solid;
+	float:left;
+	margin-top:1px;
+}
+.send {
+	width: 50px;
+	height: 22px;
+	float:left;
+	margin:1px;
+}
+.serverRes{
+	width:150px;
+	height:22px;
+	border: 1px teal solid;
+	float:left;
+	margin:1px;
+}
+
+

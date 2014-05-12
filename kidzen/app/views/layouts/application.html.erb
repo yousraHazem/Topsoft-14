@@ -161,6 +161,35 @@
           </div>  
         </div>  
         <% end %>  
+	<% if signed_in? %>
+	<div class="box">
+	  <div class="bet_time2">
+	    No Friends Online :(
+	  </div>
+	</div>
+	<div class="box">
+	  <div class="bet_time1">
+	    <image src="/assets/chat.png" width="50px" height="60px" />
+	    Online Friends
+	  </div>
+	</div>
+	<div class="box">
+	  <div class="bet_time">
+	    <h3></DIC> Chat Box</h3>
+
+              <div id="chatBox"></div>
+
+              <div id="usersOnLine"></div>
+
+              <form id="messageForm">
+	        <input id="message" type="text">
+	        <input id="send" type="submit" value="Send">
+                <div id="serverRes"></div>
+              </form>
+	  </div>
+	</div>
+	<% else %>
+	<% end %>
 
   </br>
   </br>
