@@ -15,7 +15,13 @@ class SessionsController < ApplicationController
   # Creates a new session
   # Authors: Ahmed H. Ismail
   def create
-    user = RegisteredUser.find_by(email: params[:session][:email].downcase )
+    if RegisteredUser.exists?(email: params[:session][:email].downcase)
+      user = RegisteredUser.find_by(
+        email: params[:session][:email].downcase )
+    else
+      user = ContentProvider.find_by(
+        email: params[:session][:email].downcase)
+    end
     if user and user.authenticate(params[:session][:password])
       # Sign in user
       sign_in user

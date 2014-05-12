@@ -11,7 +11,8 @@ module SessionsHelper
     # Place token (plain text) in browser
     cookies.permanent[:remember_token] = remember_token
     # Save hashed token in browser
-    user.update_attribute(:remember_token, RegisteredUser.digest(remember_token))
+    user.update_attribute(:remember_token,
+      RegisteredUser.digest(remember_token))
     self.current_user = user
   end
 
@@ -19,7 +20,7 @@ module SessionsHelper
   # Authors: Ahmed H. Ismail
   def sign_out
       current_user.update_attribute(:remember_token,
-                                    RegisteredUser.digest(RegisteredUser.new_remember_token))
+        RegisteredUser.digest(RegisteredUser.new_remember_token))
       cookies.delete(:remember_token)
       self.current_user = nil
   end
@@ -30,11 +31,19 @@ module SessionsHelper
     @current_user = user
   end
 
-  # Retrive currently signed in user
-  # Authors: Ahmed H. Ismail
+  # Retrive currently signed in user.
+  # The user can either be a RegisteredUser (supervisor or child)
+  # or a ContentProvider.
+  # Authors: Ahmed H. Ismail, Nouran T. Attia.
   def current_user
     remember_token = RegisteredUser.digest(cookies[:remember_token])
-    @current_user ||= RegisteredUser.find_by(remember_token: remember_token)
+    if RegisteredUser.exists?(remember_token: remember_token)
+      @current_user ||= RegisteredUser.find_by(
+        remember_token: remember_token)
+    else
+      @current_user ||= ContentProvider.find_by(
+        remember_token: remember_token)
+    end
   end
 
   # Is someone signed in ?
