@@ -1,4 +1,4 @@
-#Ahamd H. Elhamshary
+#Author: Ahamd H. Elhamshary
 class Favourite < ActiveRecord::Base
 
 #Associations and validations.
