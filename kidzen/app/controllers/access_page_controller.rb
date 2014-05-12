@@ -4,8 +4,11 @@
 class AccessPageController < ApplicationController
 	skip_before_filter :verify_authenticity_token, only: [:delete_tag]
   skip_before_filter :verify_authenticity_token, only: [:update]
+  skip_before_filter :verify_authenticity_token, only: [:add]
+
   #This action is used to show the prevented Tags
   #Author:- Mohamed Khaled Abdelmeguid
+  #Child.first will be replaced by params [dependency waiting]
   def access
   #if signed_in?
   @banned = Keyword.new(params[:tag])
@@ -16,34 +19,33 @@ class AccessPageController < ApplicationController
  	end
  	#This action deletes the prevented tags from the tags list
   #Author:- Mohamed Khaled Abdelmeguid
-  #This action updates a child's options available upon the decision of the parent
-  #Author:- Mohamed Khaled Abdelmeguid
-  def update
-  @value = params[:valueUpdate]
-  @child = params[:child]
-  @ability = params[:abilityUpdate]
-  #new_hash = {'mutual_friends_rooms_only' => @value}
-  if @value == true
-    @upd = Permission.find_by(registered_user_id: 2, abilities: ['mutual_friends_rooms_only' => false])
-    if !@upd.nil?
-      @upd.update(:abilities => {'mutual_friends_rooms_only' => true})
-      @upd.save 
-    else
-      puts("error, No record with such option")
-    end  
-  end
-  if @value == false
-    @upd = Permission.find_by(registered_user_id: 2, abilities: ['mutual_friends_rooms_only' => true])
-    if !@upd.nil?
-      @upd.update(:abilities => {'mutual_friends_rooms_only' => false})
-      @upd.save 
-    else
-      puts("error, No record with such option")
-	  end
-  end  
+  def delete_tag
+  @permit = params[:tag]
+  @name = params[:child]
+  Keyword.where(child_name: @name, tag: @permit).each do |des|
+  des.destroy
+  end	
   respond_to do |format|
   format.json { render json: {status: "ok"} }
 	end
+  end
+  #This action is used to add a new prevented tag by submitting it
+  #and we first check if it's already found in the DB
+  #Author:- Mohamed Khaled AbdelMeguid
+  def add
+  @child = params[:child]
+  @ban = params[:ban]
+  if Keyword.find_by(child_name: @child, tag: @ban).nil?
+    @new = Keyword.new
+    @new.Child_name = @child
+    @new.tag = @ban
+    @new.save
+  else
+    puts("already exists")
+  end
+  respond_to do |format|
+  format.json { render json: {status: "ok"} }
+  end
   end
 end  
 

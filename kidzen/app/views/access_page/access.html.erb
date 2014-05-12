@@ -1,18 +1,19 @@
+
+<input type="text" id="submitTags" >
+<button onclick="ban(<%= "\"#{@child.registered_user.username}\"" %>)">Ban it!</button>
   
-  
-  <div class = "tags">  
-  <% if (Permission.find_by(registered_user_id: 2).abilities[:mutual_friends_rooms_only] = true) == true   %>
-  <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" checked > 
-    <text class = "tags"> mutual friends rooms only </text>
-  <br>
-  <% end %>
-  <% if (Permission.find_by(registered_user_id: 2).abilities[:mutual_friends_rooms_only] = false) == true %>
-  <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" > 
-    <text class = "tags"> mutual friends rooms only </text>
-  <br>
+  <% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
+    <div class = "whole">
+    <div id = "<%= key.tag %>">
+    <text class = "tags" > - <%= key.tag %> </text>
+    <button onclick = "deleteInfo(<%= "\"#{key.tag}\"" %> , <%= "\"#{@child.registered_user.username}\"" %> ) " class = "del" > 
+      X
+    </button>
+    
+  </div>
   <%end%>
   
-  </div>
+  
   
 
 
@@ -33,17 +34,27 @@ function create_ajax_request (url, data, callback) {
   return xhr;
 }
 
+  function deleteInfo (toBeDeleted, childName) {
+    Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+    };
+    var x = document.getElementById(toBeDeleted);
+    x.remove();
+    var url = ['http://' + location.host, 'access_page', 'delete_tag'].join('/');
+    var callback = function(responseJSON, xhr) {
+    }
+    create_ajax_request(url, {tag: toBeDeleted, child: childName}, callback);
+  }
+
   
 
-  function changeMutualRooms(childId) {
-    var checkBox = document.getElementById("mutual friends rooms only");
-    var abilityUpdate = "mutual_friends_rooms_only";
-    var valueUpdate = checkBox.checked;
-    prompt(valueUpdate);
-    var url = ['http://' + location.host, 'access_page', 'update'].join('/');
+  function ban(childName) {
+    var banned = document.getElementById("submitTags").value
+    prompt(banned + " is now banned for your child, Please refresh the page to view all of the tags to be able to delete them. Thanks !");
+    var url = ['http://' + location.host, 'access_page', 'add'].join('/');
     var callback = function(responseJSON, xhr) {
-  }
-  create_ajax_request(url, {ability: abilityUpdate, value: valueUpdate, child: childId}, callback);
+    }
+    create_ajax_request(url, {ban: banned, child: childName}, callback);
   }
 
 </script>
@@ -63,8 +74,8 @@ function create_ajax_request (url, data, callback) {
   vertical-align: middle;
 }
 .tags {
-  margin-top: 135px;
-  margin-right: 200px;
+  margin-right: 0px;
+  margin-bottom: 0px;
   font-family: news-gothic-std, sans-serif;
   font-weight: 400;
   font-style: italic;
