@@ -3,7 +3,7 @@
 <%= simple_form_for :group , url: groups_path do |f| %>
   <%=f.input :group_name, required: true, label: 'Group name : ' %><br>
   <%=f.input :group_description, label: 'About the group : '%>
-
+  <!-- Flash error that reports errors for missing or misused fields with a button to close the error-->
   <% if !flash[:error].nil? %>
     <div class="alert alert-error">
       <button type="button" class="close" data-dismiss="alert" >Close error</button>
