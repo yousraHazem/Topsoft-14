@@ -1,0 +1,12 @@
+
+<% for puzzle in @puzzles %>
+<div class="puzzle"> 
+Description: <%= puzzle.description %> 
+<%= link_to "Show", puzzle %>
+<%= link_to "Edit", edit_puzzle_path(puzzle) %>
+<%= link_to "Destroy", puzzle, :confirm => 'Are you sure?', :method => :delete %> 
+<br>
+</div>
+<% end %>
+
+<p><%= link_to "New Puzzle", new_photo_path %></p>

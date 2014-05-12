@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<%= javascript_include_tag "jquery.jqpuzzle.js"%>
+	<%= javascript_include_tag "jquery.js"%>
+	<%= stylesheet_link_tag "jquery.jqpuzzle.css"%>
+</head>
+<body>
+	<div id="game_location">
+	<%= show_for @puzzle do |s| %>
+		<%= image_tag @puzzle.image_url(:thumb), :alt => "Animals crossing", :class => "jqPuzzle"%>
+	<% end %>
+	</div>	
+</body>
+</html>
+
+
+
+
