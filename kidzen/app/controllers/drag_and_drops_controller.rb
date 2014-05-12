@@ -25,8 +25,18 @@ skip_before_filter :verify_authenticity_token, :only => [:update]
 		end
 	end
 	def update
+    @post_title = params[:title]
+    @post_content = params[:body]
+    @post = Post.new(:title => @post_title, :body => @post_content)
+    @post.save
     @new_score =  params[:score]
     @drag_and_drops_score = DragAndDropScore.new(:drag_and_drop_id => params[:id], :score => @new_score)
     @drag_and_drops_score.save
+  end
+  def share_score
+    @post_title = params[:title]
+    @post_content = params[:body]
+    @post = Post.new(:title => @post_title, :body => @post_content)
+    @post.save
   end
 end
