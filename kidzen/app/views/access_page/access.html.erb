@@ -1,0 +1,75 @@
+
+
+  
+  <div class = "tags">  
+   
+<% if (Permission.exists?(registered_user_id: 2 , abilities: ["can_create_public_chat_rooms"=>true])) %>
+    <p class = "tags"> 
+    <input type="checkbox" id = "can create public chat rooms" onclick="changeCreateRooms(2)" checked >
+    can create public chat rooms 
+    </p>
+  <%else%>
+    <p class = "tags"> <input type="checkbox" id = "can create public chat rooms" onclick="changeCreateRooms(2)" >
+    can create public chat rooms </p>
+  <br>
+  <% end %>
+  </div>
+  </div>
+
+
+<script>
+
+function create_ajax_request (url, data, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('PUT', url, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Accept', 'application/json'); // I want JSON 
+  xhr.responseType = "json";
+  xhr.addEventListener('load', function() {
+    xhr.responseJSON =  xhr.response;
+    console.log(xhr.responseJSON);
+    callback(xhr.responseJSON,  xhr);
+  });
+  xhr.send( JSON.stringify(data) );
+  return xhr;
+}
+
+ 
+
+  function changeCreateRooms(childId) {
+    var checkBox = document.getElementById("can create public chat rooms");
+    var valueUpdate = checkBox.checked;
+    prompt(valueUpdate);
+    var url = ['http://' + location.host, 'access_page', 'update_create_rooms'].join('/');
+    var callback = function(responseJSON, xhr) {
+  }
+  create_ajax_request(url, {value: valueUpdate, child: childId}, callback);
+  }
+
+</script>
+
+<style type="text/css">
+
+.del {
+  background: -webkit-gradient(linear, left top, left bottom, from(#78bbe6), to(#78bbe6));
+  background: -webkit-linear-gradient(top, #78bbe6, #78bbe6);
+  background: -moz-linear-gradient(top, #78bbe6, #78bbe6);
+  background: -ms-linear-gradient(top, #78bbe6, #78bbe6);
+  background: -o-linear-gradient(top, #78bbe6, #78bbe6); 
+  color: white;
+  font-size: 13px;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.tags {
+  margin-right: 0px;
+  margin-bottom: 10px;
+  font-family: news-gothic-std, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  background-color: #78bbe6;
+  color: white;
+  }
+
+</style>
