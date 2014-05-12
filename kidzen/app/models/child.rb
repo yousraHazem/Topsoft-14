@@ -1,6 +1,7 @@
 class Child < ActiveRecord::Base
   # Associations and validations.
-  has_and_belongs_to_many :interests
+  has_and_belongs_to_many :interests 
+  has_and_belongs_to_many :favourites
   belongs_to :registered_user, dependent: :destroy
 
 
