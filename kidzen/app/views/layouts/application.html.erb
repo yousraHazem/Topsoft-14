@@ -1,5 +1,7 @@
-<!DOCTYPE html >
+<html class="no-js">
 <head>
+
+
   <title>Kiddizen</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -16,7 +18,8 @@
 </head>
 
 <link rel="shortcut icon" href="/assets/icon.gif"/>
-<body>
+<body class="home traffic-sw-theme yellow">
+<link rel="stylesheet" type="text/css" href='/assets/stylesheets/headband.css' />
    <% if signed_in? %>
      Logged in as <strong><%= current_user.email %></strong>.b>
      <%= link_to 'Inbox', messages_path  %> |
@@ -82,11 +85,13 @@
      
 
       <div class="clr"></div>
-
+     <div class="sup_dash">
+       <h3><a href="/supervisors/dashboard">Supervisors From here</a></h3>
+     </div> 
       <div class="menu_nav">
         <% if ( session[:locale] == "en")%>
         <ul>
-          <li class="active"><a href="#"><%= t('home') %></a></li>
+          <li class="active"><a href="/"><%= t('home') %></a></li>
           <li><%= link_to t('profile'), controller: :registered_users, action: :show %></li>
           <li><a href="#"><%= t('activities') %></a></li>
           <% if signed_in? %>
@@ -106,7 +111,7 @@
         <li><a href="#"><%= t('messages') %></a></li>
         <li><a href="#"><%= t('activities') %></a></li>
         <li><a href="#"><%= t('profile') %></a></li>
-        <li class="active"><a href="#"><%= t('home') %></a></li>
+        <li class="active"><a href="/"><%= t('home') %></a></li>
         </ul>
         <% end %>
         <div class="clr"></div>

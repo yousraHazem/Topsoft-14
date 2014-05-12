@@ -27,7 +27,11 @@ html {
 .main {
 	padding:0;
 	margin:0;
-	background:url(/assets/main_bg.jpg) repeat-y center;
+	width:100%;
+	height:100%;
+	background:url(/assets/bg1.jpg) center;
+        background-repeat:no-repeat;
+        background-size:contain;
 }
 
 
@@ -59,7 +63,7 @@ h1 a, h1 a:hover {
 	text-decoration:none;
 }
 h1 span {
-	color:#78bbe6;
+	color:#0B0B61;
 }
 h1 small {
 	padding:0 10px;
@@ -105,16 +109,19 @@ a.rm, a.com {
 }
 .menu_nav {
 	margin:0 0 10px;
+	color:#0B0B61;
 	padding:0;
 }
 .menu_nav ul {
 	list-style:none;
+	color:#0B0B61;
 	margin:0;
 	padding:0;
 	float:right;
 }
 .menu_nav ul li {
 	margin:0;
+	color:#0B0B61;
 	padding:15px 5px 15px 0;
 	float:left;
 	background:url(/assets/menu_line.jpg) repeat-x top;
@@ -123,13 +130,13 @@ a.rm, a.com {
 	display:block;
 	margin:0;
 	padding:11px 25px;
-	color:#878989;
+	color:#0B0B61;
 	text-decoration:none;
 	font-size:13px;
 	line-height:16px;
 }
 .menu_nav ul li.active a, .menu_nav ul li a:hover {
-	color:#fff;
+	color:#0B0B61;
 	text-decoration:none;
 	background:#78bbe6;
 }
@@ -265,7 +272,7 @@ ul.ex_menu li {
 }
 ul.sb_menu li a, ul.ex_menu li a {
 	display:block;
-	color:#959595;
+	color:#0B0B61;
 	text-decoration:none;
 	padding:5px;
 	margin-left:-15px;
@@ -497,4 +504,11 @@ ol li .send {
 	width:100%;
 	font-size:0;
 	line-height:0;
+}
+.sub_dash {
+	padding:0;
+	margin:0;
+	width:100%;
+	height:100%;
+	font:normal 11px Arial, Helvetica, sans-serif;
 }
