@@ -1,17 +1,19 @@
   
   
-
-  <% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
-    
-  <%end%>
-  <%= form_tag('/access', remote: true) %>
   <div class = "tags">  
-  <input type="checkbox" id = "mutual friends rooms only" checked = "Permission.find_by(registered_user_id: 2).abilities[:mutual_friends_rooms_only]" onclick= "changeMutualRooms(<%= "\"#{@child.registered_user_id}\"" %>)" > 
+  <% if (Permission.find_by(registered_user_id: 2).abilities[:mutual_friends_rooms_only] = true) == true   %>
+  <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" checked > 
     <text class = "tags"> mutual friends rooms only </text>
   <br>
+  <% end %>
+  <% if (Permission.find_by(registered_user_id: 2).abilities[:mutual_friends_rooms_only] = false) == true %>
+  <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" > 
+    <text class = "tags"> mutual friends rooms only </text>
+  <br>
+  <%end%>
   
   </div>
-  </div>
+  
 
 
 <script>
@@ -37,6 +39,7 @@ function create_ajax_request (url, data, callback) {
     var checkBox = document.getElementById("mutual friends rooms only");
     var abilityUpdate = "mutual_friends_rooms_only";
     var valueUpdate = checkBox.checked;
+    prompt(valueUpdate);
     var url = ['http://' + location.host, 'access_page', 'update'].join('/');
     var callback = function(responseJSON, xhr) {
   }
@@ -60,6 +63,8 @@ function create_ajax_request (url, data, callback) {
   vertical-align: middle;
 }
 .tags {
+  margin-top: 135px;
+  margin-right: 200px;
   font-family: news-gothic-std, sans-serif;
   font-weight: 400;
   font-style: italic;
