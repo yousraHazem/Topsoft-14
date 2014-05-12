@@ -142,8 +142,8 @@ class ChildrenController < ApplicationController
   # Authors: Ahmad H. Elhamshary.
   def add_interests
     child = Child.where("registered_user_id=#{current_registered_user.id}").first
-    interests = Interests.create( :id => params[:id], :name => params[:name])
-    child.interests << interests
+    interest = Interest.create( :id => params[:id], :name => params[:name])
+    child.interests << interest
     flash[:notice] = "Your interest has been successfully added"
   end
 
@@ -153,8 +153,8 @@ class ChildrenController < ApplicationController
   # Authors: Ahmad H. Elhamshary.
   def add_favourites
     child = Child.where("registered_user_id=#{current_registered_user.id}").first
-    favourites = Favourites.create( :id => params[:id], :name => params[:name])
-    child.favourites << favourites
+    favourite = Favourite.create( :id => params[:id], :name => params[:name])
+    child.favourites << favourite
     flash[:notice] = "Your favourite has been successfully added"
   end
   
@@ -164,7 +164,7 @@ class ChildrenController < ApplicationController
   # Authors: Ahmad H. Elhamshary.
   def add_hobbies
     child = Child.where("registered_user_id=#{current_registered_user.id}").first
-    hobbies = Hobbies.create( :id => params[:id], :name => params[:name])
+    hobby = Hobby.create( :id => params[:id], :name => params[:name])
     child.hobbies << hobbies
     flash[:notice] = "Your hobby has been successfully added"
   end
