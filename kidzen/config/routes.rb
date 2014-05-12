@@ -1,5 +1,7 @@
 Kidzen::Application.routes.draw do
 
+  resources :puzzles
+
   root 'registered_users#show'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
