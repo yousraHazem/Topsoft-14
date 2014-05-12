@@ -1,9 +1,15 @@
+
+
 <h3> Match shapes with their corresponding slots</h3>
 <br>
+<%= content_tag :div, class: "game_id", data: {drag_id: @drag_and_drop.id} do %>
+<% end %>
+<br>
+
 <button type="button" onclick="history.go(0);"><i>Play Again</i></button>
 <br>
 <br>
-<div class='contentn'>
+<div class='content'>
  <div class='triangle'>
   <a href='#' class='option' data-inf='portion'>
     <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
@@ -24,6 +30,21 @@
 <div id="trdrop"> </div>
 <div id="crdrop"></div>
 </div>
+<table align = "right">
+  <thead>
+    <tr>
+      <th>Your Past Scores</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% for drag_score in @drag_and_drops_scores %>
+      <tr>
+        <td><%= drag_score.score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <style>
 body { }
 .triangle {
@@ -67,11 +88,10 @@ body { }
 }
 .option:first-child:after { top: 0; left: 0; }
 .option:last-child:after { right: 0; bottom: 0; }
-.contentn {
+.content {
 width: 800px;
 height: 600px;
 background-color: #00CCCC;
-position: absolute;
 }
 #square {
     overflow:hidden;
@@ -132,26 +152,27 @@ border-left: 100px solid transparent;
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
 <script type="text/javascript">
  var matched = 0;
-  var score = 0;
+  var nscore = 0;
+  var n = '<%= h @drag_and_drop.id -%>';
 $( init );
  
 function init() {
    matched = 0;
    score = 0;
   $('.triangle').data('shape',1).draggable({
-    containment: '.contentn',
+    containment: '.content',
     cursor: 'move',
-    snap: '.contentn'
+    snap: '.content'
   });
   $('#square').data('shape',2).draggable({
-    containment: '.contentn',
+    containment: '.content',
     cursor: 'move',
-    snap: '.contentn'
+    snap: '.content'
   });
   $('#circle').data('shape',3).draggable({
-    containment: '.contentn',
+    containment: '.content',
     cursor: 'move',
-   snap: '.contentn'
+   snap: '.content'
   });
  $('#sqrdrop').data('shape',2).droppable({
     drop: handhide
@@ -163,15 +184,29 @@ function init() {
     drop: handhide
   });  
 }
+function create_ajax_request (url, data, callback) { 
+var xhr = new XMLHttpRequest(); 
+xhr.open('PUT', url, true); 
+xhr.setRequestHeader('Content-Type', 'application/json'); 
+xhr.setRequestHeader('Accept', 'application/json'); 
+xhr.responseType = "json"; xhr.addEventListener('load', function() { 
+xhr.responseJSON = xhr.response; console.log(xhr.responseJSON); 
+callback(xhr.responseJSON, xhr); }); 
+ xhr.send( JSON.stringify(data) ); 
+  return xhr; 
+}
  function handhide(event ,ui) {
   matched++;
   var draggable = ui.draggable;
   var contid = $(this).data('shape')
   var shid = draggable.data('shape')
-  if(contid == shid) score++;
+  if(contid == shid) nscore++;
   draggable.hide();
-  if(matched == 3)
-    alert('Your Score: '+score);
-
+  if(matched == 3) {
+    alert('Your Score: '+nscore);
+    var url = ['http://' + location.host, 'drag_and_drops',n].join('/');
+    var callback = function(responseJSON, xhr) {}
+    create_ajax_request(url,{score: nscore},callback);
+}
 } 
 </script>

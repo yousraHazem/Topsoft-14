@@ -1,5 +1,7 @@
 class DragAndDropsController < ApplicationController
-
+skip_before_filter :verify_authenticity_token, :only => [:update]
+ protect_from_forgery with: :null_session
+ require 'json'
   def drag_and_drop_params
 	params.require(:drag_and_drop).permit(:name, :image)
   end
@@ -10,6 +12,7 @@ class DragAndDropsController < ApplicationController
 
   def show
   	@drag_and_drop = DragAndDrop.find(params[:id])
+  	@drag_and_drops_scores = DragAndDropScore.order("created_at desc").limit(10).where(:drag_and_drop_id => @drag_and_drop[:id])
   end
 
   def create
@@ -21,4 +24,9 @@ class DragAndDropsController < ApplicationController
 			render :action => 'new'
 		end
 	end
+	def update
+    @new_score =  params[:score]
+    @drag_and_drops_score = DragAndDropScore.new(:drag_and_drop_id => params[:id], :score => @new_score)
+    @drag_and_drops_score.save
+  end
 end
