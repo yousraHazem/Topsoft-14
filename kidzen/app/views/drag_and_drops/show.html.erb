@@ -1,52 +1,57 @@
-
-
+<!DOCTYPE html>
+<!-- This page is used to view the drag and drop game which contains
+Three shapes (circle - square - triangle) with background
+of the image that was uploaded by the content provider, and 3 slots
+of the same shapes and the child has to match this shapes and view 
+his/her score after finishing the game as well as past scores in the
+lower right corner of the page. Author : Hussien M. Eloy. -->
 <h3> Match shapes with their corresponding slots</h3>
 <br>
-<%= content_tag :div, class: "game_id", data: {drag_id: @drag_and_drop.id} do %>
-<% end %>
 <br>
-
+<!-- Button used  for starting new turn. -->
 <button type="button" onclick="history.go(0);"><i>Play Again</i></button>
 <br>
+<!-- Button used to share score of last game. -->
 <button type="button" onclick="shareScore();"><i>Share Score</i></button>
 <br>
-
-<script src="drag_and_drop.js">
-</script>
-
+<!-- Including the javacript file that actually runs the game. -->
+<script src="drag_and_drop.js"></script>
+<!-- Passing the variables The game id and name to the script 
+to be used there. -->
 <script type="text/javascript">
-  var n = '<%= h @drag_and_drop.id -%>';
-  var g = '<%= h @drag_and_drop.name -%>';
+  var gameId = '<%= h @drag_and_drop.id -%>';
+  var gameName = '<%= h @drag_and_drop.name -%>';
 </script>
-    
+<!-- This is the window that holds the draggable and droppable 
+objects where the actual game happens really on it. -->    
 <div class='contentn'>
- <div class='triangle'>
-  <a href='#' class='option' data-inf='portion'>
+  <div class='triangle'>
+    <a href='#' class='option' data-inf='portion'>
+      <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
+    </a>
+  </div>
+  <br>
+  <br>
+  <div id="square">
     <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
-  </a>
+  </div>
+  <br>
+  <br>
+  <div id="circle">
+    <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
+  </div>
+  <br>
+  <div id="square-slot"></div>
+  <div id="triangular-slot"> </div>
+  <div id="circular-slot"></div>
 </div>
-<br>
-<br>
-<div id="square">
-  <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
-</div>
-<br>
-<br>
-<div id="circle">
-  <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
-</div>
-<br>
-<div id="sqrdrop"> </div>
-<div id="trdrop"> </div>
-<div id="crdrop"></div>
-</div>
+<!-- The table that holds the previous scores. -->
 <table align = "right">
   <thead>
     <tr>
       <th>Your Past Scores</th>
     </tr>
   </thead>
-
   <tbody>
     <% for drag_score in @drag_and_drops_scores %>
       <tr>
@@ -55,6 +60,7 @@
     <% end %>
   </tbody>
 </table>
+<!-- Including the stylesheet file of the page and jquery plugins. -->
 <style src="drag_and_drop.css"></style>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
