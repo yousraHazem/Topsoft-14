@@ -73,8 +73,9 @@ class ChildrenController < ApplicationController
         @errors = @user.errors.full_messages
         format.html { render :signup}
       rescue PermissionParamsError => ppe
+        @user.destroy
         format.json { render json: {status: "failed"} }
-        format.html { render file: File.join(Rails.root, 'public/500.html'), status: 500, layout: false }
+        format.html { render status: 500 }
       rescue ChildParamsError => cpe
         @errors = @child_account.errors.full_messages
         @user.destory

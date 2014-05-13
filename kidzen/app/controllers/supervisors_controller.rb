@@ -95,10 +95,14 @@ class SupervisorsController < ApplicationController
       rescue RegisteredUserParamsError => rpe
         format.json { render json: @user.errors.full_messages }
         format.html { render :signup }
-      rescue ArgumentError => ae
-        @user.destroy
+      rescue PermissionParamsError => ppe
+        @user.destory
+        format.json { render json: {status: "failed"} }
+        format.html { render status: 500 }
+      rescue SupervisorParamsError => ae
         format.json { render json: @user.errors.full_messages }
         format.html { render :signup }
+        @user.destroy
       end
     end
   end
