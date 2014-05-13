@@ -1,39 +1,43 @@
-
+<!DOCTYPE html>
+<!-- This page is used as an index page that will show gallery 
+in grid layout using blueimp gallery. I know I shouldn't include 
+script inside this page but it has to be done like this according 
+to the doumentation provided by the gem author. Author : Hussien M. Eloy -->
 <link rel="stylesheet" href="css/blueimp-gallery.min.css">
 <div id="blueimp-gallery" class="blueimp-gallery">
-    <div class="slides"></div>
-    <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
 </div>
 <div id="links">
    <% for video in @videos %>
    <% if video.file? %>
     <a
-        href="<%= video.real_file %>"
-        title="<%= video.description %>"
-        type="video/webm"
-        data-poster="<%= video.screenshot %>"
+       href="<%= video.real_file %>"
+       title="<%= video.description %>"
+       type="video/webm"
+       data-poster="<%= video.screenshot %>"
     ><img src="<%= video.screenshot %>"
-    width = 300
-    heigth = 300
-    alt="<%= video.description %>">
+          width = 300
+          height = 300
+          alt="<%= video.description %>">
     </a>
    <% end %>
    <% if video.youtube? %>
    <a
-        href="<%= "http://www.youtube.com/watch?v="+video.get_link %>"
-        title="<%= video.description %>"
-        type="text/html"
-        data-youtube="<%= video.get_link %>"
-        data-poster="<%= "http://img.youtube.com/vi/"+video.get_link+"/0.jpg" %>"
+      href="<%= "http://www.youtube.com/watch?v="+video.get_link %>"
+      title="<%= video.description %>"
+      type="text/html"
+      data-youtube="<%= video.get_link %>"
+      data-poster="<%= "http://img.youtube.com/vi/"+video.get_link+"/0.jpg" %>"
     ><img src="<%= "http://img.youtube.com/vi/"+video.get_link+"/0.jpg" %>" 
-    width = 300
-    heigth = 300
-    alt="<%= video.description %>"></a>
+          width = 300
+          height = 300
+          alt="<%= video.description %>"></a>
    <% end %>
    <% end %>
 </div>

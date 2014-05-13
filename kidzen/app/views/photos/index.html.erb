@@ -1,18 +1,24 @@
+<!DOCTYPE html>
+<!-- This page is used as an index page that will show gallery 
+in grid layout using blueimp gallery. I know I shouldn't include 
+script inside this page but it has to be done like this according 
+to the doumentation provided by the gem author. Author : Hussien M. Eloy -->
 <link rel="stylesheet" href="css/blueimp-gallery.min.css">
 <div id="blueimp-gallery" class="blueimp-gallery">
-    <div class="slides"></div>
-    <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
 </div>
 <div id="links">
-   <% for photo in @photos %>
-   <%= link_to "",photo.image_url,:title => photo.description %>
-   <%= image_tag(photo.image_url(:thumb),  :width => 300, :height => 300, :alt => photo.description) %>
-   <% end %>
+  <% for photo in @photos %>
+  <%= link_to "",photo.image_url,:title => photo.description %>
+  <%= image_tag(photo.image_url(:thumb),  :width => 300, :
+    height => 300, :alt => photo.description) %>
+  <% end %>
 </div>
 <script src="js/blueimp-gallery.min.js"></script>
 <script>
