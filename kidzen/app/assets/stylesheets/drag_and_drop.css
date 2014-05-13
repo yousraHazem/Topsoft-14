@@ -1,0 +1,100 @@
+.triangle {
+  overflow: hidden;
+  position: relative;
+  left: 300px;
+  margin: 0 auto;
+  width: 100px; height: 100px;
+}
+.option, .option img { width: 100%; height: 100%; }
+.option {
+  overflow: hidden;
+  position: absolute;  
+  /* arctan(27 / 40) = 34.01935deg 
+   * need to skew by 90deg - 34.01935deg = 55.98065deg
+  */
+  transform: skewX(-55.98deg);
+}
+.option:first-child {
+  left: -.25em;
+  transform-origin: 100% 0;
+}
+.option:last-child {
+  right: -.25em;
+  transform-origin: 0 100%;
+}
+.option img { opacity: .75; transition: .5s; }
+.option img:hover { opacity: 1; }
+.option img, .option:after {
+  transform: skewX(55.98deg);
+  transform-origin: inherit;
+}
+.option:after {
+  position: absolute;
+  margin: .5em 1.65em;
+  color: white;
+  font: 500 1.25em Courier;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  content: attr(data-inf);
+}
+.option:first-child:after { top: 0; left: 0; }
+.option:last-child:after { right: 0; bottom: 0; }
+.contentn {
+width: 800px;
+height: 600px;
+background-color: #00CCCC;
+}
+#square {
+    overflow:hidden;
+    width:100px;
+    height:100px;
+    position: relative;
+    left: 300px;
+    margin: 0 auto;
+    clear:both;
+}
+#circle  {
+  overflow: hidden;
+  width: 100px;
+ height: 100px;
+ position: relative;
+ left: 300px;
+ margin: 0 auto; 
+ background-size: cover;
+ display: block; 
+ border-radius: 100px;
+ -webkit-border-radius: 100px;
+ -moz-border-radius: 100px;
+}
+#sqrdrop {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 500px;
+  background-color: gray;
+}
+#trdrop {
+overflow: hidden;
+width: 0;
+height: 0;
+position: absolute;
+left: 620px;
+text-indent: -9999px;
+border-bottom: 100px solid gray;
+border-left: 100px solid transparent;
+}
+#crdrop {
+ overflow: hidden;
+  width: 100px;
+ height: 100px;
+ position: absolute;
+ left: 750px;
+ margin: 0 auto; 
+ background-size: cover;
+ display: block; 
+ border-radius: 100px;
+ -webkit-border-radius: 100px;
+ -moz-border-radius: 100px;
+ background-color: gray; 
+}
