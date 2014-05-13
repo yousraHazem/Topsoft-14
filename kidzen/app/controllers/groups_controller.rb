@@ -27,7 +27,7 @@ class GroupsController < ApplicationController
   # group_params - hash.
   # Insertion of a new record in table groups.
   # The function takes a unique username, and a group_name and
-  # creates a new group by creating and inserting a,
+  # creates a new group by creating and inserting a
   # new record in table groups.
   # Has error reporting for missing or misused fields.
   # Complexity: O(1).
