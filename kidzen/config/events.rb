@@ -12,6 +12,5 @@ WebsocketRails::EventMap.describe do
     
   end
   # Notification Events end.
-  # Authors: Ahmed H. Ismail.
 
 end
