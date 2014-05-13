@@ -109,7 +109,7 @@
         <li><a href="#"><%= t('logout') %></a></li>
         <li><a href="#"><%= t('notifications') %></a></li>
         <li><a href="#"><%= t('messages') %></a></li>
-        <li><a href="#"><%= t('activities') %></a></li>
+        <li><a href="#"><%= t('PlayGround') %></a></li>
         <li><a href="#"><%= t('profile') %></a></li>
         <li class="active"><a href="/"><%= t('home') %></a></li>
         </ul>
@@ -164,7 +164,7 @@
 	<% if signed_in? %>
 	<div class="box">
 	  <div class="bet_time2">
-	    No Friends Online :(
+	    <%= render partial: "friendships/view_my_friends", locals: {friends: @friends, child: @child} %>
 	  </div>
 	</div>
 	<div class="box">
@@ -182,8 +182,8 @@
               <div id="usersOnLine"></div>
 
               <form id="messageForm">
-	        <input id="message" type="text">
-	        <input id="send" type="submit" value="Send">
+	        <input id="message" type="text" height="40px">
+	        <input class="testbutton" id="send" type="submit" value="Send">
                 <div id="serverRes"></div>
               </form>
 	  </div>
