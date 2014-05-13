@@ -112,17 +112,18 @@ function playGame(event, ui) {
 */
 function shareScore() {
     if (canShare) {
-    var url = ['http://' + location.host, 'drag_and_drops'
-        , gameID].join('/');
-    var gameUrl = ['http://' + location.host, 'drag_and_drops'
-        , gameId].join('/');
-    var head = 'My progress at '+ gameName +'game';
-    var post = 'I have scored '+gameScore+' points at '+gameName.link(gameUrl);
-    var callback = function(responseJSON, xhr) {}
-    create_ajax_request(url,{title: head, body: post},callback);
-    alert('Successfully Shared :)');
-  }
-  else {
-    alert('You have to Play first!');
-  }
+        var url = ['http://' + location.host, 'drag_and_drops'
+            , gameId].join('/');
+        var gameUrl = ['http://' + location.host, 'drag_and_drops'
+            , gameId].join('/');
+        var head = 'My progress at '+ gameName +' game';
+        var post = 'I have scored '+gameScore+' points\
+            at ' +gameName.link(gameUrl);
+        var callback = function(responseJSON, xhr) {}
+        create_ajax_request(url,{title: head, body: post},callback);
+        alert('Successfully Shared :)');
+    }
+    else {
+        alert('You have to Play first!');
+    }
 } 
