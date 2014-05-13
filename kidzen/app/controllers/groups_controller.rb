@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   # Method for creating a new group.
-  # Input : group_params hash.
+  # group_params - hash.
   # Insertion of a new record in table groups.
   # The function takes a unique username, and a group_name and
   # creates a new group by creating and inserting a,
