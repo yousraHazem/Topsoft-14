@@ -1,6 +1,8 @@
 require 'spec_helper'
 
-feature "parent signup" do 
+# Tests the signup feature
+# Authors: Ahmed H. Ismail.
+feature "signup" do 
 
   scenario "Should be able to create a parent account" do
     visit parent_signup_path
