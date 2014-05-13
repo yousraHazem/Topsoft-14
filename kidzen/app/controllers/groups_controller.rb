@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
   # Method for creating a new group.
   # Input : group_params hash.
   # Insertion of a new record in table groups.
-  # The function takes a unique username, and a group_name and,
+  # The function takes a unique username, and a group_name and
   # creates a new group by creating and inserting a,
   # new record in table groups.
   # Has error reporting for missing or misused fields.
@@ -76,6 +76,7 @@ class GroupsController < ApplicationController
 
   # DELETE /groups/1
   # DELETE /groups/1.json
+  # Auto generated code modified by : Mohammed Tarek Nabih
   def destroy
     @group = Group.find(params[:id]).destroy
     respond_to do |format|
