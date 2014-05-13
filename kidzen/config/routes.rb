@@ -84,10 +84,8 @@ Kidzen::Application.routes.draw do
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
 
   
-  #Posts and comments
-  resources :posts do
-    resources :comments, :only => [:create]
-  end
+
+    
 
   get '/group_members/:id/view' , to:  'group_members#view'
   post '/group_members/:id/view' => 'group_members#view'     
