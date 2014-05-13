@@ -11,13 +11,6 @@
    <%= f.label :remote_image_url, "or image URL" %><br />
    <%= f.text_field :remote_image_url, :id => "rem", :onclick => "doRem()" %>
   </p>
-  <script type="text/javascript">
-  function doLoc () {
-    document.getElementById("rem").value = '';
-  }
-  function doRem() {
-    document.getElementById("loc").value = '';
-  }
-  </script>
+  <script src="photo.js"></script>
   <p><%= f.submit %></p>
 <% end %>
