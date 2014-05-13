@@ -22,7 +22,7 @@ Kidzen::Application.routes.draw do
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'
   # Children notification actions
-  get "/supervisors/dashboard", to: 'supervisors#show'
+  get "/supervisors/dashboard", to: 'supervisors#show', as: :parent_profile
   put "/supervisors/accept_child", to: 'supervisors#accept_child'
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
   get "/supervisors/signup", to: 'supervisors#signup', as: 'parent_signup'
