@@ -1,5 +1,5 @@
 class Child < ActiveRecord::Base
-  # Associations and validations.
+  #Associations and validations.
   belongs_to :registered_user, dependent: :destroy
   has_many :invitation_events
            :foreign_key => 'inviter_id',
