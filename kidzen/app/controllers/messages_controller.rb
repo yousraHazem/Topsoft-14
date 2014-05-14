@@ -47,9 +47,9 @@ class MessagesController < ApplicationController
     @message.sender = current_user.email
     @re = @message.recepient
 
-    #if RegisteredUser.where(:email => @message.recepient)
-       #@message.save
-     #end 
+    if !@message.valid?
+      flash[:error] = @message.errors.full_messages.join("<br>").html_safe
+    end
     respond_to do |format|
       if RegisteredUser.exists?(:email => @re)
       #if
