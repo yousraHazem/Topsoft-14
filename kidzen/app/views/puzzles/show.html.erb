@@ -12,9 +12,14 @@
 	<% end %>
 	</div>	
 
-
 	<% if params[:moves] != nil || params[:time] != nil || params[:score] != nil%>
     	<% PuzzleScore.create(:puzzle_id => @puzzle.id, :child_id => current_user.id, :moves => params[:moves], :time => params[:time], :score => params[:score] ) %>
+    	<script>
+			var url = window.location.href;
+			var urlsplit = url.split("?");
+			url = urlsplit[0];
+			window.location.href = url;
+		</script>
   	<%end%>
 	</br>
   	<h1> Score History <h1>

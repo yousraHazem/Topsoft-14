@@ -1,7 +1,7 @@
 
 <% for puzzle in @puzzles %>
 <div class="puzzle"> 
-Description: <%= puzzle.description %> 
+<h1> <%= puzzle.description %> </h1>
 <%= link_to "Show", puzzle %>
 <%= link_to "Edit", edit_puzzle_path(puzzle) %>
 <%= link_to "Destroy", puzzle, :confirm => 'Are you sure?', :method => :delete %> 
