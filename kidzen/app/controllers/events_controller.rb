@@ -99,6 +99,8 @@ class EventsController < ApplicationController
     end
 
     #Never trust parameters from the scary internet, only allow the white list through.
+    #This method defines event parameters which are location , name , date_time , description , image 
+    #Author : Nouran Mamdouh
     def event_params
       params.require(:event).permit(:location, :name, :date_time, :description, :image)
     end

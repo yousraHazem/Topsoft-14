@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 <%- # to show each event details after creation -%>
+<%- # to show image photo -%>
+<%- # Nouran Mamdouh -%>
 <p>
 <strong>Photo:</strong>
 <%= image_tag @event.image_url(:thumb) if @event.image? %>
