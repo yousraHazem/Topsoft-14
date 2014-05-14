@@ -12,6 +12,7 @@ class PuzzlesController < ApplicationController
   # GET /puzzles/1
   # GET /puzzles/1.json
   def show
+    @puzzle_score = PuzzleScore.all
   end
 
   # GET /puzzles/new
