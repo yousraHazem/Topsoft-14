@@ -12,6 +12,9 @@ class NewSurveysController < ApplicationController
   def show
   end
 
+  def submit
+  end
+
   # GET /new_surveys/new
   def new
     @new_survey = NewSurvey.new

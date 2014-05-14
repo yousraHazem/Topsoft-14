@@ -9,36 +9,39 @@
 
 <ol>
   <% for @question in @new_survey.questions %>
-  <li><%= h @question.content %></li>
-  <ul>
-    <% for answer in @question.answers %>
-      <li><%= h answer.content %></li>
-    <% end %>
-    <% for pic_model in @question.pic_models %>
-      <li><%= h pic_model.pic_url %></li>
-      <% if myString == "" %>
-      <% myString = "\"" + pic_model.pic_url + "\"" %>
-      <% else %>
-      <% myString = myString + "," + "\"" + pic_model.pic_url + "\"" %>
+    <li><%= h @question.content %></li>
+    <ul>
+      <% for answer in @question.answers %>
+        <li><%= radio_button_tag "poll", answer.content ,true%>
+          <%= h answer.content %></li>
       <% end %>
-      <li>
-        <label>
-          <input type="checkbox">
-        </input>
-        <img src="<%= pic_model.pic_url %>" />
-        </label>
-      </li>
-    <% end %>
-    <% for range_slider in @question.range_sliders %>
-      <input type="range" min="<%range_slider.min%>" max="<%range_slider.max%>" value="0" onchange="showValue(this.value)" />
-      <span id="range">0</span>
-    <% end %>
-    <% for rank in @question.ranks %>
-      <li><%= h rank.content %></li>
-    <% end %>
-</ul>
+      <% for pic_model in @question.pic_models %>
+        <li><%= h pic_model.pic_url %></li>
+        <% if myString == "" %>
+          <% myString = "\"" + pic_model.pic_url + "\"" %>
+        <% else %>
+          <% myString = myString + "," + "\"" + pic_model.pic_url + "\"" %>
+        <% end %>
+        <li>
+          <label>
+            <input type="checkbox">
+            </input>
+            <img src="<%= pic_model.pic_url %>" />
+          </label>
+        </li>
+      <% end %>
+      <% for range_slider in @question.range_sliders %>
+        <input type="range" min="<%= range_slider.min %>" max="<%= range_slider.max %>" value="<%= range_slider.value %>" onchange="showValue(this.value)" />
+        <span id="range">0</span>
+      <% end %>
+      <% for rank in @question.ranks %>
+        <li><%= h rank.content %></li>
+      <% end %>
+    </ul>
   <% end %>
 </ol>
+
+
 
 <%= link_to 'Edit', edit_new_survey_path(@new_survey) %> |
 <%= link_to 'Back', new_surveys_path %>
@@ -50,4 +53,6 @@
 function showValue(newValue)
 {
   document.getElementById("range").innerHTML=newValue;
-}</script>
+}
+
+</script>
