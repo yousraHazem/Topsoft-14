@@ -1,11 +1,13 @@
 <h3>My Friends</h3>
   <%if @friends.to_a !=[]%>
     <div class="friend_list">
-    <%@friends.to_a.each do |friend|%>
-      <%user=RegisteredUser.where("id=#{friend.registered_user_id}").first%>
-      <%s="#{user.first_name} #{user.family_name}"%>
-      <p class="friend"><%=s%></p>
-    <%end%>
+      <%@friends.to_a.each do |friend|%>
+        <%child_friend=RegisteredUser.where
+        ("id=#{friend.registered_user_id}").first%>
+        <%full_name="#{child_friend.first_name} #
+        {child_friend.family_name}"%>
+        <p class="friend"><%=full_name%></p>
+      <%end%>
     </div>
   <%else%>
     <h4>You Currently have no Friends</h4>
