@@ -41,7 +41,8 @@
 }
 
 .option img { 
-opacity: .75; transition: .5s; 
+  opacity: .75; 
+  transition: .5s; 
 }
 
 .option img:hover { 
