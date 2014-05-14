@@ -13,8 +13,8 @@ class FriendshipsController < ApplicationController
 
   # This method to provide the child with the decision to either accept or reject pending friendship requests.
   # is_accepted - integer represents accepting or rejection of the pending friendship request.
-  # rec1 - active record of the pending friendship relation that is accepted.
-  # rec2 - active record of the requested friendship relation that is accepted.
+  # pending_friendship - active record of the pending friendship relation that is accepted.
+  # requested_friendship - active record of the requested friendship relation that is accepted.
   # destroyed_friendship - active record of the pending friendship relation that is rejected.
   # redirects to the pending friendship requests view after either accepting or rejecting a pending friendship request .
   # Time complexity: O(n).
@@ -23,11 +23,14 @@ class FriendshipsController < ApplicationController
   def accept_reject_friend_request
     is_accepted = params[:status].to_i
     if is_accepted == 1
-      rec1 = Friendship.where("child_1_id=#{current_user.id} AND child_2_id=#{params[:friend_id]}").update_all(status:"accepted")
-      rec2 = Friendship.where("child_1_id=#{params[:friend_id]} AND child_2_id=#{current_user.id}").update_all(status:"accepted")
+      pending_friendship = Friendship.where("child_1_id=#{current_user.id} AND
+      child_2_id=#{params[:friend_id]}").update_all(status:"accepted")
+      requested_friendship = Friendship.where("child_1_id=#{params[:friend_id]} AND
+      child_2_id=#{current_user.id}").update_all(status:"accepted")
       flash[:notice] = "friend request successfully accepted"
     else
-      destroyed_friendship = Friendship.delete_all("child_1_id=#{current_user.id} AND child_2_id=#{params[:friend_id]}")
+      destroyed_friendship = Friendship.delete_all
+      ("child_1_id=#{current_user.id} AND child_2_id=#{params[:friend_id]}")
       flash[:notice] = "friend request successfully rejected"
     end
     redirect_to( :controller => 'friendships', :action => 'view_pending_friendship_requests')
