@@ -1,0 +1,134 @@
+<div class="fields">
+<p>
+  <%= f.label :content, "Question" %>
+  <%= link_to_remove_fields "remove", f %><br />
+  <%= f.text_area :content %><br />
+</p>
+
+<%= f.fields_for :answers do |ff| %>
+    <div class="field">
+      <%= render 'answer_fields', :f => ff %>
+    </div>
+<% end %>
+
+<p class="AddAns" onclick="enableAns()">
+  <%= link_to_add_fields "Add Answer", f, :answers %>
+</p>
+
+<%= f.fields_for :pic_models do |ff| %>
+      <div class="field">
+        <%= render 'pic_model_fields', :f => ff %>
+      </div>
+  <% end %>
+  
+    <p class="AddPic" onclick="enablePic()">
+      <%= link_to_add_fields "Add pic answer", f, :pic_models %>
+    </p>
+
+    <%= f.fields_for :range_sliders do |ff| %>
+    <div class="field">
+      <%= render 'range_slider_fields', :f => ff %>
+    </div>
+<% end %>
+
+<p class="AddRange" onclick="enableRang()">
+  <%= link_to_add_fields "Add Slider", f, :range_sliders %>
+</p>
+
+<%= f.fields_for :ranks do |ff| %>
+    <div class="field">
+      <%= render 'rank_fields', :f => ff %>
+    </div>
+<% end %>
+
+<p class="AddRank" onclick="enableRank()">
+  <%= link_to_add_fields "Add rank", f, :ranks %>
+</p>
+
+</div>
+
+
+<script type="text/javascript">
+    function enableAns() {
+      var elements = document.getElementsByClassName("AddPic");
+      for(var i=0; i<elements.length; i++) {
+        if (i==(elements.length - 1)){
+          elements[i].style.display='none';
+        };
+      }
+    var elements = document.getElementsByClassName("AddRange");
+      for(var i=0; i<elements.length; i++) {
+        if (i==(elements.length - 1)){
+          elements[i].style.display='none';
+        };
+      }
+      var elements = document.getElementsByClassName("AddRank");
+      for(var i=0; i<elements.length; i++) {
+        if (i==(elements.length - 1)){
+          elements[i].style.display='none';
+        };
+      }
+    }
+    
+    function enablePic() {
+        var elements = document.getElementsByClassName("AddAns");
+      for(var i=0; i<elements.length; i++) {
+        if (i==(elements.length - 1)){
+          elements[i].style.display='none';
+        };
+    }
+    var elements = document.getElementsByClassName("AddRange");
+      for(var i=0; i<elements.length; i++) {
+        if (i==(elements.length - 1)){
+          elements[i].style.display='none';
+        };
+  }
+  var elements = document.getElementsByClassName("AddRank");
+      for(var i=0; i<elements.length; i++) {
+        if (i==(elements.length - 1)){
+          elements[i].style.display='none';
+        };
+  }
+}
+
+  function enableRang() {
+        var elements = document.getElementsByClassName("AddAns");
+      for(var i=0; i<elements.length; i++) {
+        if (i==(elements.length - 1)){
+          elements[i].style.display='none';
+        };
+    }
+    var elements = document.getElementsByClassName("AddPic");
+      for(var i=0; i<elements.length; i++) {
+        if (i==(elements.length - 1)){
+          elements[i].style.display='none';
+        };
+  }
+  var elements = document.getElementsByClassName("AddRank");
+      for(var i=0; i<elements.length; i++) {
+        if (i==(elements.length - 1)){
+          elements[i].style.display='none';
+        };
+  }
+}
+function enableRank() {
+        var elements = document.getElementsByClassName("AddAns");
+      for(var i=0; i<elements.length; i++) {
+        if (i==(elements.length - 1)){
+          elements[i].style.display='none';
+        };
+    }
+    var elements = document.getElementsByClassName("AddPic");
+      for(var i=0; i<elements.length; i++) {
+        if (i==(elements.length - 1)){
+          elements[i].style.display='none';
+        };
+  }
+  var elements = document.getElementsByClassName("AddRange");
+      for(var i=0; i<elements.length; i++) {
+        if (i==(elements.length - 1)){
+          elements[i].style.display='none';
+        };
+  }
+}
+  </script>
