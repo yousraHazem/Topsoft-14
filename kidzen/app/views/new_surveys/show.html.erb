@@ -16,17 +16,11 @@
           <%= h answer.content %></li>
       <% end %>
       <% for pic_model in @question.pic_models %>
-        <li><%= h pic_model.pic_url %></li>
-        <% if myString == "" %>
-          <% myString = "\"" + pic_model.pic_url + "\"" %>
-        <% else %>
-          <% myString = myString + "," + "\"" + pic_model.pic_url + "\"" %>
-        <% end %>
         <li>
           <label>
             <input type="checkbox">
             </input>
-            <img src="<%= pic_model.pic_url %>" />
+            <img src="<%= pic_model.pic_url %>" width="100" height="100" />
           </label>
         </li>
       <% end %>
