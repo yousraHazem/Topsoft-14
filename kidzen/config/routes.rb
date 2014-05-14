@@ -17,7 +17,10 @@ Kidzen::Application.routes.draw do
   # Lists pending notifications
   get "/notifications/pending", to: 'notifications#pending'
   # End generic routes
-
+  # events path
+  get "events/:id/view_friends", to: 'events#view_friends'
+  get "events/:id/destroy", to: 'events#destroy'
+  get "events/:id/invite/", to: 'events#invite_friend_to_an_event'
   # Supervisor routes:
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'

@@ -19,6 +19,16 @@
   <strong>Description:</strong>
   <%= @event.description %>
 </p>
+<% if event_invitations.event_id==event.id %>
+  <% if event_invitations.invited_id==current_user.id %>
+  <%- # you are invited by -%>
+    <%= button_tag "Accept"%>
+    <%= button_tag "Reject"%>
+  <% else %>
+    Welcome
+  <% end %>
+<% end %>
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
