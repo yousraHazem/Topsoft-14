@@ -8,17 +8,17 @@
  * Author : Hussien M. Eloy.
 */
 .triangle {
-  overflow: hidden;
-  position: relative;
   left: 300px;
   margin: 0 auto;
+  overflow: hidden;
+  position: relative;
   width: 100px; height: 100px;
 }
 
 .option, 
 .option img { 
-  width: 100%; 
-  height: 100%; 
+  height: 100%;
+  width: 100%;  
 }
 
 .option {
@@ -49,29 +49,30 @@
   opacity: 1; 
 }
 
-.option img, .option:after {
+.option img, 
+.option:after {
   transform: skewX(55.98deg);
   transform-origin: inherit;
 }
 
 .option:after {
-  position: absolute;
-  margin: .5em 1.65em;
   color: white;
+  content: attr(data-inf);
   font: 500 1.25em Courier;
   letter-spacing: .1em;
+  margin: .5em 1.65em;
+  position: absolute;
   text-transform: uppercase;
-  content: attr(data-inf);
 }
 
 .option:first-child:after { 
-  top: 0; 
-  left: 0; 
+  left: 0;
+  top: 0;  
 }
 
 .option:last-child:after { 
-  right: 0; 
   bottom: 0; 
+  right: 0; 
 }
 
 /*
@@ -79,23 +80,23 @@
  * Author : Hussien M. Eloy
 */
 .contentn {
-  width: 800px;
-  height: 600px;
   background-color: #00CCCC;
+  height: 600px;
+  width: 800px;
 }
 
 /*
  * Drawing square.
  * Author : Hussien M. Eloy
 */
-#square {
-  overflow:hidden;
-  width:100px;
-  height:100px;
-  position: relative;
+#square { 
+  clear: both;
+  height: 100px;
   left: 300px;
   margin: 0 auto;
-  clear:both;
+  overflow: hidden;
+  position: relative;
+  width: 100px;
 }
 
 /*
@@ -103,17 +104,17 @@
  *Author : Hussien M. Eloy 
 */
 #circle  {
-  overflow: hidden;
-  width: 100px;
-  height: 100px;
-  position: relative;
-  left: 300px;
-  margin: 0 auto; 
   background-size: cover;
-  display: block; 
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
+  display: block;
+  height: 100px;
+  left: 300px;
+  margin: 0 auto;  
+  overflow: hidden;
+  position: relative;
+  width: 100px;
 }
 
 /* 
@@ -121,12 +122,12 @@
  * Author : Hussien M. Eloy
 */
 #square-slot {
-  overflow: hidden;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  left: 500px;
   background-color: gray;
+  height: 100px;
+  left: 500px;
+  overflow: hidden;
+  position: absolute;
+  width: 100px;
 }
 
 /* 
@@ -134,14 +135,14 @@
  * Author : Hussien M. Eloy.
 */
 #triangular-slot {
-  overflow: hidden;
-  width: 0;
-  height: 0;
-  position: absolute;
-  left: 620px;
-  text-indent: -9999px;
   border-bottom: 100px solid gray;
   border-left: 100px solid transparent;
+  height: 0;
+  left: 620px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -9999px;
+  width: 0;
 }
 
 /*
@@ -149,16 +150,18 @@
  * Author : Hussien M. Eloy
 */
 #circular-slot {
-  overflow: hidden;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  left: 750px;
-  margin: 0 auto; 
+  background-color: gray;
   background-size: cover;
-  display: block; 
   border-radius: 100px;
   -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  background-color: gray; 
+  -moz-border-radius: 100px; 
+  display: block; 
+  height: 100px;
+  left: 750px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute; 
+  width: 100px;
 }
+
+
