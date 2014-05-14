@@ -883,6 +883,10 @@ $.fn.jqPuzzle = function(settings, texts) {
 					if(control.toggleOriginal) $originalButton.addClass('jqp-disabled');
 					if(control.toggleNumbers) $numbersButton.addClass('jqp-disabled');
 					
+					var url = window.location.href;
+ 					var score = (10000/moves + 10000/seconds);
+ 			        url = url + "?moves=" + moves + "&time=" + seconds + "&score=" + score;
+			        window.location.href = url;
 					// fade in original
 					$background.appendTo($wrapper).fadeTo(animation.fadeOriginalSpeed, 1.0, function() {
 						lock = false; // reset lock
