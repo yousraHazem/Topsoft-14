@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 <%- # to show each event details after creation -%>
 <p>
+<strong>Photo:</strong>
+<%= image_tag @photo.image_url(:thumb) if @photo.image? %>
+</p>
+
+<p>
   <strong>Location:</strong>
   <%= @event.location %>
 </p>
