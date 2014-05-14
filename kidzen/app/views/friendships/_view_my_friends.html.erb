@@ -1,7 +1,7 @@
 <h5>My Friends</h5>
-  <%if friends.to_a !=[]%>
+  <%if @friends.to_a !=[]%>
     <div class="friend_list">
-    <%friends.to_a.each do |friend|%>
+    <%@friends.to_a.each do |friend|%>
       <%user=RegisteredUser.where("id=#{friend.registered_user_id}").first%>
       <%s="#{user.first_name} #{user.family_name}"%>
       <%if user.online == true%>
