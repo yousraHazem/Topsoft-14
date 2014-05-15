@@ -24,6 +24,27 @@ class Child < ActiveRecord::Base
   has_many :friendships,
            :foreign_key => 'child_1_id',
            :dependent => :destroy
+  # Validations for event requests
+  # Author : Nouran Mamdouh
+  has_many :invited_events,
+           :through => :event_invitations,
+           :conditions => "accept = 'accepted'"
+
+  has_many :requested_eventss,
+           :through => :event_invitations,
+           :source => :inviter,
+           :conditions => "status = 'requested'",
+           :order => :created_at
+
+  has_many :pending_events,
+           :through => :event_invitations,
+           :source => :inviter,
+           :conditions => "status = 'pending'",
+           :order => :created_at
+
+  has_many :events,
+           :foreign_key => 'inviter_id',
+           :dependent => :destroy
 
 
   # Checks if other is a friend of this child.
@@ -48,8 +69,18 @@ class Child < ActiveRecord::Base
 
   def receive_friend_request(requester)
   end
-
+  
   def send_friend_request(friend)
+  end
+
+  # Recieve event request
+  # Author : Nouran Mamdouh
+  def receive_event_request(requester)
+  end
+
+  # Sends event request
+  # Author : Nouran Mamdouh
+  def send_event_request(friend)
   end
 
   # Adds a new friendship entry.
