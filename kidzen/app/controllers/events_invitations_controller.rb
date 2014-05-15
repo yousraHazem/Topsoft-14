@@ -36,8 +36,10 @@ end
   def accept_reject_event_request
     is_accepted = params[:status].to_i
     if is_accepted == 1
-      rec1 = EventInvitation.where("child_1_id=#{current_user.id} AND child_2_id=#{params[:inviter]}").update_all(status:"accepted")
-      rec2 = EventInvitation.where("child_1_id=#{params[:inviter]} AND child_2_id=#{current_user.id}").update_all(status:"accepted")
+      pending_events = EventInvitation.where("child_1_id=#{current_user.id} AND
+        child_2_id=#{params[:inviter_id]}").update_all(status:"accepted")
+      requested_events = EventInvitation.where("child_1_id=#{params[:inviter_id]} AND
+        child_2_id=#{current_user.id}").update_all(status:"accepted")
       flash[:notice] = "Event request successfully accepted"
     else
       destroyed_event_request = EventInvitation.delete_all("child_1_id=#{current_user.id} AND child_2_id=#{params[:inviter]}")
@@ -45,5 +47,6 @@ end
     end
     redirect_to( :controller => 'events_invitations_controller', :action => 'view_pending_event_requests')
   end
+
 
 end
