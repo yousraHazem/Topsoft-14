@@ -4,7 +4,7 @@
 class RegisteredUser < ActiveRecord::Base
   searchkick autocomplete: [:username, :first_name, :middle_name, :family_name, :email]  
   private
-    VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
+   
 
     # Creates the token.
     # Authors: Ahmed H. Ismail
@@ -13,6 +13,7 @@ class RegisteredUser < ActiveRecord::Base
     end
 
   public
+    VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
     # Validations: 
     validates :username, presence: true, length: { minimum: 4 }, uniqueness: true
     validates :first_name, presence: true, length: { maximum: 256 }

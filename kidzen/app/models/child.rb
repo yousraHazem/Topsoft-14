@@ -1,7 +1,7 @@
 class Child < ActiveRecord::Base
   # Associations and validations.
   belongs_to :registered_user, dependent: :destroy
-
+  validates :guardian_email, presence: true, format: { with: RegisteredUser::VALID_EMAIL_REGEX }
 
   # Checks if other is a friend of this child.
   # other - child
