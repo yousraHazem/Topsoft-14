@@ -48,6 +48,11 @@ class RegisteredUser < ActiveRecord::Base
     def full_name
       [first_name, middle_name, family_name].join(" ")
     end
+
+    def age
+    birth_year=RegisteredUser.find(id).birth_date.year
+    Date.today.year-birth_year
+    end
     
     # Checks if female
     # Authors: Ahmed H. Ismail    

@@ -60,6 +60,10 @@ class Child < ActiveRecord::Base
   def write_message
   end
 
+  def age
+  RegisteredUser.find(id).age
+  end
+
   # Checks if child is approved.
   # Authors: Ahmed H. Ismail
   def approved?
