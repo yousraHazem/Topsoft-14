@@ -2,12 +2,12 @@
 #Author:- Mohamed Khaled Abdelmeguid
 
 class AccessPageController < ApplicationController
-	skip_before_filter :verify_authenticity_token, only: [:delete_tag]
+  skip_before_filter :verify_authenticity_token, only: [:delete_tag]
   skip_before_filter :verify_authenticity_token, only: [:update]
-    skip_before_filter :verify_authenticity_token, only: [:add]
-    skip_before_filter :verify_authenticity_token, only: [:update_join_rooms]
-    skip_before_filter :verify_authenticity_token, only: [:update_create_rooms]
-
+  skip_before_filter :verify_authenticity_token, only: [:add]
+  skip_before_filter :verify_authenticity_token, only: [:update_join_rooms]
+  skip_before_filter :verify_authenticity_token, only: [:update_create_rooms]
+  
   #This action is used to show the prevented Tags
   #Author:- Mohamed Khaled Abdelmeguid
   def access
@@ -17,8 +17,8 @@ class AccessPageController < ApplicationController
   #else
   #	redirect_to session_path :new
   #end
- 	end
- 	#This action deletes the prevented tags from the tags list
+  end
+  #This action deletes the prevented tags from the tags list
   #Author:- Mohamed Khaled Abdelmeguid
   def delete_tag
   @permit = params[:tag]
@@ -28,12 +28,10 @@ class AccessPageController < ApplicationController
   end	
   respond_to do |format|
   format.json { render json: {status: "ok"} }
-	end
+  end
   end
   #This action updates a child's options available upon the decision of the parent
   #Author:- Mohamed Khaled Abdelmeguid
- 
-
   def update_join_rooms
   @value = params[:value]
   @child = params[:child]
@@ -60,6 +58,5 @@ class AccessPageController < ApplicationController
   format.json { render json: {status: "ok"} }
   end
   end
-  
 end  
 
