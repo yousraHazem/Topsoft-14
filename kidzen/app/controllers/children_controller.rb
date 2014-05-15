@@ -1,6 +1,7 @@
 require 'exceptions'
 # Authors: Ammar M. ELWazir, Shary Beshara, Ahmed H. Ismail
 class ChildrenController < ApplicationController
+  include Exceptions
 
   # GET /children/show
   # Shows the currently logged in user's 
@@ -29,7 +30,7 @@ class ChildrenController < ApplicationController
   # Children.
   # Authors Ahmed H. Ismail
   def signup 
-    @errors = [] # Populated by errors by create.
+    @errors = [] # Populated with errors by create.
   end
 
 
@@ -51,13 +52,13 @@ class ChildrenController < ApplicationController
     respond_to do |format|
       begin       
         @user = RegisteredUser.new(registered_user_params)
-        raise RegisteredUserParamsError(@user.inspect) if not @user.save
+        raise RegisteredUserParamsError.new(@user.inspect) if not @user.save
         # registered user fields ok.
         # Finalize perms
         perms = Permission.child_default(@user)
-        raise PermissionParamsError(registered_user_params.inspect) if not perms.save
+        raise PermissionParamsError.new(registered_user_params.inspect) if not perms.save
         @child_account = Child.new(child_params(@user))
-        raise ChildParamsError(@child_account.inspect) if not @child_account.save
+        raise ChildParamsError.new(@child_account.inspect) if not @child_account.save
         sign_in @user # login
         # Send verification email
         UserMailer.account_verification(@child_account).deliver 
@@ -78,7 +79,7 @@ class ChildrenController < ApplicationController
         format.html { render status: 500 }
       rescue ChildParamsError => cpe
         @errors = @child_account.errors.full_messages
-        @user.destory
+        @user.destroy
         format.json { render json: @errors }
         format.html { render :signup }
       end      

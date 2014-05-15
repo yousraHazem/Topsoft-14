@@ -4,7 +4,7 @@ require 'exceptions'
 class SupervisorsController < ApplicationController  
   # TODO: fix 'X-CSRF-Token' in XMLHttpRequest header
   skip_before_filter :verify_authenticity_token, only: [:accept_child, :reject_child]
-  
+  include Exceptions
   # GET /confirm_children
   # Renders the confirm children
   # view.
@@ -72,6 +72,7 @@ class SupervisorsController < ApplicationController
   # Authors: Ahmed H. Ismail
   def signup
     @user = RegisteredUser.new
+    @errors = [] # Populated with errors by create.
   end
 
   # POST /supervisors/create
@@ -83,26 +84,28 @@ class SupervisorsController < ApplicationController
         create_params = signup_params
         create_params[:banned] = false
         @user = RegisteredUser.new(create_params)
-        raise RegisteredUserParamsError(@user.inspect) if not @user.save
+        raise RegisteredUserParamsError.new(@user.inspect) if not @user.save
         perms = Permission.supervisor_default(@user)
-        raise PermissionParamsError(create_params.inspect) if not perms.save
+        raise PermissionParamsError.new(create_params.inspect) if not perms.save
         @supervisor = Supervisor.new(registered_user: @user)
-        raise SupervisorParamsError(create_params.inspect) if not @supervisor.save
+        raise SupervisorParamsError.new(create_params.inspect) if not @supervisor.save
         sign_in @user
         format.json { render json: {status: "ok"} }
         flash[:success] = "Welcome to kidzen!!"
         format.html { redirect_to @user }
       rescue RegisteredUserParamsError => rpe
-        format.json { render json: @user.errors.full_messages }
+        @errors = @user.errors.full_messages
+        format.json { render json: @errors }
         format.html { render :signup }
       rescue PermissionParamsError => ppe
-        @user.destory
+        @user.destroy
         format.json { render json: {status: "failed"} }
         format.html { render status: 500 }
       rescue SupervisorParamsError => ae
-        format.json { render json: @user.errors.full_messages }
-        format.html { render :signup }
+        @errors = @supervisor.errors.full_messages
         @user.destroy
+        format.json { render json: @errors }
+        format.html { render :signup }        
       end
     end
   end
