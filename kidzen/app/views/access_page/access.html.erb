@@ -1,26 +1,23 @@
+<!-- This is the access view page, the part of the child's options 
+Author:-Mohamed Khaled AbdelMeguid -->
 
-
-  
-  <% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
-    <%end%>
-  
-  <div class = "tags">  
-  
+<!-- This method views the checkbox checked or not checked according to the hash value in the DB 
+Author:- Mohamed Khaled AbdelMeguid -->
+<% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
+<%end%>
+<div class = "tags">  
   <% if (Permission.exists?(registered_user_id: 2 , abilities: ["can_join_public_chat_rooms"=>true])) %>
     <p class = "tags"> <input type="checkbox" id = "can join public chat rooms" onclick="changeJoinRooms(2)" checked>
     can join public chat rooms </p>
   <%else%>
-  <p class = "tags"><input type="checkbox" id = "can join public chat rooms" onclick="changeJoinRooms(2)"> 
-  can join public chat rooms </p>
+    <p class = "tags"><input type="checkbox" id = "can join public chat rooms" onclick="changeJoinRooms(2)"> 
+    can join public chat rooms </p>
   <%end%>
-
+</div>
   
-  </div>
-  </div>
-
 
 <script>
-
+//This function create an AJAX request
 function create_ajax_request (url, data, callback) {
   var xhr = new XMLHttpRequest();
   xhr.open('PUT', url, true);
@@ -35,22 +32,9 @@ function create_ajax_request (url, data, callback) {
   xhr.send( JSON.stringify(data) );
   return xhr;
 }
-
-  function deleteInfo (toBeDeleted, childName) {
-    Element.prototype.remove = function() {
-    this.parentElement.removeChild(this);
-    };
-    var x = document.getElementById(toBeDeleted);
-    x.remove();
-    var url = ['http://' + location.host, 'access_page', 'delete_tag'].join('/');
-    var callback = function(responseJSON, xhr) {
-    }
-    create_ajax_request(url, {tag: toBeDeleted, child: childName}, callback);
-  }
-
-  
-
-  function changeJoinRooms(childId) {
+//This function  changes the value of the checbox in the DB when pressed
+//Author:- Mohamed Khaled AbdelMeguid
+function changeJoinRooms(childId) {
     var checkBox = document.getElementById("can join public chat rooms");
     var valueUpdate = checkBox.checked;
     prompt(valueUpdate);
@@ -59,25 +43,11 @@ function create_ajax_request (url, data, callback) {
   }
   create_ajax_request(url, {value: valueUpdate, child: childId}, callback);
   }
-
-  
-
 </script>
 
 <style type="text/css">
-
-.del {
-  background: -webkit-gradient(linear, left top, left bottom, from(#78bbe6), to(#78bbe6));
-  background: -webkit-linear-gradient(top, #78bbe6, #78bbe6);
-  background: -moz-linear-gradient(top, #78bbe6, #78bbe6);
-  background: -ms-linear-gradient(top, #78bbe6, #78bbe6);
-  background: -o-linear-gradient(top, #78bbe6, #78bbe6); 
-  color: white;
-  font-size: 13px;
-  font-family: Georgia, serif;
-  text-decoration: none;
-  vertical-align: middle;
-}
+/* This styles the checbox
+Author:- Mohamed Khaled AbdelMeguid */
 .tags {
   margin-right: 0px;
   margin-bottom: 10px;
@@ -87,5 +57,4 @@ function create_ajax_request (url, data, callback) {
   background-color: #78bbe6;
   color: white;
   }
-
 </style>
