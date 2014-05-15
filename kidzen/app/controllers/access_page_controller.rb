@@ -50,6 +50,11 @@ class AccessPageController < ApplicationController
   end
   end
 
+# This action is used to unban a topic to specific child.
+# topic - topic that should be unbanned.
+# child - the specific child username.
+# Authors:- Shary Beshara.
+
   def delete_topic
     @topic = params[:topic]
     @child = params[:child]
@@ -61,10 +66,14 @@ class AccessPageController < ApplicationController
     end
   end
 
+# This action is used to ban a topic to specific child.
+# topic - topic that should be banned.
+# child - the specific child username.
+# Authors:- Shary Beshara.
+
   def ban_topic
     @topic = params[:topic]
     @child = params[:child]
-    puts("hjfg")
     if !BannedTopic.exists?(child_name: @child, activity_topic: @topic)
       BannedTopic.create(:child_name => @child, :activity_topic => @topic)
     end

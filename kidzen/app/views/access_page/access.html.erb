@@ -1,8 +1,11 @@
-  
+<!-- This method includes the javascript file to use it's functions -->  
+<!-- Authors: Shary Beshara -->    
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag("ban_topics.js") %>
 <% end %>
 
+<!-- This method list all the topics of the available activities -->  
+<!-- Authors: Shary Beshara -->    
 
 <div id = "list_of_activities">
   <% Activity.all.each do |activity| %>
@@ -13,6 +16,9 @@
     <% end %>
   <% end %>
 </div>
+
+<!-- This method list all the banned topics of the child -->  
+<!-- Authors: Shary Beshara -->  
 
 <div id = "topics">
   <% BannedTopic.where(child_name: @child.registered_user.username).each do |topic| %>

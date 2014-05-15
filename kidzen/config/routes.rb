@@ -1,8 +1,11 @@
 Kidzen::Application.routes.draw do
 
   get "access_page/access"
+  
+  # Routes used in the access_page views.
   put "access_page/delete_topic"
   put "access_page/ban_topic"
+
 post '/settings', to: 'registered_users#set_settings'
   root 'registered_users#show'
   # Internationalization

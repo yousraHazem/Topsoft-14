@@ -1,3 +1,10 @@
+/************************************************** 
+ * This function send the request by AJax.        *
+ * url -  path to action.                         *
+ * data - data needed to be passed to the action. *
+ * Authors: Shary Beshara.                        *
+ *************************************************/
+
   function send_by_ajax (url, data, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('PUT', url, true);
@@ -13,26 +20,41 @@
     return xhr;
   }
 
-function banTopic(elem, activity , childName) {
- 
+  /********************************************************************* 
+ * This function sends the topic needed to be banned and the specified *
+ * child to the action by AJAX.                                        *
+ * topic -  topic needed to banned passed by the view.                 *
+ * childName - the child user name.                                    *
+ * Authors: Shary Beshara.                                             *
+ **********************************************************************/
 
+function banTopic(elem, topic , childName) {
     elem.remove();
     var url = ['http://' + location.host, 'access_page', 'ban_topic'].join('/');
     var callback = function(responseJSON, xhr) {
     }
-    send_by_ajax(url, {topic: activity, child: childName}, callback);
+    send_by_ajax(url, {topic: topic, child: childName}, callback);
     var topics_div = document.getElementById('topics');
     var button = document.createElement('button');
     button.onclick = function () {
-      deleteTopic(activity, childName);
+      deleteTopic(topic, childName);
     };
     button.appendChild(document.createTextNode('X'));
     var button_div = document.createElement('div');
-    button_div.id = activity;
-    button_div.appendChild(document.createTextNode(activity));
+    button_div.id = topic;
+    button_div.appendChild(document.createTextNode(topic));
     button_div.appendChild(button)
     topics_div.appendChild(button_div);
   }
+
+  /*********************************************************************** 
+ * This function sends the topic needed to be unbanned and the specified *
+ * child to the action by AJAX.                                          *
+ * toBeDeleted -  topic needed to unbanned passed by the view.           *
+ * childName - the child user name.                                      *
+ * Authors: Shary Beshara.                                               *
+ ************************************************************************/
+
 
   function deleteTopic (toBeDeleted, childName) {
 
