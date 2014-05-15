@@ -1,13 +1,11 @@
 #Access Control Page
 #Authors:- Mohamed Khaled Abdelmeguid
-
 class AccessPageController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:delete_tag]
   skip_before_filter :verify_authenticity_token, only: [:update]
   skip_before_filter :verify_authenticity_token, only: [:add]
   skip_before_filter :verify_authenticity_token, only: [:update_join_rooms]
   skip_before_filter :verify_authenticity_token, only: [:update_create_rooms]
-
   #This action is used to show the prevented Tags
   #Author:- Mohamed Khaled Abdelmeguid
   def access
@@ -45,5 +43,4 @@ class AccessPageController < ApplicationController
   format.json { render json: {status: "ok"} }
   end
   end
- end  
-
+ end
