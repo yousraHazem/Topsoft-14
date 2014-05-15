@@ -1,23 +1,21 @@
-  
-  
-  <div class = "tags">  
-  <% if (Permission.find_by(registered_user_id: 2).abilities[:mutual_friends_rooms_only] = true) == true   %>
-  <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" checked > 
-    <text class = "tags"> mutual friends rooms only </text>
-  <br>
-  <% end %>
-  <% if (Permission.find_by(registered_user_id: 2).abilities[:mutual_friends_rooms_only] = false) == true %>
-  <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" > 
-    <text class = "tags"> mutual friends rooms only </text>
-  <br>
-  <%end%>
-  
-  </div>
-  
+<!-- This part views other child option through a checkbox
+Author:- Mohamed Khaled AbdelMeguid -->
 
+<div class = "tags">  
+<% if (Permission.exists?(registered_user_id: 2 , abilities: ["mutual_friends_rooms_only"=>true])) %>
+  <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" checked > 
+  <text class = "tags"> mutual friends rooms only </text>
+  <br>
+  <% else %>
+    <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" > 
+    <text class = "tags"> mutual friends rooms only </text>
+    <br>
+  <%end%>
+  </div>
 
 <script>
-
+//This function creates an AJAX request
+//Author:- Mohamed Khaled AbdelMeguid
 function create_ajax_request (url, data, callback) {
   var xhr = new XMLHttpRequest();
   xhr.open('PUT', url, true);
@@ -32,36 +30,22 @@ function create_ajax_request (url, data, callback) {
   xhr.send( JSON.stringify(data) );
   return xhr;
 }
-
-  
-
-  function changeMutualRooms(childId) {
-    var checkBox = document.getElementById("mutual friends rooms only");
-    var abilityUpdate = "mutual_friends_rooms_only";
-    var valueUpdate = checkBox.checked;
-    prompt(valueUpdate);
-    var url = ['http://' + location.host, 'access_page', 'update'].join('/');
-    var callback = function(responseJSON, xhr) {
-  }
+//This function changes the value of the checbox in the DB
+//Author:- Mohamed Khaled AbdelMeguid
+function changeMutualRooms(childId) {
+  var checkBox = document.getElementById("mutual friends rooms only");
+  var abilityUpdate = "mutual_friends_rooms_only";
+  var valueUpdate = checkBox.checked;
+  var url = ['http://' + location.host, 'access_page', 'update'].join('/');
+  var callback = function(responseJSON, xhr) {
+}
   create_ajax_request(url, {ability: abilityUpdate, value: valueUpdate, child: childId}, callback);
   }
-
 </script>
 
 <style type="text/css">
-
-.del {
-  background: -webkit-gradient(linear, left top, left bottom, from(#78bbe6), to(#78bbe6));
-  background: -webkit-linear-gradient(top, #78bbe6, #78bbe6);
-  background: -moz-linear-gradient(top, #78bbe6, #78bbe6);
-  background: -ms-linear-gradient(top, #78bbe6, #78bbe6);
-  background: -o-linear-gradient(top, #78bbe6, #78bbe6); 
-  color: white;
-  font-size: 13px;
-  font-family: Georgia, serif;
-  text-decoration: none;
-  vertical-align: middle;
-}
+/* This styles the checkbox
+Author:- Mohamed Khaled AbdelMeguid */
 .tags {
   margin-top: 135px;
   margin-right: 200px;
