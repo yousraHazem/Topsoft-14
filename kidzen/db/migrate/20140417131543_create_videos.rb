@@ -6,6 +6,7 @@ class CreateVideos < ActiveRecord::Migration
       t.string :file
       t.string :real_file
       t.string :youtube
+      t.string :screenshot
       t.timestamps
     end
   end
