@@ -1,31 +1,43 @@
+# controller for Puzzles
+# Author : Moaz El-Nashar
 class PuzzlesController < ApplicationController
   before_action :set_puzzle, only: [:show, :edit, :update, :destroy]
 
-
-
-  # GET /puzzles
-  # GET /puzzles.json
+  # List all puzzles from the database
+  # Return non   
+  # Complexity O(n)
+  # Author : Moaz El-Nashar
   def index
     @puzzles = Puzzle.all
   end
 
-  # GET /puzzles/1
-  # GET /puzzles/1.json
+  # Display Puzzle and its score
+  # Return non   
+  # Complexity O(1) for the puzzle it self and O(n) for the score
+  # Author : Moaz El-Nashar
   def show
     @puzzle_score = PuzzleScore.all
   end
 
-  # GET /puzzles/new
+  # Create new puzzle
+  # Return non 
+  # Complexity O(1)
+  # Author : Moaz El-Nashar
   def new
     @puzzle = Puzzle.new
   end
 
-  # GET /puzzles/1/edit
+  # Edit existing puzzle 
+  # Return non 
+  # Complexity O(1)
+  # Author : Moaz El-Nashar
   def edit
   end
 
-  # POST /puzzles
-  # POST /puzzles.json
+  # Create new puzzle 
+  # Return : redirect to the show page or the new page  
+  # Complexity O(1)
+  # Author : Moaz El-Nashar
   def create
     @puzzle = Puzzle.new(puzzle_params)
     if @puzzle.save
@@ -36,8 +48,10 @@ class PuzzlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /puzzles/1
-  # PATCH/PUT /puzzles/1.json
+  # Update an existing puzzle
+  # Return : redirect to the show or edit page
+  # Complexity O(1)
+  # Author : Moaz El-Nashar  
   def update
     respond_to do |format|
       if @puzzle.update(puzzle_params)
@@ -50,8 +64,10 @@ class PuzzlesController < ApplicationController
     end
   end
 
-  # DELETE /puzzles/1
-  # DELETE /puzzles/1.json
+  # Destroy an existing puzzle
+  # Return : Redirect to index page
+  # complexity O(1)
+  # Author : Moaz El-Nashar  
   def destroy
     @puzzle.destroy
     respond_to do |format|
@@ -61,12 +77,16 @@ class PuzzlesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    # Finding puzzle by id
+    # complexity O(n)
+    # Author : Moaz El-Nashar
     def set_puzzle
       @puzzle = Puzzle.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Define attributes for Rails 4
+    # complexity O(n)
+    # Author : Moaz El-Nashar
     def puzzle_params
       params.require(:puzzle).permit(:description, :image, :remote_image_url)
     end

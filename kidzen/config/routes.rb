@@ -1,7 +1,5 @@
 Kidzen::Application.routes.draw do
 
-  resources :puzzles
-
   root 'registered_users#show'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
@@ -73,6 +71,7 @@ Kidzen::Application.routes.draw do
   resources :poll_questions
   resources :sessions, only: [:new, :create, :destroy]
   resources :group_members
+  resources :puzzles
 
   
   get "group_members/index"
