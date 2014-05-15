@@ -1,5 +1,6 @@
 Kidzen::Application.routes.draw do
 
+  get "events_invitations/event_invitation"
   root 'registered_users#show'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
