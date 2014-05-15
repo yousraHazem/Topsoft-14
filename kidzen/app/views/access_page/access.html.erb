@@ -1,24 +1,24 @@
-
-
+<!--Authors:- Mohamed Khaled AbdelMeguid -->
   
-  <div class = "tags">  
-   
+<!-- This part views the prevented tags of a speceific Child 
+Author:- Mohamed Khaled AbdelMeguid-->  
+<div class = "tags">  
 <% if (Permission.exists?(registered_user_id: 2 , abilities: ["can_create_public_chat_rooms"=>true])) %>
-    <p class = "tags"> 
-    <input type="checkbox" id = "can create public chat rooms" onclick="changeCreateRooms(2)" checked >
-    can create public chat rooms 
-    </p>
+  <p class = "tags"> 
+  <input type="checkbox" id = "can create public chat rooms" onclick="changeCreateRooms(2)" checked >
+  can create public chat rooms 
+  </p>
   <%else%>
-    <p class = "tags"> <input type="checkbox" id = "can create public chat rooms" onclick="changeCreateRooms(2)" >
-    can create public chat rooms </p>
+  <p class = "tags"> <input type="checkbox" id = "can create public chat rooms" onclick="changeCreateRooms(2)" >
+  can create public chat rooms </p>
   <br>
   <% end %>
   </div>
   </div>
 
-
 <script>
-
+//This method creates an ajax request
+//Author:- Mohamed Khaled AbdelMeguid
 function create_ajax_request (url, data, callback) {
   var xhr = new XMLHttpRequest();
   xhr.open('PUT', url, true);
@@ -33,23 +33,21 @@ function create_ajax_request (url, data, callback) {
   xhr.send( JSON.stringify(data) );
   return xhr;
 }
-
- 
-
-  function changeCreateRooms(childId) {
-    var checkBox = document.getElementById("can create public chat rooms");
-    var valueUpdate = checkBox.checked;
-    prompt(valueUpdate);
-    var url = ['http://' + location.host, 'access_page', 'update_create_rooms'].join('/');
-    var callback = function(responseJSON, xhr) {
+//This function change the value of the checkbox in the DB and in the view 
+//Author:- Mohamed Khaled AbdelMeguid
+function changeCreateRooms(childId) {
+  var checkBox = document.getElementById("can create public chat rooms");
+  var valueUpdate = checkBox.checked;
+  var url = ['http://' + location.host, 'access_page', 'update_create_rooms'].join('/');
+  var callback = function(responseJSON, xhr) {
   }
   create_ajax_request(url, {value: valueUpdate, child: childId}, callback);
   }
-
 </script>
 
 <style type="text/css">
-
+/* This method designs the style of the X buttons in the view 
+Author:- Mohamed Khaled AbdelMEguid  */
 .del {
   background: -webkit-gradient(linear, left top, left bottom, from(#78bbe6), to(#78bbe6));
   background: -webkit-linear-gradient(top, #78bbe6, #78bbe6);
@@ -62,6 +60,8 @@ function create_ajax_request (url, data, callback) {
   text-decoration: none;
   vertical-align: middle;
 }
+/* This method designs the prevented tags that appear in the view 
+Author:- Mohamed Khaled AbdelMEguid*/
 .tags {
   margin-right: 0px;
   margin-bottom: 10px;
@@ -71,5 +71,4 @@ function create_ajax_request (url, data, callback) {
   background-color: #78bbe6;
   color: white;
   }
-
 </style>
