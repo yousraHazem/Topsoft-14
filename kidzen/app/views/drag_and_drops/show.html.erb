@@ -4,6 +4,17 @@ of the image that was uploaded by the content provider, and 3 slots
 of the same shapes and the child has to match this shapes and view 
 his/her score after finishing the game as well as past scores in the
 lower right corner of the page. Author : Hussien M. Eloy. -->
+<!-- Include necessary javascript and stylesheets files -->
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag("drag_and_drop.js") %>
+  <%= javascript_include_tag("http://ajax.googleapis.com/ajax/libs/j"\
+  "query/1.5.0/jquery.min.js") %>
+  <%= javascript_include_tag("http://ajax.googleapis.com/ajax/libs/j"\
+  "queryui/1.8.9/jquery-ui.min.js") %>
+<% end %>
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag("drag_and_drop.css") %>
+<% end %>
 <h3> Match shapes with their corresponding slots</h3>
 <br>
 <br>
@@ -13,8 +24,6 @@ lower right corner of the page. Author : Hussien M. Eloy. -->
 <!-- Button used to share score of last game. -->
 <button type="button" onclick="shareScore();"><i>Share Score</i></button>
 <br>
-<!-- Including the javacript file that actually runs the game. -->
-<script src="drag_and_drop.js"></script>
 <!-- Passing the variables The game id and name to the script 
 to be used there. -->
 <script type="text/javascript">
@@ -59,7 +68,3 @@ objects where the actual game happens really on it. -->
     <% end %>
   </tbody>
 </table>
-<!-- Including the stylesheet file of the page and jquery plugins. -->
-<style src="drag_and_drop.css"></style>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>

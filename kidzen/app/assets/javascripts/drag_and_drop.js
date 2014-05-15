@@ -122,8 +122,7 @@ function shareScore() {
         var callback = function(responseJSON, xhr) {}
         create_ajax_request(url,{title: head, body: post},callback);
         alert('Successfully Shared :)');
-    }
-    else {
+    } else {
         alert('You have to Play first!');
     }
 } 
