@@ -1,21 +1,18 @@
 
 <% @children.each do |child| %>
-  <div onclick="collapse(this)" class="collapsable_container" id="<%= Child.find(child).registered_user.username %>" >
+  <div onclick="collapse(this)" class="collapsable_container"
+    id="<%= Child.find(child).registered_user.username %>" >
     <!-- Input is used for preserving state -->
     <div class ="round_button">
       <label class="header"><input type="checkbox" class="filter" disabled="true" /> 
         <p class="round_inner"><%= Child.find(child).registered_user.full_name %></p>
       </label>
     </div>
-
       <div class="collapsable_field">
-       
-        
-        <% Notification.where(:assigned_to => Child.find(child).registered_user.username).each do |notification| %>
-        <%= notification.long_desc %>
+        <% Notification.where(:assigned_to => Child.find(child).registered_user.username)
+          .each do |notification| %>
+          <%= notification.long_desc %>
         <% end %>   
-
-         
     </div>
   </div>
   <br/>
