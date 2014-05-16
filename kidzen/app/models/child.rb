@@ -1,6 +1,26 @@
 class Child < ActiveRecord::Base
   # Associations and validations.
   belongs_to :registered_user, dependent: :destroy
+ 
+  has_many :friends,
+           :through => :friendships,
+           :conditions => "status = 'accepted'"
+
+  has_many :requested_friends,
+           :through => :friendships,
+           :source => :friend,
+           :conditions => "status = 'requested'",
+           :order => :created_at
+
+  has_many :pending_friends,
+           :through => :friendships,
+           :source => :friend,
+           :conditions => "status = 'pending'",
+           :order => :created_at
+
+  has_many :friendships,
+           :foreign_key => 'child_1_id',
+           :dependent => :destroy
 
 
   # Checks if other is a friend of this child.
