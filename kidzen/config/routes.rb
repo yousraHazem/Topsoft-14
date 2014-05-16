@@ -11,6 +11,21 @@ Kidzen::Application.routes.draw do
   # username will be the same as in the url /show/"username".
   # Author: Ammar ELWazeer
   get '/show/:username', to: 'registered_users#show_user'
+  
+  #gets the unique event's name and/ or id from the url.
+  #name: the event's unique name.
+  #id: the event's unique id.
+  #Author: Ahmad H. Elhamshary.
+  get '/show/events/:name' , to: 'events#show_event'
+  get '/events/:id' , to: 'events#show'
+
+  #gets the unique name and/ or id from the group's url 
+  #name: the group's unique name.
+  #id: the group's unique id.
+  #Author: Ahmad H. Elhamshary.
+  get '/show/groups/:group_name' , to: 'groups#show_group'
+  get '/groups/:id' , to: 'groups#show
+  
   # Settings' actions
   post '/settings', to: 'registered_users#set_settings'
   get '/settings', to: 'registered_users#settings'
