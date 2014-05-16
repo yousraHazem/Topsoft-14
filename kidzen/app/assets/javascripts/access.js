@@ -33,7 +33,7 @@ function deleteInfo (toBeDeleted, childName) {
   }
   
 /* This functions submits a word to be banned for a child.
-Authors:- Mohamed Khaled AbdelMeguid. */
+Author:- Mohamed Khaled AbdelMeguid. */
 function ban(childName) {
     var banned = document.getElementById("submitTags").value
     prompt(banned + " is now banned for your child, Please refresh the page to view all of the tags to be able to delete them. Thanks !");
