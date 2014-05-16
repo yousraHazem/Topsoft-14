@@ -1,7 +1,7 @@
-//This function creates an AJAX request where the paramaters are the url which is specifing
-//the controller and the action, the data which is specifing the data to be sent to the 
-//controller, and a callback function
-//Authors:- Mohamed Khaled AbdelMeguid
+/* This function creates an AJAX request where the paramaters are the url which is specifing
+the controller and the action, the data which is specifing the data to be sent to the 
+controller, and a callback function. 
+Authors: Mohamed Khaled AbdelMeguid. */
 function create_ajax_request (url, data, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('PUT', url, true);
@@ -16,9 +16,10 @@ function create_ajax_request (url, data, callback) {
     xhr.send( JSON.stringify(data) );
     return xhr;
 }
-//This function change a child option when the checkbox is pressed with a true or false value
-//in the DB through an AJAX request
-//Authors:- Mohamed Khaled AbdelMeguid
+
+/* This function change a child option when the checkbox is pressed with a true or false value
+in the DB through an AJAX request.
+Authors: Mohamed Khaled AbdelMeguid. */
  function changeMutualRooms(childId) {
     var checkBox = document.getElementById("mutual friends rooms only");
     var valueUpdate = checkBox.checked;
