@@ -5,8 +5,8 @@
   <%= stylesheet_link_tag("access.css") %>
 <% end %>
 <!-- This part views a specific option of a child through a checked 
-or unchecked box according to it's value in the DB 
-Authors:- Mohamed Khaled AbdelMeguid -->
+or unchecked box according to it's value in the DB .
+Authors: Mohamed Khaled AbdelMeguid. -->
 <div class = "tags">  
 <% if (Permission.exists?(registered_user_id: @child.registered_user.id , 
   abilities: ["can_create_public_chat_rooms"=>true])) %>
