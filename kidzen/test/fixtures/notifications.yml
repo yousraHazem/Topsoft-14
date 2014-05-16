@@ -5,11 +5,11 @@ one:
   title: MyString
   short_desc: MyString
   long_desc: MyString
-  embedded_view_url: MyString
+  custom_view_url: MyString
 
 two:
   assigned_to: MyString
   title: MyString
   short_desc: MyString
   long_desc: MyString
-  embedded_view_url: MyString
+  custom_view_url: MyString

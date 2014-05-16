@@ -2,9 +2,9 @@
 # RegisteredUser.
 # Authors: Ahmed H. Ismail
 class RegisteredUser < ActiveRecord::Base
-  searchkick autocomplete: [:username, :first_name, :middle_name, :family_name, :nickname, :email]  
+  searchkick autocomplete: [:username, :first_name, :middle_name, :family_name, :email]  
   private
-    VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
+   
 
     # Creates the token.
     # Authors: Ahmed H. Ismail
@@ -13,6 +13,7 @@ class RegisteredUser < ActiveRecord::Base
     end
 
   public
+    VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
     # Validations: 
     validates :username, presence: true, length: { minimum: 4 }, uniqueness: true
     validates :first_name, presence: true, length: { maximum: 256 }
@@ -25,7 +26,6 @@ class RegisteredUser < ActiveRecord::Base
     validates :banned, inclusion: [true, false]
     # this needs to be in the javascript
     # validates :password, length: { minimum: 6 }
-    validates_associated :permission # Note: Don't use on both ends
     # Associations:
     has_one :permission, dependent: :destroy
     after_initialize  :cap_names
@@ -61,13 +61,6 @@ class RegisteredUser < ActiveRecord::Base
     def male?
       gender.downcase == "male"
     end
-
-    # # Am I a child?
-    # # Authors: Ahmed H. Ismail
-    # def child?
-    #   is_child
-    # end
-
 
     # Assigns first name.
     # name - string input

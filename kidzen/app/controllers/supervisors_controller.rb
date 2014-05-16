@@ -1,9 +1,10 @@
+require 'exceptions'
 # Supervisor controller
 # Authors: Ahmed H. Ismail
 class SupervisorsController < ApplicationController  
   # TODO: fix 'X-CSRF-Token' in XMLHttpRequest header
   skip_before_filter :verify_authenticity_token, only: [:accept_child, :reject_child]
-  
+  include Exceptions
   # GET /confirm_children
   # Renders the confirm children
   # view.
@@ -71,36 +72,44 @@ class SupervisorsController < ApplicationController
   # Authors: Ahmed H. Ismail
   def signup
     @user = RegisteredUser.new
+    @errors = [] # Populated with errors by create.
   end
 
   # POST /supervisors/create
   # Creates a new supervisor
   # Authors: Ahmed H. Ismail
   def create
-    perms = Permission.supervisor_default
-    perms.save
-    create_params = signup_params
-    create_params[:banned] = false
-    create_params[:permission] = perms
-    Rails.logger.debug("create_params: #{create_params.inspect}")
-    @user = RegisteredUser.new(create_params)
-    respond_to do |format|
-      if @user.save
-        perms.registered_user = @user
-        perms.save
-        @supervisor = Supervisor.create(registered_user: @user)
+    respond_to do |format| 
+      begin
+        create_params = signup_params
+        create_params[:banned] = false
+        @user = RegisteredUser.new(create_params)
+        raise RegisteredUserParamsError.new(@user.inspect) if not @user.save
+        perms = Permission.supervisor_default(@user)
+        raise PermissionParamsError.new(create_params.inspect) if not perms.save
+        @supervisor = Supervisor.new(registered_user: @user)
+        raise SupervisorParamsError.new(create_params.inspect) if not @supervisor.save
         sign_in @user
         format.json { render json: {status: "ok"} }
         flash[:success] = "Welcome to kidzen!!"
         format.html { redirect_to @user }
-      else
-        perms.destroy
-        format.json { render json: @user.errors.full_messages }
-        format.html { render :signup}
+      rescue RegisteredUserParamsError => rpe
+        @errors = @user.errors.full_messages
+        format.json { render json: @errors }
+        format.html { render :signup }
+      rescue PermissionParamsError => ppe
+        @user.destroy
+        format.json { render json: {status: "failed"} }
+        format.html { render status: 500 }
+      rescue SupervisorParamsError => ae
+        @errors = @supervisor.errors.full_messages
+        @user.destroy
+        format.json { render json: @errors }
+        format.html { render :signup }        
       end
     end
-
   end
+
 
 
   # This method gets email and supervisor id from the view and find the 

@@ -25,7 +25,7 @@ Kidzen::Application.routes.draw do
   get "/supervisors/dashboard", to: 'supervisors#show'
   put "/supervisors/accept_child", to: 'supervisors#accept_child'
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
-  get "/supervisors/signup", to: 'supervisors#signup'
+  get "/supervisors/signup", to: 'supervisors#signup', as: :parent_signup
   post "/supervisors/create", to: 'supervisors#create'
   # This routes to enable getting info from invite page
   get "supervisors/invite", to: 'supervisors#invite'
@@ -39,7 +39,7 @@ Kidzen::Application.routes.draw do
   delete '/signout', to: 'sessions#destroy'
   get '/signout', to: 'sessions#destroy'
   # Children Signup paths
-  get '/signup', to: 'children#signup'
+  get '/signup', to: 'children#signup', as: :child_signup
   post '/children/create', to: 'children#create'
   get '/children/show', to: 'children#show'  
 

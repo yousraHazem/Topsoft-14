@@ -4,8 +4,7 @@ class CreateActivities < ActiveRecord::Migration
       t.integer :min_age
       t.integer :max_age
       t.string :name
-      t.string :category
-      
+      t.string :topic
       t.timestamps
     end
   end
