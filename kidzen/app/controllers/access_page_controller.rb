@@ -11,7 +11,7 @@ class AccessPageController < ApplicationController
   #Authors:- Mohamed Khaled Abdelmeguid
   def access
   if signed_in?
-    @child = Child.find(registered_user_id: params[:id])
+    @child = Child.find_by(registered_user_id: params[:id])
   else
     redirect_to session_path :new
   end
