@@ -14,8 +14,6 @@ class ApplicationController < ActionController::Base
     session[:locale]= params[:locale]
     redirect_to :back, notice: "Your language has been changes to #{params[:locale]}"
   end
-
-
  
   private
   # This is function check the current language of the system.
