@@ -21,6 +21,7 @@ Kidzen::Application.routes.draw do
   # Supervisor routes:
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'
+  get "/children_history", to: 'supervisors#children_history'
   # Children notification actions
   get "/supervisors/dashboard", to: 'supervisors#show', as: :parent_profile
   put "/supervisors/accept_child", to: 'supervisors#accept_child'
@@ -71,6 +72,7 @@ Kidzen::Application.routes.draw do
   resources :poll_questions
   resources :sessions, only: [:new, :create, :destroy]
   resources :group_members
+  resources :songs
 
   
   get "group_members/index"
@@ -82,7 +84,15 @@ Kidzen::Application.routes.draw do
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
   get '/group_members/:id/view' , to:  'group_members#view'
-  post '/group_members/:id/view' => 'group_members#view'     
+  post '/group_members/:id/view' => 'group_members#view'  
+  get '/group_members/:id/leave_group' , to:  'group_members#leave_group'
+  post '/group_members/:id/leave_group' => 'group_members#leave_group'
+  get '/group_members/:id/join_group' , to:  'group_members#join_group'
+  post '/group_members/:id/join_group' => 'group_members#join_group'    
+  get "friendships/view_my_friends"
+  get "friendships/view_pending_friendship_requests"
+  get "friendships/accept_reject_friend_request"  
+  get "friendships/send_friend_request"     
 
   # children routes
   get "child/verify"
@@ -96,7 +106,6 @@ Kidzen::Application.routes.draw do
 
 
 
-
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
@@ -105,5 +114,8 @@ Kidzen::Application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  # topics routes
+  get "topics/index"
+  get "topics/show"
 end
 
