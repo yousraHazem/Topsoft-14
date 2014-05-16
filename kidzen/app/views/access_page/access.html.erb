@@ -6,8 +6,8 @@
 <% end %>
 <!-- This part views a text field and a submit buuton, which are used to submit 
 a tag to be prevented from a child, 
-and it also views the tags that has been submitted already
-Authors:- Mohamed Khaled AbdelMeguid -->
+and it also views the tags that has been submitted already.
+Authors: Mohamed Khaled AbdelMeguid. -->
 <input type="text" id="submitTags" >
 <button onclick="ban(<%= "\"#{@child.registered_user.username}\"" %>)">Ban it!</button>  
 <% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
