@@ -1,5 +1,5 @@
   <h3>Topics</h3>
-  <%if !topics.empty?%>
+  <%if !@topics.empty?%>
     <div class="topics">
       <%for topic in @topics%>
         <p> <%=link_to(topic.name,{:action=>"show",:id=>topic.id},
