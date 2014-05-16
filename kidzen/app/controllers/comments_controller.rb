@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 #Here we create our comment
 #Parameters : None
 #returns : None
-#Author : Abdelrahman Saad
+#Author : Abdelrahman S. Elsayed
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create!(comment_params)
@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
 #Here we define the parameters of the comment
 #Parameters : None
 #returns : None
-#Author : Abdelrahman Saad
+#Author : Abdelrahman S. Elsayed
   def comment_params
     params.require(:comment).permit(:body , :post_id)
   end
