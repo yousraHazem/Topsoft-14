@@ -51,17 +51,6 @@ group :development do
 end
 
 
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-
-
-# Use ActiveModel has_secure_password
-
-
-
-
 gem 'carrierwave-video'
 
 gem 'streamio-ffmpeg'
@@ -84,3 +73,7 @@ gem 'rmagick'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'nifty-generators'
+
+gem 'faye'
