@@ -8,7 +8,6 @@ class PostsController < ApplicationController
 # returns : None
 # Author : Abdelrahman S. Elsayed
   def index
-    @user = current_user
     @posts = Post.find(:all, :order => 'posts.created_at DESC')
     @post = Post.new
   end
@@ -20,8 +19,7 @@ class PostsController < ApplicationController
 # returns : None
 # Author : Abdelrahman S. Elsayed
   def show
-    @user = current_user
-    redirect_to index 
+      redirect_to index 
   end
 
 # GET /posts/new
@@ -43,9 +41,9 @@ class PostsController < ApplicationController
 # new post.
 # Parameters : None
 # returns : None
-# Author : Abdelrahman S. Elsayed , Shary Beshara.
+# Author : Abdelrahman S. Elsayed , Shary Beshara
   def create
-   if ! Supervisor.exists?(registered_user: current_user)
+   #if ! Supervisor.exists?(registered_user: current_user)
     @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
