@@ -26,6 +26,7 @@ class SupervisorsController < ApplicationController
 
   # GET /supervisors/dashboard
   # Renders the supervisor's homepage
+  # Authors: Ahmed H. Ismail
   def show
     if signed_in?
       # Is user a supervisor?
@@ -97,7 +98,7 @@ class SupervisorsController < ApplicationController
   end
 
   # This action get the children of the supervisor and pass them to the view.
-  # Authors:- Shary Beshara
+  # Authors: Shary Beshara
   def children_history
     @children = ChildSupervisor.where(supervisor: current_user)
   end
