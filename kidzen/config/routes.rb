@@ -82,6 +82,7 @@ Kidzen::Application.routes.draw do
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   #Posts and comments
   resources :posts do
@@ -91,6 +92,18 @@ Kidzen::Application.routes.draw do
   get '/group_members/:id/view' , to:  'group_members#view'
   post '/group_members/:id/view' => 'group_members#view'     
 >>>>>>> 6dedc81120f00d35b9cb779479a5e2a2749c872d
+=======
+  get "friendships/view_my_friends"
+  
+
+    
+
+  get '/group_members/:id/view' , to:  'group_members#view'
+  post '/group_members/:id/view' => 'group_members#view'
+  get "friendships/view_pending_friendship_requests"
+  get "friendships/accept_reject_friend_request"  
+  get "friendships/send_friend_request"     
+>>>>>>> a003f2060415f611221a4f9000038824a9ef0a1b
 
   # children routes
   get "child/verify"
