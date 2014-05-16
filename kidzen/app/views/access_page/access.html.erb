@@ -1,0 +1,59 @@
+<!-- This is the access view page, the part of the child's options 
+Author:-Mohamed Khaled AbdelMeguid -->
+
+<!-- This method views the checkbox checked or not checked according to the hash value in the DB 
+Author:- Mohamed Khaled AbdelMeguid -->
+<% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
+<%end%>
+<div class = "tags">  
+  <% if (Permission.exists?(registered_user_id: 2 , abilities: ["can_join_public_chat_rooms"=>true])) %>
+    <p class = "tags"> <input type="checkbox" id = "can join public chat rooms" onclick="changeJoinRooms(2)" checked>
+    can join public chat rooms </p>
+  <%else%>
+    <p class = "tags"><input type="checkbox" id = "can join public chat rooms" onclick="changeJoinRooms(2)"> 
+    can join public chat rooms </p>
+  <%end%>
+</div>
+  
+
+<script>
+//This function create an AJAX request
+function create_ajax_request (url, data, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('PUT', url, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Accept', 'application/json'); // I want JSON 
+  xhr.responseType = "json";
+  xhr.addEventListener('load', function() {
+    xhr.responseJSON =  xhr.response;
+    console.log(xhr.responseJSON);
+    callback(xhr.responseJSON,  xhr);
+  });
+  xhr.send( JSON.stringify(data) );
+  return xhr;
+}
+//This function  changes the value of the checbox in the DB when pressed
+//Author:- Mohamed Khaled AbdelMeguid
+function changeJoinRooms(childId) {
+  var checkBox = document.getElementById("can join public chat rooms");
+  var valueUpdate = checkBox.checked;
+  var url = ['http://' + location.host, 'access_page', 'update_join_rooms'].join('/');
+  var callback = function(responseJSON, xhr) {
+}
+  create_ajax_request(url, {value: valueUpdate, child: childId}, callback);
+  }
+</script>
+
+<style type="text/css">
+/* This styles the checbox
+Author:- Mohamed Khaled AbdelMeguid */
+.tags {
+  margin-right: 0px;
+  margin-bottom: 10px;
+  font-family: news-gothic-std, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  background-color: #78bbe6;
+  color: white;
+  }
+</style>
