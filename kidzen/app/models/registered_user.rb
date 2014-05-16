@@ -2,15 +2,14 @@
 # RegisteredUser.
 # Authors: Ahmed H. Ismail
 class RegisteredUser < ActiveRecord::Base
-  extend TokenHelper
   searchkick autocomplete: [:username, :first_name, :middle_name, :family_name, :nickname, :email]  
   private
     VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
 
     # Creates the token.
-    # Authors: Ahmed H. Ismail , Nouran Tarek Attia
+    # Authors: Ahmed H. Ismail
     def create_remember_token
-      self.remember_token = digest(new_remember_token)
+      self.remember_token = RegisteredUser.digest(RegisteredUser.new_remember_token)
     end
 
   public
@@ -126,6 +125,20 @@ class RegisteredUser < ActiveRecord::Base
       Notification.where(assigned_to: username, pending: true )
     end
 
+
+
+    # Generates a random token
+    # Authors: Ahmed H. Ismail
+    def self.new_remember_token
+       SecureRandom.urlsafe_base64
+    end
+
+    # Passes token through one way hash
+    # Authors: Ahmed H. Ismail
+    def self.digest(token)
+      Digest::SHA1.hexdigest(token.to_s)
+    end
+
     # This method changes the attribute (notification_by_email) of the user by 
     # The value passed to it from the controller
     # Notification_by_email is the attribute that show if the user wants the 
@@ -134,4 +147,7 @@ class RegisteredUser < ActiveRecord::Base
     def settings(notification_by_email)
         update_attributes(notification_by_email: notification_by_email)
     end
+
+
+
 end
