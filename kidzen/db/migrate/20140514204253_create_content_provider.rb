@@ -1,10 +1,8 @@
 class CreateContentProvider < ActiveRecord::Migration
   def change
-    create_table :content_providers do |t|
-    	t.string :username
-		t.string :email
-		t.string :password_digest
-		t.string :remember_token
+    create_table :content_providers, primary_key: :registered_user_id, id: false do |t|
+    	t.integer :registered_user_id
+      t.timestamps
     end
   end
 end
