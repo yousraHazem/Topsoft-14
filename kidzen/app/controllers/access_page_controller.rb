@@ -22,7 +22,7 @@ class AccessPageController < ApplicationController
   @value = params[:value]
   @child = params[:child]
   if @value == true
-    @upd = Permission.find_by(registered_user_id: 2, abilities: ['can_create_public_chat_rooms' => false])
+    @upd = Permission.find_by(registered_user_id: @child, abilities: ['can_create_public_chat_rooms' => false])
     if !@upd.nil?
       @upd.update(:abilities => {'can_create_public_chat_rooms' => true})
       @upd.save 
@@ -31,7 +31,7 @@ class AccessPageController < ApplicationController
     end  
   end
   if @value == false
-    @upd = Permission.find_by(registered_user_id: 2, abilities: ['can_create_public_chat_rooms' => true])
+    @upd = Permission.find_by(registered_user_id: @child, abilities: ['can_create_public_chat_rooms' => true])
     if !@upd.nil?
       @upd.update(:abilities => {'can_create_public_chat_rooms' => false})
       @upd.save 
