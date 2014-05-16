@@ -1,14 +1,14 @@
 <!-- This view adds the subject , body and receipent labels , and the send message button -->
-<!-- Author: Ali A. El-Halawaty .-->
+<!-- Author: Ali A. El-Halawaty.-->
 <%= form_for @message do |form| %>
-<% if @message.errors.any? %>
+  <% if @message.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
-
+      <h2><%= pluralize(@message.errors.count, "error") %>
+       prohibited this message from being saved:</h2>
       <ul>
-      <% @message.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @message.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>

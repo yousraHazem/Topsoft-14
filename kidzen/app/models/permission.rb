@@ -28,6 +28,9 @@ class Permission < ActiveRecord::Base
     perm_hash[:account_creation] = false
     perm_hash[:supervisor] = false
     perm_hash[:child] = true
+    perm_hash[:can_join_public_chat_rooms] = false
+    perm_hash[:can_create_public_chat_rooms] = false
+    perm_hash[:mutual_friends_rooms_only] = false
     Permission.new(abilities: perm_hash)
   end
 
