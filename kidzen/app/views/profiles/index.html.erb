@@ -45,5 +45,13 @@
     <% end %>
   <% end %>
 <% end %>
+
+  <% if Child.exists?(registered_user: current_user) %>
+
+    <% @child = Child.find_by(registered_user: current_user) %>
+
+    <%= render partial: "Posts/index", locals: {friends: @child.friends, child: @child} %>
+
+  <% end %>
 </center>
 
