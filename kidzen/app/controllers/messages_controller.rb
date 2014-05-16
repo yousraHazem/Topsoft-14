@@ -45,15 +45,13 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(m_params)
     @message.sender = current_user.email
-    @re = @message.recepient
-
+    @receiver_mail = @message.recepient
     if !@message.valid?
       flash[:error] = @message.errors.full_messages.join("<br>").html_safe
     end
-    respond_to do |format|
-      if RegisteredUser.exists?(:email => @re)
-      #if
-       @message.save
+      respond_to do |format|
+      if RegisteredUser.exists?(:email => @receiver_mail)
+        @message.save
         format.html { redirect_to :action => :index, notice: 'Message has been sent.' }
         format.json { render json: @messages }
       else
