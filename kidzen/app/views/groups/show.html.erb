@@ -13,3 +13,5 @@
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
 <%= button_to 'View Members', controller: :group_members, action: "view" %>
+<%= button_to 'Join Group', controller: :group_members, action: "join_group" %>
+<%= button_to 'Leave Group', controller: :group_members, action: "leave_group" %>
