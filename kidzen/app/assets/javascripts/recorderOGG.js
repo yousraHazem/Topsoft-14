@@ -1,4 +1,4 @@
-(function(window){
+  (function(window){
     var Recorder = function(source,cfg){
 
       var WORKER_PATH = '/assets/recorderWorkerOGG.js';
@@ -43,6 +43,6 @@
       console.log("HERE");
       currCallback(e.data);
     }
-};
-window.Recorder = Recorder;
-})(window);
+  };
+  window.Recorder = Recorder;
+  })(window);
