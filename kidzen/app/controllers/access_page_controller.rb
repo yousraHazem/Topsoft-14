@@ -1,5 +1,5 @@
 # Access Control Page.
-# Author: Mohamed Khaled Abdelmeguid.
+# Authors: Mohamed Khaled Abdelmeguid.
 
 class AccessPageController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:delete_tag]
@@ -19,7 +19,7 @@ class AccessPageController < ApplicationController
   end
   
   # This action updates a child's options available upon the decision of the parent.
-  # Author:- Mohamed Khaled Abdelmeguid.
+  # Authors: Mohamed Khaled Abdelmeguid.
   def update_join_rooms
     @value = params[:value]
     @child = params[:child]
