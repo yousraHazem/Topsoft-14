@@ -2,7 +2,7 @@
 #Authors:- Mohamed Khaled Abdelmeguid
 
 class AccessPageController < ApplicationController
-	skip_before_filter :verify_authenticity_token, only: [:delete_tag]
+  skip_before_filter :verify_authenticity_token, only: [:delete_tag]
   skip_before_filter :verify_authenticity_token, only: [:update]
   skip_before_filter :verify_authenticity_token, only: [:add]
   #This action is used to show the prevented Tags
@@ -15,8 +15,8 @@ class AccessPageController < ApplicationController
   else
   redirect_to session_path :new
   end
- 	end
- 	#This action deletes the prevented tags from the tags list
+  end
+  #This action deletes the prevented tags from the tags list
   #Authors:- Mohamed Khaled Abdelmeguid
   def delete_tag
   if Supervisor.find_by(registered_user_id: current_user.id) == 
@@ -29,7 +29,7 @@ class AccessPageController < ApplicationController
   end	
   respond_to do |format|
   format.json { render json: {status: "ok"} }
-	end
+  end
   end
   #This action is used to add a new prevented tag by submitting it
   #and we first check if it's already found in the DB
