@@ -1,3 +1,7 @@
+<!--# This page is to create survey.
+    # Parameters : None.
+    # Returns : None.
+    # Author : Ahmad Bassiouny.-->
 <%= form_for(@new_survey) do |f| %>
   <% if @new_survey.errors.any? %>
     <div id="error_explanation">
@@ -23,7 +27,7 @@
   <% end %>
   
   <p><%= link_to_add_fields "Add Question", f, :questions %></p>
-  
+
   <div class="actions">
     <%= f.submit %>
   </div>
