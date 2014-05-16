@@ -1,0 +1,17 @@
+<!-- This piece of code intializes a table, 
+then retrieves GroupMember elements that method View pass to it then add them to the table.
+Complexity: O(n).
+Author: Mohamed Bahgat Elrakaiby
+-->
+<h1>View members</h1>
+ <table>
+  <tr>
+    <th>username</th>
+  </tr>
+ 
+  <% @group_members.each do |g| %>
+    <tr>
+      <td><%= g.username %></td>
+    </tr>
+  <% end %>
+</table>
