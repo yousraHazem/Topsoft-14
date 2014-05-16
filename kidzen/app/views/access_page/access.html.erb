@@ -22,7 +22,7 @@
 <!-- Authors: Shary Beshara -->  
 <div id = "topics">
   <% BannedTopic.where(child_name: @child.registered_user.username).each do 
-    topic| %>
+    |topic| %>
     <div id = "<%= topic.activity_topic  %>" > 
       <%= topic.activity_topic %>
       <button onclick = "deleteTopic(<%= "\"#{topic.activity_topic}\"" %>, <%= 
