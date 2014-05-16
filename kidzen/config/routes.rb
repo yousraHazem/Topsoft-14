@@ -100,7 +100,7 @@ post '/settings', to: 'registered_users#set_settings'
   get "access_page/access"
   post '/access_page/access', to: 'access_page#access'
   put 'access_page/delete_tag', to: 'access_page#delete_tag'
-  put 'access_page/update', to: 'access_page#update'
+  put 'access_page/update_mutual_rooms', to: 'access_page#update_mutual_rooms'
   put 'access_page/add', to: 'access_page#add'				
 
 
