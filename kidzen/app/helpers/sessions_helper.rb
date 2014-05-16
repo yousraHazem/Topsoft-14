@@ -1,7 +1,7 @@
 # Helpers for logging in
 # Authors: Ahmed H. Ismail
 module SessionsHelper
-  #include TokenHelper
+
   # Signs in a user and stores a cookie on his/her browser.
   # Only call this from sessions controller
   # Or after authenticating the password !
