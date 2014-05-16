@@ -8,7 +8,7 @@ class EventsInvitationsController < ApplicationController
   # Time complexity: O(n).
   #Authors: Nouran Mamdouh.
 
-  def send_event_request
+  def send_friend_request
     user_id = current_user.id
     pending_friendship = EventsInvitation.new( :invited_id => params[:inviter_id].to_i,
       :child_2_id => user_id, :status => "pending")
