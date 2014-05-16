@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 #returns : None
 #Author : Abdelrahman S. Elsayed , Shary Beshara.
   def create
-    if ! Supervisor.exists?(registered_user: current_user)
+    #if ! Supervisor.exists?(registered_user: current_user)
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create!(comment_params)
     respond_to do |format|
