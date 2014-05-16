@@ -4,18 +4,17 @@
 <img id="pause" src="assets/pause.png" onclick="togglePauseRecording(this);">
 <h3 id="state" style="color:#AB0000;">State: Stopped</h3>
 <div style="width:100%;">
-<h2><a id="save" href="#">Save</a></h2>
-<h1>Your Recordings:</h1>
-
-<% @files.each do |file| %>
-  <div>
-  <h2> <%= time_ago_in_words(file.created_at).to_s + " ago."%></h2>
-  <audio controls>
-  <source src=<%= "/audioClips/" + file.filename + ".wav" %>>
-  </audio>
-  <%= link_to " Delete clip",action: "delete", id: file.id %>
-  </div>
-<% end %>
+  <h2><a id="save" href="#">Save</a></h2>
+  <h1>Your Recordings:</h1>
+  <% @files.each do |file| %>
+    <div>
+      <h2> <%= time_ago_in_words(file.created_at).to_s + " ago."%></h2>
+      <audio controls>
+      <source src=<%= "/audioClips/" + file.filename + ".wav" %>>
+      </audio>
+      <%= link_to " Delete clip",action: "delete", id: file.id %>
+    </div>
+    <% end %>
 </div>
 <%= javascript_include_tag "main" %>
 <script src="/assets/recorder.js?body=1"></script>
