@@ -4,14 +4,12 @@
   for group displaying group_name, group_description,
   and the username of the group owner-->
 <%= show_for @group do |u| %>
-  <h3>Group Name</h3>
   <%= u.attribute :group_name %>
-  <h3>Group Description</h3>
   <%= u.attribute :group_description %>
-  <h3>Group Owner</h3>
   <%= u.attribute :owner %>
 <% end %>
 
 <%= link_to "view membership requests", controller: :group_members, action: :membership_requests%>
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
+<%= button_to 'View Members', controller: :group_members, action: "view" %>
