@@ -33,6 +33,10 @@ class RegisteredUsersController < ApplicationController
     end
   end
 
+  def edit
+    @registered_user = RegisteredUser.find(params[:id])
+  end
+
   # This method gets the attribute from the view and sends it to the
   # function in the model after checking the user is signed in
   # Authors: Shary Beshara
