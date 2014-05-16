@@ -21,6 +21,7 @@ Kidzen::Application.routes.draw do
   # Supervisor routes:
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'
+  get "/children_history", to: 'supervisors#children_history'
   # Children notification actions
   get "/supervisors/dashboard", to: 'supervisors#show'
   put "/supervisors/accept_child", to: 'supervisors#accept_child'
@@ -73,6 +74,9 @@ Kidzen::Application.routes.draw do
   resources :new_surveys, only: [:index, :new, :create, :show, :destroy]
   put "/new_surveys/submit", to: 'new_surveys#submit'
   get "/new_surveys/show_super/:id", to: 'new_surveys#show_super'
+  resources :drag_and_drops
+  resources :songs
+
 
   
   get "group_members/index"
@@ -83,6 +87,11 @@ Kidzen::Application.routes.draw do
   get "groups/:id/membership_requests" , to: 'group_members#membership_requests'
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
+
+  
+
+    
+
   get '/group_members/:id/view' , to:  'group_members#view'
   post '/group_members/:id/view' => 'group_members#view'  
   get '/group_members/:id/leave_group' , to:  'group_members#leave_group'
@@ -93,6 +102,7 @@ Kidzen::Application.routes.draw do
   get "friendships/view_pending_friendship_requests"
   get "friendships/accept_reject_friend_request"  
   get "friendships/send_friend_request"     
+
 
   # children routes
   get "child/verify"
