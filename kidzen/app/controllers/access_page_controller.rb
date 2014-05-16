@@ -10,10 +10,10 @@ class AccessPageController < ApplicationController
   #Child.first will be replaced by params [dependency waiting]
   def access
   if signed_in?
-  @banned = Keyword.new(params[:tag])
-  @child = Child.find(params[:id])
+    @banned = Keyword.new(params[:tag])
+    @child = Child.find(params[:id])
   else
-  redirect_to session_path :new
+    redirect_to session_path :new
   end
   end
   #This action deletes the prevented tags from the tags list
@@ -21,10 +21,10 @@ class AccessPageController < ApplicationController
   def delete_tag
   if Supervisor.find_by(registered_user_id: current_user.id) == 
   ChildParent.find_by(parent_id: current_user.id)
-  @permit = params[:tag]
-  @name = params[:child]
-  Keyword.where(child_name: @name, tag: @permit).each do |des|
-  des.destroy
+    @permit = params[:tag]
+    @name = params[:child]
+    Keyword.where(child_name: @name, tag: @permit).each do |des|
+    des.destroy
   end
   end	
   respond_to do |format|
