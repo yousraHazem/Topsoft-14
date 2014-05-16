@@ -2,7 +2,6 @@
 the controller and the action, the data which is specifing the data to be sent to the 
 controller, and a callback function.
 Authors: Mohamed Khaled AbdelMeguid. */
-
 function create_ajax_request (url, data, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('PUT', url, true);
