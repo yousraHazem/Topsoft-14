@@ -1,6 +1,5 @@
 # Access Control Page.
 # Authors: Mohamed Khaled Abdelmeguid.
-
 class AccessPageController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:delete_tag]
   skip_before_filter :verify_authenticity_token, only: [:update]
