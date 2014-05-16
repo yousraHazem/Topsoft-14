@@ -128,9 +128,8 @@ class GroupMembersController < ApplicationController
     child = Child.where(:registered_user_id => user.id)
     member = GroupMember.new(:group_id => :group_id,:username => user.username,:member_accept_state => 2,:owner_accept_state => 1)
     member.save
-    end
+  end
     
-
   # This is a function that adds a member to the group by his email.
   # Doesn't return anything.
   # user is a variable of type RegisteredUser.
