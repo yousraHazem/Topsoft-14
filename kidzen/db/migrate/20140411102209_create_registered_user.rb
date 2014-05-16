@@ -18,7 +18,12 @@ class CreateRegisteredUser < ActiveRecord::Migration
         t.string :remember_token
         t.timestamps
     end
+<<<<<<< HEAD
     add_index :registered_users, :email, unique: true
+=======
+    add_index :registered_users, :email, unique: true 
+    add_index :registered_users, :username, unique: true
+>>>>>>> parent of 9acfc7e... Merge branch 'migrations' into c3_s27_photos_and_videos_gallery
     add_index :registered_users, :remember_token
   end
 end
