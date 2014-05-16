@@ -11,7 +11,9 @@
 # and this ensured in ImageUploader class using def extension_white_list.
 # Author : Hussien M. Eloy.
 class Photo < ActiveRecord::Base
-  mount_uploader :image, ImageUploader      
+  mount_uploader :image, ImageUploader
+  # has_many :comments,:tags    <<< to be un-commented once these models are created
+  belongs_to :post                
   validates :description, :image, presence: true
 
 
