@@ -52,8 +52,9 @@ class AccessPageController < ApplicationController
   def delete_topic
     @topic = params[:topic]
     @child = params[:child]
-    BannedTopic.where(child_name: @child, activity_topic: @topic).each do |des|
-      des.destroy
+    BannedTopic.where(child_name: @child, activity_topic: @topic).each do 
+    	|topic|
+      topic.destroy
     end 
     respond_to do |format|
       format.json { render json: {status: "ok"} }
