@@ -13,7 +13,7 @@ Authors: Mohamed Khaled AbdelMeguid. -->
     abilities: ["can_join_public_chat_rooms"=>true])) %>
     <p class = "tags"> 
       <input type="checkbox" id = "can join public chat rooms" 
-        onclick="changeJoinRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+      onclick="changeJoinRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
       can join public chat rooms
     </p>
   <%else%>
