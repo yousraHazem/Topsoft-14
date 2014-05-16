@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 # returns : None
 # Author : Abdelrahman Saad
   def index
+    @user = current_user
     @posts = Post.find(:all, :order => 'posts.created_at DESC')
     @post = Post.new
   end
@@ -19,6 +20,7 @@ class PostsController < ApplicationController
 # returns : None
 # Author : Abdelrahman Saad
   def show
+    @user = current_user
       redirect_to index 
   end
 
@@ -40,7 +42,9 @@ class PostsController < ApplicationController
 # Here we make a new post with parameters and add it to our database
 # Parameters : None
 # returns : None
-# Author : Abdelrahman Saad
+# This method checks if the user is not a supervisor to be allowed to create a 
+# new post.
+# Author : Abdelrahman Saad, Shary Beshara
   def create
     if ! Supervisor.exists?(registered_user: current_user)
       @post = Post.new(post_params)

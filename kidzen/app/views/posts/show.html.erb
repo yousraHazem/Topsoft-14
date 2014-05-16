@@ -4,6 +4,8 @@
   <div id="comments">
     <%= render :partial => @post.comments %>
   </div>
+  <!-- This checks if the user is not a supervisor to be able to comment-->
+  <!-- Authors: Shary Beshara -->
   <% if !Supervisor.exists?(registered_user: @user) %>
     <%= form_for [@post, Comment.new] do |f| %>
     <p>
