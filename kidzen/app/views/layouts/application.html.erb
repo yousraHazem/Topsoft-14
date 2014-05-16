@@ -1,7 +1,5 @@
 <html class="no-js">
 <head>
-
-
   <title>Kiddizen</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -14,6 +12,7 @@
   <%= yield :stylesheet_includes %>
   <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
+
   <%= javascript_include_tag :defaults, "http://localhost:9292/faye.js" %>
 
 </head>
@@ -28,7 +27,6 @@
    <% end %>
   <br/>
 
-
 <div class="main">
 
   <div class="main_resize">
@@ -36,8 +34,6 @@
         <%= link_to "العربية", change_locale_path(locale: :ar) %>
         <%= link_to "English", change_locale_path(locale: :en) %>
       </p>
-
-
       <div id="alert_container">
     <% flash.each do |key, value| %>
       <div class="flash flash-<%= key %>">
@@ -45,17 +41,11 @@
       </div>
     <% end %>      
   </div>
-
-
     <div class="header">
-
 <% if ( session[:locale] == "en")%> 
-
       <div class="logo">
-      
         <h1><a href="#"><img src="/assets/icon.gif" width="50" height="50" alt="" /><span><%= t('kid') %></span><%= t('dizen') %><small></small></a></h1>
       </div>
-      
      <div class="search">
         <form method="get" id="search" action="/searches">
           <span>
@@ -66,13 +56,10 @@
         <div class="clr"></div>
       </div>
 <% end %>
-
-
 <% if ( session[:locale] == "ar")%>
   <div class="logo1">
     <h1><a href="#"><span><%= t('kid') %></span><%= t('dizen') %><img src="/assets/icon.gif" width="50" height="50" alt="" /><small></small></a></h1>
   </div>
-      
         <div class="search1">
           <form method="get" id="search" action="/searches">
             <span>
@@ -83,8 +70,6 @@
           <div class="clr"></div>
         </div>
 <% end %>
-     
-
       <div class="clr"></div>
      <div class="sup_dash">
        <h3><a href="/supervisors/dashboard">Supervisors From here</a></h3>
@@ -117,15 +102,12 @@
         <% end %>
         <div class="clr"></div>
       </div>
-      
     </div>
     <div class="content">
       <div class="content_bg">
         <% if ( session[:locale] == "en")%>
         <div class="mainbar">
-          
             <%= yield %>
-
             </br></br></br></br></br></br></br>
           </div>
         </div>
@@ -142,7 +124,6 @@
           </div>  
         </div>  
         <% end %> 
-
         <% if ( session[:locale] == "ar")%> 
         <div class="mainbar1">
             <%= yield %>
@@ -166,12 +147,9 @@
 	<div class="box">
 	  <div class="bet_time2">
 	    <% if Child.exists?(registered_user: current_user) %>
-
-+        <% @child = Child.find_by(registered_user: current_user) %>
-
-+  	    <%= render partial: "friendships/view_my_friends", locals: {friends: @child.friends, child: @child} %>
-
-+      <% end %>
+       <% @child = Child.find_by(registered_user: current_user) %>
+  	    <%= render partial: "friendships/view_my_friends", locals: {friends: @child.friends, child: @child} %>
+      <% end %>
 	  </div>
 	</div>
 	<div class="box">
@@ -183,11 +161,8 @@
 	<div class="box">
 	  <div class="bet_time">
 	    <h3></DIC> Chat Box</h3>
-
               <div id="chatBox"></div>
-
               <div id="usersOnLine"></div>
-
               <form id="messageForm">
 	        <input id="message" type="text" height="40px">
 	        <input class="testbutton" id="send" type="submit" value="Send">
@@ -197,7 +172,6 @@
 	</div>
 	<% else %>
 	<% end %>
-
   </br>
   </br>
   </br>
@@ -208,9 +182,5 @@
   </br>
   </br>
   </br>
-
-
 </body>
 </html>
-
-
