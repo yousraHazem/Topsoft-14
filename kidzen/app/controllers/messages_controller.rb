@@ -81,7 +81,7 @@ class MessagesController < ApplicationController
 
   private 
   # This function is required to define variables for rails 4 as attr_accesible not usable in rails 4.
-  # Complexity o(1).
+  # Complexity O(1).
   # Authors: Ali A. El-Halawaty.   
   def m_params
     params.require(:message).permit(:subject, :body, :sender, :recepient, :read)
