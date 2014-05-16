@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   # This function indexes the messages by the most sent message or received message desplayed first
   # @message instant user of a type message.
   # @user instant user of type registered user.
-  # Complexity o(n).
+  # Complexity O(n).
   # Authors: Ali A. El-Halawaty.
   def index 
     @user = current_user
@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
   end
   
   # This function shows messages to user as it checks if the user is the receiver or sender of message.
-  # The user must be related to the message either he is a sender or a receiver .
+  # The user must be related to the message either he is a sender or a receiver.
   # @message instant user of a type message.
   # @user instant user of type registered user.
   # Complexity O(n).
@@ -39,8 +39,8 @@ class MessagesController < ApplicationController
   end
 
   # This function creates new message by passing parameters to it form m_params function 
-  # and saves it in the table and if the message saved succes message will emerge else failure message .
-  # Complexity o(1) .
+  # and saves it in the table and if the message saved succes message will emerge else failure message.
+  # Complexity O(1).
   # Authors: Ali A. El-Halawaty.
   def create
     @message = Message.new(m_params)
@@ -61,8 +61,8 @@ class MessagesController < ApplicationController
     end
   end
 
-  # This function searches for the message and deletes the message from the table
-  # Complexity o(n)
+  # This function searches for the message and deletes the message from the table.
+  # Complexity O(n).
   # Authors: Ali A. El-Halawaty.
   def destroy
     @message = Message.find(params[:id])
@@ -80,8 +80,8 @@ class MessagesController < ApplicationController
 
 
   private 
-  # This function is required to define variables for rails 4 as attr_accesible not usable in rails 4 .
-  # Complexity o(1) .
+  # This function is required to define variables for rails 4 as attr_accesible not usable in rails 4.
+  # Complexity o(1).
   # Authors: Ali A. El-Halawaty.   
   def m_params
     params.require(:message).permit(:subject, :body, :sender, :recepient, :read)
