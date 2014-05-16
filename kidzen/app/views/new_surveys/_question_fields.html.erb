@@ -1,0 +1,42 @@
+<!--# This page is to create a Question with all the links that belongs to it.
+    # Parameters : None.
+    # Returns : None.
+    # Author : Ahmad Bassiouny.-->
+<div class="fields">
+<p>
+  <%= f.label :content, "Question" %>
+  <%= link_to_remove_fields "remove", f %><br />
+  <%= f.text_area :content %><br />
+</p>
+
+<%= f.fields_for :answers do |ff| %>
+  <div class="field">
+    <%= render 'answer_fields', :f => ff %>
+  </div>
+<% end %>
+
+<p class="AddAns" onclick="enableAns()">
+  <%= link_to_add_fields "Add Answer", f, :answers %>
+</p>
+
+<%= f.fields_for :pic_models do |ff| %>
+  <div class="field">
+    <%= render 'pic_model_fields', :f => ff %>
+  </div>
+<% end %>
+  
+<p class="AddPic" onclick="enablePic()">
+  <%= link_to_add_fields "Add pic answer", f, :pic_models %>
+</p>
+
+<%= f.fields_for :range_sliders do |ff| %>
+  <div class="field">
+    <%= render 'range_slider_fields', :f => ff %>
+  </div>
+<% end %>
+
+<p class="AddRange" onclick="enableRang()">
+  <%= link_to_add_fields "Add Slider", f, :range_sliders %>
+</p>
+
+</div>

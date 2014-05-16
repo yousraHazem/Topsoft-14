@@ -8,30 +8,36 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   storage :file
-  # storage :fog
 
-  # Override the directory where uploaded files will be stored.
-  # This is a sensible default for uploaders that are meant to be mounted:
+  # This method is used to store the uploaded photo to specified
+  # location in the server.
+  # Parametes : None.
+  # Returns : photo's url - string.
+  # Approch : Just assigning the stored directory to the returned url.
+  # Author : Hussien M. Eloy.  
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
 
-  # Create different versions of your uploaded files:
+  # This method is used to set image dimensions.
+  # Parametes : None.
+  # Returns : None.
+  # Approch : Assign the photo to be resized according to give layout and size.
+  # Author : Hussien M. Eloy.  
   version :thumb do
     process :resize_to_fit => [500, 500]
   end
-
-  # Add a white list of extensions which are allowed to be uploaded.
-  # For images you might use something like this:
+  
+  # This method is used to specify the valid extensions of uploaded files.
+  # Parametes : None.
+  # Returns : None.
+  # Approch : Just saying that the suffix of the uploaded file 
+  # should be of these extensions.
+  # Author : Hussien M. Eloy.  
   def extension_white_list
     %w(jpg jpeg gif png)
   end
 
-  # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
-
+ 
 end
