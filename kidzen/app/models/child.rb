@@ -1,7 +1,27 @@
 class Child < ActiveRecord::Base
   # Associations and validations.
   belongs_to :registered_user, dependent: :destroy
+  # Validations for events.
+  # Author : Nouran Mamdouh.
+  has_many :events,
+           :through => :event_invitations,
+           :conditions => "status = 'accepted'"
 
+  has_many :requested_event_invitations,
+           :through => :event_invitations,
+           :source => :inviter_id,
+           :conditions => "status = 'requested'",
+           :order => :created_at
+
+  has_many :pending_event_invitations,
+           :through => :event_invitations,
+           :source => :inviter_id,
+           :conditions => "status = 'pending'",
+           :order => :created_at
+
+  has_many :event_invitations,
+           :foreign_key => 'invited_id',
+           :dependent => :destroy
 
   # Checks if other is a friend of this child.
   # other - child
