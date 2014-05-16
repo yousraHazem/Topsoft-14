@@ -23,7 +23,7 @@ class Child < ActiveRecord::Base
 
   has_many :friendships,
            :foreign_key => 'child_1_id',
-           :dependent => :destroy
+           :dependent => :destroy       
   # Validations for event requests
   # Author : Nouran Mamdouh
   has_many :invited_events,
