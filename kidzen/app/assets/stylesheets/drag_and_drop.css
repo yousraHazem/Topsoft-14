@@ -1,0 +1,168 @@
+/*
+ * This is the stylesheet used for drag and drop game.
+ * Author : Hussien M. Eloy.
+*/
+
+/* 
+ * Drawing Right angled triangle.
+ * Author : Hussien M. Eloy.
+*/
+.triangle {
+  height: 100px;
+  left: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 100px; 
+}
+
+.option, 
+.option img { 
+  height: 100%;
+  width: 100%;  
+}
+
+.option {
+  overflow: hidden;
+  position: absolute;  
+  /* arctan(27 / 40) = 34.01935deg 
+   * need to skew by 90deg - 34.01935deg = 55.98065deg
+  */
+  transform: skewX(-55.98deg);
+}
+
+.option:first-child {
+  left: -.25em;
+  transform-origin: 100% 0;
+}
+
+.option:last-child {
+  right: -.25em;
+  transform-origin: 0 100%;
+}
+
+.option img { 
+  opacity: .75; 
+  transition: .5s; 
+}
+
+.option img:hover { 
+  opacity: 1; 
+}
+
+.option img, 
+.option:after {
+  transform: skewX(55.98deg);
+  transform-origin: inherit;
+}
+
+.option:after {
+  color: white;
+  content: attr(data-inf);
+  font: 500 1.25em Courier;
+  letter-spacing: .1em;
+  margin: .5em 1.65em;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.option:first-child:after { 
+  left: 0;
+  top: 0;  
+}
+
+.option:last-child:after { 
+  bottom: 0; 
+  right: 0; 
+}
+
+/*
+ * Styling the Shape of the container.
+ * Author : Hussien M. Eloy
+*/
+.contentn {
+  background-color: #00CCCC;
+  height: 600px;
+  width: 800px;
+}
+
+/*
+ * Drawing square.
+ * Author : Hussien M. Eloy
+*/
+#square { 
+  clear: both;
+  height: 100px;
+  left: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 100px;
+}
+
+/*
+ * Drawing Circle.
+ *Author : Hussien M. Eloy 
+*/
+#circle  {
+  background-size: cover;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  display: block;
+  height: 100px;
+  left: 300px;
+  margin: 0 auto;  
+  overflow: hidden;
+  position: relative;
+  width: 100px;
+}
+
+/* 
+ * Drawing Square Slot.
+ * Author : Hussien M. Eloy
+*/
+#square-slot {
+  background-color: gray;
+  height: 100px;
+  left: 500px;
+  overflow: hidden;
+  position: absolute;
+  width: 100px;
+}
+
+/* 
+ * Drawing triangular Slot.
+ * Author : Hussien M. Eloy.
+*/
+#triangular-slot {
+  border-bottom: 100px solid gray;
+  border-left: 100px solid transparent;
+  height: 0;
+  left: 620px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -9999px;
+  width: 0;
+}
+
+/*
+ * Drawing circular Slot.
+ * Author : Hussien M. Eloy
+*/
+#circular-slot {
+  background-color: gray;
+  background-size: cover;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px; 
+  display: block; 
+  height: 100px;
+  left: 750px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute; 
+  width: 100px;
+}
+
+
