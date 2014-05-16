@@ -49,7 +49,7 @@ class MessagesController < ApplicationController
     if !@message.valid?
       flash[:error] = @message.errors.full_messages.join("<br>").html_safe
     end
-      respond_to do |format|
+    respond_to do |format|
       if RegisteredUser.exists?(:email => @receiver_mail)
         @message.save
         format.html { redirect_to :action => :index, notice: 'Message has been sent.' }
