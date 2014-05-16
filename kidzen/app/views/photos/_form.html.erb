@@ -4,8 +4,8 @@ It also contains a refrence to script page
 needed for validation. Author : Hussien M. Eloy.  -->
 <%= form_for @photo, html: { multipart: true } do |f| %>
   <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.label :description  %><br />
+    <%= f.text_field :description, id:"Description" %>
   </p>
   <p>
     <%= f.label :image,"Upload your Photo from Here" %> <br />
