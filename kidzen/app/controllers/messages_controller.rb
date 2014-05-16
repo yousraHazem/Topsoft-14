@@ -85,12 +85,18 @@ class MessagesController < ApplicationController
   end
 
 
-  #This function to filter the message from any offensive word
 
-  #Authours: Mina M. Misak
+  # This function to filter the message from any offensive word
+  # Instiallize an array Words to split the message content in it then loop in the message to see if it contain
+  # Any offensive words so it will send a notification to the parent or the supervisor of the chile 
+  # Aompliexity o(n)
+  # Authours: Mina M. Misak
   def filter_messages
-    #if(offensiveWords.find(@message.body))
-    # this function is waiting for the database table 
+    @words = @message.body.split(" ")
+    words.each do |i|
+      if OffensiveWords.exists?(:offensive_words =>@i)
+        # send notification to the both parents
+    
   end
 
 end
