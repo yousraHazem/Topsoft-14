@@ -1,31 +1,31 @@
-<!--# This page is to list all the surveys.
+  <!--# This page is to list all the surveys.
     # Parameters : None.
     # Returns : None.
     # Author : Ahmad Bassiouny.-->
-<h1>Listing new_surveys</h1>
+  <h1>Listing new_surveys</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @new_surveys.each do |new_survey| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= new_survey.name %></td>
-        <td><%= link_to 'Show', new_survey %></td>
-        <td><%= link_to 'Destroy', new_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>User</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @new_surveys.each do |new_survey| %>
+        <tr>
+          <td><%= new_survey.name %></td>
+          <td><%= link_to 'Show', new_survey %></td>
+          <td><%= link_to 'Destroy', new_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New New survey', new_new_survey_path %>
+  <br>
+
+  <%= link_to 'New New survey', new_new_survey_path %>
