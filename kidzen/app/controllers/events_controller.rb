@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:edit, :update, :destroy]
 
   # GET /events
   # GET /events.json
@@ -13,10 +13,19 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
   end
-
-  # GET /events/1
-  # GET /events/1.json
+	
+  #Shows a certain event with its id.
+  #id: the event's unique id.
+  #Author: Ahmad H. Elhamshary.
   def show
+    @event = Event.where(:id=>params[:id]).first
+  end
+
+  #Shows a certain event with its name.
+  #name: the event's unique name.
+  #Author: Ahmad H. Elhamshary.
+  def show_event
+    @event = Event.where(:name=>params[:name]).first
   end
 
   # GET /events/new

@@ -7,9 +7,18 @@ class GroupsController < ApplicationController
     @groups = Group.all
   end
 
-  # GET /groups/1
-  # GET /groups/1.json
+  #Shows a certain group with its id.
+  #id: the group's unique id.
+  #Author: Ahmad H. Elhamshary.
   def show
+    @group = Group.where(:id=>params[:id]).first
+  end
+
+  #Shows a certain group with its name.
+  #name: the event's unique name.
+  #Author: Ahmad H. Elhamshary.
+  def show_group
+    @group = Group.where(:group_name=>params[:group_name]).first
   end
 
   # GET /groups/new
