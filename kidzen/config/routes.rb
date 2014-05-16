@@ -1,7 +1,5 @@
 Kidzen::Application.routes.draw do
 
-  get "invite_chatroom/index"
-  root 'registered_users#show'
   resources :home
 
   root 'home#index'
@@ -143,6 +141,5 @@ Kidzen::Application.routes.draw do
   # topics routes
   get "topics/index"
   get "topics/show"
-  get "chatroom/index"
 end
 
