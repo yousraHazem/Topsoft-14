@@ -1,4 +1,4 @@
-  <h1>Pending Event requests</h1>
+<h1>Pending Event requests</h1>
   <%if @pending_events.to_a !=[]%>
     <%@pending_events.to_a.each do |t|%>
       <%event=Event.where("name=#{t.name}").first%>

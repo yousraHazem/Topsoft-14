@@ -1,5 +1,6 @@
 Kidzen::Application.routes.draw do
 
+  get "events_invitations_controller/view_pending_event"
   get "events_invitations/event_invitation"
   root 'registered_users#show'
   # Internationalization
