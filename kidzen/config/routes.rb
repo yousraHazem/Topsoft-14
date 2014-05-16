@@ -70,8 +70,7 @@ Kidzen::Application.routes.draw do
   resources :poll_questions
   resources :sessions, only: [:new, :create, :destroy]
   resources :group_members
-  resources :new_surveys
-  post 'submit' => 'new_surveys#submit', as: :submit
+  resources :new_surveys, only: [:index, :new, :create, :show, :destroy]
   put "/new_surveys/submit", to: 'new_surveys#submit'
 
   
