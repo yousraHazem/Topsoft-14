@@ -2,8 +2,6 @@ class NewSurveysController < ApplicationController
   skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
 
   # This method is used to list all the surveys of a signed in user.
-  # if the user is a child it will list all the surveys in the system.
-  # if the user is a supervisor, it will list all surveys created by him.
   # Parameters : None.
   # Returns : None.
   # Author : Ahmad Bassiouny.
