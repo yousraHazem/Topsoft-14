@@ -29,8 +29,9 @@
                   <input type="checkbox" name="<%= pic_model.pic_url %>" value="<%= pic_model.pic_url %>" />
                   <img src="<%= pic_model.pic_url %>" width="100" height="100" />
                 </div>
-              </label>
-            </li>
+              </li>
+            </label>
+          </li>
         <% end %>
         <% for range_slider in @question.range_sliders %>
           <input type="range" min="<%= range_slider.min %>" max="<%= range_slider.max %>" value="<%= range_slider.value %>" onchange="showValue(this.value)" />
