@@ -1,0 +1,59 @@
+<!-- This part views other child option through a checkbox
+Author:- Mohamed Khaled AbdelMeguid -->
+
+<div class = "tags">  
+<% if (Permission.exists?(registered_user_id: 2 , abilities: ["mutual_friends_rooms_only"=>true])) %>
+  <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" checked > 
+  <text class = "tags"> mutual friends rooms only </text>
+  <br>
+  <% else %>
+    <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" > 
+    <text class = "tags"> mutual friends rooms only </text>
+    <br>
+  <%end%>
+  </div>
+
+<script>
+//This function creates an AJAX request
+//Author:- Mohamed Khaled AbdelMeguid
+function create_ajax_request (url, data, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('PUT', url, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Accept', 'application/json'); // I want JSON 
+  xhr.responseType = "json";
+  xhr.addEventListener('load', function() {
+    xhr.responseJSON =  xhr.response;
+    console.log(xhr.responseJSON);
+    callback(xhr.responseJSON,  xhr);
+  });
+  xhr.send( JSON.stringify(data) );
+  return xhr;
+}
+//This function changes the value of the checbox in the DB
+//Author:- Mohamed Khaled AbdelMeguid
+function changeMutualRooms(childId) {
+  var checkBox = document.getElementById("mutual friends rooms only");
+  var abilityUpdate = "mutual_friends_rooms_only";
+  var valueUpdate = checkBox.checked;
+  var url = ['http://' + location.host, 'access_page', 'update'].join('/');
+  var callback = function(responseJSON, xhr) {
+}
+  create_ajax_request(url, {ability: abilityUpdate, value: valueUpdate, child: childId}, callback);
+  }
+</script>
+
+<style type="text/css">
+/* This styles the checkbox
+Author:- Mohamed Khaled AbdelMeguid */
+.tags {
+  margin-top: 135px;
+  margin-right: 200px;
+  font-family: news-gothic-std, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  background-color: #78bbe6;
+  color: white;
+  }
+
+</style>
