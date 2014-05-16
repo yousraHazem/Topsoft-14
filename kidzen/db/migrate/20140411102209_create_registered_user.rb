@@ -3,7 +3,7 @@ class CreateRegisteredUser < ActiveRecord::Migration
     create_table :registered_users do |t|
         t.string :username
         t.boolean :online
-        t.string :gender
+        t.boolean :gender
         t.timestamp :last_accessed
         t.string :first_name
         t.string :middle_name
@@ -18,8 +18,7 @@ class CreateRegisteredUser < ActiveRecord::Migration
         t.string :remember_token
         t.timestamps
     end
-    add_index :registered_users, :email, unique: true 
-    add_index :registered_users, :username, unique: true
+    add_index :registered_users, :email, unique: true
     add_index :registered_users, :remember_token
   end
 end
