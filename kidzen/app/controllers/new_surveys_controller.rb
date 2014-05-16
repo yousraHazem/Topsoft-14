@@ -1,8 +1,12 @@
 class NewSurveysController < ApplicationController
   skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
 
-  # GET /new_surveys
-  # GET /new_surveys.json
+  # This method is used to list all the surveys of a signed in user.
+  # if the user is a child it will list all the surveys in the system.
+  # if the user is a supervisor, it will list all surveys created by him.
+  # Parameters : None.
+  # Returns : None.
+  # Author : Ahmad Bassiouny.
   def index
     if signed_in?
       # Is user a supervisor?
@@ -18,28 +22,25 @@ class NewSurveysController < ApplicationController
     end
   end
 
-  # GET /new_surveys/1
-  # GET /new_surveys/1.json
+  # This method is used to get the data of a certain survey and show it.
+  # Parameters : None.
+  # Returns : None.
+  # Author : Ahmad Bassiouny.
   def show
     if signed_in?
-      # Is user a supervisor?
-      if Child.exists?(registered_user_id: current_user.id)
-        @new_survey = NewSurvey.find(params[:id])
-      else
-        # Must be a supervisor.
-        @new_survey = NewSurvey.find(params[:id])
-        if @new_survey.user_id == current_user.id
-          @new_surveys = NewSurvey.find_all_by_user_id current_user.id
-        else
-          redirect_to session_path :new
-        end
-      end
+      @new_survey = NewSurvey.find(params[:id])
     else
       # No one signed in
       redirect_to session_path :new
     end
   end
 
+  # This method is used to is used to recieve AJAX requests that come from
+  # the javascript files. In order to use these data for insertion in database
+  # in table Answer and PicModel.
+  # Parameters : None.
+  # Returns : None.
+  # Author : Ahmad Bassiouny.
   def submit
     @data = params[:arrays]
     @data.each do |element|
@@ -58,11 +59,18 @@ class NewSurveysController < ApplicationController
     end
   end
 
+  # This method is used to show ONLY the result of the survey.
+  # Parameters : None.
+  # Returns : None.
+  # Author : Ahmad Bassiouny.
   def show_super
     @new_survey = NewSurvey.find(params[:id])
   end
 
-  # GET /new_surveys/new
+  # This method is used to create a new instance of a survey.
+  # Parameters : None.
+  # Returns : None.
+  # Author : Ahmad Bassiouny.
   def new
     if signed_in?
       # Is user a supervisor?
@@ -78,12 +86,11 @@ class NewSurveysController < ApplicationController
     end
   end
 
-  # GET /new_surveys/1/edit
-  def edit
-  end
-
-  # POST /new_surveys
-  # POST /new_surveys.json
+  # This method is used to create a new survey using the values he entered in 
+  # the _from and link the survey to the user by the user ID.
+  # Parameters : None.
+  # Returns : None.
+  # Author : Ahmad Bassiouny.
   def create
     @new_survey = NewSurvey.new(new_survey_params)
 
@@ -99,8 +106,10 @@ class NewSurveysController < ApplicationController
     end
   end
 
-  # DELETE /new_surveys/1
-  # DELETE /new_surveys/1.json
+  # This method is used to destroy a survey.
+  # Parameters : None.
+  # Returns : None.
+  # Author : Ahmad Bassiouny.
   def destroy
     @new_survey = NewSurvey.find(params[:id])
     @new_survey.destroy
