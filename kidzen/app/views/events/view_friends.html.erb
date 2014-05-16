@@ -12,7 +12,7 @@
   <br/>
   <p>
     <%= f.label :friend_name %>
-    <%= f.text_field_with_auto_complete :child , :friend_name %>
+    <%= f.text_field_with_auto_complete :child , :friend_name , { :size => 15} , { :url => formatted_friends_path(:js) , :method => :get , :with => " 'search=' + element.value"} %>
   </p>
   <%end%>
   <%else%>
