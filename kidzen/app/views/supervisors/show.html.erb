@@ -2,10 +2,12 @@
   <p>This is a test view</p>
   <p>Current signed in user is : <%= current_user.full_name %></p> 
 <% @child = Child.first %>
-<button onclick= "goTo(<%= "\'#{@child.registered_user.id}\'" %>)"> <%= @child.registered_user.username %></button>
+<button onclick= "goTo(<%= "\'#{@child.registered_user.id}\'" %>)">
+<%= @child.registered_user.username %>
+</button>
 </div>
-  <script>
+<script>
  function goTo(id) {
  	window.location.href = "http://localhost:3000/access_page/access?id=" + id;
  } 	
-  </script>
+</script>
