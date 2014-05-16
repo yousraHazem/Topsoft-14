@@ -14,6 +14,7 @@ class CreateRegisteredUser < ActiveRecord::Migration
         t.boolean :banned
         t.boolean :notification_by_email
         t.string :remember_token
+        t.string :image
         t.timestamps
     end
     add_index :registered_users, :email, unique: true 
