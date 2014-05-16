@@ -1,6 +1,6 @@
 Kidzen::Application.routes.draw do
 
-  get "access_page/access"
+ 
 post '/settings', to: 'registered_users#set_settings'
   root 'registered_users#show'
   # Internationalization
@@ -96,7 +96,8 @@ post '/settings', to: 'registered_users#set_settings'
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   #resources :registered_users
 
-  # access page routes
+  # access page routes.
+  # Authors: Mohamed Khaled AbdelMeguid.
   get "access_page/access"
   post '/access_page/access', to: 'access_page#access'
   put 'access_page/delete_tag', to: 'access_page#delete_tag'
