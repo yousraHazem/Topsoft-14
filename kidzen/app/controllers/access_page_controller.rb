@@ -11,7 +11,7 @@ class AccessPageController < ApplicationController
   def access
   if signed_in?
     @banned = Keyword.new(params[:tag])
-    @child = Child.find(params[:id])
+    @child = Child.find_by(registered_user_id: params[:id])
   else
     redirect_to session_path :new
   end
@@ -20,7 +20,7 @@ class AccessPageController < ApplicationController
   #Authors:- Mohamed Khaled Abdelmeguid
   def delete_tag
   if Supervisor.find_by(registered_user_id: current_user.id) == 
-  ChildParent.find_by(parent_id: current_user.id)
+    ChildParent.find_by(parent_id: current_user.id)
     @permit = params[:tag]
     @name = params[:child]
     Keyword.where(child_name: @name, tag: @permit).each do |des|
