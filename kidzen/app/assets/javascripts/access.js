@@ -20,7 +20,7 @@ function create_ajax_request (url, data, callback) {
 /*This function change a child option when the checkbox is pressed with a true or false value
 in the DB through an AJAX request.
 Authors:- Mohamed Khaled AbdelMeguid. */
- function changeJoinRooms(childId) {
+function changeJoinRooms(childId) {
     var checkBox = document.getElementById("can join public chat rooms");
     var valueUpdate = checkBox.checked;
     prompt(valueUpdate);
