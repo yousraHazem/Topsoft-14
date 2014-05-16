@@ -1,5 +1,6 @@
 Kidzen::Application.routes.draw do
 
+  get "invite_chatroom/index"
   root 'registered_users#show'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'

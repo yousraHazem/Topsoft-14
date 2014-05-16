@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+  <html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Chat</title>
@@ -33,16 +33,19 @@
           <div class="container nav-collapse">
             <ul class="nav">
               <li><div class="btn-group">
-                <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i> <span id="username">Guest</span> <span class="caret"></span></a>
+                <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" 
+                href="#"><i class="icon-user"></i> <span id="username">Guest</span> 
+                <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="" id="edit-user-info" data-target="#user-information" data-toggle="modal">Edit User Information</a></li>
+                  <li><a href="" id="edit-user-info" data-target="#user-information" 
+                    data-toggle="modal">Edit User Information</a></li>
                 </ul>
               </div></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
-    </div>
+  </div>
 
     <div class="container">
       <div class="content">
@@ -66,18 +69,17 @@
       </div>
     </div><!--/row-->
     <div id="chat" class="well" data-uri="<%= request.host %>:<%= request.port %>/websocket">
-</div>
+  </div>
 
-<div class="form-inline well">
+  <div class="form-inline well">
   <fieldset>
     <input type="text" class="input-medium" id="user_name">
     <input type="text" class="input-xlarge" id="message">
     <button id="send" class="btn btn-primary">Send</button>
   </fieldset>
-</div>
+  </div>
   </div><!--/content-->
-</div> <!-- /container -->
-
+  </div> <!-- /container -->
 
   </body>
-</html>
+  </html>
