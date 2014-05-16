@@ -1,3 +1,4 @@
 class Topic < ActiveRecord::Base
-has_many :activities
+  # Authors: Khaled I. Elhossiny
+  has_many :activities
 end
