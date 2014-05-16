@@ -1,3 +1,4 @@
+
 <!-- This method includes the javascript file to use it's functions -->  
 <!-- Authors: Shary Beshara -->    
 <% content_for :javascript_includes do %>
@@ -36,3 +37,77 @@
     <% end %>
   <% end %>
 </div>
+  
+  <div class = "tags">  
+  <% if (Permission.find_by(registered_user_id: 2).abilities[:mutual_friends_rooms_only] = true) == true   %>
+  <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" checked > 
+    <text class = "tags"> mutual friends rooms only </text>
+  <br>
+  <% end %>
+  <% if (Permission.find_by(registered_user_id: 2).abilities[:mutual_friends_rooms_only] = false) == true %>
+  <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" > 
+    <text class = "tags"> mutual friends rooms only </text>
+  <br>
+  <%end%>
+  
+  </div>
+  
+
+
+<script>
+
+function create_ajax_request (url, data, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('PUT', url, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Accept', 'application/json'); // I want JSON 
+  xhr.responseType = "json";
+  xhr.addEventListener('load', function() {
+    xhr.responseJSON =  xhr.response;
+    console.log(xhr.responseJSON);
+    callback(xhr.responseJSON,  xhr);
+  });
+  xhr.send( JSON.stringify(data) );
+  return xhr;
+}
+
+  
+
+  function changeMutualRooms(childId) {
+    var checkBox = document.getElementById("mutual friends rooms only");
+    var abilityUpdate = "mutual_friends_rooms_only";
+    var valueUpdate = checkBox.checked;
+    prompt(valueUpdate);
+    var url = ['http://' + location.host, 'access_page', 'update'].join('/');
+    var callback = function(responseJSON, xhr) {
+  }
+  create_ajax_request(url, {ability: abilityUpdate, value: valueUpdate, child: childId}, callback);
+  }
+
+</script>
+
+<style type="text/css">
+
+.del {
+  background: -webkit-gradient(linear, left top, left bottom, from(#78bbe6), to(#78bbe6));
+  background: -webkit-linear-gradient(top, #78bbe6, #78bbe6);
+  background: -moz-linear-gradient(top, #78bbe6, #78bbe6);
+  background: -ms-linear-gradient(top, #78bbe6, #78bbe6);
+  background: -o-linear-gradient(top, #78bbe6, #78bbe6); 
+  color: white;
+  font-size: 13px;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.tags {
+  margin-top: 135px;
+  margin-right: 200px;
+  font-family: news-gothic-std, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  background-color: #78bbe6;
+  color: white;
+  }
+
+</style>
