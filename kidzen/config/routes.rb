@@ -43,6 +43,8 @@ Kidzen::Application.routes.draw do
   post '/children/create', to: 'children#create'
   get '/children/show', to: 'children#show'  
 
+   get "events_invitations_controller/send_event"
+
 
   resources :public, :only => [:upload_photo, :uploading, :remove_photo]
   match '/uploadphoto', :to => 'public#upload_photo', via: [:get, :post]
