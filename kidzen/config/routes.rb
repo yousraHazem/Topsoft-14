@@ -86,6 +86,10 @@ Kidzen::Application.routes.draw do
 
     
 
+  get '/group_members/:id/view' , to:  'group_members#view'
+  post '/group_members/:id/view' => 'group_members#view'
+  get "friendships/send_friend_request"     
+
   # children routes
   get "child/verify"
   post "child/new"
