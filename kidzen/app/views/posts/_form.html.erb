@@ -1,6 +1,6 @@
 <!-- Here is the form that submit a post through
      Author : Abdelrahman Saad -->
-<%= form_for(@post) do |f| %>
+<%= form_for(@post,remote : true) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
