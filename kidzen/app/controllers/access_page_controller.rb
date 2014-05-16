@@ -2,7 +2,7 @@
 #Author:- Mohamed Khaled Abdelmeguid
 
 class AccessPageController < ApplicationController
-	skip_before_filter :verify_authenticity_token, only: [:delete_tag]
+  skip_before_filter :verify_authenticity_token, only: [:delete_tag]
   skip_before_filter :verify_authenticity_token, only: [:update]
   skip_before_filter :verify_authenticity_token, only: [:add]
   skip_before_filter :verify_authenticity_token, only: [:update_join_rooms]
@@ -15,7 +15,7 @@ class AccessPageController < ApplicationController
   else
     redirect_to session_path :new
   end
- 	end
+  end
   #This action updates a child's options available upon the decision of the parent
   #Author:- Mohamed Khaled Abdelmeguid
   def update_join_rooms
