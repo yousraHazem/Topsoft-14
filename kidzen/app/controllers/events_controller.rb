@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+  # To search for a friend in friend list by auto_complete 
+  # Author : Nouran Mamdouh
+  auto_complete_for :child , :friend_name
   # GET /events
   # GET /events.json
   # This method view all the events in model Event in index (home)page

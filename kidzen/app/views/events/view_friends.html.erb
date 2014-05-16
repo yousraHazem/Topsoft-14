@@ -11,8 +11,8 @@
     <%= link_to "invite friend" , :controller => "events", :action => 'invite_friend_to_an_event' , :friend_id => t.id %>
   <br/>
   <p>
-    <%= f.label :friend_name%>
-    <%= f.text_field :friend_name%>
+    <%= f.label :friend_name %>
+    <%= f.text_field_with_auto_complete :child , :friend_name %>
   </p>
   <%end%>
   <%else%>
