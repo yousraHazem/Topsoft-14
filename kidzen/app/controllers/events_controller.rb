@@ -1,16 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
-  #This method invite a friend to an events 
-  #Parameters : child id , invited friend id and event id
-  #Returns : None
-  #Approach : invite friend to an event
-  #Time Complexity : O(1)
-  #Author : Nouran Mamdouh
-  def invite_friend_to_an_event
-    @invite = Event_Invitations.create(:inviter=>current_user.id,
-    :invited=>params[friend_id],:event=>@event_id)
-  end
+  
   #This method to assign variable friends to child's friends
   #Parameters : None
   #Returns : None

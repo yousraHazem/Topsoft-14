@@ -19,8 +19,5 @@
   <strong>Description:</strong>
   <%= @event.description %>
 </p>
-<%- #Add link to view friends of current child -%>
-<%- #Author : Nouran Mamdouh -%>
-<%=link_to "View friends", controller: "events", action: "view_friends"%>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
