@@ -11,6 +11,10 @@
   <%= javascript_include_tag("notification_action.js") %>
   <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
+  <%= render partial: 'layouts/social_media_scripts' %>
+  <meta property="og:title" content="Kiddizen" />
+  <meta property="og:image" content="http://kiddizen.net/assets/header_images.jpg" />
+  <meta property="og:description" content="Social Network for kids" />
 </head>
 <body>
   <div class="locale_button">
@@ -38,15 +42,14 @@
     </div>
   </div>
   <br/>
-  <div id="bottom_container" >
-    <div id="footer">
+   <footer>
+      <%= render partial: 'layouts/social_media' %>
       <div class="round_button">
         <%= link_to "Sign out", signout_path, method: "delete", class: "round_inner" %>
       </div>
       <div class = "round_button">
         <%= link_to "Profile", current_user, class: "round_inner" %>
       </div>
-    </div>
   </div>
   
 </body>

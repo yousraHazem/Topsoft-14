@@ -12,7 +12,10 @@
   <%= yield :stylesheet_includes %>
   <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
-
+  <%= render partial: 'layouts/social_media_scripts' %>
+  <meta property="og:title" content="Kiddizen" />
+  <meta property="og:image" content="http://kiddizen.net/assets/header_images.jpg" />
+  <meta property="og:description" content="Social Network for kids" />
 </head>
 
 <link rel="shortcut icon" href="/assets/icon.gif"/>
@@ -22,14 +25,6 @@
      <%= link_to 'Inbox', messages_path  %> |
      <%= link_to 'Send message', new_message_path  %> | 
    <% end %>
-  <div class="locale_button">
-    <div class="round_button">
-      <%= link_to "Arabic", change_locale_path(locale: :ar), class: "round_inner" %>
-    </div>
-    <div class="round_button">
-      <%= link_to "English", change_locale_path(locale: :en), class: "round_inner" %>
-    </div>
-  </div>
   <br/>
 
 
@@ -176,7 +171,7 @@
   </br>
   </br>
 
-
+  <%= render partial: 'layouts/social_media' %>
 </body>
 </html>
 

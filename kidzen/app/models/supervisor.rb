@@ -28,7 +28,7 @@ class Supervisor < ActiveRecord::Base
     notification.title = "New child #{child.registered_user.full_name}"
     notification.short_desc = "A new child needs approval."
     notification.long_desc = " "
-    notification.embedded_view_url = nil
+    notification.custom_view_url = nil
     # Enqueue
     registered_user.queue_notification( notification ) # Sets the associations
     if notification.save
@@ -87,7 +87,7 @@ class Supervisor < ActiveRecord::Base
       notification.title = "Reported post by #{child.registered_user.full_name}"
       notification.short_desc = "#{post.title}"
       notification.long_desc = " "
-      noticiation.embedded_view_url = "post_notification"
+      noticiation.custom_view_url = "post_notification"
       registered_user.queue_notification(noticiation)
       if notification.save?
         actions = notification.add_post_reported_actions(post)
