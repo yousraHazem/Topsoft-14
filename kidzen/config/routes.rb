@@ -94,7 +94,15 @@ Kidzen::Application.routes.draw do
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   #resources :registered_users
 
-
+  # access page routes
+  #Authors:- Mohamed Khaled AbdelMeguid
+  get "access_page/access"
+  post '/access_page/access', to: 'access_page#access'
+  put 'access_page/delete_tag', to: 'access_page#delete_tag'
+  put 'access_page/update', to: 'access_page#update'
+  put 'access_page/add', to: 'access_page#add'
+  put 'access_page/update_join_rooms', to: 'access_page#update_join_rooms'
+  put 'access_page/update_create_rooms', to: 'access_page#update_create_rooms'
 
 
   # You can have the root of your site routed with "root"

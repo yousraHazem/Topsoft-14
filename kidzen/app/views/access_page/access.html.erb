@@ -1,84 +1,24 @@
-
+<% content_for :javascript_includes do %>
+<%= javascript_include_tag("access.js") %>
+<% end %>
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag("access.css") %>
+<% end %>
+<!-- This part views a text field and a submit buuton, which are used to submit a tag to be prevented from a child, and it also views the tags that has been submitted alreadt 
+Authors:- Mohamed Khaled AbdelMeguid -->
 <input type="text" id="submitTags" >
-<button onclick="ban(<%= "\"#{@child.registered_user.username}\"" %>)">Ban it!</button>
-  
-  <% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
-    <div class = "whole">
-    <div id = "<%= key.tag %>">
-    <text class = "tags" > - <%= key.tag %> </text>
-    <button onclick = "deleteInfo(<%= "\"#{key.tag}\"" %> , <%= "\"#{@child.registered_user.username}\"" %> ) " class = "del" > 
+<button onclick="ban(<%= "\"#{@child.registered_user.username}\"" %>)">Ban it!</button>  
+<% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
+  <div class = "whole">
+  <div id = "<%= key.tag %>">
+  <text class = "tags" > - <%= key.tag %> </text>
+  <button onclick = "deleteInfo(<%= "\"#{key.tag}\"" %> , <%= "\"#{@child.registered_user.username}\"" %> ) " class = "del" > 
       X
-    </button>
-    
+  </button>
   </div>
-  <%end%>
+<%end%>
 
 
 
-<script>
 
-function create_ajax_request (url, data, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('PUT', url, true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.setRequestHeader('Accept', 'application/json'); // I want JSON 
-  xhr.responseType = "json";
-  xhr.addEventListener('load', function() {
-    xhr.responseJSON =  xhr.response;
-    console.log(xhr.responseJSON);
-    callback(xhr.responseJSON,  xhr);
-  });
-  xhr.send( JSON.stringify(data) );
-  return xhr;
-}
 
-  function deleteInfo (toBeDeleted, childName) {
-    Element.prototype.remove = function() {
-    this.parentElement.removeChild(this);
-    };
-    var x = document.getElementById(toBeDeleted);
-    x.remove();
-    var url = ['http://' + location.host, 'access_page', 'delete_tag'].join('/');
-    var callback = function(responseJSON, xhr) {
-    }
-    create_ajax_request(url, {tag: toBeDeleted, child: childName}, callback);
-  }
-
-  
-
-  function ban(childName) {
-    var banned = document.getElementById("submitTags").value
-    prompt(banned + " is now banned for your child, Please refresh the page to view all of the tags to be able to delete them. Thanks !");
-    var url = ['http://' + location.host, 'access_page', 'add'].join('/');
-    var callback = function(responseJSON, xhr) {
-    }
-    create_ajax_request(url, {ban: banned, child: childName}, callback);
-  }
-
-</script>
-
-<style type="text/css">
-
-.del {
-  background: -webkit-gradient(linear, left top, left bottom, from(#78bbe6), to(#78bbe6));
-  background: -webkit-linear-gradient(top, #78bbe6, #78bbe6);
-  background: -moz-linear-gradient(top, #78bbe6, #78bbe6);
-  background: -ms-linear-gradient(top, #78bbe6, #78bbe6);
-  background: -o-linear-gradient(top, #78bbe6, #78bbe6); 
-  color: white;
-  font-size: 13px;
-  font-family: Georgia, serif;
-  text-decoration: none;
-  vertical-align: middle;
-}
-.tags {
-  margin-right: 0px;
-  margin-bottom: 0px;
-  font-family: news-gothic-std, sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  background-color: #78bbe6;
-  color: white;
-  }
-
-</style>
