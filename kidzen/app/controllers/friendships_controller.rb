@@ -1,4 +1,14 @@
 class FriendshipsController < ApplicationController
+  # This method to provide the child with a list of friends.
+  # child - the child currently signed in.
+  # @friends - active record of children.
+  # Returns @friends which is the active record of the child's friends.
+  # Time complexity: O(n).
+  #Authors: Khaled I. Elhossiny.
+ 
+  def view_my_friends
+    child = Child.where("registered_user_id=#{current_user.id}").first
+    @friends = child.friends
   # This method to send a friendship request.
   # user_id - the id of the child currently signed in.
   # pending_friendship - active record of the pending friendship relation.
@@ -19,6 +29,6 @@ class FriendshipsController < ApplicationController
    else
       flash[:error] = "unable to send friend request"
    end
-    redirect_to( :controller => params[:cont].to_s, :action => params[:act].to_s)
+    redirect_to(:back)
   end
 end
