@@ -1,4 +1,4 @@
-# Authors: Ammar M. ELWazir, Shary Beshara, Ahmed H. Ismail
+# Authors: Ammar M. ELWazir, Shary Beshara, Ahmed H. Ismail, Ahmad H. Elhamshary
 class ChildrenController < ApplicationController
 
   # GET /children/show
@@ -135,5 +135,38 @@ class ChildrenController < ApplicationController
     def signup_params
       params.require(:child).permit(:first_name, :middle_name, :family_name, :gender, "birth_date(1i)", "birth_date(2i)", "birth_date(3i)", :email, :password, :password_confirmation, :username, :guardian_email)
     end
+  
+  # Adds a new interest to the child.
+  # child - the object of the child currently signed in.
+  # interest - the interest the child wants to add.
+  # Authors: Ahmad H. Elhamshary.
+  def add_interest
+    child = Child.where("registered_user_id=#{current_registered_user.id}").first
+    interest = Interest.create( :id => params[:id], :name => params[:name])
+    child.interests << interest
+    flash[:notice] = "Your interest has been successfully added"
+  end
+
+  # Adds a new favourite to the child.
+  # child - the object of the child currently signed in.
+  # favourite - the favourite the child wants to add.
+  # Authors: Ahmad H. Elhamshary.
+  def add_favourite
+    child = Child.where("registered_user_id=#{current_registered_user.id}").first
+    favourite = Favourite.create( :id => params[:id], :name => params[:name])
+    child.favourites << favourite
+    flash[:notice] = "Your favourite has been successfully added"
+  end
+  
+  # Adds a new hobby to the child.
+  # child - the object of the child currently signed in.
+  # hobbie - the favourite the child wants to add.
+  # Authors: Ahmad H. Elhamshary.
+  def add_hobby
+    child = Child.where("registered_user_id=#{current_registered_user.id}").first
+    hobby = Hobby.create( :id => params[:id], :name => params[:name])
+    child.hobbies << hobbies
+    flash[:notice] = "Your hobby has been successfully added"
+  end
     
 end

@@ -1,5 +1,5 @@
 # Supervisor controller
-# Authors: Ahmed H. Ismail
+# Authors: Ahmed H. Ismail, Ahmad H. Elhamshary.
 class SupervisorsController < ApplicationController  
   # TODO: fix 'X-CSRF-Token' in XMLHttpRequest header
   skip_before_filter :verify_authenticity_token, only: [:accept_child, :reject_child]
@@ -164,5 +164,41 @@ class SupervisorsController < ApplicationController
         end
       end
     end
+  
+  #Adds an interest to a supervised child.
+  #child: the child whom will get a new added interest.
+  #interest: the new interest to be added.
+  #Authors: Ahmad H. Elhamshary.
+  def add_interest 
+    child = Child.find(params[:id].to_i) 
+    interest = Interest.create( :id => params[:id], :name => params[:name]) 
+    child.interests << interest 
+    flash[:notice] = "Your interest has been successfully added" 
+    redirect_to( :controller => params[:cont], :action => params[:act]) 
+  end
+
+  #Adds a favourite to a supervised child.
+  #child: the child whom will get a new added interest.
+  #favourite: the new favourite to be added.
+  #Authors: Ahmad H. Elhamshary.
+  def add_favourite
+    child = Child.find(params[:id].to_i) 
+    favourite = Favourite.create( :id => params[:id], :name => params[:name]) 
+    child.favourites << favourite 
+    flash[:notice] = "Your favourite has been successfully added" 
+    redirect_to( :controller => params[:cont], :action => params[:act]) 
+  end
+
+  #Adds a hobby to a supervised child.
+  #child: the child whom will get a new added interest.
+  #hobby: the new favourite to be added.
+  #Authors: Ahmad H. Elhamshary.
+  def add_hobby
+    child = Child.find(params[:id].to_i) 
+    hobby = Hobby.create( :id => params[:id], :name => params[:name]) 
+    child.hobbies << Hobby 
+    flash[:notice] = "Your Hobby has been successfully added" 
+    redirect_to( :controller => params[:cont], :action => params[:act]) 
+  end
 
 end
