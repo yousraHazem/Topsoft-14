@@ -81,6 +81,7 @@ Kidzen::Application.routes.draw do
   get "groups/:id/membership_requests" , to: 'group_members#membership_requests'
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
+  get "friendships/view_my_friends"
   
 
     
