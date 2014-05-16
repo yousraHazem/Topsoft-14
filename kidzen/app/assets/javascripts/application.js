@@ -15,6 +15,12 @@
 //= require turbolinks
 //= require_tree .
 //= require cocoon
+//= require blueimp-gallery-all
+//= require blueimp-gallery-fullscreen
+//= require blueimp-gallery-indicator
+//= require blueimp-gallery-video
+//= require jquery.blueimp-gallery
+
 
 
 function remove_fields(link) {
@@ -27,3 +33,4 @@ function add_fields(link, association, content) {
   var regexp = new RegExp("new_" + association, "g");
   $(link).parent().before(content.replace(regexp, new_id));
 }
+

@@ -1,0 +1,12 @@
+ <h1>Listing posts</h1>
+ <%= render partial: "form" %>
+ <% @posts.each do |c| %>
+   <%= render :partial => c %>
+   <% @post = c %>
+   <%= render partial: "show" %>
+ <% end %>
+<!-- This checks if the user is not a supervisor to be able to post-->
+<!-- Authors: Shary Beshara -->
+ <% if !Supervisor.exists?(registered_user: @user) %>
+ 	<%= link_to 'New Post', new_post_path %>
+ <% end %>
