@@ -1,11 +1,11 @@
 Kidzen::Application.routes.draw do
 
-  get "events_invitations_controller/view_pending_event"
-  get "events_invitations_controller/view_accepted_event"
-  get "events_invitations_controller/view_rejected_event"
-  get "events_invitations_controller/view_my_events"
-  get "events_invitations_controller/send_event"
-  get "events_invitations_controller/accept_reject_event"
+  get "events_invitations/view_pending_event"
+  get "events_invitations/view_accepted_event"
+  get "events_invitations/view_rejected_event"
+  get "events_invitations/view_my_events"
+  get "events_invitations/send_event"
+  get "events_invitations/accept_reject_event"
   root 'registered_users#show'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
