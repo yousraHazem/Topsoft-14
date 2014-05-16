@@ -122,10 +122,6 @@ Kidzen::Application.routes.draw do
   get "friendships/accept_reject_friend_request"  
   get "friendships/send_friend_request"     
 
-<<<<<<< HEAD
-=======
-
->>>>>>> development
 
   # children routes
   get "child/verify"
