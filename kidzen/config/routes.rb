@@ -87,7 +87,10 @@ Kidzen::Application.routes.draw do
   post '/group_members/:id/leave_group' => 'group_members#leave_group'
   get '/group_members/:id/join_group' , to:  'group_members#join_group'
   post '/group_members/:id/join_group' => 'group_members#join_group'    
-
+  get "friendships/view_my_friends"
+  get "friendships/view_pending_friendship_requests"
+  get "friendships/accept_reject_friend_request"  
+  get "friendships/send_friend_request"     
 
   # children routes
   get "child/verify"

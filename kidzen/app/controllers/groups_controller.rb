@@ -21,21 +21,24 @@ class GroupsController < ApplicationController
   def edit
   end
 
-
-  # Method for creating a new group.
-  # Input : group_params hash .
-  # Insertion of a new record in table groups .
-  # The function takes a unique username, and a group_name and 
-  # creates a new group by creating and inserting a 
-  # new record in table groups.
-  # Complexity: O(1).
-  # Author: Nouran T. Attia.
   # POST /groups
   # POST /groups.json
+  # Method for creating a new group.
+  # group_params - hash.
+  # Insertion of a new record in table groups.
+  # The function takes a unique username, and a group_name and
+  # creates a new group by creating and inserting a
+  # new record in table groups.
+  # Has error reporting for missing or misused fields.
+  # Complexity: O(1).
+  # Author: Nouran T. Attia, Mohammed T. Nabih.
   def create
     if signed_in?
       @group = Group.new(group_params)
       @group.owner = current_user.username
+      if !@group.valid?
+        flash[:error] = @group.errors.full_messages.join("<br>").html_safe
+      end
       respond_to do |format|
         if @group.save
           format.html { redirect_to @group, notice: 
@@ -72,8 +75,9 @@ class GroupsController < ApplicationController
 
   # DELETE /groups/1
   # DELETE /groups/1.json
+  # Auto generated code modified by : Mohammed Tarek Nabih
   def destroy
-    @group.destroy
+    @group = Group.find(params[:id]).destroy
     respond_to do |format|
       format.html { redirect_to groups_url }
       format.json { head :no_content }
