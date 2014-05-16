@@ -105,7 +105,6 @@ Kidzen::Application.routes.draw do
 
 
 
-
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
@@ -114,5 +113,8 @@ Kidzen::Application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  # topics routes
+  get "topics/index"
+  get "topics/show"
 end
 

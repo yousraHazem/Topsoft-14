@@ -1,6 +1,9 @@
 class Child < ActiveRecord::Base
   # Associations and validations.
   belongs_to :registered_user, dependent: :destroy
+
+  has_many :activity_accounts
+  has_many :activities ,:through => :activity_accounts
  
   has_many :friends,
            :through => :friendships,
@@ -78,6 +81,12 @@ class Child < ActiveRecord::Base
   end
 
   def write_message
+  end
+  
+  # gets the age of the child
+  # Authors: Khaled I. Elhossiny
+  def age
+    RegisteredUser.find(id).age
   end
 
   # Checks if child is approved.
