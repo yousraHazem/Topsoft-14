@@ -5,7 +5,7 @@ class CreateNotifications < ActiveRecord::Migration
       t.string :title
       t.string :short_desc
       t.string :long_desc
-      t.string :custom_view_url
+      t.string :embedded_view_url
       t.boolean :pending
       t.string :data
       t.timestamps
