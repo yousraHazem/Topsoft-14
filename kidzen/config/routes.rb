@@ -30,7 +30,7 @@ Kidzen::Application.routes.draw do
   # This routes to enable getting info from invite page
   get "supervisors/invite", to: 'supervisors#invite'
   post "supervisors/invite", to: 'supervisors#invite'
-
+  get "events/:id/view_friends", to: 'events#view_friends'
   # End supervisor routes
 
 
@@ -81,9 +81,8 @@ Kidzen::Application.routes.draw do
   get "groups/:id/membership_requests" , to: 'group_members#membership_requests'
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
-  
-
-    
+  get '/group_members/:id/view' , to:  'group_members#view'
+  post '/group_members/:id/view' => 'group_members#view'     
 
   # children routes
   get "child/verify"

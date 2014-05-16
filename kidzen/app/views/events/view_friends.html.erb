@@ -1,0 +1,20 @@
+<h1>My Friends</h1>
+  <%- #list all child's friends first and last name if exists and providing a link for each in order to invite them to the event else it retruns a message Sorry, You have no Friends -%>
+  <%- #Returns: first and last name of friends -%>
+  <%- #Approach : listing all friends of the child to invite them to the event -%>
+  <%- #Author : Nouran Mamdouh -%>
+  <%if @friends.to_a !=[]%>
+    <%@friends.to_a.each do |t|%>
+    <%user=RegisteredUser.where("id=#{t.registered_user_id}").first%>
+    <%s="#{user.first_name} #{user.family_name}"%>
+    <%=s%>
+    <%= link_to "invite friend" , :controller => "events", :action => 'invite_friend_to_an_event' , :friend_id => t.id %>
+  <br/>
+  <p>
+    <%= f.label :friend_name %>
+    <%= f.text_field_with_auto_complete :child , :friend_name , { :size => 15} , { :url => formatted_friends_path(:js) , :method => :get , :with => " 'search=' + element.value"} %>
+  </p>
+  <%end%>
+  <%else%>
+    <p>Sorry,You have no Friends</p>
+  <%end%>

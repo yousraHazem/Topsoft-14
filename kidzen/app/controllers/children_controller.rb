@@ -1,6 +1,9 @@
 # Authors: Ammar M. ELWazir, Shary Beshara, Ahmed H. Ismail
 class ChildrenController < ApplicationController
-
+  # Search for child by auto_complete 
+  # Author : Nouran Mamdouh
+  def index
+    @children = Child.find(:all , :conditions => ['name LIKE ?', "%#{params[:search]}%"])
   # GET /children/show
   # Shows the currently logged in user's 
   # Profile if he/she is a child
