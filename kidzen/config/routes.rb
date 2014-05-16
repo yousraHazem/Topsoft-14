@@ -71,7 +71,7 @@ Kidzen::Application.routes.draw do
   resources :poll_questions
   resources :sessions, only: [:new, :create, :destroy]
   resources :group_members
-
+  resources :puzzles
   
   get "group_members/index"
   get "group_members/new"
