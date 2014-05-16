@@ -108,7 +108,6 @@ post '/settings', to: 'registered_users#set_settings'
 				
 
 
-
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

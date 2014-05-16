@@ -7,7 +7,6 @@ class AccessPageController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:add]
   skip_before_filter :verify_authenticity_token, only: [:update_join_rooms]
   skip_before_filter :verify_authenticity_token, only: [:update_create_rooms]
-
   #This action is used to show the prevented Tags
   #Author:- Mohamed Khaled Abdelmeguid
   def access
