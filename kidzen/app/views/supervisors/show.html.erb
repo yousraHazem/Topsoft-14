@@ -3,7 +3,7 @@
   <p>Current signed in user is : <%= current_user.full_name %></p> 
 <% @child = Child.first %>
 <button onclick= "goTo(<%= "\'#{@child.registered_user.id}\'" %>)">
-<%= @child.registered_user.username %>
+  <%= @child.registered_user.username %>
 </button>
 </div>
 <script>
