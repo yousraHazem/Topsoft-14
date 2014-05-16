@@ -47,6 +47,7 @@ class FriendshipsController < ApplicationController
   def view_my_friends
     child = Child.where("registered_user_id=#{current_user.id}").first
     @friends = child.friends
+  end
   # This method to send a friendship request.
   # user_id - the id of the child currently signed in.
   # pending_friendship - active record of the pending friendship relation.
