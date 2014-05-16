@@ -1,5 +1,8 @@
+<!DOCTYPE html>
+<!-- This page is used to show the photos using image_tag
+accompanied by its description with 
+some options to choose from. Author : Hussien M. Eloy -->
 <p>
-<strong>Photo:</strong>
 <%= image_tag @photo.image_url(:thumb) if @photo.image? %>
 </p>
 <p>

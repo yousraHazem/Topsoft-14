@@ -72,6 +72,8 @@ Kidzen::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :group_members
   resources :drag_and_drops
+  resources :songs
+
 
   
   get "group_members/index"
@@ -88,7 +90,15 @@ Kidzen::Application.routes.draw do
     
 
   get '/group_members/:id/view' , to:  'group_members#view'
-  post '/group_members/:id/view' => 'group_members#view'     
+  post '/group_members/:id/view' => 'group_members#view'  
+  get '/group_members/:id/leave_group' , to:  'group_members#leave_group'
+  post '/group_members/:id/leave_group' => 'group_members#leave_group'
+  get '/group_members/:id/join_group' , to:  'group_members#join_group'
+  post '/group_members/:id/join_group' => 'group_members#join_group'    
+  get "friendships/view_my_friends"
+  get "friendships/view_pending_friendship_requests"
+  get "friendships/accept_reject_friend_request"  
+  get "friendships/send_friend_request"     
 
 
   # children routes
@@ -103,7 +113,6 @@ Kidzen::Application.routes.draw do
 
 
 
-
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
@@ -112,5 +121,8 @@ Kidzen::Application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  # topics routes
+  get "topics/index"
+  get "topics/show"
 end
 
