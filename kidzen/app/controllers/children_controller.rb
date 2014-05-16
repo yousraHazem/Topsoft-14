@@ -92,8 +92,13 @@ class ChildrenController < ApplicationController
       @child_account = Child.find(params[:id])
     end
 
+    # Permits only certain params through.
+    # Used for signup forms.
+    # Authors: Ahmed H. Ismail
     def signup_params
-      params.require(:child).permit(:first_name, :middle_name, :family_name, :gender, "birth_date(1i)", "birth_date(2i)", "birth_date(3i)", :email, :password, :password_confirmation, :username, :guardian_email)
+      params.require(:child).permit(:first_name, :middle_name, :family_name, 
+        :gender, "birth_date(1i)", "birth_date(2i)", "birth_date(3i)", :email, 
+        :password, :password_confirmation, :username, :guardian_email)
     end
 
     # Grabs Child specific params from signup params.
