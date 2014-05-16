@@ -26,6 +26,7 @@ class SupervisorsController < ApplicationController
 
   # GET /supervisors/dashboard
   # Renders the supervisor's homepage
+  # Authors: Ahmed H. Ismail
   def show
     if signed_in?
       # Is user a supervisor?
@@ -62,6 +63,7 @@ class SupervisorsController < ApplicationController
 
 
   # GET /supervisors/signup
+  # Renders the signup page
   # Authors: Ahmed H. Ismail
   def signup
     @user = RegisteredUser.new
