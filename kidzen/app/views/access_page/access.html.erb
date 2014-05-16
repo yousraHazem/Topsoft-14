@@ -12,9 +12,9 @@ Authors: Mohamed Khaled AbdelMeguid. -->
   <% if (Permission.exists?(registered_user_id: @child.registered_user.id , 
     abilities: ["mutual_friends_rooms_only"=>true])) %>
     <p class = "tags"> 
-    <input type="checkbox" id = "mutual friends rooms only" 
-      onclick="changeMutualRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
-      mutual friends rooms only
+      <input type="checkbox" id = "mutual friends rooms only" 
+        onclick="changeMutualRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+        mutual friends rooms only
     </p>
   <%else%>
     <p class = "tags"> <input type="checkbox" id = "mutual friends rooms only" 
