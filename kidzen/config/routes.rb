@@ -21,6 +21,7 @@ Kidzen::Application.routes.draw do
   # Supervisor routes:
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'
+  get "/children_history", to: 'supervisors#children_history'
   # Children notification actions
   get "/supervisors/dashboard", to: 'supervisors#show'
   put "/supervisors/accept_child", to: 'supervisors#accept_child'
