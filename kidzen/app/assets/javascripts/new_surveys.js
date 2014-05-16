@@ -132,3 +132,7 @@ function enableRank() {
         };
   }
 }
+
+function RedirectTo(){
+   window.location.href='http://localhost:3000/new_surveys';
+}

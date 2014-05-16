@@ -1,29 +1,23 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @new_survey.name %>
 </p>
-
-
 
 <ol>
   <% for @question in @new_survey.questions %>
     <li><%= h @question.content %></li>
     <ul>
       <% for answer in @question.answers %>
-        <div class = "radioo">
-          <input type="radio" name="<%= answer.content %>" value="<%= answer.content %>">
         <%= h answer.content %></li>
-        </div>
+        <%= answer.votes %>
       <% end %>
       <% for pic_model in @question.pic_models %>
         <li>
           <label>
             <li>
               <div class = "box">
-                <input type="checkbox" name="<%= pic_model.pic_url %>" value="<%= pic_model.pic_url %>" />
             <img src="<%= pic_model.pic_url %>" width="100" height="100" />
+            <%= pic_model.votes %>
             </div>
           </label>
         </li>
@@ -41,6 +35,6 @@
 
 
 
-<button onclick="submit(); RedirectTo();">submit</button>
+<button onclick="submit()">submit</button>
 
 <%= link_to 'Back', new_surveys_path %>

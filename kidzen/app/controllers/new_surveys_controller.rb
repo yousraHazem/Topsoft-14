@@ -4,13 +4,40 @@ class NewSurveysController < ApplicationController
   # GET /new_surveys
   # GET /new_surveys.json
   def index
-    @new_surveys = NewSurvey.all
+    if signed_in?
+      # Is user a supervisor?
+      if Child.exists?(registered_user_id: current_user.id)
+        @new_surveys = NewSurvey.all
+      else
+        # Must be a supervisor.
+        @new_surveys = NewSurvey.find_all_by_user_id current_user.id
+      end
+    else
+      # No one signed in
+      redirect_to session_path :new
+    end
   end
 
   # GET /new_surveys/1
   # GET /new_surveys/1.json
   def show
-    @new_survey = NewSurvey.find(params[:id])
+    if signed_in?
+      # Is user a supervisor?
+      if Child.exists?(registered_user_id: current_user.id)
+        @new_survey = NewSurvey.find(params[:id])
+      else
+        # Must be a supervisor.
+        @new_survey = NewSurvey.find(params[:id])
+        if @new_survey.user_id == current_user.id
+          @new_surveys = NewSurvey.find_all_by_user_id current_user.id
+        else
+          redirect_to session_path :new
+        end
+      end
+    else
+      # No one signed in
+      redirect_to session_path :new
+    end
   end
 
   def submit
@@ -31,9 +58,24 @@ class NewSurveysController < ApplicationController
     end
   end
 
+  def show_super
+    @new_survey = NewSurvey.find(params[:id])
+  end
+
   # GET /new_surveys/new
   def new
-    @new_survey = NewSurvey.new
+    if signed_in?
+      # Is user a supervisor?
+      if Child.exists?(registered_user_id: current_user.id)
+        redirect_to child_path :show
+      else
+        # Must be a supervisor.
+        @new_survey = NewSurvey.new
+      end
+    else
+      # No one signed in
+      redirect_to session_path :new
+    end
   end
 
   # GET /new_surveys/1/edit
@@ -47,6 +89,7 @@ class NewSurveysController < ApplicationController
 
     respond_to do |format|
       if @new_survey.save
+        @new_survey.update_column(:user_id, current_user.id)
         format.html { redirect_to @new_survey, notice: 'New survey was successfully created.' }
         format.json { render action: 'show', status: :created, location: @new_survey }
       else
@@ -68,7 +111,6 @@ class NewSurveysController < ApplicationController
   end
 
   private
-    # Never trust parameters from the scary internet, only allow the white list through.
     def new_survey_params
       params.require(:new_survey).permit(:name, :user_id)
     end

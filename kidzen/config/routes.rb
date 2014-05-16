@@ -72,6 +72,7 @@ Kidzen::Application.routes.draw do
   resources :group_members
   resources :new_surveys, only: [:index, :new, :create, :show, :destroy]
   put "/new_surveys/submit", to: 'new_surveys#submit'
+  get "/new_surveys/show_super/:id", to: 'new_surveys#show_super'
 
   
   get "group_members/index"
