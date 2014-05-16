@@ -41,7 +41,7 @@ module SessionsHelper
   # Is someone signed in ?
   # Authors: Ahmed H. Ismail
   def signed_in?
-      !current_user.nil?
+    !current_user.nil?
   end
 
 end
