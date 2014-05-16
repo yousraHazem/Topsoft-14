@@ -13,11 +13,11 @@ Authors: Mohamed Khaled AbdelMeguid. -->
 <% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
   <div class = "whole">
     <div id = "<%= key.tag %>">
-    <text class = "tags" > - <%= key.tag %> </text>
-    <button onclick = "deleteInfo(<%= "\"#{key.tag}\"" %> , 
-    <%= "\"#{@child.registered_user.username}\"" %> ) " class = "del" > 
-      X
-    </button>
+      <text class = "tags" > - <%= key.tag %> </text>
+        <button onclick = "deleteInfo(<%= "\"#{key.tag}\"" %> , 
+          <%= "\"#{@child.registered_user.username}\"" %> ) " class = "del" > 
+          X
+        </button>
   </div>
 <%end%>
 
