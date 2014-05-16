@@ -1,0 +1,10 @@
+  <% title "Chat" %>
+
+  <ul id="chat">
+    <%= render @chat %>
+  </ul>
+  # cretaing the chatroom interface.
+  <%= form_for Chat.new, :remote => true do |f| %>
+    <%= f.text_field :content %>
+    <%= f.submit "Send" %>
+  <% end %>

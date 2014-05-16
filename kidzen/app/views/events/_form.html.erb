@@ -27,7 +27,22 @@
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
+   <p>
+   <%= f.label :image,"Upload your Photo from Here" %> <br />
+   <%= f.file_field :image, :id => "loc", :onclick => "doLoc()" %>
+  </p>
+  
+  <script type="text/javascript">
+  function doLoc () {
+    document.getElementById("rem").value = '';
+  }
+  function doRem() {
+    document.getElementById("loc").value = '';
+  }
+  </script>
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
 <% end %>
