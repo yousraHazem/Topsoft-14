@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
+    @profile_owner = RegisteredUser.where(:username=>params[:username]).first
   end
 
   # GET /profiles/1
