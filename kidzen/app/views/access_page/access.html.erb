@@ -8,19 +8,22 @@ Authors: Mohamed Khaled AbdelMeguid. -->
   <%= stylesheet_link_tag("access.css") %>
 <% end %>
 <div class = "tags">  
-  <% if (Permission.exists?(registered_user_id: @child.registered_user.id , 
-    abilities: ["can_join_public_chat_rooms"=>true])) %>
-    <p class = "tags"> 
-      <input type="checkbox" id = "can join public chat rooms" 
-      onclick="changeJoinRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
-      can join public chat rooms
-    </p>
-  <%else%>
-    <p class = "tags"> <input type="checkbox" id = "can join public chat rooms" 
-      onclick="changeJoinRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
+  <% if @child == nil %>
+    <p>You have no children </p>
+    <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
+      abilities: ["can_join_public_chat_rooms"=>true])) %>
+      <p class = "tags"> 
+        <input type="checkbox" id = "can join public chat rooms" 
+        onclick="changeJoinRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+        can join public chat rooms
+      </p>
+      <%else%>
+      <p class = "tags"> <input type="checkbox" id = "can join public chat rooms" 
+        onclick="changeJoinRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
         can join public chat rooms 
-    </p>
+      </p>
   <br>
-  <%end%>   
+  <%end%>
+  <%end%>
 </div>
 
