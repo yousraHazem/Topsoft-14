@@ -11,15 +11,16 @@ Authors: Mohamed Khaled AbdelMeguid. -->
 <% if (Permission.exists?(registered_user_id: @child.registered_user.id , 
   abilities: ["can_create_public_chat_rooms"=>true])) %>
   <p class = "tags"> 
-  <input type="checkbox" id = "can create public chat rooms" 
-  onclick="changeCreateRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
-  can create public chat rooms
+    <input type="checkbox" id = "can create public chat rooms" 
+      onclick="changeCreateRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+      can create public chat rooms
   </p>
-  <%else%>
-    <p class = "tags"> <input type="checkbox" id = "can create public chat rooms" 
+<%else%>
+  <p class = "tags"> <input type="checkbox" id = "can create public chat rooms" 
     onclick="changeCreateRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
-    can create public chat rooms </p>
-    <br>
-  <%end%>   
+    can create public chat rooms 
+  </p>
+  <br>
+<%end%>   
 </div>
 
