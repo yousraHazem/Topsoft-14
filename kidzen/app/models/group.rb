@@ -2,6 +2,7 @@ class Group < ActiveRecord::Base
   # Group Model , has one to many relation with GroupMember
   # Authors: Nouran T. Attia, Mohammed T. Nabih
   has_many :group_members
+  has_many :posts
   
   # Validations
   validates :owner, presence: true
