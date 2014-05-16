@@ -3,13 +3,13 @@ class EventsController < ApplicationController
 
   # GET /events
   # GET /events.json
-  #this method view all the events in model Event in index (home)page
-  #assign variable events to all records in table Event
-  #Parameters :None
-  #Returns : None
-  #Approach : view all the events created 
+  # This method view all the events in model Event in index (home)page
+  # Assign variable events to all records in table Event
+  # Parameters :None
+  # Returns : None
+  # Approach : view all the events created 
   # Time Complexity : O(1)
-  #Author : Nouran Mamdouh
+  # Author : Nouran Mamdouh
   def index
     @events = Event.all
   end
@@ -19,14 +19,25 @@ class EventsController < ApplicationController
   def show
   end
 
+  # Timehis method to assign variable friends to child's friends
+  # Parameters : None
+  # Returns : None
+  # Approach : view child's friends
+  # Time Complexity : O(n)
+  # Author : Nouran Mamdouh
+  def view_friends
+    @child = Child.where("registered_user_id=#{current_user.id}").first
+    @friends = @child.friends
+  end
+
   # GET /events/new
-  #this method creates a new event .
-  #assign variable event to new instance  
-  #Parameters :None
-  #Returns : None
-  #Approach : create a new event created
+  # This method creates a new event .
+  # Assign variable event to new instance  
+  # Parameters :None
+  # Returns : None
+  # Approach : create a new event created
   # Time Complexity : O(1)
-  #Author : Nouran Mamdouh
+  # Author : Nouran Mamdouh
   def new
     @event = Event.new
   end
@@ -36,12 +47,12 @@ class EventsController < ApplicationController
   end
   # POST /events
   # POST /events.json
-  #this method creates a new event after submitting the form with the variables
-  #Parameters : event parameters
-  #Returns : None
-  #Approach : save the new event instance to the event model
+  # This method creates a new event after submitting the form with the variables
+  # Parameters : event parameters
+  # Returns : None
+  # Approach : save the new event instance to the event model
   # Time Complexity : O(n)
-  #Author : Nouran Mamdouh
+  # Author : Nouran Mamdouh
   def create
     @event = Event.new(event_params)
     respond_to do |format|
@@ -57,12 +68,12 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
-  #this method updates an existing event viewing a message Event was successfully updated.
-  #Parameters : event parameters
-  #Returns : None
-  #Approach : update the event 
+  # This method updates an existing event viewing a message Event was successfully updated.
+  # Parameters : event parameters
+  # Returns : None
+  # Approach : update the event 
   # Time Complexity : O(n)
-  #Author : Nouran Mamdouh
+  # Author : Nouran Mamdouh
   def update
     respond_to do |format|
       if @event.update(event_params)
@@ -77,12 +88,12 @@ class EventsController < ApplicationController
 
   # DELETE /events/1
   # DELETE /events/1.json
-  #this method deletes an existing event 
-  #Parameters : None
-  #Returns : None
-  #Approach : delete specific event 
+  # This method deletes an existing event 
+  # Parameters : None
+  # Returns : None
+  # Approach : delete specific event 
   # Time Complexity : O(n)
-  #Author : Nouran Mamdouh
+  # Author : Nouran Mamdouh
   def destroy
     @event.destroy
     respond_to do |format|
