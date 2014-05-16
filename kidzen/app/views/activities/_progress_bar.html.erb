@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script type="text/javascript">
+function progress(){
+    var progress = setInterval(function() {
+      var $bar = $('.bar');
+      var $pct = $('#pct');
+      $.get("<%= @batch.id %>/status.json", function(data){
+        if (data.status == "done") {
+          location.reload();
+        } else {
+          $bar.width(data.progress+"%");
+          $pct.text(data.progress+"%");
+        }
+      });
+    }, 800);
+}
+
+$(document).ready(function() {
+  $.get("<%= @batch.id %>/status.json", function(data) {
+    if (data.status == "processing") {
+      progress();
+    }
+  });
+});
+</script>
+</body>
+</html>
