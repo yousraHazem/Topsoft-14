@@ -1,6 +1,5 @@
 #Access Control Page
 #Author:- Mohamed Khaled Abdelmeguid
-
 class AccessPageController < ApplicationController
 	skip_before_filter :verify_authenticity_token, only: [:delete_tag]
   skip_before_filter :verify_authenticity_token, only: [:add]
@@ -10,51 +9,46 @@ class AccessPageController < ApplicationController
   #Author:- Mohamed Khaled Abdelmeguid
   #Child.first will be replaced by params [dependency waiting]
   def access
-  #if signed_in?
-   @banned = Keyword.new(params[:tag])
-  @child = Child.first
-  #else
-  #	redirect_to session_path :new
-  #end
+    @banned = Keyword.new(params[:tag])
+    @child = Child.first
  	end
 
- 	#This action deletes the prevented tags from the tags list
+  #This action deletes the prevented tags from the tags list
   #Author:- Mohamed Khaled Abdelmeguid
   def delete_tag
-  @permit = params[:tag]
-  @name = params[:child]
-  Keyword.where(child_name: @name, tag: @permit).each do |des|
-  des.destroy
-  end	
-  respond_to do |format|
-  format.json { render json: {status: "ok"} }
-	end
+    @permit = params[:tag]
+    @name = params[:child]
+    Keyword.where(child_name: @name, tag: @permit).each do |des|
+      des.destroy
+    end	
+    respond_to do |format|
+      format.json { render json: {status: "ok"} }
+    end
   end
 
   #This action is used to add a new prevented tag by submitting it
   #and we first check if it's already found in the DB
   #Author:- Mohamed Khaled AbdelMeguid
   def add
-  @child = params[:child]
-  @ban = params[:ban]
-  if Keyword.find_by(child_name: @child, tag: @ban).nil?
-    @new = Keyword.new
-    @new.Child_name = @child
-    @new.tag = @ban
-    @new.save
-  else
-    puts("already exists")
-  end
-  respond_to do |format|
-  format.json { render json: {status: "ok"} }
-  end
+    @child = params[:child]
+    @ban = params[:ban]
+    if Keyword.find_by(child_name: @child, tag: @ban).nil?
+      @new = Keyword.new
+      @new.Child_name = @child
+      @new.tag = @ban
+      @new.save
+    else
+      puts("already exists")
+    end
+    respond_to do |format|
+      format.json { render json: {status: "ok"} }
+    end
   end
 
-# This action is used to unban a topic to specific child.
-# topic - topic that should be unbanned.
-# child - the specific child username.
-# Authors:- Shary Beshara.
-
+  # This action is used to unban a topic to specific child.
+  # topic - topic that should be unbanned.
+  # child - the specific child username.
+  # Authors:- Shary Beshara.
   def delete_topic
     @topic = params[:topic]
     @child = params[:child]
@@ -66,11 +60,10 @@ class AccessPageController < ApplicationController
     end
   end
 
-# This action is used to ban a topic to specific child.
-# topic - topic that should be banned.
-# child - the specific child username.
-# Authors:- Shary Beshara.
-
+  # This action is used to ban a topic to specific child.
+  # topic - topic that should be banned.
+  # child - the specific child username.
+  # Authors:- Shary Beshara.
   def ban_topic
     @topic = params[:topic]
     @child = params[:child]

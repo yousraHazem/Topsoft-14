@@ -6,11 +6,12 @@
 
 <!-- This method list all the topics of the available activities -->  
 <!-- Authors: Shary Beshara -->    
-
 <div id = "list_of_activities">
   <% Activity.all.each do |activity| %>
-   <% if !BannedTopic.exists?(child_name: @child.registered_user.username, activity_topic: activity.category) %>
-    <button   onclick = "banTopic(this, <%= "\"#{activity.category}\"" %>, <%= "\"#{@child.registered_user.username}\"" %>)" >
+   <% if !BannedTopic.exists?(child_name: @child.registered_user.username,
+    activity_topic: activity.category) %>
+    <button   onclick = "banTopic(this, <%= "\"#{activity.category}\"" %>, <%= 
+      "\"#{@child.registered_user.username}\"" %>)" >
      <%= activity.category %>
     </button>
     <% end %>
@@ -19,18 +20,15 @@
 
 <!-- This method list all the banned topics of the child -->  
 <!-- Authors: Shary Beshara -->  
-
 <div id = "topics">
-  <% BannedTopic.where(child_name: @child.registered_user.username).each do |topic| %>
+  <% BannedTopic.where(child_name: @child.registered_user.username).each do 
+    topic| %>
     <div id = "<%= topic.activity_topic  %>" > 
       <%= topic.activity_topic %>
-      <button onclick = "deleteTopic(<%= "\"#{topic.activity_topic}\"" %>, <%= "\"#{@child.registered_user.username}\"" %>)" >
+      <button onclick = "deleteTopic(<%= "\"#{topic.activity_topic}\"" %>, <%= 
+        "\"#{@child.registered_user.username}\"" %>)" >
         X
       </button>
- 
     </div>
   <% end %>
 </div>
-
-
-

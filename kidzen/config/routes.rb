@@ -6,7 +6,7 @@ Kidzen::Application.routes.draw do
   put "access_page/delete_topic"
   put "access_page/ban_topic"
 
-post '/settings', to: 'registered_users#set_settings'
+  post '/settings', to: 'registered_users#set_settings'
   root 'registered_users#show'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
