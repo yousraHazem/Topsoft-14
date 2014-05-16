@@ -1,10 +1,12 @@
+<!-- This page will have the fields needed to submit page.
+Author : Hussien M. Eloy. -->
 <%= form_for @song, html: { multipart: true } do |f| %>
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
- <p>
-   <%= f.label :file,"Upload your Video from Here" %> <br />
+  <p>
+   <%= f.label :file,"Upload your Song from Here" %> <br />
     <%= f.file_field :file %>
   </p> 
   <br>

@@ -1,75 +1,87 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: [:show, :edit, :update, :destroy]
+  
 
-  # GET /songs
-  # GET /songs.json
+  # This method used to assign all the songs in the database.
+  # to variable @songss in order to view them in the index page.
+  # Parameters : None.
+  # Returns : None.
+  # Approach : Just returning all the records in songs table.
+  # Author : Hussien M. Eloy.
   def index
     @songs = Song.all
   end
-
-  # GET /songs/1
-  # GET /songs/1.json
+  
+  # This method used to assign song using it's id
+  # to variable @song in order to view it.
+  # Parameters : None.
+  # Returns : None.
+  # Approach : Select song record using it's id.
+  # Author : Hussien M. Eloy. 
   def show
+    @song = Song.find(params[:id])
   end
 
-  # GET /songs/new
+  # This method used to initialize new song and assign it to variable
+  # @song in order to access it in new view.
+  # Parameters : None.
+  # Returns : None.
+  # Approach : Just creates new Instance of song.
+  # Author : Hussien M. Eloy.
   def new
     @song = Song.new
   end
 
-  # GET /songs/1/edit
+  # This method used to assign song using it's id
+  # to variable @song in order to use it
+  # in edit action in form view.
+  # Parameters : None.
+  # Returns : None.
+  # Approach : Select song record using it's id.
+  # Author : Hussien M. Eloy.
   def edit
+    @song = Song.find(params[:id])
   end
 
-  # POST /songs
-  # POST /songs.json
+  # This method used to initialize new song using its parameters
+  # and assign it to variable @song and trying to save it
+  # and convert the song in order to access it in form view to create.
+  # Parameters : None.
+  # Returns : None.
+  # Approach : Just creates new Instance of song and save and convert it.
+  # Author : Hussien M. Eloy.
   def create
     @song = Song.new(song_params)
-
-    respond_to do |format|
-      if @song.save
-        @song.convert
-        format.html { redirect_to @song, notice: 'Song was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @song }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
-      end
+    if @song.save
+      @song.convert
+      flash[:notice] = "Successfully created song"
+      redirect_to @song
+    else
+      render :action => 'new'
     end
   end
 
-  # PATCH/PUT /songs/1
-  # PATCH/PUT /songs/1.json
-  def update
-    respond_to do |format|
-      if @song.update(song_params)
-        format.html { redirect_to @song, notice: 'Song was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /songs/1
-  # DELETE /songs/1.json
+  # This method used to assign song using it's id
+  # to variable @song in order to use it
+  # in destroy action in form view.
+  # Parameters : None.
+  # Returns : None.
+  # Approach : Select song record using it's id.
+  # Author : Hussien M. Eloy.
   def destroy
+    @song = Song.find(params[:id])
     @song.destroy
-    respond_to do |format|
-      format.html { redirect_to songs_url }
-      format.json { head :no_content }
-    end
+    flash[:notice] = "Successfully destroyed Song"
+    redirect_to videos_url
+  end
+  
+  # This method is used to Allow accessing model attributes As Rails 4 does
+  # not support "attr_accessible" keyword.
+  # Parameters : None.
+  # Returns : None.
+  # Approach : The method is just making The model's column accessible.
+  # Author : Hussien M. Eloy.
+  def song_params
+    params.require(:song).permit(:name, :file, :real_file)
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_song
-      @song = Song.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def song_params
-      params.require(:song).permit(:name, :file, :real_file)
-    end
 end
