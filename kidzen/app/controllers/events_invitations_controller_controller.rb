@@ -15,7 +15,7 @@ class EventsInvitationsControllerController < ApplicationController
  # Time complexity: O(n).
  # Authors: Nouran Mamdouh.
 
-  def view_pending_event_requests
+  def view_pending_event
     child = Child.where("registered_user_id=#{current_user.id}").first
     @pending_events = child.pending_events
   end
@@ -32,7 +32,7 @@ end
   # Time complexity: O(n).
   # Authors: Nouran Mamdouh.
 
-    def view_accepted_event_requests
+    def view_accepted_event
     child = Child.where("registered_user_id=#{current_user.id}").first
     @accepted_events = child.accepted_events
   end
@@ -44,7 +44,7 @@ end
   # Time complexity: O(n).
   #Authors: Nouran Mamdouh.
 
-    def view_rejected_event_requests
+    def view_rejected_event
     child = Child.where("registered_user_id=#{current_user.id}").first
     @rejected_events = child.rejected_events
   end

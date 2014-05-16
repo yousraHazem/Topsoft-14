@@ -1,0 +1,11 @@
+<h1>Pending Event requests</h1>
+  <%if @rejected_events.to_a !=[]%>
+    <%@rejected_events.to_a.each do |t|%>
+      <%event=Event.where("name=#{t.name}").first%>
+      <%s="#{event.name} #{event.location} #{event.date_time} #{event.description}}"%>
+      <%=s%>
+      <br/>
+    <%end%>
+  <%else%>
+    <p>You Currently have no Rejected Events Requests</p>
+  <%end%>
