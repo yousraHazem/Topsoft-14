@@ -19,7 +19,6 @@
     <% @new_surveys.each do |new_survey| %>
       <tr>
         <td><%= new_survey.name %></td>
-        <td><%= new_survey.user_id %></td>
         <td><%= link_to 'Show', new_survey %></td>
         <td><%= link_to 'Destroy', new_survey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
