@@ -13,7 +13,7 @@
     <ul>
       <% for answer in @question.answers %>
         <div class = "radioo">
-          <input type="radio" name="<%= answer.content %>" value="<%= answer.content %>">
+          <input type="radio" name="poll" value="<%= answer.content %>">
         <%= h answer.content %></li>
         </div>
       <% end %>
