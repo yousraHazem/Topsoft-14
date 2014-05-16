@@ -1,21 +1,23 @@
-
+<!-- This is the view that show all the children of this supervisor as 
+ buttons-->  
+<!-- Authors: Shary Beshara -->   
 <% @children.each do |child| %>
-  <div onclick="collapse(this)" class="collapsable_container" id="<%= Child.find(child).registered_user.username %>" >
-    <!-- Input is used for preserving state -->
+  <div onclick="collapse(this)" class="collapsable_container" id="<%= Child.
+    find(child).registered_user.username %>" >
     <div class ="round_button">
-      <label class="header"><input type="checkbox" class="filter" disabled="true" /> 
-        <p class="round_inner"><%= Child.find(child).registered_user.full_name %></p>
+      <label class="header"><input type="checkbox" class="filter" disabled="
+        true" /> 
+        <p class="round_inner"><%= Child.find(child).registered_user.full_name 
+          %></p>
       </label>
     </div>
-
-      <div class="collapsable_field">
-       
-        
-        <% Notification.where(:assigned_to => Child.find(child).registered_user.username).each do |notification| %>
+    <!-- This is the view that show the notification of the child-->  
+    <!-- Authors: Shary Beshara -->   
+    <div class="collapsable_field confirm_child_cont">
+      <% Notification.where(:assigned_to => Child.find(child).registered_user
+        .username).each do |notification| %>
         <%= notification.long_desc %>
-        <% end %>   
-
-         
+      <% end %>
     </div>
   </div>
   <br/>

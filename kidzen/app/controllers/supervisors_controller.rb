@@ -95,9 +95,12 @@ class SupervisorsController < ApplicationController
     end
 
   end
-    def children_history
-      @children = ChildSupervisor.where(supervisor: current_user)
-    end
+
+  # This action get the children of the supervisor and pass them to the view.
+  # Authors:- Shary Beshara
+  def children_history
+    @children = ChildSupervisor.where(supervisor: current_user)
+  end
 
   private
 
