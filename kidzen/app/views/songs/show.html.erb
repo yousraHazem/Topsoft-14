@@ -1,0 +1,9 @@
+<!-- This page is used to show the song using audio_tag
+accompanied by its description with
+some options to choose from. Author : Hussien M. Eloy -->
+<%= @song.name %>
+<br>
+<%= audio_tag @song.real_file, :controls => true, :type => "audio/mp3" %>
+<%= link_to 'Delete', @song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<br>
+<%= link_to 'Back', songs_path %>
