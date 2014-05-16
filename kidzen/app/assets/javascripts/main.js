@@ -1,3 +1,6 @@
+/* implement the voice recording process
+*Author: Ali A. Halawaty.
+*/
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 var recordB = document.querySelector("#record");
@@ -21,7 +24,7 @@ function resetSprites() {
 function doneEncoding( blob ) {
 
     //Uncomment line below to enable save to server.
-    // Recorder.save( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
+    Recorder.save( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
 
     Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
     recIndex++;

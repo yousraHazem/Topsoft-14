@@ -1,3 +1,6 @@
+/*implement the voice recording process
+*Author: Ali A. Halawaty.
+*/
 var recLength = 0,
   recBufferL = [],
   recBufferR = [],
