@@ -22,7 +22,7 @@
           <label>
             <li>
               <div class = "box">
-              <%= check_box_tag "poll", answer.content %>
+                <input type="checkbox" name="<%= pic_model.pic_url %>" value="<%= pic_model.pic_url %>" />
             <img src="<%= pic_model.pic_url %>" width="100" height="100" />
             </div>
           </label>
@@ -49,9 +49,27 @@
 
 <script type="text/javascript">
 
+function create_ajax_request (url, data, callback) {
+  var xhr = new XMLHttpRequest();
+
+  xhr.open('PUT', url, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Accept', 'application/json'); // I want JSON 
+  xhr.responseType = "json";
+  xhr.addEventListener('load', function() {
+    xhr.responseJSON =  xhr.response;
+    console.log(xhr.responseJSON);
+    callback(xhr.responseJSON,  xhr);
+  });
+  xhr.send( JSON.stringify(data) );
+  return xhr;
+}
+
+
 function submit()
 {
   var SelectedValue = [];
+  var name = 0;
 var radios = document.getElementsByTagName("input");
 for(var i=0; i<radios.length; i++) {
   if(radios[i].checked)
@@ -61,6 +79,10 @@ for(var i=0; i<radios.length; i++) {
         SelectedValue.push("valueSelected")
       }
 }
+var url = ['http://' + location.host, 'new_surveys', 'submit'].join('/');
+var callback = function(responseJSON, xhr) {
+    }
+create_ajax_request(url, {arrays: SelectedValue}, callback);
 }
 
 function showValue(newValue)

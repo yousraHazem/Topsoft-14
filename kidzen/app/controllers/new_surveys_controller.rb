@@ -1,5 +1,6 @@
 class NewSurveysController < ApplicationController
-  before_action :set_new_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_new_survey, only: [:show, :edit, :update, :destroy, :submit]
+  skip_before_filter :verify_authenticity_token, only: [:submit]
 
   # GET /new_surveys
   # GET /new_surveys.json
@@ -13,6 +14,21 @@ class NewSurveysController < ApplicationController
   end
 
   def submit
+    data = params[:arrays]
+    for selected_answer in data
+      @first_answer = Answer.find_by_content slected_answer
+      if @first_answer
+        m = @first_answer.votes
+        m = m.to_i + 1
+        @first_answer.update_attributes votes: m
+      end
+      @first_answer = pic_model.find_by_pic_url slected_answer
+      if @first_answer
+        m = @first_answer.votes
+        m = m.to_i + 1
+        @first_answer.update_attributes votes: m
+      end
+    end
   end
 
   # GET /new_surveys/new
