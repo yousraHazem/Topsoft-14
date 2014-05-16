@@ -11,10 +11,10 @@ class AccessPageController < ApplicationController
   #Authors:- Mohamed Khaled Abdelmeguid
   def access
   if signed_in?
-  @banned = Keyword.new(params[:tag])
-  @child = Child.find(params[:id])
+    @banned = Keyword.new(params[:tag])
+    @child = Child.find(params[:id])
   else
-  redirect_to session_path :new
+    redirect_to session_path :new
   end
   end
   #This action updates the child option with true or false 
