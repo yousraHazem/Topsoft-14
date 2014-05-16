@@ -81,9 +81,8 @@ Kidzen::Application.routes.draw do
   get "groups/:id/membership_requests" , to: 'group_members#membership_requests'
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
-  
-
-    
+  get '/group_members/:id/view' , to:  'group_members#view'
+  post '/group_members/:id/view' => 'group_members#view'     
 
   # children routes
   get "child/verify"
@@ -91,6 +90,18 @@ Kidzen::Application.routes.draw do
   get "children/verify"
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
+     
+
+   get '/record' => 'home#record'
+
+   post '/saveRecording' => 'home#saveRecording'
+
+   get '/:controller/:action' => 'home#action'
+
+   get '/videoPic' => 'home#recording'
+
+   get '/recOGG' => 'home#recOGG'
+
 
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   #resources :registered_users
