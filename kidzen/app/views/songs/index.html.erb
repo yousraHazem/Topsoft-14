@@ -1,15 +1,23 @@
-<%= audio_tag @songs.first.file_url, :controls => true, :type => "audio/mp3", :id => "audio",
+<%= link_to 'New Song', new_song_path %>
+<br>
+<%= audio_tag @songs.first.real_file, :controls => true, :type => "audio/mp3", :id => "audio",
 :tabindex => "0", :preload => "auto"%>
 <ul id="playlist">
 <li class="active">
-<%= link_to @songs.first.name, @songs.first.file_url %> </li>
+<%= link_to @songs.first.name, @songs.first.real_file %> </li>
 <% for song in @songs %>
 <% if song != @songs.first %>
-<li> <%= link_to song.name, song.file_url %>
-<%= link_to "Open",song, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+<li><%= link_to song.name, song.real_file %></li>
 <% end %>
 <% end %>
 </ul>
+<br>
+<br>
+<h3>You may want to Open each song Seperately</h3>
+<% @songs.each do |song| %>
+<%= link_to song.name, song %>
+<br>
+<% end %> 
 <style type="text/css">
   #playlist,audio {
     background: #666;
@@ -30,6 +38,7 @@
     text-decoration: none;
   }
 </style>
+
 <script type="text/javascript">
   var audio,playlist,tracks,current;
   init();
@@ -37,7 +46,7 @@
     current = 0;
     audio = $('audio');
     playlist = $('#playlist');
-    tracks.find('li a');
+    tracks = playlist.find('li a');
     len = tracks.length - 1;
     audio[0].volume = .10;
     audio[0].play();
@@ -49,7 +58,8 @@
     });
     audio[0].addEventListener('ended',function(e) {
       current++;
-      if(current == len) {
+      if(current == len+1) {
+        current = 0;
         link = playlist.find('a')[0];
       }
       else {
@@ -60,7 +70,7 @@
   }
   function run(link,player) {
     player.src = link.attr('href');
-    var par = link.parent();
+    par = link.parent();
     par.addClass('active').siblings().removeClass('active');
     audio[0].load();
     audio[0].play(); 

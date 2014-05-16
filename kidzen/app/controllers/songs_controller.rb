@@ -28,6 +28,7 @@ class SongsController < ApplicationController
 
     respond_to do |format|
       if @song.save
+        @song.convert
         format.html { redirect_to @song, notice: 'Song was successfully created.' }
         format.json { render action: 'show', status: :created, location: @song }
       else
@@ -69,6 +70,6 @@ class SongsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def song_params
-      params.require(:song).permit(:name, :file)
+      params.require(:song).permit(:name, :file, :real_file)
     end
 end
