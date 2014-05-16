@@ -1,6 +1,5 @@
 class NewSurveysController < ApplicationController
-  before_action :set_new_survey, only: [:show, :edit, :update, :destroy, :submit]
-  skip_before_filter :verify_authenticity_token, only: [:submit]
+  skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
 
   # GET /new_surveys
   # GET /new_surveys.json
@@ -11,22 +10,23 @@ class NewSurveysController < ApplicationController
   # GET /new_surveys/1
   # GET /new_surveys/1.json
   def show
+    @new_survey = NewSurvey.find(params[:id])
   end
 
   def submit
-    data = params[:arrays]
-    for selected_answer in data
-      @first_answer = Answer.find_by_content slected_answer
+    @data = params[:arrays]
+    @data.each do |element|
+      @first_answer = Answer.find_by_content element
       if @first_answer
         m = @first_answer.votes
         m = m.to_i + 1
         @first_answer.update_attributes votes: m
       end
-      @first_answer = pic_model.find_by_pic_url slected_answer
-      if @first_answer
-        m = @first_answer.votes
+      @second_answer = PicModel.find_by_pic_url element
+      if @second_answer
+        m = @second_answer.votes
         m = m.to_i + 1
-        @first_answer.update_attributes votes: m
+        @second_answer.update_attributes votes: m
       end
     end
   end
@@ -56,23 +56,10 @@ class NewSurveysController < ApplicationController
     end
   end
 
-  # PATCH/PUT /new_surveys/1
-  # PATCH/PUT /new_surveys/1.json
-  def update
-    respond_to do |format|
-      if @new_survey.update(new_survey_params)
-        format.html { redirect_to @new_survey, notice: 'New survey was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @new_survey.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /new_surveys/1
   # DELETE /new_surveys/1.json
   def destroy
+    @new_survey = NewSurvey.find(params[:id])
     @new_survey.destroy
     respond_to do |format|
       format.html { redirect_to new_surveys_url }
@@ -81,11 +68,6 @@ class NewSurveysController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_new_survey
-      @new_survey = NewSurvey.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def new_survey_params
       params.require(:new_survey).permit(:name, :user_id)
