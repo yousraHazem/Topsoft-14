@@ -1,0 +1,21 @@
+  <h3>Pending Friendship requests</h3>
+  <%if @pending_friends.to_a !=[]%>
+    <div class="pending_list">
+      <%@pending_friends.to_a.each do |child|%>
+        <%pending_friend=RegisteredUser.where("id=#{child.registered_user_id}").first%>
+        <%full_name="#{pending_friend.first_name} #{pending_friend.family_name}"%>
+        <%=full_name%>
+        <%=link_to image_tag("accept.jpg",size: "50x50"),:controller=>'friendships',
+          :action=>'accept_reject_friend_request',
+          :friend_id=>pending_friend.id,
+          :status=>1,:class=>"accept"%>
+        <%=link_to image_tag("reject.jpg",size: "50x50"),:controller=>'friendships',
+          :action=>'accept_reject_friend_request',
+          :friend_id=>pending_friend.id,
+          :status=>0,:class=>"reject"%>
+        <br/>
+      <%end%>
+    </div>
+  <%else%>
+    <h4>You Currently have no Pending Friendship Requests</h4>
+  <%end%>
