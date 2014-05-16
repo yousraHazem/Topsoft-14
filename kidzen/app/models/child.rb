@@ -1,6 +1,50 @@
 class Child < ActiveRecord::Base
-  # Associations and validations.
+  #Associations and validations.
   belongs_to :registered_user, dependent: :destroy
+  has_many :invitation_events
+           :foreign_key => 'inviter_id',
+           :dependent => :destroy
+
+  has_many :invited_friends,
+           :through => :friendships,
+           :conditions => "accept = 'accepted'"
+
+  has_many :requested_friends,
+           :through => :friendships,
+           :source => :friend,
+           :conditions => "status = 'requested'",
+           :order => :created_at
+
+  has_many :pending_friends,
+           :through => :friendships,
+           :source => :friend,
+           :conditions => "status = 'pending'",
+           :order => :created_at
+
+  has_many :friendships,
+           :foreign_key => 'child_1_id',
+           :dependent => :destroy       
+  # Validations for event requests
+  # Author : Nouran Mamdouh
+  has_many :invited_events,
+           :through => :event_invitations,
+           :conditions => "accept = 'accepted'"
+
+  has_many :requested_eventss,
+           :through => :event_invitations,
+           :source => :inviter,
+           :conditions => "status = 'requested'",
+           :order => :created_at
+
+  has_many :pending_events,
+           :through => :event_invitations,
+           :source => :inviter,
+           :conditions => "status = 'pending'",
+           :order => :created_at
+
+  has_many :events,
+           :foreign_key => 'inviter_id',
+           :dependent => :destroy
 
   has_many :activity_accounts
   has_many :activities ,:through => :activity_accounts
@@ -48,8 +92,18 @@ class Child < ActiveRecord::Base
 
   def receive_friend_request(requester)
   end
-
+  
   def send_friend_request(friend)
+  end
+
+  # Recieve event request
+  # Author : Nouran Mamdouh
+  def receive_event_request(requester)
+  end
+
+  # Sends event request
+  # Author : Nouran Mamdouh
+  def send_event_request(friend)
   end
 
   # Adds a new friendship entry.

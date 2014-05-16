@@ -1,5 +1,7 @@
 Kidzen::Application.routes.draw do
 
+  get "events_invitations/view_pending_event"
+  get "events_invitations/event_invitation"
   root 'registered_users#show'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
@@ -17,7 +19,10 @@ Kidzen::Application.routes.draw do
   # Lists pending notifications
   get "/notifications/pending", to: 'notifications#pending'
   # End generic routes
-
+  # events path
+  get "events/:id/view_friends", to: 'events#view_friends'
+  get "events/:id/destroy", to: 'events#destroy'
+  get "events/:id/invite/", to: 'events#invite_friend_to_an_event'
   # Supervisor routes:
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'

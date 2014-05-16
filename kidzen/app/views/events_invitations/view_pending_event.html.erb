@@ -1,0 +1,15 @@
+<h1>Pending Event requests</h1>
+  <%if @pending_events.to_a !=[]%>
+    <%@pending_events.to_a.each do |t|%>
+      <%event=Event.where("name=#{t.name}").first%>
+      <%s="#{event.name} #{event.location} #{event.date_time} #{event.description}}"%>
+      <%=s%>
+      <%=link_to "accept event request",:controller=>'events_invitations',
+      :action=>'accept_reject_event_request',:invited=>t.registered_user_id,:status=>1%>
+      <%=link_to "reject event request",:controller=>'events_invitations',
+      :action=>'accept_reject_event_request',:invited=>t.registered_user_id,:status=>0%>
+      <br/>
+    <%end%>
+  <%else%>
+    <p>You Currently have no Pending Events Requests</p>
+  <%end%>
