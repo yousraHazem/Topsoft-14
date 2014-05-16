@@ -1,3 +1,6 @@
+/* This code carries the function of encoding to wav of the recrding
+*Author: Ali A. Halawaty.
+*/
 var recLength = 0,
   recBuffersL = [],
   recBuffersR = [],

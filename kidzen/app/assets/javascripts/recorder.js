@@ -1,3 +1,7 @@
+/* this function is composed of small function 
+*which all work together to implement the voice recording process
+*Author: Ali A. Halawaty.
+*/
 (function(window){
 
   var WORKER_PATH = '/assets/recorderWorker.js';
