@@ -120,10 +120,18 @@ class NewSurveysController < ApplicationController
   end
 
   private
+    # This method is used to prevent other attributes than the one i created.
+    # Parameters : None.
+    # Returns : None.
+    # Author : Ahmad Bassiouny.
     def new_survey_params
       params.require(:new_survey).permit(:name, :user_id)
     end
 
+    # This method is used to allow nestted attributes.
+    # Parameters : None.
+    # Returns : None.
+    # Author : Ahmad Bassiouny.
     def new_survey_params
       params.require(:new_survey).permit(:name, :user_id, questions_attributes: [:content, :_destroy, answers_attributes: [:content, :_destroy], pic_models_attributes: [:pic_url, :_destroy], range_sliders_attributes: [:max, :min, :value, :_destroy], ranks_attributes: [:content, :_destroy]]) 
     end
