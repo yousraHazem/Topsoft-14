@@ -7,7 +7,7 @@ class VideosController < ApplicationController
   # Approach : The method is  just making The model's column accessible.
   # Author : Hussien M. Eloy.
   def video_params
-  params.require(:video).permit(:description, :category, :file, 
+    params.require(:video).permit(:description, :category, :file, 
     :real_file, :youtube, :screenshot)
   end
 
@@ -53,7 +53,7 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
     if @video.save
       if !@video.file.blank?
-      @video.convert
+        @video.convert
       end
       flash[:notice] = "Successfully created video"
       redirect_to @video
@@ -86,7 +86,7 @@ class VideosController < ApplicationController
       flash[:notice] = "Successfully updated video"
       redirect_to video_url
     else
-    render :action => 'edit' 
+      render :action => 'edit' 
     end
   end
 
