@@ -1,34 +1,35 @@
-(function(window){
-
-  var WORKER_PATH = '/assets/recorderWorker.js';
-
-  var Recorder = function(source, cfg){
+  /* this function is composed of small function 
+  *which all work together to implement the voice recording process
+  *Author: Ali A. Halawaty.
+  */
+  (function(window){
+    var WORKER_PATH = '/assets/recorderWorker.js';
+    var Recorder = function(source, cfg){
     var config = cfg || {};
     var bufferLen = config.bufferLen || 4096;
     this.context = source.context;
     if(!this.context.createScriptProcessor){
-       this.node = this.context.createJavaScriptNode(bufferLen, 2, 2);
+      this.node = this.context.createJavaScriptNode(bufferLen, 2, 2);
     } else {
-       this.node = this.context.createScriptProcessor(bufferLen, 2, 2);
+        this.node = this.context.createScriptProcessor(bufferLen, 2, 2);
     }
-
     function setState()
     {
       var state = document.getElementById("state");
       if(recording==0) {
         state.innerHTML ="State: Stopped";
         state.style.color = "#AB0000";
-      }
-      else if(recording==1) {
+    }
+    else if(recording==1) {
         state.innerHTML ="State: Recording";
         state.style.color = "#03BD00";
-      }
-      else if(recording==2) {
+    }
+    else if(recording==2) {
         state.innerHTML ="State: Paused";
         state.style.color = "#E38B00";
-      }
+        }
     }
-
+    
     var worker = new Worker(config.workerPath || WORKER_PATH);
     worker.postMessage({
       command: 'init',

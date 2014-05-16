@@ -1,0 +1,94 @@
+<!-- This page is used as an index page it is used
+to play songs one after another continously. Author : Hussien M. Eloy --> 
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag("song.css") %>
+<% end %>
+<%= link_to 'New Song', new_song_path %>
+<br>
+<br>
+<br>
+<%= audio_tag @songs.first.real_file, :controls => true, 
+  :type => "audio/mp3", :id => "audio", :tabindex => "0", :preload => "auto"%>
+<ul id="playlist">
+ <li class="active">
+   <%= link_to @songs.first.name, @songs.first.real_file %> 
+ </li>
+ <% for song in @songs %>
+   <% if song != @songs.first %>
+     <li><%= link_to song.name, song.real_file %></li>
+   <% end %>
+ <% end %>
+</ul>
+<br>
+<br>
+<h3>You may want to Open each song Seperately</h3>
+<% @songs.each do |song| %>
+<%= link_to song.name, song %>
+<br>
+<% end %>
+<!-- I'm very sorry that I 'll embed JS in the page , I tried for hours
+to make it work from seperate file but without success unfortunately. -->
+<script>
+/*
+ * This is JavaScript file that controls the music playing.
+ * Author : Hussien M. Eloy
+*/ 
+var audio;
+var playlist;
+var tracks;
+var current;
+
+init();
+/* 
+ * This function is used to handle the actions take on the player.
+ * Parameters : None.
+ * Returns : None.
+ * Approach : The method take the component from html view and 
+ * provide it with some functionalities as mouse clikking and handling
+ * what happens when a song ends.
+ * Author : Hussien M. Eloy 
+*/
+function init () {
+    current = 0;
+    audio = $('audio');
+    playlist = $('#playlist');
+    tracks = playlist.find('li a');
+    len = tracks.length - 1;
+    audio[0].volume = .10;
+    audio[0].play();
+    playlist.find('a').click(function(e) {
+        e.preventDefault();
+        link = $(this);
+        current = link.parent().index();
+        run(link,audio[0]);
+    });
+    audio[0].addEventListener('ended',function(e) {
+        current++;
+        if (current == len + 1) {
+            current = 0;
+            link = playlist.find('a')[0];
+        } else {
+        link = playlist.find('a')[current];
+        }
+        run($(link),audio[0]); 
+    });
+}
+/*
+ * This method is used to run a song using its url.
+ * Parameters : link - hyperlink.
+                audio - audio_tag.
+ * Returns : None. 
+ * Approach : Just assiging the src of the player to be the link provided
+ * then clear all other active sounds.Then play the new track.
+ * Author : Hussien M. Eloy
+*/
+function run(link, player) {
+    player.src = link.attr('href');
+    par = link.parent();
+    par.addClass('active').siblings().removeClass('active');
+    audio[0].load();
+    audio[0].play(); 
+}
+
+</script>
+
