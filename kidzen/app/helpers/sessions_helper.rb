@@ -12,14 +12,14 @@ module SessionsHelper
     # Place token (plain text) in browser
     cookies.permanent[:remember_token] = remember_token
     # Save hashed token in browser
-    user.update_attribute(:remember_token, RegisteredUser.digest(remember_token), online: true)
+    user.update_attributes(remember_token: RegisteredUser.digest(remember_token), online: true)
     self.current_user = user
   end
 
   # Signs out the currently logged in user.
   # Authors: Ahmed H. Ismail
   def sign_out
-      current_user.update_attribute(:remember_token,
+      current_user.update_attributes(remember_token:
                                     RegisteredUser.digest(RegisteredUser.new_remember_token), online: false)
       cookies.delete(:remember_token)
       self.current_user = nil
