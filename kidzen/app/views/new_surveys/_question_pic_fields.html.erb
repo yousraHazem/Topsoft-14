@@ -6,9 +6,9 @@
   </p>
 
   <%= f.fields_for :pic_models do |ff| %>
-      <div class="field">
-        <%= render 'pic_model_fields', :f => ff %>
-      </div>
+    <div class="field">
+      <%= render 'pic_model_fields', :f => ff %>
+    </div>
   <% end %>
   <p><%= link_to_add_fields "Add pic answer", f, :pic_models %></p>
 </div>

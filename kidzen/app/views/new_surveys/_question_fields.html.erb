@@ -6,9 +6,9 @@
 </p>
 
 <%= f.fields_for :answers do |ff| %>
-    <div class="field">
-      <%= render 'answer_fields', :f => ff %>
-    </div>
+  <div class="field">
+    <%= render 'answer_fields', :f => ff %>
+  </div>
 <% end %>
 
 <p class="AddAns" onclick="enableAns()">
@@ -16,19 +16,19 @@
 </p>
 
 <%= f.fields_for :pic_models do |ff| %>
-      <div class="field">
-        <%= render 'pic_model_fields', :f => ff %>
-      </div>
-  <% end %>
+  <div class="field">
+    <%= render 'pic_model_fields', :f => ff %>
+  </div>
+<% end %>
   
-    <p class="AddPic" onclick="enablePic()">
-      <%= link_to_add_fields "Add pic answer", f, :pic_models %>
-    </p>
+<p class="AddPic" onclick="enablePic()">
+  <%= link_to_add_fields "Add pic answer", f, :pic_models %>
+</p>
 
-    <%= f.fields_for :range_sliders do |ff| %>
-    <div class="field">
-      <%= render 'range_slider_fields', :f => ff %>
-    </div>
+<%= f.fields_for :range_sliders do |ff| %>
+  <div class="field">
+    <%= render 'range_slider_fields', :f => ff %>
+  </div>
 <% end %>
 
 <p class="AddRange" onclick="enableRang()">
