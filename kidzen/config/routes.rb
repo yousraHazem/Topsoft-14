@@ -58,8 +58,7 @@ Kidzen::Application.routes.draw do
   resources :videos
   resources :groups
   resources :events
-  resources :polls
-  resources :surveys
+  resources :polls  
   resources :messages
   resources :profile_musics
   resources :searches
@@ -72,6 +71,9 @@ Kidzen::Application.routes.draw do
   resources :poll_questions
   resources :sessions, only: [:new, :create, :destroy]
   resources :group_members
+  resources :new_surveys, only: [:index, :new, :create, :show, :destroy]
+  put "/new_surveys/submit", to: 'new_surveys#submit'
+  get "/new_surveys/show_super/:id", to: 'new_surveys#show_super'
   resources :drag_and_drops
   resources :songs
 
