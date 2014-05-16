@@ -1,29 +1,68 @@
-<h1>Listing songs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>File</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @songs.each do |song| %>
-      <tr>
-        <td><%= song.name %></td>
-        <td><%= song.file %></td>
-        <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Song', new_song_path %>
+<%= audio_tag @songs.first.file_url, :controls => true, :type => "audio/mp3", :id => "audio",
+:tabindex => "0", :preload => "auto"%>
+<ul id="playlist">
+<li class="active">
+<%= link_to @songs.first.name, @songs.first.file_url %> </li>
+<% for song in @songs %>
+<% if song != @songs.first %>
+<li> <%= link_to song.name, song.file_url %>
+<%= link_to "Open",song, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+<% end %>
+<% end %>
+</ul>
+<style type="text/css">
+  #playlist,audio {
+    background: #666;
+    width: 400px;
+    padding: 20px;
+  } 
+  .active a{
+    color: #5DB0E6;
+    text-decoration: none;
+  }
+  li a {
+    color: #eeeedd;
+    background: #333;
+    padding: 5px;
+    display: block;
+  }
+  li a:hover {
+    text-decoration: none;
+  }
+</style>
+<script type="text/javascript">
+  var audio,playlist,tracks,current;
+  init();
+  function init () {
+    current = 0;
+    audio = $('audio');
+    playlist = $('#playlist');
+    tracks.find('li a');
+    len = tracks.length - 1;
+    audio[0].volume = .10;
+    audio[0].play();
+    playlist.find('a').click(function(e) {
+      e.preventDefault();
+      link = $(this);
+      current = link.parent().index();
+      run(link,audio[0]);
+    });
+    audio[0].addEventListener('ended',function(e) {
+      current++;
+      if(current == len) {
+        link = playlist.find('a')[0];
+      }
+      else {
+        link = playlist.find('a')[current];
+      }
+      run($(link),audio[0]); 
+    });
+  }
+  function run(link,player) {
+    player.src = link.attr('href');
+    var par = link.parent();
+    par.addClass('active').siblings().removeClass('active');
+    audio[0].load();
+    audio[0].play(); 
+  }
+</script>
