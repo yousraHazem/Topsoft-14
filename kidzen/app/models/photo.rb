@@ -14,7 +14,7 @@
 class Photo < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   # has_many :comments,:tags    <<< to be un-commented once these models are created
-  # belongs_to :post    <<< to be un-commented once these models are created        
+  belongs_to :post          
   validates_presence_of :description, :image 
 
 

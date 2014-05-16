@@ -86,6 +86,10 @@ Kidzen::Application.routes.draw do
   resources :posts do
     resources :comments, :only => [:create]
   end
+  get "/posts/addPhoto"
+  resources :posts do
+    put :addPhoto, :on => :collection
+  end 
 
   # children routes
   get "child/verify"

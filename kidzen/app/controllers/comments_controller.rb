@@ -6,7 +6,10 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create!(comment_params)
-    redirect_to @post
+    respond_to do |format|
+      format.html {redirect_to @post}
+      format.js
+    end
   end
 #Here we define the parameters of the comment
 #Parameters : None
