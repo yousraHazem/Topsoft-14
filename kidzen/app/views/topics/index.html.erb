@@ -1,0 +1,11 @@
+  <h3>Topics</h3>
+  <%if !@topics.empty?%>
+    <div class="topics">
+      <%for topic in @topics%>
+        <p> <%=link_to(topic.name,{:action=>"show",:id=>topic.id},
+          :class =>"topic")%></p>
+      <%end%>
+    </div>
+  <%else%>
+     <h4>No topics to display</h4>
+  <%end%>

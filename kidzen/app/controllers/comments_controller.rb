@@ -2,8 +2,9 @@ class CommentsController < ApplicationController
 #Here we create our comment
 #Parameters : None
 #returns : None
-#Author : Abdelrahman S. Elsayed
+#Author : Abdelrahman S. Elsayed , Shary Beshara.
   def create
+    if ! Supervisor.exists?(registered_user: current_user)
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create!(comment_params)
     respond_to do |format|
@@ -19,3 +20,6 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:body , :post_id)
   end
 end
+
+
+    
