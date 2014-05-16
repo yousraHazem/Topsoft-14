@@ -9,10 +9,10 @@
 <div id = "list_of_activities">
   <% Activity.all.each do |activity| %>
    <% if !BannedTopic.exists?(child_name: @child.registered_user.username,
-    activity_topic: activity.category) %>
-    <button   onclick = "banTopic(this, <%= "\"#{activity.category}\"" %>, <%= 
+    activity_topic: activity.topic) %>
+    <button   onclick = "banTopic(this, <%= "\"#{activity.topic}\"" %>, <%= 
       "\"#{@child.registered_user.username}\"" %>)" >
-     <%= activity.category %>
+     <%= activity.topic %>
     </button>
     <% end %>
   <% end %>
