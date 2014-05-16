@@ -60,7 +60,9 @@ class Child < ActiveRecord::Base
 
   def write_message
   end
-
+  
+  # gets the age of the child
+  # Authors: Khaled I. Elhossiny
   def age
   RegisteredUser.find(id).age
   end

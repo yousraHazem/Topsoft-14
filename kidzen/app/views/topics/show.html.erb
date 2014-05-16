@@ -28,11 +28,11 @@
         <%if activity.children.where(:id=>current_user.id).exists?%>
           <p> <%=link_to(activity.name,{:controller=>:activities,:action=>"show",
             :id=>activity.id},:class =>"played")%></p>
-    <%else%>
-      <p> <%=link_to(activity.name,{:controller=>:activities,:action=>"show",
-        :id=>activity.id},:class =>"activity")%></p>
+        <%else%>
+          <p> <%=link_to(activity.name,{:controller=>:activities,:action=>"show",
+            :id=>activity.id},:class =>"activity")%></p>
+        <%end%>
       <%end%>
-    <%end%>
   </div>
     <%else%>
       <br/>

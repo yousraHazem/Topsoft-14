@@ -49,6 +49,10 @@ class RegisteredUser < ActiveRecord::Base
       [first_name, middle_name, family_name].join(" ")
     end
 
+    # calculate the age of the user
+    # birth_year - the year of birth of user
+    # returns age based on subtraction of current year - birth year
+    # Authors: Khaled I. Elhossiny 
     def age
     birth_year=RegisteredUser.find(id).birth_date.year
     Date.today.year-birth_year
