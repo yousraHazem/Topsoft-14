@@ -64,7 +64,7 @@ class Child < ActiveRecord::Base
   # gets the age of the child
   # Authors: Khaled I. Elhossiny
   def age
-  RegisteredUser.find(id).age
+    RegisteredUser.find(id).age
   end
 
   # Checks if child is approved.

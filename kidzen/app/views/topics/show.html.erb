@@ -6,24 +6,24 @@
         background-size:150px 100px;
         background-repeat:no-repeat;
         font-weight:100;
-        padding:12px;
-        margin-left:-12px;
-        width:300px;
         height:300px;
+        margin-left:-12px;
+        padding:12px;
+        width:300px;
       }
      .played:hover
      {
+       background-image:url('/assets/abstract_blue_waves_bubbles.jpg');
        color:white;
        font-weight:700;
        font-style:italic;
-       background-image:url('/assets/abstract_blue_waves_bubbles.jpg');
        text-decoration:none;
      }
     </style>
   </head>
   <h3>Activities</h3>
   <div class="activities">
-    <%if(@activities!=[])%>
+    <%if(!@activities.empty?)%>
       <%for activity in @activities%>
         <%if activity.children.where(:id=>current_user.id).exists?%>
           <p> <%=link_to(activity.name,{:controller=>:activities,:action=>"show",
@@ -36,7 +36,7 @@
   </div>
     <%else%>
       <br/>
-      <h4>You cureently have no available activities</h4>
+      <h4>You currently have no available activities</h4>
     <%end%>
 
 
