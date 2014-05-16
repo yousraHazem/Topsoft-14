@@ -14,13 +14,13 @@ class EventsInvitationsController < ApplicationController
  # Time complexity: O(n).
  # Authors: Nouran Mamdouh.
 
-  def view_pending_event_requests
+  def view_pending_event
     child = Child.where("registered_user_id=#{current_user.id}").first
     @pending_events = child.pending_events
   end
 
  
-  def send_event_request
+  def send_event
 
   end
 end
@@ -33,7 +33,7 @@ end
  # Time complexity: O(n).
  #Authors: Nouran Mamdouh.
 
-  def accept_reject_event_request
+  def accept_reject_event
     is_accepted = params[:status].to_i
     if is_accepted == 1
       pending_events = EventInvitation.where("child_1_id=#{current_user.id} AND
