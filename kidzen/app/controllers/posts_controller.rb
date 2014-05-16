@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 # Here we are assigning variables @posts and @post
 # Parameters : None
 # returns : None
-# Author : Abdelrahman Saad
+# Author : Abdelrahman S. Elsayed
   def index
     @posts = Post.find(:all, :order => 'posts.created_at DESC')
     @post = Post.new
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 # Here we direct our post show page to our index html file
 # Parameters : None
 # returns : None
-# Author : Abdelrahman Saad
+# Author : Abdelrahman S. Elsayed
   def show
       redirect_to index 
   end
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 # Here we create a new instance of post
 # Parameters : None
 # returns : None
-# Author : Abdelrahman Saad
+# Author : Abdelrahman S. Elsayed
   def new
   end
 
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
 # Here we make a new post with parameters and add it to our database
 # Parameters : None
 # returns : None
-# Author : Abdelrahman Saad
+# Author : Abdelrahman S. Elsayed
   def create
     @post = Post.new(post_params)
     respond_to do |format|
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
 # Here we update our post's attributes
 # Parameters : None
 # returns : None
-# Author : Abdelrahman Saad
+# Author : Abdelrahman S. Elsayed
   def update
     respond_to do |format|
       if @post.update(post_params)
@@ -77,7 +77,7 @@ class PostsController < ApplicationController
 # Here we delete an instance of post
 # Parameters : None
 # returns : None
-# Author : Abdelrahman Saad
+# Author : Abdelrahman S. Elsayed
   def destroy
     @post.destroy
     respond_to do |format|
@@ -91,7 +91,7 @@ class PostsController < ApplicationController
 # Here we set our variable @post to a certaing post by id
 # Parameters : None
 # returns : None
-# Author : Abdelrahman Saad
+# Author : Abdelrahman S. Elsayed
     def set_post
       @post = Post.find(params[:id])
     end
@@ -100,7 +100,7 @@ class PostsController < ApplicationController
 # Here we define our post attributes
 # Parameters : None
 # returns : None
-# Author : Abdelrahman Saad
+# Author : Abdelrahman S. Elsayed
     def post_params
       params.require(:post).permit(:title, :body)
     end
