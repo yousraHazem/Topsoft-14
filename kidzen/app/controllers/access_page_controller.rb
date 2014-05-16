@@ -10,7 +10,6 @@ class AccessPageController < ApplicationController
   #Child.first will be replaced by params [dependency waiting]
   def access
   if signed_in?
-    @banned = Keyword.new(params[:tag])
     @child = Child.find_by(registered_user_id: params[:id])
   else
     redirect_to session_path :new
