@@ -116,5 +116,6 @@ Kidzen::Application.routes.draw do
   # topics routes
   get "topics/index"
   get "topics/show"
+  get "chatroom/index"
 end
 
