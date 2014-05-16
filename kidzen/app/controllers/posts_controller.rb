@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 # Author : Abdelrahman Saad
   def show
     @user = current_user
-      redirect_to index 
+    redirect_to index 
   end
 
 # GET /posts/new
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
       @post = Post.new(post_params)
       respond_to do |format|
         if @post.save
-         format.html { redirect_to @post}
+          format.html { redirect_to @post}
           format.json { render action: 'show', status: :created, location: @post }
         else
           format.html { render action: 'new' }
