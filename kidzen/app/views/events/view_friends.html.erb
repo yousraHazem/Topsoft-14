@@ -10,6 +10,10 @@
     <%=s%>
     <%= link_to "invite friend" , :controller => "events", :action => 'invite_friend_to_an_event' , :friend_id => t.id %>
   <br/>
+  <p>
+    <%= f.label :friend_name%>
+    <%= f.text_field :friend_name%>
+  </p>
   <%end%>
   <%else%>
     <p>Sorry,You have no Friends</p>
