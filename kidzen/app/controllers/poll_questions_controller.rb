@@ -75,7 +75,7 @@ class PollQuestionsController < ApplicationController
          #update the question's user id column with the current user id 
          @poll_question.update_column(:user_id, current_user.id)
          format.html { redirect_to @poll_question, notice: 'Poll question was successfully created.' }
-         format.json { render action: 'show', status: :created, location: @poll_question }
+         format.js
       else
          format.html { render action: 'new' }
          format.json { render json: @poll_question.errors, status: :unprocessable_entity }
