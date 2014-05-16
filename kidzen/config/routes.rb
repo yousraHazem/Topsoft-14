@@ -2,6 +2,9 @@ Kidzen::Application.routes.draw do
 
   get "invite_chatroom/index"
   root 'registered_users#show'
+  resources :home
+
+  root 'home#index'
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
 
@@ -24,10 +27,10 @@ Kidzen::Application.routes.draw do
   get "/confirm_children", to: 'supervisors#confirm_children'
   get "/children_history", to: 'supervisors#children_history'
   # Children notification actions
-  get "/supervisors/dashboard", to: 'supervisors#show'
+  get "/supervisors/dashboard", to: 'supervisors#show', as: :parent_profile
   put "/supervisors/accept_child", to: 'supervisors#accept_child'
   put "/supervisors/reject_child", to: 'supervisors#reject_child'
-  get "/supervisors/signup", to: 'supervisors#signup'
+  get "/supervisors/signup", to: 'supervisors#signup', as: 'parent_signup'
   post "/supervisors/create", to: 'supervisors#create'
   # This routes to enable getting info from invite page
   get "supervisors/invite", to: 'supervisors#invite'
@@ -41,7 +44,7 @@ Kidzen::Application.routes.draw do
   delete '/signout', to: 'sessions#destroy'
   get '/signout', to: 'sessions#destroy'
   # Children Signup paths
-  get '/signup', to: 'children#signup'
+  get '/signup', to: 'children#signup', as: :child_signup
   post '/children/create', to: 'children#create'
   get '/children/show', to: 'children#show'  
 
@@ -89,6 +92,11 @@ Kidzen::Application.routes.draw do
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
 
+  get "friendships/view_my_friends"
+  get '/group_members/:id/view' , to:  'group_members#view'
+  post '/group_members/:id/view' => 'group_members#view'     
+
+
   
 
     
@@ -103,6 +111,7 @@ Kidzen::Application.routes.draw do
   get "friendships/view_pending_friendship_requests"
   get "friendships/accept_reject_friend_request"  
   get "friendships/send_friend_request"     
+
 
 
   # children routes

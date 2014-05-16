@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+class HomeController < ApplicationController
+  # GET /homes
+  # GET /homes.json
+  def index
+    @homes = Home.all
+  end
+=======
 require 'securerandom'
 class HomeController < ApplicationController
 
@@ -33,4 +41,5 @@ class HomeController < ApplicationController
     end
 
 
+>>>>>>> 90897c85c243f9d8c2a83da371dec93e81aed57f
 end
