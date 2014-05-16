@@ -52,4 +52,12 @@ FactoryGirl.define do
     association :registered_user, factory: :parent_user
   end
 
+  # Factory for creating a child entity.
+  # Authors: Ahmed H. Ismail.
+  factory :child, class: Child do 
+    guardian_email "supervisor1@example.com"
+    is_approved false
+    association :registered_user, factory: :child_user
+  end
+
 end
