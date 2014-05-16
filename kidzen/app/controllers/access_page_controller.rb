@@ -9,8 +9,7 @@ class AccessPageController < ApplicationController
   #Author:- Mohamed Khaled Abdelmeguid
   #Child.first will be replaced by params [dependency waiting]
   def access
-    @banned = Keyword.new(params[:tag])
-    @child = Child.first
+    @child = Child.find_by(registered_user_id: params[:id])
  	end
 
   #This action deletes the prevented tags from the tags list
