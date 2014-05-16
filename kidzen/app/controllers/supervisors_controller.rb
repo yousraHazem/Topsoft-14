@@ -7,7 +7,7 @@ class SupervisorsController < ApplicationController
   # GET /confirm_children
   # Renders the confirm children
   # view.
-  # Authors: Ahmed H. Ismail
+  # Authors: Ahmed H. Ismail.
   def confirm_children
     if signed_in?
       if Supervisor.exists?(registered_user: current_user)
@@ -25,8 +25,8 @@ class SupervisorsController < ApplicationController
   end
 
   # GET /supervisors/dashboard
-  # Renders the supervisor's homepage
-  # Authors: Ahmed H. Ismail
+  # Renders the supervisor's homepage.
+  # Authors: Ahmed H. Ismail.
   def show
     if signed_in?
       # Is user a supervisor?
@@ -45,7 +45,7 @@ class SupervisorsController < ApplicationController
   
   # PUT /supervisor/reject_child
   # Accept child action.
-  # Authors: Ahmed H. Ismail
+  # Authors: Ahmed H. Ismail.
   def accept_child
     data = params[:child_username]
     func = lambda { |supervisor, child | supervisor.accept_child(child) }
@@ -54,7 +54,7 @@ class SupervisorsController < ApplicationController
 
   # PUT /supervisor/accept_child
   # Reject child action.
-  # Authors: Ahmed H. Ismail
+  # Authors: Ahmed H. Ismail.
   def reject_child
     data = params[:child_username]
     func = lambda { |supervisor, child | supervisor.reject_child(child) }
@@ -63,14 +63,14 @@ class SupervisorsController < ApplicationController
 
 
   # GET /supervisors/signup
-  # Authors: Ahmed H. Ismail
+  # Authors: Ahmed H. Ismail.
   def signup
     @user = RegisteredUser.new
   end
 
   # POST /supervisors/create
-  # Creates a new supervisor
-  # Authors: Ahmed H. Ismail
+  # Creates a new supervisor.
+  # Authors: Ahmed H. Ismail.
   def create
     perms = Permission.supervisor_default
     perms.save
@@ -98,7 +98,7 @@ class SupervisorsController < ApplicationController
   end
 
   # This action get the children of the supervisor and pass them to the view.
-  # Authors: Shary Beshara
+  # Authors: Shary Beshara.
   def children_history
     @children = ChildSupervisor.where(supervisor: current_user)
   end
@@ -106,9 +106,11 @@ class SupervisorsController < ApplicationController
   private
 
     # Safety first.
-    # Authors Ahmed H. Ismail
+    # Authors Ahmed H. Ismail.
     def signup_params
-      params.require(:registered_user).permit(:first_name, :middle_name, :family_name, :gender, :birth_date, :email, :password, :password_confirmation, :username)
+      params.require(:registered_user).permit(:first_name, :middle_name, 
+        :family_name, :gender, :birth_date, :email, :password, 
+          :password_confirmation, :username)
     end
 
     # Helper function that finds a child by username and calles a function
