@@ -53,7 +53,7 @@ class AccessPageController < ApplicationController
     @topic = params[:topic]
     @child = params[:child]
     BannedTopic.where(child_name: @child, activity_topic: @topic).each do 
-    	|topic|
+			|topic|
       topic.destroy
     end 
     respond_to do |format|
