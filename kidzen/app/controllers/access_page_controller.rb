@@ -2,7 +2,7 @@
 #Author:- Mohamed Khaled Abdelmeguid
 
 class AccessPageController < ApplicationController
-	skip_before_filter :verify_authenticity_token, only: [:delete_tag]
+  skip_before_filter :verify_authenticity_token, only: [:delete_tag]
   skip_before_filter :verify_authenticity_token, only: [:update]
   skip_before_filter :verify_authenticity_token, only: [:add]
   skip_before_filter :verify_authenticity_token, only: [:update_join_rooms]
@@ -10,14 +10,14 @@ class AccessPageController < ApplicationController
   #This action is used to show the prevented Tags
   #Authors:- Mohamed Khaled Abdelmeguid
   def access
-  #if signed_in?
+  if signed_in?
   @banned = Keyword.new(params[:tag])
   @child = Child.find(params[:id])
-  #else
-  #	redirect_to session_path :new
-  #end
- 	end
- 	#This action updates the child option with true or false 
+  else
+  redirect_to session_path :new
+  end
+  end
+  #This action updates the child option with true or false 
   #Authors:- Mohamed Khaled Abdelmeguid
   def update_create_rooms
   @value = params[:value]
