@@ -2,6 +2,7 @@ Kidzen::Application.routes.draw do
 
 
 
+
  
 post '/settings', to: 'registered_users#set_settings'
   root 'registered_users#show'
@@ -9,6 +10,8 @@ post '/settings', to: 'registered_users#set_settings'
 
   get "invite_chatroom/index"
   root 'registered_users#show'
+
+
   resources :home
 
   root 'home#index'
@@ -158,6 +161,5 @@ post '/settings', to: 'registered_users#set_settings'
   # topics routes
   get "topics/index"
   get "topics/show"
-  get "chatroom/index"
 end
 
