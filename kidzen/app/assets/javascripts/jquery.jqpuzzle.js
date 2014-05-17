@@ -69,36 +69,36 @@
         // language localizations
         var i18n = {
             en: {
-              shuffleLabel: 'Shuffle',
-              toggleOriginalLabel: 'Original',
-              toggleNumbersLabel: 'Numbers',
-              confirmShuffleMessage: 'Do you really want to shuffle?',
-              movesLabel: 'moves',
-              secondsLabel: 'seconds'
+                shuffleLabel: 'Shuffle',
+                toggleOriginalLabel: 'Original',
+                toggleNumbersLabel: 'Numbers',
+                confirmShuffleMessage: 'Do you really want to shuffle?',
+                movesLabel: 'moves',
+                secondsLabel: 'seconds'
             },
             fr: {
-              shuffleLabel: 'Mélanger',
-              toggleOriginalLabel: 'Original',
-              toggleNumbersLabel: 'Nombres',
-              confirmShuffleMessage: 'Veux-tu vraiment mélanger?',
-              movesLabel: 'mouvements',
-              secondsLabel: 'secondes'
+                shuffleLabel: 'Mélanger',
+                toggleOriginalLabel: 'Original',
+                toggleNumbersLabel: 'Nombres',
+                confirmShuffleMessage: 'Veux-tu vraiment mélanger?',
+                movesLabel: 'mouvements',
+                secondsLabel: 'secondes'
             },
             de: {
-              shuffleLabel: 'Mischen',
-              toggleOriginalLabel: 'Original',
-              toggleNumbersLabel: 'Nummern',
-              confirmShuffleMessage: 'Willst du wirklich mischen?',
-              movesLabel: 'Züge',
-              secondsLabel: 'Sekunden'
+                shuffleLabel: 'Mischen',
+                toggleOriginalLabel: 'Original',
+                toggleNumbersLabel: 'Nummern',
+                confirmShuffleMessage: 'Willst du wirklich mischen?',
+                movesLabel: 'Züge',
+                secondsLabel: 'Sekunden'
             },
             pt: {
-              shuffleLabel: 'Embaralhar',
-              toggleOriginalLabel: 'Original',
-              toggleNumbersLabel: 'Numeros',
-              confirmShuffleMessage: 'Tem certeza que deseja reembralhar?',
-              movesLabel: 'movimentos',
-              secondsLabel: 'segundos'
+                shuffleLabel: 'Embaralhar',
+                toggleOriginalLabel: 'Original',
+                toggleNumbersLabel: 'Numeros',
+                confirmShuffleMessage: 'Tem certeza que deseja reembralhar?',
+                movesLabel: 'movimentos',
+                secondsLabel: 'segundos'
             }
         };
         // if rows or cols, but no hole was user-defined,
