@@ -72,7 +72,9 @@
 <% end %>
       <div class="clr"></div>
      <div class="sup_dash">
+     <% if not signed_in? or Supervisor.exists?(current_user) %>
        <h3><a href="/supervisors/dashboard">Supervisors From here</a></h3>
+     <% end %>
      </div> 
       <div class="menu_nav">
         <% if ( session[:locale] == "en")%>
