@@ -1,0 +1,16 @@
+<!-- This page shows the link of editing the post and comments below it
+     Author : Abdelrahman Saad --> 
+  <p id="notice"><%= notice %></p>
+  <%= link_to 'Edit', edit_post_path(@post) %> 
+    <h2>Comments</h2>
+    <div id="comments">
+      <%= render :partial => @post.comments %>
+    </div>
+    <%= form_for [@post, Comment.new , remote: true] do |f| %>
+     <p>
+       <%= f.label :body, "New comment" %><br/>
+       <%= f.text_area :body %>
+     </p>
+     <p><%= f.submit "Add comment" %></p>
+  <% end %>
+

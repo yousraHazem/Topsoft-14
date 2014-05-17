@@ -6,7 +6,7 @@ gem 'rails', '4.0.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'cocoon'
-
+gem 'blueimp-gallery'
 gem "searchkick"
 
 # Use gem file devise to make sign in/up and adding info
@@ -43,21 +43,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :test do
+group :development do
   gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.1.0'
+  gem 'capybara-rails'
+  gem 'rspec-rails'
+  gem "factory_girl_rails"
 end
-
-
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-
-
-# Use ActiveModel has_secure_password
-
-
 
 
 gem 'carrierwave-video'
@@ -82,3 +73,7 @@ gem 'rmagick'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'nifty-generators'
+
+gem 'faye'
