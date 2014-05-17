@@ -56,7 +56,8 @@ class PuzzlesController < ApplicationController
         render :action => 'new'
       end
     else
-    redirect_to session_new_path  
+      redirect_to session_new_path 
+    end 
   end
 
   # Update an existing puzzle
