@@ -16,7 +16,11 @@ class PuzzlesController < ApplicationController
   # Complexity O(1) for the puzzle it self and O(n) for the score
   # Author : Moaz El-Nashar
   def show
-    @puzzle_score = PuzzleScore.all
+    if signed_in?
+      @puzzle_score = PuzzleScore.all
+    else
+      redirect_to session_new_path
+    end
   end
 
   # Create new puzzle
@@ -24,7 +28,11 @@ class PuzzlesController < ApplicationController
   # Complexity O(1)
   # Author : Moaz El-Nashar
   def new
-    @puzzle = Puzzle.new
+    if signed_in?
+      @puzzle = Puzzle.new
+    else
+      redirect_to session_new_path
+    end
   end
 
   # Edit existing puzzle 
@@ -39,13 +47,16 @@ class PuzzlesController < ApplicationController
   # Complexity O(1)
   # Author : Moaz El-Nashar
   def create
-    @puzzle = Puzzle.new(puzzle_params)
-    if @puzzle.save
-      flash[:notice] = "Successfully added photo."
-      redirect_to @puzzle
+    if signed_in?
+      @puzzle = Puzzle.new(puzzle_params)
+      if @puzzle.save
+        flash[:notice] = "Successfully added photo."
+        redirect_to @puzzle
+      else
+        render :action => 'new'
+      end
     else
-      render :action => 'new'
-    end
+    redirect_to session_new_path  
   end
 
   # Update an existing puzzle
