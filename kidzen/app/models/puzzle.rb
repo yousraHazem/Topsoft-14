@@ -2,5 +2,6 @@
 # Author : Moaz El-Nashar
 class Puzzle < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
-	validates_presence_of :description, :image 
+	validates :description, presence: true
+  validates :image, presence: true
 end

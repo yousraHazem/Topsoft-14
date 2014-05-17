@@ -1,31 +1,36 @@
 <!DOCTYPE HTML>
 <html>
-<head>
-  <title></title>
-</head>
+ <head>
+   <title></title>
+ </head>
 
-<body>
-  <div id="game_location">
-    <%= show_for @puzzle do |puzzle_score| %>
-    	<%= image_tag @puzzle.image_url(:thumb), :alt => "Animals crossing", :class => "jqPuzzle" %>
+  <body>
+    <div id="game_location">
+      <%= show_for @puzzle do |puzzle_score| %>
+      	<%= image_tag @puzzle.image_url(:thumb), :alt => 
+          "Animals crossing", :class => "jqPuzzle" %>
+      <% end %>
+    </div>
+    <% if params[:moves] != nil || params[:time] != nil || params
+      [:score]!= nil%>
+      <% PuzzleScore.create(:puzzle_id => @puzzle.id, :child_id 
+        => current_user.id, :moves => params[:moves], :time =>
+        params[:time], :score => params[:score] ) %>
+    	<script>
+  		var url = window.location.href;
+          var urlsplit = url.split("?");
+          url = urlsplit[0];
+          window.location.href = url;
+    	</script>
+    <%end%>
+    <br>
+    <h1>Score History</h1>
+    <% @puzzle_score.each do |puzzle_score| %>
+    	<% if current_user.id == puzzle_score.child_id %>
+    		<%= puzzle_score.score %><br>
+    	<% end %> 
     <% end %>
-  </div>
-  <% if params[:moves] != nil || params[:time] != nil || params[:score] != nil%><% PuzzleScore.create(:puzzle_id => @puzzle.id, :child_id => current_user.id, :moves => params[:moves], :time => params[:time], :score => params[:score] ) %>
-  	<script>
-		var url = window.location.href;
-        var urlsplit = url.split("?");
-        url = urlsplit[0];
-        window.location.href = url;
-  	</script>
-  <%end%>
-  <br>
-  <h1>Score History</h1>
-  <% @puzzle_score.each do |puzzle_score| %>
-  	<% if current_user.id == puzzle_score.child_id %>
-  		<%= puzzle_score.score %><br>
-  	<% end %> 
-  <% end %>
-</body>
+  </body>
 </html>
 
 
