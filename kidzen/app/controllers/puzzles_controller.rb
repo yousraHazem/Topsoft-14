@@ -19,7 +19,7 @@ class PuzzlesController < ApplicationController
     if signed_in?
       @puzzle_score = PuzzleScore.all
     else
-      redirect_to session_new_path
+      redirect_to session_path :new
     end
   end
 
@@ -31,7 +31,7 @@ class PuzzlesController < ApplicationController
     if signed_in?
       @puzzle = Puzzle.new
     else
-      redirect_to session_new_path
+      redirect_to session_path :new
     end
   end
 
@@ -56,7 +56,7 @@ class PuzzlesController < ApplicationController
         render :action => 'new'
       end
     else
-      redirect_to session_new_path 
+      redirect_to session_path :new 
     end 
   end
 
