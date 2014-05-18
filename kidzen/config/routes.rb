@@ -3,9 +3,16 @@ Kidzen::Application.routes.draw do
 
 
 
- 
 post '/settings', to: 'registered_users#set_settings'
   root 'registered_users#show'
+
+  resources :home
+
+
+
+ 
+post '/settings', to: 'registered_users#set_settings'
+ 
 
 
   get "invite_chatroom/index"
@@ -14,6 +21,7 @@ post '/settings', to: 'registered_users#set_settings'
   resources :home
 
 
+5c
 
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
@@ -152,11 +160,18 @@ post '/settings', to: 'registered_users#set_settings'
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   #resources :registered_users
 
+
   # access page routes.
+
   # Authors: Mohamed Khaled AbdelMeguid.
   get "access_page/access"
-  post '/access_page/access', to: 'access_page#access'
-  put 'access_page/delete_tag', to: 'access_page#delete_tag'
+
+  put 'access_page/update', to: 'access_page#update'
+  put 'access_page/add', to: 'access_page#add'
+  put 'access_page/update_join_rooms', to: 'access_page#update_join_rooms'
+  put 'access_page/update_create_rooms', to: 'access_page#update_create_rooms'
+				
+
   put 'access_page/update_mutual_rooms', to: 'access_page#update_mutual_rooms'
   put 'access_page/add', to: 'access_page#add'				
 
