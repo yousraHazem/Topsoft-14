@@ -1,0 +1,12 @@
+ <!-- Here is the main page that showes the posts with comments
+      Author : Abdelrahman Saad -->
+ <h1>Listing posts</h1>
+ <div id="postsAjax">
+   <%= render partial: "form" %>
+ </div>
+ <% @posts.each do |c| %>
+     <% @post = c %>
+     <%= render :partial => @post %>
+ <% end %>
+
+

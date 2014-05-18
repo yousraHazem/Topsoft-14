@@ -2,6 +2,30 @@
 <html>
 <head>
   <title></title>
+  <%= javascript_include_tag "jquery.jqpuzzle.js" %>
+  <%= javascript_include_tag "jquery.js" %>
+  <script>
+    var jqOld = jQuery.noConflict();
+    jqOld(function() {
+        jqOld('#camera_wrap_4').camera({
+            height: 'auto',
+            loader: 'bar',
+            pagination: false,
+            thumbnails: false,
+            hover: false,
+            opacityOnGrid: false,
+            imagePath: 'images/banner'
+        });
+    })
+</script>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+    var jqNew = jQuery.noConflict();
+    jqNew(function() {
+        jqNew("#nav").sticky({topSpacing:0});
+    })
+</script>
 </head>
 
 <body>
@@ -10,6 +34,7 @@
     	<%= image_tag @puzzle.image_url(:thumb), :alt => "Animals crossing", :class => "jqPuzzle" %>
     <% end %>
   </div>
+  <% if signed_in? %>
   <% if params[:moves] != nil || params[:time] != nil || params[:score] != nil%><% PuzzleScore.create(:puzzle_id => @puzzle.id, :child_id => current_user.id, :moves => params[:moves], :time => params[:time], :score => params[:score] ) %>
   	<script>
 		var url = window.location.href;
@@ -17,7 +42,7 @@
         url = urlsplit[0];
         window.location.href = url;
   	</script>
-  <%end%>
+  <% end %>
   <br>
   <h1>Score History</h1>
   <% @puzzle_score.each do |puzzle_score| %>
@@ -25,6 +50,8 @@
   		<%= puzzle_score.score %><br>
   	<% end %> 
   <% end %>
+ <% end %>
+
 </body>
 </html>
 

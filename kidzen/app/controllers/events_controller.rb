@@ -1,31 +1,31 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
-  # GET /events
-  # GET /events.json
-  #this method view all the events in model Event in index (home)page
-  #assign variable events to all records in table Event
+  #GET /events
+  #GET /events.json
+  #This method view all the events in model Event in index (home)page
+  #Assign variable events to all records in table Event
   #Parameters :None
   #Returns : None
   #Approach : view all the events created 
-  # Time Complexity : O(1)
+  #Time Complexity : O(1)
   #Author : Nouran Mamdouh
   def index
     @events = Event.all
   end
 
-  # GET /events/1
-  # GET /events/1.json
+  #GET /events/1
+  #GET /events/1.json
   def show
   end
 
-  # GET /events/new
-  #this method creates a new event .
+  #GET /events/new
+  #This method creates a new event .
   #assign variable event to new instance  
   #Parameters :None
   #Returns : None
   #Approach : create a new event created
-  # Time Complexity : O(1)
+  #Time Complexity : O(1)
   #Author : Nouran Mamdouh
   def new
     @event = Event.new
@@ -34,13 +34,13 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
   end
-  # POST /events
-  # POST /events.json
-  #this method creates a new event after submitting the form with the variables
+  #POST /events
+  #POST /events.json
+  #This method creates a new event after submitting the form with the variables
   #Parameters : event parameters
   #Returns : None
   #Approach : save the new event instance to the event model
-  # Time Complexity : O(n)
+  #Time Complexity : O(n)
   #Author : Nouran Mamdouh
   def create
     @event = Event.new(event_params)
@@ -55,13 +55,13 @@ class EventsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /events/1
-  # PATCH/PUT /events/1.json
-  #this method updates an existing event viewing a message Event was successfully updated.
+  #PATCH/PUT /events/1
+  #PATCH/PUT /events/1.json
+  #This method updates an existing event viewing a message Event was successfully updated.
   #Parameters : event parameters
   #Returns : None
   #Approach : update the event 
-  # Time Complexity : O(n)
+  #Time Complexity : O(n)
   #Author : Nouran Mamdouh
   def update
     respond_to do |format|
@@ -75,13 +75,13 @@ class EventsController < ApplicationController
     end
   end
 
-  # DELETE /events/1
-  # DELETE /events/1.json
-  #this method deletes an existing event 
+  #DELETE /events/1
+  #DELETE /events/1.json
+  #This method deletes an existing event 
   #Parameters : None
   #Returns : None
   #Approach : delete specific event 
-  # Time Complexity : O(n)
+  #Time Complexity : O(n)
   #Author : Nouran Mamdouh
   def destroy
     @event.destroy
@@ -93,13 +93,18 @@ class EventsController < ApplicationController
 
   
   private
-    # Use callbacks to share common setup or constraints between actions.
+    #Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    #Never trust parameters from the scary internet, only allow the white list through.
+    #This method defines event parameters which are location , name , date_time , description , image 
+    #Author : Nouran Mamdouh
     def event_params
-      params.require(:event).permit(:location, :name, :date_time, :description)
+      params.require(:event).permit(:location, :name, :date_time, :description, :image)
     end
+
+    
+
 end

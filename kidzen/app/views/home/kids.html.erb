@@ -1,0 +1,516 @@
+<html>
+<head>
+
+<title>Kiddizen</title>
+<%= javascript_include_tag "jquery.js" %>
+<%= javascript_include_tag "jquery-ui-1.8.4.custom.min.js" %>
+<%= javascript_include_tag "jquery.inview.js" %>
+<%= javascript_include_tag "jquery.parallax-1.1.js" %>
+<%= javascript_include_tag "topscript.js" %>
+<%= javascript_include_tag "script.js" %>
+<%= javascript_include_tag "spin.js" %>
+<style></style>
+<%= javascript_include_tag "jquery.jplayer.min.js" %>
+<%= javascript_include_tag "qtransform.js" %>
+<%= javascript_include_tag "jquery.mousewheel.js" %>
+<%= javascript_include_tag "jquery.backgroundPosition.js" %>
+<%= stylesheet_link_tag "style.css" %>
+<%= stylesheet_link_tag "topstyle.css" %> 
+    
+</head>
+
+<body> 
+    <!--[if lte IE 8]>
+  <div style="width:100%;height:100%;background-color:red;background:url(img/ie.png) red no-repeat center center;position:fixed;z-index:15000" >
+  	 
+  </div>
+<![endif]--> 
+    
+
+<section></section>
+<script>     
+     
+        $('#mob').show(); 
+</script>
+<section id="login_btn_box" style="top: 0px;">
+    <section class="container">
+        
+        <section id="popup_box">
+            <section id="popup_top_bar"></section>
+            <section id="popup_btn" class="fonten">
+                <span class="fonten ">Menu<span>            </span></span></section>
+        </section>
+        
+        <section id="login_btn_box_a"></section>
+    </section>
+</section> 
+<section id="temp" class="data"></section>
+
+<section id="login_box" style="top: -120px;">
+    <section id="login_bg">
+        <section id="login_content">
+            
+            <section id="st1"><form action="/users/login" id="loginformid" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"></div>                <section class="padd"></section>
+                <section class="inpu floatleft inpu_en"><input name="data[User][username]" id="u_box" class="fonte inp_en" def="نام کاربری"></section>
+                <section class="inpu fleft"><input name="data[User][password]" id="p_box" class="fonte inp_en" type="text"></section>
+                
+                <section class="loginb2 fleft" id="login_btn">&nbsp;
+                    <span class="fonte ">Login<span>
+                    
+                
+                &nbsp;</span></span></section> 
+                <a href="/signup" class="loginb fleft register_btn_en" id="register_btn">&nbsp;
+                    
+                    <span class="fonte ">Register<span>
+                    
+                &nbsp;</span></span></a>
+                <a href="http://facebook.com/" target="_blank" id="fb" class="button fright fb_en"></a>
+                    
+                 
+                    
+
+                <a href="/" class="loginb btnen" id="home11">&nbsp;
+                    
+                    <span class="fonte ">Home<span>
+
+                &nbsp;</span></span></a>
+                <!--<section style="float: left; margin-top: 2px;margin-left: 10px;">
+                    اگر هنوز ثبت نام نکردی
+                </section>-->
+                <section id="loginloader1_con" class="fleft" style="margin-left:40px;">
+                    <section id="loginloader1"><div class="spinner" aria-role="progressbar" style="position: relative; z-index: 2000000000;"><div style="position: absolute; top: -1px; opacity: 0.25; -webkit-animation: opacity-100-25-0-11 0.5263157894736842s linear infinite;"><div style="position: absolute; width: 8px; height: 3px; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; -webkit-transform-origin: 0% 50%; -webkit-transform: rotate(8deg) translate(8px, 0px); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; -webkit-animation: opacity-100-25-1-11 0.5263157894736842s linear infinite;"><div style="position: absolute; width: 8px; height: 3px; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; -webkit-transform-origin: 0% 50%; -webkit-transform: rotate(40deg) translate(8px, 0px); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; -webkit-animation: opacity-100-25-2-11 0.5263157894736842s linear infinite;"><div style="position: absolute; width: 8px; height: 3px; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; -webkit-transform-origin: 0% 50%; -webkit-transform: rotate(73deg) translate(8px, 0px); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; -webkit-animation: opacity-100-25-3-11 0.5263157894736842s linear infinite;"><div style="position: absolute; width: 8px; height: 3px; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; -webkit-transform-origin: 0% 50%; -webkit-transform: rotate(106deg) translate(8px, 0px); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; -webkit-animation: opacity-100-25-4-11 0.5263157894736842s linear infinite;"><div style="position: absolute; width: 8px; height: 3px; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; -webkit-transform-origin: 0% 50%; -webkit-transform: rotate(138deg) translate(8px, 0px); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; -webkit-animation: opacity-100-25-5-11 0.5263157894736842s linear infinite;"><div style="position: absolute; width: 8px; height: 3px; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; -webkit-transform-origin: 0% 50%; -webkit-transform: rotate(171deg) translate(8px, 0px); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; -webkit-animation: opacity-100-25-6-11 0.5263157894736842s linear infinite;"><div style="position: absolute; width: 8px; height: 3px; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; -webkit-transform-origin: 0% 50%; -webkit-transform: rotate(204deg) translate(8px, 0px); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; -webkit-animation: opacity-100-25-7-11 0.5263157894736842s linear infinite;"><div style="position: absolute; width: 8px; height: 3px; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; -webkit-transform-origin: 0% 50%; -webkit-transform: rotate(237deg) translate(8px, 0px); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; -webkit-animation: opacity-100-25-8-11 0.5263157894736842s linear infinite;"><div style="position: absolute; width: 8px; height: 3px; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; -webkit-transform-origin: 0% 50%; -webkit-transform: rotate(269deg) translate(8px, 0px); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; -webkit-animation: opacity-100-25-9-11 0.5263157894736842s linear infinite;"><div style="position: absolute; width: 8px; height: 3px; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; -webkit-transform-origin: 0% 50%; -webkit-transform: rotate(302deg) translate(8px, 0px); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div><div style="position: absolute; top: -1px; opacity: 0.25; -webkit-animation: opacity-100-25-10-11 0.5263157894736842s linear infinite;"><div style="position: absolute; width: 8px; height: 3px; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0px 1px; -webkit-transform-origin: 0% 50%; -webkit-transform: rotate(335deg) translate(8px, 0px); border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; background-position: initial initial; background-repeat: initial initial;"></div></div></div></section>
+                </section>
+                <section id="error1" class="fleft" style="margin-left:-30px; style=" margin-top:3px;""=""> <span class="fonte ">!Username or password was wrong<span>                </span></span></section>
+                </form>            </section>
+            <section id="st2" class="info">
+                <section class="prof_en" id="profile_pic" style="background-image: url(/assets/img/kids/profile.jpg)"></section>
+                <section class="fright " id="stname">
+                    <span style="font-size: 20px;color:#fff!important;" class="dir">
+                        !  <span class="fonte" style="margin-left:-5px;">Hey </span>
+                        
+                   
+                     </span><br>
+                    <span class="fonte ">?How are you<span>
+                    
+                    
+                </span></span></section>
+                <section class="topb2 fright" id="logout_btn">
+                    
+                    <span class="fonte ">Logout<span>
+                    
+                </span></span></section>
+                <a href="/editprofile" class="topb fright" id="editp_btn">
+                    
+                    <span class="fonte ">Edit profile<span>
+            
+                </span></span></a>
+                <section class="floatleft " id="point">0</section>
+                <a href="http://facebook.com/" target="_blank" id="fb2" class="button fleft fb2_en"></a>
+                <a href="/contact" class="topb  btn2en" id="contact_btn2">&nbsp;
+                    <span class="fonte ">Contact us<span>
+                &nbsp;</span></span></a>
+                <a href="/about" class="topb  btn2en" id="about_btn2">&nbsp;
+                    <span class="fonte ">About us<span>
+
+                &nbsp;</span></span></a>
+                <a href="/" class="topb  btn2en" id="home12">&nbsp;
+                    <span class="fonte ">Home<span>
+
+                &nbsp;</span></span></a>
+                <section id="point_detail" class="pointen">
+                    <section class="points_item_en">
+                        <span id="nnum1" class="numm">(0)</span>
+                        <span class="fonte">Puzzles</span>
+                    </section>
+                    <section class="points_item_en">
+                        <span id="nnum2" class="numm">(0)</span>
+                        <span class="fonte">Painting</span> 
+                    </section>
+                    <section class="points_item_en">
+                        <span id="nnum3" class="numm">(0)</span>
+                        <span class="fonte">Stories</span>
+                    </section>
+                    <section class="points_item_en">
+                        <span id="nnum4" class="numm">(0)</span>
+                        <span class="fonte">Learning</span>
+                    </section>
+                    <section class="points_item_en">
+                        <span id="nnum5" class="numm">(0)</span>
+                        <span class="fonte">Cooking</span>
+                    </section>
+                </section>
+            </section>
+            <!--<section  id="st2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <section id="uname">
+                                    </section>
+                <section id="welcome">
+                    خوش آمدید
+                </section>
+                <section class="loginb " id="logout_btn">
+                    خروج
+                </section>
+                <section class="loginb " id="editp_btn">
+ویرایش اطلاعات
+                </section>
+                <section id="loginloader2_con">
+                    <section id="loginloader2"></section>
+                </section>
+            </section> -->
+        </section>
+    </section>
+</section> 
+
+<section class="info" id="lang">en</section>  
+<style>
+.fest{
+position:absolute;
+top:30px;
+right:0px;
+z-index:10;
+}
+.fest a{
+width:150px;
+height:150px;
+text-indent:-9000px;
+display:block;
+background:url(/assets/img/fest.png) no-repeat;
+}
+</style>
+<section id="mainBody" class="night" style="width: 1301px;">
+    
+        <section id="clouds" style="display: none; right: 300.5px; bottom: 328px;"></section>
+        <section id="clouds2" style="right: 300.5px; bottom: 328px;"></section>
+            <section class="container">
+                <!--<div id="lala" class="btn2"><section class="container">
+                    <div id="lalan" class="btnn2"></div>
+                    <div id="lalah" class="btnh2"></div>
+                </section></div>-->
+            </section>
+        </section>
+        
+        <section id="dwn_btn" style="left: 617.5px;"></section>
+        <div id="dwn_btn" class="btn"><section class="container">
+            <div id="dwn_btnh" class="btnh"></div>
+            <div id="dwn_btnn" class="btnn" style="opacity: 1;"></div>
+        </section></div>
+            <!--<source src="http://jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" type="audio/mp4" />
+                <source src="http://jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" type="audio/ogg" />
+            <source src="/mp3/a1.ogg" codecs="vorbis" type="audio/ogg" />
+     
+     -->
+            <!--<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+             -->
+            <!--<audio id="a1"  >
+                <source src="http://hmaraefat-basu.ir/music/a3.mp3" type="audio/ogg" />
+                <p>Your browser does not support HTML5 audio.</p>
+            </audio>-->
+        <section id="first_foot">
+            <section class="container">
+                <section id="sitemap_btn"></section>
+            </section>
+        </section>
+        
+    
+        <section id="foot_txt"></section>
+        <section id="sitemap">
+            <section class="container">
+                <a href="http://facebook.com/" target="_blank" id="fb_sm" class="button"></a>
+                <table id="sitemap_table" class="fonten">
+                    <tbody><tr class="sm_head fontenb"><td width="100">Kids</td><td width="100">Parents</td><td width="100">We</td></tr>
+                    <tr><td><a href="/kids">Home</a></td>
+                        <td><a href="/parents/articles">Articles</a></td>
+                        <td><a href="/">Intro</a></td></tr>
+                    <tr><td><a href="/kids/puzzle">Puzzle</a></td>
+                        <td><a href="/parents/doctor">Dr.Online</a></td>
+                        <td><a href="/about">About us</a></td></tr>
+                    <tr><td><a href="/kids/color">Painting</a></td>
+                        <td></td>
+                        <td><a href="/contact">Contact us</a></td></tr>
+                    <tr><td><a href="/kids/story">Story</a></td>
+                        <td></td><td><a href="http://www.facebook.com">Facebook</a></td></tr>
+                    <tr><td><a href="/kids/learning">Learning</a></td>
+                        <td></td><td></td></tr>
+                    <tr><td><a href="/kids/cooking">Cooking</a></td>
+                        <td></td><td></td></tr>
+                </tbody></table>
+                <section id="where" class="fonte">Where do you want to go?</section>
+                    
+            </section>
+        </section>        <section id="foot_right">
+            <section id="clock" class="coloo">
+                <span id="hour">8</span>:<span id="minute" class="coloo">26</span>
+            </section>
+        </section> 
+        <svg id="pingu_svg1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="595px" height="842px" viewBox="0 0 595 842" enable-background="new 0 0 595 842" xml:space="preserve" style="right: 90.5px; bottom: -162px;">
+        <g id="Background">
+           </g>
+           <g id="Guides">
+           </g>
+           <g id="Foreground">
+                   <g>
+                        <animateMotion dur="7.5s" calcMode="linear" keyTimes="0;0.04;0.07;1;" attributeName="transform" values="0,0;0,-80;0,0;0,0" repeatCount="indefinite"></animateMotion>
+                           <g>
+                                   <circle cx="306.681" cy="408.633" r="116.586"></circle>
+                                   <path d="M306.681,408.633"></path>
+                           </g>
+                           <path fill="#FFFFFF" d="M227.954,366.314c5.328-25.065,29.965-41.065,55.031-35.737c14.192,3.017,25.479,12.225,31.632,24.195
+                                   c10.491-8.433,24.546-12.254,38.738-9.237c25.065,5.328,41.065,29.966,35.737,55.031c-5.328,25.065-29.966,41.065-55.031,35.737
+                                   c-14.192-3.017-25.479-12.224-31.632-24.195c-10.49,8.433-24.546,12.254-38.738,9.237
+                                   C238.626,416.017,222.626,391.379,227.954,366.314z"></path>
+                           <g>
+                             <animateMotion dur="2.5s" calcMode="linear" keyTimes="0;0.02;0.0201;0.0290;0.0291;0.16;0.1601;0.169;0.1691;1;" attributeName="transform" values="0,0;0,0;30,-60;30,-60;0,0;0,0;30,-60;30,-60;0,0;0,0" repeatCount="indefinite"></animateMotion>
+                                   <circle cx="273.296" cy="375.996" r="15.405"></circle>
+                                   <path d="M273.296,375.996"></path>
+                           </g>
+                           <g><animateMotion dur="2.5s" calcMode="linear" keyTimes="0;0.02;0.0201;0.0290;0.0291;0.16;0.1601;0.169;0.1691;1;" attributeName="transform" values="0,0;0,0;-20,-60;-20,-60;0,0;0,0;-20,-60;-20,-60;0,0;0,0" repeatCount="indefinite"></animateMotion>
+                                   <circle cx="343.665" cy="390.955" r="15.405"></circle>
+                                   <path d="M343.666,390.955"></path>
+                           </g>
+                           <g>
+                                   <path fill="#FFFFFF" d="M376.606,501.924c-25.979,19.437-59.893,27.99-94.124,20.714c-34.23-7.276-61.732-28.884-77.56-57.208
+                                           c24.962-22.3,59.852-32.811,95.102-25.318C335.274,447.606,362.873,471.398,376.606,501.924z"></path>
+                           </g>
+                           <g id="damagh">
+                                <animateTransform dur="2.5s" calcMode="linear" keyTimes="0;0.02;0.04;1" attributeName="transform" type="rotate" values="0,298,427;20,298,427; 0,298,427; 0,298,427;" repeatCount="indefinite"></animateTransform>
+                                <path fill-rule="evenodd" clip-rule="evenodd" fill="#F26522" d="M291.575,461.116c-14.697-3.124-24.123-47.337-24.123-47.337
+                                        s13.161-21.063,37.56-15.877c24.421,5.191,27.854,29.783,27.854,29.783S306.272,464.24,291.575,461.116z"></path>
+                           </g>
+                           <g>
+                           
+                                <animateTransform id="anim2" dur="2.5s" calcMode="linear" keyTimes="0;0.013;0.033;0.053;0.073;0.093;0.113;0.133;0.153;0.173;0.193;0.213;1" attributeName="transform" type="rotate" values="0,284,524;0,284,524; 20,284,524;
+                                                            0,284,524; 20,284,524;
+                                                            0,284,524; 20,284,524;
+                                                            0,284,524; 20,284,524;
+                                                            0,284,524; 20,284,524;
+                                                            0,284,524; 0,284,524 " repeatCount="indefinite"></animateTransform>
+                                <path fill-rule="evenodd" clip-rule="evenodd" fill="#F26522" d="M404.02,576.604c15.761-9.347,15.998-39.643-17.531-53.875
+                                        c-33.529-14.232-94.639-19.384-103.863,2.346C282.625,525.075,388.258,585.951,404.02,576.604z"></path>
+                           </g>  
+                           <g>
+                                <!--<animateTransform attributeName="transform" type="rotate" 
+                                                  from="0 284 524" to="360 284 524" dur="1s" 
+                                                  calcMode="spline" repeatCount="indefinite"/>-->
+                                <animateTransform dur="2.5s" calcMode="linear" keyTimes="0;0.02;0.04;0.06;0.08;0.1;0.12;0.14;0.16;0.18;0.2;1" attributeName="transform" type="rotate" values="0,284,524; -20,284,524;
+                                                            0,284,524; -20,284,524;
+                                                            0,284,524; -20,284,524;
+                                                            0,284,524; -20,284,524;
+                                                            0,284,524; -20,284,524;
+                                                            0,284,524; 0,284,524 " repeatCount="indefinite"></animateTransform>
+                                <path fill-rule="evenodd" clip-rule="evenodd" fill="#F26522" d="M151.108,520.634c-10.334-15.132,2.255-42.689,38.657-41.417
+                                        c36.401,1.271,93.963,22.429,93.139,46.021C282.905,525.237,161.442,535.766,151.108,520.634z"></path>
+                           </g>
+                   </g>
+           </g>
+           <script type="text/javascript" src="/pingu/js/jquery.js"></script>
+            
+           </svg>
+            <svg id="pingu_svg2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="595px" height="842px" viewBox="20 30 595 842" enable-background="new 0 0 595 842" xml:space="preserve" style="opacity: 1; right: 70.5px; bottom: -162px;">
+            <g id="Background">
+            </g>
+            <g id="Guides">
+            </g>
+            <g id="Foreground">
+                    <g transform="translate(295.321, 474.136)">
+                        <!--<animateMotion 
+                                                 dur="7.5s" calcMode="linear" 
+                                                 keyTimes="0;.5;1;"
+                                                 attributeName="transform"  
+                                                 values="0,0;-15,-25;0,0"
+                                                 repeatCount="indefinite"></animateMotion>-->
+                        
+                        <g>
+                                <g>
+                                        <circle transform="translate(-295.321, -474.136)" cx="295.321" cy="474.136" r="116.586"></circle>
+                                        
+                                        <path d="M295.321,474.136"></path>
+                                </g>
+                        <animateTransform dur="4s" calcMode="linear" keyTimes="0;.17;.35;.5;.67;.85;1" attributeName="transform" type="scale" values="1,1;1.02,1.02;1,1;1,1;1.02,1.02;1,1;1,1 " repeatCount="indefinite"></animateTransform>
+                                <g>
+                                        <path transform="translate(-295.321, -474.136)" fill="#FFFFFF" d="M365.245,567.427c-25.979,19.437-59.893,27.991-94.123,20.714c-34.23-7.276-61.733-28.884-77.56-57.208
+                                                c24.962-22.3,59.852-32.811,95.102-25.317C323.914,513.109,351.512,536.901,365.245,567.427z">
+                                        
+                                        </path>
+                                </g>
+                        </g>
+                    </g>
+                    <g>
+                            <path stroke="#FFFFFF" stroke-miterlimit="3.8637" d="M216.594,431.817c5.328-25.065,29.965-41.065,55.03-35.737
+                                    c14.193,3.017,25.479,12.225,31.632,24.195c10.49-8.433,24.546-12.254,38.738-9.237c25.065,5.328,41.065,29.966,35.737,55.031
+                                    c-5.328,25.065-29.965,41.065-55.03,35.737c-14.193-3.017-25.479-12.224-31.632-24.195c-10.49,8.433-24.546,12.254-38.738,9.237
+                                    C227.266,481.52,211.266,456.882,216.594,431.817z"></path>
+                            <path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="3.8637" d="M216.594,431.817
+                                    c5.328-25.065,29.965-41.065,55.03-35.737c14.193,3.017,25.479,12.225,31.632,24.195c10.49-8.433,24.546-12.254,38.738-9.237
+                                    c25.065,5.328,41.065,29.966,35.737,55.031c-5.328,25.065-29.965,41.065-55.03,35.737c-14.193-3.017-25.479-12.224-31.632-24.195
+                                    c-10.49,8.433-24.546,12.254-38.738,9.237C227.266,481.52,211.266,456.882,216.594,431.817z"></path>
+                    </g>
+                    <g id="dama">
+                    <animateTransform dur="4s" calcMode="linear" keyTimes="0;0.49;0.5;.51;1" attributeName="transform" type="rotate" values="0,286,493;0,286,493; 20,286,493; 0,286,493; 0,286,493;" repeatCount="indefinite"></animateTransform>
+                            <path fill-rule="evenodd" clip-rule="evenodd" fill="#F26522" d="M280.214,526.619c-14.697-3.124-24.123-47.337-24.123-47.337
+                                    s13.161-21.063,37.56-15.877c24.421,5.191,27.854,29.783,27.854,29.783S294.911,529.743,280.214,526.619z"></path>
+                    </g>
+                                        
+                    <g id="rightf">
+                              <animateTransform dur="4s" calcMode="linear" keyTimes="0;.17;.35;1" attributeName="transform" type="rotate" values="0,271,590; 
+                                                              5,271,590;
+                                                            0,271,590;  0,271,590 " repeatCount="indefinite"></animateTransform>
+                            <path fill-rule="evenodd" clip-rule="evenodd" fill="#F26522" d="M392.659,642.107c15.762-9.347,15.998-39.643-17.531-53.875
+                                    C341.6,574,280.489,568.849,271.265,590.578C271.265,590.578,376.897,651.454,392.659,642.107z"></path>
+                    </g>
+                    <g>
+                            <g id="leftf">
+                            <animateTransform dur="4s" calcMode="linear" keyTimes="0;.17;.35;.425;.445;.465;.65;.67;.69;1" attributeName="transform" type="rotate" values="0,271,590; 
+                                                              -15,271,590;
+                                                            0,271,590;0,271,590;
+                                                            -7,271,590;0,271,590;0,271,590;
+                                                            -7,271,590;0,271,590
+                                                            ;  0,271,590 " repeatCount="indefinite"></animateTransform>
+                            
+                                    <path fill-rule="evenodd" clip-rule="evenodd" fill="#F26522" d="M139.748,586.137c-10.334-15.132,2.255-42.689,38.657-41.417
+                                            s93.963,22.429,93.139,46.021C271.544,590.74,150.082,601.269,139.748,586.137z"></path>
+                            </g>
+                    </g><circle cx="271" cy="590" r="1"></circle>
+                    <g>
+                            <path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#4D4D4F" stroke-width="3" stroke-miterlimit="3.8637" d="
+                                    M216.783,447.63c0,0,85.956-19.012,155.729,30.583"></path>
+                    </g>
+                    <!--<g id="kolah">
+                        <animateMotion 
+                                                 dur="4s" calcMode="linear" 
+                                                 keyTimes="0;.17;.35;.5;.67;.85;1"
+                                                 attributeName="transform"  
+                                                 values="0,0;3,-5;0,0;0,0;3,-5;0,0;0,0 "
+                                                 repeatCount="indefinite"></animateMotion>
+                        <g>
+                                <path fill-rule="evenodd" clip-rule="evenodd" fill="#C41134" d="M255.458,344.128c8.072-37.979,53.892-99.34,91.871-91.268
+                                        s53.734,82.522,45.661,120.501s-35.586-12.624-73.565-20.696S247.384,382.107,255.458,344.128z"/>
+                        </g>
+                        <g>
+                                <g>
+                                        <path fill="#FFFFFF" d="M242.164,337.086c2.791-12.093,14.855-19.63,26.948-16.836l118.419,27.365
+                                                c12.093,2.794,19.634,14.863,16.843,26.956l-2.372,10.279c-2.79,12.093-14.855,19.63-26.948,16.836L256.635,374.32
+                                                c-12.093-2.794-19.634-14.862-16.843-26.955L242.164,337.086L242.164,337.086z"/>
+                                        <path fill="#FFFFFF" d="M322.083,360.968"/>
+                                </g>
+                        </g>
+                        <g>
+                                <g>
+                                        <path fill="#FFFFFF" d="M319.905,239.534c0.296-17.023,14.335-30.581,31.359-30.283c17.023,0.298,30.583,14.339,30.287,31.362
+                                                c-0.296,17.023-14.335,30.581-31.359,30.283C333.168,270.599,319.609,256.558,319.905,239.534z"/>
+                                        <path fill="#FFFFFF" d="M350.728,240.074"/>
+                                </g>
+                        </g>
+                    </g>-->
+            </g>
+            </svg> 
+                     
+            <!--<section id="top_clouds"></section>-->
+    </section>
+<section id="menu_bg1">
+</section>
+<section id="menu_bg2">
+</section>
+
+<section id="menu" style="width: 1301px;">
+    <section id="puzzle"></section>
+    <section id="painting"></section>
+    <section id="learning"></section>
+    <section id="cooking"></section>
+    <section id="story"></section>
+        
+    <section class="container">
+        <section id="left_hand">
+            <section class="container">
+                <section class="num" id="menu_num" style="left: 150.5px; top: 190px;">1</section>
+                <section class="pics" id="light" style="opacity: 1; top: 89px;"></section>
+                <section class="pics" id="color" style="opacity: 0; top: -75.5px;"></section>
+                <section class="pics" id="window" style="opacity: 0; top: 45px;"></section>
+                <section class="pics" id="b" style="opacity: 0;"></section>
+                <section class="pics" id="a" style="opacity: 0;"></section>
+            </section>
+        </section>
+
+        <section id="right_hand">
+            <section class="container">
+                <section id="part_title" class="fontenb " style="line-height: 65% !important; top: 190px; right: 350.5px;">Puzzle</section>
+                <section id="part_desc" class="fonten " style="color: rgb(62, 141, 36); top: 270px; right: 350.5px;">Do you like solve puzzles?</section>
+                <section id="plus" class="button" style="right: 220.5px; top: 180px;"></section>
+            </section>
+        </section>
+        
+        <section id="glass" style="bottom: 140px; right: 650.5px;"></section>
+        <section id="sand" style="bottom: 140px; right: 650.5px;"></section>
+        <section id="left_btn" class="button2" style="top: 175px;"></section>
+        <section id="right_btn" class="button2" style="top: 175px;"></section>
+        <section id="circles_box"><section class="container">
+            <section class="cir" id="ci1" style="top: -4px; left: -4px; height: 60px; width: 60px;"></section>
+            <section class="cir" id="ci2"></section>
+            <section class="cir" id="ci3"></section>
+            <section class="cir" id="ci4"></section>
+            <section class="cir" id="ci5"></section>
+            <section class="circles" id="c1"></section>
+            <section class="circles" id="c2"></section>
+            <section class="circles" id="c3"></section>
+            <section class="circles" id="c4"></section>
+            <section class="circles" id="c5"></section>
+        </section></section>
+        <!--<section id="nakh">
+            <section id="item1" class="itemnum"></section>
+            <section id="item2" class="itemnum"></section>
+            <section id="item3" class="itemnum"></section>
+            <section id="item4" class="itemnum"></section>
+            <section id="item5" class="itemnum"></section>
+            <section id="ar1" class="ar">1</section>
+            <section id="ar2" class="ar">2</section>
+            <section id="ar3" class="ar">3</section>
+            <section id="ar4" class="ar">4</section>
+            <section id="ar5" class="ar">5</section>
+        </section>-->
+        <section id="kid" class="cursor fixed" style="bottom: -199.42195872807312px; left: 382px;">
+            <section class="contianer"> 
+                <section id="kid_eye" class=""></section>
+            </section>
+        </section>
+    </section>
+</section>
+<section class="info" id="logged"></section> 
+
+ 
+        
+<section id="shortlogin" style="display: block;">
+    <table id="shortlogin_table" cellspacing="0" cellpadding="0"><tbody><tr><td>
+        <section id="short_a"></section>
+        <section id="shortlogin_content">
+            <section class="container">
+                <section id="short_login_top">
+                    <section id="short_login_txt">
+                        <span class="fonte">... If you are not registered yet<span>                    </span></span></section>
+                    <a href="/signup" id="signup" class="login_btn3">
+                        <span class="fonte ">Register here<span>                    </span></span></a>
+                    
+                    <section id="continue" class="login_btn3">
+                        <span class="fonte ">Take a tour<span>                    </span></span></section>
+                    
+                </section>
+                
+            <section id="short_a2">
+            <table id="shortlogin_inputs_table" border="0">  
+                <tbody><tr>
+                    <td width="560" align="left"> <form action="/users/login" id="loginformid2" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"></div>                        <section class="inpu2"><input class="fonte lineh" name="data[User][username]" id="u_box2"></section>
+                        <section class="inpu2"><input class="fonte lineh" name="data[User][password]" id="p_box2" type="text"></section>
+                        </form>                    </td>
+                    <td style="position: relative">
+                        <section id="login_btn2" class="fonte ">Login                                 
+                         
+
+                        </section>
+                    </td>
+                </tr>
+            </tbody></table>
+            </section>
+            </section>
+        </section>
+    </td></tr></tbody></table>
+</section>
+
+
+</body></html>

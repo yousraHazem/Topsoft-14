@@ -7,5 +7,6 @@ def get_answers()
 end
 
 def get_result()
+end
 
 end

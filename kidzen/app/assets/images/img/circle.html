@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BabyPingu</title>
+<script type="text/javascript" src="/js/jquery.js"></script><script type="text/javascript" src="/js/jquery-ui-1.8.4.custom.min.js"></script><script type="text/javascript" src="/js/jquery.inview.js"></script><script type="text/javascript" src="/js/jquery.parallax-1.1.js"></script><script type="text/javascript" src="/js/script.js"></script><script type="text/javascript" src="/js/spin.js"></script><script type="text/javascript" src="/js/canvasloader.js"></script><script type="text/javascript" src="/js/jquery.livequery.js"></script><script type="text/javascript" src="/js/jquery.mousewheel.js"></script><script type="text/javascript" src="/js/jquery.backgroundPosition.js"></script><script type="text/javascript" src="/js/jquery.mCustomScrollbar.js"></script><link rel="stylesheet" type="text/css" href="/css/style.css" /><link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css" /> 
+	<link rel="icon" href="/favicon.ico" type="image/x-icon" />  
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link href='css/style.css' rel='stylesheet' type='text/css' />
+</head>
+
+<script>
+    (function($){
+        $(document).ready(function(){
+            /*$("#center_scr").mCustomScrollbar({mouseWheel:true}); */ 
+			 $("#ru_map_items").mCustomScrollbar({mouseWheel:true,advanced:{
+				updateOnBrowserResize:true, 
+                                autoHideScrollbar:true,
+                                scrollInertia:5000,
+				updateOnContentResize:true}}); 
+                         $("#ru_res_items").mCustomScrollbar({mouseWheel:true,advanced:{
+				updateOnBrowserResize:true, 
+                                autoHideScrollbar:true,
+                                scrollInertia:5000,
+				updateOnContentResize:true}}); 
+			
+        });
+    })(jQuery);
+
+</script>
+<body style="background: #D90011;">
+
+
+<!--[if lte IE 8]>
+  <div style="width:100%;height:100%;background-color:#fff;position:fixed;z-index:15000; 
+  background-position: -80px -140px;background-image:url(/img/404/bg-404.jpg) ; background-repeat:no-repeat; " >
+  	<div style="width:593px;
+	height:138px;	
+	background-image:url(/img/404/ie.jpg); 
+    background-repeat:no-repeat;
+	position:absolute;
+    top:5%	;
+    left:10%;
+	margin-top:250px;" > 
+    	 
+    </div>
+  </div>
+<![endif]-->
+    <section id="err404" > 
+        
+    </section>
+    <a id="home1" href="/"></a>
+    <div id="footer404"  ></div>
+    <div id="pre" class="data">/</div>
+ </body>
+</html>
+
+
