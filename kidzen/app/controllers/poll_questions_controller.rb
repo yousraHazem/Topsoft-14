@@ -44,7 +44,6 @@ class PollQuestionsController < ApplicationController
         @poll_question = PollQuestion.new
         #creating a defult new answer
         @poll_question.poll_answers.build
-        @poll_question.poll_answers.sub_answer.build
       else
         # Must be a supervisor.
         @poll_question = PollQuestion.new

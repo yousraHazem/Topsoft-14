@@ -1,16 +1,40 @@
 Kidzen::Application.routes.draw do
 
-  get "invite_chatroom/index"
-  root 'registered_users#show'
-  resources :home
+
+
 
   
+  # Routes used in the access_page views.
+  put "access_page/delete_topic"
+  put "access_page/ban_topic"
+
+  post '/settings', to: 'registered_users#set_settings'
+
+
+ 
+post '/settings', to: 'registered_users#set_settings'
+
+  root 'registered_users#show'
+
+  resources :home
+
+
+
+  get "invite_chatroom/index"
+  
+
+
+
+
+
+
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
 
   # RegisteredUser (generic) routes
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
+  get '/profile/:username', to: 'profiles#index'
   # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
   # username will be the same as in the url /show/"username".
   # Author: Ammar ELWazeer
@@ -25,6 +49,7 @@ Kidzen::Application.routes.draw do
   # Supervisor routes:
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'
+  # Children history page
   get "/children_history", to: 'supervisors#children_history'
   # Children notification actions
   get "/supervisors/dashboard", to: 'supervisors#show', as: :parent_profile
@@ -92,6 +117,17 @@ Kidzen::Application.routes.draw do
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
 
+
+  
+  #Posts and comments
+  resources :posts do
+    resources :comments, :only => [:create]
+  end
+  get "/posts/addPhoto"
+  resources :posts do
+    put :addPhoto, :on => :collection
+  end 
+
   get "friendships/view_my_friends"
   get '/group_members/:id/view' , to:  'group_members#view'
   post '/group_members/:id/view' => 'group_members#view'     
@@ -100,6 +136,7 @@ Kidzen::Application.routes.draw do
   
 
     
+
 
   get '/group_members/:id/view' , to:  'group_members#view'
   post '/group_members/:id/view' => 'group_members#view'  
@@ -111,7 +148,6 @@ Kidzen::Application.routes.draw do
   get "friendships/view_pending_friendship_requests"
   get "friendships/accept_reject_friend_request"  
   get "friendships/send_friend_request"     
-
 
 
   # children routes
@@ -130,15 +166,20 @@ Kidzen::Application.routes.draw do
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   #resources :registered_users
 
-  # access page routes
-  #Authors:- Mohamed Khaled AbdelMeguid
+
+
+  # Access page routes.
+  # Authors: Mohamed Khaled AbdelMeguid.
   get "access_page/access"
-  post '/access_page/access', to: 'access_page#access'
   put 'access_page/delete_tag', to: 'access_page#delete_tag'
-  put 'access_page/update', to: 'access_page#update'
-  put 'access_page/add', to: 'access_page#add'
+  put 'access_page/update_mutual_rooms', to: 'access_page#update_mutual_rooms'
+  put 'access_page/add_tag', to: 'access_page#add_tag'
   put 'access_page/update_join_rooms', to: 'access_page#update_join_rooms'
   put 'access_page/update_create_rooms', to: 'access_page#update_create_rooms'
+  
+				
+
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
@@ -151,6 +192,5 @@ Kidzen::Application.routes.draw do
   # topics routes
   get "topics/index"
   get "topics/show"
-  get "chatroom/index"
 end
 

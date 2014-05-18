@@ -2,19 +2,20 @@
   <p>This is a test view</p>
   <p>Current signed in user is : <%= current_user.full_name %></p> 
 
-  <% @child = Child.first %>
-  <button onclick= "goTo(<%= "\'#{@child.registered_user.id}\'" %>)"> 
-    <%= @child.registered_user.username %>
-  </button>
+  <% if Child.first.nil? %>
+    <p>you have no children to view</p>
+  <%else%>
+    <% @child = Child.find(:all).each do |child|%> 
+      <button onclick= "goTo(<%= "\'#{child.registered_user.id}\'" %>)">
+        <%= child.registered_user.username %>
+      </button>
+      <%end%>
+  <%end%>
+  <%= link_to 'New survey', new_new_survey_path %>
 </div>
-<script>
+
+ <script>
 function goTo(id) {
     window.location.href = "http://localhost:3000/access_page/access?id=" + id;
-} 	
-
+} 
 </script>
-
-  <%= link_to 'New survey', new_new_survey_path %>
-
-</div>
-

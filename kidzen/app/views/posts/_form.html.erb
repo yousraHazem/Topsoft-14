@@ -1,3 +1,5 @@
+<!-- Here is the form that submit a post through
+     Author : Abdelrahman Saad -->
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -14,5 +16,5 @@
   </div>
   <div class="actions">
     <%= f.submit %>
-  </div>
+  </div> 
 <% end %>

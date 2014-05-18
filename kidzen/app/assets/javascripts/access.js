@@ -26,6 +26,7 @@ function deleteInfo (toBeDeleted, childName) {
     };
     var x = document.getElementById(toBeDeleted);
     x.remove();
+    prompt(toBeDeleted + " is deleted from you child's prevented tags")
     var url = ['http://' + location.host, 'access_page', 'delete_tag'].join('/');
     var callback = function(responseJSON, xhr) {
     }
@@ -37,8 +38,46 @@ Author:- Mohamed Khaled AbdelMeguid. */
 function ban(childName) {
     var banned = document.getElementById("submitTags").value
     prompt(banned + " is now banned for your child, Please refresh the page to view all of the tags to be able to delete them. Thanks !");
-    var url = ['http://' + location.host, 'access_page', 'add'].join('/');
+    var url = ['http://' + location.host, 'access_page', 'add_tag'].join('/');
     var callback = function(responseJSON, xhr) {
     }
     create_ajax_request(url, {ban: banned, child: childName}, callback);
   }
+
+/*This function change a child option when the checkbox is pressed with a true or false value
+in the DB through an AJAX request.
+Authors:- Mohamed Khaled AbdelMeguid. */
+function changeJoinRooms(childId) {
+    var checkBox = document.getElementById("can join public chat rooms");
+    var valueUpdate = checkBox.checked;
+    prompt(valueUpdate);
+    var url = ['http://' + location.host, 'access_page', 'update_join_rooms'].join('/');
+    var callback = function(responseJSON, xhr) {
+    }
+create_ajax_request(url, {value: valueUpdate, child: childId}, callback);
+}
+
+/* This function change a child option when the checkbox is pressed with a true or false value
+in the DB through an AJAX request.
+Authors: Mohamed Khaled AbdelMeguid. */
+function changeCreateRooms(childId) {
+    var checkBox = document.getElementById("can create public chat rooms");
+    var valueUpdate = checkBox.checked;
+    var url = ['http://' + location.host, 'access_page', 'update_create_rooms'].join('/');
+        var callback = function(responseJSON, xhr) {
+    }
+create_ajax_request(url, {value: valueUpdate, child: childId}, callback);
+}
+
+/* This function change a child option when the checkbox is pressed with a true or false value
+in the DB through an AJAX request.
+Authors: Mohamed Khaled AbdelMeguid. */
+function changeMutualRooms(childId) {
+    var checkBox = document.getElementById("mutual friends rooms only");
+    var valueUpdate = checkBox.checked;
+    prompt(valueUpdate);
+    var url = ['http://' + location.host, 'access_page', 'update_mutual_rooms'].join('/');
+    var callback = function(responseJSON, xhr) {
+    }
+create_ajax_request(url, {value: valueUpdate, child: childId}, callback);
+}

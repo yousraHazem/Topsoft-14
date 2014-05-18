@@ -1,30 +1,126 @@
+<!-- This method includes the javascript file to use it's functions -->  
+<!-- Authors: Shary Beshara -->    
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag("ban_topics.js") %>
+<% end %>
+
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag("access.js") %>
 <% end %>
 <% content_for :stylesheet_includes do %>
   <%= stylesheet_link_tag("access.css") %>
 <% end %>
-<!-- This part views a text field and a submit buuton, which are used to submit 
+
+<!-- This part views a options of a child through a checked 
+or unchecked checkboxes according to it's value in the DB .
+Authors: Mohamed Khaled AbdelMeguid. -->
+  <% if @child == nil %>
+    <p>No children to view the change create rooms option or you have go to your page and click a child</p>
+      <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
+        abilities: ["can_create_public_chat_rooms"=>true])) %>
+        <p class = "tags"> 
+          <input type="checkbox" id = "can create public chat rooms" 
+            onclick="changeCreateRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+            can create public chat rooms
+        </p>
+        <%else%>
+          <p class = "tags"> <input type="checkbox" id = "can create public chat rooms" 
+          onclick="changeCreateRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
+          can create public chat rooms 
+        </p>
+      <%end%>
+  <%end%>
+ 
+  <% if @child == nil %>
+    <p>No children to view the join public rooms request or you have go to your page and click a child </p>
+    <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
+      abilities: ["can_join_public_chat_rooms"=>true])) %>
+      <p class = "tags"> 
+        <input type="checkbox" id = "can join public chat rooms" 
+        onclick="changeJoinRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+        can join public chat rooms
+      </p>
+      <%else%>
+      <p class = "tags"> <input type="checkbox" id = "can join public chat rooms" 
+        onclick="changeJoinRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
+        can join public chat rooms 
+      </p>
+    <%end%>
+  <%end%>
+
+ <% if @child == nil %>
+    <p>No children to view the join public rooms request or you have go to your page and click a child </p>
+    <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
+      abilities: ["mutual_friends_rooms_only"=>true])) %>
+      <p class = "tags"> 
+        <input type="checkbox" id = "mutual friends rooms only" 
+        onclick="changeMutualRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+        mutual friends rooms only
+      </p>
+      <%else%>
+      <p class = "tags"> <input type="checkbox" id = "mutual friends rooms only" 
+        onclick="changeMutualRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
+        mutual friends rooms only 
+      </p>
+  <br>
+    <%end%>
+  <%end%>     
+
+  <!-- This part views a text field and a submit button, which are used to submit 
 a tag to be prevented from a child, 
 and it also views the tags that has been submitted already.
 Authors: Mohamed Khaled AbdelMeguid. -->
-<% if @child == nil %>
-  <p>You have no children </p>
-<% else %>
-  <input type="text" id="submitTags" >
-  <button onclick="ban(<%= "\"#{@child.registered_user.username}\"" %>)">Ban it!</button>  
-  <% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
-    <div class = "whole">
-      <div id = "<%= key.tags %>">
-        <text class = "tags" > - <%= key.tags %> </text>
-          <button onclick = "deleteInfo(<%= "\"#{key.tags}\"" %> , 
-            <%= "\"#{@child.registered_user.username}\"" %> ) " class = "del" > 
-            X
-          </button>
-    </div>
+  <% if @child == nil %>
+    <p>No children to view their permitted tags or you have go to your page and click a child </p>
+  <% else %>
+    <input type="text" id="submitTags" >
+    <button onclick="ban(<%= "\"#{@child.registered_user.username}\"" %>)">Ban it!</button>  
+    <% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
+      <div class = "whole">
+        <div id = "<%= key.tags %>">
+          <text class = "tags" > - <%= key.tags %> </text>
+            <button onclick = "deleteInfo(<%= "\"#{key.tags}\"" %> , 
+              <%= "\"#{@child.registered_user.username}\"" %> ) " class = "del" > 
+              X
+            </button>
+      </div>
   <%end%>  
 <%end%>
+</div>
 
+<!-- This method list all the topics of the available activities -->  
+<!-- Authors: Shary Beshara -->    
+<div id = "list_of_activities">
+  <% Activity.all.each do |activity| %>
+    <% if !@child == nil %>
+      <% if !BannedTopic.exists?(child_name: @child.registered_user.username,
+        activity_topic: activity.topic) %>
+        <button   onclick = "banTopic(this, <%= "\"#{activity.topic}\"" %>, 
+          <%= "\"#{@child.registered_user.username}\"" %>)" >
+          <%= activity.topic %>
+        </button>
+      <% end %>  
+    <% end %>
+  <% end %>
+
+<!-- This method list all the banned topics of the child -->  
+<!-- Authors: Shary Beshara -->  
+<div id = "topics">
+  <% if !@child == nil %>
+    <% BannedTopic.where(child_name: @child.registered_user.username).each do 
+      |topic| %>
+      <div id = "<%= topic.activity_topic  %>" > 
+        <%= topic.activity_topic %>
+        <button onclick = "deleteTopic(<%= "\"#{topic.activity_topic}\"" %>, 
+          <%= "\"#{@child.registered_user.username}\"" %>)" >
+            X
+        </button>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+  
+ 
 
 
 

@@ -4,8 +4,8 @@ class ChatController < ApplicationController
   end
   
 
-  # This is a method that creates a new chat conection.
-  # Author: Mohamed Bahgat Elrakaiby.
+  # This is a method that creates a new chat conection
+  # Author: Mohamed Bahgat Elrakaiby
   def create
     @chat = Chat.create!(params[:chat])
   end
