@@ -91,7 +91,7 @@ class ChildrenController < ApplicationController
           # Send verification email
           UserMailer.account_verification(@child_account).deliver 
           # Send notification to parent
-          if RegisteredUser.exists?(email: @child_account.guardian_email)
+          if Supervisor.exists?(RegisteredUser.exists?(email: @child_account.guardian_email))
             parent = Supervisor.find(RegisteredUser.find_by(email: @child_account.guardian_email))
             parent.notify_child_created(@child_account)
           end

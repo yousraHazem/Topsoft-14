@@ -1,6 +1,6 @@
-class CreatePhotos < ActiveRecord::Migration
+class CreatePuzzles < ActiveRecord::Migration
   def change
-    create_table :photos do |t|
+    create_table :puzzles do |t|
       	t.string :description
       	t.string :image
       	t.string :remote_image_url

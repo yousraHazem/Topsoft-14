@@ -3,4 +3,5 @@ class Post < ActiveRecord::Base
   # also saying that every post has many comments
   validates_presence_of :body
   has_many :comments
+  has_one :photo
 end
