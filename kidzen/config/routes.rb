@@ -17,25 +17,11 @@ Kidzen::Application.routes.draw do
 
 
 
-post '/settings', to: 'registered_users#set_settings'
-  root 'registered_users#show'
-
-  resources :home
-
-
-
- 
-post '/settings', to: 'registered_users#set_settings'
- 
-
-
   get "invite_chatroom/index"
   
 
-  resources :home
 
 
-5c
 
 
   # Internationalization
@@ -59,6 +45,7 @@ post '/settings', to: 'registered_users#set_settings'
   # Supervisor routes:
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'
+  # Children history page
   get "/children_history", to: 'supervisors#children_history'
   # Children notification actions
   get "/supervisors/dashboard", to: 'supervisors#show', as: :parent_profile
