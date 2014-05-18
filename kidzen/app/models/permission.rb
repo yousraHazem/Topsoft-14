@@ -39,7 +39,7 @@ class Permission < ActiveRecord::Base
 
  def self.child_default_hash_create
     perm_hash = Hash.new
-    perm_hash[:can_create_chat_rooms] = false
+    perm_hash[:can_create_public_chat_rooms] = false
     Permission.new(abilities: perm_hash)
   end	
 
