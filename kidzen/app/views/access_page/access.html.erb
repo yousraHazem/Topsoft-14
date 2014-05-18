@@ -5,6 +5,39 @@
   <%= javascript_include_tag("ban_topics.js") %>
 <% end %>
 
+
+<!-- This part views a specific option of a child through a checked or unchecked
+box according to it's value in the DB. 
+Authors: Mohamed Khaled AbdelMeguid. -->
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag("access.js") %>
+<% end %>
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag("access.css") %>
+<% end %>
+
+<div class = "tags">  
+  <% if @child == nil %>
+    <p>You have no children </p>
+    <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
+      abilities: ["mutual_friends_rooms_only"=>true])) %>
+      <p class = "tags"> 
+        <input type="checkbox" id = "mutual friends rooms only" 
+          onclick="changeMutualRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+          mutual friends rooms only
+      </p>
+    <%else%>
+      <p class = "tags"> <input type="checkbox" id = "mutual friends rooms only" 
+        onclick="changeMutualRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
+        mutual friends rooms only 
+      </p>
+    <br>
+  <%end%>  
+    <%end%>   
+</div>
+
+
+
 <!-- This method list all the topics of the available activities -->  
 <!-- Authors: Shary Beshara -->    
 <div id = "list_of_activities">
@@ -42,60 +75,4 @@
   
 
 
-<script>
 
-function create_ajax_request (url, data, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('PUT', url, true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-  xhr.setRequestHeader('Accept', 'application/json'); // I want JSON 
-  xhr.responseType = "json";
-  xhr.addEventListener('load', function() {
-    xhr.responseJSON =  xhr.response;
-    console.log(xhr.responseJSON);
-    callback(xhr.responseJSON,  xhr);
-  });
-  xhr.send( JSON.stringify(data) );
-  return xhr;
-}
-
-  
-
-  function changeMutualRooms(childId) {
-    var checkBox = document.getElementById("mutual friends rooms only");
-    var abilityUpdate = "mutual_friends_rooms_only";
-    var valueUpdate = checkBox.checked;
-    prompt(valueUpdate);
-    var url = ['http://' + location.host, 'access_page', 'update'].join('/');
-    var callback = function(responseJSON, xhr) {
-  }
-  create_ajax_request(url, {ability: abilityUpdate, value: valueUpdate, child: childId}, callback);
-  }
-
-</script>
-
-<style type="text/css">
-
-.del {
-  background: -webkit-gradient(linear, left top, left bottom, from(#78bbe6), to(#78bbe6));
-  background: -webkit-linear-gradient(top, #78bbe6, #78bbe6);
-  background: -moz-linear-gradient(top, #78bbe6, #78bbe6);
-  background: -ms-linear-gradient(top, #78bbe6, #78bbe6);
-  background: -o-linear-gradient(top, #78bbe6, #78bbe6); 
-  color: white;
-  font-size: 13px;
-  font-family: Georgia, serif;
-  text-decoration: none;
-  vertical-align: middle;
-}
-.tags {
-  margin-top: 135px;
-  margin-right: 200px;
-  font-family: news-gothic-std, sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  background-color: #78bbe6;
-  color: white;
-  }
-
-</style>

@@ -1,0 +1,12 @@
+/* This part styles the backgroud of the checkbox and it's text
+Authors: Mohamed Khaled AbdelMeguid. */
+.tags {
+  margin-right: 0px;
+  margin-bottom: 10px;
+  font-family: news-gothic-std, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  background-color: #78bbe6;
+  color: white;
+  }
+
