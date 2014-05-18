@@ -3,10 +3,8 @@
 <center>
 <p>
 <strong>Photo:</strong>
-<%= image_tag @profile_owner.image_url(:thumb) if @profile_owner.image? %>
+<%= image_tag "defaultpp.png" %>
 </p>
-
-<%= render 'form' %>
 
 <p>
   <strong>User name:</strong>
@@ -31,13 +29,13 @@
 </p>
 <% if current_user.id==@profile_owner.id %> 
 <% else %>
-  <% if Child.where(:id=>current_user.id).friends.where(:id=>@profile_owner.id).exists? %>
+  <% if Child.where(:id=>current_user.id).first.friends.where(:id=>@profile_owner.id).exists? %>
     Friends
   <% else %>
-    <% if Child.where(:id=>current_user.id).requested_friends.where(:id=>@profile_owner.id).exists? %> 
+    <% if Child.where(:id=>current_user.id).first.requested_friends.where(:id=>@profile_owner.id).exists? %> 
       Pending
     <% else %> 
-      <% if Child.where(:id=>current_user.id).pending_friends.where(:id=>@profile_owner.id).exists? %> 
+      <% if Child.where(:id=>current_user.id).first.pending_friends.where(:id=>@profile_owner.id).exists? %> 
         Waiting For accept or reject
       <% else %>
         <%=link_to "Add friend",:controller=>'friendships',:action=>'send_friend_request',:friend_id=>@profile_owner.id%>
@@ -45,13 +43,5 @@
     <% end %>
   <% end %>
 <% end %>
-
-  <% if Child.exists?(registered_user: current_user) %>
-
-    <% @child = Child.find_by(registered_user: current_user) %>
-
-    <%= render partial: "Posts/index", locals: {friends: @child.friends, child: @child} %>
-
-  <% end %>
 </center>
 
