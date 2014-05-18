@@ -17,25 +17,11 @@ Kidzen::Application.routes.draw do
 
 
 
-post '/settings', to: 'registered_users#set_settings'
-  root 'registered_users#show'
-
-  resources :home
-
-
-
- 
-post '/settings', to: 'registered_users#set_settings'
- 
-
-
   get "invite_chatroom/index"
   
 
-  resources :home
 
 
-5c
 
 
   # Internationalization

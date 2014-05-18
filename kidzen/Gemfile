@@ -63,7 +63,7 @@ gem 'simple_form'
 #use show_for gem to show group page
 gem 'show_for'
 
-#gem 'rmagick'
+gem 'rmagick'
 
 # Use unicorn as the app server
 # gem 'unicorn'
