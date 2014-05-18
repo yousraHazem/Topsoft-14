@@ -15,9 +15,9 @@ Authors: Mohamed Khaled AbdelMeguid. -->
   <button onclick="ban(<%= "\"#{@child.registered_user.username}\"" %>)">Ban it!</button>  
   <% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
     <div class = "whole">
-      <div id = "<%= key.tag %>">
-        <text class = "tags" > - <%= key.tag %> </text>
-          <button onclick = "deleteInfo(<%= "\"#{key.tag}\"" %> , 
+      <div id = "<%= key.tags %>">
+        <text class = "tags" > - <%= key.tags %> </text>
+          <button onclick = "deleteInfo(<%= "\"#{key.tags}\"" %> , 
             <%= "\"#{@child.registered_user.username}\"" %> ) " class = "del" > 
             X
           </button>
