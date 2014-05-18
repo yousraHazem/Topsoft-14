@@ -50,6 +50,12 @@ class ChildrenController < ApplicationController
   def create 
     perms = Permission.child_default
     perms.save
+    perms = Permission.child_default_hash_join
+    perms.save
+    perms = Permission.child_default_hash_create
+    perms.save
+    perms = Permission.child_default_hash_mutual
+    perms.save
     super_duper_params = signup_params
     registered_user_params = Hash.new
     # Unpack params for registered_user

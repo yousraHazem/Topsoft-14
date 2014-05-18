@@ -87,7 +87,7 @@ class AccessPageController < ApplicationController
        @upd = Permission.find_by(registered_user_id: @child,
         abilities: ['mutual_friends_rooms_only' => false])
       if !@upd.nil?
-        @upd.update(:abilities => {'mutual_friends_rooms_only' => true})
+        @upd.update(:abilities => {'mutual_friends_rooms_only'=>true})
         @upd.save 
       else
         puts("error, No record with such option")
@@ -95,9 +95,9 @@ class AccessPageController < ApplicationController
     end
     if @value == false
       @upd = Permission.find_by(registered_user_id: @child, 
-        abilities: ['mutual_friends_rooms_only' => true])
+        abilities: ['mutual_friends_rooms_only'=>true])
       if !@upd.nil?
-        @upd.update(:abilities => {'mutual_friends_rooms_only' => false})
+        @upd.update(:abilities => {'mutual_friends_rooms_only'=>false})
         @upd.save 
       else
         puts("error, No record with such option")
