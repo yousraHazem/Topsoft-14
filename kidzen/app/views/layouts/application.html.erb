@@ -95,7 +95,7 @@
         <li><a href="#"><%= t('notifications') %></a></li>
         <li><a href="#"><%= t('messages') %></a></li>
         <li><a href="#"><%= t('PlayGround') %></a></li>
-        <li><a href="#"><%= t('profile') %></a></li>
+        <li><a href="/profile/ammar"><%= t('profile') %></a></li>
         <li class="active"><a href="/"><%= t('home') %></a></li>
         </ul>
         <% end %>
@@ -120,6 +120,9 @@
               <li><a href="/events"><%= t('events') %></a></li>
               <li><a href="/photos"><%= t('Photo Gallery') %></a></li>
               <li><a href="/videos"><%= t('video Gallery') %></a></li>
+              <li class="active"><a href="#"><%= t('friends') %></a></li>
+              <li><a href="/profile/amaar"><%= t('profile') %></a></li>
+	      <li><a href="/friendships/view_pending_friendship_requests.html"><%= t('Pending Friend Requests') %></a></li>
             </ul>
           </div>  
         </div>  

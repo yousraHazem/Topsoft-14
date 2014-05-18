@@ -52,7 +52,7 @@ class PhotosController < ApplicationController
     if @photo.save
       flash[:notice] = "Successfully created photo."
       #redirect_to @photo
-      redirect_to @post
+      redirect_to @photo
     else
       render :action => 'new'
     end
