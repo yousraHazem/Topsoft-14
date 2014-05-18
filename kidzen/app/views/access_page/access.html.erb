@@ -1,0 +1,29 @@
+<!-- This part views a specific option of a child through a checked or unchecked 
+box according to it's value in the DB. 
+Authors: Mohamed Khaled AbdelMeguid. -->  
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag("access.js") %>
+<% end %>
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag("access.css") %>
+<% end %>
+<div class = "tags">  
+  <% if @child == nil %>
+    <p>You have no children </p>
+    <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
+      abilities: ["can_join_public_chat_rooms"=>true])) %>
+      <p class = "tags"> 
+        <input type="checkbox" id = "can join public chat rooms" 
+        onclick="changeJoinRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+        can join public chat rooms
+      </p>
+      <%else%>
+      <p class = "tags"> <input type="checkbox" id = "can join public chat rooms" 
+        onclick="changeJoinRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
+        can join public chat rooms 
+      </p>
+  <br>
+  <%end%>
+  <%end%>
+</div>
+
