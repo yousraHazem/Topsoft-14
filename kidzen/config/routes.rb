@@ -2,12 +2,17 @@ Kidzen::Application.routes.draw do
 
 
 
+
   
   # Routes used in the access_page views.
   put "access_page/delete_topic"
   put "access_page/ban_topic"
 
   post '/settings', to: 'registered_users#set_settings'
+
+
+ 
+post '/settings', to: 'registered_users#set_settings'
 
   root 'registered_users#show'
 
@@ -17,7 +22,6 @@ Kidzen::Application.routes.draw do
   get "invite_chatroom/index"
   
 
-  resources :home
 
 
 
@@ -43,6 +47,7 @@ Kidzen::Application.routes.draw do
   # Supervisor routes:
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'
+  # Children history page
   get "/children_history", to: 'supervisors#children_history'
   # Children notification actions
   get "/supervisors/dashboard", to: 'supervisors#show', as: :parent_profile
@@ -160,19 +165,14 @@ Kidzen::Application.routes.draw do
   #resources :registered_users
 
 
-  # access page routes.
-
+  # Access page routes.
   # Authors: Mohamed Khaled AbdelMeguid.
   get "access_page/access"
-
-  put 'access_page/update', to: 'access_page#update'
+  put 'access_page/update_mutual_rooms', to: 'access_page#update_mutual_rooms'
   put 'access_page/add', to: 'access_page#add'
   put 'access_page/update_join_rooms', to: 'access_page#update_join_rooms'
   put 'access_page/update_create_rooms', to: 'access_page#update_create_rooms'
 				
-
-  put 'access_page/update_mutual_rooms', to: 'access_page#update_mutual_rooms'
-  put 'access_page/add', to: 'access_page#add'				
 
 
   # You can have the root of your site routed with "root"
