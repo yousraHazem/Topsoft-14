@@ -1,8 +1,33 @@
 Kidzen::Application.routes.draw do
 
+
+
+
+  
+  # Routes used in the access_page views.
+  put "access_page/delete_topic"
+  put "access_page/ban_topic"
+
+  post '/settings', to: 'registered_users#set_settings'
+
+
+ 
+post '/settings', to: 'registered_users#set_settings'
+
+  root 'registered_users#show'
+
   resources :home
 
-  root 'home#index'
+
+
+  get "invite_chatroom/index"
+  
+
+
+
+
+
+
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
 
@@ -24,6 +49,7 @@ Kidzen::Application.routes.draw do
   # Supervisor routes:
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'
+  # Children history page
   get "/children_history", to: 'supervisors#children_history'
   # Children notification actions
   get "/supervisors/dashboard", to: 'supervisors#show', as: :parent_profile
@@ -139,6 +165,19 @@ Kidzen::Application.routes.draw do
 
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   #resources :registered_users
+
+
+
+  # Access page routes.
+  # Authors: Mohamed Khaled AbdelMeguid.
+  get "access_page/access"
+  put 'access_page/delete_tag', to: 'access_page#delete_tag'
+  put 'access_page/update_mutual_rooms', to: 'access_page#update_mutual_rooms'
+  put 'access_page/add_tag', to: 'access_page#add_tag'
+  put 'access_page/update_join_rooms', to: 'access_page#update_join_rooms'
+  put 'access_page/update_create_rooms', to: 'access_page#update_create_rooms'
+  
+				
 
 
 

@@ -23,7 +23,7 @@ class MessagesController < ApplicationController
   def show 
     @message = Message.find(params[:id])
     @user = current_user
-    if (@user.email == @message.sender) || (@user.email == @message.recepient)
+    if (@user.username == @message.sender) || (@user.username == @message.recepient)
     else
       respond_to do |format|
         format.html { redirect_to :action => :index, notice: 'No message found' }
@@ -44,13 +44,13 @@ class MessagesController < ApplicationController
   # Authors: Ali A. El-Halawaty.
   def create
     @message = Message.new(m_params)
-    @message.sender = current_user.email
+    @message.sender = current_user.username
     @receiver_mail = @message.recepient
     if !@message.valid?
       flash[:error] = @message.errors.full_messages.join("<br>").html_safe
     end
     respond_to do |format|
-      if RegisteredUser.exists?(:email => @receiver_mail)
+      if RegisteredUser.exists?(:username => @receiver_mail)
         @message.save
         format.html { redirect_to :action => :index, notice: 'Message has been sent.' }
         format.json { render json: @messages }
