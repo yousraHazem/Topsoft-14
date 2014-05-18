@@ -3,7 +3,7 @@ class CreateRegisteredUser < ActiveRecord::Migration
     create_table :registered_users do |t|
         t.string :username
         t.boolean :online
-        t.boolean :gender
+        t.string :gender
         t.timestamp :last_accessed
         t.string :first_name
         t.string :middle_name
@@ -16,6 +16,7 @@ class CreateRegisteredUser < ActiveRecord::Migration
         t.integer :permission_id
         t.boolean :notification_by_email
         t.string :remember_token
+        t.string :image
         t.timestamps
     end
     add_index :registered_users, :email, unique: true 

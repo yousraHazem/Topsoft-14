@@ -30,6 +30,6 @@
 <%= javascript_include_tag "main" %>
 <script src="/assets/recorder.js?body=1"></script>
 <h3>Upload song</h3>
-<%= render 'songs/form' %>
+<%= link_to "New Songs", new_song_path %>
 <h3>play songs</h3>
-<%= render 'songs/index' %>
+<%= link_to "My Songs", "songs/index" %>

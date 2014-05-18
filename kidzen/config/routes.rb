@@ -2,12 +2,26 @@ Kidzen::Application.routes.draw do
 
 
 
+
 post '/settings', to: 'registered_users#set_settings'
   root 'registered_users#show'
 
   resources :home
 
-  root 'home#index'
+
+
+ 
+post '/settings', to: 'registered_users#set_settings'
+ 
+
+
+  get "invite_chatroom/index"
+  
+
+  resources :home
+
+
+5c
 
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
@@ -15,6 +29,7 @@ post '/settings', to: 'registered_users#set_settings'
   # RegisteredUser (generic) routes
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
+  get '/profile/:username', to: 'profiles#index'
   # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
   # username will be the same as in the url /show/"username".
   # Author: Ammar ELWazeer
@@ -96,6 +111,17 @@ post '/settings', to: 'registered_users#set_settings'
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
 
+
+  
+  #Posts and comments
+  resources :posts do
+    resources :comments, :only => [:create]
+  end
+  get "/posts/addPhoto"
+  resources :posts do
+    put :addPhoto, :on => :collection
+  end 
+
   get "friendships/view_my_friends"
   get '/group_members/:id/view' , to:  'group_members#view'
   post '/group_members/:id/view' => 'group_members#view'     
@@ -104,6 +130,7 @@ post '/settings', to: 'registered_users#set_settings'
   
 
     
+
 
   get '/group_members/:id/view' , to:  'group_members#view'
   post '/group_members/:id/view' => 'group_members#view'  
@@ -115,7 +142,6 @@ post '/settings', to: 'registered_users#set_settings'
   get "friendships/view_pending_friendship_requests"
   get "friendships/accept_reject_friend_request"  
   get "friendships/send_friend_request"     
-
 
 
   # children routes
@@ -134,16 +160,20 @@ post '/settings', to: 'registered_users#set_settings'
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   #resources :registered_users
 
-  # Access page routes.
+
+  # access page routes.
+
   # Authors: Mohamed Khaled AbdelMeguid.
   get "access_page/access"
-  post '/access_page/access', to: 'access_page#access'
-  put 'access_page/delete_tag', to: 'access_page#delete_tag'
+
   put 'access_page/update', to: 'access_page#update'
   put 'access_page/add', to: 'access_page#add'
   put 'access_page/update_join_rooms', to: 'access_page#update_join_rooms'
   put 'access_page/update_create_rooms', to: 'access_page#update_create_rooms'
 				
+
+  put 'access_page/update_mutual_rooms', to: 'access_page#update_mutual_rooms'
+  put 'access_page/add', to: 'access_page#add'				
 
 
   # You can have the root of your site routed with "root"

@@ -43,12 +43,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development do
-  gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara-rails'
-  gem 'rspec-rails'
-  gem "factory_girl_rails"
-end
+#group :development do
+  #gem 'selenium-webdriver', '2.35.1'
+  #gem 'capybara-rails'
+  #gem 'rspec-rails'
+  #gem "factory_girl_rails"
+#end
 
 
 gem 'carrierwave-video'
@@ -63,7 +63,7 @@ gem 'simple_form'
 #use show_for gem to show group page
 gem 'show_for'
 
-gem 'rmagick'
+#gem 'rmagick'
 
 # Use unicorn as the app server
 # gem 'unicorn'
