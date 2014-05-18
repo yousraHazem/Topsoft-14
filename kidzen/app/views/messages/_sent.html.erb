@@ -1,5 +1,5 @@
 <% @messages.each do |m| %>
-<% if m.sender == @user.email %>
+<% if m.sender == @user.username %>
 <table class="table">
   <tr>
     <td>
@@ -10,7 +10,7 @@
     </td>
     <td><%= m.recepient %></td>
     <td><%= m.created_at %></td>
-    <td><%= link_to 'Delete Message', m, method: :delete, data: { confirm: 'Are you sure?' } %></td>td>
+    <td><%= link_to 'Delete Message', m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 </table>
 <% end %>
