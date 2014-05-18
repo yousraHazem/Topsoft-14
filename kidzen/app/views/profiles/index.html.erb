@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<center>
+<p>
+<strong>Photo:</strong>
+<%= image_tag "defaultpp.png" %>
+</p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @profile_owner.username %>
+</p>
+
+
+
+<p>
+  <strong>name:</strong>
+  <%= @profile_owner.full_name%>
+</p>
+
+<p>
+  <strong>Birth of date:</strong>
+  <%= @profile_owner.birth_date %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @profile_owner.gender %>
+</p>
+<% if current_user.id==@profile_owner.id %> 
+<% else %>
+  <% if Child.where(:id=>current_user.id).first.friends.where(:id=>@profile_owner.id).exists? %>
+    Friends
+  <% else %>
+    <% if Child.where(:id=>current_user.id).first.requested_friends.where(:id=>@profile_owner.id).exists? %> 
+      Pending
+    <% else %> 
+      <% if Child.where(:id=>current_user.id).first.pending_friends.where(:id=>@profile_owner.id).exists? %> 
+        Waiting For accept or reject
+      <% else %>
+        <%=link_to "Add friend",:controller=>'friendships',:action=>'send_friend_request',:friend_id=>@profile_owner.id%>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+</center>
+

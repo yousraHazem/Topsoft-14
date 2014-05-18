@@ -9,12 +9,11 @@ post '/settings', to: 'registered_users#set_settings'
 
 
   get "invite_chatroom/index"
-  root 'registered_users#show'
-
+  
 
   resources :home
 
-  root 'home#index'
+
 
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
@@ -22,6 +21,7 @@ post '/settings', to: 'registered_users#set_settings'
   # RegisteredUser (generic) routes
   get '/registered_user', to: 'registered_users#show'
   get '/profile', to: 'registered_users#show'
+  get '/profile/:username', to: 'profiles#index'
   # Unique url for every user to use it to access the profile(by now to access simple information until profile story).
   # username will be the same as in the url /show/"username".
   # Author: Ammar ELWazeer
@@ -103,6 +103,17 @@ post '/settings', to: 'registered_users#set_settings'
   get "groups/:id/membership_requests" , to: 'group_members#accept_membership_request'
   get "groups/:id/membership_requests" , to: 'group_members#reject_membership_request'
 
+
+  
+  #Posts and comments
+  resources :posts do
+    resources :comments, :only => [:create]
+  end
+  get "/posts/addPhoto"
+  resources :posts do
+    put :addPhoto, :on => :collection
+  end 
+
   get "friendships/view_my_friends"
   get '/group_members/:id/view' , to:  'group_members#view'
   post '/group_members/:id/view' => 'group_members#view'     
@@ -111,6 +122,7 @@ post '/settings', to: 'registered_users#set_settings'
   
 
     
+
 
   get '/group_members/:id/view' , to:  'group_members#view'
   post '/group_members/:id/view' => 'group_members#view'  
@@ -122,7 +134,6 @@ post '/settings', to: 'registered_users#set_settings'
   get "friendships/view_pending_friendship_requests"
   get "friendships/accept_reject_friend_request"  
   get "friendships/send_friend_request"     
-
 
 
   # children routes
