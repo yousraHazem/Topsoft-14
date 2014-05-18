@@ -1,6 +1,6 @@
 <!-- This is the view that show all the children of this supervisor as 
- buttons-->  
-<!-- Authors: Shary Beshara -->   
+ buttons.-->  
+<!-- Authors: Shary Beshara. -->   
 <% @children.each do |child| %>
 
   <div onclick="collapse(this)" class="collapsable_container"
@@ -13,14 +13,14 @@
           %></p>
       </label>
     </div>
-    <!-- This is the view that show the notification of the child-->  
-    <!-- Authors: Shary Beshara -->   
 
-      <div class="collapsable_field">
-        <% Notification.where(:assigned_to => Child.find(child).registered_user.username)
-          .each do |notification| %>
-          <%= notification.long_desc %>
-        <% end %>   
+    <!-- This is the view that show the notification of the child.-->  
+    <!-- Authors: Shary Beshara. -->   
+    <div class="collapsable_field confirm_child_cont">
+      <% Notification.where(:assigned_to => Child.find(child).registered_user
+        .username).each do |notification| %>
+        <%= notification.long_desc %>
+      <% end %>
 
     </div>
   </div>
