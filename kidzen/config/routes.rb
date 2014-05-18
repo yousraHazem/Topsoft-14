@@ -13,7 +13,6 @@ Kidzen::Application.routes.draw do
 
   resources :home
 
-  root 'home#index'
 
   # Internationalization
   get 'change_locale', to: 'application#change_locale'

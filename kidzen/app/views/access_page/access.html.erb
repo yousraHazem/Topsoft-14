@@ -38,19 +38,7 @@
   <% end %>
 </div>
   
-  <div class = "tags">  
-  <% if (Permission.find_by(registered_user_id: 2).abilities[:mutual_friends_rooms_only] = true) == true   %>
-  <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" checked > 
-    <text class = "tags"> mutual friends rooms only </text>
-  <br>
-  <% end %>
-  <% if (Permission.find_by(registered_user_id: 2).abilities[:mutual_friends_rooms_only] = false) == true %>
-  <input type = "checkbox" id = "mutual friends rooms only" onclick="changeMutualRooms(2)" > 
-    <text class = "tags"> mutual friends rooms only </text>
-  <br>
-  <%end%>
-  
-  </div>
+ 
   
 
 

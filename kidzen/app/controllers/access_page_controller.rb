@@ -105,5 +105,6 @@ class AccessPageController < ApplicationController
   format.json { render json: {status: "ok"} }
 	end
   end
-end  
+end
+end
 
