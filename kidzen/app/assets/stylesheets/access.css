@@ -1,5 +1,4 @@
-
-/* This part styles the backgroud of the checkbox and it's text
+/* This part styles the backgroud of the checkbox and it's text.
 Authors: Mohamed Khaled AbdelMeguid. */
 .tags {
   margin-right: 0px;
@@ -10,4 +9,19 @@ Authors: Mohamed Khaled AbdelMeguid. */
   background-color: #78bbe6;
   color: white;
   }
+  
+/* This part styles the backgroud and color of the delete button.
+Authors: Mohamed Khaled AbdelMeguid. */
+.del {
+  background: -webkit-gradient(linear, left top, left bottom, from(#78bbe6), to(#78bbe6));
+  background: -webkit-linear-gradient(top, #78bbe6, #78bbe6);
+  background: -moz-linear-gradient(top, #78bbe6, #78bbe6);
+  background: -ms-linear-gradient(top, #78bbe6, #78bbe6);
+  background: -o-linear-gradient(top, #78bbe6, #78bbe6); 
+  color: white;
+  font-size: 13px;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  vertical-align: middle;
+}
 

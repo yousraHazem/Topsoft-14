@@ -4,9 +4,6 @@
   <%= javascript_include_tag("ban_topics.js") %>
 <% end %>
 
-<!-- This part views a specific option of a child through a checked or unchecked
-box according to it's value in the DB. 
-Authors: Mohamed Khaled AbdelMeguid. -->
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag("access.js") %>
 <% end %>
@@ -17,9 +14,8 @@ Authors: Mohamed Khaled AbdelMeguid. -->
 <!-- This part views a options of a child through a checked 
 or unchecked checkboxes according to it's value in the DB .
 Authors: Mohamed Khaled AbdelMeguid. -->
-<div class = "tags">  
   <% if @child == nil %>
-    <p>You have no children to view the change create rooms option </p>
+    <p>No children to view the change create rooms option or you have go to your page and click a child</p>
       <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
         abilities: ["can_create_public_chat_rooms"=>true])) %>
         <p class = "tags"> 
@@ -36,7 +32,7 @@ Authors: Mohamed Khaled AbdelMeguid. -->
   <%end%>
  
   <% if @child == nil %>
-    <p>You have no children to view the join public rooms request </p>
+    <p>No children to view the join public rooms request or you have go to your page and click a child </p>
     <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
       abilities: ["can_join_public_chat_rooms"=>true])) %>
       <p class = "tags"> 
@@ -53,7 +49,7 @@ Authors: Mohamed Khaled AbdelMeguid. -->
   <%end%>
 
  <% if @child == nil %>
-    <p>You have no children to view the join public rooms request </p>
+    <p>No children to view the join public rooms request or you have go to your page and click a child </p>
     <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
       abilities: ["mutual_friends_rooms_only"=>true])) %>
       <p class = "tags"> 
@@ -69,6 +65,27 @@ Authors: Mohamed Khaled AbdelMeguid. -->
   <br>
     <%end%>
   <%end%>     
+
+  <!-- This part views a text field and a submit button, which are used to submit 
+a tag to be prevented from a child, 
+and it also views the tags that has been submitted already.
+Authors: Mohamed Khaled AbdelMeguid. -->
+  <% if @child == nil %>
+    <p>No children to view their permitted tags or you have go to your page and click a child </p>
+  <% else %>
+    <input type="text" id="submitTags" >
+    <button onclick="ban(<%= "\"#{@child.registered_user.username}\"" %>)">Ban it!</button>  
+    <% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
+      <div class = "whole">
+        <div id = "<%= key.tags %>">
+          <text class = "tags" > - <%= key.tags %> </text>
+            <button onclick = "deleteInfo(<%= "\"#{key.tags}\"" %> , 
+              <%= "\"#{@child.registered_user.username}\"" %> ) " class = "del" > 
+              X
+            </button>
+      </div>
+  <%end%>  
+<%end%>
 </div>
 
 <!-- This method list all the topics of the available activities -->  
@@ -104,7 +121,7 @@ Authors: Mohamed Khaled AbdelMeguid. -->
 </div>
   
  
-  
+
 
 
 
