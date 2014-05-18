@@ -2,6 +2,7 @@
 # RegisteredUser.
 # Authors: Ahmed H. Ismail
 class RegisteredUser < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
   searchkick autocomplete: [:username, :first_name, :middle_name, :family_name, :nickname, :email]  
   private
     VALID_EMAIL_REGEX = /\A([a-z.\-_\d]+)@([a-z\-_\d]+(\.[a-z]+)+)\z/
@@ -47,6 +48,15 @@ class RegisteredUser < ActiveRecord::Base
     # Authors: Ahmed H. Ismail
     def full_name
       [first_name, middle_name, family_name].join(" ")
+    end
+
+    # calculate the age of the user
+    # birth_year - the year of birth of user
+    # returns age based on subtraction of current year - birth year
+    # Authors: Khaled I. Elhossiny 
+    def age
+      birth_year=RegisteredUser.find(id).birth_date.year
+      Date.today.year-birth_year
     end
     
     # Checks if female

@@ -1,0 +1,70 @@
+<!-- This page is used to view the drag and drop game which contains
+Three shapes (circle - square - triangle) with background
+of the image that was uploaded by the content provider, and 3 slots
+of the same shapes and the child has to match this shapes and view 
+his/her score after finishing the game as well as past scores in the
+lower right corner of the page. Author : Hussien M. Eloy. -->
+<!-- Include necessary javascript and stylesheets files -->
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag("drag_and_drop.js") %>
+  <%= javascript_include_tag("http://ajax.googleapis.com/ajax/libs/j"\
+  "query/1.5.0/jquery.min.js") %>
+  <%= javascript_include_tag("http://ajax.googleapis.com/ajax/libs/j"\
+  "queryui/1.8.9/jquery-ui.min.js") %>
+<% end %>
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag("drag_and_drop.css") %>
+<% end %>
+<h3> Match shapes with their corresponding slots</h3>
+<br>
+<br>
+<!-- Button used  for starting new turn. -->
+<button type="button" onclick="location.reload(true);"><i>Play Again</i></button>
+<br>
+<!-- Button used to share score of last game. -->
+<button type="button" onclick="shareScore();"><i>Share Score</i></button>
+<br>
+<!-- Passing the variables The game id and name to the script 
+to be used there. -->
+<script type="text/javascript">
+  var gameId = '<%= h @drag_and_drop.id -%>';
+  var gameName = '<%= h @drag_and_drop.name -%>';
+</script>
+<!-- This is the window that holds the draggable and droppable 
+objects where the actual game happens really on it. -->    
+<div class='contentn'>
+  <div class='triangle'>
+    <a href='#' class='option' data-inf='portion'>
+      <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
+    </a>
+  </div>
+  <br>
+  <br>
+  <div id="square">
+    <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
+  </div>
+  <br>
+  <br>
+  <div id="circle">
+    <%= image_tag(@drag_and_drop.image_url(:thumb)) %>
+  </div>
+  <br>
+  <div id="square-slot"></div>
+  <div id="triangular-slot"> </div>
+  <div id="circular-slot"></div>
+</div>
+<!-- The table that holds the previous scores. -->
+<table align = "right">
+  <thead>
+    <tr>
+      <th>Your Past Scores</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for drag_score in @drag_and_drops_scores %>
+      <tr>
+        <td><%= drag_score.score %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

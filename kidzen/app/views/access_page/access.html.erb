@@ -1,0 +1,103 @@
+
+<!-- This method includes the javascript file to use it's functions -->  
+<!-- Authors: Shary Beshara -->    
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag("ban_topics.js") %>
+<% end %>
+
+
+<!-- This part views a specific option of a child through a checked or unchecked
+box according to it's value in the DB. 
+Authors: Mohamed Khaled AbdelMeguid. -->
+>>>>>>> d41a4c87760f2d6dad8b0e8c17fed413d6c55f5c
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag("access.js") %>
+<% end %>
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag("access.css") %>
+<% end %>
+
+<!-- This part views a specific option of a child through a checked 
+or unchecked box according to it's value in the DB .
+Authors: Mohamed Khaled AbdelMeguid. -->
+<div class = "tags">  
+  <% if @child == nil %>
+    <p>You have no children </p>
+      <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
+        abilities: ["can_create_public_chat_rooms"=>true])) %>
+        <p class = "tags"> 
+          <input type="checkbox" id = "can create public chat rooms" 
+            onclick="changeCreateRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+            can create public chat rooms
+        </p>
+        <%else%>
+          <p class = "tags"> <input type="checkbox" id = "can create public chat rooms" 
+          onclick="changeCreateRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
+          can create public chat rooms 
+        </p>
+        <br>
+    <%end%>
+<%end%>
+
+
+<div class = "tags">  
+  <% if @child == nil %>
+    <p>You have no children </p>
+    <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
+      abilities: ["mutual_friends_rooms_only"=>true])) %>
+      <p class = "tags"> 
+        <input type="checkbox" id = "mutual friends rooms only" 
+          onclick="changeMutualRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+          mutual friends rooms only
+      </p>
+    <%else%>
+      <p class = "tags"> <input type="checkbox" id = "mutual friends rooms only" 
+        onclick="changeMutualRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
+        mutual friends rooms only 
+      </p>
+    <br>
+  <%end%>  
+    <%end%>   
+
+</div>
+
+
+
+<!-- This method list all the topics of the available activities -->  
+<!-- Authors: Shary Beshara -->    
+<div id = "list_of_activities">
+  <% Activity.all.each do |activity| %>
+    <% if !@child == nil %>
+      <% if !BannedTopic.exists?(child_name: @child.registered_user.username,
+        activity_topic: activity.topic) %>
+        <button   onclick = "banTopic(this, <%= "\"#{activity.topic}\"" %>, 
+          <%= "\"#{@child.registered_user.username}\"" %>)" >
+          <%= activity.topic %>
+        </button>
+      <% end %>  
+    <% end %>
+  <% end %>
+</div>
+
+<!-- This method list all the banned topics of the child -->  
+<!-- Authors: Shary Beshara -->  
+<div id = "topics">
+  <% if !@child == nil %>
+    <% BannedTopic.where(child_name: @child.registered_user.username).each do 
+      |topic| %>
+      <div id = "<%= topic.activity_topic  %>" > 
+        <%= topic.activity_topic %>
+        <button onclick = "deleteTopic(<%= "\"#{topic.activity_topic}\"" %>, 
+          <%= "\"#{@child.registered_user.username}\"" %>)" >
+            X
+        </button>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+  
+ 
+  
+
+
+

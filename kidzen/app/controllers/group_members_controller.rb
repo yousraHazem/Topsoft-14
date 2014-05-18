@@ -107,6 +107,16 @@ class GroupMembersController < ApplicationController
   def reject_membership_request
   end
 
+  # This method allows a user to view the members of a group.
+  # The members are populated in @group_members to allow the model to generate a list of members.
+  # Returns nothing.
+  # Time Complexity: O(n).
+  # Author: Mohamed Bahgat Elrakaiby.
+  def view
+      @group_members = GroupMember.where(:group_id => params[:id],
+       :owner_accept_state => 1, :member_accept_state => 1)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_group_member

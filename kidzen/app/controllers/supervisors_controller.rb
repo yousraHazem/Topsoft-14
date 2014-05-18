@@ -4,6 +4,9 @@ class SupervisorsController < ApplicationController
   # before_action :set_supervisor, except: [] # set for all
   # TODO: fix 'X-CSRF-Token' in XMLHttpRequest header
   skip_before_filter :verify_authenticity_token, only: [:accept_child, :reject_child]
+  require 'json'
+  
+
   # GET /confirm_children
   # Renders the confirm children
   # view.
@@ -26,6 +29,7 @@ class SupervisorsController < ApplicationController
 
   # GET /supervisors/dashboard
   # Renders the supervisor's homepage
+  # Authors: Ahmed H. Ismail
   def show
     if signed_in?
       # Is user a supervisor?
@@ -62,6 +66,7 @@ class SupervisorsController < ApplicationController
 
 
   # GET /supervisors/signup
+  # Renders the signup page
   # Authors: Ahmed H. Ismail
   def signup
     @user = RegisteredUser.new
