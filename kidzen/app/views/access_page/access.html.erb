@@ -1,10 +1,8 @@
-
 <!-- This method includes the javascript file to use it's functions -->  
 <!-- Authors: Shary Beshara -->    
 <% content_for :javascript_includes do %>
   <%= javascript_include_tag("ban_topics.js") %>
 <% end %>
-
 
 <!-- This part views a specific option of a child through a checked or unchecked
 box according to it's value in the DB. 
@@ -21,7 +19,7 @@ or unchecked box according to it's value in the DB .
 Authors: Mohamed Khaled AbdelMeguid. -->
 <div class = "tags">  
   <% if @child == nil %>
-    <p>You have no children </p>
+    <p>You have no children to view the change create rooms option </p>
       <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
         abilities: ["can_create_public_chat_rooms"=>true])) %>
         <p class = "tags"> 
@@ -34,14 +32,44 @@ Authors: Mohamed Khaled AbdelMeguid. -->
           onclick="changeCreateRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
           can create public chat rooms 
         </p>
-        <br>
+      <%end%>
+  <%end%>
+ 
+  <% if @child == nil %>
+    <p>You have no children to view the join public rooms request </p>
+    <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
+      abilities: ["can_join_public_chat_rooms"=>true])) %>
+      <p class = "tags"> 
+        <input type="checkbox" id = "can join public chat rooms" 
+        onclick="changeJoinRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+        can join public chat rooms
+      </p>
+      <%else%>
+      <p class = "tags"> <input type="checkbox" id = "can join public chat rooms" 
+        onclick="changeJoinRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
+        can join public chat rooms 
+      </p>
     <%end%>
-<%end%>
+  <%end%>
 
-
+ <% if @child == nil %>
+    <p>You have no children to view the join public rooms request </p>
+    <% else if (Permission.exists?(registered_user_id: @child.registered_user.id , 
+      abilities: ["mutual_friends_rooms_only"=>true])) %>
+      <p class = "tags"> 
+        <input type="checkbox" id = "mutual friends rooms only" 
+        onclick="changeMutualRooms(<%= "\'#{@child.registered_user.id}\'" %>)" checked >
+        mutual friends rooms only
+      </p>
+      <%else%>
+      <p class = "tags"> <input type="checkbox" id = "mutual friends rooms only" 
+        onclick="changeMutualRooms(<%= "\'#{@child.registered_user.id}\'" %>)" >
+        mutual friends rooms only 
+      </p>
+  <br>
+    <%end%>
+  <%end%>     
 </div>
-
-
 
 <!-- This method list all the topics of the available activities -->  
 <!-- Authors: Shary Beshara -->    
@@ -57,7 +85,6 @@ Authors: Mohamed Khaled AbdelMeguid. -->
       <% end %>  
     <% end %>
   <% end %>
-</div>
 
 <!-- This method list all the banned topics of the child -->  
 <!-- Authors: Shary Beshara -->  
