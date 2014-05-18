@@ -1,8 +1,20 @@
 Kidzen::Application.routes.draw do
 
+
+
+
+ 
+post '/settings', to: 'registered_users#set_settings'
+  root 'registered_users#show'
+
+
+  get "invite_chatroom/index"
+  
+
   resources :home
 
-  root 'home#index'
+
+
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
 
@@ -140,6 +152,13 @@ Kidzen::Application.routes.draw do
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   #resources :registered_users
 
+  # access page routes.
+  # Authors: Mohamed Khaled AbdelMeguid.
+  get "access_page/access"
+  post '/access_page/access', to: 'access_page#access'
+  put 'access_page/delete_tag', to: 'access_page#delete_tag'
+  put 'access_page/update_mutual_rooms', to: 'access_page#update_mutual_rooms'
+  put 'access_page/add', to: 'access_page#add'				
 
 
   # You can have the root of your site routed with "root"
