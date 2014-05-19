@@ -23,7 +23,7 @@ class AccessPageController < ApplicationController
   def delete_tag
       @permit = params[:tag]
       @name = params[:child]
-      Keyword.where(child_name: @name, tags: @permit).each do |tag|
+      Keyword.where(child_name: @name, tag: @permit).each do |tag|
         tag.destroy
       end
   end	
@@ -34,10 +34,10 @@ class AccessPageController < ApplicationController
   def add_tag
     @kid = params[:child]
     @ban = params[:ban]
-    if Keyword.find_by(child_name: @kid, tags: @ban).nil?
+    if Keyword.find_by(child_name: @kid, tag: @ban).nil?
       @new = Keyword.new
       @new.child_name = @kid
-      @new.tags = @ban
+      @new.tag = @ban
       @new.save
     else
       puts("already exists")
@@ -95,7 +95,7 @@ class AccessPageController < ApplicationController
     end
     if @value == false
       @upd = Permission.find_by(registered_user_id: @child, 
-        abilities: ['mutual_friends_rooms_only'=>true])
+        abilities: ['mutual_friends_rooms_only' => true])
       if !@upd.nil?
         @upd.update(:abilities => {'mutual_friends_rooms_only'=>false})
         @upd.save 
