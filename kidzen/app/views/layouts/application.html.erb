@@ -77,7 +77,7 @@
         <% if ( session[:locale] == "en")%>
         <ul>
           <li class="active"><a href="/"><%= t('home') %></a></li>
-          <li><%= link_to t('profile'), controller: :registered_users, action: :show %></li>
+          <li><%=link_to t('profile'), "profile/"+current_user.username %></li>
           <li><a href="#"><%= t('activities') %></a></li>
           <% if signed_in? %>
             <li><%= link_to t('logout'), signout_path, method: "delete" %></li>
@@ -95,7 +95,7 @@
         <li><a href="#"><%= t('notifications') %></a></li>
         <li><a href="#"><%= t('messages') %></a></li>
         <li><a href="#"><%= t('PlayGround') %></a></li>
-        <li><a href="/profile/ammar"><%= t('profile') %></a></li>
+        <li><%=link_to t('profile'), "profile/"+current_user.username%></li>
         <li class="active"><a href="/"><%= t('home') %></a></li>
         </ul>
         <% end %>

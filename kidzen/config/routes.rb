@@ -12,9 +12,8 @@ Kidzen::Application.routes.draw do
 
 
  
-post '/settings', to: 'registered_users#set_settings'
 
-  root 'registered_users#show'
+  root 'home#index'
 
   resources :home
 
