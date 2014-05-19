@@ -4,7 +4,7 @@ Kidzen::Application.routes.draw do
 
   root 'home#index'
   get '/kids' => 'home#kids'
-  get '/puzzle' => 'home#puzzle'
+  get '/home_puzzles' => 'home#home_puzzles'
 
   # Internationalization
   get 'change_locale', to: 'application#change_locale'

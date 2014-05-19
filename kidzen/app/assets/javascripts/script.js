@@ -279,7 +279,7 @@ $(function(){
         });
 	$('#plus').click(function(){
             if(cur_page==0)
-                window.location='puzzle';
+                window.location='home_puzzles';
             else if(cur_page==1)
                 window.location=pre+'kids/color';
             else if(cur_page==2)

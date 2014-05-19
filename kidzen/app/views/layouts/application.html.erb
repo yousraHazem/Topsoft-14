@@ -80,7 +80,7 @@
           <li class="active"><a href="/"><%= t('home') %></a></li>
           <li><%= link_to t('profile'), controller: :registered_users, action: :show %></li>
           <li><a href="#"><%= t('activities') %></a></li>
-          <li><%= link_to t('messages'), controller: :messages, action: :index %></li>
+          
           <% if signed_in? %>
             <li><%= link_to t('logout'), signout_path, method: "delete" %></li>
           <% else %>
