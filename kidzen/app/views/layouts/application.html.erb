@@ -1,18 +1,40 @@
-<html class="no-js">
+<html>
 <head>
   <title>Kiddizen</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
   <%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-<!--   <%= javascript_include_tag "application" %> -->
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag("general.css") %>
+  <%= stylesheet_link_tag "application.css" %>
+  <%= stylesheet_link_tag "messages.css" %>
+  <%= stylesheet_link_tag "access.css" %>
+  <%= stylesheet_link_tag "chat.css.scss" %>
+  <%= stylesheet_link_tag "chatroom.css.scss" %>
+  <%= stylesheet_link_tag "children.css.scss" %>
+  <%= stylesheet_link_tag "drag_and_drop.css" %>
+  <%= stylesheet_link_tag "events.css.scss" %>
+  <%= stylesheet_link_tag "general.css" %>
+  <%= stylesheet_link_tag "groups.css.scss" %>
+  <%= stylesheet_link_tag "homes.css.scss" %>
+  <%= stylesheet_link_tag "jquery.jqpuzzle.css" %>
+  <%= stylesheet_link_tag "notifications.css.scss" %>
+  <%= stylesheet_link_tag "poll_questions.css.scss" %>
+  <%= stylesheet_link_tag "polls.css.scss" %>
+  <%= stylesheet_link_tag "profile_musics.css.scss" %>
+  <%= stylesheet_link_tag "profiles.css.scss" %>
+  <%= stylesheet_link_tag "public.css.scss" %>
+  <%= stylesheet_link_tag "puzzles.css.scss" %>
+  <%= stylesheet_link_tag "registered_users.css.scss" %>
+  <%= stylesheet_link_tag "scaffolds.css.scss" %>
+  <%= stylesheet_link_tag "sessions.css.scss" %>
+  <%= stylesheet_link_tag "signin_forms.css" %>
+  <%= stylesheet_link_tag "signup_forms.css" %>
+  <%= stylesheet_link_tag "supervisors.css" %>
+  <%= stylesheet_link_tag "supervisors.css.scss" %>
+  
   <%= yield :stylesheet_includes %>
   <%= yield :javascript_includes %>
   <%= csrf_meta_tags %>
-
   <%= javascript_include_tag :defaults, "http://localhost:9292/faye.js" %>
 
 </head>
@@ -72,7 +94,7 @@
 <% end %>
       <div class="clr"></div>
      <div class="sup_dash">
-       <h3><a href="/supervisors/dashboard">Supervisors From here</a></h3>
+   
      </div> 
       <div class="menu_nav">
         <% if ( session[:locale] == "en")%>
@@ -80,13 +102,13 @@
           <li class="active"><a href="/"><%= t('home') %></a></li>
           <li><%= link_to t('profile'), controller: :registered_users, action: :show %></li>
           <li><a href="#"><%= t('activities') %></a></li>
-          
           <% if signed_in? %>
             <li><%= link_to t('logout'), signout_path, method: "delete" %></li>
           <% else %>
             <li><%= link_to "Sign in", controller: :sessions, action: :new %></li>
             <li><%= link_to "Sign up", controller: :children, action: :signup %></li>
           <% end %>
+          <li><%= link_to t('messages'), controller: :messages, action: :index %></li>
         </ul>
         <% end %>
 
@@ -96,7 +118,7 @@
         <li><a href="#"><%= t('notifications') %></a></li>
         <li><a href="#"><%= t('messages') %></a></li>
         <li><a href="#"><%= t('PlayGround') %></a></li>
-        <li><a href="#"><%= t('profile') %></a></li>
+        <li><a href="/profile/ammar"><%= t('profile') %></a></li>
         <li class="active"><a href="/"><%= t('home') %></a></li>
         </ul>
         <% end %>
@@ -116,10 +138,14 @@
           <div class="gadget">
             <div class="clr"></div>
             <ul class="sb_menu">
+              <li class="active"><a href="/friendships/view_my_friends"><%= t('friends') %></a></li>
+              <li><a href="/groups"><%= t('groups') %></a></li>
+              <li><a href="/events"><%= t('events') %></a></li>
+              <li><a href="/photos"><%= t('Photo Gallery') %></a></li>
+              <li><a href="/videos"><%= t('video Gallery') %></a></li>
               <li class="active"><a href="#"><%= t('friends') %></a></li>
-              <li><a href="#"><%= t('groups') %></a></li>
-              <li><a href="#"><%= t('events') %></a></li>
-              <li><a href="#"><%= t('chat_rooms') %></a></li>
+              <li><a href="/profile/amaar"><%= t('profile') %></a></li>
+	      <li><a href="/friendships/view_pending_friendship_requests.html"><%= t('Pending Friend Requests') %></a></li>
             </ul>
           </div>  
         </div>  

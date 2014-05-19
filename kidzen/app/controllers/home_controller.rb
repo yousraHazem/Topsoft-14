@@ -38,7 +38,7 @@ class HomeController < ApplicationController
         end
     end
 
-    def puzzle
+    def home_puzzles
         respond_to do |format|
         format.html { render :layout => false } # your-action.html.erb
         end

@@ -9,7 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  *= require blueimp-gallery-all
  *= require blueimp-gallery-indicator
  *= require blueimp-gallery-video

@@ -165,6 +165,6 @@ Parameters : None.
 Returns : None.
 Author : Ahmad Bassiouny.
 */
-function RedirectTo(){
-   window.location.href='http://localhost:3000/new_surveys';
+function RedirectTo(id){
+   window.location.href='http://localhost:3000/new_surveys/show_super/'+id;
 }
