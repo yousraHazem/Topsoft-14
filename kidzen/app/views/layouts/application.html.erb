@@ -77,25 +77,31 @@
         <% if ( session[:locale] == "en")%>
         <ul>
           <li class="active"><a href="/"><%= t('home') %></a></li>
-          <li><%= link_to t('profile'), controller: :registered_users, action: :show %></li>
-          <li><a href="#"><%= t('activities') %></a></li>
-          <% if signed_in? %>
+	  <% if signed_in? %>
+            <li><%=link_to t('profile'), "profile/"+current_user.username %></li>
+	    <li><a href="#"><%= t('activities') %></a></li>
             <li><%= link_to t('logout'), signout_path, method: "delete" %></li>
+	    <li><%= link_to t('messages'), controller: :messages, action: :index %></li>
           <% else %>
             <li><%= link_to "Sign in", controller: :sessions, action: :new %></li>
             <li><%= link_to "Sign up", controller: :children, action: :signup %></li>
           <% end %>
-          <li><%= link_to t('messages'), controller: :messages, action: :index %></li>
+          
         </ul>
         <% end %>
 
        <% if ( session[:locale] == "ar")%>
         <ul>
-        <li><a href="#"><%= t('logout') %></a></li>
-        <li><a href="#"><%= t('notifications') %></a></li>
-        <li><a href="#"><%= t('messages') %></a></li>
-        <li><a href="#"><%= t('PlayGround') %></a></li>
-        <li><a href="/profile/ammar"><%= t('profile') %></a></li>
+	<% if signed_in? %>
+          <li><a href="#"><%= t('logout') %></a></li>
+          <li><a href="#"><%= t('notifications') %></a></li>
+          <li><a href="#"><%= t('messages') %></a></li>
+          <li><a href="#"><%= t('PlayGround') %></a></li>
+          <li><%=link_to t('profile'), "profile/"+current_user.username%></li>
+	<% else %>
+	  <li><%= link_to "Sign in", controller: :sessions, action: :new %></li>
+          <li><%= link_to "Sign up", controller: :children, action: :signup %></li>
+	<% end %>
         <li class="active"><a href="/"><%= t('home') %></a></li>
         </ul>
         <% end %>
@@ -115,14 +121,15 @@
           <div class="gadget">
             <div class="clr"></div>
             <ul class="sb_menu">
+	      <% if signed_in? %>
               <li class="active"><a href="/friendships/view_my_friends"><%= t('friends') %></a></li>
               <li><a href="/groups"><%= t('groups') %></a></li>
               <li><a href="/events"><%= t('events') %></a></li>
               <li><a href="/photos"><%= t('Photo Gallery') %></a></li>
               <li><a href="/videos"><%= t('video Gallery') %></a></li>
               <li class="active"><a href="#"><%= t('friends') %></a></li>
-              <li><a href="/profile/amaar"><%= t('profile') %></a></li>
 	      <li><a href="/friendships/view_pending_friendship_requests.html"><%= t('Pending Friend Requests') %></a></li>
+	      <% end %>
             </ul>
           </div>  
         </div>  

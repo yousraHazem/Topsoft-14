@@ -36,6 +36,7 @@ class Permission < ActiveRecord::Base
 
 
 
+
   def hash_default
     self[:abilities].default = false
   end
