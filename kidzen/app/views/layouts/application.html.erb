@@ -121,14 +121,15 @@
           <div class="gadget">
             <div class="clr"></div>
             <ul class="sb_menu">
+	      <% if signed_in? %>
               <li class="active"><a href="/friendships/view_my_friends"><%= t('friends') %></a></li>
               <li><a href="/groups"><%= t('groups') %></a></li>
               <li><a href="/events"><%= t('events') %></a></li>
               <li><a href="/photos"><%= t('Photo Gallery') %></a></li>
               <li><a href="/videos"><%= t('video Gallery') %></a></li>
               <li class="active"><a href="#"><%= t('friends') %></a></li>
-              <li><a href="/profile/amaar"><%= t('profile') %></a></li>
 	      <li><a href="/friendships/view_pending_friendship_requests.html"><%= t('Pending Friend Requests') %></a></li>
+	      <% end %>
             </ul>
           </div>  
         </div>  
