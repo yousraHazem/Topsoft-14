@@ -7,4 +7,5 @@ class Group < ActiveRecord::Base
   validates :owner, presence: true
   validates :group_name, presence: true, length: { minimum: 4, maximum: 16}, uniqueness: true
   validates :group_description, presence: true
+  searchkick autocomplete: [:name]	
 end
