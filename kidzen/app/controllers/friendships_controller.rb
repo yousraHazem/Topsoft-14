@@ -63,7 +63,8 @@ class FriendshipsController < ApplicationController
       :child_2_id => user_id, :status => "pending")
     requested_friendship = Friendship.new( :child_1_id => user_id, 
       :child_2_id => params[:friend_id].to_i, :status => "requested")
-    if friendship1.save && friendship2.save
+
+    if pending_friendship.save && requested_friendship.save
       flash[:notice] = "friend request sent"
    else
       flash[:error] = "unable to send friend request"

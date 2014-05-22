@@ -1,0 +1,72 @@
+<!-- This method includes the javascript file to use it's functions -->  
+<!-- Authors: Shary Beshara -->    
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag("ban_topics.js") %>
+<% end %>
+
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag("access.js") %>
+<% end %>
+<% content_for :stylesheet_includes do %>
+  <%= stylesheet_link_tag("access.css") %>
+<% end %>
+
+<!-- This part views a text field and a submit button, which are used to submit 
+a tag to be prevented from a child, 
+and it also views the tags that has been submitted already.
+Authors: Mohamed Khaled AbdelMeguid. -->
+<% if @child == nil %>
+  <p>No children to view their permitted tags or you have go to your page and click a child </p>
+<% else %>
+  <input type="text" id="submitTags" >
+    <button onclick="ban(<%= "\"#{@child.registered_user.username}\"" %>)">Ban it!</button>  
+      <% Keyword.where(child_name: @child.registered_user.username).each do |key|%>
+        <div class = "whole">
+          <div id = "<%= key.tag %>">
+            <text class = "tags" > - <%= key.tag %> </text>
+              <button onclick = "deleteInfo(<%= "\"#{key.tag}\"" %> , 
+                <%= "\"#{@child.registered_user.username}\"" %> ) " class = "del" > 
+                X
+            </button>
+        </div>
+  <%end%>  
+<%end%>
+</div>
+
+<!-- This method list all the topics of the available activities -->  
+<!-- Authors: Shary Beshara -->    
+<div id = "list_of_activities">
+  <% Activity.all.each do |activity| %>
+    <% if !@child == nil %>
+      <% if !BannedTopic.exists?(child_name: @child.registered_user.username,
+        activity_topic: activity.topic) %>
+        <button   onclick = "banTopic(this, <%= "\"#{activity.topic}\"" %>, 
+          <%= "\"#{@child.registered_user.username}\"" %>)" >
+          <%= activity.topic %>
+        </button>
+      <% end %>  
+    <% end %>
+  <% end %>
+
+<!-- This method list all the banned topics of the child -->  
+<!-- Authors: Shary Beshara -->  
+<div id = "topics">
+  <% if !@child == nil %>
+    <% BannedTopic.where(child_name: @child.registered_user.username).each do 
+      |topic| %>
+      <div id = "<%= topic.activity_topic  %>" > 
+        <%= topic.activity_topic %>
+        <button onclick = "deleteTopic(<%= "\"#{topic.activity_topic}\"" %>, 
+          <%= "\"#{@child.registered_user.username}\"" %>)" >
+            X
+        </button>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+  
+ 
+
+
+
+

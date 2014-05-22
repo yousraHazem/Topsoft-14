@@ -150,7 +150,7 @@
 
               <% if signed_in? %>
               <li class="active"><%= link_to t('profile'), "/profile/"+current_user.username %></li>
-	      <li><a href="/friendships/view_pending_friendship_requests.html"><%= t('Pending Friend Requests') %></a></li>
+        <li><a href="/friendships/view_pending_friendship_requests.html"><%= t('Pending Friend Requests') %></a></li>
         <% end %>
             </ul>
           </div>  
@@ -175,36 +175,26 @@
           </div>  
         </div>  
         <% end %>  
-	<% if signed_in? %>
-	<div class="box">
-	  <div class="bet_time2">
-	    <% if Child.exists?(registered_user: current_user) %>
+  <% if signed_in? %>
+  <div class="box">
+    <div class="bet_time2">
+      <% if Child.exists?(registered_user: current_user) %>
        <% @child = Child.find_by(registered_user: current_user) %>
-  	    <%= render partial: "friendships/view_my_friends", locals: {friends: @child.friends, child: @child} %>
+        <%= render partial: "friendships/view_my_friends", locals: {friends: @child.friends, child: @child} %>
       <% end %>
-	  </div>
-	</div>
-	<div class="box">
-	  <div class="bet_time1">
-	    <image src="/assets/chat.png" width="50px" height="60px" />
-	    Online Friends
-	  </div>
-	</div>
-	
+    </div>
+  </div>
+  <div class="box">
+    <div class="bet_time1">
+      <image src="/assets/chat.png" width="50px" height="60px" />
+      Online Friends
+    </div>
+  </div>
+
               </form>
-	  </div>
-	</div>
-	<% else %>
-	<% end %>
-  </br>
-  </br>
-  </br>
-  </br>
-  </br>
-  </br>
-  </br>
-  </br>
-  </br>
-  </br>
+    </div>
+  </div>
+  <% else %>
+  <% end %>
 </body>
 </html>

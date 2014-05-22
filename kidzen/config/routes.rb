@@ -1,10 +1,21 @@
 Kidzen::Application.routes.draw do
 
-  resources :home
 
   root 'home#index'
-  get '/kids' => 'home#kids'
-  get '/home_puzzles' => 'home#home_puzzles'
+
+  
+  # Routes used in the access_page views.
+  put "access_page/delete_topic"
+  put "access_page/ban_topic"
+
+  post '/settings', to: 'registered_users#set_settings'
+
+
+  get "invite_chatroom/index"
+  
+
+
+
 
   # Internationalization
   get 'change_locale', to: 'application#change_locale'
@@ -27,6 +38,8 @@ Kidzen::Application.routes.draw do
   # Supervisor routes:
   # Confirm children page
   get "/confirm_children", to: 'supervisors#confirm_children'
+
+  # Children history page
   get "/children_history", to: 'supervisors#children_history'
   # Children notification actions
   get "/supervisors/dashboard", to: 'supervisors#show', as: :parent_profile
@@ -77,6 +90,7 @@ Kidzen::Application.routes.draw do
   resources :poll_questions
   resources :sessions, only: [:new, :create, :destroy]
   resources :group_members
+  resources :home
   resources :puzzles
   resources :new_surveys, only: [:index, :new, :create, :show, :destroy]
   put "/new_surveys/submit", to: 'new_surveys#submit'
@@ -84,6 +98,7 @@ Kidzen::Application.routes.draw do
   resources :drag_and_drops
   resources :songs
   resources :ajax_posts
+
 
   
   get "group_members/index"
@@ -132,8 +147,11 @@ Kidzen::Application.routes.draw do
   get "child/verify"
   post "child/new"
   get "children/verify"
-  # Internationalization
-  get 'change_locale', to: 'application#change_locale'
+
+
+  # home routes
+  get '/kids' => 'home#kids'
+  get '/home_puzzles' => 'home#home_puzzles'
   get '/record' => 'home#record'
   post '/saveRecording' => 'home#saveRecording'
   get '/:controller/:action' => 'home#action'
@@ -143,6 +161,18 @@ Kidzen::Application.routes.draw do
 
   #resources :public, :only => [:upload_photo, :uploading, :remove_photo]  
   #resources :registered_users
+
+
+  # Access page routes.
+  # Authors: Mohamed Khaled AbdelMeguid.
+  get "access_page/access"
+  put 'access_page/delete_tag', to: 'access_page#delete_tag'
+  put 'access_page/update_mutual_rooms', to: 'access_page#update_mutual_rooms'
+  put 'access_page/add_tag', to: 'access_page#add_tag'
+  put 'access_page/update_join_rooms', to: 'access_page#update_join_rooms'
+  put 'access_page/update_create_rooms', to: 'access_page#update_create_rooms'
+  
+				
 
 
 

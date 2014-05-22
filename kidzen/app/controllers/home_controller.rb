@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
 
-    layout nil
-    layout 'application', :except => :view
+
     # This function creates a new recording.
     # @files is initial variable of type file
     # Author: Ali A. Halawaty.
@@ -55,6 +54,4 @@ class HomeController < ApplicationController
         format.html { render :layout => false } # your-action.html.erb
         end
     end  
-
-
 end

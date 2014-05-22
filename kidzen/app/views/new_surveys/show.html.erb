@@ -46,6 +46,6 @@
 
 
 
-  <button onclick="submit(); RedirectTo();">submit</button>
-
+  <button onclick="submit(); RedirectTo(<%= @new_survey.id %>);">submit</button>
+  
   <%= link_to 'Back', new_surveys_path %>

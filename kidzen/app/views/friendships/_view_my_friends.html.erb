@@ -2,12 +2,16 @@
   <%if friends.to_a !=[]%>
     <div class="friend_list">
       <%friends.to_a.each do |friend|%>
+	<script type="text/javascript">
+	  function RedirectTo(username){window.location.href='http://localhost:3000/profile/'+username;}
+	</script>
         <%user=RegisteredUser.where("id=#{friend.registered_user_id}").first%>
         <%s="#{user.first_name} #{user.family_name}"%>
         <%if user.online == true%>
-          <p class="friend"><label class="circle_red"></label>&nbsp;<%=link_to s, user.usernam%></p>
+	  <%= redirect_profile = "p" %>
+          <p class="friend"><label class="circle_green"></label>&nbsp;<%=link_to s, user.username%></p>
         <% else %>
-          <p class="friend"><label class="circle_green"></label>&nbsp;<%=link_to s, user.usernam%></p>
+          <p class="friend"><label class="circle_red"></label>&nbsp;<%=link_to s, user.username%></p>
         <% end %>
       <%end%>
     </div>
