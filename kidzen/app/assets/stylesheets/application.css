@@ -117,7 +117,7 @@ a.rm, a.com {
 .menu_nav ul {
 	list-style:none;
 	color:#0B0B61;
-	margin:0;
+	margin:23;
 	padding:0;
 	float:right;
 }
@@ -131,7 +131,7 @@ a.rm, a.com {
 .menu_nav ul li a {
 	display:block;
 	margin:0;
-	padding:11px 25px;
+	padding:11px 30px;
 	color:#0B0B61;
 	text-decoration:none;
 	font-size:13px;

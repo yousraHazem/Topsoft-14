@@ -1,0 +1,4 @@
+<%= form_for ajax_post, remote: true do |f| %>
+  <%= f.label :status, ajax_post.status %>
+  <%= link_to "(remove)", ajax_post, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
+<% end %>

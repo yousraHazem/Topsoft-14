@@ -60,7 +60,7 @@ $(function(){
             title[1]='Painting';
             title[2]='Gallery';
             title[3]='Survey';
-            title[4]='Drag And Drop';
+            title[4]='Videos';
             desc[0]='Do you like solve puzzles?';
             desc[1]='There are lots of colors here!';
             desc[2]='Nice Photos for lovely kids!';
@@ -281,13 +281,13 @@ $(function(){
             if(cur_page==0)
                 window.location='home_puzzles';
             else if(cur_page==1)
-                window.location=pre+'kids/color';
+                window.location='#';
             else if(cur_page==2)
-                window.location=pre+'kids/story';
+                window.location='photos';
             else if(cur_page==3)
-                window.location=pre+'kids/learning';
+                window.location='new_surveys';
             else if(cur_page==4)
-                window.location=pre+'kids/cooking';
+                window.location='videos';
         });
         $('.itemnum:eq(0)').addClass('item1hover');
             

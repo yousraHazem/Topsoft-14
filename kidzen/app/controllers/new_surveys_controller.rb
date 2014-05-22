@@ -6,18 +6,7 @@ class NewSurveysController < ApplicationController
   # Returns : None.
   # Author : Ahmad Bassiouny.
   def index
-    if signed_in?
-      # Is user a supervisor?
-      if Child.exists?(registered_user_id: current_user.id)
-        @new_surveys = NewSurvey.all
-      else
-        # Must be a supervisor.
-        @new_surveys = NewSurvey.find_all_by_user_id current_user.id
-      end
-    else
-      # No one signed in
-      redirect_to session_path :new
-    end
+     @new_surveys = NewSurvey.all
   end
 
   # This method is used to get the data of a certain survey and show it.
@@ -25,12 +14,7 @@ class NewSurveysController < ApplicationController
   # Returns : None.
   # Author : Ahmad Bassiouny.
   def show
-    if signed_in?
       @new_survey = NewSurvey.find(params[:id])
-    else
-      # No one signed in
-      redirect_to session_path :new
-    end
   end
 
   # This method is used to is used to recieve AJAX requests that come from
@@ -70,18 +54,7 @@ class NewSurveysController < ApplicationController
   # Returns : None.
   # Author : Ahmad Bassiouny.
   def new
-    if signed_in?
-      # Is user a supervisor?
-      if Child.exists?(registered_user_id: current_user.id)
-        redirect_to child_path :show
-      else
-        # Must be a supervisor.
         @new_survey = NewSurvey.new
-      end
-    else
-      # No one signed in
-      redirect_to session_path :new
-    end
   end
 
   # This method is used to create a new survey using the values he entered in 

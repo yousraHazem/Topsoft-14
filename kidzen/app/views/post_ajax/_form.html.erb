@@ -1,0 +1,20 @@
+<% @ajax_post = AjaxPost.new %>
+<%= simple_form_for(@ajax_post, remote: true) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :status %>
+  </div>
+
+  <%= f.fields_for :ajax_comments do |ff| %>
+    <div class="field">
+      <%= render 'ajax_comment_fields', :f => ff %>
+    </div>
+  <% end %>
+  
+  <p><%= link_to_add_fields "Add comment", f, :ajax_comments %></p>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

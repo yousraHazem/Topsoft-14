@@ -5,10 +5,27 @@ of the same shapes and the child has to match this shapes and view
 his/her score after finishing the game as well as past scores in the
 lower right corner of the page. Author : Hussien M. Eloy. -->
 <!-- Include necessary javascript and stylesheets files -->
-
+<html>
+<head>
 <% content_for :stylesheet_includes do %>
   <%= stylesheet_link_tag("drag_and_drop.css") %>
 <% end %>
+ <script>
+    var jqOld = jQuery.noConflict();
+    jqOld(function() {
+        jqOld('#camera_wrap_4').camera({
+            height: 'auto',
+            loader: 'bar',
+            pagination: false,
+            thumbnails: false,
+            hover: false,
+            opacityOnGrid: false,
+            imagePath: 'images/banner'
+        });
+    })
+</script>
+</head>
+<body>
 <h3> Match shapes with their corresponding slots</h3>
 <br>
 <br>
@@ -62,3 +79,5 @@ objects where the actual game happens really on it. -->
     <% end %>
   </tbody>
 </table>
+</body>
+</html>

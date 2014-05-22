@@ -72,4 +72,4 @@ class ActivitiesController < ApplicationController
       params.require(:activity).permit(:min_age, :max_age, :name, :category)
     end
 end
-end
+

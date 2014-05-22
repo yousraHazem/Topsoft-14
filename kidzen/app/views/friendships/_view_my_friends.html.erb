@@ -5,9 +5,9 @@
         <%user=RegisteredUser.where("id=#{friend.registered_user_id}").first%>
         <%s="#{user.first_name} #{user.family_name}"%>
         <%if user.online == true%>
-          <p class="friend"><label class="circle_red"></label>&nbsp;<%=s%></p>
+          <p class="friend"><label class="circle_red"></label>&nbsp;<%=link_to s, user.usernam%></p>
         <% else %>
-          <p class="friend"><label class="circle_green"></label>&nbsp;<%=s%></p>
+          <p class="friend"><label class="circle_green"></label>&nbsp;<%=link_to s, user.usernam%></p>
         <% end %>
       <%end%>
     </div>

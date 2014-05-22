@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+
+
 <p>
   <strong>Approved:</strong>
   <%= @user.approved? %>
@@ -32,6 +34,9 @@
   <%= @user.registered_user.gender %>
 </p>
 
+<p>
+<%= link_to 'New Ajax post', new_ajax_post_path, id: "new_ajax" %>
+</p>
 
 <%= link_to 'Back', children_path %>
 <%= link_to 'Create Event', controller: :events, action: :new %>

@@ -94,21 +94,22 @@
 <% end %>
       <div class="clr"></div>
      <div class="sup_dash">
-   
+  
      </div> 
       <div class="menu_nav">
         <% if ( session[:locale] == "en")%>
         <ul>
           <li class="active"><a href="/"><%= t('home') %></a></li>
           <li><%= link_to t('profile'), controller: :registered_users, action: :show %></li>
-          <li><a href="#"><%= t('activities') %></a></li>
+          <li><%= link_to t('puzzles'), puzzles_path %></li>
+          <li><%= link_to t('messages'), controller: :messages, action: :index %></li>
           <% if signed_in? %>
             <li><%= link_to t('logout'), signout_path, method: "delete" %></li>
           <% else %>
             <li><%= link_to "Sign in", controller: :sessions, action: :new %></li>
             <li><%= link_to "Sign up", controller: :children, action: :signup %></li>
           <% end %>
-          <li><%= link_to t('messages'), controller: :messages, action: :index %></li>
+          
         </ul>
         <% end %>
 
@@ -138,14 +139,19 @@
           <div class="gadget">
             <div class="clr"></div>
             <ul class="sb_menu">
-              <li class="active"><a href="/friendships/view_my_friends"><%= t('friends') %></a></li>
-              <li><a href="/groups"><%= t('groups') %></a></li>
+                    
+             <li class="active"><a href="/friendships/view_my_friends"><%= t('friends') %></a></li>
+          
+              <li ><a href="/groups"><%= t('groups') %></a></li>
               <li><a href="/events"><%= t('events') %></a></li>
               <li><a href="/photos"><%= t('Photo Gallery') %></a></li>
               <li><a href="/videos"><%= t('video Gallery') %></a></li>
-              <li class="active"><a href="#"><%= t('friends') %></a></li>
-              <li><a href="/profile/amaar"><%= t('profile') %></a></li>
+              <li><a href="/record"><%= t('Songs Gallery') %></a></li>
+
+              <% if signed_in? %>
+              <li class="active"><%= link_to t('profile'), "/profile/"+current_user.username %></li>
 	      <li><a href="/friendships/view_pending_friendship_requests.html"><%= t('Pending Friend Requests') %></a></li>
+        <% end %>
             </ul>
           </div>  
         </div>  
@@ -161,7 +167,7 @@
           <div class="gadget">
             <div class="clr"></div>
             <ul class="sb_menu">
-              <li class="active"><a href="#"><%= t('friends') %></a></li>
+              <li class="active"><a href="/friendships/view_my_friends"><%= t('friends') %></a></li>
               <li><a href="#"><%= t('groups') %></a></li>
               <li><a href="#"><%= t('events') %></a></li>
               <li><a href="#"><%= t('chat_rooms') %></a></li>
@@ -184,15 +190,7 @@
 	    Online Friends
 	  </div>
 	</div>
-	<div class="box">
-	  <div class="bet_time">
-	    <h3></DIC> Chat Box</h3>
-              <div id="chatBox"></div>
-              <div id="usersOnLine"></div>
-              <form id="messageForm">
-	        <input id="message" type="text" height="40px">
-	        <input class="testbutton" id="send" type="submit" value="Send">
-                <div id="serverRes"></div>
+	
               </form>
 	  </div>
 	</div>

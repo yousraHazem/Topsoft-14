@@ -1,0 +1,7 @@
+<%= show_for @ajax_post do |s| %>
+  <%= s.attribute :user_id %>
+  <%= s.attribute :status %>
+<% end %>
+
+<%= link_to 'Edit', edit_ajax_post_path(@ajax_post) %> |
+<%= link_to 'Back', ajax_posts_path %>
