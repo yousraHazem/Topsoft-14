@@ -1,0 +1,16 @@
+<h3>My Events</h3>
+  <%if @events.to_a !=[]%>
+    <div class="friend_list">
+      <%@events.to_a.each do |friend|%>
+        <%event=Events.where
+          ("id=#{friend.registered_user_id}").first%>
+        <%name="#{event.name} #
+          {event.location} #
+          {event.date_time} #
+          {event.description}"%>
+        <p class="event"><%=name%></p>
+      <%end%>
+    </div>
+  <%else%>
+    <h4>You Currently have no Events</h4>
+  <%end%>

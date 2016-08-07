@@ -50,7 +50,8 @@ Kidzen::Application.routes.draw do
   # This routes to enable getting info from invite page
   get "supervisors/invite", to: 'supervisors#invite'
   post "supervisors/invite", to: 'supervisors#invite'
-
+  get "events_invitations/view_my_events"
+  get "events_invitations/view_my_friends_events"
   # End supervisor routes
 
 
