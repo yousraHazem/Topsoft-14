@@ -1,0 +1,36 @@
+class Activities
+    $minimum_age
+    $maximum_age
+    $name
+    $category
+    $invitation_id
+
+    	def set_id(child_id)
+    	@child_id=child_id
+    	
+    	end
+
+    	def get_id
+
+    	end
+
+        def play(child_id)
+
+
+         end
+        def share(child_id)
+
+         end
+
+        def invite(child_id1,child_id2)
+
+
+        end
+
+        def set_invitation_id(invitation_id)
+
+        end
+
+        def get_invitation
+        end
+end
